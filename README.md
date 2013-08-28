@@ -12,8 +12,8 @@ Then view [http://localhost:3000](http://localhost:3000) in your browser
 
 ## We're using
 
-Ruby 2
-Rails 4
-Devise + Omniauth-Facebook
-Bootstrap 3
-FontAwesome
+- Ruby 2
+- Rails 4
+- Devise + Omniauth-Facebook
+- Bootstrap 3
+- FontAwesome
