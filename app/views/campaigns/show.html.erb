@@ -1,0 +1,9 @@
+<h1><%= @campaign.tag_line %></h1>
+
+<div class="well well-sm">
+  <%= simple_format(@campaign.call_to_action) %>
+
+  <a class="btn btn-primary" href="#">Invite your friends to create a team</a>
+  <%= link_to 'Join a team with cool new people', roles_path(:campaign_id => @campaign.id), :class => 'btn btn-primary' %>
+</div>
+

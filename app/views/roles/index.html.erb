@@ -1,0 +1,17 @@
+<h1>First, pick the role you want to play on your team</h1>
+
+<p>Then you can invite your friends via email.</p>
+
+<div class="well well-sm">
+
+  <% @roles.each do |role| %>
+    <div class="panel">
+      <h2>
+        <%= role.name %>
+        <%= link_to "That's me!", role_path(:role_id => role.id), :class => 'btn btn-success pull-right' %>
+      </h2>
+      <p><%= role.description %></p>
+    </div>
+  <% end %>
+
+</div>

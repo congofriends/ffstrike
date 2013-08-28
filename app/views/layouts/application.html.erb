@@ -21,8 +21,10 @@
           <li class="active"><a href="#">Link</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><%= current_user.name %></a></li>
-          <li><img src="<%= current_user.image %>" /></li>
+          <% unless current_user.nil? %>
+            <li><a href="#"><%= current_user.name %></a></li>
+            <li><img src="<%= current_user.image %>" /></li>
+          <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav>
