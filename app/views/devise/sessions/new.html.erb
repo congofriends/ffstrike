@@ -1,0 +1,29 @@
+<div class="col-md-6 col-md-offset-3">
+  <h2>Sign in with Facebook</h2>
+
+  <%= render "devise/shared/omniauth" %>
+
+  <h3>Don't have a facebook account?</h3>
+
+  <p>
+    It's a great idea to team your Facebook account up with Fast Food Strike. We're all about
+    awareness and promotion and what better place to do that than Facebook? Plus we can automatically
+    do a few simple (non-intrusive) things, like work out where you are and connect you with folks
+    in your area, or work out if you're friends have signed up in case you'd like to leaflet with them.
+  </p>
+
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <div><%= f.label :email %><br />
+      <%= f.email_field :email, :autofocus => true, :class => 'form-control' %></div>
+
+    <div><%= f.label :password %><br />
+      <%= f.password_field :password, :class => 'form-control' %></div>
+
+    <% if devise_mapping.rememberable? -%>
+      <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <% end -%>
+
+    <div><%= f.submit "Sign in", :class => 'btn btn-default' %></div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>
