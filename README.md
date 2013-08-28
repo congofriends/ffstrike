@@ -8,7 +8,7 @@
     bundle exec rake db:migrate
     bundle exec rails
 
-Then view http://localhost:3000 in your browser
+Then view [http://localhost:3000](http://localhost:3000) in your browser
 
 ## We're using
 
