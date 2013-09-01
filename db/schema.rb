@@ -11,25 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130828052113) do
-
-  create_table "campaigns", force: true do |t|
-    t.string   "name"
-    t.string   "code"
-    t.string   "icon"
-    t.string   "call_to_action"
-    t.string   "tag_line"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "roles", force: true do |t|
-    t.integer  "campaign_id"
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20130827080109) do
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
