@@ -6,7 +6,7 @@
     cd ffstrike
     bundle install
     bundle exec rake db:migrate
-    bundle exec rails
+    bundle exec rails server
 
 Then view [http://localhost:3000](http://localhost:3000) in your browser
 
