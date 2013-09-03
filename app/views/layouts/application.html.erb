@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ffstrike</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+<title>Ffstrike</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
 </head>
 <body>
-
+<div id="wrap">
   <div class="container">
 
     <nav class="navbar navbar-default" role="navigation">
-    <div class="navbar-header">
-      <%= link_to 'Fast Food Strike', root_path, :class => 'navbar-brand' %>
-    </div>
+      <div class="navbar-header">
+        <%= link_to 'Fast Food Strike', root_path, :class => 'navbar-brand' %>
+      </div>
 
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
@@ -23,8 +23,8 @@
         <ul class="nav navbar-nav navbar-right">
           <% unless current_user.nil? %>
             <li><a href="#"><%= current_user.name %></a></li>
-            <li><img src="<%= current_user.image %>" /></li>
-          <% end %>
+          <li><img src="<%= current_user.image %>" /></li>
+        <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav>
@@ -33,7 +33,14 @@
   <div class="container">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-<%= yield %>
+    <%= yield %>
   </div>
+  <div id="push"></div>
+</div> <!-- End #wrap -->
+<footer>
+  <div class="container">
+    This project is not affiliated with or authorized by any organization. This is just a brainstorm in code about a new way to organize people. Whether or not it is ever used in the Fast Food Strike, we hope this basic idea will be used someday for something.
+  </div>
+</footer>
 </body>
 </html>

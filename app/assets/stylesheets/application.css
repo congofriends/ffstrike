@@ -12,3 +12,36 @@
  *= require_tree .
  *= require font-awesome
  */
+
+html, body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -70px;
+}
+
+#push, footer {
+  height: 70px;
+}
+
+footer {
+  padding-top: 10px;
+  border-top: 1px solid #282828;
+}
+
+@media (max-width: 767px) {
+  #wrap {
+    margin: auto;
+  }
+  #push {
+    display: none;
+  }
+  footer {
+    height: auto;
+  }
+}
