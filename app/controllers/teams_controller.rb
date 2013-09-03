@@ -18,7 +18,8 @@ class TeamsController < ApplicationController
   end
 
   def create
-    team = Team.create(params[:team].to_hash)
+    team_params = params[:team].to_hash.merge(:coordinator => current_user)
+    team = Team.create(team_params)
     redirect_to teams_invite_url(:id => team.id)
   end
 
