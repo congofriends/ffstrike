@@ -1,20 +1,11 @@
 Ffstrike::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
-  root 'home#start'
 
+  root 'home#start'
   get 'home/start' => 'home#start'
 
-  get 'teams/new' => 'teams#new'
-  post 'teams/new' => 'teams#create'
-
   get 'teams/:id/invite' => 'teams#invite', :as => 'teams_invite'
-
-  get 'teams' => 'teams#index'
-
-  #root 'campaigns#show', :campaign_id => 1
-
-  #get 'roles/:campaign_id' => 'roles#index', :as => :roles
-  #get 'roles/show/:role_id' => 'roles#show', :as => :role
+  resources :teams
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
