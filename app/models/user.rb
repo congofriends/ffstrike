@@ -25,6 +25,11 @@ class User
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
 
+  # Omniauthable
+  field :provider,           :type => String
+  field :uid,                :type => String
+
+  # Facebook related properties
   field :name,               :type => String
   field :image,              :type => String
 
