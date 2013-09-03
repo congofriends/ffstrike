@@ -1,6 +1,6 @@
 Ffstrike::Application.configure do
-  ENV['FACEBOOK_APP_ID'] = '171511886369691'
-  ENV['FACEBOOK_APP_SECRET'] = '75c98e118a26853e9fff59a3a7f76163'
+  ENV['FACEBOOK_APP_ID'] = '426624144117081'
+  ENV['FACEBOOK_APP_SECRET'] = 'da81b9d419f0dcce05cc2d370411364f'
 
   # Settings specified here will take precedence over those in config/application.rb.
 
