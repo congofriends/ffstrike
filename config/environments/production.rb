@@ -1,4 +1,7 @@
 Ffstrike::Application.configure do
+  ENV['FACEBOOK_APP_ID'] = '171511886369691'
+  ENV['FACEBOOK_APP_SECRET'] = '75c98e118a26853e9fff59a3a7f76163'
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
