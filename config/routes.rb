@@ -3,7 +3,12 @@ Ffstrike::Application.routes.draw do
   root 'home#start'
 
   get 'home/start' => 'home#start'
+
   get 'teams/new' => 'teams#new'
+  post 'teams/new' => 'teams#create'
+
+  get 'teams/:id/invite' => 'teams#invite', :as => 'teams_invite'
+
   get 'teams' => 'teams#index'
 
   #root 'campaigns#show', :campaign_id => 1

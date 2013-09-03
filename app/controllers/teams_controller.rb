@@ -16,6 +16,11 @@ class TeamsController < ApplicationController
   def new
   end
 
+  def create
+    team = Team.create(params[:team].to_hash)
+    redirect_to teams_invite_url(:id => team.id)
+  end
+
   def invite
   end
 end
