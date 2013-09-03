@@ -1,10 +1,9 @@
 Ffstrike::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   root 'home#start'
+
   get 'home/start' => 'home#start'
-
   get 'teams/new' => 'teams#new'
-
   get 'teams' => 'teams#index'
 
   #root 'campaigns#show', :campaign_id => 1
