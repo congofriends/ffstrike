@@ -5,6 +5,10 @@ class TeamsController < ApplicationController
   end
 
   def show
+    team = Team.find(params[:id])
+    if team.coordinator == current_user
+      render "coordinator_dashboard"
+    end
   end
 
   def apply
