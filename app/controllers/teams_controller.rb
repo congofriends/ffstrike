@@ -5,8 +5,8 @@ class TeamsController < ApplicationController
   end
 
   def show
-    team = Team.find(params[:id])
-    if team.coordinator == current_user
+    @team = Team.find(params[:id])
+    if @team.coordinator.user == current_user
       render "coordinator_dashboard"
     end
   end
@@ -18,12 +18,14 @@ class TeamsController < ApplicationController
   end
 
   def new
-    @team = Team.new
+    @team = Team.new :coordinator => Coordinator.new
   end
 
   def create
-    team_params = params[:team].to_hash.merge(:coordinator => current_user)
-    team = Team.create(team_params)
+    team = Team.new(params[:team].to_hash)
+    team.coordinator.user = current_user
+    team.save
+
     redirect_to teams_invite_url(:id => team.id)
   end
 

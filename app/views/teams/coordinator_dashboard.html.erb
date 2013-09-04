@@ -1,3 +1,6 @@
+<%= content_for :head do %>
+  <%= javascript_include_tag 'coordinator_dashboard' %>
+<% end %>
 <h1>Coordinator dashboard</h1>
 
 <h3>This page gives you the tools you need to be an effective team member.</h3>
@@ -120,6 +123,16 @@
     <p>
     These are the few things you absolutely must get done. Check them off as you do them so that your coordinator doesn't have to nag you.
     </p>
+
+  </div>
+  <div class="col-md-8">
+    <% @team.coordinator.tasks.each do |task| %>
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input <%= "checked='checked'" if task.done %> class="mark-task" type="checkbox" data-team-id="<%= @team.id %>" data-role-name="coordinator" data-task-id="<%= task.id %>" />
+      </span>
+      <%= task.description %>
+    </div>
+    <% end %>
   </div>
 </div>
-

@@ -1,4 +1,7 @@
 Ffstrike::Application.configure do
+  # Delete teams every time the server boots while the data model is in flux
+  config.truncate_models = [:team]
+
   ENV['FACEBOOK_APP_ID'] = '426624144117081'
   ENV['FACEBOOK_APP_SECRET'] = 'da81b9d419f0dcce05cc2d370411364f'
 

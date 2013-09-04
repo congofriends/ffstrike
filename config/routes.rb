@@ -8,6 +8,8 @@ Ffstrike::Application.routes.draw do
   get 'teams/:id/invite' => 'teams#invite', :as => 'teams_invite'
   resources :teams
 
+  post 'tasks/:team_id/:role_name/:task_id' => 'tasks#update'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -21,21 +21,27 @@ You're starting a new team that will leaflet restaurants around your town. You'l
   </p>
 
   <%= form_for @team do |f| %>
-    <%  {:why => "Write a sentence or two that capture why you want to do this work: (you can edit this later)",
-         :where => "Describe where you're thinking of leafleting: (you can edit this later)",
-         :name => "Have an idea for a team name? (optional - and yes, you can edit it later)",
-         :about_private => "Is there anything you'd like to tell us about yourself? (Won't be shared publically.)"
-    }.each_pair do |field, desc| %>
+    <p>
+      <%= f.label :name, "Have an idea for a team name? (optional - and yes, you can edit it later)" %><br />
+      <%= f.text_field :name, :class => 'form-control' %>
+    </p>
+
+    <%= f.fields_for :coordinator do |coord_f| %>
+      <%  {:why => "Write a sentence or two that capture why you want to do this work: (you can edit this later)",
+           :where => "Describe where you're thinking of leafleting: (you can edit this later)",
+           :about_private => "Is there anything you'd like to tell us about yourself? (Won't be shared publically.)"
+      }.each_pair do |field, desc| %>
+        <p>
+          <%= coord_f.label field, desc %><br />
+          <%= coord_f.text_area field, :class => 'form-control' %>
+        </p>
+      <% end %>
+
       <p>
-        <%= f.label field, desc %><br />
-        <%= f.text_area field, :class => 'form-control' %>
+        <%= coord_f.label :phone, "Your mobile number (will only be shared with the national organizers and your team)" %><br />
+        <%= coord_f.text_field :phone, :class => 'form-control', :style => 'width: 50%' %>
       </p>
     <% end %>
-
-    <p>
-      <%= f.label :phone, "Your mobile number (will only be shared with the national organizers and your team)" %><br />
-      <%= f.text_field :phone, :class => 'form-control', :style => 'width: 50%' %>
-    </p>
 
     <p>
       <%= f.submit "Submit application", :class => 'btn btn-primary' %>

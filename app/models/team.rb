@@ -1,13 +1,8 @@
 class Team
   include Mongoid::Document
+  embeds_one :coordinator
+  accepts_nested_attributes_for :coordinator
 
-  field :why,              :type => String
-  field :where,            :type => String
   field :name,             :type => String
-  field :about_private,    :type => String
-  field :phone,            :type => String
-
   field :active,           :type => Mongoid::Boolean, :default => true
-
-  belongs_to :coordinator, :class_name => "User"
 end
