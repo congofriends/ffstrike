@@ -3,6 +3,7 @@ ruby '2.0.0'
 
 gem 'pry'
 gem 'pry-debugger'
+gem 'pry-rails'
 
 gem 'thin'
 
