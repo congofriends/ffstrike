@@ -7,7 +7,7 @@ class Team
   field :about_private,    :type => String
   field :phone,            :type => String
 
-  field :active,           :type => Mongoid::Boolean, :default => false
+  field :active,           :type => Mongoid::Boolean, :default => true
 
   belongs_to :coordinator, :class_name => "User"
 end
