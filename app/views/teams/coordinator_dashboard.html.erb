@@ -54,7 +54,7 @@
         </tr>
       </thead>
       <tbody>
-      <% @team.role_applications.each do |r| %>
+      <% @team.role_applications.select {|r| !r.approved?}.each do |r| %>
         <tr>
           <td><%= r.role.capitalize %></td>
           <td><%= r.user.name %></td>
@@ -87,17 +87,23 @@
         </tr>
       </thead>
       <tbody>
+	  <% @team.role_applications.select {|r| r.approved?}.each do |r| %>
+	    <tr>
+	      <td><%= r.role.capitalize %></td>
+	      <td><%= r.user.name %></td>
+	      <td><%= r.user.email %></td>
+	    </tr>
+	  <% end %>
+	  <tr>
+		<td>Coordinator</td>
+		<td><%= @team.coordinator.user.name %> (You!) <a href="reassign-team-member.html" class="label label-default">Reassign</a></td>
+		<td><%= @team.coordinator.user.email%></td>
+		<td><%= @team.coordinator.tasks.count{|t|t.done?}%> of <%=@team.coordinator.tasks.count%> tasks done</td>
       <tr>
         <td>Mapper</td>
         <td>Molly Mapper <a href="reassign-team-member.html" class="label label-default">Reassign</a></td>
         <td>mollymapper@mailinator.com</td>
         <td>3 of 4 tasks done</td>
-      </tr>
-      <tr>
-        <td>Coordinator</td>
-        <td>Cathy Coordinator (You!) <a href="reassign-team-member.html" class="label label-default">Reassign</a></td>
-        <td>cathycoordinator@mailinator.com</td>
-        <td>4 of 5 tasks done</td>
       </tr>
       </tbody>
     </table>
