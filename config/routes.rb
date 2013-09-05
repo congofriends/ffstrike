@@ -1,13 +1,23 @@
 Ffstrike::Application.routes.draw do
+  # RailsAdmin
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  # Devise - Authentication
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
+  # Landing/Home page
   root 'home#start'
   get 'home/start' => 'home#start'
 
-  get 'teams/:id/invite' => 'teams#invite', :as => 'teams_invite'
+  # Teams
   resources :teams
+  get 'teams/:id/invite' => 'teams#invite', :as => 'invite_team'
+  get 'teams/:id/join' => 'teams#join', :as => 'join_team'
+  get 'teams/:id/apply/:role' => 'teams#apply', :as => 'apply_team'
+  post 'teams/:id/role_application' => 'teams#role_application', :as => 'new_role_application'
+  get 'teams/:id/wait' => 'teams#wait', :as => 'wait_team'
 
+  # Tasks
   post 'tasks/:team_id/:role_name/:task_id' => 'tasks#update'
 
   # The priority is based upon order of creation: first created -> highest priority.

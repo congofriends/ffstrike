@@ -12,6 +12,16 @@ class TeamsController < ApplicationController
   end
 
   def apply
+    @team_id = params[:id]
+    @role_application = RoleApplication.new(:role => params[:role])
+  end
+
+  def role_application
+    team = Team.find(params[:id])
+    team.role_applications << RoleApplication.new(params[:role_application].to_hash)
+    team.save
+
+    redirect_to wait_team_path(params[:id])
   end
 
   def wait
@@ -26,10 +36,14 @@ class TeamsController < ApplicationController
     team.coordinator.user = current_user
     team.save
 
-    redirect_to teams_invite_url(:id => team.id)
+    redirect_to invite_team_url(:id => team.id)
   end
 
   def invite
+    @team_id = params[:id]
+  end
+
+  def join
     @team_id = params[:id]
   end
 end

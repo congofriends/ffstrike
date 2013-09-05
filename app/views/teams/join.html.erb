@@ -1,0 +1,15 @@
+<h1>First, pick the role you want to play on your team.</h1>
+
+<%
+  { :Mapper => "Are you a great back seat driver? Good at using Google Maps. Then Mapper may be the role for you. You'll use a shared Google map to pick out restaurants that no one has contacted yet, then plan a route and print out some maps.",
+    :Printer => "Your job is simple, but in some ways the most important: printing out and cutting up the leaflets. You'll need a printer and some patience with a pair of scissors. OR you can just go to Kinkos! ",
+    :Driver => "Any points on your liscence? Then don't apply for this role. You've got to transport the team around town. Shy about handing out leaflets in a restaurant? Then you can stay in the car and be the getaway driver."
+  }.each_pair do |role, desc|
+%>
+  <div class="row well well-sm">
+    <h3><%= role.to_s %></h3>
+    <p><%= desc %></p>
+    <%= link_to "That's me!", apply_team_url(@team_id, role.to_s.downcase.to_sym), :class => 'btn btn-success' %>
+  </div>
+<% end %>
+

@@ -1,0 +1,33 @@
+<h1>So you want to be a <%= @role_application.role.capitalize %></h1>
+
+<%= render :partial => "teams/roles/#{@role_application.role}" %>
+
+<%= form_for @role_application, :url => new_role_application_path(@team_id)  do |f| %>
+
+  <%= f.hidden_field :role, :value => @role_application.role %>
+
+  <p>
+    <%= f.label :why_dependable, "Your team -- and about 3.5 million workers -- will be depending on you. In a few sentences, please convince us that you'll be dependable: " %><br />
+    <%= f.text_area :why_dependable, :class => 'form-control' %>
+  </p>
+
+  <p>
+    <%= f.label :why_cause, "In a couple of sentences, please tell us why you want to support the fast food worker strike: " %><br />
+    <%= f.text_area :why_cause, :class => 'form-control' %>
+  </p>
+
+  <p>
+    <%= f.label :other, "Is there anything else you'd like to tell us about yourself? " %><br />
+    <%= f.text_area :other, :class => 'form-control' %>
+  </p>
+
+  <p>
+    <%= f.label :phone, "Your mobile number (will only be shared with the national organizers and your team): " %><br />
+    <%= f.text_field :phone, :class => 'form-control' %>
+  </p>
+
+  <p>
+    <%= f.submit "Submit Application", :class => 'btn btn-primary' %>
+  </p>
+
+<% end %>
