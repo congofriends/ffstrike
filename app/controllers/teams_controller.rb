@@ -18,7 +18,11 @@ class TeamsController < ApplicationController
 
   def role_application
     team = Team.find(params[:id])
-    team.role_applications << RoleApplication.new(params[:role_application].to_hash)
+
+    role_application = RoleApplication.new(params[:role_application].to_hash)
+    role_application.user = current_user
+
+    team.role_applications << role_application
     team.save
 
     redirect_to wait_team_path(params[:id])

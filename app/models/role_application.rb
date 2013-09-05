@@ -1,6 +1,7 @@
 class RoleApplication
   include Mongoid::Document
   embedded_in :team
+  belongs_to :user
 
   field :role,            :type => String
   field :why_dependable,  :type => String
