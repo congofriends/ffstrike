@@ -52,24 +52,14 @@
         </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>Driver</td>
-        <td>Donna Driver</td>
-        <td>donnadriver@mailinator.com</td>
-        <td><a href="#" class="label label-default">review their application</a></td>
-      </tr>
-      <tr>
-        <td>Driver</td>
-        <td>Deirda Driver</td>
-        <td>deirdradriver@mailinator.com</td>
-        <td><a href="#" class="label label-default">review their application</a></td>
-      </tr>
-      <tr>
-        <td>Mapper</td>
-        <td>Matt Mapper</td>
-        <td>mollymapper@mailinator.com</td>
-        <td><a href="#" class="label label-default">invite for different role</a></td>
-      </tr>
+      <% @team.role_applications.each do |r| %>
+        <tr>
+          <td><%= r.role.capitalize %></td>
+          <td><%= r.user.name %></td>
+          <td><%= r.user.email %></td>
+          <td><a href="#" class="label label-default">review their application</a></td>
+        </tr>
+      <% end %>
       </tbody>
     </table>
   </div>
