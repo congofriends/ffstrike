@@ -1,3 +1,7 @@
+<%= content_for :head do %>
+  <%= javascript_include_tag 'coordinator_invite' %>
+<% end %>
+
 <h1>Invite your team</h1>
 
 <h3>
@@ -5,12 +9,14 @@ Just send an email with the link below to a few of your friends so that they can
 </h3>
 
 <div class="well well-sm">
-  <textarea class="form-control" rows="5">
+  <textarea class="form-control" rows="5" id="invite_text">
 Three and a half million fast food workers in America work at or close to minimum wage. With an average age of 28, they are adults, trying to support families. They are doing what workers in other industries in America and around the world have always done: join together to ask for higher pay. Want to help? There are only three slots left on my team -- sign up quick! This http://flashteams.com/join/team_id_blahblah
   </textarea>
 
   <p>
-  <button class="btn btn-default">Copy...</button> and paste into an email to your friends.
+  <button id="copy_invite_text" class="btn btn-primary" data-clipboard-target="invite_text">
+    Copy to your clipboard
+  </button> and paste into an email to your friends.
   </p>
 
   <h3>Or...</h3>

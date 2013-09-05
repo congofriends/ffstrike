@@ -43,6 +43,7 @@ gem 'omniauth-facebook'
 gem 'mongoid', github: 'mongoid/mongoid'
 
 gem 'font-awesome-rails'
+gem 'zeroclipboard-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
