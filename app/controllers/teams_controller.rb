@@ -30,5 +30,6 @@ class TeamsController < ApplicationController
   end
 
   def invite
+    @team_id = params[:id]
   end
 end
