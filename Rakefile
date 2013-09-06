@@ -18,4 +18,9 @@ namespace :mongo do
   task :stop do
     sh "kill -9 $(cat #{db_dir}/mongod.lock)"
   end
+
+  desc 'Destroy the mongodb server and all its contents'
+  task :destroy => [:stop] do
+    sh "rm -rf #{db_dir}*"
+  end
 end
