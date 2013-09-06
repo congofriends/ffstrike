@@ -8,4 +8,5 @@ class RoleApplication
   field :why_cause,       :type => String
   field :other,           :type => String
   field :phone,           :type => String
+  field :approved,        :type => Mongoid::Boolean, :default => false
 end
