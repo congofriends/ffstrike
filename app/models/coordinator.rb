@@ -15,6 +15,8 @@ class Coordinator
   embeds_many :tasks, :as => :role
   belongs_to :user
 
+  accepts_nested_attributes_for :tasks
+
   field :why,              :type => String
   field :where,            :type => String
   field :about_private,    :type => String
