@@ -54,12 +54,12 @@
         </tr>
       </thead>
       <tbody>
-      <% @team.role_applications.select {|r| !r.approved?}.each do |r| %>
-        <tr>
+      <% @team.role_applications.select {|r| !r.approved?}.sort_by { |r| r.rejected? ? 1 : 0 }.each do |r| %>
+        <tr class="<%= 'strikethrough' if r.rejected? %>">
           <td><%= r.role.capitalize %></td>
           <td><%= r.user.name %></td>
           <td><%= r.user.email %></td>
-          <td><a href="#" class="label label-default">review their application</a></td>
+          <td><%= link_to "Review this application#{ ' again' if r.rejected?}", view_role_application_path(@team.id, r.id), :class => 'btn btn-primary btn-xs' %></td>
         </tr>
       <% end %>
       </tbody>
@@ -87,24 +87,19 @@
         </tr>
       </thead>
       <tbody>
-	  <% @team.role_applications.select {|r| r.approved?}.each do |r| %>
-	    <tr>
-	      <td><%= r.role.capitalize %></td>
-	      <td><%= r.user.name %></td>
-	      <td><%= r.user.email %></td>
-	    </tr>
-	  <% end %>
-	  <tr>
-		<td>Coordinator</td>
-		<td><%= @team.coordinator.user.name %> (You!) <a href="reassign-team-member.html" class="label label-default">Reassign</a></td>
-		<td><%= @team.coordinator.user.email%></td>
-		<td><%= @team.coordinator.tasks.count{|t|t.done?}%> of <%=@team.coordinator.tasks.count%> tasks done</td>
       <tr>
-        <td>Mapper</td>
-        <td>Molly Mapper <a href="reassign-team-member.html" class="label label-default">Reassign</a></td>
-        <td>mollymapper@mailinator.com</td>
-        <td>3 of 4 tasks done</td>
+        <td>Coordinator</td>
+        <td><%= @team.coordinator.user.name %> (You!) <a href="reassign-team-member.html" class="label label-default">Reassign</a></td>
+        <td><%= @team.coordinator.user.email%></td>
+        <td><%= @team.coordinator.tasks.count{|t|t.done?}%> of <%=@team.coordinator.tasks.count%> tasks done</td>
       </tr>
+      <% @team.role_applications.select {|r| r.approved?}.each do |r| %>
+      <tr>
+        <td><%= r.role.capitalize %></td>
+        <td><%= r.user.name %></td>
+        <td><%= r.user.email %></td>
+      </tr>
+      <% end %>
       </tbody>
     </table>
   </div>

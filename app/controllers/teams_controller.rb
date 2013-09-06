@@ -16,7 +16,7 @@ class TeamsController < ApplicationController
     @role_application = RoleApplication.new(:role => params[:role])
   end
 
-  def role_application
+  def create_role_application
     team = Team.find(params[:id])
 
     role_application = RoleApplication.new(params[:role_application].to_hash)
@@ -26,6 +26,22 @@ class TeamsController < ApplicationController
     team.save
 
     redirect_to wait_team_path(params[:id])
+  end
+
+  def view_role_application
+    @team = Team.find(params[:id])
+    @role_application = @team.role_applications.find(params[:role_application_id])
+  end
+
+  def review_role_application
+    team = Team.find(params[:id])
+    role_application = team.role_applications.find(params[:role_application_id])
+
+    role_application.approved = (params[:status] == 'approve')
+    role_application.rejected = (params[:status] == 'reject')
+    role_application.save
+
+    redirect_to :team
   end
 
   def wait

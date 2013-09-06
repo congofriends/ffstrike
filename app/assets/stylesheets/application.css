@@ -45,3 +45,7 @@ footer {
     height: auto;
   }
 }
+
+tr.strikethrough td {
+  text-decoration: line-through;
+}

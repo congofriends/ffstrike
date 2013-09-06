@@ -1,0 +1,21 @@
+<h1><%= @role_application.role.capitalize %> Application: <%= @role_application.user.name  %></h1>
+
+<div class="row well well-sm">
+  <p>Your team -- and about 3.5 million workers -- will be depending on you. In a few sentences, please convince us that you'll be dependable:</p>
+  <blockquote><%= @role_application.why_dependable %></blockquote>
+</div>
+
+<div class="row well well-sm">
+  <p>In a couple of sentences, please tell us why you want to support the fast food worker strike: </p>
+  <blockquote><%= @role_application.why_cause %></blockquote>
+</div>
+
+<div class="row well well-sm">
+  <p>Is there anything else you'd like to tell us about yourself? </p>
+  <blockquote><%= @role_application.other %></blockquote>
+</div>
+
+<div class="row pull-right">
+  <%= link_to "Approve", review_role_application_path(@team.id, @role_application.id, 'approve'), :method => :post, :class => 'btn btn-primary' %>
+  <%= link_to "Reject", review_role_application_path(@team.id, @role_application.id, 'reject'), :method => :post, :class => 'btn btn-primary' %>
+</div>

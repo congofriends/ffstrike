@@ -9,4 +9,5 @@ class RoleApplication
   field :other,           :type => String
   field :phone,           :type => String
   field :approved,        :type => Mongoid::Boolean, :default => false
+  field :rejected,        :type => Mongoid::Boolean, :default => false
 end
