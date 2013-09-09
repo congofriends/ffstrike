@@ -1,0 +1,63 @@
+<h1><%= @role.role.capitalize %> Dashboard</h1>
+
+<h3>This page gives you the tools you need to be an effective team member.</h3>
+
+<div class="row">
+  <div class="well well-sm col-md-4">
+    <h4>Here's your team</h4>
+
+    <p>
+    You are a member of a team with four roles. Your coordinator is responsible for getting you all in the same place and checking in on everyone's progress.
+    </p>
+  </div>
+
+  <div class="col-md-8">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Team role</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Dashboard</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Coordinator</td>
+          <td><%= @team.coordinator.user.name %> (You!) <!-- <a href="reassign-team-member.html" class="label label-default">Reassign</a> --></td>
+          <td><%= @team.coordinator.user.email%></td>
+          <td><%= @team.coordinator.tasks.where(:done => true).count %> of <%=@team.coordinator.tasks.count%> tasks done</td>
+        </tr>
+      <% @team.role_applications.select {|r| r.approved?}.each do |r| %>
+        <tr>
+          <td><%= r.role.capitalize %></td>
+          <td><%= r.user.name %></td>
+          <td><%= r.user.email %></td>
+          <td><%= r.tasks.where(:done => true).count %> of <%= r.tasks.count%> tasks done</td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="well well-sm col-md-4">
+    <h4>Here's your todo list</h4>
+
+    <p>
+    These are the few things you absolutely must get done. Check them off as you do them so that your coordinator doesn't have to nag you.
+    </p>
+  </div>
+  <div class="col-md-8">
+    <% @role.tasks.each do |task| %>
+      <div class="input-group">
+      <span class="input-group-addon">
+        <input <%= "checked='checked'" if task.done %> class="mark-task" type="checkbox" data-team-id="<%= @team.id %>" data-role-name="coordinator" data-task-id="<%= task.id %>" />
+      </span>
+      <%= task.description %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
