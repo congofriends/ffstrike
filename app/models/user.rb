@@ -31,6 +31,7 @@ class User
 
   # Facebook related properties
   field :name,               :type => String
+  validates_presence_of :name
   field :image,              :type => String
 
   ## Confirmable

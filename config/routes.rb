@@ -3,7 +3,10 @@ Ffstrike::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   # Devise - Authentication
-  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "users" }
+  devise_scope :users do
+    resources :users
+  end
 
   # Landing/Home page
   root 'home#start'
