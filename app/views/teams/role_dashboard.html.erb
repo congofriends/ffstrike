@@ -53,9 +53,11 @@
     <% @role.tasks.each do |task| %>
       <div class="input-group">
       <span class="input-group-addon">
-        <input <%= "checked='checked'" if task.done %> class="mark-task" type="checkbox" data-team-id="<%= @team.id %>" data-role-name="coordinator" data-task-id="<%= task.id %>" />
+        <input <%= "checked='checked'" if task.done %> class="mark-task" type="checkbox" data-team-id="<%= @team.id %>" data-role-name="<%= @role.role %>" data-task-id="<%= task.id %>" />
       </span>
-      <%= task.description %>
+      <p>
+        <%= task.description %>
+      </p>
     </div>
     <% end %>
   </div>
