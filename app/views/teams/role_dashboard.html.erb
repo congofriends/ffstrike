@@ -24,7 +24,7 @@
       <tbody>
         <tr>
           <td>Coordinator</td>
-          <td><%= @team.coordinator.user.name %> (You!) <!-- <a href="reassign-team-member.html" class="label label-default">Reassign</a> --></td>
+          <td><%= @team.coordinator.user.name %></td>
           <td><%= @team.coordinator.user.email%></td>
           <td><%= @team.coordinator.tasks.where(:done => true).count %> of <%=@team.coordinator.tasks.count%> tasks done</td>
         </tr>
@@ -36,11 +36,20 @@
           <td><%= r.tasks.where(:done => true).count %> of <%= r.tasks.count%> tasks done</td>
         </tr>
       <% end %>
+      <% unless @role.approved? %>
+        <tr class="warning">
+          <td><%= @role.role.capitalize %></td>
+          <td><%= @role.user.name %> (You!)</td>
+          <td><%= @role.user.email %></td>
+          <td>Your application is pending...</td>
+        </tr>
+      <% end %>
       </tbody>
     </table>
   </div>
 </div>
 
+<% if @role.approved? %>
 <div class="row">
   <div class="well well-sm col-md-4">
     <h4>Here's your todo list</h4>
@@ -62,4 +71,4 @@
     <% end %>
   </div>
 </div>
-
+<% end %>
