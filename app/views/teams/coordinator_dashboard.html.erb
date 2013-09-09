@@ -98,6 +98,7 @@
         <td><%= r.role.capitalize %></td>
         <td><%= r.user.name %></td>
         <td><%= r.user.email %></td>
+        <td><%= r.tasks.where(:done => true).count %> of <%= r.tasks.count%> tasks done</td>
       </tr>
       <% end %>
       </tbody>

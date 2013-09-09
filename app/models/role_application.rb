@@ -1,6 +1,8 @@
 class RoleApplication
   include Mongoid::Document
   embedded_in :team
+  embeds_many :tasks, :as => :role
+
   belongs_to :user
 
   field :role,            :type => String

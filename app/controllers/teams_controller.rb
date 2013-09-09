@@ -13,13 +13,13 @@ class TeamsController < ApplicationController
 
   def apply
     @team_id = params[:id]
-    @role_application = RoleApplication.new(:role => params[:role])
+    @role_application = "#{params[:role]}_application".camelcase.constantize.new(:role => params[:role])
   end
 
   def create_role_application
     team = Team.find(params[:id])
 
-    role_application = RoleApplication.new(params[:role_application].to_hash)
+    role_application = "#{params[:role_application][:role]}_application".camelcase.constantize.new(params[:role_application].to_hash)
     role_application.user = current_user
 
     team.role_applications << role_application
