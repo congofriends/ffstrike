@@ -89,9 +89,9 @@
       <tbody>
       <tr>
         <td>Coordinator</td>
-        <td><%= @team.coordinator.user.name %> (You!) <a href="reassign-team-member.html" class="label label-default">Reassign</a></td>
+        <td><%= @team.coordinator.user.name %> (You!) <!-- <a href="reassign-team-member.html" class="label label-default">Reassign</a> --></td>
         <td><%= @team.coordinator.user.email%></td>
-        <td><%= @team.coordinator.tasks.count{|t|t.done?}%> of <%=@team.coordinator.tasks.count%> tasks done</td>
+        <td><%= @team.coordinator.tasks.where(:done => true).count %> of <%=@team.coordinator.tasks.count%> tasks done</td>
       </tr>
       <% @team.role_applications.select {|r| r.approved?}.each do |r| %>
       <tr>
