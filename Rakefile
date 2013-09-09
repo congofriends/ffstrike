@@ -16,7 +16,8 @@ namespace :mongo do
 
   desc 'Stop the mongodb server'
   task :stop do
-    sh "kill -9 $(cat #{db_dir}/mongod.lock)"
+    lockfile = "#{db_dir}/mongod.lock"
+    sh "ps -p $(cat #{lockfile}) && kill -9 $(cat #{lockfile})" do |ok, result|; end if File.exists? lockfile
   end
 
   desc 'Destroy the mongodb server and all its contents'
