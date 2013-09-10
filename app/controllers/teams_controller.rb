@@ -68,6 +68,6 @@ class TeamsController < ApplicationController
   end
 
   def join
-    @team_id = params[:id]
+    @team = Team.find(params[:id])
   end
 end

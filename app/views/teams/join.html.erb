@@ -6,10 +6,14 @@
     :Driver => "Any points on your liscence? Then don't apply for this role. You've got to transport the team around town. Shy about handing out leaflets in a restaurant? Then you can stay in the car and be the getaway driver."
   }.each_pair do |role, desc|
 %>
-  <div class="row well well-sm">
+  <div class="row well well-sm <%= 'role-filled' if @team.role(role.to_s.downcase.to_sym) %>">
     <h3><%= role.to_s %></h3>
     <p><%= desc %></p>
-    <%= link_to "That's me!", apply_team_url(@team_id, role.to_s.downcase.to_sym), :class => 'btn btn-success' %>
+    <% unless @team.role(role.to_s.downcase.to_sym) %>
+      <%= link_to "That's me!", apply_team_url(@team.id, role.to_s.downcase.to_sym), :class => 'btn btn-success' %>
+    <% else %>
+      <a class="btn btn-info">This role has been filled.</a>
+    <% end %>
   </div>
 <% end %>
 
