@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require zeroclipboard
 //= require_tree .
+//= stub bootstrap.min
