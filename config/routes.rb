@@ -11,6 +11,7 @@ Ffstrike::Application.routes.draw do
   # Landing/Home page
   root 'home#start'
   get 'home/start' => 'home#start'
+  get 'home/faq' => 'home#faq', :as => 'faq'
 
   # Teams
   resources :teams
