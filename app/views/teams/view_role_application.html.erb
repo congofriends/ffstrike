@@ -16,6 +16,12 @@
 </div>
 
 <div class="row pull-right">
-  <%= link_to "Approve", review_role_application_path(@team.id, @role_application.id, 'approve'), :method => :post, :class => 'btn btn-primary' %>
+  <% unless @team.role(@role_application.role.to_sym) %>
+    <%= link_to "Approve", review_role_application_path(@team.id, @role_application.id, 'approve'), :method => :post, :class => 'btn btn-primary' %>
+  <% else %>
+    <button class="btn btn-default">
+      You already have a <%= @role_application.role.capitalize %> on your team.
+    </button>
+  <% end %>
   <%= link_to "Reject", review_role_application_path(@team.id, @role_application.id, 'reject'), :method => :post, :class => 'btn btn-primary' %>
 </div>
