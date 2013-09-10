@@ -1,20 +1,31 @@
+DB_DIR = File.expand_path('./db/mongo')
+LOCKFILE = "#{DB_DIR}/mongod.lock"
+
 namespace :mongo do
-  db_dir = File.expand_path('./db/mongo')
+  def running?
+    Kernel.system("ps -p $(cat #{LOCKFILE})")
+  end
 
   desc 'Start the mongodb server'
   task :start do
-    Dir.mkdir(db_dir) unless Dir.exists?(db_dir)
-    sh "mongod --dbpath='#{db_dir}' --logpath='#{db_dir}.log' -vvvv --fork"
+    Dir.mkdir(DB_DIR) unless Dir.exists?(DB_DIR)
+    sh "mongod --dbpath='#{DB_DIR}' --logpath='#{DB_DIR}.log' -vvvv --fork" unless running?
   end
 
   desc 'Stop the mongodb server'
   task :stop do
-    lockfile = "#{db_dir}/mongod.lock"
-    sh "ps -p $(cat #{lockfile}) && kill -9 $(cat #{lockfile})" do |ok, result|; end if File.exists? lockfile
+    sh "kill -9 $(cat #{LOCKFILE})" if running?
   end
 
   desc 'Destroy the mongodb server and all its contents'
   task :destroy => [:stop] do
-    sh "rm -rf #{db_dir}*"
+    sh "rm -rf #{DB_DIR}*"
+  end
+
+  desc 'Seed the mongodb server'
+  task :seed => [:start, :environment] do
+    Dir["#{File.expand_path('./db/seeds/')}/*.rb"].each do |seed_file|
+      require seed_file
+    end
   end
 end
