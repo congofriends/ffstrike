@@ -39,9 +39,9 @@
       <div class="btn-group">
         <button data-toggle="dropdown" class="btn btn-sm btn-success dropdown-toggle" type="button">Join team as... &nbsp;<span class="caret"></span></button>
         <ul role="menu" class="dropdown-menu">
-          <li><a href="apply-to-be-a-driver.html">Driver</a></li>
-          <li><a href="apply-to-be-a-mapper.html">Mapper</a></li>
-          <li><a href="apply-to-be-a-printer.html">Printer</a></li>
+          <% %w{driver mapper printer}.each do |role| %>
+            <li><%= link_to role.capitalize, apply_team_path(team.id, role) %></li>
+          <% end %>
         </ul>
       </div>
     </td>
