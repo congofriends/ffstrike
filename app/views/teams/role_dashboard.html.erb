@@ -58,15 +58,14 @@
     These are the few things you absolutely must get done. Check them off as you do them so that your coordinator doesn't have to nag you.
     </p>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-8 task-list">
+    <h4><span id="tasks-to-do"><%= @role.tasks.where(:done => false).count %></span>/<%= @role.tasks.count %> tasks are still on your list.</h4>
     <% @role.tasks.each do |task| %>
-      <div class="input-group">
-      <span class="input-group-addon">
+    <div class="checkbox">
+      <label>
         <input <%= "checked='checked'" if task.done %> class="mark-task" type="checkbox" data-team-id="<%= @team.id %>" data-role-name="<%= @role.role %>" data-task-id="<%= task.id %>" />
-      </span>
-      <p>
-        <%= task.description %>
-      </p>
+        <%= raw task.description %>
+      </label>
     </div>
     <% end %>
   </div>
