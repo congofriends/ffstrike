@@ -3,6 +3,7 @@ LOCKFILE = "#{DB_DIR}/mongod.lock"
 
 namespace :mongo do
   def running?
+    return false unless File.exists?(LOCKFILE)
     Kernel.system("ps -p $(cat #{LOCKFILE})")
   end
 
@@ -28,4 +29,7 @@ namespace :mongo do
       require seed_file
     end
   end
+
+  desc 'Create a working, seeded mongo database and run it'
+  task :create => [:seed]
 end
