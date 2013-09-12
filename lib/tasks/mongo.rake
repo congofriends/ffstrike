@@ -24,12 +24,12 @@ namespace :mongo do
   end
 
   desc 'Seed the mongodb server'
-  task :seed => [:start, :environment] do
+  task :seed => [:environment] do
     Dir["#{File.expand_path('./db/seeds/')}/*.rb"].each do |seed_file|
       require seed_file
     end
   end
 
   desc 'Create a working, seeded mongo database and run it'
-  task :create => [:seed]
+  task :create => [:start, :seed]
 end
