@@ -9,6 +9,7 @@ APP_NAME=$1
 
 heroku apps:create --addons mongohq:sandbox $APP_NAME
 git push heroku master
+heroku run bundle exec rake mongo:seed
 heroku ps:scale web=1 -a $APP_NAME
 
 echo "Remember: You'll need a corresponding Facebook app to refer to "
