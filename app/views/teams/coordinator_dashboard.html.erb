@@ -116,15 +116,14 @@
     </p>
 
   </div>
-  <div class="col-md-8">
+  <div class="col-md-8 task-list">
+    <h4><span id="tasks-to-do"><%= @team.coordinator.tasks.where(:done => false).count %></span>/<%= @team.coordinator.tasks.count %> tasks are still on your list.</h4>
     <% @team.coordinator.tasks.each do |task| %>
-    <div class="input-group">
-      <span class="input-group-addon">
+    <div class="checkbox">
+      <label>
         <input <%= "checked='checked'" if task.done %> class="mark-task" type="checkbox" data-team-id="<%= @team.id %>" data-role-name="coordinator" data-task-id="<%= task.id %>" />
-      </span>
-      <p>
         <%= task.description %>
-      </p>
+      </label>
     </div>
     <% end %>
   </div>
