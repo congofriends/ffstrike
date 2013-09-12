@@ -19,6 +19,7 @@ Ffstrike::Application.routes.draw do
   get 'teams/:id/join' => 'teams#join', :as => 'join_team'
   get 'teams/:id/apply/:role' => 'teams#apply', :as => 'apply_team'
 
+  # Roles
   post 'teams/:id/role_application' => 'teams#create_role_application', :as => 'new_role_application'
   get 'teams/:id/role_application/:role_application_id' => 'teams#view_role_application', :as => 'view_role_application'
   post 'teams/:id/role_application/:role_application_id/:status' => 'teams#review_role_application', :as => 'review_role_application'
