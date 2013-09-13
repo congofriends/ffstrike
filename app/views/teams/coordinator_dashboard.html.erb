@@ -14,24 +14,26 @@
 
   </div>
   <div class="col-md-8">
-    <table class="table table-bordered table-striped">
-      <thead>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Team role</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Invitation link</th>
+          </tr>
+        </thead>
+        <tbody>
         <tr>
-          <th>Team role</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Invitation link</th>
+          <td>Mapper</td>
+          <td>Matilda Mapper</td>
+          <td>matildamapper@mailinator.com</td>
+          <td>http://flashteam.com/detroitfliers/mapper</td>
         </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>Mapper</td>
-        <td>Matilda Mapper</td>
-        <td>matildamapper@mailinator.com</td>
-        <td>http://flashteam.com/detroitfliers/mapper</td>
-      </tr>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
@@ -44,26 +46,28 @@
     </p>
   </div>
   <div class="col-md-8">
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Team role</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Dashboard</th>
-        </tr>
-      </thead>
-      <tbody>
-      <% @team.role_applications.select {|r| !r.approved?}.sort_by { |r| r.rejected? ? 1 : 0 }.each do |r| %>
-        <tr class="<%= 'strikethrough' if r.rejected? %>">
-          <td><%= r.role.capitalize %></td>
-          <td><%= r.user.name %></td>
-          <td><%= r.user.email %></td>
-          <td><%= link_to "Review this application#{ ' again' if r.rejected?}", view_role_application_path(@team.id, r.id), :class => 'btn btn-primary btn-xs' %></td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Team role</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Dashboard</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @team.role_applications.select {|r| !r.approved?}.sort_by { |r| r.rejected? ? 1 : 0 }.each do |r| %>
+          <tr class="<%= 'strikethrough' if r.rejected? %>">
+            <td><%= r.role.capitalize %></td>
+            <td><%= r.user.name %></td>
+            <td><%= r.user.email %></td>
+            <td><%= link_to "Review this application#{ ' again' if r.rejected?}", view_role_application_path(@team.id, r.id), :class => 'btn btn-primary btn-xs' %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
@@ -77,39 +81,41 @@
     </p>
   </div>
   <div class="col-md-8">
-    <table class="table table-bordered table-striped">
-      <thead>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Team role</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Dashboard</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
         <tr>
-          <th>Team role</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Dashboard</th>
-          <th>Actions</th>
+          <td>Coordinator</td>
+          <td><%= @team.coordinator.user.name %> (You!) <!-- <a href="reassign-team-member.html" class="label label-default">Reassign</a> --></td>
+          <td><%= @team.coordinator.user.email%></td>
+          <td><%= @team.coordinator.tasks.where(:done => true).count %> of <%=@team.coordinator.tasks.count%> tasks done</td>
+          <td></td>
         </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>Coordinator</td>
-        <td><%= @team.coordinator.user.name %> (You!) <!-- <a href="reassign-team-member.html" class="label label-default">Reassign</a> --></td>
-        <td><%= @team.coordinator.user.email%></td>
-        <td><%= @team.coordinator.tasks.where(:done => true).count %> of <%=@team.coordinator.tasks.count%> tasks done</td>
-        <td></td>
-      </tr>
-      <% @team.role_applications.select {|r| r.approved?}.each do |r| %>
-      <tr>
-        <td><%= r.role.capitalize %></td>
-        <td><%= r.user.name %></td>
-        <td><%= r.user.email %></td>
-        <td><%= r.tasks.where(:done => true).count %> of <%= r.tasks.count%> tasks done</td>
-        <td>
-          <%= link_to 'Remove From Team', cancel_role_application_path(@team.id, r.id),
-          :method => :delete, :confirm => 'Are you sure you want to remove this person from your team?',
-          :class => 'btn btn-sm btn-danger' %>
-        </td>
-      </tr>
-      <% end %>
-      </tbody>
-    </table>
+        <% @team.role_applications.select {|r| r.approved?}.each do |r| %>
+        <tr>
+          <td><%= r.role.capitalize %></td>
+          <td><%= r.user.name %></td>
+          <td><%= r.user.email %></td>
+          <td><%= r.tasks.where(:done => true).count %> of <%= r.tasks.count%> tasks done</td>
+          <td>
+            <%= link_to 'Remove From Team', cancel_role_application_path(@team.id, r.id),
+            :method => :delete, :confirm => 'Are you sure you want to remove this person from your team?',
+            :class => 'btn btn-sm btn-danger' %>
+          </td>
+        </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
