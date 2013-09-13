@@ -26,6 +26,11 @@ You're starting a new team that will leaflet restaurants around your town. You'l
       <%= f.text_field :name, :class => 'form-control' %>
     </p>
 
+    <p>
+      <%= f.label :zip, "Which ZIP code will you be leafletting in?" %><br />
+      <%= f.text_field :zip, :class => 'form-control' %>
+    </p>
+
     <%= f.fields_for :coordinator do |coord_f| %>
       <%  {:why => "Write a sentence or two that capture why you want to do this work: (you can edit this later)",
            :where => "Describe where you're thinking of leafleting: (you can edit this later)",

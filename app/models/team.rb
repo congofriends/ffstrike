@@ -8,6 +8,7 @@ class Team
 
   field :name,             :type => String
   field :active,           :type => Mongoid::Boolean, :default => true
+  field :zip,              :type => String
 
   def role(role_name)
     return coordinator if role_name == :coordinator
