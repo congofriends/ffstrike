@@ -16,15 +16,14 @@ class Team
 
   # Required for Geocoding
   field :coordinates,      :type => Array
-
+  after_validation :geocode
   geocoded_by :zip do |obj, results|
     if geo = results.first
       obj.city = geo.city
-      obj.coordinates = [geo.latitude, geo.longitude]
+      obj.coordinates = [geo.longitude, geo.latitude]
     end
   end
 
-  after_validation :geocode
 
   def role(role_name)
     return coordinator if role_name == :coordinator
