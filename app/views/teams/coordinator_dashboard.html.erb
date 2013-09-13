@@ -84,6 +84,7 @@
           <th>Name</th>
           <th>Email</th>
           <th>Dashboard</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -92,6 +93,7 @@
         <td><%= @team.coordinator.user.name %> (You!) <!-- <a href="reassign-team-member.html" class="label label-default">Reassign</a> --></td>
         <td><%= @team.coordinator.user.email%></td>
         <td><%= @team.coordinator.tasks.where(:done => true).count %> of <%=@team.coordinator.tasks.count%> tasks done</td>
+        <td></td>
       </tr>
       <% @team.role_applications.select {|r| r.approved?}.each do |r| %>
       <tr>
@@ -99,6 +101,11 @@
         <td><%= r.user.name %></td>
         <td><%= r.user.email %></td>
         <td><%= r.tasks.where(:done => true).count %> of <%= r.tasks.count%> tasks done</td>
+        <td>
+          <%= link_to 'Remove From Team', cancel_role_application_path(@team.id, r.id),
+          :method => :delete, :confirm => 'Are you sure you want to remove this person from your team?',
+          :class => 'btn btn-sm btn-danger' %>
+        </td>
       </tr>
       <% end %>
       </tbody>
