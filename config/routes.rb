@@ -23,6 +23,7 @@ Ffstrike::Application.routes.draw do
   post 'teams/:id/role_application' => 'teams#create_role_application', :as => 'new_role_application'
   get 'teams/:id/role_application/:role_application_id' => 'teams#view_role_application', :as => 'view_role_application'
   post 'teams/:id/role_application/:role_application_id/:status' => 'teams#review_role_application', :as => 'review_role_application'
+  delete 'teams/:id/role_application/:role_application_id' => 'teams#cancel_role_application', :as => 'cancel_role_application'
 
   get 'teams/:id/wait' => 'teams#wait', :as => 'wait_team'
 

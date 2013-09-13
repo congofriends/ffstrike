@@ -41,7 +41,12 @@
           <td><%= @role.role.capitalize %></td>
           <td><%= @role.user.name %> (You!)</td>
           <td><%= @role.user.email %></td>
-          <td>Your application is pending...</td>
+          <td>
+            Your application is pending...
+            <%= link_to 'Cancel Application', cancel_role_application_path(@team.id, @role.id),
+            :method => :delete, :confirm => 'Are you sure you want to cancel your application?',
+            :class => 'btn btn-sm btn-danger' %>
+          </td>
         </tr>
       <% end %>
       </tbody>

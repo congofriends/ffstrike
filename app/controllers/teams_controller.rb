@@ -48,6 +48,14 @@ class TeamsController < ApplicationController
     redirect_to :team
   end
 
+  def cancel_role_application
+    team = Team.find(params[:id])
+    role_application = team.role_applications.find(params[:role_application_id])
+    role_application.destroy
+
+    redirect_to root_path
+  end
+
   def wait
   end
 
