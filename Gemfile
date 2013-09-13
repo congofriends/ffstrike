@@ -41,6 +41,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'mongoid', github: 'mongoid/mongoid'
+gem 'koala'
 
 gem 'geocoder'
 

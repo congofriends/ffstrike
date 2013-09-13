@@ -25,6 +25,12 @@ class TeamsController < ApplicationController
     @team_id = params[:id]
     @role_application = "#{params[:role]}_application".camelcase.constantize.new(:role => params[:role])
   end
+  
+  def facebook_friends
+    oauth_access_token = User.authentication_token
+    @graph = Koala::Facebook::API.new(oauth_access_token)
+    @friends = @graph.get_connections("me", "friends")
+  end
 
   def create_role_application
     team = Team.find(params[:id])
