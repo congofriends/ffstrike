@@ -1,3 +1,20 @@
+<h1>Find teams near you</h1>
+
+<%= form_tag find_teams_path, :method => :post, :class => 'form-inline' do %>
+  <div class="form-group">
+    <%= label_tag 'zip', 'ZIP Code', :class => 'sr-only' %>
+    <%= text_field_tag 'zip', (@zip || 'ZIP'), :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= label_tag 'distance', 'Within distance (miles)', :class => 'sr-only' %>
+    <div class="input-group">
+      <%= text_field_tag 'distance', (@distance || '5'), :class => 'form-control' %>
+      <span class="input-group-addon">miles</span>
+    </div>
+  </div>
+  <%= submit_tag 'Find Teams', :class => 'btn btn-default' %>
+<% end %>
+
 <h1>Teams near you</h1>
 
 <div class="row">
@@ -50,7 +67,7 @@
       </div>
     </td>
     <td><%= team.name %></td>
-    <td>team.where</td>
+    <td><%= team.zip %> (<%= team.coordinates %>)</td>
     <td><%= team.coordinator.user.name %></td>
     <td>team.when</td>
   </tr>

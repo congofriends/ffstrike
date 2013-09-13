@@ -2,7 +2,13 @@ class TeamsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @teams = Team.all
+    unless params[:zip] and params[:distance]
+      @teams = Team.all
+    else
+      @zip = params[:zip]
+      @distance = params[:distance]
+      @teams = Team.near(@zip, @distance)
+    end
   end
 
   def show
