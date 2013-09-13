@@ -12,10 +12,18 @@ class Team
   field :active,           :type => Mongoid::Boolean, :default => true
 
   field :zip,              :type => String
+  field :city,             :type => String
 
   # Required for Geocoding
   field :coordinates,      :type => Array
-  geocoded_by :zip
+
+  geocoded_by :zip do |obj, results|
+    if geo = results.first
+      obj.city = geo.city
+      obj.coordinates = [geo.latitude, geo.longitude]
+    end
+  end
+
   after_validation :geocode
 
   def role(role_name)
