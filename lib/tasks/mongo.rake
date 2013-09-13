@@ -31,5 +31,5 @@ namespace :mongo do
   end
 
   desc 'Create a working, seeded mongo database and run it'
-  task :create => [:start, :seed]
+  task :create => [:start, :'db:mongoid:create_indexes', :seed]
 end

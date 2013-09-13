@@ -1,5 +1,7 @@
 class Team
   include Mongoid::Document
+  include Geocoder::Model::Mongoid
+
   embeds_one :coordinator
   embeds_many :role_applications
 
@@ -8,7 +10,13 @@ class Team
 
   field :name,             :type => String
   field :active,           :type => Mongoid::Boolean, :default => true
+
   field :zip,              :type => String
+
+  # Required for Geocoding
+  field :coordinates,      :type => Array
+  geocoded_by :zip
+  after_validation :geocode
 
   def role(role_name)
     return coordinator if role_name == :coordinator

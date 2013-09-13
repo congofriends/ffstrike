@@ -42,6 +42,8 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'mongoid', github: 'mongoid/mongoid'
 
+gem 'geocoder'
+
 gem 'font-awesome-rails'
 gem 'zeroclipboard-rails'
 
