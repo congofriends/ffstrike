@@ -48,6 +48,11 @@ gem 'geocoder'
 gem 'font-awesome-rails'
 gem 'zeroclipboard-rails'
 
+group :test, :development do
+  gem 'rspec'
+  gem 'rspec-rails'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
