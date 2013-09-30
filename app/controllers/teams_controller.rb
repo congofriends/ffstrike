@@ -14,6 +14,7 @@ class TeamsController < ApplicationController
   def show
     @team = Team.find(params[:id])
     if @team.coordinator.user == current_user
+      @friends = []
       render "coordinator_dashboard"
     else
       @role = @team.role_applications.where(:user => current_user).first
