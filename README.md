@@ -1,5 +1,5 @@
 # ffstrike
-
+ 
 [![Build Status](https://snap-ci.com/p8jIF5XroTIkH2WUa-0PxBlDDzQH-U7akv3IDx7KL8g/build_image)](https://snap-ci.com/projects/gardym/ffstrike/build_history)
 
 ## How to get started
