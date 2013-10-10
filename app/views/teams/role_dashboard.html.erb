@@ -76,3 +76,21 @@
   <%= render :partial => 'tasks', :locals => { :tasks => @role.tasks, :team => @team, :role => @role.role } %>
 </div>
 <% end %>
+
+<% if @role.approved? %>
+<div class="row">
+  <div class="well well-sm col-md-4">
+    <h4>Map</h4>
+
+    <p>
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    </p>
+  </div>
+  <%= form_for @team, :as => 'team' do |f| %>
+    <%= f.label :map, "Map link" %><br />
+    <%= f.text_area :map, :class => 'form_control' %>
+
+    <%= f.submit "Submit", :class => 'btn btn-primary'%>
+  <% end %> 
+</div>
+<% end %>

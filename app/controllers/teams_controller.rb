@@ -91,4 +91,13 @@ class TeamsController < ApplicationController
   def join
     @team = Team.find(params[:id])
   end
+
+  def update
+    puts params.inspect
+    @team = Team.find(params[:id])
+    @team.update_attributes!(:map => params[:team][:map].to_sym)
+
+    @role = @team.role_applications.where(:user => current_user).first
+    render "role_dashboard" 
+  end
 end

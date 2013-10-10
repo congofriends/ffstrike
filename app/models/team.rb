@@ -13,6 +13,7 @@ class Team
 
   field :zip,              :type => String
   field :city,             :type => String
+  field :map,              :type => String
 
   # Required for Geocoding
   field :coordinates,      :type => Array
