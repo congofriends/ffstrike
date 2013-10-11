@@ -91,6 +91,9 @@
     <%= f.text_area :map, :class => 'form_control' %>
 
     <%= f.submit "Submit", :class => 'btn btn-primary'%>
+
   <% end %> 
 </div>
+
+<%= yield :scripts %> 
 <% end %>

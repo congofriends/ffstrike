@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="well well-sm col-md-4">
-    <h4>Here's are your Facebook friends you've invited and are still waiting on </h4>
+    <h4>Here's where you can invite your friends and supporters </h4>
 
     <p>
     If you want to nag these folks, make sure you include their special link below.
@@ -18,18 +18,13 @@
       <table class="table table-bordered table-striped">
         <thead>
           <tr>
-            <th>Team role</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Invitation link</th>
+            <th>Invite new team members via...</th>
           </tr>
         </thead>
         <tbody>
         <tr>
-          <td>Mapper</td>
-          <td>Matilda Mapper</td>
-          <td>matildamapper@mailinator.com</td>
-          <td>http://flashteam.com/detroitfliers/mapper</td>
+          <td><a href="https://www.facebook.com/sharer/sharer.php?u=<%= join_team_url(@team.id) %>" target="Hello"> <%= image_tag "facebook.png", :class=> "thumbnail" %></a> 
+          <a href="http://twitter.com/share?text=Join my team in the fight for minimum wage: <%= join_team_url(@team.id) %>"<%= join_team_url(@team.id) %>"><%= image_tag "twitter.png", :class=> "thumbnail" %></a></td>
         </tr>
         <% @friends.each do |friend| %>
           <tr>

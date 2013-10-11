@@ -44,6 +44,7 @@ gem 'mongoid', github: 'mongoid/mongoid'
 gem 'koala'
 
 gem 'geocoder'
+gem 'gmaps4rails'
 
 gem 'font-awesome-rails'
 gem 'zeroclipboard-rails'
