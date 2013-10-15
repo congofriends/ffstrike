@@ -66,6 +66,10 @@ tr.strikethrough td {
   float: left;
 }
 
+.strike {
+  text-decoration:line-through
+}
+
 table.fixed {
   table-layout: fixed;
 }
