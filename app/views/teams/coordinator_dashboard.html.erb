@@ -24,7 +24,7 @@
         <tbody>
         <tr>
           <td><a href="https://www.facebook.com/sharer/sharer.php?u=<%= join_team_url(@team.id) %>" target="Hello"> <%= image_tag "facebook.png", :class=> "thumbnail" %></a> 
-          <a href="http://twitter.com/share?text=Join my team in the fight for minimum wage: <%= join_team_url(@team.id) %>"<%= join_team_url(@team.id) %>"><%= image_tag "twitter.png", :class=> "thumbnail" %></a></td>
+          <a href="http://twitter.com/share?text=Join my team in the fight for minimum wage: <%= join_team_url(@team.id) %>"><%= image_tag "twitter.png", :class=> "thumbnail" %></a></td>
         </tr>
         <% @friends.each do |friend| %>
           <tr>
@@ -89,15 +89,17 @@
             <th>Name</th>
             <th>Email</th>
             <th>Dashboard</th>
-            <th>Actions</th>
+            <th>Remove</th>
+            <th>Reassign</th>
           </tr>
         </thead>
         <tbody>
         <tr>
           <td>Coordinator</td>
-          <td><%= @team.coordinator.user.name %> (You!) <!-- <a href="reassign-team-member.html" class="label label-default">Reassign</a> --></td>
+          <td><%= @team.coordinator.user.name %> (You!)  </td>
           <td><%= @team.coordinator.user.email%></td>
           <td><%= @team.coordinator.tasks.where(:done => true).count %> of <%=@team.coordinator.tasks.count%> tasks done</td>
+          <td></td>
           <td></td>
         </tr>
         <% @team.role_applications.select {|r| r.approved?}.each do |r| %>
@@ -111,6 +113,7 @@
             :method => :delete, :confirm => 'Are you sure you want to remove this person from your team?',
             :class => 'btn btn-sm btn-danger' %>
           </td>
+          <td><%= link_to 'Reassign', reassign_path(@team.id, r.id), :class => 'btn btn-sm btn-danger' unless @team.role_applications.select { |application| application.approved? }.count == 3 %></td>
         </tr>
         <% end %>
         </tbody>

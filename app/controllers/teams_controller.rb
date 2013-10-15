@@ -61,6 +61,21 @@ class TeamsController < ApplicationController
     redirect_to :team
   end
 
+  def reassign
+    @team = Team.find(params[:id])
+    @role = @team.role_applications.find(params[:role_application_id])
+  end
+
+  def reassign_team_member
+    @team = Team.find(params[:id])
+    role_application = @team.role_applications.find(params[:role_application_id])
+    role_application.role = params[:role].downcase 
+    role_application.save
+    @friends = []
+    render 'coordinator_dashboard'
+  end
+    
+
   def cancel_role_application
     team = Team.find(params[:id])
     role_application = team.role_applications.find(params[:role_application_id])
