@@ -73,3 +73,21 @@ tr.strikethrough td {
 table.fixed {
   table-layout: fixed;
 }
+
+.btn-primary, .btn-default {
+  margin: 5px 0px 0px 0px;
+}
+
+.well-sm {
+  margin: 15px 5px 5px 5px;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.navbar-nav, .navbar-right {
+  font-size: 16px;
+  font-weight: 600;
+}
