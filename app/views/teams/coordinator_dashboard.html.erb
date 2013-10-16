@@ -102,7 +102,7 @@
           <td></td>
           <td><% unless @team.role_applications.select { |application| application.approved? }.count >= 3 %>
               <div class="btn-group">
-                <button data-toggle="dropdown" class="btn btn-sm btn-success dropdown-toggle" type="button">Take responsibility for... &nbsp;<span class="caret"></span></button>
+                <button data-toggle="dropdown" class="btn btn-sm btn-success dropdown-toggle" type="button">Take role... &nbsp;<span class="caret"></span></button>
                 <ul role="menu" class="dropdown-menu">
                   <% %w{driver mapper printer}.each do |role| %>
                     <% unless @team.role(role.to_sym) %>
