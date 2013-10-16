@@ -28,6 +28,7 @@ Ffstrike::Application.routes.draw do
   delete 'teams/:id/role_application/:role_application_id' => 'teams#cancel_role_application', :as => 'cancel_role_application'
   get 'teams/:id/wait' => 'teams#wait', :as => 'wait_team'
   get 'teams/:id/reassign_team_member/:role_application_id/' => 'teams#reassign_team_member', :as => 'reassign_team_member'
+  get 'teams/:id/take_responsibility/:role' => 'teams#take_responsibility', :as => 'take_responsibility'
 
   # Tasks
   post 'tasks/:team_id/:role_name/:task_id' => 'tasks#update'

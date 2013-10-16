@@ -49,6 +49,20 @@ class TeamsController < ApplicationController
     redirect_to wait_team_path(params[:id])
   end
 
+  def take_responsibility
+    @team = Team.find(params[:id])
+    
+    role_application = "#{params[:role]}_application".camelcase.constantize.new(:role => params[:role])
+    role_application.user = current_user
+    role_application.approved = true
+
+    @team.role_applications << role_application
+    @team.save
+
+    @friends = []
+    redirect_to root_path
+  end
+
   def view_role_application
     @team = Team.find(params[:id])
     @role_application = @team.role_applications.find(params[:role_application_id])
