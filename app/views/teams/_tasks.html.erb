@@ -1,14 +1,14 @@
-<% # USE: %>
-<% # render :partial => 'tasks', :locals => { :tasks => @team.coordinator.tasks, :team => @team, :role => 'coordinator' %>
-
 <div class="col-md-8 task-list">
   <h4><span id="tasks-to-do"><%= tasks.where(:done => false).count %></span>/<%= tasks.count %> tasks are still on your list.</h4>
   <% tasks.each do |task| %>
   <div class="checkbox">
     <label>
-      <input <%= "checked='checked'" if task.done %> class="mark-task" type="checkbox" data-team-id="<%= team.id %>" data-role-name="<%= role %>" data-task-id="<%= task.id %>" />
-      <%= raw task.description %>
+      <input <%= "checked='checked'" if task.done %> 
+             class="mark-task" type="checkbox" data-team-id="<%= team.id %>" 
+             data-role-name="<%= role %>" data-task-id="<%= task.id %>"
+             <%= (role == 'coordinator') || (@role.user == current_user) ? '' : 'disabled' %> />
+             <%= raw task.description %>
     </label>
   </div>
-  <% end %>
+<% end %>
 </div>

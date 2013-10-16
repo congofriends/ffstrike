@@ -107,7 +107,8 @@
           <td><%= r.role.capitalize %></td>
           <td><%= r.user.name %></td>
           <td><%= r.user.email %></td>
-          <td><%= r.tasks.where(:done => true).count %> of <%= r.tasks.count%> tasks done</td>
+          <td><%= r.tasks.where(:done => true).count %> of <%= r.tasks.count%> tasks done, 
+              <%= link_to 'dashboard', team_path(params[:id], {role: r.role})%></td>
           <td>
             <%= link_to 'Remove From Team', cancel_role_application_path(@team.id, r.id),
             :method => :delete, :confirm => 'Are you sure you want to remove this person from your team?',
