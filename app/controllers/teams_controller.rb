@@ -70,6 +70,9 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
     role_application = @team.role_applications.find(params[:role_application_id])
     role_application.role = params[:role].downcase 
+    role_application.tasks = DriverApplication.new.tasks if params[:role].downcase == 'driver' 
+    role_application.tasks = PrinterApplication.new.tasks if params[:role].downcase == 'printer'
+    role_application.tasks = MapperApplication.new.tasks if params[:role].downcase == 'mapper'
     role_application.save
     @friends = []
     render 'coordinator_dashboard'
