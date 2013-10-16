@@ -78,8 +78,14 @@ table.fixed {
   margin: 5px 0px 0px 0px;
 }
 
-.well-sm {
+.well-smm {
   margin: 15px 5px 5px 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
 }
 
 .navbar-brand {
