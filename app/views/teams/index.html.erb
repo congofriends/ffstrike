@@ -1,14 +1,14 @@
 <h1>Find teams near you</h1>
 
 <%= form_tag find_teams_path, :method => :post, :class => 'form-inline' do %>
-  <div class="form-group">
+  <div class="form-group one-line">
     <%= label_tag 'zip', 'ZIP Code', :class => 'sr-only' %>
     <%= text_field_tag 'zip', (@zip), :class => 'form-control', :placeholder => 'ZIP' %>
   </div>
-  <div class="form-group">
+  <div class="form-group one-line">
     <%= label_tag 'distance', 'Within distance (miles)', :class => 'sr-only' %>
     <div class="input-group">
-      <%= text_field_tag 'distance', (@distance || '5'), :class => 'form-control' %>
+      <%= text_field_tag 'distance', @distance, :class => 'form-control', :placeholder => 'distance' %>
       <span class="input-group-addon">miles</span>
     </div>
   </div>
