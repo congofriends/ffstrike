@@ -8,7 +8,6 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require_tree .
  *= require font-awesome
  *= stub bootstrap-cyborg
@@ -96,4 +95,15 @@ table.fixed {
 .navbar-nav, .navbar-right {
   font-size: 16px;
   font-weight: 600;
+}
+
+.list-group-item {
+  width: 35%;
+}
+
+a.list-group-item:hover,
+a.list-group-item:focus {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #ff6319;
 }
