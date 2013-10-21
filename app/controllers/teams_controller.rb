@@ -35,17 +35,8 @@ class TeamsController < ApplicationController
   def disband
     @team = Team.find(params[:id])
     @team.destroy
-    
-    unless params[:zip] and params[:distance]
-      @teams = Team.all
-    else
-      @zip = params[:zip]
-      @distance = params[:distance]
-      @teams = Team.near(@zip, @distance)
-      flash[:notice] = "No teams have been found in this area. Try another zip or distance value" if @team.nil?
-    end
 
-    render "index"
+    redirect_to root_path
   end
 
   def facebook_friends
