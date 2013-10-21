@@ -25,9 +25,15 @@ class Team
     end
   end
 
+  delegate :tasks, to: :coordinator
 
   def role(role_name)
     return coordinator if role_name == :coordinator
     self.role_applications.where(:approved => true, :role => role_name).first
   end
+
+  def approved_applications
+    self.role_applications.where({:approved => true})
+  end
+  
 end

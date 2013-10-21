@@ -98,7 +98,7 @@
           <td>Coordinator</td>
           <td><%= @team.coordinator.user.name %> (You!)  </td>
           <td><%= @team.coordinator.user.email%></td>
-          <td><%= @team.coordinator.tasks.where(:done => true).count %> of <%=@team.coordinator.tasks.count%> tasks done</td>
+          <td><%= @team.coordinator.tasks.where(:done => true).count %> of <%=@team.tasks.count%> tasks done</td>
           <td></td>
           <td><% unless @team.role_applications.select { |application| application.approved? }.count >= 3 %>
               <div class="btn-group">
@@ -113,7 +113,7 @@
             </div>
           <% end %></td>
         </tr>
-        <% @team.role_applications.select {|r| r.approved?}.each do |r| %>
+        <% @team.approved_applications.each do |r| %>
         <tr>
           <td><%= r.role.capitalize %></td>
           <td><%= r.user.name %></td>
@@ -144,5 +144,5 @@
     </p>
 
   </div>
-  <%= render :partial => 'tasks', :locals => { :tasks => @team.coordinator.tasks, :team => @team, :role => 'coordinator' } %>
+  <%= render :partial => 'tasks', :locals => { :tasks => @team.tasks, :team => @team, :role => 'coordinator' } %>
 </div>

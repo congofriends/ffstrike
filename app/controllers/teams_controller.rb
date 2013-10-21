@@ -93,6 +93,7 @@ class TeamsController < ApplicationController
     role_application.tasks = MapperApplication.new.tasks if params[:role].downcase == 'mapper'
     role_application.save
     @friends = []
+
     render 'coordinator_dashboard'
   end
     
