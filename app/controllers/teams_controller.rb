@@ -8,7 +8,7 @@ class TeamsController < ApplicationController
       @zip = params[:zip]
       @distance = params[:distance]
       @teams = Team.near(@zip, @distance)
-      flash[:notice] = "No teams have been found in this area. Try another zip or distance value" if @team.nil?
+      flash[:notice] = "No teams have been found in this area. Try another zip or distance value" if Team.where(zip: params[:zip]).count == 0
     end
   end
 
