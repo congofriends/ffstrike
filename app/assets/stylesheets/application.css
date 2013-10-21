@@ -97,3 +97,21 @@ table.fixed {
   font-size: 16px;
   font-weight: 600;
 }
+
+.list-group-item {
+  width: 35%;
+}
+
+a.list-group-item:hover,
+a.list-group-item:focus {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #ff6319;
+}
+
+.one-line {
+  width: 15%;
+  margin-right: 10px;
+  margin-top: 5px;
+  padding-bottom: -5px;
+}

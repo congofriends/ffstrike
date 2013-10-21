@@ -12,7 +12,8 @@ Ffstrike::Application.routes.draw do
   root 'home#start'
   get 'home/start' => 'home#start'
   get 'home/faq' => 'home#faq', :as => 'faq'
-
+  get 'home/about_us' => 'home#about_us', :as => 'about_us'
+  
   # Teams
   resources :teams
   get 'teams/:id/invite' => 'teams#invite', :as => 'invite_team'
