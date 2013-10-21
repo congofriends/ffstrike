@@ -32,6 +32,22 @@ class TeamsController < ApplicationController
     @role_application = "#{params[:role]}_application".camelcase.constantize.new(:role => params[:role])
   end
   
+  def disband
+    @team = Team.find(params[:id])
+    @team.destroy
+    
+    unless params[:zip] and params[:distance]
+      @teams = Team.all
+    else
+      @zip = params[:zip]
+      @distance = params[:distance]
+      @teams = Team.near(@zip, @distance)
+      flash[:notice] = "No teams have been found in this area. Try another zip or distance value" if @team.nil?
+    end
+
+    render "index"
+  end
+
   def facebook_friends
     oauth_access_token = User.authentication_token
     @graph = Koala::Facebook::API.new(oauth_access_token)

@@ -21,6 +21,7 @@ Ffstrike::Application.routes.draw do
   get 'teams/:id/apply/:role' => 'teams#apply', :as => 'apply_team'
   post 'teams/find' => 'teams#index', :as => 'find_teams'
   get 'teams/:id/reassign/:role_application_id' => 'teams#reassign', :as => 'reassign'
+  delete 'teams/:id/disband' => 'teams#disband', :as => 'disband_team'
 
   # Roles
   post 'teams/:id/role_application' => 'teams#create_role_application', :as => 'new_role_application'

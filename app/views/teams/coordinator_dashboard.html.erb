@@ -1,5 +1,9 @@
 <h1>Coordinator dashboard</h1>
 
+<%= link_to 'Disband Team', disband_team_path(@team.id),
+            :method => :delete, :confirm => 'Are you sure you want to disband this team? No turning back!',
+            :class => 'btn btn-sm btn-danger' %>
+
 <h3>This page gives you the tools you need to be an effective team member.</h3>
 
 <div class="row">
@@ -25,7 +29,7 @@
         <tr>
           <td>
             <a href="https://www.facebook.com/sharer/sharer.php?u=<%= join_team_url(@team.id) %>" target="_blank">
-              <%= image_tag "facebook.png", :class=> "thumbnail" %>
+            <%= image_tag "facebook.png", :class=> "thumbnail" %>
           </a> 
           <a href="http://twitter.com/share?text=Join my team in the fight for minimum wage: <%= join_team_url(@team.id) %>" target="_blank">
             <%= image_tag "twitter.png", :class=> "thumbnail" %>
