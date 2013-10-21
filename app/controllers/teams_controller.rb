@@ -8,6 +8,7 @@ class TeamsController < ApplicationController
       @zip = params[:zip]
       @distance = params[:distance]
       @teams = Team.near(@zip, @distance)
+      flash[:notice] = "No teams have been found in this area. Try another zip or distance value" if @team.nil?
     end
   end
 
@@ -75,7 +76,6 @@ class TeamsController < ApplicationController
     role_application.approved = (params[:status] == 'approve')
     role_application.rejected = (params[:status] == 'reject')
     role_application.save
-
     redirect_to :team
   end
 

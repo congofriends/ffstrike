@@ -41,13 +41,18 @@
     </nav>
   </div>
 
-  <div class="container">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </div>
-  <div id="push"></div>
+<div id="main-content" class="container">
+    <div class="row">
+       <% flash.each do |key, value|%>
+         <div class="alert alert-success alert-<%= key %>"><%= value %></div>
+       <% end%>
+     </div>
+   <%= yield%>
+</div>
+
+<div id="push"></div>
 </div> <!-- End #wrap -->
+
 <footer>
   <div class="container">
     This project is not affiliated with or authorized by any organization. This is just a brainstorm in code about a new way to organize people. Whether or not it is ever used in the Fast Food Strike, we hope this basic idea will be used someday for something.
