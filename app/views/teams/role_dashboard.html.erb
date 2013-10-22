@@ -86,23 +86,3 @@
 </div>
 <% end %>
 
-<% if @role.approved? %>
-<div class="row">
-  <div class="well well-sm col-md-4">
-    <h4>Map</h4>
-
-    <p>
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-    </p>
-  </div>
-  <%= form_for @team, :as => 'team' do |f| %>
-    <%= f.label :map, "Map link" %><br />
-    <%= f.text_area :map, :class => 'form_control' %>
-
-    <%= f.submit "Submit", :class => 'btn btn-primary'%>
-
-  <% end %> 
-</div>
-
-<%= yield :scripts %> 
-<% end %>
