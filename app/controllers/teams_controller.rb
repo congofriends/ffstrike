@@ -39,6 +39,10 @@ class TeamsController < ApplicationController
     redirect_to root_path
   end
 
+  def my_teams
+    @current_user_teams = Team.where("role_applications.user_id" => current_user.id) 
+  end
+
   def facebook_friends
     oauth_access_token = User.authentication_token
     @graph = Koala::Facebook::API.new(oauth_access_token)
