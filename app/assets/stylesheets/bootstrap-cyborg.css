@@ -672,8 +672,6 @@ blockquote {
 }
 
 blockquote p {
-  font-size: 17.5px;
-  font-weight: 300;
   line-height: 1.25;
 }
 
@@ -3444,7 +3442,7 @@ input[type="button"].btn-block {
 .dropup .caret,
 .navbar-fixed-bottom .dropdown .caret {
   border-top: 0 dotted;
-  border-bottom: 4px solid #000000;
+  border-bottom: 0;
   content: "";
 }
 
@@ -3452,7 +3450,7 @@ input[type="button"].btn-block {
 .navbar-fixed-bottom .dropdown .dropdown-menu {
   top: auto;
   bottom: 100%;
-  margin-bottom: 1px;
+  margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
