@@ -3459,7 +3459,6 @@ input[type="button"].btn-block {
 .navbar-fixed-bottom .dropdown .dropdown-menu {
   top: auto;
   bottom: 100%;
-  margin-bottom: 1px;
 }
 
 @media (min-width: 768px) {
@@ -4707,7 +4706,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-default {
   background-color: #ff6319;
-  border-color: #bf3e11;
 }
 
 .navbar-default .navbar-brand {
@@ -4763,7 +4761,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #bc3d11;
 }
 
 .navbar-default .navbar-nav > .dropdown > a:hover .caret,
