@@ -52,13 +52,16 @@ class TeamsController < ApplicationController
   def create_role_application
     team = Team.find(params[:id])
 
-    role_application = "#{params[:role_application][:role]}_application".camelcase.constantize.new(params[:role_application].to_hash)
-    role_application.user = current_user
+    @role_application = "#{params[:role_application][:role]}_application".camelcase.constantize.new(params[:role_application].to_hash)
+    @role_application.user = current_user
+    team.role_applications << @role_application
 
-    team.role_applications << role_application
-    team.save
-
-    redirect_to wait_team_path(params[:id])
+    if team.save
+      redirect_to wait_team_path(params[:id])
+    else
+      flash[:notice] = "First and second questions are required" 
+      render 'apply'
+    end
   end
 
   def take_responsibility
