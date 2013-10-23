@@ -1,8 +1,14 @@
-<h1>Coordinator dashboard</h1>
-
-<%= link_to 'Disband Team', disband_team_path(@team.id),
+<div class="row">
+  <div class="title">
+    <span class="disband-button">
+      <%= link_to 'Disband Team', disband_team_path(@team.id),
             :method => :delete, :confirm => 'Are you sure you want to disband this team? No turning back!',
             :class => 'btn btn-sm btn-danger' %>
+    </span>
+
+    <h1>Coordinator dashboard </h1>
+  </div>
+</div>
 
 <h3>This page gives you the tools you need to be an effective team member.</h3>
 
