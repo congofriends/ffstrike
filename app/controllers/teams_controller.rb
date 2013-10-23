@@ -8,7 +8,7 @@ class TeamsController < ApplicationController
       @zip = params[:zip]
       @distance = params[:distance]
       @teams = Team.near(@zip, @distance)
-      flash[:notice] = "No teams have been found in this area. Try another zip or distance value" if Team.where(zip: params[:zip]).count == 0
+      flash.now[:notice] = "No teams have been found in this area. Try another zip or distance value" if Team.where(zip: params[:zip]).count == 0
     end
   end
 
@@ -56,9 +56,15 @@ class TeamsController < ApplicationController
     role_application.user = current_user
 
     team.role_applications << role_application
-    team.save
+    if team.save
+      redirect_to wait_team_path(params[:id])
+    else
+      flash.now[:notice] = "You must enter a valid phone number." 
 
-    redirect_to wait_team_path(params[:id])
+      @team_id = params[:id]
+      @role_application = "#{params[:role_application][:role]}_application".camelcase.constantize.new(params[:role_application].to_hash)
+      render 'apply'
+    end
   end
 
   def take_responsibility
