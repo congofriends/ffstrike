@@ -1,4 +1,4 @@
-class RoleApplication
+class RoleApplication 
   include Mongoid::Document
   embedded_in :team
   embeds_many :tasks, :as => :role
@@ -13,5 +13,5 @@ class RoleApplication
   field :approved,        :type => Mongoid::Boolean, :default => false
   field :rejected,        :type => Mongoid::Boolean, :default => false
 
-  validates_presence_of :why_cause, :other 
+  validates_format_of :phone, :with => /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/, :on => :create, :allow_blank => true, :on => :update
 end

@@ -8,7 +8,7 @@ class TeamsController < ApplicationController
       @zip = params[:zip]
       @distance = params[:distance]
       @teams = Team.near(@zip, @distance)
-      flash[:notice] = "No teams have been found in this area. Try another zip or distance value" if Team.where(zip: params[:zip]).count == 0
+      flash.now[:notice] = "No teams have been found in this area. Try another zip or distance value" if Team.where(zip: params[:zip]).count == 0
     end
   end
 
@@ -52,14 +52,16 @@ class TeamsController < ApplicationController
   def create_role_application
     team = Team.find(params[:id])
 
-    @role_application = "#{params[:role_application][:role]}_application".camelcase.constantize.new(params[:role_application].to_hash)
-    @role_application.user = current_user
-    team.role_applications << @role_application
+    role_application = "#{params[:role_application][:role]}_application".camelcase.constantize.new(params[:role_application].to_hash)
+    role_application.user = current_user
 
+    team.role_applications << role_application
     if team.save
       redirect_to wait_team_path(params[:id])
     else
-      flash[:notice] = "First and second questions are required" 
+      flash.now[:notice] = "You must enter a valid phone number. Valid phone numbers are 10 digits long." 
+      @team_id = params[:id]
+      @role_application = "#{params[:role_application][:role]}_application".camelcase.constantize.new(params[:role_application].to_hash)
       render 'apply'
     end
   end

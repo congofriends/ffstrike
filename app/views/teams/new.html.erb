@@ -34,7 +34,7 @@ You're starting a new team that will leaflet restaurants around your town. You'l
     <%= f.fields_for :coordinator do |coord_f| %>
       <%  {:why => "Write a sentence or two that capture why you want to do this work: (you can edit this later)",
            :where => "Describe where you're thinking of leafleting: (you can edit this later)",
-           :about_private => "Is there anything you'd like to tell us about yourself? (Won't be shared publically.)"
+           :about_private => "Is there anything you'd like to tell us about yourself? (Won't be shared publicly.)"
       }.each_pair do |field, desc| %>
         <p>
           <%= coord_f.label field, desc %><br />
