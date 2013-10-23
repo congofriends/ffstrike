@@ -1,32 +1,30 @@
-<div class="col-md-8 task-list">
-  <table class="table table-bordered table-striped">
-  	<thead>
-  		<tr>
-  			<th></th>
-  			<th>
-  	    	<h4>
-  					<span id="tasks-to-do"><%= tasks.where(:done => false).count %></span>/<%= tasks.count %> tasks are still on your list.</h4>
-  				</h4>
-  			</th>
-  		</tr>
-  	</thead>
-		<% tasks.each do |task| %>
-		  <tr>
-		    <td>				
-					<div class="checkbox">
-    	  		<input <%= "checked='checked'" if task.done %> 
-      	       class="mark-task" type="checkbox" data-team-id="<%= team.id %>" 
-        	     data-role-name="<%= role %>" data-task-id="<%= task.id %>"
-          	   <%= (role == 'coordinator') || (@role.user == current_user) ? '' : 'disabled' %> />
-        </td>
-				<td> 
-								<% if task.done %>	
-									<%= content_tag(:s, (raw task.description)) if task.done %>
-								<% else %>
-									<%= raw task.description %>	
-								<% end %>
-				</td> 
-			</tr>
-		<% end %>
-		</table>
-</div>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th></th>
+			<th>
+	    	<h4>
+					<span id="tasks-to-do"><%= tasks.where(:done => false).count %></span>/<%= tasks.count %> tasks are still on your list.</h4>
+				</h4>
+			</th>
+		</tr>
+	</thead>
+	<% tasks.each do |task| %>
+	  <tr>
+	    <td>				
+				<div class="checkbox">
+  	  		<input <%= "checked='checked'" if task.done %> 
+    	       class="mark-task" type="checkbox" data-team-id="<%= team.id %>" 
+      	     data-role-name="<%= role %>" data-task-id="<%= task.id %>"
+        	   <%= (role == 'coordinator') || (@role.user == current_user) ? '' : 'disabled' %> />
+      </td>
+			<td> 
+							<% if task.done %>	
+								<%= content_tag(:s, (raw task.description)) if task.done %>
+							<% else %>
+								<%= raw task.description %>	
+							<% end %>
+			</td> 
+		</tr>
+	<% end %>
+</table>
