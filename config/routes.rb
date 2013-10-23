@@ -4,8 +4,8 @@ Ffstrike::Application.routes.draw do
 
   # Devise - Authentication
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "users" }
-  devise_scope :users do
-    resources :users
+  devise_scope :user do
+    get "users/:id" => "users#show", as: :user
   end
 
   # Landing/Home page
@@ -13,8 +13,9 @@ Ffstrike::Application.routes.draw do
   get 'home/start' => 'home#start'
   get 'home/faq' => 'home#faq', :as => 'faq'
   get 'home/about_us' => 'home#about_us', :as => 'about_us'
-  
+
   # Teams
+  get 'teams/my_teams' => 'teams#my_teams', :as => 'my_teams'
   resources :teams
   get 'teams/:id/invite' => 'teams#invite', :as => 'invite_team'
   get 'teams/:id/join' => 'teams#join', :as => 'join_team'
@@ -22,6 +23,7 @@ Ffstrike::Application.routes.draw do
   post 'teams/find' => 'teams#index', :as => 'find_teams'
   get 'teams/:id/reassign/:role_application_id' => 'teams#reassign', :as => 'reassign'
   delete 'teams/:id/disband' => 'teams#disband', :as => 'disband_team'
+  
 
   # Roles
   post 'teams/:id/role_application' => 'teams#create_role_application', :as => 'new_role_application'
