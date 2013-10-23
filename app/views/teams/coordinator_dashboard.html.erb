@@ -13,153 +13,129 @@
 <h3>This page gives you the tools you need to be an effective team member.</h3>
 
 <div class="row">
-  <div class="well well-sm col-md-4">
-    <h4>Here's where you can invite your friends and supporters </h4>
-
-    <p>
-    If you want to nag these folks, make sure you include their special link below.
-    </p>
-
-    <%= link_to join_team_url(@team.id), join_team_url(@team.id) %>
-
-  </div>
-  <div class="col-md-8">
-    <div class="table-responsive">
-      <table class="table table-bordered table-striped">
-        <thead>
-          <tr>
-            <th>Invite new team members via...</th>
-          </tr>
-        </thead>
-        <tbody>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
         <tr>
-          <td>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=<%= join_team_url(@team.id) %>/&t=Frustrated about minimum wage jobs? Come make a difference." target="_blank">
-            <%= image_tag "facebook.png", :class=> "thumbnail" %>
-          </a> 
-          <a href="http://twitter.com/share?text=Join my team in the fight for minimum wage: <%= join_team_url(@team.id) %>" target="_blank">
-            <%= image_tag "twitter.png", :class=> "thumbnail" %>
-          </a>
-          </td>
+          <th>Invite new team members via...</th>
         </tr>
-        <% @friends.each do |friend| %>
-          <tr>
-            <td><%= friend %></td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
-    </div>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=<%= join_team_url(@team.id) %>/&t=Frustrated about minimum wage jobs? Come make a difference." target="_blank">
+          <%= image_tag "facebook.png", :class=> "thumbnail" %>
+        </a> 
+        <a href="http://twitter.com/share?text=Join my team in the fight for minimum wage: <%= join_team_url(@team.id) %>" target="_blank">
+          <%= image_tag "twitter.png", :class=> "thumbnail" %>
+        </a>
+        <a>
+      	  <%= link_to join_team_url(@team.id), join_team_url(@team.id) %>
+        </a>
+        </td>
+      </tr>
+      <% @friends.each do |friend| %>
+        <tr>
+          <td><%= friend %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
 
 <div class="row">
-  <div class="well well-sm col-md-4">
-    <h4>Here's who's requested to be on your team</h4>
+  <h4>Here's who's requested to be on your team</h4>
 
-    <p>
-    Please review all the applications as soon as possible. You don't have to accept everyone onto your team. If you feel someone's not a good fit, you can reject them and we'll just tell them to search for a different team. You can also ask people who have applied for a role you've already filled to apply for a different role.
-    </p>
-  </div>
-  <div class="col-md-8">
-    <div class="table-responsive">
-      <table class="table table-bordered table-striped">
-        <thead>
-          <tr>
-            <th>Team role</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Dashboard</th>
-          </tr>
-        </thead>
-        <tbody>
-        <% @team.role_applications.select {|r| !r.approved?}.sort_by { |r| r.rejected? ? 1 : 0 }.each do |r| %>
-          <tr class="<%= 'strikethrough' if r.rejected? %>">
-            <td><%= r.role.capitalize %></td>
-            <td><%= r.user.name %></td>
-            <td><%= r.user.email %></td>
-            <td><%= link_to "Review this application#{ ' again' if r.rejected?}", view_role_application_path(@team.id, r.id), :class => 'btn btn-primary btn-xs' %></td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
-
-<div class="row">
-  <div class="well well-sm col-md-4">
-    <h4>Here's your team</h4>
-
-    <p>
-    You are a member of a team with four roles. Your coordinator is responsible for getting you all in the same place and checking in on everyone's progress.
-    </p>
-  </div>
-  <div class="col-md-8">
-    <div class="table-responsive">
-      <table class="table table-bordered table-striped">
-        <thead>
-          <tr><h4>Team name: <%= @team.name %></h4></tr>
-          <tr>
-            <th>Team role</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Dashboard</th>
-            <th>Remove</th>
-            <th>Reassign</th>
-          </tr>
-        </thead>
-        <tbody>
+  <p>
+  Please review all the applications as soon as possible. You don't have to accept everyone onto your team. If you feel someone's not a good fit, you can reject them and we'll just tell them to search for a different team. You can also ask people who have applied for a role you've already filled to apply for a different role.
+  </p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
         <tr>
-          <td>Coordinator</td>
-          <td><%= @team.coordinator.user.name %> (You!)  </td>
-          <td><%= @team.coordinator.user.email%></td>
-          <td><%= @team.coordinator.tasks.where(:done => true).count %> of <%=@team.tasks.count%> tasks done</td>
-          <td></td>
-          <td><% unless @team.role_applications.select { |application| application.approved? }.count >= 3 %>
-              <div class="btn-group">
-                <button data-toggle="dropdown" class="btn btn-sm btn-success dropdown-toggle" type="button">Take role... &nbsp;<span class="caret"></span></button>
-                <ul role="menu" class="dropdown-menu">
-                  <% %w{driver mapper printer}.each do |role| %>
-                    <% unless @team.role(role.to_sym) %>
-                      <li><%= link_to role.capitalize, take_responsibility_path(@team.id, role.to_s.downcase.to_sym) %></li>
-                    <% end %>
-                  <% end %>
-                </ul>
-            </div>
-          <% end %></td>
+          <th>Team role</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Dashboard</th>
         </tr>
-        <% @team.approved_applications.each do |r| %>
-        <tr>
+      </thead>
+      <tbody>
+      <% @team.role_applications.select {|r| !r.approved?}.sort_by { |r| r.rejected? ? 1 : 0 }.each do |r| %>
+        <tr class="<%= 'strikethrough' if r.rejected? %>">
           <td><%= r.role.capitalize %></td>
           <td><%= r.user.name %></td>
           <td><%= r.user.email %></td>
-          <td><%= r.tasks.where(:done => true).count %> of <%= r.tasks.count%> tasks done, 
-              <%= link_to 'dashboard', team_path(params[:id], {role: r.role})%></td>
-          <td>
-            <%= link_to 'Remove From Team', cancel_role_application_path(@team.id, r.id),
-            :method => :delete, :confirm => 'Are you sure you want to remove this person from your team?',
-            :class => 'btn btn-sm btn-danger' %>
-          </td>
-          <td><%= link_to 'Reassign', reassign_path(@team.id, r.id), :class => 'btn btn-sm btn-danger' unless @team.role_applications.select { |application| application.approved? }.count >= 3 %></td>
+          <td><%= link_to "Review this application#{ ' again' if r.rejected?}", view_role_application_path(@team.id, r.id), :class => 'btn btn-primary btn-xs' %></td>
         </tr>
-        <% end %>
-        </tbody>
-      </table>
-    </div>
+      <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
 
 
 <div class="row">
-  <div class="well well-sm col-md-4">
-    <h4>Here's your todo list</h4>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr><h4>Your Team: <%= @team.name %></h4></tr>
+        <tr>
+          <th>Team role</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Dashboard</th>
+          <th>Remove</th>
+          <th>Reassign</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Coordinator</td>
+        <td><%= @team.coordinator.user.name %> (You!)  </td>
+        <td><%= @team.coordinator.user.email%></td>
+        <td><%= @team.coordinator.tasks.where(:done => true).count %> of <%=@team.tasks.count%> tasks done</td>
+        <td></td>
+        <td><% unless @team.role_applications.select { |application| application.approved? }.count >= 3 %>
+            <div class="btn-group">
+              <button data-toggle="dropdown" class="btn btn-sm btn-success dropdown-toggle" type="button">Take role... &nbsp;<span class="caret"></span></button>
+              <ul role="menu" class="dropdown-menu">
+                <% %w{driver mapper printer}.each do |role| %>
+                  <% unless @team.role(role.to_sym) %>
+                    <li><%= link_to role.capitalize, take_responsibility_path(@team.id, role.to_s.downcase.to_sym) %></li>
+                  <% end %>
+                <% end %>
+              </ul>
+          </div>
+        <% end %></td>
+      </tr>
+      <% @team.approved_applications.each do |r| %>
+      <tr>
+        <td><%= r.role.capitalize %></td>
+        <td><%= r.user.name %></td>
+        <td><%= r.user.email %></td>
+        <td><%= r.tasks.where(:done => true).count %> of <%= r.tasks.count%> tasks done, 
+            <%= link_to 'dashboard', team_path(params[:id], {role: r.role})%></td>
+        <td>
+          <%= link_to 'Remove From Team', cancel_role_application_path(@team.id, r.id),
+          :method => :delete, :confirm => 'Are you sure you want to remove this person from your team?',
+          :class => 'btn btn-sm btn-danger' %>
+        </td>
+        <td><%= link_to 'Reassign', reassign_path(@team.id, r.id), :class => 'btn btn-sm btn-danger' unless @team.role_applications.select { |application| application.approved? }.count >= 3 %></td>
+      </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="row">
+    <h4>Your Todo List</h4>
 
     <p>
     These are the few things you absolutely must get done. Check them off as you do them so that your coordinator doesn't have to nag you.
     </p>
 
-  </div>
   <%= render :partial => 'tasks', :locals => { :tasks => @team.tasks, :team => @team, :role => 'coordinator' } %>
 </div>
