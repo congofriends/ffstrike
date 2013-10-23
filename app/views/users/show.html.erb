@@ -1,0 +1,5 @@
+<h1>User Profile</h1>
+<%= link_to "Update personal info", edit_user_registration_path, :class => "btn btn-primary" %>
+<img src= "<%= current_user.image %>" >
+<p>User email: <%= @user.email %></p>
+<p>User name: <%= @user.name %></p>
