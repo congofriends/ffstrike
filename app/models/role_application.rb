@@ -6,7 +6,7 @@ class RoleApplication
   belongs_to :user
 
   field :role,            :type => String
-  field :why_dependable,  :type => String
+  # field :why_dependable,  :type => String
   field :why_cause,       :type => String
   field :other,           :type => String
   field :phone,           :type => String

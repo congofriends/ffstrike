@@ -66,7 +66,16 @@
           <td><%= r.role.capitalize %></td>
           <td><%= r.user.name %></td>
           <td><%= r.user.email %></td>
-          <td><%= link_to "Review this application#{ ' again' if r.rejected?}", view_role_application_path(@team.id, r.id), :class => 'btn btn-primary btn-xs' %></td>
+          <td>
+            <%= link_to r.tasks.where(:done => true).count.to_s + " of " + r.tasks.count.to_s + " tasks done",
+                team_path(params[:id], {role: r.role}) %>
+          </td>
+          <td>
+            <%= link_to 'Remove From Team', cancel_role_application_path(@team.id, r.id),
+            :method => :delete, :confirm => 'Are you sure you want to remove this person from your team?',
+            :class => 'btn btn-sm btn-danger' %>
+          </td>
+          <td><%= link_to 'Reassign', reassign_path(@team.id, r.id), :class => 'btn btn-sm btn-danger' unless @team.role_applications.select { |application| application.approved? }.count >= 3 %></td>
         </tr>
       <% end %>
       </tbody>

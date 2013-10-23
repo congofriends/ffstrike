@@ -50,8 +50,10 @@
             <td><%= r.role.capitalize %></td>
             <td><%= r.user.name %></td>
             <td><%= r.user.email %></td>
-            <td><%= r.tasks.where(:done => true).count %> of <%= r.tasks.count%> tasks done, 
-                  <%= link_to 'dashboard', team_path(params[:id], {role: r.role}) %></td>
+            <td>
+              <%= link_to r.tasks.where(:done => true).count.to_s + " of " + r.tasks.count.to_s + " tasks done",
+                  team_path(params[:id], {role: r.role}) %>
+            </td>
           </tr>
         <% end %>
         <% unless @role.approved? %>
