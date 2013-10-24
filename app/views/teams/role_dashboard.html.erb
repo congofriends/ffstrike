@@ -12,7 +12,6 @@
 
   </div>
   <%= @role.role.capitalize %> Dashboard
-
 </h1>
 
 <h3>This page gives you the tools you need to be an effective team member.</h3>
@@ -26,54 +25,7 @@
     </p>
   </div>
 
-  <div class="col-md-8">
-    <div class="table-responsive">
-      <table class="table table-bordered table-striped">
-        <thead>
-          <tr><h4>Team name: <%= @team.name %></h4></tr>
-          <tr>
-            <th>Team role</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Dashboard</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Coordinator</td>
-            <td><%= @team.coordinator.user.name %></td>
-            <td><%= @team.coordinator.user.email%></td>
-            <td><%= @team.coordinator.tasks.where(:done => true).count %> of <%=@team.coordinator.tasks.count%> tasks done</td>
-          </tr>
-        <% @team.role_applications.select {|r| r.approved?}.each do |r| %>
-          <tr>
-            <td><%= r.role.capitalize %></td>
-            <td><%= r.user.name %></td>
-            <td><%= r.user.email %></td>
-            <td>
-              <%= link_to "#{r.tasks.where(:done => true).count} of #{r.tasks.count} tasks done",
-                  team_path(params[:id], {role: r.role}) %>
-            </td>
-          </tr>
-        <% end %>
-        <% unless @role.approved? %>
-          <tr class="warning">
-            <td><%= @role.role.capitalize %></td>
-            <td><%= @role.user.name %> (You!)</td>
-            <td><%= @role.user.email %></td>
-            <td>
-              Your application is pending...
-              <%= link_to 'Cancel Application', cancel_role_application_path(@team.id, @role.id),
-              :method => :delete, :confirm => 'Are you sure you want to cancel your application?',
-              :class => 'btn btn-sm btn-danger' %>
-            </td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
+  <%= render 'teams/your_team_summary' %>
 
 <% if @role.approved? %>
 <div class="row">

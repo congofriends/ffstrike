@@ -1,0 +1,31 @@
+<div class="thin-row">
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Invite new team members via...</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=<%= join_team_url(@team.id) %>/&t=Frustrated about minimum wage jobs? Come make a difference." target="_blank">
+          <%= image_tag "facebook.png", :class=> "thumbnail" %>
+        </a> 
+        <a href="http://twitter.com/share?text=Join my team in the fight for minimum wage: <%= join_team_url(@team.id) %>" target="_blank">
+          <%= image_tag "twitter.png", :class=> "thumbnail" %>
+        </a>
+        <a>
+      	  <%= link_to join_team_url(@team.id), join_team_url(@team.id) %>
+        </a>
+        </td>
+      </tr>
+      <% @friends.each do |friend| %>
+        <tr>
+          <td><%= friend %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
