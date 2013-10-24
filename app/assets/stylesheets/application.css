@@ -116,10 +116,6 @@ table.fixed {
   line-height: 0;
 }
 
-.row .alert {
-  width: 600px;
-}
-
 #main-content {
   padding-top: 80px;
 }
@@ -131,4 +127,9 @@ table.fixed {
 .thin-row {
 	margin-left: 150px;
 	margin-right: 150px;
+}
+
+.field-required {
+  color: red;
+  font-size: 19px;
 }

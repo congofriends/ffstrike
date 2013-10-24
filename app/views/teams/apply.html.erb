@@ -7,12 +7,12 @@
   <%= f.hidden_field :role, :value => @role_application.role %>
 
   <p>
-    <%= f.label :why_cause, "Give us a few sentences about why you are interested in participating helping with the Fast Food Strike Movement."  %><br />
+    <%= f.label :why_cause, "Give us a few sentences about why you are interested in participating helping with the Fast Food Strike Movement."  %><span class="field-required">*</span><br />
     <%= f.text_area :why_cause, :class => 'form-control' %>
   </p>
 
   <p>
-    <%= f.label :other, "Is there anything else you'd like to tell us about yourself? " %><br />
+    <%= f.label :other, "Is there anything else you'd like to tell us about yourself? " %><span class="field-required">*</span><br />
     <%= f.text_area :other, :class => 'form-control' %>
   </p>
 
