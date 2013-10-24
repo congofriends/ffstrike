@@ -1,3 +1,4 @@
+<div class="thin-row">
 <h1>
   <div class="pull-right">
     <% if @role.role == current_user.name%>
@@ -15,28 +16,16 @@
 </h1>
 
 <h3>This page gives you the tools you need to be an effective team member.</h3>
-
-<div class="row">
-  <div class="well well-sm col-md-4">
-    <h4>Here's your team</h4>
-
+</div>
+<div class="thin-row">
     <p>
     You are a member of a team with four roles. Your coordinator is responsible for getting you all in the same place and checking in on everyone's progress.
     </p>
-  </div>
+</div>
 
-  <%= render 'teams/your_team_summary' %>
+<%= render 'teams/your_team_summary' %>
 
 <% if @role.approved? %>
-<div class="row">
-  <div class="well well-sm col-md-4">
-    <h4>Here's your todo list</h4>
-
-    <p>
-    These are the few things you absolutely must get done. Check them off as you do them so that your coordinator doesn't have to nag you.
-    </p>
-  </div>
   <%= render :partial => 'tasks', :locals => { :tasks => @role.tasks, :team => @team, :role => @role.role } %>
-</div>
 <% end %>
 

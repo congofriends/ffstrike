@@ -8,19 +8,11 @@
 
     <h1>Coordinator dashboard </h1>
   </div>
-	<h3>This page gives you the tools you need to be an effective team member.</h3>
+	<h3>This page gives you the tools you need to be an effective coordinator.</h3>
 </div>
 
 <%= render 'teams/social_links' %>
 <%= render 'teams/applications_to_review' %>
 <%= render 'teams/your_team_summary' %>
+<%= render :partial => 'tasks', :locals => { :tasks => @team.tasks, :team => @team, :role => 'coordinator' } %>
 
-<div class="thin-row">
-    <h4>Your Todo List</h4>
-
-    <p>
-    These are the few things you absolutely must get done. Check them off as you do them so that your coordinator doesn't have to nag you.
-    </p>
-
-  <%= render :partial => 'tasks', :locals => { :tasks => @team.tasks, :team => @team, :role => 'coordinator' } %>
-</div>
