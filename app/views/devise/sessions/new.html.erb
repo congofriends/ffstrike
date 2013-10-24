@@ -1,38 +1,29 @@
-<div class="well well-sm col-md-6 col-md-offset-3">
-  <h2>
-    <div class="pull-right">
-      <%= render "devise/shared/omniauth" %>
-    </div>
-    Sign in with Facebook
-  </h2>
-
-</div>
-
-<div class="well well-sm col-md-6 col-md-offset-3">
+<div align="center" class="xthin-row">
 
   <h4>
-    <div class="pull-right"> <%= render "devise/shared/links" %> </div>
-    Don't have a facebook account?
+	Share your involvement:
   </h4>
+  <%= render "devise/shared/omniauth" %>
+	</br>
+  <h4>
+	Or login with your email address:
+	</h4>
+ <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
-  <p>
-    It's a great idea to team your Facebook account up with Fast Food Strike. We're all about
-    awareness and promotion and what better place to do that than Facebook? Plus we can automatically
-    do a few simple (non-intrusive) things, like work out where you are and connect you with folks
-    in your area, or work out if you're friends have signed up in case you'd like to leaflet with them.
-  </p>
-
-  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-    <div><%= f.label :email %><br />
-      <%= f.email_field :email, :class => 'form-control' %></div>
-
-    <div><%= f.label :password %><br />
-      <%= f.password_field :password, :class => 'form-control' %></div>
-
-    <% if devise_mapping.rememberable? -%>
+    <div><%= f.email_field :email, :class => 'signup-input', :placeholder => 'Your Email Address' %></div>
+    </br>
+    <div><%= f.password_field :password, :class => 'signup-input', :placeholder => 'Your Password' %></div>
+    </br>
+    <div><%= f.submit "Sign in", :class => 'signin-button' %></div>
+     <% if devise_mapping.rememberable? -%>
       <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
     <% end -%>
 
-    <div><%= f.submit "Sign in", :class => 'btn btn-primary' %></div>
-  <% end %>
+ <% end %>
+ </br>
+   <h4 id="signup-prompt">
+    <div id="signup-button"> <%= render "devise/shared/sign_up" %> </div>
+  </h4>
+    <div> <%= render "devise/shared/forgot_password" %> </div>
+		</br>
 </div>
