@@ -145,7 +145,7 @@ h3 {
 	background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
   border-radius: 4px;
-  
+  margin-top: 10%;  
 }
 
 #signup-prompt {
@@ -197,3 +197,5 @@ h3 {
 	-o-user-select: none;
 	user-select: none;
 }
+
+

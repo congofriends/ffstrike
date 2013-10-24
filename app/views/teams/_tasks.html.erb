@@ -20,7 +20,7 @@
   	    <td>				
   				<div class="checkbox">
     	  		<input <%= "checked='checked'" if task.done %> 
-      	       class="mark-task" type="checkbox" data-team-id="<%= team.id %>" 
+      	       id = "task" class="mark-task" type="checkbox" data-team-id="<%= team.id %>" 
         	     data-role-name="<%= role %>" data-task-id="<%= task.id %>"
           	   <%= (role == 'coordinator') || (@role.user == current_user) ? '' : 'disabled' %> />
         </td>
