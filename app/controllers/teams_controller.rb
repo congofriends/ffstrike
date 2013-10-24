@@ -59,7 +59,7 @@ class TeamsController < ApplicationController
     if team.save
       redirect_to wait_team_path(params[:id])
     else
-      flash.now[:notice] = "You must enter a valid phone number. Valid phone numbers are 10 digits long." 
+      flash.now[:danger] = role_application.errors.messages.values.flatten.first if role_application.errors.messages.count != 0
       @team_id = params[:id]
       @role_application = "#{params[:role_application][:role]}_application".camelcase.constantize.new(params[:role_application].to_hash)
       render 'apply'
