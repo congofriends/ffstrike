@@ -5,24 +5,24 @@
   </h4>
   <%= render "devise/shared/omniauth" %>
 
+  <h4>
+	Or login with your email address:
+	</h4>
+ <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
-  <h4 id="signup-prompt">
-    Don't have a facebook account? 
-    <div id="signup-button"> <%= render "devise/shared/sign_up" %> </div>
-  </h4>
-  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-
-    <div><%= f.label :email %><br />
-      <%= f.email_field :email, :class => 'form-control' %></div>
-
-    <div><%= f.label :password %><br />
-      <%= f.password_field :password, :class => 'form-control' %></div>
-
-    <% if devise_mapping.rememberable? -%>
+    <div><%= f.email_field :email, :class => 'signup-input', :placeholder => 'Your Email Address' %></div>
+    </br>
+    <div><%= f.password_field :password, :class => 'signup-input', :placeholder => 'Your Password' %></div>
+    </br>
+    <div><%= f.submit "Sign in", :class => 'signin-button' %></div>
+     <% if devise_mapping.rememberable? -%>
       <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
     <% end -%>
 
-    <div><%= f.submit "Sign in", :class => 'btn btn-primary' %></div>
-  <% end %>
+ <% end %>
+   <h4 id="signup-prompt">
+    <div id="signup-button"> <%= render "devise/shared/sign_up" %> </div>
+  </h4>
     <div> <%= render "devise/shared/forgot_password" %> </div>
+		</br>
 </div>
