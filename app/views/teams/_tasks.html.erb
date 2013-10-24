@@ -4,7 +4,7 @@
 			<th></th>
 			<th>
 	    	<h4>
-					<span id="tasks-to-do"><%= tasks.where(:done => false).count %></span>/<%= tasks.count %> tasks are still on your list.</h4>
+					<span id="tasks-to-do"><%= @team.noncompleted_tasks(tasks) %></span>/<%= tasks.count %> tasks are still on your list.</h4>
 				</h4>
 			</th>
 		</tr>

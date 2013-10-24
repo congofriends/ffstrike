@@ -17,9 +17,9 @@
         <td>Coordinator</td>
         <td><%= @team.coordinator.user.name %> (You!)  </td>
         <td><%= @team.coordinator.user.email%></td>
-        <td><%= @team.coordinator.tasks.where(:done => true).count %> of <%=@team.tasks.count%> tasks done</td>
+        <td><%= @team.completed_tasks(@team.coordinator)  %> of <%=@team.tasks.count%> tasks done</td>
         <td></td>
-        <td><% unless @team.role_applications.select { |application| application.approved? }.count >= 3 %>
+        <td><% unless @team.approved_application_exceeds_limit %>
             <div class="btn-group">
               <button data-toggle="dropdown" class="btn btn-sm btn-success dropdown-toggle" type="button">Take role... &nbsp;<span class="caret"></span></button>
               <ul role="menu" class="dropdown-menu">
@@ -38,7 +38,7 @@
         <td><%= r.user.name %></td>
         <td><%= r.user.email %></td>
         <td>
-          <%= link_to "#{r.tasks.where(:done => true).count} of #{r.tasks.count} tasks done",
+          <%= link_to "#{@team.completed_tasks(r)} of #{r.tasks.count} tasks done",
               team_path(params[:id], {role: r.role}) %>
         </td>
         <td>

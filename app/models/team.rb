@@ -36,4 +36,20 @@ class Team
     self.role_applications.where({:approved => true})
   end
   
+  def applications_to_review
+    self.role_applications.select { |r| !r.approved? }.sort_by { |r| r.rejected? ? 1 : 0 }
+  end
+
+  def approved_application_exceeds_limit
+    approved_applications.count >= 3
+  end
+
+  def noncompleted_tasks(tasks)
+    tasks.where(:done => false).count 
+  end
+
+  def completed_tasks(role)
+    role.tasks.where(:done => true).count
+  end
+
 end
