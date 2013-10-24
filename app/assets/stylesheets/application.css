@@ -136,3 +136,20 @@ h3 {
   color: #ff6319;
 }
 
+.xthin-row {
+	margin-left: 400px;
+	margin-right: 400px;
+	align-content: center;
+	background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  
+}
+
+#signup-prompt {
+  vertical-align: bottom;
+}
+
+#signup-button {
+	display: inline;
+}
