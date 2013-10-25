@@ -40,7 +40,15 @@ class TeamsController < ApplicationController
   end
 
   def my_teams
-    @current_user_teams = Team.where("role_applications.user_id" => current_user.id) 
+    @current_user_teams = []
+    @current_user_teams.uniq!
+    Team.where("coordinator.user_id" => current_user.id).each do |team|
+      @current_user_teams << team
+    end
+    all_user_teams = Team.where("role_applications.user_id" => current_user.id)  
+      all_user_teams.each do |team|
+          @current_user_teams << team if team.approved_application_exists? current_user.id
+      end
   end
 
   def facebook_friends

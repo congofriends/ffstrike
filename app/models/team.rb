@@ -27,6 +27,15 @@ class Team
 
   delegate :tasks, to: :coordinator
 
+  def approved_application_exists? user_id
+    self.role_applications.each do |application|
+      if application.user_id == user_id 
+        return true if application.approved?
+      end
+    end
+    return false
+  end
+
   def role(role_name)
     return coordinator if role_name == :coordinator
     self.role_applications.where(:approved => true, :role => role_name).first
