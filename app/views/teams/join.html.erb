@@ -4,7 +4,7 @@
   { :Driver => "Any points on your liscence? Then don't apply for this role. You've got to transport the team around town. Shy about handing out leaflets in a restaurant? Then you can stay in the car and be the getaway driver.",
  		:Mapper => "Are you a great back seat driver? Good at using Google Maps. Then Mapper may be the role for you. You'll use a shared Google map to pick out restaurants that no one has contacted yet, then plan a route and print out some maps.",
     :Printer => "Your job is simple, but in some ways the most important: printing out and cutting up the leaflets. You'll need a printer and some patience with a pair of scissors. OR you can just go to Kinkos! "
-    }.each_pair do |role, desc|
+    }.each_pair.sort.map do |role, desc|
 %>
   <div class="row well well-sm <%= 'role-filled' if @team.role(role.to_s.downcase.to_sym) %>">
     <h3><%= role.to_s %></h3>
