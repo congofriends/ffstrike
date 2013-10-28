@@ -6,7 +6,15 @@
         <tr>
           <th>Team role</th>
           <th>Name</th>
-          <th>Email</th>
+          <th> Email 
+              <textarea style="display:none" rows="6" id="team_emails"><%= @team.coordinator.user.email %> <% @team.approved_applications.each do |r| %>
+                        <%= r.user.email %> 
+                        <% end %>
+              </textarea>
+              <button id="copy_invite_text" data-clipboard-target="team_emails">
+              Copy emails to clipboard
+              </button>
+              <a href='mailto:<%= @team.coordinator.user.email %>,<% @team.approved_applications.each do |r| %><%= r.user.email %>,<% end %>'>Mail All</a></th>
           <th>Dashboard</th>
           <% if @team.coordinator.user_id == current_user.id %>
               <th>Remove</th>
@@ -18,7 +26,7 @@
       <tr>
         <td>Coordinator</td>
         <td><%= @team.coordinator.user.name %> (You!)  </td>
-        <td><%= @team.coordinator.user.email%></td>
+        <td><%= mail_to @team.coordinator.user.email %> </td>
         <td><%= @team.completed_tasks(@team.coordinator)  %> of <%=@team.tasks.count%> tasks done</td>
         <% if @team.coordinator.user_id == current_user.id %>
             <td></td>
@@ -41,7 +49,7 @@
       <tr>
         <td><%= r.role.capitalize %></td>
         <td><%= r.user.name %></td>
-        <td><%= r.user.email %></td>
+        <td><%= mail_to r.user.email %></td>
         <td>
           <%= link_to "#{@team.completed_tasks(r)} of #{r.tasks.count} tasks done",
               team_path(params[:id], {role: r.role}) %>
