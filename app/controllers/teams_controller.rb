@@ -140,9 +140,13 @@ class TeamsController < ApplicationController
   def create
     team = Team.new(params[:team].to_hash)
     team.coordinator.user = current_user
-    team.save
-
-    redirect_to invite_team_url(:id => team.id)
+    if team.save
+      redirect_to invite_team_url(:id => team.id)
+    else
+      flash.now[:danger] = team.errors.messages.values.flatten.first
+      @team = Team.new :coordinator => Coordinator.new
+      render "new" 
+    end
   end
 
   def invite

@@ -22,7 +22,7 @@ You're starting a new team that will leaflet restaurants around your town. You'l
 
   <%= form_for @team do |f| %>
     <p>
-      <%= f.label :name, "Have an idea for a team name? (optional - and yes, you can edit it later)" %><br />
+      <%= f.label :name, "What's your team name?" %><span class="field-required">*</span><br />
       <%= f.text_field :name, :class => 'form-control' %>
     </p>
 

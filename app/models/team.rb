@@ -27,6 +27,8 @@ class Team
 
   delegate :tasks, to: :coordinator
 
+  validates_presence_of :name, :message => "Team name is required.", :on => :create
+
   def approved_application_exists? user_id
     self.role_applications.each do |application|
       if application.user_id == user_id 
