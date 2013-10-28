@@ -13,6 +13,10 @@ class HomeController < ApplicationController
     end
   end
 
+  def start_forced
+    render 'start'
+  end
+
   def faq
   end
 

@@ -11,6 +11,7 @@ Ffstrike::Application.routes.draw do
   # Landing/Home page
   root 'home#start'
   get 'home/start' => 'home#start'
+  get 'home/start_forced' => 'home#start_forced', :as => 'start'
   get 'home/faq' => 'home#faq', :as => 'faq'
   get 'home/about_us' => 'home#about_us', :as => 'about_us'
 
