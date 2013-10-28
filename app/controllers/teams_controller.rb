@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :create_team]
+  before_filter :authenticate_user!, :except => [:index, :create_team_info, :join_team_info]
 
   def index
     unless params[:zip] and params[:distance]
@@ -27,7 +27,10 @@ class TeamsController < ApplicationController
       end
   end
 
-  def create_team
+  def create_team_info
+  end
+
+  def join_team_info
   end
 
   def apply
