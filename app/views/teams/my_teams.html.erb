@@ -5,6 +5,7 @@
     <thead>
       <tr>
         <th>Team name</th>
+        <th>Location</th>
         <th>Coordinator's name</th>
         <th>Coordinator's email</th>
       </tr>
@@ -14,6 +15,7 @@
     <tr>
       <td><a href=<%= team.id %>><%= team.name %></a></td>
       <td><strong><%= team.city %></strong> - <%= team.zip %></td>
+      <td><%= team.coordinator.user.name %></td>
       <td><%= team.coordinator.user.email %></td>
     </tr>
     <% end %>

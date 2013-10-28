@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index]
+  before_filter :authenticate_user!, :except => [:index, :create_team_info]
 
   def index
     unless params[:zip] and params[:distance]
@@ -25,6 +25,9 @@ class TeamsController < ApplicationController
         end
       render "role_dashboard"
       end
+  end
+
+  def create_team_info
   end
 
   def apply
@@ -140,9 +143,13 @@ class TeamsController < ApplicationController
   def create
     team = Team.new(params[:team].to_hash)
     team.coordinator.user = current_user
-    team.save
-
-    redirect_to invite_team_url(:id => team.id)
+    if team.save
+      redirect_to invite_team_url(:id => team.id)
+    else
+      flash.now[:danger] = team.errors.messages.values.flatten.first
+      @team = Team.new :coordinator => Coordinator.new
+      render "new" 
+    end
   end
 
   def invite
