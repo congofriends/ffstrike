@@ -198,4 +198,7 @@ h3 {
 	user-select: none;
 }
 
-
+.btn-facebook.btn.btn-primary{
+	background-color: #3b5998;
+  border-color: #3b5998;	
+}
