@@ -12,11 +12,5 @@ $(function() {
     var tasksLeftSpan = $(this).closest('.task-list').find('#tasks-to-do');
     var currentCount = parseInt(tasksLeftSpan.text());
     tasksLeftSpan.text(currentCount - (checked ? 1 : -1));
-		
-		if checked {
-			document.getElementById("task").style.setProperty("text-decoration", "line-through");
-		} else {
-			document.getElementById("task").style.setProperty("text-decoration", "none");
-		}
-  });
+	  });
 });
