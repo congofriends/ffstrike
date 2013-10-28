@@ -15,7 +15,8 @@ Ffstrike::Application.routes.draw do
   get 'home/about_us' => 'home#about_us', :as => 'about_us'
 
   # Teams
-  get 'teams/create_team_info' => 'teams#create_team', :as => 'create_team_info'
+  get 'teams/create_team_info' => 'teams#create_team_info', :as => 'create_team_info'
+  get 'teams/join_team_info' => 'teams#join_team_info', :as => 'join_team_info'
   get 'teams/my_teams' => 'teams#my_teams', :as => 'my_teams'
   resources :teams
   get 'teams/:id/invite' => 'teams#invite', :as => 'invite_team'
