@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index]
+  before_filter :authenticate_user!, :except => [:index, :create_team_info]
 
   def index
     unless params[:zip] and params[:distance]
@@ -25,6 +25,9 @@ class TeamsController < ApplicationController
         end
       render "role_dashboard"
       end
+  end
+
+  def create_team_info
   end
 
   def apply
