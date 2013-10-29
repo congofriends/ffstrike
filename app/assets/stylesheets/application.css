@@ -138,6 +138,20 @@ h3 {
   color: #ff6319;
 }
 
+.thumbnail-teams {
+  width: 250px;
+}
+
+.txt-area-team-details {
+  resize: none;
+}
+
+.btn-information {
+  background-color: #39b3d7;
+  border-color: #269abc;
+  color: #ffffff;
+}
+
 .xthin-row {
 	margin-left: 400px;
 	margin-right: 400px;
@@ -201,4 +215,8 @@ h3 {
 .btn-facebook.btn.btn-primary{
 	background-color: #3b5998;
   border-color: #3b5998;	
+.nav-teams {
+  margin: 5px 5px;
+  width: 200px;
 }
+
