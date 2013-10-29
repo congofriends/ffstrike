@@ -57,6 +57,11 @@ class TeamsController < ApplicationController
       end
   end
 
+  def team_details
+    @teams = Team.where(:"coordinator.user_id" => current_user.id)
+    # @team = Team.find(params[:id])
+  end
+
   def facebook_friends
     oauth_access_token = User.authentication_token
     @graph = Koala::Facebook::API.new(oauth_access_token)
@@ -143,6 +148,10 @@ class TeamsController < ApplicationController
     @team = Team.new :coordinator => Coordinator.new
   end
 
+  def edit
+    @team = Team.find(params[:id])
+  end
+
   def create
     team = Team.new(params[:team].to_hash)
     team.coordinator.user = current_user
@@ -166,9 +175,21 @@ class TeamsController < ApplicationController
   def update
     puts params.inspect
     @team = Team.find(params[:id])
-    @team.update_attributes!(:map => params[:team][:map].to_sym)
+    @team.update_attributes(team_params)
+    # @team.update_attributes!(:map => params[:team][:map].to_sym)
 
     @role = @team.role_applications.where(:user => current_user).first
-    render "role_dashboard" 
+    @teams =  Team.where(:"coordinator.user_id" => current_user.id) 
+    flash.now[:notice] = "Team information has been updated"
+    render 'team_details'
   end
+
+  def team_tasks
+    @team = Team.find(params[:id])
+  end
+
+  private
+    def team_params
+      params.require(:team).permit(:name, :city, :zip, :map, :coordinator => [:where, :why], :coordinator_attributes => [:tasks_attributes => [:id, :description] ])
+    end
 end

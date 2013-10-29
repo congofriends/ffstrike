@@ -19,6 +19,7 @@ Ffstrike::Application.routes.draw do
   get 'teams/create_team_info' => 'teams#create_team_info', :as => 'create_team_info'
   get 'teams/join_team_info' => 'teams#join_team_info', :as => 'join_team_info'
   get 'teams/my_teams' => 'teams#my_teams', :as => 'my_teams'
+  get 'teams/team_details' => 'teams#team_details', :as => 'team_details' 
   resources :teams
   get 'teams/:id/invite' => 'teams#invite', :as => 'invite_team'
   get 'teams/:id/join' => 'teams#join', :as => 'join_team'
@@ -26,7 +27,7 @@ Ffstrike::Application.routes.draw do
   post 'teams/find' => 'teams#index', :as => 'find_teams'
   get 'teams/:id/reassign/:role_application_id' => 'teams#reassign', :as => 'reassign'
   delete 'teams/:id/disband' => 'teams#disband', :as => 'disband_team'
-  
+  get 'teams/:id/team_tasks' => 'teams#team_tasks', :as => 'team_tasks' 
 
   # Roles
   post 'teams/:id/role_application' => 'teams#create_role_application', :as => 'new_role_application'

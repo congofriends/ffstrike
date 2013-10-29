@@ -1,0 +1,15 @@
+<h2> Coordinator tasks</h2>
+  <%= form_for @team do |team_form| %>
+      <%= team_form.fields_for :coordinator do |c_form| %>
+        <%= c_form.fields_for :tasks do |g| %>
+          <div class="form-group">
+            <%= g.label "Task" %>
+            <%= g.text_area :description, :class => "form-control team-details" %>
+          </div> 
+        <% end %>
+      <% end %>
+  <%= team_form.submit "Save", :class =>"btn btn-primary" %>
+  <%= link_to "Go back", team_details_path, :class => "btn btn-primary" %>
+  <% end %>
+
+<h2>Mapper tasks</h2>     
