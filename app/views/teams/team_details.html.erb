@@ -1,5 +1,4 @@
 <h1>Team Details</h1>
-<% binding.pry %>
 <h2>You are the member of teams:</h2>
 
 <% @teams = Team.where('role_applications.user_id' => current_user.id) if @teams.size.eql?(0) %>

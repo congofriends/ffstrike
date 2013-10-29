@@ -174,7 +174,6 @@ class TeamsController < ApplicationController
 
   def update
     puts params.inspect
-    binding.pry
     @team = Team.find(params[:id])
     @team.update_attributes(team_params)
     # @team.update_attributes!(:map => params[:team][:map].to_sym)
