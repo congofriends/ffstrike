@@ -159,6 +159,7 @@ class TeamsController < ApplicationController
       redirect_to invite_team_url(:id => team.id)
     else
       flash.now[:danger] = team.errors.messages.values.flatten.first
+      flash.now[:danger] = team.coordinator.errors.messages.values.flatten.first
       @team = Team.new :coordinator => Coordinator.new
       render "new" 
     end

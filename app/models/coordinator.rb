@@ -21,6 +21,9 @@ class Coordinator
   field :where,            :type => String
   field :about_private,    :type => String
   field :phone,            :type => String
+  
+  validates_format_of :phone, :with => /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
+    :on => :create, :allow_blank => true, :message => "You must enter a valid phone number. Valid phone numbers are 10 digits long."
 
   def initialize(args = nil)
     super(args)
