@@ -1,0 +1,14 @@
+<%= link_to "about", about_path %>
+<%= link_to "sign in", sign_in_path %>
+
+<h1>Make A Difference! <br>
+Find a rally. </h1>
+
+<%= form_tag "/rallies" do %>
+  <%= search_field_tag 'zip', value = nil, options = {placeholder: "ZIP"}%>
+  <%= button_tag name="search", type: "button" %>
+<% end %>
+
+
+
+
