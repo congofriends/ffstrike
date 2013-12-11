@@ -1,0 +1,14 @@
+create a movement!
+
+<%= form_for @movement do |form| %>
+  <%= form.label :name %> 
+  <%= form.text_field :name %>
+
+  <%= form.label :category %>
+  <%= form.text_field :category %>
+
+  <%= form.label :story %>
+  <%= form.text_field :story %>
+
+  <%= form.submit %>
+<% end %>
