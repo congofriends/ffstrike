@@ -19,6 +19,6 @@ class MovementsController < ApplicationController
   private
   
   def movement_params
-    params.require(:movement).permit(:name, :category, :story)
+    params.require(:movement).permit(:name, :category, :story, :image)
   end
 end

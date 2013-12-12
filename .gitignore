@@ -23,3 +23,6 @@
 
 # Ignore simplecov files
 coverage/
+
+# Ignore pictures uploaded on localhost
+public/system/movements/images
