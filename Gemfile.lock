@@ -142,7 +142,8 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.0.0)
-  factory_girl_rails
+  factory_girl
+  factory_girl_rails (~> 4.0)
   jbuilder (~> 1.2)
   jquery-rails
   pg (= 0.15.1)

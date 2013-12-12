@@ -1,15 +1,11 @@
 require 'spec_helper'
 
 describe MovementsController do
-  describe "#new" do
-    before(:each) do
-      @movement = FactoryGirl.build(:movement)
-    end
- 
-    it "creates a new movement" do
-      get "/movements/new"
+  describe "GET #new" do
+    it "responds successfully" do
+      get "new"
 
-      expects(assigns[:movement]).to be(@movement) 
+      expect(response).to be_success
     end
   end
 end

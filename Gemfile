@@ -32,10 +32,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 
-group :development do
+group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'factory_girl'
+  gem 'factory_girl_rails', "~> 4.0"
   gem 'pry'
   gem 'pry-rails'
 end
