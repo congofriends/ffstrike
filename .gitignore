@@ -20,3 +20,6 @@
 # Ignore vim swapfiles
 *.swp
 *.swo
+
+# Ignore simplecov files
+coverage/
