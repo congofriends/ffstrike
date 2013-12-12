@@ -1,19 +1,19 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Thoughtworker/Coding/ffstrike/app/controllers/home_controller.rb": [
+      "/Users/Thoughtworker/ffstrike/app/controllers/home_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/Thoughtworker/Coding/ffstrike/app/controllers/application_controller.rb": [
+      "/Users/Thoughtworker/ffstrike/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
         null
       ],
-      "/Users/Thoughtworker/Coding/ffstrike/spec/controllers/movements_controller_spec.rb": [
+      "/Users/Thoughtworker/ffstrike/spec/controllers/movements_controller_spec.rb": [
         1,
         null,
         1,
@@ -58,7 +58,7 @@
         null,
         null
       ],
-      "/Users/Thoughtworker/Coding/ffstrike/app/controllers/movements_controller.rb": [
+      "/Users/Thoughtworker/ffstrike/app/controllers/movements_controller.rb": [
         1,
         1,
         1,
@@ -80,7 +80,7 @@
         null,
         null
       ],
-      "/Users/Thoughtworker/Coding/ffstrike/spec/helpers/movements_helper_spec.rb": [
+      "/Users/Thoughtworker/ffstrike/spec/helpers/movements_helper_spec.rb": [
         1,
         null,
         null,
@@ -96,7 +96,7 @@
         1,
         null
       ],
-      "/Users/Thoughtworker/Coding/ffstrike/spec/models/movement_spec.rb": [
+      "/Users/Thoughtworker/ffstrike/spec/models/movement_spec.rb": [
         1,
         null,
         1,
@@ -110,6 +110,6 @@
         null
       ]
     },
-    "timestamp": 1386874668
+    "timestamp": 1386878871
   }
 }

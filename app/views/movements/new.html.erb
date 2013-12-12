@@ -5,7 +5,7 @@ create a movement!
   <%= form.text_field :name %>
 
   <%= form.label :category %>
-  <%= form.text_field :category %>
+  <%= form.select :category, options_for_select(%w[Politics Animals]) %>
 
   <%= form.label :story %>
   <%= form.text_field :story %>
