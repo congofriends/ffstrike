@@ -1,5 +1,5 @@
 class MovementsController < ApplicationController
   def new
-    @movement = Movement.create
+    @movement = Movement.new
   end
 end
