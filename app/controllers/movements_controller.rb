@@ -2,4 +2,19 @@ class MovementsController < ApplicationController
   def new
     @movement = Movement.new
   end
+
+  def create
+    @movement = Movement.new(movement_params)
+    if @movement.save
+      redirect_to movement_path(@movement)
+    else
+      render :new
+    end
+  end
+
+  private
+  
+  def movement_params
+    params.require(:movement).permit(:name, :category, :story)
+  end
 end
