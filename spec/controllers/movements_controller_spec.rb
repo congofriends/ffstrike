@@ -40,4 +40,21 @@ describe MovementsController do
       end
     end
   end
+
+	describe "GET #show" do
+		before :each do
+			@movement = FactoryGirl.build(:movement)
+			Movement.stub(:find).and_return @movement
+		end
+
+		it "assigns the new movement to @movement" do
+			Movement.should_receive(:find).with(@movement.id.to_s)
+			get :show, id: @movement
+		end
+
+		it "renders the #show view" do
+			get :show, id: @movement
+			expect(response).to render_template :show
+		end
+	end
 end

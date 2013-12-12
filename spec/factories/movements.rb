@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :movement do
+		id '1'
     name 'My Little Pony'
     category 'Ponies'
     story 'Lovely life of a lovely little pony.'

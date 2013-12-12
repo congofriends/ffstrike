@@ -12,6 +12,10 @@ class MovementsController < ApplicationController
     end
   end
 
+	def show
+		@movement = Movement.find(params[:id])		
+	end
+
   private
   
   def movement_params

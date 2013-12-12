@@ -56,6 +56,24 @@
         null,
         null,
         null,
+        null,
+        1,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/Thoughtworker/ffstrike/app/controllers/movements_controller.rb": [
@@ -71,6 +89,10 @@
         null,
         3,
         null,
+        null,
+        null,
+        1,
+        2,
         null,
         null,
         1,
@@ -110,6 +132,6 @@
         null
       ]
     },
-    "timestamp": 1386878871
+    "timestamp": 1386882347
   }
 }
