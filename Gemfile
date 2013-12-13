@@ -38,7 +38,6 @@ gem 'jbuilder', '~> 1.2'
 # Check test coverage across app
 gem 'simplecov', :require => false, :group => :test
 
-
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
@@ -46,6 +45,7 @@ group :test, :development do
   gem 'factory_girl_rails', "~> 4.0"
   gem 'pry'
   gem 'pry-rails'
+  gem 'better_errors'
 end
 
 group :doc do
