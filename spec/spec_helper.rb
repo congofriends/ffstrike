@@ -48,4 +48,5 @@ end
 
 RSpec.configure do |config|
   config.include Paperclip::Shoulda::Matchers
+  config.include Devise::TestHelpers, :type => :controller
 end

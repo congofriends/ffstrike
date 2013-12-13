@@ -1,5 +1,5 @@
 Ffstrike::Application.routes.draw do
-  #resources :rallies
+  devise_for :users
 
   root 'home#index'
 

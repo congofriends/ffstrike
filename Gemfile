@@ -38,6 +38,8 @@ gem 'jbuilder', '~> 1.2'
 # Check test coverage across app
 gem 'simplecov', :require => false, :group => :test
 
+# User authentication system
+gem 'devise'
 
 group :test, :development do
   gem 'rspec'
