@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe MovementsController do
+  before :each do
+    controller.stub(:authenticate_user!).and_return true 
+  end
+
   describe "GET #new" do
     it "responds successfully" do
       get "new"
