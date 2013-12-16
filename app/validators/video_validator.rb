@@ -5,12 +5,9 @@ class VideoValidator < ActiveModel::Validator
     end
   end
 
-  URL_Formats = {
-        regular: /^(https?:\/\/)?(www\.)?youtube.com\/watch\?(.*\&)?v=([^&]+)/,
-        invalid_chars: /[^a-zA-Z0-9\:\/\?\=\&\$\-\_\.\+\!\*\'\(\)\,]/
-        }
+  INVALID_CHARS = /[^a-zA-Z0-9\:\/\?\=\&\$\-\_\.\+\!\*\'\(\)\,]/
 
   def has_invalid_chars?(youtube_url)
-    !URL_Formats[:invalid_chars].match(youtube_url).nil?
+    !INVALID_CHARS.match(youtube_url).nil?
   end
 end
