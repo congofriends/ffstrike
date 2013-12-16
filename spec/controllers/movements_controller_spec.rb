@@ -75,6 +75,10 @@ describe MovementsController do
       @movement = FactoryGirl.create(:movement)
       put :update, id: @movement, movement: FactoryGirl.attributes_for(:movement, video: "https://www.youtube.com/watch?v=_ZSbC09qgLI") 
     end
+    
+    it "loads the requested movement" do
+      expect(assigns(:movement)).to eq(@movement)
+    end
 
     it "updates the movement" do
       @movement.reload
