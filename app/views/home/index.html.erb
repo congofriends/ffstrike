@@ -1,5 +1,6 @@
 <%= link_to "about", about_path %>
-<%= link_to "sign in", sign_in_path %>
+<%= link_to "sign in devise", new_session_path(:user) %>
+<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
 
 <h1>Make A Difference! <br>
 Find a rally. </h1>
