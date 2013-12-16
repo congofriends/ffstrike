@@ -8,7 +8,9 @@ Ffstrike::Application.routes.draw do
   get 'sign_in' => 'home#sign_in', as: 'sign_in'
 
   #movements
-  resources :movements
+  resources :movements do
+    resources :rallies
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -3,6 +3,7 @@ class CreateRallies < ActiveRecord::Migration
     create_table :rallies do |t|
       t.string :name
       t.text :story
+      t.string :location
 
       t.timestamps
     end
