@@ -1,5 +1,6 @@
 class MovementsController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :load_movement, :except => [:new, :create]
   include YoutubeParserHelper
 
   def new
@@ -15,9 +16,11 @@ class MovementsController < ApplicationController
     end
   end
 
-	def show
-		@movement = Movement.find(params[:id])		
-	end
+	def show; end
+
+  def update
+    redirect_to movement_path(@movement) 
+  end
 
   private
   
@@ -26,4 +29,7 @@ class MovementsController < ApplicationController
     params.require(:movement).permit(:name, :category, :story, :image, :video)
   end
 
+  def load_movement
+		@movement = Movement.find(params[:id])		
+  end
 end

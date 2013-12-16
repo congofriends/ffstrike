@@ -1,6 +1,16 @@
 <div>
 	Coordinator Tab 
 
+  Your Movement Information
+  	<%= form_for @movement do |form| %>
+  	  <%= form.label :name %>
+  	  <%= form.text_field :name %>
+  	  <%= form.label :story %>
+  	  <%= form.text_area :story %>
+  	  <%= form.label :category %>
+  	  <%= form.text_field :category %>
+    <% end %>
+
 	<div>
 		Share
     <a href="https://www.facebook.com/sharer/sharer.php?s=100&p[title]=#"
@@ -24,18 +34,15 @@
     Media
 			
   	<%= form_for @movement do |form| %>
-  	  <%= form.label :name %>
-  	  <%= form.text_field :name %>
-  	  <%= form.label :story %>
-  	  <%= form.text_area :story %>
-  	  <%= form.label :category %>
-  	  <%= form.text_field :category %>
-  	
   	  <%= form.label :image %>
   	  <%= image_tag @movement.image.url, size: "490x275" %>
-  	
+	    <%= form.file_field :image %>
+
   	  <%= form.label :video %>
       <iframe width="400" height="272" src="http://www.youtube.com/embed/<%= @movement.video %>" frameborder="0" allowfullscreen></iframe>
+    	<%= form.text_field :video %>
+
+      <%= form.submit %>
   	<% end %>
   </div>
 
