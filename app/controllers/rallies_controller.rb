@@ -1,2 +1,0 @@
-class RalliesController < ApplicationController
-end
