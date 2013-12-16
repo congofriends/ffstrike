@@ -48,6 +48,7 @@ group :test, :development do
   gem 'factory_girl_rails', "~> 4.0"
   gem 'pry'
   gem 'pry-rails'
+  gem 'better_errors'
 end
 
 group :doc do
