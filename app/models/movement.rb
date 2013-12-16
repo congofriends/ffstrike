@@ -1,5 +1,6 @@
 class Movement < ActiveRecord::Base
-  include YoutubeParserHelper
+
+  validates_with VideoValidator, fields: [:video]
 
   validates_presence_of :name, on: :create 
   has_attached_file :image, :default_url => 'cat.png'

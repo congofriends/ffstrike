@@ -43,6 +43,18 @@ describe MovementsController do
         expect(response).to render_template :new 
       end
     end
+
+    context "with invalid video" do
+      it "does not save the movement" do
+        expect{ post :create, movement: FactoryGirl.attributes_for(:movement_with_invalid_video) }.to_not change(Movement, :count) 
+      end
+
+      it "re-renders the new method" do
+        post :create, movement: FactoryGirl.attributes_for(:movement_with_invalid_video) 
+
+        expect(response).to render_template :new 
+      end
+    end
   end
 
 	describe "GET #show" do
