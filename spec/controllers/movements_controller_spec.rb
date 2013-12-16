@@ -73,14 +73,15 @@ describe MovementsController do
   describe "PUT #update" do
     before :each do
       @movement = FactoryGirl.create(:movement)
+      put :update, id: @movement, movement: FactoryGirl.attributes_for(:movement, video: "https://www.youtube.com/watch?v=_ZSbC09qgLI") 
     end
 
     it "updates the movement" do
-      expect{ put :update, id: @movement, movement: FactoryGirl.attributes_for(:movement, video: "http://changedurl.com") }.to change(@movement, :video) 
+      @movement.reload
+      expect(@movement.video).to eq("_ZSbC09qgLI")
     end
 
     it "redirects to show" do
-      put :update,  id: @movement 
       expect(response).to redirect_to movement_path(@movement)
     end
   end

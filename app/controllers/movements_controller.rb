@@ -19,6 +19,7 @@ class MovementsController < ApplicationController
 	def show; end
 
   def update
+    @movement.update_attributes(movement_params)
     redirect_to movement_path(@movement) 
   end
 
