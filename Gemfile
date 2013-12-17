@@ -35,6 +35,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 # Check test coverage across app
 gem 'simplecov', :require => false, :group => :test
 
