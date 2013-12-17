@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable 
 
-
   def self.find_for_facebook_oauth(auth)
     User.find_by(:provider => auth.provider, :uid => auth.uid)
   end
