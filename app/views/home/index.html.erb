@@ -1,10 +1,12 @@
 <div class="hero-unit text-center">
-<h1>Make A Difference! </h1>
-<p>Find a rally. </p>
+<h1>Make A Difference</h1>
+<h2>Find a rally near you.</h2>
 
-<%= form_tag "/rallies" do %>
-  <%= search_field_tag 'zip', value = nil, options = {placeholder: "ZIP"}%>
-  <%= button_tag name="search", type: "button" %>
-<% end %>
+<div class='form-horizontal'>
+  <%= form_tag "/rallies" do %>
+    <%= search_field_tag 'zip', value = nil, options = {placeholder: "ZIP"}%>
+    <%= button_tag name="Search" %>
+  <% end %>
+</div>
 
 <%= link_to "Feeling inspired? Create A Movement.", new_movement_path %>
