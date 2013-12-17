@@ -5,7 +5,6 @@ Ffstrike::Application.routes.draw do
 
   #home
   get 'about' => 'home#about',  as: 'about'
-  get 'sign_in' => 'home#sign_in', as: 'sign_in'
 
   #movements
   resources :movements
