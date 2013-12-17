@@ -1,13 +1,10 @@
-<%= link_to "about", about_path %>
-<%= link_to "sign in devise", new_session_path(:user) %>
-<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-
-<h1>Make A Difference! <br>
-Find a rally. </h1>
+<div class="hero-unit text-center">
+<h1>Make A Difference! </h1>
+<p>Find a rally. </p>
 
 <%= form_tag "/rallies" do %>
   <%= search_field_tag 'zip', value = nil, options = {placeholder: "ZIP"}%>
   <%= button_tag name="search", type: "button" %>
 <% end %>
 
-<%= link_to "create a movement!", new_movement_path %>
+<%= link_to "Feeling inspired? Create A Movement.", new_movement_path %>
