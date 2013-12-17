@@ -1,10 +1,13 @@
 module YoutubeParserHelper
 
-  REGULAR = /^(https?:\/\/)?(www\.)?youtube.com\/watch\?(.*\&)?v=([^&]+)/
+  REGULAR_URL = /^(https?:\/\/)?(www\.)?youtube.com\/watch\?(.*\&)?v=([^&]+)/
+  EMBED_URL = /^(https?:\/\/)?(www\.)?youtube.com\/embed\/([^?]+)/
 
   def extract_video_id(youtube_url)
-    if match = REGULAR.match(youtube_url)
+    if match = REGULAR_URL.match(youtube_url)
       return match[4]
+    elsif match = EMBED_URL.match(youtube_url)
+      return match[3]
     end
     nil
   end
