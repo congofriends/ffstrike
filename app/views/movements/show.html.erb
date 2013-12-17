@@ -39,7 +39,7 @@
 	    <%= form.file_field :image %>
 
   	  <%= form.label :video %>
-      <iframe width="400" height="272" src="http://www.youtube.com/embed/<%= @movement.video %>" frameborder="0" allowfullscreen></iframe>
+      <%= youtube_embed_url_for_(@movement.video) %>
     	<%= form.text_field :video %>
 
       <%= form.submit %>
