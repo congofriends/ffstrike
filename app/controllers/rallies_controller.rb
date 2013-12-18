@@ -16,6 +16,11 @@ class RalliesController < ApplicationController
     end
   end
   
+  def show
+    @rally = Rally.find(params[:id])
+    @tasks = @rally.tasks
+  end
+
   private
 
   def rally_params
