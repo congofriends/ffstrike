@@ -1,13 +1,15 @@
 class RalliesController < ApplicationController
   def new
     @rally = Rally.new      
+    @movement = Movement.find params[:movement_id]
   end
 
   def create
     @rally = Rally.new(rally_params)
+    @movement = Movement.find params[:movement_id]
     if @rally.save 
       flash[:notice] = "Rally created!"
-      redirect_to movement_path(Movement.find_by_id(params[:movement_id]))
+      redirect_to movement_path(@movement)
     else
       flash[:notice] = "Rally was not created."
       render :new
