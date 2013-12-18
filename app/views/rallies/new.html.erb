@@ -1,0 +1,22 @@
+Create a rally!
+
+<%= form_for @movement do |form| %>
+  <%= form.label :name %> 
+  <%= form.text_field :name %>
+
+  <%= form.label :category %>
+  <%= form.select :category, options_for_select(%w[Politics Animals]) %>
+
+  <%= form.label :story %>
+  <%= form.text_field :story %>
+
+  <%= form.label :image %>
+	<%= form.file_field :image %>
+	
+  <%= form.label :video, "Paste embeded youtube link" %>
+	<%= form.text_field :video %>
+
+  <%= form.submit %>
+<% end %>
+
+
