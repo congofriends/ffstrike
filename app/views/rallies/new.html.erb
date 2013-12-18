@@ -14,7 +14,7 @@ Create a rally!
   <%= form.text_field :zip %>
 
   <%= form.label :coordinator %>
-  <%= form.select :coordinator, options_for_select([current_user.email]) %>
+  <%= form.select :coordinator_id, [[current_user.email, current_user.id]] %>
 
   <%= form.label :notes %>
 	<%= form.text_field :notes %>
