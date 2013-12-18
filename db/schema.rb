@@ -31,7 +31,11 @@ ActiveRecord::Schema.define(version: 20131213180925) do
 
   create_table "rallies", force: true do |t|
     t.string   "name"
-    t.text     "story"
+    t.text     "notes"
+    t.string   "address"
+    t.string   "city"
+    t.string   "zip"
+    t.integer  "coordinator_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
