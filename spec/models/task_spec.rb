@@ -16,6 +16,10 @@ describe Task do
   end
 
   it "is not valid with a description longer than 250 symbols" do
-    expect(FactoryGirl.build(:task_with_description_longer_than_250)).to_not be_valid
+    expect(FactoryGirl.build(:task_with_description_longer_than_250_characters)).to_not be_valid
+  end
+
+  it "is valid with a description 250 symbols" do
+    expect(FactoryGirl.build(:task_with_description_250_characters)).to be_valid
   end
 end
