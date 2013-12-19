@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Movement do
+  let(:movement)  { FactoryGirl.build(:movement) }
+
   it "has a working factory" do
     expect(FactoryGirl.build(:movement)).to be_valid
   end
@@ -16,4 +18,5 @@ describe Movement do
  	it { should validate_attachment_size(:image).
 			                 less_than(2.megabytes) }	 
 
+  it { should respond_to(:tasks) }
 end

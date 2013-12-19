@@ -1,16 +1,16 @@
 require 'spec_helper'
 
 describe Task do
-  let(:rally) { FactoryGirl.build(:rally) }
-  before { @task = rally.tasks.build(description: "Lorem ipsum") }
+  let(:movement) { FactoryGirl.build(:movement) }
+  before { @task = movement.tasks.build(description: "Lorem ipsum is a good task name") }
 
   subject { @task }
   it {should respond_to(:description)}
-  it {should respond_to(:rally_id)}
-  it {should respond_to(:rally)}
+  it {should respond_to(:movement_id)}
+  it {should respond_to(:movement)}
 
   #TODO: find out why this test is failing
-  # its(:rally) {should eq rally}
+  # its(:movement) {should eq movement}
 
   it "is not valid without a description" do
     expect(FactoryGirl.build(:task_without_description)).to_not be_valid
@@ -25,7 +25,7 @@ describe Task do
   end
 
   describe "when rally_id is not present" do
-    before { @task.rally_id = nil }
+    before { @task.movement_id = nil }
     it {should_not be_valid}
   end
 end

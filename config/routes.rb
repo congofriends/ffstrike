@@ -9,6 +9,7 @@ Ffstrike::Application.routes.draw do
   #movements
   resources :movements do
     resources :rallies
+    resources :tasks
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,6 @@
+<h4>Add a new task to a movement:</h4>
+<% @task = @movement.tasks.build%>
+<%= form_for ([@movement, @task]) do |f| %>
+  <%= f.text_area :description, placeholder: "Enter new task description here..." %>
+  <%= f.submit "Create new task" %>
+<% end %>

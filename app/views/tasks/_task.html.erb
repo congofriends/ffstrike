@@ -1,3 +1,6 @@
 <li>
   <%= task.description %>
+  <%= link_to "Delete", movement_task_path(@movement, task.id), method: :delete,
+    data: { confirm: "You sure about deleting task '#{task.description}'?"}  %>
+  <%= link_to "Update", edit_movement_task_path(@movement, task) %>
 </li>

@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  belongs_to :rally
+  belongs_to :movement
+  validates :movement_id, presence: true
   validates :description, length: { maximum: 250, minimum: 1 }
-  validates :rally_id, presence: true
 end
