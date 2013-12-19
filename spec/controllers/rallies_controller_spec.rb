@@ -48,7 +48,7 @@ describe RalliesController do
 
       it "notifies user that rally had errors" do
         post :create, movement_id: movement, rally: FactoryGirl.attributes_for(:invalid_rally)
-        flash[:notice].should == "Rally was not created."
+        flash[:notice].should == "Coordinator can't be blank Address can't be blank"
       end
     end 
   end

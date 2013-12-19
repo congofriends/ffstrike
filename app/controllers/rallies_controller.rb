@@ -11,7 +11,7 @@ class RalliesController < ApplicationController
       flash[:notice] = "Rally created!"
       redirect_to movement_path(@movement)
     else
-      flash[:notice] = @rally.errors.full_messages.flatten.join
+      flash[:notice] = @rally.errors.full_messages.flatten.join(' ')
       render :new
     end
   end
