@@ -1,6 +1,12 @@
 class Users::InvitationsController < Devise::InvitationsController
   def update
+    binding.pry
     self.resource = resource_class.accept_invitation!(update_resource_params)
+
+    inviter = User.find(resource.invited_by_id)
+    movement = Movement.find(inviter.movement_id)
+    resource.update_attributes(movement_id: movement.id)
+    
     if resource.errors.empty?
       flash_message = resource.active_for_authentication? ? :updated : :updated_not_active                                                                                        
       set_flash_message :notice, flash_message
