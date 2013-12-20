@@ -2,7 +2,7 @@
 <h1>Make A Difference</h1>
 <h2>Find a rally near you.</h2>
 
-<div class='form-horizontal'>
+<div class='form-search'>
   <%= form_tag "/rallies" do %>
     <%= search_field_tag 'zip', value = nil, options = {placeholder: "ZIP"}%>
     <%= button_tag name="Search" %>

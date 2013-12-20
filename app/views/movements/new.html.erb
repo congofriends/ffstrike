@@ -1,20 +1,33 @@
-create a movement!
+<div class='container-fluid'>
+  <div class='span4'>
+    <div class='well'>
+      <div class='form-horizontal'>
+        <%= form_for @movement do |form| %>
+          <%= form.label :name %> 
+          <%= form.text_field :name %>
 
-<%= form_for @movement do |form| %>
-  <%= form.label :name %> 
-  <%= form.text_field :name %>
+          <%= form.label :category %>
+          <%= form.select :category, options_for_select(%w[Politics Animals]) %>
 
-  <%= form.label :category %>
-  <%= form.select :category, options_for_select(%w[Politics Animals]) %>
+          <%= form.label :story %>
+          <%= form.text_field :story %>
 
-  <%= form.label :story %>
-  <%= form.text_field :story %>
+          <%= form.label :image %>
+          <%= form.file_field :image %>
+          
+          <%= form.label :video, "Paste embeded youtube link" %>
+          <%= form.text_field :video %>
 
-  <%= form.label :image %>
-	<%= form.file_field :image %>
-	
-  <%= form.label :video, "Paste embeded youtube link" %>
-	<%= form.text_field :video %>
+          <%= form.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-  <%= form.submit %>
-<% end %>
+  <div class='span8'>
+    <div class='well'>
+      <h1>It's time to create a movement.</h1>
+      <h3>Once you enter the relevant details, you'll be able to create rallies for your supporters to attend. Your rallies will be searchable via the home page.</h3>
+    </div>
+  </div>
+</div>

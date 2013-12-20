@@ -10,10 +10,10 @@ class MovementsController < ApplicationController
   def create
     @movement = Movement.new(movement_params)
     if @movement.save
-      flash[:notice] = "your movement was saved"
+      flash[:notice] = "Your movement was saved"
       redirect_to movement_path(@movement)
     else
-      flash[:notice] = "there were errors"
+      flash[:notice] = "There was an problem when saving your movement. Please try again."
       render :new 
     end
   end
