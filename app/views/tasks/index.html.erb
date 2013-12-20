@@ -1,0 +1,6 @@
+<% if @movement.tasks.any? %>
+  <h3>Movements tasks <%= @movement.tasks.count %></h3>
+  <%= render @tasks %>
+<% end %>
+<%= render 'tasks/form' %>
+

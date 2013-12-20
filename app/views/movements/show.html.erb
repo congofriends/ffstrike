@@ -21,7 +21,7 @@
         <div>
           Share
           <a href="https://www.facebook.com/sharer/sharer.php?s=100&p[title]=#"
-            target="_blank"> <%= image_tag "facebook.png", :class=> "thumbnail",  size: "100x100" %>
+      target="_blank"> <%= image_tag "facebook.png", :class=> "thumbnail",  size: "100x100" %>
           </a>
          
           <a href="http://twitter.com/share?text=#">
@@ -31,6 +31,7 @@
           <a href="mailto:#">
             <%= image_tag "envelope.png", :class=> "thumbnail", size: "100x100" %>
           </a>
+          <%= link_to("Invite More Coordinators", new_user_invitation_path) %>
         </div>
 
         <div>
@@ -44,11 +45,9 @@
             <%= form.label :image %>
             <%= image_tag @movement.image.url, size: "490x275" %>
             <%= form.file_field :image %>
-
             <%= form.label :video %>
-            <iframe width="400" height="272" src="http://www.youtube.com/embed/<%= @movement.video %>" frameborder="0" allowfullscreen></iframe>
+            <%= youtube_embed_url_for_(@movement.video) %>
             <%= form.text_field :video %>
-
             <%= form.submit %>
           <% end %>
         </div>
@@ -56,12 +55,14 @@
     </div>
     <div class='tab-pane' id='rallies'>
       <div class='well'>
-        Rallies will go here.
+        <h1>Rallies</h1>
+        <%= link_to "Create a new Rally", new_movement_rally_path(@movement) %>
       </div>
     </div>
     <div class='tab-pane' id='tasks'>
       <div class='well'>
-        Tasks will go here.
+        <h1>Tasks</h1>
+        <%= link_to "Movement tasks configuration", movement_tasks_path(@movement) %>
       </div>
     </div>
     <div class='tab-pane' id='successes'>

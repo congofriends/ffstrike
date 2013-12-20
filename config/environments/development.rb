@@ -1,4 +1,8 @@
 Ffstrike::Application.configure do
+  ENV['FACEBOOK_ID'] = '426624144117081'
+  ENV['FACEBOOK_APP_SECRET'] = 'da81b9d419f0dcce05cc2d370411364f'  
+  OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

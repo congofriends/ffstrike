@@ -1,15 +1,15 @@
 Ffstrike::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "users", :invitations => 'users/invitations'  }
 
   root 'home#index'
 
   #home
   get 'about' => 'home#about',  as: 'about'
-  get 'sign_in' => 'home#sign_in', as: 'sign_in'
 
   #movements
   resources :movements do
     resources :rallies
+    resources :tasks
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
