@@ -1,6 +1,5 @@
 class Users::InvitationsController < Devise::InvitationsController
   def update
-    binding.pry
     self.resource = resource_class.accept_invitation!(update_resource_params)
 
     inviter = User.find(resource.invited_by_id)
