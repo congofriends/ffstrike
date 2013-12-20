@@ -14,9 +14,7 @@ class MovementsController < ApplicationController
       unless current_user.nil?
         current_user.add_movement(@movement)
       end
-
-
-      flash[:notice] = "Your movement was saved"
+      flash[:notice] = "Congratulations! Your movement was created. Try starting some rallies."
       redirect_to movement_path(@movement)
     else
       flash[:notice] = "There was an problem when saving your movement. Please try again."
