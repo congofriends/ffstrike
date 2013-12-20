@@ -1,58 +1,73 @@
-<div class='well'>
-  Your Movement Information
-  	<%= form_for @movement do |form| %>
-  	  <%= form.label :name %>
-  	  <%= form.text_field :name %>
-  	  <%= form.label :story %>
-  	  <%= form.text_area :story %>
-  	  <%= form.label :category %>
-  	  <%= form.text_field :category %>
-    <% end %>
+<div class='tabbable'>
+  <ul class="nav nav-tabs">
+    <li class='active'><a href='#movement' data-toggle='tab'>Movement</a></li>
+    <li><a href='#rallies' data-toggle='tab'>Rallies</a></li>
+    <li><a href='#tasks' data-toggle='tab'>Tasks</a></li>
+    <li><a href='#successes' data-toggle='tab'>Successes</a></li>
+  </ul>
+  <div class='tab-content'>
+    <div class='tab-pane active' id='movement'>
+      <div class='well'>
+        Your Movement Information
+          <%= form_for @movement do |form| %>
+            <%= form.label :name %>
+            <%= form.text_field :name %>
+            <%= form.label :story %>
+            <%= form.text_area :story %>
+            <%= form.label :category %>
+            <%= form.text_field :category %>
+          <% end %>
 
-	<div>
-		Share
-    <a href="https://www.facebook.com/sharer/sharer.php?s=100&p[title]=#"
-      target="_blank"> <%= image_tag "facebook.png", :class=> "thumbnail",  size: "100x100" %>
-    </a>
-   
-    <a href="http://twitter.com/share?text=#">
-      <%= image_tag "twitter.png", :class=> "thumbnail", size: "100x100" %>
-    </a>
+        <div>
+          Share
+          <a href="https://www.facebook.com/sharer/sharer.php?s=100&p[title]=#"
+            target="_blank"> <%= image_tag "facebook.png", :class=> "thumbnail",  size: "100x100" %>
+          </a>
+         
+          <a href="http://twitter.com/share?text=#">
+            <%= image_tag "twitter.png", :class=> "thumbnail", size: "100x100" %>
+          </a>
 
-    <a href="mailto:#">
-      <%= image_tag "envelope.png", :class=> "thumbnail", size: "100x100" %>
-    </a>
-	</div>
+          <a href="mailto:#">
+            <%= image_tag "envelope.png", :class=> "thumbnail", size: "100x100" %>
+          </a>
+        </div>
 
-  <div>
-    Rallies
+        <div>
+          Rallies
+        </div>
+
+        <div>
+          Media
+            
+          <%= form_for @movement do |form| %>
+            <%= form.label :image %>
+            <%= image_tag @movement.image.url, size: "490x275" %>
+            <%= form.file_field :image %>
+
+            <%= form.label :video %>
+            <iframe width="400" height="272" src="http://www.youtube.com/embed/<%= @movement.video %>" frameborder="0" allowfullscreen></iframe>
+            <%= form.text_field :video %>
+
+            <%= form.submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class='tab-pane' id='rallies'>
+      <div class='well'>
+        Rallies will go here.
+      </div>
+    </div>
+    <div class='tab-pane' id='tasks'>
+      <div class='well'>
+        Tasks will go here.
+      </div>
+    </div>
+    <div class='tab-pane' id='successes'>
+      <div class='well'>
+        Successes will go here.
+      </div>
+    </div>
   </div>
-
-  <div>
-    Media
-			
-  	<%= form_for @movement do |form| %>
-  	  <%= form.label :image %>
-  	  <%= image_tag @movement.image.url, size: "490x275" %>
-	    <%= form.file_field :image %>
-
-  	  <%= form.label :video %>
-      <iframe width="400" height="272" src="http://www.youtube.com/embed/<%= @movement.video %>" frameborder="0" allowfullscreen></iframe>
-    	<%= form.text_field :video %>
-
-      <%= form.submit %>
-  	<% end %>
-  </div>
-
-</div>
-
-<div>
-  Rallies Tab
-</div>
-
-<div>
-  Tasks Tab
-</div>
-<div>
-  Success Tab
 </div>
