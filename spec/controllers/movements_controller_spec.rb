@@ -30,6 +30,13 @@ describe MovementsController do
 
         expect(response).to redirect_to movement_path(Movement.last)
       end
+
+      it "assigns current_user.movement_id to its id" do
+        user = FactoryGirl.create(:user, email: "test@example.com")
+        sign_in :user, user
+        post :create, movement: FactoryGirl.attributes_for(:movement, name: "test")
+        expect(User.last.movement_id).to eq(Movement.last.id) 
+      end
     end
 
     context "without valid name" do
@@ -55,6 +62,7 @@ describe MovementsController do
         expect(response).to render_template :new 
       end
     end
+
   end
 
 	describe "GET #show" do

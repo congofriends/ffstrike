@@ -8,7 +8,7 @@ FactoryGirl.define do
 
   factory :rally do
     name 'Super rally'
-    id {rand(1000).to_s}
+    id '1' 
     address '333 North Pole Road'
     city 'Chicago'
     zip '60606'

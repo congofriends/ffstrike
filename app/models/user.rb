@@ -25,4 +25,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  def add_movement(movement)
+    self.update_attributes(movement_id: movement.id)
+  end 
+
 end
