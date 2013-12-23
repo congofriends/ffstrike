@@ -1,7 +1,7 @@
 class Task < ActiveRecord::Base
   belongs_to :movement
   validates :movement_id, presence: true
-  validates :description, presence: true, length: { maximum: 250, minimum: 1 }
+  validates :description, presence: true, length: { maximum: 250 }
   validate :at_least_one_rally_size
 
   scope :tasks_for, -> (rally_type){where(rally_type => true)}

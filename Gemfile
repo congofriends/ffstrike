@@ -56,6 +56,7 @@ group :test, :development do
   gem 'pry'
   gem 'pry-rails'
   gem 'better_errors'
+  gem 'assert_difference'
 end
 
 group :doc do

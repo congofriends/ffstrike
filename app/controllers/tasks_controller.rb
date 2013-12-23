@@ -22,7 +22,7 @@ class TasksController < ApplicationController
         else 
            @task.errors.full_messages.flatten.join
         end
-      redirect_to(:back)
+      render 'index'
     end
   end
 

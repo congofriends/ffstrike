@@ -6,17 +6,24 @@ FactoryGirl.define do
   end
 
   factory :task_without_description, class: Task do
+    movement
+    small_rally true
+  end
+
+  factory :task_without_rally_size, class: Task do
+    description {'description '*2}
+    movement
   end
 
   factory :task_with_description_longer_than_250_characters, class: Task do
     description {251.times.map{ ('a'..'z').to_a.sample }.join}
-    movement_id '1' 
+    movement
     small_rally true
   end
 
   factory :task_with_description_250_characters, class: Task do
     description {250.times.map{ ('a'..'z').to_a.sample }.join}
-    movement_id '1' 
+    movement
     small_rally true
   end
 end
