@@ -5,9 +5,11 @@
     <li><a href='#tasks' data-toggle='tab'>Tasks</a></li>
     <li><a href='#successes' data-toggle='tab'>Successes</a></li>
   </ul>
+
   <div class='tab-content'>
     <div class='tab-pane active' id='movement'>
       <div class='well'>
+
         Your Movement Information
           <%= form_for @movement do |form| %>
             <%= form.label :name %>
@@ -18,8 +20,24 @@
             <%= form.text_field :category %>
           <% end %>
 
-        <div>
-          Share
+      
+
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    Email Your Attendees 
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+                  THIS IS WHERE YOU MAIL
+                </div>
+              </div>
+            </div> 
+
           <a href="https://www.facebook.com/sharer/sharer.php?s=100&p[title]=#"
       target="_blank"> <%= image_tag "facebook.png", :class=> "thumbnail",  size: "100x100" %>
           </a>
