@@ -13,7 +13,6 @@ class TasksController < ApplicationController
   def create
     @task = @movement.tasks.build(task_params)
     if @task.save
-      binding.pry
       flash[:notice] = "Task '#{@task.description}' is created"
       redirect_to movement_tasks_path
     else
