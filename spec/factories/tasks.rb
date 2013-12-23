@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :task do
     description "I am a valid task for rally"
     movement
+    small_rally true
   end
 
   factory :task_without_description, class: Task do

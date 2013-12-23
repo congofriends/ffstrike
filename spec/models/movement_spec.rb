@@ -19,4 +19,20 @@ describe Movement do
 			                 less_than(2.megabytes) }	 
 
   it { should respond_to(:tasks) }
+  
+  describe "task assosiation" do
+    before do 
+      movement.save
+      2.times { FactoryGirl.create(:task, movement: movement) }
+    end
+
+    it "should destroy assosiated tasks" do
+      tasks = movement.tasks.to_a
+      movement.destroy
+      expect(tasks).not_to be_empty
+      tasks.each do |task|
+        expect(Task.where(id: task.id)).to be_empty
+      end
+    end
+  end
 end
