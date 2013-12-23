@@ -9,4 +9,20 @@ class Movement < ActiveRecord::Base
   
   has_many :users
 
+  def movement_tasks
+    self.tasks
+  end
+
+  def count_movement_tasks
+    self.movement_tasks.count
+  end
+
+  def tasks_for(rally_size)
+    self.movement_tasks.tasks_for(rally_size)
+  end
+
+  def count_tasks(rally_size)
+    self.tasks_for(rally_size).count
+  end
+
 end

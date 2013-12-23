@@ -4,7 +4,6 @@ class TasksController < ApplicationController
 
   def index
     @tasks = @movement.tasks
-    # @task = @movement.tasks.new
   end
 
   def new
@@ -14,10 +13,16 @@ class TasksController < ApplicationController
   def create
     @task = @movement.tasks.build(task_params)
     if @task.save
-      flash[:notice] = "Task <<#{@task.description}>> is created"
+      binding.pry
+      flash[:notice] = "Task '#{@task.description}' is created"
       redirect_to movement_tasks_path
     else
-      flash[:notice] = @task.errors.full_messages.flatten.join
+      flash[:notice] = 
+        if @task.errors.messages.has_key?(:rally_error_warning)
+          @task.errors.full_messages.last 
+        else 
+           @task.errors.full_messages.flatten.join
+        end
       redirect_to(:back)
     end
   end
@@ -36,7 +41,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:description)
+    params.require(:task).permit(:description, :small_rally, :medium_rally, :big_rally)
   end
 
   def load_movement

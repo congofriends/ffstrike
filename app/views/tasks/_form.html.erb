@@ -2,5 +2,11 @@
 <% @task = @movement.tasks.build%>
 <%= form_for ([@movement, @task]) do |f| %>
   <%= f.text_area :description, placeholder: "Enter new task description here..." %>
+  <%= f.check_box :small_rally %>
+  <%= f.label "small", :small_rally %>
+  <%= f.check_box :medium_rally %>
+  <%= f.label "medium", :medium_rally %>
+  <%= f.check_box :big_rally %>
+  <%= f.label "big", :big_rally %>
   <%= f.submit "Create new task" %>
 <% end %>
