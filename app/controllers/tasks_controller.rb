@@ -2,26 +2,13 @@ class TasksController < ApplicationController
   before_action :load_movement
   before_action :load_task, :only => [:destroy, :edit, :show, :update]
 
-  def index
-    @tasks = @movement.tasks
-  end
-
-  def new
-    @task = @movement.tasks.build
-  end
-
   def create
     @task = @movement.tasks.build(task_params)
     if @task.save
       flash[:notice] = "Task '#{@task.description}' is created"
       redirect_to movement_tasks_path
     else
-      flash[:notice] = 
-        if @task.errors.messages.has_key?(:rally_error_warning)
-          @task.errors.full_messages.last 
-        else 
-           @task.errors.full_messages.flatten.join
-        end
+      flash[:notice] = @task.errors.full_messages.flatten.join
       render 'index'
     end
   end

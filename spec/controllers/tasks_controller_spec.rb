@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-
 describe TasksController do
   describe "POST #create" do
     let(:movement){FactoryGirl.create(:movement)}
