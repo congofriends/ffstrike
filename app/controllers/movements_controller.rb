@@ -22,7 +22,8 @@ class MovementsController < ApplicationController
     end
   end
 
-	def show; end
+	def show; 
+  end
 
   def update
     @movement.update_attributes(movement_params)

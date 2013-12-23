@@ -28,6 +28,8 @@ describe UserMailer do
     end
 
     it "doesnt mail other movements" do 
+      different_movement_attendee = FactoryGirl.create :attendee, email: "AnotherMovement@example.com", movement_id: @movement.id + 1
+      mail.to.should_not include("AnotherMovement@example.com")
     end
 
   end
