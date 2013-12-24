@@ -8,7 +8,7 @@ class TasksController < ApplicationController
       flash[:notice] = "Task '#{@task.description}' is created"
       redirect_to movement_tasks_path
     else
-      flash[:notice] = @task.errors.full_messages.flatten.join
+      flash[:notice] = @task.errors.full_messages.flatten.join('. ')
       render 'index'
     end
   end
