@@ -8,8 +8,8 @@ describe Users::InvitationsController do
       inviter = FactoryGirl.create(:user, movement_id:  "1", email: "inviter@example.org")
       movement = FactoryGirl.create(:movement, id: "1")
 
-      User.stub!(:accept_invitation!).and_return(invitee)
-      User.stub!(:find).and_return(inviter)
+      User.stub(:accept_invitation!).and_return(invitee)
+      User.stub(:find).and_return(inviter)
 
       @request.env["devise.mapping"] = Devise.mappings[:user]
 
