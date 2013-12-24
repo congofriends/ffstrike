@@ -3,8 +3,6 @@ class MovementsController < ApplicationController
   before_filter :load_movement, :except => [:new, :create]
   include YoutubeParserHelper
 
-  def index; end
-
   def new
     @movement = Movement.new
   end

@@ -34,8 +34,8 @@
               <div id="collapseOne" class="panel-collapse collapse">
                 <div class="panel-body">
                   <%= form_tag("/mail", method: "post") do %>
-                    <%= text_field_tag "mail[message]", nil, placeholder: 'Enter a message to all attendees' %>
-                    <%= hidden_field_tag "mail[movement_id]", @movement.id.to_i %>
+                    <%= text_field_tag "mail[:message]", nil, placeholder: 'Enter a message to all attendees' %>
+                    <%= hidden_field_tag "mail[:movement_id]", @movement.id.to_i %>
                     <%= submit_tag "Send Email"%>
                   <% end %>
                 </div>
