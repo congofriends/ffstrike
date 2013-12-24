@@ -1,0 +1,13 @@
+<div>
+  Media
+    
+  <%= form_for @movement do |form| %>
+    <%= form.label :image %>
+    <%= image_tag @movement.image.url, size: "490x275" %>
+    <%= form.file_field :image %>
+    <%= form.label :video %>
+    <%= youtube_embed_url_for_(@movement.video) %>
+    <%= form.text_field :video %>
+    <%= form.submit %>
+  <% end %>
+</div>

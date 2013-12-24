@@ -1,0 +1,27 @@
+<div class='tab-pane active' id='movement'>
+  <div class='well'>
+
+    Your Movement Information
+      <%= form_for @movement do |form| %>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+        <%= form.label :story %>
+        <%= form.text_area :story %>
+        <%= form.label :category %>
+        <%= form.text_field :category %>
+      <% end %>
+
+      <%= render "email" %>      
+      <%= render "share" %>
+      <%= link_to("Invite More Coordinators", new_user_invitation_path) %>
+
+    <div>
+      Rallies
+    </div>
+
+    <%= render "media_form" %>
+
+  </div>
+</div>
+
+

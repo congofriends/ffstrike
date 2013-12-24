@@ -7,47 +7,9 @@
   </ul>
 
   <div class='tab-content'>
-    <div class='tab-pane active' id='movement'>
-      <div class='well'>
-
-        Your Movement Information
-          <%= form_for @movement do |form| %>
-            <%= form.label :name %>
-            <%= form.text_field :name %>
-            <%= form.label :story %>
-            <%= form.text_area :story %>
-            <%= form.label :category %>
-            <%= form.text_field :category %>
-          <% end %>
-
-          <%= render "email" %>      
-          <%= render "share" %>
-          <%= link_to("Invite More Coordinators", new_user_invitation_path) %>
-
-        <div>
-          Rallies
-        </div>
-
-        <%= render "media_form" %>
-
-      </div>
-    </div>
-    <div class='tab-pane' id='rallies'>
-      <div class='well'>
-        <h1>Rallies</h1>
-        <%= link_to "Create a new Rally", new_movement_rally_path(@movement) %>
-      </div>
-    </div>
-    <div class='tab-pane' id='tasks'>
-      <div class='well'>
-        <h1>Tasks</h1>
-        <%= link_to "Movement tasks configuration", movement_tasks_path(@movement) %>
-      </div>
-    </div>
-    <div class='tab-pane' id='successes'>
-      <div class='well'>
-        Successes will go here.
-      </div>
-    </div>
+    <%= render "tab_movement" %>
+    <%= render "tab_rallies" %>
+    <%= render "tab_tasks" %>
+    <%= render "tab_successes" %>
   </div>
 </div>
