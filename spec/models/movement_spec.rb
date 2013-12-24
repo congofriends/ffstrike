@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Movement do
   let(:movement)  { FactoryGirl.build(:movement) }
 
-  it "has a working factory" do
+  it "is valid with correct fields" do
     expect(FactoryGirl.build(:movement)).to be_valid
   end
 
@@ -19,7 +19,8 @@ describe Movement do
 			                 less_than(2.megabytes) }	 
 
   it { should respond_to(:tasks) }
-  
+  it { should respond_to(:users) }
+
   describe "task assosiation" do
     before do 
       movement.save
@@ -30,9 +31,7 @@ describe Movement do
       tasks = movement.tasks.to_a
       movement.destroy
       expect(tasks).not_to be_empty
-      tasks.each do |task|
-        expect(Task.where(id: task.id)).to be_empty
-      end
+      tasks.each { |task| expect(Task.where(id: task.id)).to be_empty }
     end
   end
 end
