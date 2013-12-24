@@ -65,7 +65,7 @@ describe TasksController do
   describe "DELETE #destroy" do
     it "should destroy task" do
       task; movement
-      assert_difference 'Task.count', -1 do
+      assert_difference 'Task.count', -1, "Task is deleted" do
         delete :destroy, movement_id: movement, id: task
       end
       assert_redirected_to movement_tasks_path
