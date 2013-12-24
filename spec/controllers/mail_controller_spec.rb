@@ -12,7 +12,7 @@ describe MailController do
     #end
 
     it "tells usermailer to mail" do
-      post "mail_all", mail: {:":movement_id" => "1", :":message" => "TestMessage"}
+      post "mail_all", mail: {:movement_id => "1", :message => "TestMessage"}
       assert !ActionMailer::Base.deliveries.empty?
     end
 

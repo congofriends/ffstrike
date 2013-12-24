@@ -9,7 +9,6 @@ class MovementsController < ApplicationController
 
   def create
     @movement = Movement.new(movement_params)
-
     if @movement.save
       unless current_user.nil?
         current_user.add_movement(@movement)
