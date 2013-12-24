@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def after_sign_in_path_for(resource)
-    movement_path(current_user.movement_id)
+    if current_user.movement_id.nil?
+      root_path
+    else
+      movement_path(current_user.movement_id)
+    end
   end
 end
