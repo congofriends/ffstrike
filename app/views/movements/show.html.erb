@@ -20,59 +20,16 @@
             <%= form.text_field :category %>
           <% end %>
 
-      
-
-          <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                    Email Your Attendees 
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseOne" class="panel-collapse collapse">
-                <div class="panel-body">
-                  <%= form_tag("/mail", method: "post") do %>
-                    <%= text_field_tag "mail[:message]", nil, placeholder: 'Enter a message to all attendees' %>
-                    <%= hidden_field_tag "mail[:movement_id]", @movement.id.to_i %>
-                    <%= submit_tag "Send Email"%>
-                  <% end %>
-                </div>
-              </div>
-            </div> 
-
-          <a href="https://www.facebook.com/sharer/sharer.php?s=100&p[title]=#"
-      target="_blank"> <%= image_tag "facebook.png", :class=> "thumbnail",  size: "100x100" %>
-          </a>
-         
-          <a href="http://twitter.com/share?text=#">
-            <%= image_tag "twitter.png", :class=> "thumbnail", size: "100x100" %>
-          </a>
-
-          <a href="mailto:#">
-            <%= image_tag "envelope.png", :class=> "thumbnail", size: "100x100" %>
-          </a>
+          <%= render "email" %>      
+          <%= render "share" %>
           <%= link_to("Invite More Coordinators", new_user_invitation_path) %>
-        </div>
 
         <div>
           Rallies
         </div>
 
-        <div>
-          Media
-            
-          <%= form_for @movement do |form| %>
-            <%= form.label :image %>
-            <%= image_tag @movement.image.url, size: "490x275" %>
-            <%= form.file_field :image %>
-            <%= form.label :video %>
-            <%= youtube_embed_url_for_(@movement.video) %>
-            <%= form.text_field :video %>
-            <%= form.submit %>
-          <% end %>
-        </div>
+        <%= render "media_form" %>
+
       </div>
     </div>
     <div class='tab-pane' id='rallies'>
