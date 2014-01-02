@@ -1,5 +1,5 @@
 <section class='front-banner'>
-  <div class="hero-unit">
+  <div class="jumbotron">
     <h1>Make A Difference</h1>
     <h2>Find a rally near you.</h2>
 
@@ -21,7 +21,7 @@
 
   <div class="row-fluid">
     <% @featured_movements.each do |featured_movement| %>
-      <div class='span4 well'>
+      <div class='col-md-4 well'>
         <div class='pagination-centered'>
             <%= image_tag featured_movement.image.url, { class:'front-page' } %>
         </div>
