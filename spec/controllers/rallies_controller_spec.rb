@@ -48,7 +48,7 @@ describe RalliesController do
 
       it "re-renders the new method" do
         post :create, movement_id: movement, rally: FactoryGirl.attributes_for(:invalid_rally)
-        expect(response).to render_template :new
+        expect(response).to redirect_to movement_path(movement)
       end
 
       it "notifies user that rally had errors" do

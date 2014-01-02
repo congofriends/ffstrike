@@ -21,7 +21,8 @@ class MovementsController < ApplicationController
     end
   end
 
-	def show; 
+	def show
+    @rally = Rally.new
   end
 
   def update
