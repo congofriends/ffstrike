@@ -25,6 +25,11 @@ describe RalliesController do
         expect{post :create, movement_id: movement, rally: FactoryGirl.attributes_for(:rally).merge(coordinator_id: coordinator.id)}.to change(Rally, :count).by(1)
       end
 
+      it "creates a rally connected to the movement" do
+        post :create, movement_id: movement.id, rally: FactoryGirl.attributes_for(:rally).merge(coordinator_id: coordinator.id)
+        expect(Rally.last.movement_id).to eq(movement.id)
+      end
+
       it "redirects to the movement page" do
         post :create, movement_id: movement, rally: FactoryGirl.attributes_for(:rally).merge(coordinator_id: coordinator.id)
         expect(response).to redirect_to movement_path(movement)
