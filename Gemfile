@@ -43,6 +43,9 @@ gem 'devise'
 # Invitation system
 gem 'devise_invitable'
 
+# Geocoding 
+gem 'geocoder'
+
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'

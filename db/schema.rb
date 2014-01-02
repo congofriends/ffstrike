@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140102173419) do
+ActiveRecord::Schema.define(version: 20140102220216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,5 +97,13 @@ ActiveRecord::Schema.define(version: 20140102173419) do
   add_index "users", ["invitation_token"], name: "index_users_on_invitation_token", unique: true, using: :btree
   add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "zipcodes", force: true do |t|
+    t.string "zip"
+    t.string "city"
+    t.string "state"
+    t.string "state_abbreviation"
+    t.float  "coordinates",        array: true
+  end
 
 end

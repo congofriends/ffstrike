@@ -65,6 +65,7 @@ GEM
       railties (>= 3.0.0)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    geocoder (1.1.8)
     hashie (2.0.5)
     hike (1.2.3)
     httpauth (0.2.0)
@@ -199,6 +200,7 @@ DEPENDENCIES
   devise_invitable
   factory_girl
   factory_girl_rails (~> 4.0)
+  geocoder
   jbuilder (~> 1.2)
   jquery-rails
   omniauth
