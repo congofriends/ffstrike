@@ -26,4 +26,8 @@ class Movement < ActiveRecord::Base
     self.tasks_for(rally_size).count
   end
 
+  def self.random(number_of_rallies = 1)
+    Movement.offset(rand(Movement.count - number_of_rallies + 1)).first(number_of_rallies) 
+  end
+
 end

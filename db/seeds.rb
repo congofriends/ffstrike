@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+FactoryGirl.create_list(:movement, 20)
+FactoryGirl.create_list(:rally, 20)
+FactoryGirl.create_list(:task, 20)
+FactoryGirl.create_list(:user, 20)
+FactoryGirl.create_list(:attendee, 20)

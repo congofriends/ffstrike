@@ -34,4 +34,24 @@ describe Movement do
       tasks.each { |task| expect(Task.where(id: task.id)).to be_empty }
     end
   end
+
+  describe '.random' do
+    before do
+      FactoryGirl.create_list(:movement, 10)
+    end
+
+    it 'returns an array of 3 movements when n = 3' do
+      expect(Movement.random(3).count).to be(3)
+    end
+
+    it 'should always return unique results' do
+      expect(uniq?(Movement.random(5))).to be(true)
+    end
+  end
+
+  private
+
+  def uniq?(movements)
+    movements.uniq.length == movements.length 
+  end
 end

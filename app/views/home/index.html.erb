@@ -1,12 +1,35 @@
-<div class="hero-unit text-center">
-<h1>Make A Difference</h1>
-<h2>Find a rally near you.</h2>
+<section class='front-banner'>
+  <div class="hero-unit text-center">
+    <h1>Make A Difference</h1>
+    <h2>Find a rally near you.</h2>
 
-<div class='form-search'>
-  <%= form_tag "/rallies" do %>
-    <%= search_field_tag 'zip', value = nil, options = {placeholder: "ZIP"}%>
-    <%= button_tag name="Search" %>
-  <% end %>
-</div>
+    <div class='form-search'>
+      <%= form_tag "/rallies" do %>
+        <%= search_field_tag 'zip', value = nil, options = {placeholder: "ZIP"}%>
+        <%= button_tag name="Search" %>
+      <% end %>
+    </div>
 
-<%= link_to "Feeling inspired? Create A Movement.", new_movement_path %>
+    <%= link_to "Feeling inspired? Create A Movement.", new_movement_path %>
+  </div>
+</section>
+
+<section class='featured-movements'>
+  <div class="row-fluid">
+    <h1>Featured Movements</h1>
+  </div>
+
+  <div class="row-fluid">
+    <% @featured_movements.each do |featured_movement| %>
+      <div class='span4 well'>
+        <div class='pagination-centered'>
+            <%= image_tag featured_movement.image.url, { class:'front-page' } %>
+        </div>
+        
+        <div class='text-center'>
+          <h3><%= link_to featured_movement.name, movement_path(featured_movement.id) %></h3>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
