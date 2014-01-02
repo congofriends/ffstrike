@@ -9,7 +9,7 @@ class RalliesController < ApplicationController
     @rally = Rally.new(rally_params.merge(movement_id: @movement.id))
     flash[:notice] = 
       @rally.save ? "Rally created!" : @rally.errors.full_messages.flatten.join(' ')
-      redirect_to movement_path(@movement)
+    redirect_to movement_path(@movement)
   end
   
   private

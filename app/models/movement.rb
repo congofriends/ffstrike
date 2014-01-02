@@ -10,6 +10,10 @@ class Movement < ActiveRecord::Base
   
   has_many :users
 
+  def movement_rallies
+    self.rallies  
+  end
+
   def movement_tasks
     self.tasks
   end
