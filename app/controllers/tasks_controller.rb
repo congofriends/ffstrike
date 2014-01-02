@@ -4,11 +4,8 @@ class TasksController < ApplicationController
 
   def create
     @task = @movement.tasks.build(task_params)
-    if @task.save
-      flash[:notice] = "Task '#{@task.description}' is created"
-    else
-      flash[:notice] = @task.errors.full_messages.flatten.join('. ')
-    end
+    flash[:notice] = 
+      @task.save ? "New task is created" : @task.errors.full_messages.flatten.join('. ')
       redirect_to movement_path(@movement)
   end
 

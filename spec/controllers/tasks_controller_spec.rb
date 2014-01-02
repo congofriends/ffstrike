@@ -17,7 +17,7 @@ describe TasksController do
 
       it "notifies the user that task was created" do
         post :create, movement_id: movement, task: FactoryGirl.attributes_for(:task)
-        flash[:notice].should == "Task 'I am a valid task for rally' is created"
+        flash[:notice].should == "New task is created"
       end
     end
 
