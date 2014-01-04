@@ -32,7 +32,7 @@ describe RalliesController do
 
       it "redirects to the movement page" do
         post :create, movement_id: movement, rally: FactoryGirl.attributes_for(:rally).merge(coordinator_id: coordinator.id)
-        expect(response).to redirect_to movement_path(movement)
+        expect(response).to redirect_to movement_path(movement, anchor: "rallies")
       end
 
       it "notifies the user that rally was created" do
@@ -48,7 +48,7 @@ describe RalliesController do
 
       it "re-renders the new method" do
         post :create, movement_id: movement, rally: FactoryGirl.attributes_for(:invalid_rally)
-        expect(response).to redirect_to movement_path(movement)
+        expect(response).to redirect_to movement_path(movement, anchor: "rallies")
       end
 
       it "notifies user that rally had errors" do

@@ -6,19 +6,19 @@ class TasksController < ApplicationController
     @task = @movement.tasks.build(task_params)
     flash[:notice] = 
       @task.save ? "New task is created" : @task.errors.full_messages.flatten.join('. ')
-      redirect_to movement_path(@movement)
+    redirect_to movement_path(@movement, anchor: "tasks")
   end
 
   def destroy
     @task.destroy
-    redirect_to  movement_path(@movement), notice: "Task is deleted"
+    redirect_to  movement_path(@movement, anchor: "tasks"), notice: "Task is deleted"
   end
 
   def edit; end
 
   def update
     @task.update_attributes(task_params)
-    redirect_to  movement_path(@movement), notice: "Task #{@task.id} id has been updated"
+    redirect_to  movement_path(@movement, anchor: "tasks"), notice: "Task #{@task.id} id has been updated"
   end
 
   private

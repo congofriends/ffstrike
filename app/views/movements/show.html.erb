@@ -1,15 +1,21 @@
-<div class='tabbable'>
-  <ul class="nav nav-tabs">
-    <li class="active"><a href='#movement' data-toggle='tab'>Movement</a></li>
-    <li><a href='#rallies' data-toggle='tab'>Rallies</a></li>
-    <li><a href='#tasks' data-toggle='tab'>Tasks</a></li>
-    <li><a href='#successes' data-toggle='tab'>Successes</a></li>
-  </ul>
+<ul id="movementTabs" class="nav nav-tabs">
+  <li> <a href="#movement" data-toggle='tab'> Movement </a> </li>
+  <li> <a href="#rallies" data-toggle="tab"> Rallies </a> </li>
+  <li> <a href='#tasks' data-toggle='tab'>Tasks </a> </li>
+  <li> <a href='#successes' data-toggle='tab'>Successes </a> </li>
+</ul>
 
-  <div class='tab-content'>
+<div class="tab-content">
+  <div class="tab-pane fade in" id="movement">
     <%= render "tab_movement" %>
+  </div>
+  <div class="tab-pane fade in" id="rallies"> 
     <%= render "tab_rallies" %>
+  </div>
+  <div class="tab-pane fade in" id="tasks"> 
     <%= render "tab_tasks" %>
+  </div>
+  <div class="tab-pane fade in" id="successes"> 
     <%= render "tab_successes" %>
   </div>
 </div>

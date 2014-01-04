@@ -12,7 +12,7 @@ describe TasksController do
 
       it "redirects to the index page" do
         post :create, movement_id: movement, task: FactoryGirl.attributes_for(:task)
-        expect(response).to redirect_to movement_path(movement)
+        expect(response).to redirect_to movement_path(movement, anchor: "tasks")
       end
 
       it "notifies the user that task was created" do
@@ -28,7 +28,7 @@ describe TasksController do
 
       it "re-renders the new method" do
         post :create, movement_id: movement, task: FactoryGirl.attributes_for(:task_without_description)
-        expect(response).to redirect_to movement_path(movement)
+        expect(response).to redirect_to movement_path(movement, anchor: "tasks")
       end
 
       it "notifies user that task information is missing description field" do
@@ -58,7 +58,7 @@ describe TasksController do
     end
 
     it "redirects to show" do
-      expect(response).to redirect_to movement_path(movement)
+      expect(response).to redirect_to movement_path(movement, anchor: "tasks")
     end
   end
 
@@ -68,7 +68,7 @@ describe TasksController do
       assert_difference 'Task.count', -1, "Task is deleted" do
         delete :destroy, movement_id: movement, id: task
       end
-      assert_redirected_to movement_path(movement)
+      assert_redirected_to movement_path(movement, anchor: "tasks")
     end
   end
 end
