@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :movement do
-		id {rand(1000).to_s} 
     name 'My Little Pony'
     category 'Ponies'
     story 'Lovely life of a lovely little pony.'
@@ -12,7 +11,6 @@ FactoryGirl.define do
   end
 
   factory :movement_with_invalid_video, class: Movement do
-		id {rand(1000).to_s}
     name 'My Little Pony'
     category 'Ponies'
     story 'Lovely life of a lovely little pony.'
@@ -20,7 +18,6 @@ FactoryGirl.define do
   end
 
   factory :movement_without_video, class: Movement do
-		id {rand(1000).to_s}
     name 'My Little Pony'
   end
 end
