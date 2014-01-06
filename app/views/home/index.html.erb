@@ -4,7 +4,7 @@
     <h2>Find a rally near you.</h2>
 
     <div class='form-search'>
-      <%= form_tag "/rallies" do %>
+      <%= form_tag "/rallies", method: "get" do %>
         <%= search_field_tag 'zip', value = nil, options = {placeholder: "ZIP"}%>
         <%= button_tag name="Search" %>
       <% end %>

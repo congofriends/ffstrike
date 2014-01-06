@@ -58,5 +58,18 @@ describe RalliesController do
     end 
   end
 
+  describe "GET #search" do
+    it "responds successfully" do
+      get "search", zip: "60647"  
+      expect(response).to be_success
+    end
+
+    it "assigns @rallies" do
+      zip = FactoryGirl.create(:zipcode, zip: "60647", latitude: 10, longitude: 50)
+      rally = FactoryGirl.create(:rally, zip: "60647") 
+      get "search", zip: "60647"
+      expect(assigns(:rallies)).to eq([rally])
+    end
+  end
 end
 

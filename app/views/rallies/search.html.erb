@@ -1,0 +1,9 @@
+<% if @rallies.length == 0 %>
+  No rallies were found near the zipcode you provided.
+<% else @rallies.each do |rally| %>
+  <%= Movement.find_by_id(rally.movement_id).name %> 
+  <%= rally.address %>
+  <%= rally.city %>
+  <%= rally.zip %>
+<% end %>
+<% end %>

@@ -3,6 +3,8 @@ Ffstrike::Application.routes.draw do
 
   root 'home#index'
 
+  get 'rallies' => 'rallies#search'  
+
   #home
   get 'about' => 'home#about',  as: 'about'
 
