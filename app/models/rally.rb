@@ -1,6 +1,5 @@
 class Rally < ActiveRecord::Base
   validates_presence_of :coordinator, :address, on: :create
-  geocoded_by :address
   reverse_geocoded_by :latitude, :longitude
   belongs_to :coordinator, class_name: User
   belongs_to :movement, class_name: Movement
