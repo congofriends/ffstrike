@@ -13,8 +13,7 @@ class RalliesController < ApplicationController
   end
   
   def search
-    #test that @rallies is assigned
-    @rallies = Rally.near_zip(params[:zip], 50)
+    @rallies = Rally.near_zip(params[:zip], 200)
   end
 
   private
