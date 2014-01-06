@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140102220216) do
+ActiveRecord::Schema.define(version: 20140106193851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 20140102220216) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "movement_id"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "rallies", ["movement_id"], name: "index_rallies_on_movement_id", using: :btree
@@ -104,6 +106,8 @@ ActiveRecord::Schema.define(version: 20140102220216) do
     t.string "state"
     t.string "state_abbreviation"
     t.float  "coordinates",        array: true
+    t.float  "latitude"
+    t.float  "longitude"
   end
 
 end

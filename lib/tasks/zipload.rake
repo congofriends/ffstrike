@@ -7,7 +7,7 @@ task :load_zip_codes => :environment do
   puts "loading zip codes from #{file}"
   File.foreach(file) do |line|
     data = line.split("\t")
-    Zipcode.create(zip: data[1], city: data[2], state: data[3], state_abbreviation: data[4], coordinates: [data[10].to_f, data[9].to_f])
+    Zipcode.create(zip: data[1], city: data[2], state: data[3], state_abbreviation: data[4], coordinates: [data[10].to_f, data[9].to_f], latitude: data[10].to_f, longitude: data[9].to_f)
   end
 end
 
