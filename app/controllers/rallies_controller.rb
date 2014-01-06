@@ -6,7 +6,7 @@ class RalliesController < ApplicationController
 
   def create
     @movement = Movement.find params[:movement_id]
-    @rally = Rally.new(rally_params.merge(movement_id: @movement.id))
+    @rally = @movement.rallies.build(rally_params)
     flash[:notice] = 
       @rally.save ? "Rally created!" : @rally.errors.full_messages.flatten.join(' ')
     redirect_to movement_path(@movement, anchor: "rallies")
