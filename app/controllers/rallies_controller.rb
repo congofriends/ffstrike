@@ -1,11 +1,11 @@
 class RalliesController < ApplicationController
+  before_filter :load_movement, :only => [:new, :create]
+
   def new
     @rally = Rally.new      
-    @movement = Movement.find params[:movement_id]
   end
 
   def create
-    @movement = Movement.find params[:movement_id]
     @rally = @movement.rallies.build(rally_params)
     flash[:notice] = 
       @rally.save ? "Rally created!" : @rally.errors.full_messages.flatten.join(' ')
@@ -16,5 +16,9 @@ class RalliesController < ApplicationController
 
   def rally_params
     params.require(:rally).permit(:address, :city, :zip, :coordinator_id, :notes)
+  end
+
+  def load_movement
+    @movement = Movement.find params[:movement_id]
   end
 end
