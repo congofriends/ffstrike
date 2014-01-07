@@ -5,6 +5,10 @@ class RalliesController < ApplicationController
     @rally = Rally.new      
   end
 
+  def show
+    @rally = Rally.find params[:id]
+  end
+
   def create
     @rally = @movement.rallies.build(rally_params)
     flash[:notice] = 

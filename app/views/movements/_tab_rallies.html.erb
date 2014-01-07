@@ -3,7 +3,6 @@
     <h1>Rallies</h1>
     <%= render template: 'rallies/new' %>
     <% @movement.movement_rallies.each do |rally| %>
-      <div>
         <%= form_for :rally do |f| %>
           <%= f.label :address %>
           <%= f.text_field :address, value: rally.address %>
@@ -13,10 +12,10 @@
           <%= f.text_field :zip, value: rally.zip %>
           <%= f.label :notes %>
           <%= f.text_field :notes, value: rally.notes %>
-          <br>
           <%= f.submit "Update", class: "btn" %> 
         <% end %>
-      </div>
+        <%= button_tag "Yes! I want to attend", type: "button", class: "btn btn-success attend-button" %>
+        <%= render template: 'attendees/new', locals: { :@rally => rally, :@attendee => @rally.attendees.build } %>
     <% end %>
   </div>
 </div>

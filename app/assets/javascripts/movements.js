@@ -29,4 +29,12 @@ $(document).ready(function() {
  if(window.location.hash) {
    refreshHash();
  }
+
+ // shows/hides attendee form
+ $(function() {
+   $(".attend-button").click(function() {
+     $(this).next().toggle();
+     return false;
+   });
+ });
 });

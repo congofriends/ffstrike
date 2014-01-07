@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20140106205459) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "rally_id"
+    t.string   "name"
   end
 
   add_index "attendees", ["rally_id"], name: "index_attendees_on_rally_id", using: :btree

@@ -14,12 +14,14 @@ class Rally < ActiveRecord::Base
     Rally.near([lookup.latitude, lookup.longitude], distance)
   end
 
-  private
+  def number_of_attendees
+    self.attendees.count
+  end
 
+  private
     def assign_coordinates
       lookup = Zipcode.find_by_zip(self.zip)
       self.update_attribute(:latitude, lookup.latitude) unless lookup.nil?
       self.update_attribute(:longitude, lookup.longitude) unless lookup.nil?
     end
-    
 end

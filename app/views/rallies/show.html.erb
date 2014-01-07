@@ -1,0 +1,12 @@
+<h3>Rally details page</h3>
+Rally id: <%= @rally.id %>
+Number of attendees: <span class="badge"> <%= @rally.number_of_attendees %> </span>
+
+<p><strong>List of attendees:</strong></p>
+<% @rally.attendees.each_with_index do |attendee, index| %>
+  <div class="panel">
+    <%= index %>
+    <%= attendee.name %>
+    <%= attendee.email %>
+  </div>
+<% end %>

@@ -24,7 +24,7 @@ describe Task do
     expect(FactoryGirl.build(:task_with_description_250_characters)).to be_valid
   end
 
-  describe "when rally_id is not present" do
+  describe "when movement_id is not present" do
     before { @task.movement_id = nil }
     it {should_not be_valid}
   end

@@ -14,6 +14,10 @@ Ffstrike::Application.routes.draw do
     resources :tasks
   end
 
+  resources :rallies do
+    resources :attendees
+  end
+
   #mail
   post 'mail' => 'mail#mail_all', as: 'mail_all'
 
