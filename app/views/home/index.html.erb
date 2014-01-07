@@ -24,11 +24,13 @@
   <div class="row">
     <% @featured_movements.each do |featured_movement| %>
       <div class='col-md-4'>
-        <div class='well'>
-          <%= image_tag featured_movement.image.url, { class:'front-page img-responsive center-block' } %>
-          
-          <div class='text-center'>
-            <h3><%= link_to featured_movement.name, movement_path(featured_movement.id) %></h3>
+        <div class='panel panel-default'>
+            <div class='panel-body'>
+            <%= image_tag featured_movement.image.url, { class:'front-page img-responsive center-block' } %>
+            
+            <div class='text-center'>
+              <h3><%= link_to featured_movement.name, movement_path(featured_movement.id) %></h3>
+            </div>
           </div>
         </div>
       </div>
