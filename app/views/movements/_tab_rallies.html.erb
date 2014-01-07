@@ -15,6 +15,7 @@
         <% end %>
         <%= button_tag "Yes! I want to attend", type: "button", class: "btn btn-success attend-button" %>
         <%= render template: 'attendees/new', locals: { :@rally => rally, :@attendee => @rally.attendees.build } %>
+        <%= render 'rallies/email_rally', rally: rally, movement: @movement %>
     <% end %>
   </div>
   <%= render template: 'rallies/new' %>

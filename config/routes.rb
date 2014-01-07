@@ -19,7 +19,12 @@ Ffstrike::Application.routes.draw do
   end
 
   #mail
-  post 'mail' => 'mail#mail_all', as: 'mail_all'
+  post 'mail_movement/:movement_id' => 'mail#mail_movement', as: 'mail_movement'
+
+  #post 'mail_rally' => 'mail#mail_rally'
+  post 'mail_rally/:rally_id/:movement_id' => 'mail#mail_rally', as: 'mail_rally'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

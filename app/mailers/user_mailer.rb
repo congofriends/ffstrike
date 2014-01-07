@@ -14,7 +14,11 @@ class UserMailer < ActionMailer::Base
   def custom_message_rally(rally_id, message)
     @recipients = Attendee.all.where(rally_id: rally_id)
     @message = message
-    mail(to: @recipients.collect(&:email).join(","))
+    unless @recipients.empty?
+      mail(to: @recipients.collect(&:email).join(","))
+      return true
+    end
+    return false
   end
 
 end
