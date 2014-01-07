@@ -1,7 +1,7 @@
 class UserMailer < ActionMailer::Base
   default from: "coordinator@rallies.com"
 
-  def custom_message_all_attendees(movement_id, message)
+  def custom_message_movement(movement_id, message)
     @recipients = Attendee.all.where(movement_id: movement_id) 
     @message = message
     unless @recipients.empty?

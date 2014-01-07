@@ -1,19 +1,21 @@
 require "spec_helper"
 
 describe UserMailer do
+
+  let(:another_user) { FactoryGirl.create(:user, email: "another_user@example.com") }
+  let(:another_rally) { FactoryGirl.create(:rally, coordinator: another_user) }
+
+  before :each do
+    @movement = FactoryGirl.create(:movement) 
+    @user = FactoryGirl.create(:user, movement_id: @movement.id)
+    @rally = FactoryGirl.create(:rally, movement_id: @movement.id, coordinator: @user)
+    @attendee = FactoryGirl.create(:attendee, movement_id: @movement.id, rally: @rally)
+  end
+ 
   describe "custom_message_all_attendees" do
 
-    let(:mail) { UserMailer.custom_message_all_attendees(@movement, "Test Email Message") }
-    let(:another_user) { FactoryGirl.create(:user, email: "another_user@example.com") }
-    let(:another_rally) { FactoryGirl.create(:rally, coordinator: another_user) }
-
-    before :each do
-      @movement = FactoryGirl.create(:movement) 
-      @user = FactoryGirl.create(:user, movement_id: @movement.id)
-      @rally = FactoryGirl.create(:rally, movement_id: @movement.id, coordinator: @user)
-      @attendee = FactoryGirl.create(:attendee, movement_id: @movement.id, rally: @rally)
-    end
-                                
+    let(:mail) { UserMailer.custom_message_movement(@movement, "Test Email Message") }
+                               
     it "renders the headers" do
       mail.subject.should eq("Message from your Movement Organizer")
       mail.to.should eq(["email@example.com"])
@@ -39,16 +41,7 @@ describe UserMailer do
   describe "custom_message_rally" do
 
     let(:mail) { UserMailer.custom_message_rally(@rally, "Test custom_message_rally") }
-    let(:another_user) { FactoryGirl.create(:user, email: "another_user@example.com") }
-    let(:another_rally) { FactoryGirl.create(:rally, coordinator: another_user) }
-
-    before :each do
-      @movement = FactoryGirl.create(:movement) 
-      @user = FactoryGirl.create(:user, movement_id: @movement.id)
-      @rally = FactoryGirl.create(:rally, movement_id: @movement.id, coordinator: @user)
-      @attendee = FactoryGirl.create(:attendee, movement_id: @movement.id, rally: @rally)
-    end
-     
+    
     it "renders the headers" do
       mail.subject.should eq("Message from your Movement Organizer")
       mail.to.should eq(["email@example.com"])

@@ -22,7 +22,7 @@
 en:
   hello: "Hello world"
   user_mailer:
-    custom_message_all_attendees:
+    custom_message_movement:
       subject: "Message from your Movement Organizer" 
     custom_message_rally:
       subject: "Message from your Movement Organizer"

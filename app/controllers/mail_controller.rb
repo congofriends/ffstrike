@@ -3,7 +3,7 @@ class MailController < ApplicationController
   def mail_movement
     movement_id = params[:movement_id]
     message = params[:message]
-    if UserMailer.custom_message_all_attendees(movement_id, message).deliver
+    if UserMailer.custom_message_movement(movement_id, message).deliver
       flash[:notice] = "Sending Emails!"
     else 
       flash[:notice] = "You have no followers to email!"
