@@ -8,7 +8,6 @@ FactoryGirl.define do
 
   factory :rally do
     name 'Super rally'
-    id '1' 
     address '333 North Pole Road'
     city 'Chicago'
     zip '60606'
