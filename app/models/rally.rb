@@ -18,11 +18,11 @@ class Rally < ActiveRecord::Base
     attendees.count
   end
 
-  def find_movement_name
+  def movement_name
     movement.name
   end
 
-  def find_movement_image
+  def movement_image
     movement.image.url
   end
 
