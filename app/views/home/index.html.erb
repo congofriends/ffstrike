@@ -25,9 +25,7 @@
     <% @featured_movements.each do |featured_movement| %>
       <div class='col-md-4'>
         <div class='well'>
-          <div class='pagination-centered'>
-              <%= image_tag featured_movement.image.url, { class:'front-page' } %>
-          </div>
+          <%= image_tag featured_movement.image.url, { class:'front-page img-responsive center-block' } %>
           
           <div class='text-center'>
             <h3><%= link_to featured_movement.name, movement_path(featured_movement.id) %></h3>
