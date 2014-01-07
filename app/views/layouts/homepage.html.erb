@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" style='margin-bottom: 0;'>
       <div class='navbar-header'>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-1">
           <span class="sr-only">Toggle navigation</span>
@@ -36,12 +36,8 @@
       </div>
     </nav>
 
-    <div class="container">
-      <div class="row">
-        <%= flash[:notice] %>
-        <%= yield %>
-      </div><!--/row-->
-    </div> <!-- /container -->
+    <%= flash[:notice] %>
+    <%= yield %>
 
   </body>
 </html>
