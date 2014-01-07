@@ -9,6 +9,7 @@ class Movement < ActiveRecord::Base
 	validates_attachment_size :image, :less_than => 2.megabytes
   
   has_many :users
+  alias_attribute :movement_name, :name
 
   def movement_rallies
     self.rallies  

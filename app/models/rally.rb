@@ -5,6 +5,7 @@ class Rally < ActiveRecord::Base
   belongs_to :movement, class_name: Movement
   has_many :attendees, dependent: :destroy
   after_validation :assign_coordinates
+  delegate :movement_name, :image, :to => :movement
 
   def self.near_zip(zipcode, distance)
     return [] if zipcode.nil?
@@ -16,14 +17,6 @@ class Rally < ActiveRecord::Base
 
   def number_of_attendees
     attendees.count
-  end
-
-  def movement_name
-    movement.name
-  end
-
-  def movement_image
-    movement.image.url
   end
 
   private

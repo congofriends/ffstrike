@@ -2,7 +2,7 @@
   No rallies were found near the zipcode you provided.
 <% else @rallies.each do |rally| %>
   <div class="well col-md-3">
-    <%= link_to image_tag(rally.movement_image, size: "100x100"), movement_path(rally.movement) %><br>
+    <%= link_to image_tag(rally.image.url, size: "100x100"), movement_path(rally.movement) %><br>
     Movement Name: <%= link_to rally.movement_name, movement_path(rally.movement) %> <br> 
     Rally Name: <%= link_to rally.name, movement_rally_path(rally.movement, rally) %>
     Rally Address: <%= rally.address %> <br>
