@@ -1,10 +1,9 @@
 <% if @rallies.length == 0 %>
   No rallies were found near the zipcode you provided.
 <% else @rallies.each do |rally| %>
-  <% movement = Movement.find_by_id(rally.movement_id) %>
   <div class="well col-md-3">
-    <%= image_tag movement.image.url, size: "100x100" %> <br>
-    Movement Name: <%= movement.name %> <br> 
+    <%= image_tag rally.find_movement_image, size: "100x100" %><br>
+    Movement Name: <%= rally.find_movement_name %> <br> 
     Rally Address: <%= rally.address %> <br>
     City: <%= rally.city %> <br>
     Zipcode: <%= rally.zip %> <br>

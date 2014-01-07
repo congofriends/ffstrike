@@ -15,7 +15,15 @@ class Rally < ActiveRecord::Base
   end
 
   def number_of_attendees
-    self.attendees.count
+    attendees.count
+  end
+
+  def find_movement_name
+    movement.name
+  end
+
+  def find_movement_image
+    movement.image.url
   end
 
   private
