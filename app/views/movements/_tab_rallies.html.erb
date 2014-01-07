@@ -1,7 +1,6 @@
 <div class='tab-pane' id='rallies'>
   <div class='well'>
-    <h1>Rallies</h1>
-    <%= render template: 'rallies/new' %>
+    <legend>Rallies</legend>
     <% @movement.movement_rallies.each do |rally| %>
         <%= form_for :rally do |f| %>
           <%= f.label :address %>
@@ -18,6 +17,7 @@
         <%= render template: 'attendees/new', locals: { :@rally => rally, :@attendee => @rally.attendees.build } %>
     <% end %>
   </div>
+  <%= render template: 'rallies/new' %>
 </div>
 
 

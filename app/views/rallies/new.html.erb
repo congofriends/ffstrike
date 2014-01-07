@@ -1,24 +1,40 @@
-Create a rally!
-<%= form_for ([@movement, @rally]) do |form| %>
-  <%= form.label :name %> 
-  <%= form.text_field :name %>
- 
-  <%= form.label :address %> 
-  <%= form.text_field :address %>
- 
-  <%= form.label :city %> 
-  <%= form.text_field :city %>
+<div class='well'>
+  <legend>Create a rally!</legend>
+  <%= form_for ([@movement, @rally]) do |form| %>
+    <fieldset>
+    <div class='form-group'>
+      <%= form.label :name %> 
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
 
-  <%= form.label :zip %> 
-  <%= form.text_field :zip %>
+    <div class='form-group'>     
+      <%= form.label :address %> 
+      <%= form.text_field :address, class: 'form-control' %>
+    </div>
+     
+    <div class='form-group'>
+      <%= form.label :city %> 
+      <%= form.text_field :city, class: 'form-control' %>
+    </div>
 
-  <%= form.label :coordinator %>
-  <%= form.select :coordinator_id, [[current_user.email, current_user.id]] %>
+    <div class='form-group'>
+      <%= form.label :zip %> 
+      <%= form.text_field :zip, class: 'form-control' %>
+    </div>
 
-  <%= form.label :notes %>
-	<%= form.text_field :notes %>
+    <div class='form-group'>
+      <%= form.label :coordinator %>
+      <%= form.select :coordinator_id, [[current_user.email, current_user.id]], { class: 'form-control' }, { class: 'form-control' } %>
+    </div>
 
-  <%= form.submit %>
-<% end %>
+    <div class='form-group'>
+      <%= form.label :notes %>
+      <%= form.text_field :notes, class: 'form-control' %>
+    </div>
 
-
+    <div class='form-group'>
+      <%= form.submit 'Create Rally', class: 'btn btn-primary' %>
+    </div>
+    </fieldset>
+  <% end %>
+</div>
