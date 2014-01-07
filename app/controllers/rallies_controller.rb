@@ -23,7 +23,7 @@ class RalliesController < ApplicationController
   private
 
   def rally_params
-    params.require(:rally).permit(:address, :city, :zip, :coordinator_id, :notes)
+    params.require(:rally).permit(:name, :address, :city, :zip, :coordinator_id, :notes)
   end
 
   def load_movement
