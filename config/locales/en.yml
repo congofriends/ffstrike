@@ -23,4 +23,6 @@ en:
   hello: "Hello world"
   user_mailer:
     custom_message_all_attendees:
-      subject: "Custom message from your Movement Organizer" 
+      subject: "Message from your Movement Organizer" 
+    custom_message_rally:
+      subject: "Message from your Movement Organizer"
