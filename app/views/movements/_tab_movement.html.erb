@@ -1,40 +1,48 @@
 <div class='tab-content tab-pane' id='movement'>
-  <div class= col-md-5>
-    <div class='well'>
-      <div class='form-horizontal'> 
-        <%= form_for @movement do |form| %>
-          <fieldset>
-          <div class='form-group'>
-            <%= form.label :name, class: 'col-md-3 control-label' %>
-            <div class='col-md-9'>
-              <%= form.text_field :name, class: 'form-control' %>
+  <div class='row'>
+    <div class= col-md-5>
+      <div class='well'>
+        <div class='form-horizontal'> 
+          <%= form_for @movement do |form| %>
+            <fieldset>
+            <div class='form-group'>
+              <%= form.label :name, class: 'col-md-3 control-label' %>
+              <div class='col-md-9'>
+                <%= form.text_field :name, class: 'form-control' %>
+              </div>
             </div>
-          </div>
 
-          <div class='form-group'>
-            <%= form.label :story, class: 'col-md-3 control-label' %>
-            <div class='col-md-9'>
-              <%= form.text_area :story, class: 'form-control' %>
+            <div class='form-group'>
+              <%= form.label :story, class: 'col-md-3 control-label' %>
+              <div class='col-md-9'>
+                <%= form.text_area :story, class: 'form-control' %>
+              </div>
             </div>
-          </div>
 
-          <div class='form-group'>
-            <%= form.label :category, class: 'col-md-3 control-label' %>
-            <div class='col-md-9'>
-              <%= form.text_field :category, class: 'form-control' %>
+            <div class='form-group'>
+              <%= form.label :category, class: 'col-md-3 control-label' %>
+              <div class='col-md-9'>
+                <%= form.text_field :category, class: 'form-control' %>
+              </div>
             </div>
-          </div>
-          </fieldset>
-        <% end %>
+            </fieldset>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%= render "share" %>
+  </div>
+
+  <div class='row'>
+    <%= render "media_form" %>
+    <div class='col-md-7'>
+      <div class='well'>
+        <legend>Coordinator Controls</legend>
+        <%= render "email" %>      
+        <%= link_to "Invite More Coordinators", new_user_invitation_path, { class: 'h4 panel-title panel-heading' } %>
       </div>
     </div>
   </div>
-
-    <%= render "share" %>
-    <%= render "email" %>      
-    <%= link_to("Invite More Coordinators", new_user_invitation_path) %>
-
-  <%= render "media_form" %>
 </div>
 
 

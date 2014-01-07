@@ -8,11 +8,22 @@
   </div>
   <div id="collapseOne" class="panel-collapse collapse">
     <div class="panel-body">
-      <%= form_tag("/mail", method: "post") do %>
-        <%= text_field_tag "mail[message]", nil, placeholder: 'Enter a message to all attendees' %>
-        <%= hidden_field_tag "mail[movement_id]", @movement.id.to_i %>
-        <%= submit_tag "Send Email"%>
-      <% end %>
+      <div class='row'>
+        <%= form_tag("/mail", method: "post") do %>
+          <div class='form-group'>
+            <div class='col-md-9'>
+              <%= text_area_tag "mail[message]", nil, placeholder: 'Enter a message to send to all attendees', class: 'form-control' %>
+              <%= hidden_field_tag "mail[movement_id]", @movement.id.to_i %>
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <div class='col-md-3'>
+              <%= submit_tag "Send Email", class: 'btn btn-primary' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div> 
