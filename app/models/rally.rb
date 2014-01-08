@@ -31,6 +31,10 @@ class Rally < ActiveRecord::Base
     end
   end
 
+  def tasks
+    movement.tasks_for(size)
+  end
+
   private
     def assign_coordinates
       lookup = Zipcode.find_by_zip(self.zip)

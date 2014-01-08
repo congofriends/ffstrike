@@ -15,7 +15,7 @@
 </div>
  
 <p class="lead">Rally's tasks </p>
-<% @rally.movement.tasks_for(@rally.size).each do |task| %>
+<% @rally.tasks.each do |task| %>
   <li class="text-info"><%= task.description %></li>
 <% end %>  
 
