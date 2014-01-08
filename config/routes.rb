@@ -20,8 +20,6 @@ Ffstrike::Application.routes.draw do
 
   #mail
   post 'mail_movement/:movement_id' => 'mail#mail_movement', as: 'mail_movement'
-
-  #post 'mail_rally' => 'mail#mail_rally'
   post 'mail_rally/:rally_id/:movement_id' => 'mail#mail_rally', as: 'mail_rally'
 
 

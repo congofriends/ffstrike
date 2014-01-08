@@ -1,8 +1,8 @@
 class UserMailer < ActionMailer::Base
   default from: "coordinator@rallies.com"
 
-  def custom_message_movement(movement_id, message)
-    @recipients = Attendee.all.where(movement_id: movement_id) 
+  def custom_message_movement(movement, message)
+    @recipients = movement.attendees
     @message = message
     unless @recipients.empty?
       mail(to: @recipients.collect(&:email).join(","))
@@ -11,10 +11,11 @@ class UserMailer < ActionMailer::Base
     return false
   end
 
-  def custom_message_rally(rally_id, message)
-    @recipients = Attendee.all.where(rally_id: rally_id)
+  def custom_message_rally(rally, message)
+    @recipients = rally.attendees
     @message = message
     unless @recipients.empty?
+      #test if recipients is empty
       mail(to: @recipients.collect(&:email).join(","))
       return true
     end
