@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable 
 
+  alias_attribute :coordinator_name, :name
+  alias_attribute :coordinator_email, :email
+
   def self.find_for_facebook_oauth(auth)
     User.find_by(:provider => auth.provider, :uid => auth.uid)
   end

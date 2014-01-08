@@ -5,7 +5,11 @@ class Rally < ActiveRecord::Base
   belongs_to :movement, class_name: Movement
   has_many :attendees, dependent: :destroy
   after_validation :assign_coordinates
-  delegate :movement_name, :image, :to => :movement
+
+  delegate :movement_name, :image,     :to => :movement
+  delegate :story,                     :to => :movement
+  delegate :coordinator_name,          :to => :coordinator
+  delegate :coordinator_email,         :to => :coordinator
 
   def self.near_zip(zipcode, distance)
     return [] if zipcode.nil?
