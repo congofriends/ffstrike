@@ -11,4 +11,4 @@ Number of attendees: <span class="badge"> <%= @rally.number_of_attendees %> </sp
   </div>
 <% end %>
 
-<% render "email_rally.html.erb" %>
+<% render partial: "email_rally.html.erb", locals: { rally: @rally, movement: @movement} %>
