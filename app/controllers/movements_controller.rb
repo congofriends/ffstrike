@@ -25,6 +25,10 @@ class MovementsController < ApplicationController
     @rally = Rally.new
   end
 
+  def export_csv
+    send_data @movement.to_csv, filename: "Attendee List"
+  end
+
   def update
     @movement.update_attributes(movement_params)
     redirect_to movement_path(@movement) 
