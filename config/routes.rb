@@ -1,12 +1,12 @@
 Ffstrike::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "users", :invitations => 'users/invitations'  }
 
-  root 'home#index'
+  root 'static_pages#index'
 
   get 'rallies' => 'rallies#search'  
 
   #home
-  get 'about' => 'home#about',  as: 'about'
+  get 'about' => 'static_pages#about',  as: 'about'
 
   #movements
   resources :movements do
