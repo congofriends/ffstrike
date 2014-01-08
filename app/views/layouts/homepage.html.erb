@@ -35,10 +35,11 @@
         </ul>
       </div>
     </nav>
-
-    <% flash.each do |key, value| %>
-      <div class='alert alert-success alert-<%= key %>'><%= value %></div>
-    <% end %>
+    <div class='container'>
+      <% flash.each do |key, value| %>
+        <div class='flash alert alert-success alert-<%= key %>'><%= value %></div>
+      <% end %>
+  </div>
     <%= yield %>
 
   </body>
