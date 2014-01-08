@@ -15,7 +15,6 @@ class UserMailer < ActionMailer::Base
     @recipients = rally.attendees
     @message = message
     unless @recipients.empty?
-      #test if recipients is empty
       mail(to: @recipients.collect(&:email).join(","))
       return true
     end

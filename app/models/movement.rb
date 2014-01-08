@@ -36,4 +36,14 @@ class Movement < ActiveRecord::Base
     Movement.offset(rand(Movement.count - number_of_rallies + 1)).first(number_of_rallies) 
   end
 
+  def to_csv
+    CSV.generate do |csv|
+      column_names = ["Name", "Email", "Phone", "Rally", "Zip", "City"]
+      csv << column_names
+      self.attendees.each do |attendee|
+        csv << [attendee.name, attendee.email, attendee.phone, attendee.rally.name, attendee.rally.zip, attendee.rally.city] 
+      end
+    end
+  end
+
 end

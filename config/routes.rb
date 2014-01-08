@@ -22,6 +22,8 @@ Ffstrike::Application.routes.draw do
   post 'mail_movement/:movement_id' => 'mail#mail_movement', as: 'mail_movement'
   post 'mail_rally/:rally_id/:movement_id' => 'mail#mail_rally', as: 'mail_rally'
 
+  #export CSV
+  get 'export_csv/:id' => 'movements#export_csv', as: 'export_csv'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

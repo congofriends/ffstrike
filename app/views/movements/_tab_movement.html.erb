@@ -40,6 +40,7 @@
         <legend>Coordinator Controls</legend>
         <%= render "email" %>      
         <%= link_to "Invite More Coordinators", new_user_invitation_path, { class: 'h4 panel-title panel-heading' } %>
+        <%= link_to "Export Attendee List", export_csv_path(@movement), class: 'btn' %>
       </div>
     </div>
   </div>

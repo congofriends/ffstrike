@@ -98,4 +98,15 @@ describe MovementsController do
     end
   end
 
+  describe "GET #export_csv" do
+    context "when format is csv" do
+      movement = FactoryGirl.create(:movement)
+      it "should return a csv attachment" do
+        @controller.should_receive(:send_data).with(movement.to_csv, filename: "Attendee List").
+          and_return { @controller.render nothing: true } # to prevent a 'missing template' error
+        get :export_csv, id: movement, format: :csv
+      end
+    end
+  end
+
 end

@@ -49,6 +49,12 @@ describe Movement do
     end
   end
 
+  describe '.to_csv' do
+    it 'should return some text' do
+      expect(movement.to_csv).not_to be_nil
+    end
+  end
+
   private
 
   def uniq?(movements)

@@ -1,23 +1,22 @@
 <div class='row'>
   <h3>Rally details page</h3>
   <p><%= @rally.name %></p>
-  <p><%= @rally.address %></p>
-  <p><%= @rally.city %></p>
+  <p><%= @rally.location %></p>
   <p><%= @rally.notes %></p>
-  <p>Number of attendees: <span class="badge"> <%= @rally.number_of_attendees %> </span></p>
-
-  <h4>List of attendees:</h4>
-  <% @rally.attendees.each_with_index do |attendee, index| %>
-    <div class='col-md-3'>
-      <div class="panel panel-default">
-        <div class='panel-body'>
-          <p><%= index %></p>
-          <p><%= attendee.name %></p>
-          <p><%= attendee.email %></p>
-        </div>
-      </div>
-    </div>
+  
+  <p class="lead">Number of attendees: <span class="badge"> <%= @rally.number_of_attendees %> </span></p>
+  <% @rally.attendees.each do |attendee| %>
+    <li class="text-info">
+      <%= attendee.name %>
+      <%= attendee.email %>
+    </li>
   <% end %>
-
-  <% render partial: "email_rally.html.erb", locals: { rally: @rally, movement: @movement} %>
+  <%= render partial: "email_rally.html.erb", locals: { rally: @rally, movement: @movement} %>
 </div>
+ 
+<p class="lead">Rally's tasks </p>
+<% @rally.tasks.each do |task| %>
+  <li class="text-info"><%= task.description %></li>
+<% end %>  
+
+<%= render 'movements/share' %>
