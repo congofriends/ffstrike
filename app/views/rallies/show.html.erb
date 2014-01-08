@@ -1,14 +1,23 @@
-<h3>Rally details page</h3>
-Rally id: <%= @rally.id %>
-Number of attendees: <span class="badge"> <%= @rally.number_of_attendees %> </span>
+<div class='row'>
+  <h3>Rally details page</h3>
+  <p><%= @rally.name %></p>
+  <p><%= @rally.address %></p>
+  <p><%= @rally.city %></p>
+  <p><%= @rally.notes %></p>
+  <p>Number of attendees: <span class="badge"> <%= @rally.number_of_attendees %> </span></p>
 
-<p><strong>List of attendees:</strong></p>
-<% @rally.attendees.each_with_index do |attendee, index| %>
-  <div class="panel">
-    <%= index %>
-    <%= attendee.name %>
-    <%= attendee.email %>
-  </div>
-<% end %>
+  <h4>List of attendees:</h4>
+  <% @rally.attendees.each_with_index do |attendee, index| %>
+    <div class='col-md-3'>
+      <div class="panel panel-default">
+        <div class='panel-body'>
+          <p><%= index %></p>
+          <p><%= attendee.name %></p>
+          <p><%= attendee.email %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
-<% render partial: "email_rally.html.erb", locals: { rally: @rally, movement: @movement} %>
+  <% render partial: "email_rally.html.erb", locals: { rally: @rally, movement: @movement} %>
+</div>
