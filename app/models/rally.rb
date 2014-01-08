@@ -29,13 +29,14 @@ class Rally < ActiveRecord::Base
 
   def size
     case number_of_attendees
-      when 1..5 then :small_rally
+      when 0..5 then :small_rally
       when 6..14 then :medium_rally
       when 15..50 then :big_rally  
     end
   end
 
   def tasks
+    binding.pry
     movement.tasks_for(size)
   end
 
