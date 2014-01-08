@@ -1,0 +1,48 @@
+<section class='front-banner'>
+  <div class='homepage-banner'>
+    <div class='homepage-jumbotron'>
+      <div class='row'>
+        <div class='col-md-6 col-md-offset-6 homepage-jumbotron-text'>
+          <h1>Make A Difference</h1>
+          <p>Find a rally near you.<p>
+
+          <%= form_tag "/rallies", method: "get", class: 'form-inline' do %>
+            <div class='form-group'>
+              <%= search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control'}%>
+            </div>
+            <div class='form-group'>
+              <%= button_tag name="Search", class: 'btn btn-default' %>
+            </div>
+          <% end %>
+
+          <%= link_to "Feeling inspired? Create A Movement.", new_movement_path %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class='featured-movements'>
+  <div class='container'>
+    <div class="row">
+      <h1>Featured Movements</h1>
+    </div>
+
+    <div class="row">
+      <% @featured_movements.each do |featured_movement| %>
+        <div class='col-md-4'>
+          <div class='panel panel-default'>
+            <div class='panel-body'>
+              <%= image_tag featured_movement.image.url, { class:'front-page img-responsive center-block' } %>
+            </div>
+            <div class='panel-footer'>
+              <div class='text-center'>
+                  <h3><%= link_to featured_movement.name, movement_path(featured_movement.id) %></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
