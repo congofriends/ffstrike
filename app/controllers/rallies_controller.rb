@@ -17,7 +17,8 @@ class RalliesController < ApplicationController
   end
   
   def search
-    @rallies = Rally.near_zip(params[:zip], 200)
+    @zip ||= extract_zip(params[:zip]) if valid_zip(params[:zip])
+    @rallies = Rally.near_zip(@zip, 200)
   end
 
   private

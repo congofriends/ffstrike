@@ -6,7 +6,7 @@
           <h1>Make A Difference</h1>
           <p>Find a rally near you.<p>
 
-          <%= form_tag "/rallies", method: "get", class: 'form-inline' do %>
+          <%= form_tag "/rallies", method: "get", class: 'form-inline', id: 'zip-form' do %>
             <div class='form-group'>
               <%= search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control'}%>
             </div>
