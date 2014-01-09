@@ -1,6 +1,8 @@
 class RalliesController < ApplicationController
   before_filter :load_movement, :only => [:new, :create, :show]
 
+  include RalliesHelper
+
   def new
     @rally = Rally.new      
   end
