@@ -3,7 +3,6 @@ class Task < ActiveRecord::Base
   validates :movement_id, presence: true
   validates :description, presence: true, length: { maximum: 250 }
   validate :at_least_one_rally_size
-  # has_and_belongs_to_many :attendees
   has_many :assignments, foreign_key: "task_id"
   has_many :assigned_attendees, through: :assignments, source: :attendee
 
