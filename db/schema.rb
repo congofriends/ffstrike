@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140106205459) do
+ActiveRecord::Schema.define(version: 20140109214530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assignments", force: true do |t|
+    t.integer  "attendee_id"
+    t.integer  "task_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "assignments", ["attendee_id", "task_id"], name: "index_assignments_on_attendee_id_and_task_id", unique: true, using: :btree
+  add_index "assignments", ["attendee_id"], name: "index_assignments_on_attendee_id", using: :btree
+  add_index "assignments", ["task_id"], name: "index_assignments_on_task_id", using: :btree
 
   create_table "attendees", force: true do |t|
     t.string   "email"
@@ -26,6 +37,17 @@ ActiveRecord::Schema.define(version: 20140106205459) do
   end
 
   add_index "attendees", ["rally_id"], name: "index_attendees_on_rally_id", using: :btree
+
+  create_table "attendees_tasks", force: true do |t|
+    t.integer  "attendee_id"
+    t.integer  "task_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "attendees_tasks", ["attendee_id", "task_id"], name: "index_attendees_tasks_on_attendee_id_and_task_id", unique: true, using: :btree
+  add_index "attendees_tasks", ["attendee_id"], name: "index_attendees_tasks_on_attendee_id", using: :btree
+  add_index "attendees_tasks", ["task_id"], name: "index_attendees_tasks_on_task_id", using: :btree
 
   create_table "movements", force: true do |t|
     t.string   "name"

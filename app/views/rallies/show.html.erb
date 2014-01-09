@@ -16,7 +16,9 @@
  
 <p class="lead">Rally's tasks </p>
 <% @rally.tasks.each do |task| %>
-  <li class="text-info"><%= task.description %></li>
+  <li class="text-info">
+  <%= task.description %> <%= button_tag "Sign up", :class=>"btn btn-primary btn-xs" %> 
+  </li>
 <% end %>  
 
 <%= render 'movements/share' %>
