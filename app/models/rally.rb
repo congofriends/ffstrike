@@ -36,7 +36,6 @@ class Rally < ActiveRecord::Base
   end
 
   def tasks
-    binding.pry
     movement.tasks_for(size)
   end
 
