@@ -13,6 +13,15 @@ describe MovementsController do
     end
   end
 
+  describe "GET #visitor" do
+    it "responds successfully" do
+      movement = FactoryGirl.create(:movement)
+      get "visitor", id: movement
+
+      expect(response).to be_success
+    end
+  end
+
   describe "POST #create" do
     it "responds successfully" do
       post :create, movement: FactoryGirl.attributes_for(:nameless_movement)

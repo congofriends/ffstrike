@@ -13,6 +13,7 @@ Ffstrike::Application.routes.draw do
     resources :rallies
     resources :tasks
   end
+  get 'visitor/:id' => 'movements#visitor', as: 'visitor' 
 
   resources :rallies do
     resources :attendees
