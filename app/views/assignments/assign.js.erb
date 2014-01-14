@@ -1,2 +1,3 @@
-alert("Thanks for signing up! We'll let your coordinator know.");
-
+var buttonText = $("#<%= dom_id(@task) %> li a").last(); 
+buttonText.text('Just signed up!');
+buttonText.removeClass("btn-primary").addClass("btn-success");
