@@ -14,8 +14,10 @@
       </div>
 
       <div class='panel-footer'>
-        <div class='text-center'>
-          <p><%= link_to rally.name, movement_rally_path(rally.movement, rally) %></p>
+        <div class='text-left'>
+          <p><%= link_to rally.name, movement_rally_path(rally.movement, rally) %>
+             <p class="lead text-right"><%= rally.number_of_attendees %> Attendees</p>
+          </p>
           <p>Location: <%= rally.location %></p>
           <p>Time: TBD</p>
           <p>Organizer: <%= rally.coordinator_name || rally.coordinator_email %> </p>

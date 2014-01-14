@@ -6,7 +6,7 @@
   
   <p class="lead">Number of attendees: <span class="badge"> <%= @rally.number_of_attendees %> </span></p>
   <% @rally.attendees.each do |attendee| %>
-    <li class="text-info">
+    <li class="text-muted">
       <%= attendee.name %>
       <%= attendee.email %>
     </li>
@@ -15,6 +15,11 @@
 </div>
  
 <p class="lead">Rally's tasks </p>
+<% if current_user.nil? %>
+   <p class="text-info">You need to create an account in order to sign up for the rally's tasks
+      <%= link_to "Create an account", new_user_registration_path, :class=>"btn btn-primary btn-xs" %>
+   </p>
+<% end %>
 <% @rally.tasks.each do |task| %>
   <%= render task %>
 <% end %>  
