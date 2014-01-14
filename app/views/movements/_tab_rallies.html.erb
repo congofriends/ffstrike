@@ -6,6 +6,7 @@
         <div class='form-inline'>
           <% @movement.movement_rallies.each do |rally| %>
             <%= form_for :rally do |f| %>
+              <h4><%= link_to "'#{rally.name}' rally summary", movement_rally_path(@movement, rally) %></h4>
               <fieldset>
               <div class='form-group'>
                 <%= f.label :address, class: 'control-label' %>
