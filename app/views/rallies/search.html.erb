@@ -21,7 +21,10 @@
           <p>Organizer: <%= rally.coordinator_name || rally.coordinator_email %> </p>
           <p>Summary:<em> <%= rally.story %> </em> </p>
         </div>
+        <%= button_tag "Yes! I want to attend", type: "button", class: "btn btn-success btn-sm attend-button" %>
+        <%= render template: 'attendees/new', locals: { :rally => rally, :attendee => rally.attendees.build } %>
       </div>
+
     </div>
   </div>
 <% end %>
