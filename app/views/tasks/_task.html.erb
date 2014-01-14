@@ -4,5 +4,10 @@
     <%= link_to "Delete", movement_task_path(@movement, task.id), method: :delete,
       data: { confirm: "You sure about deleting task '#{task.description}'?"}, remote: true  %>
     <%= link_to "Update", edit_movement_task_path(@movement, task) %>
+    <% if task.assignments.map {|a| a.attendee_id == current_user.id }.any? %>
+        <%= link_to "Signed up!", assign_movement_task_path(@movement, task), :class=>"btn btn-info btn-xs", :disabled => true %>
+    <% else %>
+        <%= link_to "Sign up", assign_movement_task_path(@movement, task), :class=>"btn btn-primary btn-xs", remote: true %>
+    <% end %>
   </li>
 <% end %>

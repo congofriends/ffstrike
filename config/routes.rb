@@ -11,7 +11,9 @@ Ffstrike::Application.routes.draw do
   #movements
   resources :movements do
     resources :rallies
-    resources :tasks
+    resources :tasks do
+      get 'assign' => 'assignments#assign', on: :member, as: 'assign'
+    end
   end
   get 'visitor/:id' => 'movements#visitor', as: 'visitor' 
 
