@@ -20,6 +20,10 @@ class Task < ActiveRecord::Base
    assignments.find_by(attendee_id: attendee.id).destroy 
   end
 
+  def is_assigned_to? account
+    self.assignments.map {|a| a.attendee_id == account.id }.any? 
+  end
+
   private
   def at_least_one_rally_size
     if [self.small_rally, self.medium_rally, self.big_rally].reject(&:blank?).size == 0
