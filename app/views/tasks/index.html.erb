@@ -1,18 +1,16 @@
-<% if @movement.tasks.any? %>
-  <h3>Movements contain <%= @movement.count_movement_tasks %> unique tasks</h3>
+<h3>Movement contains <%= @movement.count_movement_tasks %> unique tasks</h3>
 
-  <h4>Tasks for small rally <%= @movement.count_tasks(:small_rally) %> </h4>
-  <div id="small_rally">(for Rallies that have only 1-5 in attendance)</div>
-  <%= render @tasks = @movement.tasks_for(:small_rally) %>
+<h4>Tasks for small rally <%= @movement.count_tasks(:small_rally) %> </h4>
+<div id="small_rally">(for Rallies that have only 1-5 in attendance)</div>
+<%= render @tasks = @movement.tasks_for(:small_rally) %>
 
-  <h4>Tasks for medium rally <%=  @movement.count_tasks(:medium_rally) %> </h4>  
-  <div id="medium_rally">(for Rallies that have only 6-14 in attendance)</div>
-  <%= render @tasks = @movement.tasks_for(:medium_rally) %>
+<h4>Tasks for medium rally <%=  @movement.count_tasks(:medium_rally) %> </h4>  
+<div id="medium_rally">(for Rallies that have only 6-14 in attendance)</div>
+<%= render @tasks = @movement.tasks_for(:medium_rally) %>
 
-  <h4>Tasks for big rally <%=  @movement.count_tasks(:big_rally) %> </h4>  
-  <div id="big_rally">(for Rallies that have only 14-50 in attendance)</div>
-  <%= render @tasks = @movement.tasks_for(:big_rally) %>
+<h4>Tasks for big rally <%=  @movement.count_tasks(:big_rally) %> </h4>  
+<div id="big_rally">(for Rallies that have only 14-50 in attendance)</div>
+<%= render @tasks = @movement.tasks_for(:big_rally) %>
 
-<% end %>
 <%= render 'tasks/form' %>
 
