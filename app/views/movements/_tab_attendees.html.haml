@@ -1,10 +1,18 @@
-.tab-pane{id: 'successes'}
+.tab-pane{id: 'attendees'}
   .well
     %table.table.table-bordered.table-striped
       %tr
-        %th Attendee
-        %th Email
-        %th Point person?
-        %th Notes
+        %th Location 
+        %th Date
+        %th Details 
+        %th See Attendees
+      - @movement.rallies.each do |rally|
+        %tr
+          %td= rally.location
+          %td Date TBD
+          %td= rally.notes
+          %td 
+            Attendees 
+            %span.glyphicon.glyphicon-hand-down
 
 
