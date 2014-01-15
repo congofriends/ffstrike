@@ -1,4 +1,4 @@
-.tab-pane{id: 'attendees'}
+.tab-pane#attendees
   .well
     %table.table.table-bordered.table-striped
       %tr
@@ -12,7 +12,23 @@
           %td Date TBD
           %td= rally.notes
           %td 
-            Attendees 
-            %span.glyphicon.glyphicon-hand-down
+            %button.btn{type: "button", data: {toggle: "collapse", target: "#rally#{rally.id}"}}
+              Attendees 
+              %span.glyphicon.glyphicon-hand-down
+        %tr.collapse{id: "rally#{rally.id}"}
+          %td{colspan: "4"}
+            %table.table.table-bordered.table-striped
+              %tr
+                %th Name
+                %th Email
+                %th Point person?
+                %th Notes
+              - rally.attendees.each do |attendee|
+                %tr
+                  %td= attendee.name
+                  %td= attendee.email
+                  %td= attendee.assignments.count > 0 ? "yes" : "no"
+                  %td Notes Disabled
+              
 
 
