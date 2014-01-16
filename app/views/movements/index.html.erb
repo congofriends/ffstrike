@@ -1,0 +1,4 @@
+<h3> Movements created by me, <%= @movements.first.user.email %> </h3>
+<% @movements.each do |movement| %>
+  <div> <%= movement.inspect %></div>
+<% end %>
