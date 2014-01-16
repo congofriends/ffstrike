@@ -4,7 +4,7 @@ class AttendeesController < ApplicationController
   def create
     @attendee = @rally.attendees.build(attendee_params)
       if @attendee.save
-      redirect_to movement_rally_path(@movement, @rally), notice: "You sign up for the rally"
+      redirect_to movement_rally_path(@movement, @rally), notice: "You signed up for the rally"
     else
       redirect_to movement_path(@movement, anchor: "rallies"),  notice: "Email is required"
     end

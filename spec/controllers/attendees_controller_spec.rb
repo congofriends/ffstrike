@@ -18,7 +18,7 @@ describe AttendeesController do
 
       it "notifies the user that task was created" do
         post :create, rally_id: rally, attendee: FactoryGirl.attributes_for(:attendee)
-        flash[:notice].should == "You sign up for the rally"
+        flash[:notice].should == "You signed up for the rally"
       end
     end
 
