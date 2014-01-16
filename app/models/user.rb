@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable 
 
+  has_many :movements
   alias_attribute :coordinator_name, :name
   alias_attribute :coordinator_email, :email
 

@@ -42,6 +42,7 @@
     <div class='col-md-7'>
       <div class='well'>
         <legend>Coordinator Controls</legend>
+        <%= link_to "Review my all movements", movements_path, { class: 'h4 panel-title panel-heading' }%>
         <%= render "email" %>      
         <%= link_to "Invite More Coordinators", new_user_invitation_path, { class: 'h4 panel-title panel-heading' } %>
         <%= link_to "Export Attendee List", export_csv_path(@movement), class: 'btn' %>

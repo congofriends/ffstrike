@@ -1,9 +1,13 @@
 class MovementsController < ApplicationController
   before_filter :authenticate_user!, :except => [:visitor]
-  before_filter :load_movement, :except => [:new, :create]
+  before_filter :load_movement, :except => [:new, :create, :index]
   include YoutubeParserHelper
 
   def visitor
+  end
+
+  def index
+    @movements = Movement.where(user_id: current_user.id)
   end
 
   def new
@@ -12,6 +16,7 @@ class MovementsController < ApplicationController
 
   def create
     @movement = Movement.new(movement_params)
+    @movement.user_id = current_user.id
     if @movement.save
       unless current_user.nil?
         current_user.add_movement(@movement)
@@ -41,7 +46,7 @@ class MovementsController < ApplicationController
   
   def movement_params
     params[:movement][:video]= extract_video_id(params[:movement][:video])
-    params.require(:movement).permit(:name, :category, :story, :image, :video)
+    params.require(:movement).permit(:name, :category, :story, :image, :video, :user_id)
   end
 
   def load_movement

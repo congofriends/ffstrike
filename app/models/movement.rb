@@ -4,6 +4,8 @@ class Movement < ActiveRecord::Base
   has_many :tasks, dependent: :destroy
   has_many :rallies, dependent: :destroy
   has_many :attendees
+  belongs_to :user
+  validates_presence_of :user, on: :create
 
   has_attached_file :image, :default_url => 'cat.png'
 	validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
