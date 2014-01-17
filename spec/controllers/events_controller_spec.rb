@@ -3,7 +3,9 @@ require 'spec_helper'
 describe EventsController do
   describe "GET #new" do
     before :each do
-      movement = FactoryGirl.create(:movement)
+      coordinator = FactoryGirl.create(:user)
+      sign_in coordinator
+      movement = FactoryGirl.create(:movement, user: coordinator)
       get "new", movement_id: movement 
     end
 
@@ -17,8 +19,13 @@ describe EventsController do
   end
 
   describe "POST #create" do
-    let(:movement){FactoryGirl.create(:movement)}
     let(:coordinator){FactoryGirl.create(:user)}
+    let(:movement){FactoryGirl.create(:movement, user: coordinator)}
+    let(:visitor){FactoryGirl.create(:user)}
+
+    before(:each) do
+      
+    end
 
     context "with valid attributes" do
       it "creates a event" do
@@ -30,14 +37,24 @@ describe EventsController do
         expect(Event.last.movement_id).to eq(movement.id)
       end
 
-      it "redirects to the movement page" do
-        post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id)
-        expect(response).to redirect_to movement_path(movement, anchor: "events")
-      end
-
       it "notifies the user that event was created" do
         post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id)
         flash[:notice].should == "Event created!"
+      end
+    
+      context "as a coordinator" do
+        it "redirects to the movement page" do
+          @controller.stub(:current_user).and_return(coordinator)
+          post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id)
+          expect(response).to redirect_to movement_path(movement, anchor: "events")
+        end
+      end
+
+      context "as a visitor" do
+        it "redirects to the visitor page" do
+          post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id)
+          expect(response).to redirect_to visitor_path(movement)
+        end
       end
     end
 
@@ -47,7 +64,8 @@ describe EventsController do
       end
 
       it "re-renders the new method" do
-        post :create, movement_id: movement, event: FactoryGirl.attributes_for(:invalid_event)
+        @controller.stub(:current_user).and_return(coordinator)
+        post :create, movement_id: movement, event: FactoryGirl.attributes_for(:invalid_event).merge(coordinator_id: coordinator.id)
         expect(response).to redirect_to movement_path(movement, anchor: "events")
       end
 

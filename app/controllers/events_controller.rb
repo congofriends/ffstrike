@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_filter :load_movement, :only => [:new, :create, :show]
+  before_filter :authenticate_user!, :only => [:new]
 
   include EventsHelper
 
@@ -15,7 +16,11 @@ class EventsController < ApplicationController
     @event = @movement.events.build(event_params)
     flash[:notice] = 
       @event.save ? "Event created!" : @event.errors.full_messages.flatten.join(' ')
-    redirect_to movement_path(@movement, anchor: "events")
+    if current_user == @movement.user
+      redirect_to movement_path(@movement, anchor: "events")
+      return
+    end
+    redirect_to visitor_path(@movement)
   end
   
   def search
