@@ -1,11 +1,11 @@
 <h4>Add a new task to a movement:</h4>
 <%= form_for ([@movement, @task=Task.new]), remote: true, html: {class: "form-inline"} do |f| %>
   <%= f.text_area :description, placeholder: "Enter new task description here..." %>
-  <%= f.check_box :small_rally %>
-  <%= f.label "small", :small_rally %>
-  <%= f.check_box :medium_rally %>
-  <%= f.label "medium", :medium_rally %>
-  <%= f.check_box :big_rally %>
-  <%= f.label "big", :big_rally %>
+  <%= f.check_box :small_event %>
+  <%= f.label "small", :small_event %>
+  <%= f.check_box :medium_event %>
+  <%= f.label "medium", :medium_event %>
+  <%= f.check_box :big_event %>
+  <%= f.label "big", :big_event %>
   <%= f.submit "Create new task", :class=>"btn btn-success" %>
 <% end %>

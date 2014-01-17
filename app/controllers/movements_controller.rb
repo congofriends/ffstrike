@@ -21,7 +21,7 @@ class MovementsController < ApplicationController
       unless current_user.nil?
         current_user.add_movement(@movement)
       end
-      flash[:notice] = "Congratulations! Your movement was created. Try starting some rallies."
+      flash[:notice] = "Congratulations! Your movement was created. Try starting some events."
       redirect_to movement_path(@movement)
     else
       flash[:notice] = "There was an problem when saving your movement. Please try again."
@@ -30,7 +30,7 @@ class MovementsController < ApplicationController
   end
 
 	def show
-    @rally = Rally.new
+    @event = Event.new
   end
 
   def export_csv

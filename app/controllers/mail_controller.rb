@@ -11,10 +11,10 @@ class MailController < ApplicationController
     redirect_to movement_url(params[:movement_id])
   end
 
-  def mail_rally
-    rally = Rally.find(params[:rally_id])
+  def mail_event
+    event = Event.find(params[:event_id])
     message = params[:message]
-    if UserMailer.custom_message_rally(rally, message).deliver
+    if UserMailer.custom_message_event(event, message).deliver
       flash[:notice] = "Sending Emails!"
     else
       flash[:notice] = "You have no attendees to email."

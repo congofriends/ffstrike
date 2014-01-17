@@ -1,41 +1,41 @@
-<div class='tab-pane' id='rallies'>
+<div class='tab-pane' id='events'>
   <div class='well'>
-    <legend>Rallies</legend>
+    <legend>Events</legend>
     <div class='panel panel-default'>
       <div class='panel-body'>
         <div class='form-inline'>
-          <% @movement.movement_rallies.each do |rally| %>
-            <%= form_for :rally do |f| %>
-              <h4><%= link_to "'#{rally.name}' rally summary", movement_rally_path(@movement, rally) %></h4>
+          <% @movement.movement_events.each do |event| %>
+            <%= form_for :event do |f| %>
+              <h4><%= link_to "'#{event.name}' event summary", movement_event_path(@movement, event) %></h4>
               <fieldset>
               <div class='form-group'>
                 <%= f.label :address, class: 'control-label' %>
-                <%= f.text_field :address, value: rally.address, class: 'form-control' %>
+                <%= f.text_field :address, value: event.address, class: 'form-control' %>
               </div>
 
               <div class='form-group'>
                 <%= f.label :city, class: 'control-label' %>
-                <%= f.text_field :city, value: rally.city, class: 'form-control' %>
+                <%= f.text_field :city, value: event.city, class: 'form-control' %>
               </div>
 
               <div class='form-group'>
                 <%= f.label :zip, class: 'control-label' %>
-                <%= f.text_field :zip, value: rally.zip, class: 'form-control' %>
+                <%= f.text_field :zip, value: event.zip, class: 'form-control' %>
               </div>
             
               <div class='form-group'>
                 <%= f.label :notes, class: 'control-label' %>
-                <%= f.text_field :notes, value: rally.notes, class: 'form-control' %>
+                <%= f.text_field :notes, value: event.notes, class: 'form-control' %>
               </div>
 
               <%= f.submit "Update", class: "btn btn-primary" %> 
               </fieldset>
             <% end %>
-            <%= render 'rallies/email_rally', rally: rally, movement: @movement %>
+            <%= render 'events/email_event', event: event, movement: @movement %>
           <% end %>
         </div>
       </div>
     </div>
   </div>
-  <%= render template: 'rallies/new' %>
+  <%= render template: 'events/new' %>
 </div>

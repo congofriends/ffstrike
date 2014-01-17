@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "coordinator@rallies.com"
+  default from: "coordinator@events.com"
 
   def custom_message_movement(movement, message)
     @recipients = movement.attendees
@@ -11,8 +11,8 @@ class UserMailer < ActionMailer::Base
     return false
   end
 
-  def custom_message_rally(rally, message)
-    @recipients = rally.attendees
+  def custom_message_event(event, message)
+    @recipients = event.attendees
     @message = message
     unless @recipients.empty?
       mail(to: @recipients.collect(&:email).join(","))

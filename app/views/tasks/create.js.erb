@@ -1,10 +1,10 @@
-<% if params[:task][:small_rally] == "1" %>
-  $('div#small_rally').append("<%= escape_javascript(render @task) %>");
+<% if params[:task][:small_event] == "1" %>
+  $('div#small_event').append("<%= escape_javascript(render @task) %>");
 <% end %>
-<% if params[:task][:medium_rally] == "1" %>
-  $('div#medium_rally').append("<%= escape_javascript(render @task) %>");
+<% if params[:task][:medium_event] == "1" %>
+  $('div#medium_event').append("<%= escape_javascript(render @task) %>");
 <% end %> 
-<% if params[:task][:big_rally] == "1" %>
-  $('div#big_rally').append("<%= escape_javascript(render @task) %>");
+<% if params[:task][:big_event] == "1" %>
+  $('div#big_event').append("<%= escape_javascript(render @task) %>");
 <% end %> 
 $('#new_task').each(function(){ this.reset(); }) ;

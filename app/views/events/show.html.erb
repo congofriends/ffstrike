@@ -1,0 +1,27 @@
+<div class='row'>
+  <h3>Event details page</h3>
+  <p><%= @event.name %></p>
+  <p><%= @event.location %></p>
+  <p><%= @event.notes %></p>
+  
+  <p class="lead">Number of attendees: <span class="badge"> <%= @event.number_of_attendees %> </span></p>
+  <% @event.attendees.each do |attendee| %>
+    <li class="text-muted">
+      <%= attendee.name %>
+      <%= attendee.email %>
+    </li>
+  <% end %>
+  <%= render partial: "email_event.html.erb", locals: { event: @event, movement: @movement} %>
+</div>
+ 
+<p class="lead">Event's tasks </p>
+<% if current_user.nil? %>
+   <p class="text-info">You need to create an account in order to sign up for the event's tasks
+      <%= link_to "Create an account", new_user_registration_path, :class=>"btn btn-primary btn-xs" %>
+   </p>
+<% end %>
+<% @event.tasks.each do |task| %>
+  <%= render task %>
+<% end %>  
+
+<%= render 'movements/share' %>

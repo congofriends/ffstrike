@@ -1,12 +1,12 @@
 class AttendeesController < ApplicationController
-  before_filter :load_rally_and_movement, :only => [:create]
+  before_filter :load_event_and_movement, :only => [:create]
 
   def create
-    @attendee = @rally.attendees.build(attendee_params)
+    @attendee = @event.attendees.build(attendee_params)
       if @attendee.save
-      redirect_to movement_rally_path(@movement, @rally), notice: "You signed up for the rally"
+      redirect_to movement_event_path(@movement, @event), notice: "You signed up for the event"
     else
-      redirect_to movement_path(@movement, anchor: "rallies"),  notice: "Email is required"
+      redirect_to movement_path(@movement, anchor: "events"),  notice: "Email is required"
     end
   end
 
@@ -15,8 +15,8 @@ class AttendeesController < ApplicationController
     params.require(:attendee).permit(:name, :email)
   end
 
-  def load_rally_and_movement 
-    @rally = Rally.find params[:rally_id]
-    @movement = @rally.movement
+  def load_event_and_movement 
+    @event = Event.find params[:event_id]
+    @movement = @event.movement
   end
 end

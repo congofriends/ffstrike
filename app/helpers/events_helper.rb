@@ -1,4 +1,4 @@
-module RalliesHelper
+module EventsHelper
 
   def extract_zip(zip)
     /\d{5}/.match(zip)[0]

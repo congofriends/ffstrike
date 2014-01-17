@@ -6,16 +6,16 @@
         %th Date
         %th Details 
         %th See Attendees
-      - @movement.rallies.each do |rally|
+      - @movement.events.each do |event|
         %tr
-          %td= rally.location
+          %td= event.location
           %td Date TBD
-          %td= rally.notes
+          %td= event.notes
           %td 
-            %button.btn{type: "button", data: {toggle: "collapse", target: "#rally#{rally.id}"}}
+            %button.btn{type: "button", data: {toggle: "collapse", target: "#event#{event.id}"}}
               Attendees 
               %span.glyphicon.glyphicon-hand-down
-        %tr.collapse{id: "rally#{rally.id}"}
+        %tr.collapse{id: "event#{event.id}"}
           %td{colspan: "4"}
             %table.table.table-bordered.table-striped
               %tr
@@ -23,7 +23,7 @@
                 %th Email
                 %th Point person?
                 %th Notes
-              - rally.attendees.each do |attendee|
+              - event.attendees.each do |attendee|
                 %tr
                   %td= attendee.name
                   %td= attendee.email

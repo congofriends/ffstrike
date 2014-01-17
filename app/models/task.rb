@@ -2,11 +2,11 @@ class Task < ActiveRecord::Base
   belongs_to :movement
   validates :movement_id, presence: true
   validates :description, presence: true, length: { maximum: 250 }
-  validate :at_least_one_rally_size
+  validate :at_least_one_event_size
   has_many :assignments, foreign_key: "task_id"
   has_many :assigned_attendees, through: :assignments, source: :attendee
 
-  scope :tasks_for, -> (rally_type){where(rally_type => true)}
+  scope :tasks_for, -> (event_type){where(event_type => true)}
 
   def assigned? attendee
     assignments.find_by(attendee_id: attendee.id)
@@ -25,9 +25,9 @@ class Task < ActiveRecord::Base
   end
 
   private
-  def at_least_one_rally_size
-    if [self.small_rally, self.medium_rally, self.big_rally].reject(&:blank?).size == 0
-      errors[:rally_size_warning] << "Please choose at least one rally category"
+  def at_least_one_event_size
+    if [self.small_event, self.medium_event, self.big_event].reject(&:blank?).size == 0
+      errors[:event_size_warning] << "Please choose at least one event category"
     end
   end
 end

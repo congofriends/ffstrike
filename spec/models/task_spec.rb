@@ -35,8 +35,8 @@ describe Task do
 
   describe "assigned?" do
     let(:movement) { FactoryGirl.create(:movement) }
-    let(:rally) { FactoryGirl.create(:rally) }
-    let(:attendee) { FactoryGirl.create(:attendee, rally: rally)  }
+    let(:event) { FactoryGirl.create(:event) }
+    let(:attendee) { FactoryGirl.create(:attendee, event: event)  }
     let(:task) { FactoryGirl.create(:task, movement: movement) }
     before { task.assign!(attendee) }
 

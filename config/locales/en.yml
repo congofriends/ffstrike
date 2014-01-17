@@ -24,5 +24,5 @@ en:
   user_mailer:
     custom_message_movement:
       subject: "Message from your Movement Organizer" 
-    custom_message_rally:
+    custom_message_event:
       subject: "Message from your Movement Organizer"

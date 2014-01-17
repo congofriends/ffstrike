@@ -2,17 +2,17 @@
   <div class="panel-heading">
     <h4 class="panel-title">
       <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-        Email Rally Attendees 
+        Email Event Attendees 
       </a>
     </h4>
   </div>
   <div id="collapseTwo" class="panel-collapse collapse">
     <div class="panel-body">
       <div class='row'>
-        <%= form_tag(mail_rally_path(rally, movement), method: "post") do %>
+        <%= form_tag(mail_event_path(event, movement), method: "post") do %>
           <div class='form-group'>
             <div class='col-md-9'>
-              <%= text_area_tag "message", nil, placeholder: 'Enter a message to send to rally attendees', class: 'form-control' %>
+              <%= text_area_tag "message", nil, placeholder: 'Enter a message to send to event attendees', class: 'form-control' %>
             </div>
           </div>
 

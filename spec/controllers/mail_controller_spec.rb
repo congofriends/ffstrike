@@ -4,8 +4,8 @@ describe MailController do
 
   before :each do
     @movement = FactoryGirl.create(:movement)
-    @rally = FactoryGirl.create(:rally)
-    @attendee = FactoryGirl.create(:attendee, movement_id: @movement.id, rally_id: @rally.id)
+    @event = FactoryGirl.create(:event)
+    @attendee = FactoryGirl.create(:attendee, movement_id: @movement.id, event_id: @event.id)
   end
 
   describe "POST #mail" do
@@ -15,9 +15,9 @@ describe MailController do
     end
   end
 
-  describe "POST #mail_rally" do
-    it "tells usermailer to mail_rally" do
-      post "mail_rally", rally_id: @rally, movement_id: @rally, message: "Test Message"
+  describe "POST #mail_event" do
+    it "tells usermailer to mail_event" do
+      post "mail_event", event_id: @event, movement_id: @event, message: "Test Message"
       assert !ActionMailer::Base.deliveries.empty?
     end
   end 

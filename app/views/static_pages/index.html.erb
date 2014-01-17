@@ -4,9 +4,9 @@
       <div class='row'>
         <div class='col-md-6 col-md-offset-6 homepage-jumbotron-text'>
           <h1>Make A Difference</h1>
-          <p>Find a rally near you.<p>
+          <p>Find a event near you.<p>
 
-          <%= form_tag "/rallies", method: "get", class: 'form-inline', id: 'zip-form' do %>
+          <%= form_tag "/events", method: "get", class: 'form-inline', id: 'zip-form' do %>
             <div class='form-group'>
               <%= search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control'}%>
             </div>

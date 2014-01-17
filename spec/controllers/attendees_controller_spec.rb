@@ -2,38 +2,38 @@ require 'spec_helper'
 
 describe AttendeesController do
   let(:movement) { FactoryGirl.create(:movement) }
-  let(:rally) { FactoryGirl.create(:rally, movement: movement) }
-  let(:attendee) { FactoryGirl.create(:attendee, rally: rally) }
+  let(:event) { FactoryGirl.create(:event, movement: movement) }
+  let(:attendee) { FactoryGirl.create(:attendee, event: event) }
 
   describe "POST #create" do
     context "with valid information" do
       it "creates an attendee" do
-        expect{post :create, rally_id: rally, attendee: FactoryGirl.attributes_for(:attendee)}.to change(Attendee, :count).by(1)
+        expect{post :create, event_id: event, attendee: FactoryGirl.attributes_for(:attendee)}.to change(Attendee, :count).by(1)
       end
 
-      it "redirects to the rally show page" do
-        post :create, rally_id: rally, attendee: FactoryGirl.attributes_for(:attendee)
-        expect(response).to redirect_to movement_rally_path(movement, rally)
+      it "redirects to the event show page" do
+        post :create, event_id: event, attendee: FactoryGirl.attributes_for(:attendee)
+        expect(response).to redirect_to movement_event_path(movement, event)
       end
 
       it "notifies the user that task was created" do
-        post :create, rally_id: rally, attendee: FactoryGirl.attributes_for(:attendee)
-        flash[:notice].should == "You signed up for the rally"
+        post :create, event_id: event, attendee: FactoryGirl.attributes_for(:attendee)
+        flash[:notice].should == "You signed up for the event"
       end
     end
 
     context "with invalid information" do
       it "does not save the attendee" do
-        expect{post :create, rally_id: rally, attendee: FactoryGirl.attributes_for(:attendee_without_email)}.not_to change(Attendee, :count)
+        expect{post :create, event_id: event, attendee: FactoryGirl.attributes_for(:attendee_without_email)}.not_to change(Attendee, :count)
       end
 
       it "re-renders the same page" do
-        post :create, rally_id: rally, attendee: FactoryGirl.attributes_for(:attendee_without_email)
-        expect(response).to redirect_to movement_path(movement, anchor: "rallies")
+        post :create, event_id: event, attendee: FactoryGirl.attributes_for(:attendee_without_email)
+        expect(response).to redirect_to movement_path(movement, anchor: "events")
       end
 
       it "notifies user that attendee information is missing required email field" do
-        post :create, rally_id: rally, attendee: FactoryGirl.attributes_for(:attendee_without_email)
+        post :create, event_id: event, attendee: FactoryGirl.attributes_for(:attendee_without_email)
         flash[:notice].should == "Email is required"
       end
     end

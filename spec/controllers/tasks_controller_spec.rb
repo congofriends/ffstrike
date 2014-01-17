@@ -36,9 +36,9 @@ describe TasksController do
         flash[:notice].should == "Description can't be blank"
       end
 
-      it "notifies user that task information is missing rally size field" do
-        post :create, movement_id: movement, task: FactoryGirl.attributes_for(:task_without_rally_size)
-        flash[:notice].should == "Rally size warning Please choose at least one rally category"
+      it "notifies user that task information is missing event size field" do
+        post :create, movement_id: movement, task: FactoryGirl.attributes_for(:task_without_event_size)
+        flash[:notice].should == "Event size warning Please choose at least one event category"
       end
     end 
   end

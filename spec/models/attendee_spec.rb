@@ -1,14 +1,14 @@
 require 'spec_helper'
 
 describe Attendee do
- let(:rally)  { FactoryGirl.build(:rally) }
- let(:attendee) { rally.attendees.build(email: "ant_farm@com.com" ) }
+ let(:event)  { FactoryGirl.build(:event) }
+ let(:attendee) { event.attendees.build(email: "ant_farm@com.com" ) }
 
  subject { attendee }
  it {should respond_to(:name) }
  it {should respond_to(:email)}
- it {should respond_to(:rally_id)}
- it {should respond_to(:rally)}
+ it {should respond_to(:event_id)}
+ it {should respond_to(:event)}
  it {should respond_to(:assignments)}
  it {should respond_to(:assigned_tasks)}
  it {should respond_to(:assigned?)}
@@ -19,14 +19,14 @@ describe Attendee do
  #   expect(FactoryGirl.build(:attendee_without_email)).to_not be_valid
  # end
  
- describe "when rally_id is not present" do
-   before { attendee.rally_id = nil }
+ describe "when event_id is not present" do
+   before { attendee.event_id = nil }
    it {should_not be_valid}
  end
 
  describe "assigned?" do
-   let(:rally) { FactoryGirl.create(:rally) }
-   let(:attendee) { FactoryGirl.create(:attendee, rally: rally) }
+   let(:event) { FactoryGirl.create(:event) }
+   let(:attendee) { FactoryGirl.create(:attendee, event: event) }
    let(:task) { FactoryGirl.create(:task) }
    before { attendee.assign!(task) }
 

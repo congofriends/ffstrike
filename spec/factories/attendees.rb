@@ -2,12 +2,12 @@ FactoryGirl.define do
   factory :attendee do
     email "email@example.com"
     movement
-    rally
+    event
   end
 
   factory :attendee_without_email, class: Attendee do
     name "Harry Potter"
-    rally
+    event
     movement
   end
 end

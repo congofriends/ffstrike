@@ -3,27 +3,27 @@ Ffstrike::Application.routes.draw do
 
   root 'static_pages#index'
 
-  get 'rallies' => 'rallies#search'  
+  get 'events' => 'events#search'  
 
   #home
   get 'about' => 'static_pages#about',  as: 'about'
 
   #movements
   resources :movements do
-    resources :rallies
+    resources :events
     resources :tasks do
       get 'assign' => 'assignments#assign', on: :member, as: 'assign'
     end
   end
   get 'visitor/:id' => 'movements#visitor', as: 'visitor' 
 
-  resources :rallies do
+  resources :events do
     resources :attendees
   end
 
   #mail
   post 'mail_movement/:movement_id' => 'mail#mail_movement', as: 'mail_movement'
-  post 'mail_rally/:rally_id/:movement_id' => 'mail#mail_rally', as: 'mail_rally'
+  post 'mail_event/:event_id/:movement_id' => 'mail#mail_event', as: 'mail_event'
 
   #export CSV
   get 'export_csv/:id' => 'movements#export_csv', as: 'export_csv'

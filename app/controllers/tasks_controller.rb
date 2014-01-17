@@ -29,7 +29,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:description, :small_rally, :medium_rally, :big_rally)
+    params.require(:task).permit(:description, :small_event, :medium_event, :big_event)
   end
 
   def load_movement

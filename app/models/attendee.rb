@@ -1,8 +1,8 @@
 class Attendee < ActiveRecord::Base
-  belongs_to :rally, class_name: Rally
+  belongs_to :event, class_name: Event
   belongs_to :movement
   validates :email, presence: true
-  validates :rally_id, presence: true
+  validates :event_id, presence: true
   has_many :assignments, foreign_key: "attendee_id"
   has_many :assigned_tasks, through: :assignments, source: :task
 

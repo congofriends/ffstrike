@@ -1,16 +1,16 @@
 FactoryGirl.define do
   factory :task do
-    description "I am a valid task for rally"
+    description "I am a valid task for event"
     movement
-    small_rally true
+    small_event true
   end
 
   factory :task_without_description, class: Task do
     movement
-    small_rally true
+    small_event true
   end
 
-  factory :task_without_rally_size, class: Task do
+  factory :task_without_event_size, class: Task do
     description {'description '*2}
     movement
   end
@@ -18,12 +18,12 @@ FactoryGirl.define do
   factory :task_with_description_longer_than_250_characters, class: Task do
     description {251.times.map{ ('a'..'z').to_a.sample }.join}
     movement
-    small_rally true
+    small_event true
   end
 
   factory :task_with_description_250_characters, class: Task do
     description {250.times.map{ ('a'..'z').to_a.sample }.join}
     movement
-    small_rally true
+    small_event true
   end
 end
