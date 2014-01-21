@@ -19,7 +19,6 @@ describe Movement do
 			                 less_than(2.megabytes) }	 
 
   it { should respond_to(:tasks) }
-  it { should respond_to(:users) }
 
   describe "task assosiation" do
     before do 

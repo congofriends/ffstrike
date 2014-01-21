@@ -11,7 +11,6 @@ class Movement < ActiveRecord::Base
 	validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
 	validates_attachment_size :image, :less_than => 2.megabytes
   
-  has_many :users
   alias_attribute :movement_name, :name
 
   def movement_events
