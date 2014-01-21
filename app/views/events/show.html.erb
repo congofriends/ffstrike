@@ -3,6 +3,7 @@
   <p><%= @event.name %></p>
   <p><%= @event.location %></p>
   <p><%= @event.notes %></p>
+  <p><%= @event.date %></p>
   
   <p class="lead">Number of attendees: <span class="badge"> <%= @event.number_of_attendees %> </span></p>
   <% @event.attendees.each do |attendee| %>

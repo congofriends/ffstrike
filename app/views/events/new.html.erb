@@ -23,6 +23,11 @@
     </div>
 
     <div class='form-group'>
+      <%= form.label :date %>
+      <%= form.text_field :date, class: 'form-control', id: 'datepicker' %>
+    </div>
+
+    <div class='form-group'>
       <%= form.label :coordinator %>
       <%= form.select :coordinator_id, [[current_user.email, current_user.id]], { class: 'form-control' }, { class: 'form-control' } %>
     </div>

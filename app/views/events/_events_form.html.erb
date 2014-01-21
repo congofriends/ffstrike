@@ -1,0 +1,39 @@
+ <div class='form-inline'>
+  <% @movement.movement_events.each do |event| %>
+    <%= form_for :event do |f| %>
+      <h4><%= link_to "'#{event.name}' event summary", movement_event_path(@movement, event) %></h4>
+      <fieldset>
+        <div class='row'>
+          <div class='form-group col-md-2'>
+            <%= f.label :address, class: 'control-label' %>
+            <%= f.text_field :address, value: event.address, class: 'form-control' %>
+          </div>
+
+          <div class='form-group col-md-2'>
+            <%= f.label :city, class: 'control-label' %>
+            <%= f.text_field :city, value: event.city, class: 'form-control' %>
+          </div>
+
+          <div class='form-group col-md-2'>
+            <%= f.label :zip, class: 'control-label' %>
+            <%= f.text_field :zip, value: event.zip, class: 'form-control' %>
+          </div>
+    
+          <div class='form-group col-md-2'>
+            <%= f.label :notes, class: 'control-label' %>
+            <%= f.text_field :notes, value: event.notes, class: 'form-control' %>
+          </div>
+          
+          <div class='form-group col-md-2'>
+            <%= f.label :date, class: 'control-label' %>
+            <%= f.text_field :date, value: event.date, class: 'form-control' %>
+          </div>
+
+          <%= f.submit "Update", class: "btn btn-primary" %> 
+        </div>
+      </fieldset>
+    <% end %>
+    <%= render 'events/email_event', event: event, movement: @movement %>
+  <% end %>
+</div>
+

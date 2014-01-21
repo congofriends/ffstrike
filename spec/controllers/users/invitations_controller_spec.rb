@@ -5,8 +5,8 @@ describe Users::InvitationsController do
     it "assigns invited user to inviter's movement" do
 
       invitee = FactoryGirl.build(:user, email: "invitee@example.org")
-      inviter = FactoryGirl.create(:user, movement_id:  "1", email: "inviter@example.org")
-      movement = FactoryGirl.create(:movement, id: "1")
+      movement = FactoryGirl.create(:movement)
+      inviter = FactoryGirl.create(:user, movement_id:  movement.id, email: "inviter@example.org")
 
       User.stub(:accept_invitation!).and_return(invitee)
       User.stub(:find).and_return(inviter)
