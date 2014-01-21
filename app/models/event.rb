@@ -29,9 +29,9 @@ class Event < ActiveRecord::Base
 
   def size
     case number_of_attendees
-      when 0..5 then :small_rally
-      when 6..14 then :medium_rally
-      when 15..50 then :big_rally  
+      when 0..5 then :small_event
+      when 6..14 then :medium_event
+      when 15..50 then :big_event  
     end
   end
 
