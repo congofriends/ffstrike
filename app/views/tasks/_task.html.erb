@@ -1,10 +1,8 @@
-<%= div_for task do %>
+<%= div_for task do %>  
   <li>
-    <%= task.description %>
  <% if current_user %> 
-    <%= link_to "Delete", movement_task_path(@movement, task.id), method: :delete,
+    <%= link_to raw('<i class="glyphicon glyphicon-remove-circle"></i>') , movement_task_path(@movement, task.id), method: :delete,
       data: { confirm: "You sure about deleting task '#{task.description}'?"}, remote: true  %>
-    <%= link_to "Update", edit_movement_task_path(@movement, task) %>
     <% if task.is_assigned_to? current_user %>
       <%= link_to "Signed up!", assign_movement_task_path(@movement, task), :class=>"btn btn-info btn-xs", :disabled => true %>
     <% else %>
@@ -13,5 +11,6 @@
   <% else %>
       <%= link_to "Sign up", assign_movement_task_path(@movement, task), :class=>"btn btn-default btn-xs", :disabled => true %>
   <% end %>
+  <%= best_in_place task, :description, :path=>[@movement, task], :type=> :input, :html_attrs => {:class=>"input"} %>
   </li>
-<% end %>
+<% end%>

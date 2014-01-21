@@ -29,6 +29,8 @@ GEM
     assert_difference (0.5.0)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
+    best_in_place (0.2.3)
+      rails (>= 3.0.0)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -201,6 +203,7 @@ PLATFORMS
 
 DEPENDENCIES
   assert_difference
+  best_in_place
   better_errors
   coffee-rails (~> 4.0.0)
   devise

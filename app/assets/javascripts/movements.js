@@ -1,4 +1,7 @@
 $(document).ready(function() {
+/* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+
  //activate first nav-tab and tab-content if nothing is activated currently 
  var elementAlreadyActive = false;
  $('.nav-tabs li').each(function(index, li) {

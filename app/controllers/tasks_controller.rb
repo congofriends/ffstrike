@@ -24,7 +24,10 @@ class TasksController < ApplicationController
 
   def update
     @task.update_attributes(task_params)
-    redirect_to  movement_path(@movement, anchor: "tasks"), notice: "Task #{@task.id} id has been updated"
+    respond_to do |format|
+      format.html { redirect_to  movement_path(@movement, anchor: "tasks"), notice: "Task #{@task.id} id has been updated" }
+      format.json { head :ok  }
+    end
   end
 
   private
