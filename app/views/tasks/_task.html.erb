@@ -8,9 +8,10 @@
     <% else %>
       <%= link_to "Sign up", assign_movement_task_path(@movement, task), :class=>"btn btn-primary btn-xs", remote: true %>
     <% end %> 
+  <%= best_in_place task, :description, :path=>[@movement, task], :type=> :input, :html_attrs => {:class=>"input"} %>
   <% else %>
       <%= link_to "Sign up", assign_movement_task_path(@movement, task), :class=>"btn btn-default btn-xs", :disabled => true %>
+      <%= task.description %>
   <% end %>
-  <%= best_in_place task, :description, :path=>[@movement, task], :type=> :input, :html_attrs => {:class=>"input"} %>
   </li>
 <% end%>
