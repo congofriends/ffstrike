@@ -12,4 +12,6 @@
  *= require journal-theme
  *= require_tree .
  *= require font-awesome
+ *= require datepicker 
+ *= require timepicker 
  */

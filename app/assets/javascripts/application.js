@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require best_in_place
 //= require_tree .
-//= require jquery.validate.js
+//= require jquery.validate
+//= require bootstrap-datepicker
+//= require bootstrap-timepicker
