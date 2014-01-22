@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :load_movement, :only => [:new, :create, :show]
+  before_filter :load_movement, :only => [:new, :create, :show, :update]
   before_filter :authenticate_user!, :only => [:new]
 
   include EventsHelper
@@ -26,6 +26,14 @@ class EventsController < ApplicationController
   def search
     @zip ||= extract_zip(params[:zip]) if valid_zip(params[:zip])
     @events = Event.near_zip(@zip, 200)
+  end
+
+  def update
+    @event = Event.find params[:id]
+    @event.update_attributes(event_params)
+    flash[:notice] = "Event updated."
+    redirect_to movement_path(@movement, anchor: "events") 
+
   end
 
   private

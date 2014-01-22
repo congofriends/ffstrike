@@ -23,10 +23,6 @@ describe EventsController do
     let(:movement){FactoryGirl.create(:movement, user: coordinator)}
     let(:visitor){FactoryGirl.create(:user)}
 
-    before(:each) do
-      
-    end
-
     context "with valid attributes" do
       it "creates a event" do
         expect{post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id)}.to change(Event, :count).by(1)
@@ -89,5 +85,27 @@ describe EventsController do
       expect(assigns(:events)).to eq([event])
     end
   end
+
+  describe "PUT #update" do
+    let(:coordinator){FactoryGirl.create(:user)}
+    let(:movement){FactoryGirl.create(:movement, user: coordinator)}
+    let(:event){FactoryGirl.create(:event, coordinator_id: coordinator.id)}
+
+    it "changes attributes" do
+      put :update, movement_id: movement, id: event, event: {notes: "attribute changed"}
+      expect(Event.find(event.id).notes).to eql("attribute changed") 
+    end
+
+    it "redirects to movement page anchored in event" do
+      put :update, movement_id: movement, id: event, event: FactoryGirl.attributes_for(:event) 
+      expect(response).to redirect_to movement_path(movement, anchor: "events")
+    end
+
+    it "notifies user that event was updated" do
+      put :update, movement_id: movement, id: event, event: {notes: "attribute changed"}
+      flash[:notice].should == "Event updated."
+    end
+  end
+
 end
 
