@@ -10,6 +10,7 @@ Ffstrike::Application.routes.draw do
 
   #movements
   resources :movements do
+    get 'my_movements' => 'movements#user_movements', on: :collection, as: 'user'
     resources :events
     resources :tasks do
       get 'assign' => 'assignments#assign', on: :member, as: 'assign'

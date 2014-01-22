@@ -1,13 +1,17 @@
 class MovementsController < ApplicationController
   before_filter :authenticate_user!, :except => [:visitor]
-  before_filter :load_movement, :except => [:new, :create, :index]
+  before_filter :load_movement, :except => [:new, :create, :index, :user_movements]
   include YoutubeParserHelper
 
   def visitor
   end
 
   def index
-    @movements = Movement.where(user_id: current_user.id)
+    @movements = Movement.all
+  end
+
+  def user_movements
+    @movements = current_user.movements
   end
 
   def new

@@ -1,0 +1,6 @@
+<% if current_user.movements.any? %>
+  <h3>You have <%= @movements.count %> movements </h3>
+  <ol>
+    <%= render @movements %>
+  </ol>
+<% end %> 

@@ -1,0 +1,5 @@
+<li>
+<p> <%= link_to movement.name, movement_path(movement) %> </p>
+  <span> <%= movement.inspect %> </span>
+  <p class="text-muted"><em> Created <%= time_ago_in_words(movement.created_at) %> ago.</em></p>
+</li>
