@@ -16,10 +16,16 @@ describe AttendeesController do
         expect(response).to redirect_to movement_event_path(movement, event)
       end
 
-      it "notifies the user that task was created" do
+      it "notifies attendee that they signed up" do
         post :create, event_id: event, attendee: FactoryGirl.attributes_for(:attendee)
         flash[:notice].should == "You signed up for the event"
       end
+
+      it "mails the attendee" do
+        post :create, event_id: event, attendee: FactoryGirl.attributes_for(:attendee)
+        assert !ActionMailer::Base.deliveries.empty?
+      end
+
     end
 
     context "with invalid information" do

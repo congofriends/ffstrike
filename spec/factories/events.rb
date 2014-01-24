@@ -11,6 +11,8 @@ FactoryGirl.define do
     address '333 North Pole Road'
     city 'Chicago'
     zip '60606'
+    date '08/02/90'
+    time '22:35'
     notes 'i am a valid event'
     association :coordinator, factory: :user
   end

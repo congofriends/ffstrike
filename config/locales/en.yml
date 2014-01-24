@@ -26,3 +26,6 @@ en:
       subject: "Message from your Movement Organizer" 
     custom_message_event:
       subject: "Message from your Movement Organizer"
+  attendee_mailer:
+    signup_message:
+      subject: "You've signed up to attend an event!" 
