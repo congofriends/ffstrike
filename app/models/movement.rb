@@ -29,8 +29,16 @@ class Movement < ActiveRecord::Base
     self.movement_tasks.tasks_for(event_size)
   end
 
+  def common_tasks_for_all_event_types
+    self.movement_tasks.select { |task| task.small_event && task.medium_event && task.big_event }
+  end
+
   def count_tasks(event_size)
     self.tasks_for(event_size).count
+  end
+
+  def exclude_common_tasks_from(event_size)
+    tasks_for(event_size) - common_tasks_for_all_event_types
   end
 
   def self.random(number_of_events = 1)

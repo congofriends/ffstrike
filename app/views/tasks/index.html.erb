@@ -1,18 +1,21 @@
 <h3>Movement contains <%= @movement.count_movement_tasks %> unique tasks</h3>
 
+<h4>Common tasks for all event types: </h4>
+<%= render @tasks = @movement.common_tasks_for_all_event_types%>
+
 <h4>Small Event Tasks</h4>
 <div id="small_event">(1-5 attendees)
-  <%= render @tasks = @movement.tasks_for(:small_event) %>
+  <%= render @tasks = @movement.exclude_common_tasks_from(:small_event) %>
 </div>
 
 <h4>Medium Event Tasks</h4>  
 <div id="medium_event">(6-14 attendees)
-  <%= render @tasks = @movement.tasks_for(:medium_event) %>
+  <%= render @tasks = @movement.exclude_common_tasks_from(:medium_event) %>
 </div>
 
 <h4>Large Event Tasks</h4>  
 <div id="big_event">(14-50 attendees)
-  <%= render @tasks = @movement.tasks_for(:big_event) %>
+  <%= render @tasks = @movement.exclude_common_tasks_from(:big_event) %>
 </div>
 
 <%= render 'tasks/form' %>
