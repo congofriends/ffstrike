@@ -4,6 +4,12 @@
       <h4><%= link_to "'#{event.name}' event summary", movement_event_path(@movement, event) %></h4>
       <fieldset>
         <div class='row'>
+
+          <div class='form-group col-md-2'>
+            <%= f.label :type %>
+            <%= f.select :type, [["Speak Out", "Speak Out"], ["Rally", "Rally"], ["Movie Screening"]], { class: 'form-control' }, { class: 'form-control' } %>
+          </div>
+
           <div class='form-group col-md-2'>
             <%= f.label :address, class: 'control-label' %>
             <%= f.text_field :address, value: event.address, class: 'form-control' %>
@@ -34,13 +40,10 @@
             <%= f.text_field :time, value: event.time, class: 'form-control timepicker' %>
           </div>
 
-        </div>
-
-        <div class='row'>
           <div class='col-md-2'>
             <%= f.submit "Update", class: "btn btn-primary" %> 
           </div>
-          <div class='col-md-10'>
+          <div class='col-md-8'>
             <%= render 'events/email_event', event: event, movement: @movement %>
           </div>
         </div>
