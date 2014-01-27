@@ -7,5 +7,9 @@
   <%= f.label "medium", :medium_event %>
   <%= f.check_box :big_event %>
   <%= f.label "big", :big_event %>
-  <%= f.submit "Create new task", :class=>"btn btn-success" %>
+  <% if @movement.user == current_user %> 
+    <%= f.submit "Create new task", :class=>"btn btn-success" %>
+  <% else %>
+    <%= f.submit "Create new task", :class=>"btn btn-success", :disabled=>true %> 
+  <% end %>    
 <% end %>
