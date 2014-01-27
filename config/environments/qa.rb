@@ -11,6 +11,7 @@ Ffstrike::Application.configure do
     :user_name => "postmaster@ffstrike.mailgun.org",
     :password => "53bdbr1f8280"
   }
+  config.action_mailer.default_url_options = { :host => "http://rally_qa.herokuapp.com" }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
 

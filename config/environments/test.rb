@@ -7,6 +7,10 @@ Ffstrike::Application.configure do
   # and recreated between test runs. Don't rely on the data there!
   config.cache_classes = true
 
+  # Links need to work in actionmailer
+  config.action_mailer.default_url_options = { :host => "http://rally_qa.herokuapp.com" }
+
+
   # Do not eager load code on boot. This avoids loading your whole application
   # just for the purpose of running a single test. If you are using a tool that
   # preloads Rails for running tests, you may have to set it to true.
