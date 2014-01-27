@@ -9,6 +9,7 @@ FactoryGirl.define do
   factory :event do
     name 'Super event'
     address '333 North Pole Road'
+    address_details 'meet in the corner'
     city 'Chicago'
     zip '60606'
     date '08/02/90'
