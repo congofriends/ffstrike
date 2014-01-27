@@ -1,6 +1,6 @@
 <%= div_for task do %>  
-  <li>
- <% if @movement.user == current_user %> 
+ <li>
+ <% if current_user && @movement.user == current_user %> 
     <%= link_to raw('<i class="glyphicon glyphicon-remove-circle"></i>') , movement_task_path(@movement, task.id), method: :delete,
       data: { confirm: "You sure about deleting task '#{task.description}'?"}, remote: true  %>
     <% if task.is_assigned_to? current_user %>
