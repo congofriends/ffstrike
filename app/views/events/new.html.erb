@@ -1,5 +1,8 @@
 <div class='well'>
-  <legend>Create an event!</legend>
+  <legend>Create an <em><%= params[:type]%></em> event!</legend>
+
+ <%= t("event_type.#{params[:type]}") %> 
+
   <%= form_for ([@movement, @event]) do |form| %>
     <fieldset>
 

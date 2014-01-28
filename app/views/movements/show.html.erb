@@ -15,11 +15,11 @@ Our Story:
 
 <h4>Which event type would you like to create? </h4>
 <ul class="nav nav-pills nav-stacked">
-     <span class="btn-info badge"> Rally </span>
-     <span class="btn-info badge"> Public Speak-Out/Petitioning Event </span>
-     <span class="btn-info badge"> Host a Movie Screening </span>
-     <span class="btn-info badge"> Public Forums </span>
-     <span class="btn-info badge"> Meet with Decision-Makers </span>
-     <span class="btn-info badge"> Create your own event </span>
+     <%= link_to "Rally", new_movement_event_path(@movement, {type: "rally"}), :class=>"btn-info badge" %>
+     <%= link_to "Public Speak-Out/Petitioning Event", new_movement_event_path(@movement, {type: "public_speak_out"}), :class=>"btn-info badge" %>
+     <%= link_to "Host a Movie Screening", new_movement_event_path(@movement, {type: "movie_screening"}), :class=>"btn-info badge" %>
+     <%= link_to "Public Forums ", new_movement_event_path(@movement, {type: "public_forums"}), :class=>"btn-info badge" %>
+     <%= link_to "Meet with Decision-Makers ", new_movement_event_path(@movement, {type: "meet_with_decision_makers"}), :class=>"btn-info badge" %>
+     <%= link_to "Create your own event", new_movement_event_path(@movement, {type: "own_event"}), :class=>"btn-primary badge" %>
 </ul>
 
