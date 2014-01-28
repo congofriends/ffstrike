@@ -1,7 +1,6 @@
 class Movement < ActiveRecord::Base
   validates_with VideoValidator, fields: [:video]
   validates_presence_of :name, on: :create 
-  has_many :tasks, dependent: :destroy
   has_many :events, dependent: :destroy
   has_many :attendees
   belongs_to :user
@@ -15,30 +14,6 @@ class Movement < ActiveRecord::Base
 
   def movement_events
     self.events  
-  end
-
-  def movement_tasks
-    self.tasks
-  end
-
-  def count_movement_tasks
-    self.movement_tasks.count
-  end
-
-  def tasks_for(event_size)
-    self.movement_tasks.tasks_for(event_size)
-  end
-
-  def common_tasks_for_all_event_types
-    self.movement_tasks.select { |task| task.small_event && task.medium_event && task.big_event }
-  end
-
-  def count_tasks(event_size)
-    self.tasks_for(event_size).count
-  end
-
-  def exclude_common_tasks_from(event_size)
-    tasks_for(event_size) - common_tasks_for_all_event_types
   end
 
   def self.random(number_of_events = 1)

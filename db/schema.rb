@@ -40,16 +40,25 @@ ActiveRecord::Schema.define(version: 20140128194808) do
 
   add_index "attendees", ["event_id"], name: "index_attendees_on_event_id", using: :btree
 
-  create_table "attendees_tasks", force: true do |t|
-    t.integer  "attendee_id"
-    t.integer  "task_id"
+  create_table "bikes", force: true do |t|
+    t.string   "entry_date"
+    t.string   "brand"
+    t.string   "model"
+    t.string   "type"
+    t.string   "color"
+    t.string   "frame_size"
+    t.boolean  "freecyclery"
+    t.boolean  "sale"
+    t.string   "serial_number"
+    t.text     "notes"
+    t.text     "tag_info"
+    t.string   "repaired_by"
+    t.string   "repaired_for"
+    t.string   "completion_date"
+    t.string   "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "attendees_tasks", ["attendee_id", "task_id"], name: "index_attendees_tasks_on_attendee_id_and_task_id", unique: true, using: :btree
-  add_index "attendees_tasks", ["attendee_id"], name: "index_attendees_tasks_on_attendee_id", using: :btree
-  add_index "attendees_tasks", ["task_id"], name: "index_attendees_tasks_on_task_id", using: :btree
 
   create_table "events", force: true do |t|
     t.string   "name"
@@ -91,13 +100,13 @@ ActiveRecord::Schema.define(version: 20140128194808) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "movement_id"
     t.boolean  "small_event"
     t.boolean  "medium_event"
     t.boolean  "big_event"
+    t.integer  "event_id"
   end
 
-  add_index "tasks", ["movement_id"], name: "index_tasks_on_movement_id", using: :btree
+  add_index "tasks", ["event_id"], name: "index_tasks_on_event_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

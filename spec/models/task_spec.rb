@@ -1,13 +1,13 @@
 require 'spec_helper'
 
 describe Task do
-  let(:movement) { FactoryGirl.build(:movement) }
-  let(:task)  { movement.tasks.build(description: "Lorem ipsum is a good task name") }
+  let(:event) { FactoryGirl.build(:event) }
+  let(:task)  { event.tasks.build(description: "Lorem ipsum is a good task name") }
 
   subject { task }
   it {should respond_to(:description)}
-  it {should respond_to(:movement_id)}
-  it {should respond_to(:movement)}
+  it {should respond_to(:event_id)}
+  it {should respond_to(:event)}
   it {should respond_to(:assignments)}
   it {should respond_to(:assigned_attendees)}
   it {should respond_to(:assigned?)}
@@ -28,16 +28,15 @@ describe Task do
     expect(FactoryGirl.build(:task_with_description_250_characters)).to be_valid
   end
 
-  describe "when movement_id is not present" do
-    before { task.movement_id = nil }
+  describe "when event_id is not present" do
+    before { task.event_id = nil }
     it {should_not be_valid}
   end
 
   describe "assigned?" do
-    let(:movement) { FactoryGirl.create(:movement) }
     let(:event) { FactoryGirl.create(:event) }
     let(:attendee) { FactoryGirl.create(:attendee, event: event)  }
-    let(:task) { FactoryGirl.create(:task, movement: movement) }
+    let(:task) { FactoryGirl.create(:task, event: event) }
     before { task.assign!(attendee) }
 
     it {should be_assigned(attendee) }

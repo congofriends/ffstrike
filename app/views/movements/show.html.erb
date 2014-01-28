@@ -11,6 +11,7 @@ Our Story:
 <div class="well"><h4> <%= @movement.story %> </h4>
   <%= image_tag @movement.image, width: 200, :class=>"pull-right" %>
 </div>
+
 <%=youtube_embed_url_for_(@movement.video) %>
 
 <h4>Which event type would you like to create? </h4>

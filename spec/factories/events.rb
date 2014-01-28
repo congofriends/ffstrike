@@ -16,5 +16,6 @@ FactoryGirl.define do
     time '22:35'
     notes 'i am a valid event'
     association :coordinator, factory: :user
+    movement
   end
 end

@@ -5,7 +5,7 @@ class AttendeesController < ApplicationController
     @attendee = @event.attendees.build(attendee_params)
     if @attendee.save
       AttendeeMailer.signup_message(@movement, @event, @attendee).deliver
-      redirect_to movement_event_path(@movement, @event), notice: "You signed up for the event"
+      redirect_to event_path(@event), notice: "You signed up for the event"
     else
       redirect_to movement_path(@movement, anchor: "events"),  notice: "Email is required"
     end

@@ -1,13 +1,13 @@
 class TasksController < ApplicationController 
-  before_action :load_movement
+  before_action :load_event
   before_action :load_task, :only => [:destroy, :edit, :show, :update]
 
   def create
-    @task = @movement.tasks.build(task_params)
+    @task = @event.tasks.build(task_params)
     flash[:notice] = 
       @task.save ? "New task is created" : @task.errors.full_messages.flatten.join('. ')
     respond_to do |format|
-      format.html { redirect_to movement_path(@movement, anchor: "tasks") }
+      format.html { redirect_to movement_path(@event.movement, anchor: "tasks") }
       format.js
     end
   end
@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     respond_to do |format|
-      format.html { redirect_to  movement_path(@movement, anchor: "tasks"), notice: "Task is deleted" }
+      format.html { redirect_to  movement_path(@event.movement, anchor: "tasks"), notice: "Task is deleted" }
       format.js
     end
   end
@@ -25,7 +25,7 @@ class TasksController < ApplicationController
   def update
     @task.update_attributes(task_params)
     respond_to do |format|
-      format.html { redirect_to  movement_path(@movement, anchor: "tasks"), notice: "Task #{@task.id} id has been updated" }
+      format.html { redirect_to  movement_path(@event.movement, anchor: "tasks"), notice: "Task #{@task.id} id has been updated" }
       format.json { head :ok  }
     end
   end
@@ -35,8 +35,8 @@ class TasksController < ApplicationController
     params.require(:task).permit(:description, :small_event, :medium_event, :big_event)
   end
 
-  def load_movement
-    @movement = Movement.find(params[:movement_id])
+  def load_event
+    @event = Event.find(params[:event_id])
   end
 
   def load_task

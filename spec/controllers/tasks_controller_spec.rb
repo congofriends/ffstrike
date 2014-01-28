@@ -1,43 +1,44 @@
 require 'spec_helper'
 
 describe TasksController do
-  let(:movement) { FactoryGirl.create(:movement)}
-  let(:task)  { FactoryGirl.create(:task, movement: movement)}
+  let(:movement) { FactoryGirl.create(:movement) }
+  let(:event) { FactoryGirl.create(:event, movement: movement)}
+  let(:task)  { FactoryGirl.create(:task, event: event)}
 
   describe "POST #create" do
     context "with valid information" do
       it "creates a task" do
-        expect{post :create, movement_id: movement, task: FactoryGirl.attributes_for(:task)}.to change(Task, :count).by(1)
+        expect{post :create, event_id: event, task: FactoryGirl.attributes_for(:task)}.to change(Task, :count).by(1)
       end
 
       it "redirects to the index page" do
-        post :create, movement_id: movement, task: FactoryGirl.attributes_for(:task)
+        post :create, event_id: event, task: FactoryGirl.attributes_for(:task)
         expect(response).to redirect_to movement_path(movement, anchor: "tasks")
       end
 
       it "notifies the user that task was created" do
-        post :create, movement_id: movement, task: FactoryGirl.attributes_for(:task)
+        post :create, event_id: event, task: FactoryGirl.attributes_for(:task)
         flash[:notice].should == "New task is created"
       end
     end
 
     context "with invalid information" do
       it "does not save the task" do
-        expect{post :create, movement_id: movement, task: FactoryGirl.attributes_for(:task_without_description)}.not_to change(Task, :count)
+        expect{post :create, event_id: event, task: FactoryGirl.attributes_for(:task_without_description)}.not_to change(Task, :count)
       end
 
       it "re-renders the new method" do
-        post :create, movement_id: movement, task: FactoryGirl.attributes_for(:task_without_description)
+        post :create, event_id: event, task: FactoryGirl.attributes_for(:task_without_description)
         expect(response).to redirect_to movement_path(movement, anchor: "tasks")
       end
 
       it "notifies user that task information is missing description field" do
-        post :create, movement_id: movement, task: FactoryGirl.attributes_for(:task_without_description)
+        post :create, event_id: event, task: FactoryGirl.attributes_for(:task_without_description)
         flash[:notice].should == "Description can't be blank"
       end
 
       it "notifies user that task information is missing event size field" do
-        post :create, movement_id: movement, task: FactoryGirl.attributes_for(:task_without_event_size)
+        post :create, event_id: event, task: FactoryGirl.attributes_for(:task_without_event_size)
         flash[:notice].should == "Event size warning Please choose at least one event category"
       end
     end 
@@ -45,7 +46,7 @@ describe TasksController do
 
   describe "PUT #update" do
     before :each do
-      put :update, movement_id: movement, id: task, task: FactoryGirl.attributes_for(:task, description: "New description goes here") 
+      put :update, event_id: event, id: task, task: FactoryGirl.attributes_for(:task, description: "New description goes here") 
     end
     
     it "loads the requested task" do
@@ -64,9 +65,9 @@ describe TasksController do
 
   describe "DELETE #destroy" do
     it "should destroy task" do
-      task; movement
+      task; event
       assert_difference 'Task.count', -1, "Task is deleted" do
-        delete :destroy, movement_id: movement, id: task
+        delete :destroy, event_id: event, id: task
       end
       assert_redirected_to movement_path(movement, anchor: "tasks")
     end

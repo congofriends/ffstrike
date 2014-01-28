@@ -13,7 +13,7 @@ describe AttendeesController do
 
       it "redirects to the event show page" do
         post :create, event_id: event, attendee: FactoryGirl.attributes_for(:attendee)
-        expect(response).to redirect_to movement_event_path(movement, event)
+        expect(response).to redirect_to event_path(event)
       end
 
       it "notifies attendee that they signed up" do

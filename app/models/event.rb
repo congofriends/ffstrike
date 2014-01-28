@@ -4,6 +4,7 @@ class Event < ActiveRecord::Base
   belongs_to :coordinator, class_name: User
   belongs_to :movement, class_name: Movement
   has_many :attendees, dependent: :destroy
+  has_many :tasks, dependent: :destroy
   after_validation :assign_coordinates
 
   delegate :movement_name, :image,     :to => :movement
@@ -35,9 +36,27 @@ class Event < ActiveRecord::Base
     end
   end
 
-  def tasks
-    movement.tasks_for(size)
+
+  def event_tasks
+    self.tasks
   end
+
+  def count_tasks
+    self.tasks.count
+  end
+
+  def tasks_for(event_size)
+    self.tasks.tasks_for(event_size)
+  end
+
+  def common_tasks_for_all_event_types
+    self.tasks.select { |task| task.small_event && task.medium_event && task.big_event }
+  end
+
+  def exclude_common_tasks_from(event_size)
+    tasks_for(event_size) - common_tasks_for_all_event_types
+  end
+
 
   private
     def assign_coordinates

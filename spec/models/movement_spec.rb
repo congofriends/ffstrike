@@ -18,23 +18,7 @@ describe Movement do
  	it { should validate_attachment_size(:image).
 			                 less_than(2.megabytes) }	 
 
-  it { should respond_to(:tasks) }
-
-  describe "task assosiation" do
-    before do 
-      movement.save
-      2.times { FactoryGirl.create(:task, movement: movement) }
-    end
-
-    it "should destroy assosiated tasks" do
-      tasks = movement.tasks.to_a
-      movement.destroy
-      expect(tasks).not_to be_empty
-      tasks.each { |task| expect(Task.where(id: task.id)).to be_empty }
-    end
-  end
-
-  describe '.random' do
+    describe '.random' do
     before do
       FactoryGirl.create_list(:movement, 10)
     end

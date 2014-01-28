@@ -1,12 +1,31 @@
 require 'spec_helper'
 
 describe Event do
-  it "assigns a zipcode" do
+  let(:event) { FactoryGirl.build(:event) }
+
+  it { should respond_to(:tasks) }
+
+  it "geocodes" do
     zip = FactoryGirl.create(:zipcode)
     event = FactoryGirl.create(:event, zip: "60647")
     expect(event.latitude).not_to be_nil 
     expect(event.longitude).not_to be_nil
   end
+
+  describe "task assosiation" do
+    before do 
+      event.save
+      2.times { FactoryGirl.create(:task, event: event) }
+    end
+
+    it "should destroy assosiated tasks" do
+      tasks = event.tasks.to_a
+      event.destroy
+      expect(tasks).not_to be_empty
+      tasks.each { |task| expect(Task.where(id: task.id)).to be_empty }
+    end
+  end
+
 
   context "#self.near_zip" do
 

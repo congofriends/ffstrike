@@ -1,7 +1,7 @@
  <div class='form-inline'>
   <% @movement.movement_events.each do |event| %>
-    <%= form_for [@movement, event] do |f| %>
-      <h4><%= link_to "'#{event.name}' event summary", movement_event_path(@movement, event) %></h4>
+    <%= form_for event do |f| %>
+      <h4><%= link_to "'#{event.name}' event summary", event_path(event) %></h4>
       <fieldset>
         <div class='row'>
 
