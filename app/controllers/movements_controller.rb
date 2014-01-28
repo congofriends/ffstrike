@@ -3,8 +3,7 @@ class MovementsController < ApplicationController
   before_filter :load_movement, :except => [:new, :create, :index, :user_movements]
   include YoutubeParserHelper
 
-  def visitor
-  end
+  def visitor; end
 
   def index
     @movements = Movement.all
@@ -12,6 +11,10 @@ class MovementsController < ApplicationController
 
   def user_movements
     @movements = current_user.movements
+  end
+
+  def dashboard
+    @event = Event.new
   end
 
   def new
@@ -25,7 +28,7 @@ class MovementsController < ApplicationController
       unless current_user.nil?
         current_user.add_movement(@movement)
       end
-      flash[:notice] = "Congratulations! Your movement was created. Try starting some events."
+      flash[:notice] = "Congratulations! You just created a movement, try to create event type"
       redirect_to movement_path(@movement)
     else
       flash[:notice] = "There was an problem when saving your movement. Please try again."
@@ -33,9 +36,7 @@ class MovementsController < ApplicationController
     end
   end
 
-	def show
-    @event = Event.new
-  end
+	def show; end
 
   def export_csv
     send_data @movement.to_csv, filename: "Attendee List"
