@@ -36,27 +36,9 @@ class Event < ActiveRecord::Base
     end
   end
 
-
-  def event_tasks
-    self.tasks
-  end
-
-  def count_tasks
-    self.tasks.count
-  end
-
   def tasks_for(event_size)
     self.tasks.tasks_for(event_size)
   end
-
-  def common_tasks_for_all_event_types
-    self.tasks.select { |task| task.small_event && task.medium_event && task.big_event }
-  end
-
-  def exclude_common_tasks_from(event_size)
-    tasks_for(event_size) - common_tasks_for_all_event_types
-  end
-
 
   private
     def assign_coordinates

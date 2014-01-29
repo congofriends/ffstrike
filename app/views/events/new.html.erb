@@ -10,7 +10,7 @@
 
     <div class='form-group'>
       <%= form.label :event_type %>
-      <%= form.select :event_type, [["Speak Out", "Speak Out"], ["Rally", "Rally"], ["Movie Screening"]], { class: 'form-control' }, { class: 'form-control' } %>
+      <%= form.select :event_type, TaskPopulator::EVENT_TYPES, { class: 'form-control' }, { class: 'form-control' } %>
     </div>
 
     <div class='form-group'>

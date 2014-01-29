@@ -28,6 +28,11 @@ describe EventsController do
         expect{post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id)}.to change(Event, :count).by(1)
       end
 
+      it "calls the task prepopulator" do
+        TaskPopulator.should_receive(:assign_tasks)
+        post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id)
+      end
+
       it "creates a event connected to the movement" do
         post :create, movement_id: movement.id, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id)
         expect(Event.last.movement_id).to eq(movement.id)
@@ -42,7 +47,7 @@ describe EventsController do
         it "redirects to the movement page" do
           @controller.stub(:current_user).and_return(coordinator)
           post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id)
-          expect(response).to redirect_to movement_path(movement, anchor: "events")
+          expect(response).to redirect_to dashboard_movement_path(movement, anchor: "events")
         end
       end
 
@@ -62,7 +67,7 @@ describe EventsController do
       it "re-renders the new method" do
         @controller.stub(:current_user).and_return(coordinator)
         post :create, movement_id: movement, event: FactoryGirl.attributes_for(:invalid_event).merge(coordinator_id: coordinator.id)
-        expect(response).to redirect_to movement_path(movement, anchor: "events")
+        expect(response).to redirect_to dashboard_movement_path(movement, anchor: "events")
       end
 
       it "notifies user that event had errors" do
@@ -98,7 +103,7 @@ describe EventsController do
 
     it "redirects to movement page anchored in event" do
       put :update, movement_id: movement, id: event, event: FactoryGirl.attributes_for(:event) 
-      expect(response).to redirect_to movement_path(movement, anchor: "events")
+      expect(response).to redirect_to dashboard_movement_path(event.movement, anchor: "events")
     end
 
     it "notifies user that event was updated" do

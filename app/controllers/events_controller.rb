@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
-  before_filter :load_movement, :only => [:new, :create, :show, :update]
+  before_filter :load_movement, :only => [:new, :create, :show]
   before_filter :authenticate_user!, :only => [:new]
+  after_filter :populate_tasks, :only => [:create]
 
   include EventsHelper
 
@@ -17,7 +18,7 @@ class EventsController < ApplicationController
     flash[:notice] = 
       @event.save ? "Event created!" : @event.errors.full_messages.flatten.join(' ')
     if current_user == @movement.user
-      redirect_to movement_path(@movement, anchor: "events")
+      redirect_to dashboard_movement_path(@movement, anchor: "events")
       return
     end
     redirect_to visitor_path(@movement)
@@ -32,7 +33,7 @@ class EventsController < ApplicationController
     @event = Event.find params[:id]
     @event.update_attributes(event_params)
     flash[:notice] = "Event updated."
-    redirect_to movement_path(@movement, anchor: "events") 
+    redirect_to dashboard_movement_path(@event.movement, anchor: "events") 
 
   end
 
@@ -44,5 +45,9 @@ class EventsController < ApplicationController
 
   def load_movement
     @movement = Movement.find params[:movement_id]
+  end
+
+  def populate_tasks
+    TaskPopulator.assign_tasks @event 
   end
 end

@@ -40,26 +40,6 @@ ActiveRecord::Schema.define(version: 20140128194808) do
 
   add_index "attendees", ["event_id"], name: "index_attendees_on_event_id", using: :btree
 
-  create_table "bikes", force: true do |t|
-    t.string   "entry_date"
-    t.string   "brand"
-    t.string   "model"
-    t.string   "type"
-    t.string   "color"
-    t.string   "frame_size"
-    t.boolean  "freecyclery"
-    t.boolean  "sale"
-    t.string   "serial_number"
-    t.text     "notes"
-    t.text     "tag_info"
-    t.string   "repaired_by"
-    t.string   "repaired_for"
-    t.string   "completion_date"
-    t.string   "price"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "events", force: true do |t|
     t.string   "name"
     t.text     "notes"

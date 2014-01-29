@@ -1,0 +1,8 @@
+<% @movement.events.each do |event| %>
+  <h4> Event: <%= event.name %> </h4>
+  <h5> Event Type: <%= event.event_type %> </h5>
+  <% event.tasks.each do |task| %>
+    <%= render "tasks/task", task: task, event: event %>
+  <% end %>
+  <%= render "tasks/form", event: event %> 
+<% end %>
