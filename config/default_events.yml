@@ -1,0 +1,10 @@
+speakout:
+  - description: 'Task 1 for Speakout'
+    small_event: true
+  - description: 'Task 2 for Speakout'
+    medium_event: true
+rally:
+  - description: 'Task 1 for Rally'
+    small_event: true
+  - description: 'Task 2 for Rally'
+    medium_event: true
