@@ -1,10 +1,92 @@
 speakout:
-  - description: 'Task 1 for Speakout'
-    small_event: true
-  - description: 'Task 2 for Speakout'
+  # Media
+  - description: 'Look up media outlets in your area'
     medium_event: true
+    big_event: true
+  - description: 'Email reporters and media outlets 3-7 days before the event'
+    medium_event: true
+    big_event: true
+  - description: 'Call reporters and media to make sure they know about the event'
+    medium_event: true
+    big_event: true
+  - description: 'Arrive early to greet media representatives'
+    medium_event: true
+    big_event: true
+  - description: 'Send media release and photos to media representatives'
+    medium_event: true
+    big_event: true
+  # Materials
+  - description: 'Make 5 signs that showcase your message and arrive early to distribute them'
+    small_event: true
+  - description: 'Make 15 signs that showcase your message and arrive early to distribute them'
+    medium_event: true
+  - description: 'Make 30 signs that showcase your message and arrive early to distribute them'
+    big_event: true
+  - description: 'Make petition sheets for attendees'
+    small_event: true
+    medium_event: true
+    big_event: true
+  - description: 'Bring lots of extra pens and clipboards or other hard surfaces to write on'
+    small_event: true
+    medium_event: true
+    big_event: true
+  # Recruitment
+  - description: 'Print and post recruitment fliers in public places'
+    small_event: true
+    medium_event: true
+    big_event: true  
+  - description: 'Recruit 5-10 of your friends to come'
+    small_event: true
+    medium_event: true
+    big_event: true  
+  - description: 'Contacted like-minded organizations and invite them'
+    small_event: true
+    medium_event: true
+    big_event: true  
+  - description: 'Publicize your event via social media'
+    small_event: true
+    medium_event: true
+    big_event: true  
+ 
 rally:
-  - description: 'Task 1 for Rally'
-    small_event: true
-  - description: 'Task 2 for Rally'
+  # Media
+  - description: 'Look up media outlets in your area'
     medium_event: true
+    big_event: true
+  - description: 'Email reporters and media outlets 3-7 days before the event'
+    medium_event: true
+    big_event: true
+  - description: 'Call reporters and media to make sure they know about the event'
+    medium_event: true
+    big_event: true
+  - description: 'Arrive early to greet media representatives'
+    medium_event: true
+    big_event: true
+  - description: 'Send media release and photos to media representatives'
+    medium_event: true
+    big_event: true
+  # Signs
+  - description: 'Make 5 signs that showcase your message and arrive early to distribute them'
+    small_event: true
+  - description: 'Make 15 signs that showcase your message and arrive early to distribute them'
+    medium_event: true
+  - description: 'Make 30 signs that showcase your message and arrive early to distribute them'
+    big_event: true
+  # Recruitment
+  - description: 'Print and post recruitment fliers in public places'
+    small_event: true
+    medium_event: true
+    big_event: true  
+  - description: 'Recruit 5-10 of your friends to come'
+    small_event: true
+    medium_event: true
+    big_event: true  
+  - description: 'Contacted like-minded organizations and invite them to the rally'
+    small_event: true
+    medium_event: true
+    big_event: true  
+  - description: 'Publicize your event via social media'
+    small_event: true
+    medium_event: true
+    big_event: true  
+ 

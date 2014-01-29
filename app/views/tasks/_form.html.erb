@@ -1,4 +1,4 @@
-<h4>Add a new task to a movement:</h4>
+<h4>Add a new task to this event:</h4>
 <%= form_for ([event, @task=Task.new]), remote: true, html: {class: "form-inline"} do |f| %>
   <%= f.text_area :description, placeholder: "Enter new task description here..." %>
   <%= f.check_box :small_event %>
