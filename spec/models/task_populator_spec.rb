@@ -6,7 +6,6 @@ describe TaskPopulator do
     speakout = FactoryGirl.build(:event, event_type: "Speak Out")
     TaskPopulator.assign_tasks(speakout)
     expect(speakout.tasks).not_to be_empty
-    assert speakout.tasks.first.description.include? "Speakout"
   end
 
   it "does not assign tasks to a custom event" do
