@@ -20,6 +20,14 @@ class Movement < ActiveRecord::Base
     Movement.offset(rand(Movement.count - number_of_events + 1)).first(number_of_events) 
   end
 
+  def number_of_attendees
+    movement_events.inject(0) { |sum, event| sum+event.attendees.count }
+  end
+
+  def locations
+    movement_events.map { |e| e.city }.uniq.slice(0..8).join(", ")
+  end
+
   def to_csv
     CSV.generate do |csv|
       column_names = ["Name", "Email", "Phone", "Event", "Zip", "City"]

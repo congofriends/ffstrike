@@ -1,0 +1,25 @@
+<div class="col-md-3">
+  <div class='panel panel-default'>
+    <div class='panel-heading'>
+      <p class='text-center'><%= link_to event.movement_name, visitor_path(event.movement) %></p> 
+    </div>
+
+    <div class='panel-body'>
+      <%= link_to image_tag(event.image.url, class: 'front-page img-responsive center-block'), movement_path(event.movement) %>
+    </div>
+
+    <div class='panel-footer'>
+      <div class='text-left'>
+        <p><%= link_to event.name, movement_events_path(event.movement, event) %>
+           <p class="lead text-right"><%= event.number_of_attendees %> Attendees</p>
+        </p>
+        <p>Location: <%= event.location %></p>
+        <p>Time: TBD</p>
+        <p>Organizer: <%= event.coordinator_name || event.coordinator_email %> </p>
+        <p>Summary:<em> <%= event.story %> </em> </p>
+      </div>
+      <%= button_tag "Yes! I want to attend", type: "button", class: "btn btn-success btn-sm attend-button" %>
+      <%= render template: 'attendees/new', locals: { :event => event, :attendee => event.attendees.build } %>
+    </div>
+  </div>
+</div>

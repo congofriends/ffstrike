@@ -1,4 +1,1 @@
-<% @movements.each do |movement| %>
-  <%= link_to movement.name, visitor_path(movement)%>
-  <div> <%= movement.inspect %></div>
-<% end %>
+<%= render @movements %>
