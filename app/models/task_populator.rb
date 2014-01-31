@@ -15,14 +15,4 @@ class TaskPopulator
     HOST_TASKS[event.event_type] if HOST_TASKS.has_key? event.event_type
   end
 
-  private
-
-  def self.populate(event, event_type, event_tasks)
-    if event.event_type == event_type
-      event_tasks.each do |task_attributes|
-        event.tasks << Task.create(task_attributes)
-      end
-    end
-  end
-
 end
