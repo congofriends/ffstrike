@@ -2,7 +2,7 @@
 
 <% if current_user && @movement.user == current_user %>
   <p class="text-info pull-right">
-    Would like to update movement's information? - Go to <%= link_to "Coordinator's dashboard", dashboard_movement_path(@movement) %>
+    Want to update movement information? - Go to <%= link_to "Coordinator's dashboard", dashboard_movement_path(@movement, anchor: "movement") %>
   </p>                                               
 <% end %>
 

@@ -1,11 +1,13 @@
 require 'spec_helper'
 
 describe MovementsController do
-  
+   
   before :each do
     controller.stub(:current_user).and_return( FactoryGirl.create(:user) )
     controller.stub(:authenticate_user!).and_return true 
   end
+
+  let(:movement) { FactoryGirl.create(:movement) }
 
   describe "GET #new" do
     it "responds successfully" do
@@ -16,21 +18,15 @@ describe MovementsController do
 
   describe "GET #search" do
 
-    it "redirects to search results" do
-      movement = FactoryGirl.create(:movement)
-      event = FactoryGirl.create(:event)
-      movement.events << event
+    let!(:zip) { FactoryGirl.create(:zipcode, zip: "60647", latitude: 10, longitude: 50) }
+    let(:event) { movement.events.create(zip: "60647") }
 
+    it "redirects to search results" do
       get "search", id: movement, zip: event.zip
       expect(response).to be_success 
     end
 
     it "assigns events" do
-      zip = FactoryGirl.create(:zipcode, zip: "60647", latitude: 10, longitude: 50)
-      movement = FactoryGirl.create(:movement)
-      event = FactoryGirl.create(:event, zip: "60647")
-      movement.events << event
-
       get "search", id: movement, zip: event.zip
       expect(assigns(:events).first).to eql(event)
     end
@@ -54,13 +50,14 @@ describe MovementsController do
     end
 
     context "with valid attributes" do
+      let(:movement_attributes) { FactoryGirl.attributes_for(:movement) }
+
       it "creates a movement" do
-        expect{ post :create, movement: FactoryGirl.attributes_for(:movement) }.to change(Movement, :count).by(1) 
+        expect{ post :create, movement: movement_attributes }.to change(Movement, :count).by(1) 
       end
 
       it "redirects to the movement page" do
-        post :create, movement: FactoryGirl.attributes_for(:movement)
-
+        post :create, movement: movement_attributes 
         expect(response).to redirect_to movement_path(Movement.last)
       end
 
@@ -94,40 +91,35 @@ describe MovementsController do
 
 	describe "GET #show" do
 		it "assigns the new movement to @movement" do
-			movement = FactoryGirl.create(:movement)
 			get :show, id: movement
 			expect(assigns(:movement)).to eq(movement)	
 		end
 
 		it "renders the #show view" do
-			get :show, id: FactoryGirl.create(:movement)
+			get :show, id: movement
 			expect(response).to render_template :show
 		end
 	end
 
   describe "PUT #update" do
-    before :each do
-      @movement = FactoryGirl.create(:movement)
-      put :update, id: @movement, movement: FactoryGirl.attributes_for(:movement, video: "https://www.youtube.com/watch?v=_ZSbC09qgLI") 
-    end
-    
+    video_url = "https://www.youtube.com/watch?v=_ZSbC09qgLI"
+    before { put :update, id: movement, movement: FactoryGirl.attributes_for(:movement, video: video_url) }
+
     it "loads the requested movement" do
-      expect(assigns(:movement)).to eq(@movement)
+      expect(assigns(:movement)).to eq(movement)
     end
 
     it "updates the movement" do
-      @movement.reload
-      expect(@movement.video).to eq("_ZSbC09qgLI")
+      expect(movement.reload.video).to eq("_ZSbC09qgLI")
     end
 
     it "redirects to show" do
-      expect(response).to redirect_to movement_path(@movement)
+      expect(response).to redirect_to movement_path(movement)
     end
   end
 
   describe "GET #export_csv" do
     context "when format is csv" do
-      movement = FactoryGirl.create(:movement)
       it "should return a csv attachment" do
         @controller.should_receive(:send_data).with(movement.to_csv, filename: "Attendee List").
           and_return { @controller.render nothing: true } # to prevent a 'missing template' error
