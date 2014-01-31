@@ -1,11 +1,13 @@
 require 'spec_helper'
 
 describe EventsController do
+
+  let(:coordinator){FactoryGirl.create(:user)}
+  let(:movement){FactoryGirl.create(:movement, user: coordinator)}
+
   describe "GET #explanation" do
     it "responds successfully" do
-      coordinator = FactoryGirl.create(:user)
       sign_in coordinator
-      movement = FactoryGirl.create(:movement, user: coordinator)
       event = FactoryGirl.create(:event, movement: movement)
       get :explanation, id: event
       expect(response).to be_success
@@ -14,14 +16,12 @@ describe EventsController do
 
   describe "GET #new" do
     before :each do
-      coordinator = FactoryGirl.create(:user)
       sign_in coordinator
-      movement = FactoryGirl.create(:movement, user: coordinator)
       get "new", movement_id: movement 
     end
 
     it "responds successfully" do
-       expect(response).to be_success
+      expect(response).to be_success
     end
 
     it "creates new event" do
@@ -30,8 +30,6 @@ describe EventsController do
   end
 
   describe "POST #create" do
-    let(:coordinator){FactoryGirl.create(:user)}
-    let(:movement){FactoryGirl.create(:movement, user: coordinator)}
     let(:visitor){FactoryGirl.create(:user)}
 
     context "with valid attributes" do
@@ -103,8 +101,6 @@ describe EventsController do
   end
 
   describe "PUT #update" do
-    let(:coordinator){FactoryGirl.create(:user)}
-    let(:movement){FactoryGirl.create(:movement, user: coordinator)}
     let(:event){FactoryGirl.create(:event, coordinator_id: coordinator.id)}
 
     it "changes attributes" do

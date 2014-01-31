@@ -14,10 +14,9 @@ describe Attendee do
  it {should respond_to(:assigned?)}
  it {should respond_to(:assign!)}
 
- #TODO: why does it fail?
- # it "is not valid without an email" do
- #   expect(FactoryGirl.build(:attendee_without_email)).to_not be_valid
- # end
+  it "is not valid without an email" do
+    expect(FactoryGirl.build(:attendee_without_email)).not_to be_valid
+  end
  
  describe "when event_id is not present" do
    before { attendee.event_id = nil }
@@ -28,6 +27,7 @@ describe Attendee do
    let(:event) { FactoryGirl.create(:event) }
    let(:attendee) { FactoryGirl.create(:attendee, event: event) }
    let(:task) { FactoryGirl.create(:task) }
+
    before { attendee.assign!(task) }
 
    it { should be_assigned(task) }
