@@ -13,7 +13,7 @@
         <p><%= link_to event.name, movement_events_path(event.movement, event) %>
            <p class="lead text-right"><%= event.number_of_attendees %> Attendees</p>
         </p>
-        <p>Location: <%= event.location %></p>
+        <p>Location: <%= event.city %></p>
         <p>Time: TBD</p>
         <p>Organizer: <%= event.coordinator_name || event.coordinator_email %> </p>
         <p>Summary:<em> <%= event.story %> </em> </p>

@@ -3,7 +3,9 @@ class MovementsController < ApplicationController
   before_filter :load_movement, :except => [:new, :create, :index, :user_movements]
   include YoutubeParserHelper
 
-  def visitor; end
+  def visitor
+    @events = @movement.events
+  end
 
   def index
     @movements = Movement.all
@@ -36,7 +38,9 @@ class MovementsController < ApplicationController
     end
   end
 
-	def show; end
+	def show
+    @events = @movement.events
+  end
 
   def export_csv
     send_data @movement.to_csv, filename: "Attendee List"

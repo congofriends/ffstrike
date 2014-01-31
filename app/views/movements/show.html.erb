@@ -24,3 +24,27 @@ Our Story:
      <%= link_to "Create your own event", new_movement_event_path(@movement, {type: "own_event"}), :class=>"btn-primary badge" %>
 </ul>
 
+<br>
+<h3> Existing events for the <%= @movement.name%> movement: </h3>
+<% @events.each do |event| %>
+<div class="col-md-3">
+  <div class='panel panel-default'>
+    <div class='panel-heading'>
+      <h3 class='text-center'><%= event.name %></h3>
+      <p class="text-info small text-right">Type: <%= event.event_type %></p>
+    </div>
+
+    <div class='panel-footer'>
+      <div class='text-left'>
+        <p class="lead text-right"><%= event.number_of_attendees %> Attendees</p>
+        <p>Location: <%= event.city %></p>
+        <p>Time: TBD</p>
+        <p>Organizer: <%= event.coordinator_name || event.coordinator_email %> </p>
+        <p>Summary:<em> <%= event.story %> </em> </p>
+      </div>
+      <%= button_tag "Yes! I want to attend", type: "button", class: "btn btn-success btn-sm attend-button" %>
+      <%= render template: 'attendees/new', locals: { :event => event, :attendee => event.attendees.build } %>
+    </div>
+  </div>
+</div>
+<% end %>
