@@ -5,6 +5,10 @@ class EventsController < ApplicationController
 
   include EventsHelper
 
+  def explanation
+    @event = Event.find params[:id]
+  end
+
   def new
     @event = Event.new      
   end
@@ -15,13 +19,22 @@ class EventsController < ApplicationController
 
   def create
     @event = @movement.events.build(event_params)
-    flash[:notice] = 
-      @event.save ? "Event created!" : @event.errors.full_messages.flatten.join(' ')
-    if current_user == @movement.user
-      redirect_to dashboard_movement_path(@movement, anchor: "events")
+    if @event.save
+      flash[:notice] = "Event created!"
+      if current_user == @movement.user
+        redirect_to explanation_path(@event) and return
+      end
+      redirect_to visitor_path(@movement)
+      return
+    else
+      flash[:notice] = @event.errors.full_messages.flatten.join(' ')
+      if current_user == @movement.user
+       redirect_to dashboard_movement_path(@movement, anchor: "events")
+       return
+      end
+      redirect_to visitor_path(@movement)
       return
     end
-    redirect_to visitor_path(@movement)
   end
   
   def search

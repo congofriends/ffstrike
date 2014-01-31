@@ -19,12 +19,14 @@ Ffstrike::Application.routes.draw do
   end
   get 'visitor/:id' => 'movements#visitor', as: 'visitor' 
 
+  #events
   resources :events do
     resources :tasks do
       get 'assign' => 'assignments#assign', on: :member, as: 'assign'
     end
     resources :attendees
   end
+  get 'events/:id/explanation' => 'events#explanation', as: 'explanation'
 
   #mail
   post 'mail_movement/:movement_id' => 'mail#mail_movement', as: 'mail_movement'

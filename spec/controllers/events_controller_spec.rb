@@ -1,6 +1,17 @@
 require 'spec_helper'
 
 describe EventsController do
+  describe "GET #explanation" do
+    it "responds successfully" do
+      coordinator = FactoryGirl.create(:user)
+      sign_in coordinator
+      movement = FactoryGirl.create(:movement, user: coordinator)
+      event = FactoryGirl.create(:event, movement: movement)
+      get :explanation, id: event
+      expect(response).to be_success
+    end
+  end
+
   describe "GET #new" do
     before :each do
       coordinator = FactoryGirl.create(:user)
@@ -44,10 +55,10 @@ describe EventsController do
       end
     
       context "as a coordinator" do
-        it "redirects to the movement page" do
+        it "redirects to the explanation page" do
           @controller.stub(:current_user).and_return(coordinator)
           post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id)
-          expect(response).to redirect_to dashboard_movement_path(movement, anchor: "events")
+          expect(response).to redirect_to explanation_path(Event.last)
         end
       end
 

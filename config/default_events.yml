@@ -1,3 +1,13 @@
+speakout_description: 'The purpose of a public speak-out is to bring together individuals with a similar concern and to garner positive public attention for your cause. You may also chose to invite the media to cover your event. A public speak-out may be smaller than a rally - you can have a successful speak-out and petition event with just 3-10 people. Although not all speak-out events include a petitioning component, adding a petition can be a good way to engage the public, identify potential activists, and show decision-makers that your issue is popular. A public speak-out could be anywhere from 15 minutes to a whole afternoon of petitioning. Unlike a rally, speak-out’s are very easy to organize. With a few friends, you could have a speak-out in a few days, but, if you’re planning something more elaborate, you might want to give yourself a week to a month to plan. '
+
+speakout_host_tasks:
+  - 'Find a location. For this type of event, you want to pick a place with lots of food-traffic. '
+  - 'Pick a date and time. This may already be chosen for you as part of a larger “Day of Action” - if not, try to pick a date and time when lots of people will be out - lunch time is often a good bet. '
+  - 'Create an agenda for your event. This doesn’t need to be perfect - just think about what you want your event to look like and how you want it to flow. It could be “Opening Speaker [probably you], Sharing Stories by Attendees, Pass out Petitions, Petition for 20 minutes-2 hours, Closing Speaker.” '
+  - 'Prepare your speaker for the event'
+  - 'Begin publicizing your event by printing and distributing posters, using social media, inviting friends and family, and contacting like-minded organizations'
+  - 'Contact the media about your event'
+
 speakout:
   # Media
   - description: 'Look up media outlets in your area'
@@ -48,6 +58,16 @@ speakout:
     medium_event: true
     big_event: true  
  
+rally_description: 'Rallies are large events (ideally 20 or more people) intended to garner public and media attention to sway public opinion on an important issue. Rallies can look very different from one another, but generally they have at least 1-3 speakers, signs, and chants. They can last anywhere from 10 minutes to all day, but most rallies are 30 minutes to an hour long. With some time and effort, a good rally can come together in just a few days when necessary, but, if you can, we suggest giving yourself and your team at least a week to a month to organize a successful rally. '
+
+rally_host_tasks: 
+  - 'Find a location. Ideally your location has something to do with your movement AND will be a good place for media outlets to come cover your event. '
+  - 'Pick a date and time. This may already be chosen for you as part of a larger “Day of Action” - if not, try to pick a date and time when both concerned individuals and the media will be able to attend. '
+  - 'Create an agenda for your event. This doesn’t need to be perfect - just think about what you want your event to look like and how you want it to flow. It could be “Opening Speaker, Chants, Speaker, March, Closing Speaker.” '
+  - 'Find a speaker (maybe it’s you!) and start preparing your speaker for the event.'
+  - 'Begin publicizing your event by printing and distributing posters, using social media, inviting friends and family, and contacting like-minded organizations'
+  - 'Contact the media about your event'
+  
 rally:
   # Media
   - description: 'Look up media outlets in your area'
