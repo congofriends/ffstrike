@@ -25,7 +25,7 @@ class Movement < ActiveRecord::Base
   end
 
   def locations
-    movement_events.map { |e| e.city }.uniq.slice(0..8).join(", ")
+    movement_events.map(&:city).uniq.reject(&:empty?).slice(0..8).join(", ")
   end
 
   def to_csv
