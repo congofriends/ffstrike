@@ -1,29 +1,18 @@
 class TaskPopulator 
 
-  SPEAKOUT_TASKS = DEFAULT_EVENTS["speakout"]
-  SPEAKOUT_HOST_TASKS = DEFAULT_EVENTS["speakout_host_tasks"]
-  SPEAKOUT_DESCRIPTION = DEFAULT_EVENTS["speakout_description"]
-
-  RALLY_TASKS = DEFAULT_EVENTS["rally"]
-  RALLY_HOST_TASKS = DEFAULT_EVENTS["rally_host_tasks"]
-  RALLY_DESCRIPTION = DEFAULT_EVENTS["rally_description"]
-  
   EVENT_TYPE_FORM = [["Speak Out", "Speak Out"], ["Rally", "Rally"]] 
+
   def self.assign_tasks(event)
-    populate(event, "Speak Out", SPEAKOUT_TASKS)
-    populate(event, "Rally", RALLY_TASKS)
+    ATTENDEE_TASKS[event.event_type].each { |task| event.tasks << Task.create(task) } if ATTENDEE_TASKS.has_key? event.event_type
   end
 
   def self.description(event)
-    return RALLY_DESCRIPTION if event.event_type == "Rally" 
-    return SPEAKOUT_DESCRIPTION if event.event_type == "Speak Out"
+    EVENT_DESCRIPTION[event.event_type] if EVENT_DESCRIPTIONS.has_key? event.event_type
     return []
   end
 
   def self.host_tasks(event)
-    return SPEAKOUT_HOST_TASKS if event.event_type == "Speak Out"
-    return RALLY_HOST_TASKS if event.event_type == "Rally"
-    return []
+    HOST_TASKS[event.event_type] if HOST_TASKS.has_key? event.event_type
   end
 
   private
