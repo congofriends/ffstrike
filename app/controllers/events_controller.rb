@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_filter :authenticate_user!, :only => [:new]
   after_filter :populate_tasks, :only => [:create]
 
-  include EventsHelper
+  include ZipHelper
 
   def explanation
     @event = Event.find params[:id]

@@ -1,7 +1,8 @@
 class MovementsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:visitor]
+  before_filter :authenticate_user!, :except => [:visitor, :search]
   before_filter :load_movement, :except => [:new, :create, :index, :user_movements]
   include YoutubeParserHelper
+  include ZipHelper
 
   def visitor
     @events = @movement.events
@@ -9,6 +10,12 @@ class MovementsController < ApplicationController
 
   def index
     @movements = Movement.all
+  end
+
+  def search
+    @zip ||= extract_zip(params[:zip]) if valid_zip(params[:zip])
+    @events = @movement.events.near_zip(@zip, 200)
+    render 'events/search'
   end
 
   def user_movements

@@ -10,9 +10,31 @@ describe MovementsController do
   describe "GET #new" do
     it "responds successfully" do
       get "new"
-
       expect(response).to be_success
     end
+  end
+
+  describe "GET #search" do
+
+    it "redirects to search results" do
+      movement = FactoryGirl.create(:movement)
+      event = FactoryGirl.create(:event)
+      movement.events << event
+
+      get "search", id: movement, zip: event.zip
+      expect(response).to be_success 
+    end
+
+    it "assigns events" do
+      zip = FactoryGirl.create(:zipcode, zip: "60647", latitude: 10, longitude: 50)
+      movement = FactoryGirl.create(:movement)
+      event = FactoryGirl.create(:event, zip: "60647")
+      movement.events << event
+
+      get "search", id: movement, zip: event.zip
+      expect(assigns(:events).first).to eql(event)
+    end
+
   end
 
   describe "GET #visitor" do

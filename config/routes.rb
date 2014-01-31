@@ -4,6 +4,7 @@ Ffstrike::Application.routes.draw do
   root 'static_pages#index'
 
   get 'events' => 'events#search'  
+  get 'search' => 'movements#search', as: 'search'
 
   #home
   get 'about' => 'static_pages#about',  as: 'about'

@@ -14,6 +14,18 @@ Our Story:
 
 <%=youtube_embed_url_for_(@movement.video) %>
 
+Search for an event near you!  Enter your zip code:
+<%= form_tag "/search", method: "get", class: 'form-inline', id: 'zip-form' do %>
+  <div class='form-group'>
+    <%= search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control'}%>
+    <%= hidden_field_tag 'id', value = @movement.id %>
+  </div>
+  <div class='form-group'>
+    <%= button_tag name="Search", class: 'btn btn-default' %>
+  </div>
+<% end %>
+
+
 <h4>Which event type would you like to create? </h4>
 <ul class="nav nav-pills nav-stacked">
      <%= link_to "Rally", new_movement_event_path(@movement, {type: "rally"}), :class=>"btn-info badge" %>
