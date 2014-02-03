@@ -15,7 +15,7 @@ $(document).ready(function() {
    $('.tab-content div:first').addClass('active');
  }
 
- //redirect to certain tab after CRUD operations on assosiated models
+ //redirect to certain tab after CRUD operations on associated models
  var navbox = $('#movementTabs');
  navbox.on('click', 'a', function(e) {
    var $this = $(this);

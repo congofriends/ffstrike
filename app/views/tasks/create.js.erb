@@ -1,10 +1,13 @@
 <% if params[:task][:small_event] == "1" %>
-  $('div#small_event').append("<%= escape_javascript(render @task) %>");
+  $('#small<%=params[:event_id]%>').append("<%=j render "tasks/task", task: @task, event: @task.event %>");
 <% end %>
+
 <% if params[:task][:medium_event] == "1" %>
-  $('div#medium_event').append("<%= escape_javascript(render @task) %>");
+  $('#medium<%=params[:event_id]%>').append("<%=j render "tasks/task", task: @task, event: @task.event %>");
 <% end %> 
+
 <% if params[:task][:big_event] == "1" %>
-  $('div#big_event').append("<%= escape_javascript(render @task) %>");
+  $('#big<%=params[:event_id]%>').append("<%=j render "tasks/task", task: @task, event: @task.event %>");
 <% end %> 
-$('#new_task').each(function(){ this.reset(); }) ;
+
+$('#new_task<%=params[:event_id]%>').each(function(){ this.reset(); }) ;
