@@ -2,6 +2,7 @@ class Event < ActiveRecord::Base
   validates_presence_of :coordinator, :address, on: :create
   reverse_geocoded_by :latitude, :longitude
   belongs_to :coordinator, class_name: User
+  belongs_to :host, class_name: User
   belongs_to :movement, class_name: Movement
   has_many :attendees, dependent: :destroy
   has_many :tasks, dependent: :destroy
@@ -17,7 +18,7 @@ class Event < ActiveRecord::Base
     zipcode = zipcode.strip
     lookup = Zipcode.find_by_zip(zipcode)
     return [] if lookup.nil? || distance.nil?
-    Event.near([lookup.latitude, lookup.longitude], distance)
+    Event.near([lookup.latitude, lookup.longitude], distance).where("approved = true")
   end
 
   def number_of_attendees

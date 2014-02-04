@@ -19,16 +19,21 @@ describe MovementsController do
   describe "GET #search" do
 
     let!(:zip) { FactoryGirl.create(:zipcode, zip: "60647", latitude: 10, longitude: 50) }
-    let(:event) { movement.events.create(zip: "60647") }
+    let(:event) { movement.events.create(zip: "60647", approved: true) }
+    let(:unapproved_event) { movement.events.create(zip: "60647", approved: false) }
+
+    before { get "search", id: movement, zip: event.zip }
 
     it "redirects to search results" do
-      get "search", id: movement, zip: event.zip
       expect(response).to be_success 
     end
 
     it "assigns events" do
-      get "search", id: movement, zip: event.zip
-      expect(assigns(:events).first).to eql(event)
+      expect(assigns(:events)).to include(event)
+    end
+
+    it "does not assign unapproved events" do
+      expect(assigns(:events)).not_to include(unapproved_event)
     end
 
   end

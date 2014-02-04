@@ -15,7 +15,7 @@
   <%= render partial: "email_event.html.erb", locals: { event: @event, movement: @movement} %>
 </div>
  
-<p class="lead">Event's tasks </p>
+<p class="lead">Event tasks </p>
 <% if current_user.nil? %>
    <p class="text-info">You need to create an account in order to sign up for the event's tasks
       <%= link_to "Create an account", new_user_registration_path, :class=>"btn btn-primary btn-xs" %>

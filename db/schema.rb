@@ -36,21 +36,10 @@ ActiveRecord::Schema.define(version: 20140204173620) do
     t.string   "name"
     t.text     "notes"
     t.boolean  "point_person"
-    t.integer  "phone_number"
+    t.text     "phone_number"
   end
 
   add_index "attendees", ["event_id"], name: "index_attendees_on_event_id", using: :btree
-
-  create_table "attendees_tasks", force: true do |t|
-    t.integer  "attendee_id"
-    t.integer  "task_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "attendees_tasks", ["attendee_id", "task_id"], name: "index_attendees_tasks_on_attendee_id_and_task_id", unique: true, using: :btree
-  add_index "attendees_tasks", ["attendee_id"], name: "index_attendees_tasks_on_attendee_id", using: :btree
-  add_index "attendees_tasks", ["task_id"], name: "index_attendees_tasks_on_task_id", using: :btree
 
   create_table "events", force: true do |t|
     t.string   "name"
@@ -68,8 +57,11 @@ ActiveRecord::Schema.define(version: 20140204173620) do
     t.string   "time"
     t.string   "location_details"
     t.string   "event_type"
+    t.boolean  "approved"
+    t.integer  "host_id"
   end
 
+  add_index "events", ["host_id"], name: "index_events_on_host_id", using: :btree
   add_index "events", ["movement_id"], name: "index_events_on_movement_id", using: :btree
 
   create_table "movements", force: true do |t|

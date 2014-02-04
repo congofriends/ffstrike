@@ -29,8 +29,27 @@ describe EventsController do
     end
   end
 
+  describe "PUT #approve" do
+
+    it "approves an unapproved event" do
+      event = FactoryGirl.create(:event, approved: false)
+      put :approve, id: event 
+      event.reload
+      expect(event.approved).to be_true
+    end
+
+    it "disapproves an approved event" do
+      event = FactoryGirl.create(:event, approved: true)
+      put :approve, id: event 
+      event.reload
+      expect(event.approved).to be_false
+    end
+
+  end
+
   describe "POST #create" do
     let(:visitor){FactoryGirl.create(:user)}
+    before { post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id) }
 
     context "with valid attributes" do
       it "creates a event" do
@@ -43,27 +62,47 @@ describe EventsController do
       end
 
       it "creates a event connected to the movement" do
-        post :create, movement_id: movement.id, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id)
         expect(Event.last.movement_id).to eq(movement.id)
       end
-
-      it "notifies the user that event was created" do
-        post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id)
-        flash[:notice].should == "Event created!"
-      end
-    
+          
       context "as a coordinator" do
-        it "redirects to the explanation page" do
+        before :each do
           @controller.stub(:current_user).and_return(coordinator)
           post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id)
+        end
+
+        it "notifies the user that event was created" do
+          flash[:notice].should == "Event created!"
+        end
+
+        it "redirects to the explanation page" do
           expect(response).to redirect_to explanation_path(Event.last)
+        end
+
+        it "creates an approved event" do
+          expect(Event.last.approved).to eq(true)
         end
       end
 
       context "as a visitor" do
+
+        before { @controller.stub(:current_user).and_return(visitor) }
+
+        it "sets host to event creator" do
+          post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id) 
+          expect(Event.last.host).to eq(visitor)
+        end
+
         it "redirects to the visitor page" do
-          post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id)
           expect(response).to redirect_to visitor_path(movement)
+        end
+
+        it "creates an unapproved event" do
+          expect(Event.last.approved).to eq(false)
+        end
+
+        it "notifies the creator that coordinator will approve event" do
+          flash[:notice].should == "Your event will be viewable to the public as soon as the movement coordinator approves it!"
         end
       end
     end
@@ -94,9 +133,16 @@ describe EventsController do
 
     it "assigns @events" do
       zip = FactoryGirl.create(:zipcode, zip: "60647", latitude: 10, longitude: 50)
-      event = FactoryGirl.create(:event, zip: "60647") 
+      event = FactoryGirl.create(:event, zip: "60647", approved: true) 
       get "search", zip: "60647"
       expect(assigns(:events)).to eq([event])
+    end
+
+    it "doesn't assign unapproved events" do
+      zip = FactoryGirl.create(:zipcode, zip: "60647", latitude: 10, longitude: 50)
+      event = FactoryGirl.create(:event, zip: "60647", approved: false) 
+      get "search", zip: "60647"
+      expect(assigns(:events)).not_to include(event)
     end
   end
 

@@ -1,0 +1,13 @@
+<div class='form-inline'>
+  <% @movement.movement_events.select{|event| event.host != @movement.user}.each do |event| %>
+    <div class='row <%= "approval-background" unless event.approved? %>' id="<%= "event#{event.id}"%>">
+      <h3>Event details page</h3>
+      Name: <%= event.name %> <br>
+      Location: <%= event.location %> <br>
+      Notes: <%= event.notes %> <br>
+      Date: <%= event.date %> <br>
+      Approved? <span id="<%= "approval_status#{event.id}" %>"><%= event.approved %> </span> <br>
+      <%= link_to event.approved? ? 'Disapprove' : 'Approve', approve_path(event), method: :put, remote: true, id: "approve#{event.id}", class: "btn btn-primary" %>
+    </div> 
+  <% end %>
+</div>

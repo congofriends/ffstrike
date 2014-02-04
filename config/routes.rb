@@ -31,6 +31,7 @@ Ffstrike::Application.routes.draw do
     resources :attendees
   end
   get 'events/:id/explanation' => 'events#explanation', as: 'explanation'
+  put 'events/:id/approve' => 'events#approve', as: 'approve'
 
   #mail
   post 'mail_movement/:movement_id' => 'mail#mail_movement', as: 'mail_movement'
