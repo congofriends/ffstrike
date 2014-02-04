@@ -13,7 +13,7 @@ class AttendeesController < ApplicationController
 
   private
   def attendee_params
-    params.require(:attendee).permit(:name, :email)
+    params.require(:attendee).permit(:name, :email, :phone_number)
   end
 
   def load_event_and_movement 

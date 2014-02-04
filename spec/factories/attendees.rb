@@ -10,4 +10,12 @@ FactoryGirl.define do
     event
     movement
   end
+
+  factory :attendee_with_phone_number, class: Attendee do
+    name "Lord Voldemort"
+    email "email@example.com"
+    phone_number 986-345-9098
+    movement
+    event
+  end
 end
