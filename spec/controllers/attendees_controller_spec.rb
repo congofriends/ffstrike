@@ -25,10 +25,6 @@ describe AttendeesController do
         post :create, event_id: event, attendee: FactoryGirl.attributes_for(:attendee)
         assert !ActionMailer::Base.deliveries.empty?
       end
-
-      it "creates an attendee with phone number" do
-        expect{post :create, event_id: event, attendee: FactoryGirl.attributes_for(:attendee_with_phone_number)}.to change(Attendee, :count).by(1)
-      end
     end
 
     context "with invalid information" do
