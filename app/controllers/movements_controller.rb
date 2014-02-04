@@ -62,7 +62,7 @@ class MovementsController < ApplicationController
   
   def movement_params
     params[:movement][:video]= extract_video_id(params[:movement][:video])
-    params.require(:movement).permit(:name, :category, :story, :image, :video, :user_id)
+    params.require(:movement).permit(:name, :category, :tagline, :call_to_action, :extended_description, :image, :video, :user_id)
   end
 
   def load_movement

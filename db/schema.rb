@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140128194808) do
+ActiveRecord::Schema.define(version: 20140204171511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20140128194808) do
     t.float    "longitude"
     t.string   "date"
     t.string   "time"
-    t.string   "address_details"
+    t.string   "location_details"
     t.string   "event_type"
   end
 
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20140128194808) do
   create_table "movements", force: true do |t|
     t.string   "name"
     t.string   "category"
-    t.text     "story"
+    t.text     "tagline"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
@@ -83,6 +83,8 @@ ActiveRecord::Schema.define(version: 20140128194808) do
     t.datetime "image_updated_at"
     t.string   "video"
     t.integer  "user_id"
+    t.text     "call_to_action"
+    t.text     "extended_description"
   end
 
   add_index "movements", ["user_id"], name: "index_movements_on_user_id", using: :btree

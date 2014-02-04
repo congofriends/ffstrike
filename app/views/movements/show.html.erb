@@ -5,7 +5,9 @@
 <% end %>
 
 <h1><%= @movement.name %></h1>
-<h4> <%= @movement.story %> </h4>
+<h4> <%= @movement.tagline %> </h4>
+<h4> <%= @movement.call_to_action %> </h4>
+<h4> <%= @movement.extended_description %> </h4>
 <%= image_tag @movement.image, width: 200, :class=>"pull-right" %>
 
 <%=youtube_embed_url_for_(@movement.video) %>
@@ -37,7 +39,7 @@ Search for an event near you!  Enter your zip code:
           <p>Location: <%= event.city %></p>
           <p>Time: TBD</p>
           <p>Organizer: <%= event.coordinator_name || event.coordinator_email %> </p>
-          <p>Summary:<em> <%= event.story %> </em> </p>
+          <p>Summary:<em> <%= event.tagline %> </em> </p>
         </div>
         <%= button_tag "Yes! I want to attend", type: "button", class: "btn btn-success btn-sm attend-button" %>
         <%= render template: 'attendees/new', locals: { :event => event, :attendee => event.attendees.build } %>

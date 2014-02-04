@@ -13,7 +13,7 @@
         <p class="text-right"><%= movement.number_of_attendees %> Attendees</p>
         <p class="small">Locations: <%= movement.locations %></p>
         <p class="small">Organizer: <%= movement.user.email if !movement.user_id.nil? %> </p>
-        <p class="small">Summary:<em> <%= movement.story %> </em> </p>
+        <p class="small">Summary:<em> <%= movement.tagline %> </em> </p>
       </div>
       <%= link_to "See more details", visitor_path(movement), class: "btn btn-success btn-sm" %>
       <p class="text-muted small"><em> Created <%= time_ago_in_words(movement.created_at) %> ago </em></p>

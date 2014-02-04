@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
   after_validation :assign_coordinates
 
   delegate :movement_name, :image,     :to => :movement
-  delegate :story,                     :to => :movement
+  delegate :tagline,                   :to => :movement
   delegate :coordinator_name,          :to => :coordinator
   delegate :coordinator_email,         :to => :coordinator
 
