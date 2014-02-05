@@ -2,7 +2,7 @@
  <li>
  <% if current_user && task.event.movement.user == current_user %> 
     <%= link_to raw('<i class="glyphicon glyphicon-remove-circle"></i>') , event_task_path(event, task.id), method: :delete,
-      data: { confirm: "You sure about deleting task '#{task.description}'?"}, remote: true  %>
+      data: { confirm: "Are you sure you want to delete task '#{task.description}'?"}, remote: true  %>
     <% if task.is_assigned_to? current_user %>
       <%= link_to "Signed up!", assign_event_task_path(event, task), :class=>"btn btn-info btn-xs", :disabled => true %>
     <% else %>

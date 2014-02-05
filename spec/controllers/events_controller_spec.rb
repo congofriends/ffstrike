@@ -14,6 +14,15 @@ describe EventsController do
     end
   end
 
+  describe "DELETE #delete" do 
+    it "deletes the event" do
+      sign_in coordinator
+      event = FactoryGirl.create(:event, movement: movement)
+      delete :destroy, id: event
+      expect { Event.all == [] }
+    end
+  end
+
   describe "GET #new" do
     before :each do
       sign_in coordinator

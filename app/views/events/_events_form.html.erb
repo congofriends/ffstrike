@@ -49,12 +49,15 @@
             <div class='col-md-2'>
               <%= f.submit "Update", class: "btn btn-primary" %> 
             </div>
+            <div class='col-md-2'>
+              <%= button_to "delete", event, method: :delete, class: "btn btn-primary", data: { confirm: "Are you sure you want to delete this event?"}, remote: true %> 
+            </div>
 
             <div class='col-md-8'>
               <%= render 'events/email_event', event: event, movement: @movement %>
             </div>
-          </div>
 
+          </div>
         </fieldset>
       <% end %>
     <% end %>

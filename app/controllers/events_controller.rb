@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
 
   before_filter :load_movement, :only => [:new, :create]
-  before_filter :load_event, :only => [:explanation, :show, :update, :approve]
-  before_filter :authenticate_user!, :only => [:new]
+  before_filter :load_event, :only => [:explanation, :show, :update, :approve, :destroy]
+  before_filter :authenticate_user!, :only => [:new, :destroy]
   after_filter :populate_tasks, :only => [:create]
 
   include ZipHelper
@@ -51,7 +51,12 @@ class EventsController < ApplicationController
     @event.update_attributes(event_params)
     flash[:notice] = "Event updated."
     redirect_to dashboard_movement_path(@event.movement, anchor: "events") 
+  end
 
+  def destroy 
+    @event.destroy
+    flash[:notice] = "Event deleted."
+    redirect_to dashboard_movement_path(@event.movement, anchor: "events")
   end
 
   private
