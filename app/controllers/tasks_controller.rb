@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     respond_to do |format|
-      format.html { redirect_to  movement_path(@event.movement, anchor: "tasks"), notice: "Task is deleted" }
+      format.html { redirect_to  movement_path(@event.movement, anchor: "tasks"), notice: "Task deleted" }
       format.js
     end
   end
@@ -25,7 +25,7 @@ class TasksController < ApplicationController
   def update
     @task.update_attributes(task_params)
     respond_to do |format|
-      format.html { redirect_to  movement_path(@event.movement, anchor: "tasks"), notice: "Task #{@task.id} id has been updated" }
+      format.html { redirect_to  movement_path(@event.movement, anchor: "tasks"), notice: "Task has been updated" }
       format.json { head :ok  }
     end
   end

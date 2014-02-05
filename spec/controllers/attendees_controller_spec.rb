@@ -18,7 +18,7 @@ describe AttendeesController do
 
       it "notifies attendee that they signed up" do
         post :create, event_id: event, attendee: FactoryGirl.attributes_for(:attendee)
-        flash[:notice].should == "You signed up for the event"
+        flash[:notice].should == "Thanks for signing up!"
       end
 
       it "mails the attendee" do
