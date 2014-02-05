@@ -1,0 +1,29 @@
+<nav class="whitespace-for-flash-nav navbar navbar-default">
+  <div class='navbar-header'>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to "Events", root_path, :class=>"navbar-brand" %> 
+  </div>
+  
+  <div class="navbar-collapse collapse navbar-responsive-collapse" id='collapse-1'>
+    <ul class="nav navbar-nav">
+      <li><%= link_to "All movements", movements_path %></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "About", about_path %></li>
+      <% if current_user%>
+        <li><%= link_to "My movements", user_movements_path %></li>
+      <% end %>
+      <% if current_user.nil? %> 
+        <li><%= link_to "Sign In", new_session_path(:user) %></li>
+      <% else %>
+        <li><%= link_to user_name_or_email %></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

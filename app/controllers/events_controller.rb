@@ -1,20 +1,18 @@
 class EventsController < ApplicationController
   before_filter :load_movement, :only => [:new, :create, :show]
+  before_filter :load_event, :only => [:explanation, :show, :update, :approve]
   before_filter :authenticate_user!, :only => [:new]
   after_filter :populate_tasks, :only => [:create]
 
   include ZipHelper
 
-  def explanation
-    @event = Event.find params[:id]
-  end
+  def explanation; end
 
   def new
     @event = Event.new      
   end
 
   def approve
-    @event = Event.find params[:id]
     @event.update_attribute(:approved, !@event.approved)
     respond_to do |format|
       format.html { render nothing: true }
@@ -22,9 +20,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def show
-    @event = Event.find params[:id]
-  end
+  def show; end
 
   def create
     @event = @movement.events.build(event_params)
@@ -51,7 +47,6 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.find params[:id]
     @event.update_attributes(event_params)
     flash[:notice] = "Event updated."
     redirect_to dashboard_movement_path(@event.movement, anchor: "events") 
@@ -62,6 +57,10 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:event_type, :name, :address, :location_details, :city, :zip, :date, :time, :coordinator_id, :notes)
+  end
+
+  def load_event
+    @event = Event.find(params[:id])
   end
 
   def load_movement
