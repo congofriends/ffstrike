@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-  before_filter :load_movement, :only => [:new, :create, :show]
+
+  before_filter :load_movement, :only => [:new, :create]
   before_filter :load_event, :only => [:explanation, :show, :update, :approve]
   before_filter :authenticate_user!, :only => [:new]
   after_filter :populate_tasks, :only => [:create]
