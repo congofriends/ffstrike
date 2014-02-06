@@ -17,9 +17,6 @@ Ffstrike::Application.routes.draw do
     get 'search' => 'movements#search', on: :member, as: 'search'
 
     resources :events, shallow: true
-    resources :tasks do
-      get 'assign' => 'assignments#assign', on: :member, as: 'assign'
-    end
   end
   get 'visitor/:id' => 'movements#visitor', as: 'visitor' 
 

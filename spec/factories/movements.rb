@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :movement do
     name 'My Little Pony'
-    category 'Ponies'
     tagline 'Lovely life of a lovely little pony.'
     video "http://www.youtube.com/watch?v=EpnERlsfBFc"
     user
@@ -14,7 +13,6 @@ FactoryGirl.define do
 
   factory :movement_with_invalid_video, class: Movement do
     name 'My Little Pony'
-    category 'Ponies'
     tagline 'Lovely life of a lovely little pony.'
     video "http://www.youtube.com/watch?v=EpnERlsfBFc<7878>"
     user

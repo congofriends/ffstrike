@@ -7,12 +7,13 @@ class TaskPopulator
   end
 
   def self.description(event)
-    EVENT_DESCRIPTION[event.event_type] if EVENT_DESCRIPTIONS.has_key? event.event_type
-    return []
+    return EVENT_DESCRIPTIONS[event.event_type] if EVENT_DESCRIPTIONS.has_key? event.event_type
+    return
   end
 
   def self.host_tasks(event)
-    HOST_TASKS[event.event_type] if HOST_TASKS.has_key? event.event_type
+    return HOST_TASKS[event.event_type] if HOST_TASKS.has_key? event.event_type
+    return
   end
 
 end

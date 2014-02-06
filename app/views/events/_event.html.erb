@@ -14,7 +14,7 @@
            <p class="lead text-right"><%= event.number_of_attendees %> Attendees</p>
         </p>
         <p>Location: <%= event.city %></p>
-        <p>Time: TBD</p>
+        <p>Time: <%= event.time %></p>
         <p>Organizer: <%= event.coordinator_name || event.coordinator_email %> </p>
         <p>Summary:<em> <%= event.tagline %> </em> </p>
       </div>
