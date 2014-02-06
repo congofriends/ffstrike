@@ -49,6 +49,12 @@
     <div class='col-md-7'>
       <div class='well'>
         <legend>Coordinator Controls</legend>
+        <% if @movement.published? %>
+          <%= link_to "Published", publish_movement_path(@movement), class: 'btn btn-xs btn-success', disabled: true %>
+        <%else%>
+          <%= link_to "Publish", publish_movement_path(@movement), class: 'btn btn-xs btn-success' %>
+        <%end%>
+        <%= link_to "Review summary page", movement_path(@movement), class: "btn btn-xs btn-primary" %><br>
         <%= link_to "Review my all movements", user_movements_path, { class: 'h4 panel-title panel-heading' } %>
         <%= render "email" %>      
         <%= link_to "Invite More Coordinators", new_user_invitation_path, { class: 'h4 panel-title panel-heading' } %>

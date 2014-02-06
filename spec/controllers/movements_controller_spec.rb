@@ -19,7 +19,8 @@ describe MovementsController do
   describe "GET #search" do
 
     let!(:zip) { FactoryGirl.create(:zipcode, zip: "60647", latitude: 10, longitude: 50) }
-    let(:event) { movement.events.create(zip: "60647", approved: true) }
+    let(:movement) { FactoryGirl.create(:published_movement) }
+    let(:event) { movement.events.create(zip: "60647", approved: true, movement: movement) }
     let(:unapproved_event) { movement.events.create(zip: "60647", approved: false) }
 
     before { get "search", id: movement, zip: event.zip }
@@ -40,7 +41,7 @@ describe MovementsController do
 
   describe "GET #visitor" do
     it "responds successfully" do
-      movement = FactoryGirl.create(:movement)
+      # movement = FactoryGirl.create(:movement)
       get "visitor", id: movement
 
       expect(response).to be_success
@@ -120,6 +121,15 @@ describe MovementsController do
 
     it "redirects to show" do
       expect(response).to redirect_to movement_path(movement)
+    end
+  end
+
+  describe "PUT #publish" do
+    it "publish an unpublished movements" do
+      movement = FactoryGirl.create(:unpublished_movement)
+      put :publish, id: movement 
+      movement.reload
+      expect(movement.published).to be_true
     end
   end
 

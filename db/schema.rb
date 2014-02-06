@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140205215733) do
+ActiveRecord::Schema.define(version: 20140206190255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20140205215733) do
     t.integer  "user_id"
     t.text     "call_to_action"
     t.text     "extended_description"
+    t.boolean  "published"
   end
 
   add_index "movements", ["user_id"], name: "index_movements_on_user_id", using: :btree

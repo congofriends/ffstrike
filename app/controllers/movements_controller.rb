@@ -9,7 +9,7 @@ class MovementsController < ApplicationController
   end
 
   def index
-    @movements = Movement.all
+    @movements = Movement.published
   end
 
   def search
@@ -53,6 +53,14 @@ class MovementsController < ApplicationController
     send_data @movement.to_csv, filename: "Attendee List"
   end
 
+  def publish
+    @movement.publish
+    respond_to do |format|
+      format.html { redirect_to movement_path(@movement), notice: "Movement has been published" }
+      format.js
+    end
+  end
+
   def update
     @movement.update_attributes(movement_params)
     redirect_to movement_path(@movement) 
@@ -66,6 +74,6 @@ class MovementsController < ApplicationController
   end
 
   def load_movement
-		@movement = Movement.find(params[:id])		
+		@movement = Movement.find(params[:id])
   end
 end

@@ -142,13 +142,15 @@ describe EventsController do
 
     it "assigns @events" do
       zip = FactoryGirl.create(:zipcode, zip: "60647", latitude: 10, longitude: 50)
-      event = FactoryGirl.create(:event, zip: "60647", approved: true) 
+      movement = FactoryGirl.create(:published_movement)
+      event = FactoryGirl.create(:event, zip: "60647", approved: true, movement: movement) 
       get "search", zip: "60647"
       expect(assigns(:events)).to eq([event])
     end
 
     it "doesn't assign unapproved events" do
       zip = FactoryGirl.create(:zipcode, zip: "60647", latitude: 10, longitude: 50)
+      movement = FactoryGirl.create(:published_movement)
       event = FactoryGirl.create(:event, zip: "60647", approved: false) 
       get "search", zip: "60647"
       expect(assigns(:events)).not_to include(event)

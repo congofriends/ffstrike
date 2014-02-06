@@ -11,6 +11,7 @@ describe Movement do
     expect(FactoryGirl.build(:nameless_movement)).to_not be_valid
   end
 
+  it {should respond_to(:published)}
 	it { should have_attached_file(:image) }
 	it { should validate_attachment_content_type(:image).
 				allowing('image/png', 'image/gif', 'image/jpg', 'image/jpeg').

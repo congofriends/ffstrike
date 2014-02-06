@@ -11,7 +11,7 @@ Ffstrike::Application.routes.draw do
 
   #movements
   resources :movements do
-
+    get 'publish' => 'movements#publish', on: :member, as: 'publish'
     get 'my_movements' => 'movements#user_movements', on: :collection, as: 'user'
     get 'dashboard' => 'movements#dashboard', on: :member, as: 'dashboard' 
     get 'search' => 'movements#search', on: :member, as: 'search'

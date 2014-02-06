@@ -16,6 +16,14 @@ class Movement < ActiveRecord::Base
     self.events  
   end
 
+  def publish
+    self.update(published: true)
+  end
+
+  def published?
+    self.published.eql?(true)
+  end
+
   def self.random(number_of_events = 1)
     Movement.offset(rand(Movement.count - number_of_events + 1)).first(number_of_events) 
   end

@@ -22,4 +22,19 @@ FactoryGirl.define do
     name 'My Little Pony'
     user
   end
+
+  factory :published_movement, class: Movement do
+    name "My Little Pony"
+    tagline "Lovely life of a lovely little pony."
+    video "http://www.youtube.com/watch?v=EpnERlsfBFc"
+    published true
+    user
+  end
+
+  factory :unpublished_movement, class: Movement do
+    name "My Little Pony"
+    tagline "Lovely life of a lovely little pony."
+    published false
+    user
+  end
 end
