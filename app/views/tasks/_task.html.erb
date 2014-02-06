@@ -1,16 +1,16 @@
 <%= div_for task do %>  
  <li>
- <% if current_user && task.event.movement.user == current_user %> 
-    <%= link_to raw('<i class="glyphicon glyphicon-remove-circle"></i>') , event_task_path(event, task.id), method: :delete,
+ <% if current_user && task.event.movement.user == current_user %>
+    <%= link_to raw('<i class="glyphicon glyphicon-remove-circle"></i>') , event_task_path(@event, task.id), method: :delete,
       data: { confirm: "You sure about deleting task '#{task.description}'?"}, remote: true  %>
     <% if task.is_assigned_to? current_user %>
-      <%= link_to "Signed up!", assign_event_task_path(event, task), :class=>"btn btn-info btn-xs", :disabled => true %>
+      <%= link_to "Signed up!", assign_event_task_path(@event, task), :class=>"btn btn-info btn-xs", :disabled => true %>
     <% else %>
-      <%= link_to "Sign up", assign_event_task_path(event, task), :class=>"btn btn-primary btn-xs", remote: true %>
+      <%= link_to "Sign up", assign_event_task_path(@event, task), :class=>"btn btn-primary btn-xs", remote: true %>
     <% end %> 
-  <%= best_in_place task, :description, :path=>[event, task], :type=> :input, :html_attrs => {:class=>"input"} %>
+  <%= best_in_place task, :description, :path=>[@event, task], :type=> :input, :html_attrs => {:class=>"input"} %>
   <% else %>
-      <%= link_to "Sign up", assign_event_task_path(event, task), :class=>"btn btn-default btn-xs", :disabled => true %>
+      <%= link_to "Sign up", assign_event_task_path(@event, task), :class=>"btn btn-default btn-xs", :disabled => true %>
       <%= task.description %>
   <% end %>
   </li>

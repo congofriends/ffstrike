@@ -21,12 +21,14 @@
               %tr
                 %th Name
                 %th Email
+                %th Phone number
                 %th Point person?
                 %th Notes
               - event.attendees.each do |attendee|
                 %tr
                   %td= attendee.name
                   %td= attendee.email
+                  %td= attendee.phone_number
                   %td= attendee.assignments.count > 0 ? "yes" : "no"
                   %td= attendee.notes
               
