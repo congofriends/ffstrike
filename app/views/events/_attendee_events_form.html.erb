@@ -3,7 +3,7 @@
   <div class='well <%= "approval-background" unless event.approved? %>' id="<%= "event#{event.id}"%>">
     <h4> Name: <%= event.name %> </h4>
     Location: <%= event.location %> <br>
-    Notes: <%= event.notes %> <br>
+    Message to attendees: <%= event.notes %> <br>
     Date: <%= event.date %> <br>
     Approved? <span id="<%= "approval_status#{event.id}" %>"><%= event.approved %> </span> <br>
     <%= link_to event.approved? ? 'Disapprove' : 'Approve', approve_path(event), method: :put, remote: true, id: "approve#{event.id}", class: "btn btn-primary" %>
