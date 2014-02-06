@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap/bootstrap-tooltip
 //= require turbolinks
 //= require best_in_place
 //= require_tree .

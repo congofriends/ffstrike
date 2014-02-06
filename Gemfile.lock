@@ -34,6 +34,9 @@ GEM
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    bootstrap-tooltip-rails (0.1)
+      rails (>= 3.1)
+      thor
     builder (3.1.4)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -214,6 +217,7 @@ DEPENDENCIES
   assert_difference
   best_in_place
   better_errors
+  bootstrap-tooltip-rails
   coffee-rails (~> 4.0.0)
   devise
   devise_invitable

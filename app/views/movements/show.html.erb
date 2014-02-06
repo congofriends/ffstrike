@@ -54,12 +54,12 @@ Search for an event near you!  Enter your zip code:
 
 <h4>Want to create your own event?</h4>
 <ul class="nav nav-pills nav-stacked">
-     <%= link_to "Rally", new_movement_event_path(@movement, {type: "rally"}), :class=>"btn-info badge" %>
-     <%= link_to "Speak Out", new_movement_event_path(@movement, {type: "public_speak_out"}), :class=>"btn-info badge" %>
-     <%= link_to "Movie Screening", new_movement_event_path(@movement, {type: "movie_screening"}), :class=>"btn-info badge" %>
-     <%= link_to "Public Forum", new_movement_event_path(@movement, {type: "public_forums"}), :class=>"btn-info badge" %>
-     <%= link_to "Decision-Maker Meeting", new_movement_event_path(@movement, {type: "meet_with_decision_makers"}), :class=>"btn-info badge" %>
-     <%= link_to "Custom Event", new_movement_event_path(@movement, {type: "own_event"}), :class=>"btn-primary badge" %>
+  <%= link_to "Rally", new_movement_event_path(@movement, {type: "rally"}), :class=>"btn-info badge", :rel=>"tooltip", :title=> truncate(t("event_type.rally"), length:200) %>
+  <%= link_to "Speak Out", new_movement_event_path(@movement, {type: "public_speak_out"}), :class=>"btn-info badge", :rel=>"tooltip", :title=> truncate(t("event_type.public_speak_out"), length:200) %>
+  <%= link_to "Movie Screening", new_movement_event_path(@movement, {type: "movie_screening"}), :class=>"btn-info badge", :rel=>"tooltip", :title=> truncate(t("event_type.movie_screening"), length:200) %>
+  <%= link_to "Public Forum", new_movement_event_path(@movement, {type: "public_forums"}), :class=>"btn-info badge", :rel=>"tooltip", :title=> truncate(t("event_type.public_forums"), length:200) %>
+  <%= link_to "Decision-Maker Meeting", new_movement_event_path(@movement, {type: "meet_with_decision_makers"}), :class=>"btn-info badge", :rel=>"tooltip", :title=> truncate(t("event_type.meet_with_decision_makers"), length:200) %>
+  <%= link_to "Custom Event", new_movement_event_path(@movement, {type: "own_event"}), :class=>"btn-primary badge", :rel=>"tooltip", :title =>truncate(t("event_type.own_event"), length:200) %>
 </ul>
 
 <br>
