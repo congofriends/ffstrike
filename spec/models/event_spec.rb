@@ -67,6 +67,16 @@ describe Event do
         expect(Event.near_zip(@test_zip, 50)).to_not eql([event])
       end
 
+      it "finds several nearby events if assosiated movement is published" do
+         zips = ["60247", "60250", "60240"]
+         @events = []
+         zips.each do |zip|
+           @events << FactoryGirl.create(:event, zip: @test_zip, latitude: @test_latitude, longitude: @test_longitude, movement: published_movement)
+         end
+         events_near_zip = Event.near_zip(@test_zip, 50).to_a.sort_by(&:id)
+         expected_events = @events.sort_by(&:id)
+         expect(events_near_zip).to eql(expected_events)
+      end
     end
   end
 end
