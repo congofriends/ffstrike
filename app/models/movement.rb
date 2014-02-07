@@ -9,7 +9,8 @@ class Movement < ActiveRecord::Base
   has_attached_file :image, :default_url => 'cat.png'
 	validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
 	validates_attachment_size :image, :less_than => 2.megabytes
-  
+
+  scope :published, lambda {where(published: true)}
   alias_attribute :movement_name, :name
 
   def movement_events
@@ -18,14 +19,6 @@ class Movement < ActiveRecord::Base
 
   def publish
     self.update(published: true)
-  end
-
-  def published?
-    self.published.eql?(true)
-  end
-
-  def self.published
-    Movement.where(published: true)
   end
 
   def self.random(number_of_events = 1)

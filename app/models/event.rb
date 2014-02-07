@@ -18,7 +18,7 @@ class Event < ActiveRecord::Base
     zipcode = zipcode.strip
     lookup = Zipcode.find_by_zip(zipcode)
     return [] if lookup.nil? || distance.nil?
-    Event.near([lookup.latitude, lookup.longitude], distance).where(approved: true).joins(:movement).where(movements: {published: true})
+    Event.near([lookup.latitude, lookup.longitude], distance).joins(:movement).where(approved: true, movements: {published: true})
   end
 
   def number_of_attendees
