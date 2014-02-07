@@ -41,7 +41,6 @@ describe MovementsController do
 
   describe "GET #visitor" do
     it "responds successfully" do
-      # movement = FactoryGirl.create(:movement)
       get "visitor", id: movement
 
       expect(response).to be_success

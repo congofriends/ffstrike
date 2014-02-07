@@ -11,7 +11,7 @@ describe Movement do
     expect(FactoryGirl.build(:nameless_movement)).to_not be_valid
   end
 
-  it {should respond_to(:published)}
+  it { should respond_to(:published) }
 	it { should have_attached_file(:image) }
 	it { should validate_attachment_content_type(:image).
 				allowing('image/png', 'image/gif', 'image/jpg', 'image/jpeg').
@@ -19,7 +19,7 @@ describe Movement do
  	it { should validate_attachment_size(:image).
 			                 less_than(2.megabytes) }	 
 
-    describe '.random' do
+  describe '.random' do
     before do
       FactoryGirl.create_list(:movement, 10)
     end
@@ -36,6 +36,13 @@ describe Movement do
   describe '.to_csv' do
     it 'should return some text' do
       expect(movement.to_csv).not_to be_nil
+    end
+  end
+
+  describe '.publish' do
+    it 'should update published attribute to true' do
+      movement.publish
+      expect(movement.published).to be_true
     end
   end
 
