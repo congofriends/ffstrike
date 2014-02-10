@@ -4,11 +4,11 @@ describe EventsController do
 
   let(:coordinator){FactoryGirl.create(:user)}
   let(:movement){FactoryGirl.create(:movement, user: coordinator)}
+  let(:event) {FactoryGirl.create(:event, movement: movement)}
 
   describe "GET #explanation" do
     it "responds successfully" do
       sign_in coordinator
-      event = FactoryGirl.create(:event, movement: movement)
       get :explanation, id: event
       expect(response).to be_success
     end
@@ -17,7 +17,6 @@ describe EventsController do
   describe "DELETE #delete" do 
     it "deletes the event" do
       sign_in coordinator
-      event = FactoryGirl.create(:event, movement: movement)
       delete :destroy, id: event
       expect { Event.all == [] }
     end
