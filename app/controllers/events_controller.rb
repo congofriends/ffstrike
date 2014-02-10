@@ -31,7 +31,7 @@ class EventsController < ApplicationController
         redirect_to explanation_path(@event) and return
       end
       flash[:notice] = "Your event will be viewable to the public as soon as the movement coordinator approves it!"
-      redirect_to visitor_path(@movement) and return
+      redirect_to explanation_path(@event) and return
     else
       flash[:notice] = @event.errors.full_messages.flatten.join(' ')
       if current_user == @movement.user

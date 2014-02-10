@@ -1,6 +1,6 @@
 class TaskPopulator 
 
-  EVENT_TYPE_FORM = [["Speak Out", "Speak Out"], ["Rally", "Rally"]] 
+  EVENT_TYPE_FORM = EVENT_DESCRIPTIONS["event_type"].keys.map { |event| event.gsub(/_/, ' ').capitalize }
 
   def self.assign_tasks(event)
     ATTENDEE_TASKS[event.event_type].each { |task| event.tasks << Task.create(task) } if ATTENDEE_TASKS.has_key? event.event_type

@@ -102,8 +102,8 @@ describe EventsController do
           expect(Event.last.host).to eq(visitor)
         end
 
-        it "redirects to the visitor page" do
-          expect(response).to redirect_to visitor_path(movement)
+        it "redirects to the explanation page" do
+          expect(response).to redirect_to explanation_path(Event.last)
         end
 
         it "creates an unapproved event" do

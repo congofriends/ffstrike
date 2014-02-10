@@ -2,6 +2,7 @@
 <% @movement.movement_events.select{|event| event.host != @movement.user}.each do |event| %>
   <div class='well <%= "approval-background" unless event.approved? %>' id="<%= "event#{event.id}"%>">
     <h4> Name: <%= event.name %> </h4>
+    Type: <%= event.event_type %> <br>
     Location: <%= event.location %> <br>
     Message to attendees: <%= event.notes %> <br>
     Date: <%= event.date %> <br>
