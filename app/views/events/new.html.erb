@@ -2,8 +2,8 @@
   <legend>Create an <em><%= params[:type]%></em> event!</legend>
 
 <% if params[:type] %>
- <%= t("event_type.#{params[:type]}") %> 
-<% end %>
+  <%= EVENT_DESCRIPTIONS["event_type"]["#{params[:type]}"]["full_description"]%>
+<% end%>
 
   <%= form_for ([@movement, @event]) do |form| %>
     <fieldset>
