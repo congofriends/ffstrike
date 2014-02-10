@@ -4,6 +4,8 @@
   </p>                                               
 <% end %>
 
+<%= link_to "Create new movement", new_movement_path, class: "btn btn-primary btn-xs" %>
+
 <h1><%= @movement.name %></h1>
 <h4> <%= @movement.tagline %> </h4>
 <h4> <%= @movement.call_to_action %> </h4>
