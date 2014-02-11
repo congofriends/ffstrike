@@ -28,30 +28,10 @@ Search for an event near you!  Enter your zip code:
 <div class='row'>
   <h3> Events: </h3>
   <% @events.each do |event| %>
-
-  <% if event.approved %>
-  <div class="col-md-3">
-    <div class='panel panel-default'>
-      <div class='panel-heading'>
-        <h3 class='text-center'><%= event.name %></h3>
-        <p class="text-info small text-right">Type: <%= event.event_type %></p>
-      </div>
-  
-      <div class='panel-footer'>
-        <div class='text-left'>
-          <p class="lead text-right"><%= event.number_of_attendees %> Attendees</p>
-          <p>Location: <%= event.city %></p>
-          <p>Time: TBD</p>
-          <p>Organizer: <%= event.coordinator_name || event.coordinator_email %> </p>
-          <p>Summary:<em> <%= event.tagline %> </em> </p>
-          </div>
-            <%= button_tag "Yes! I want to attend", type: "button", class: "btn btn-success btn-sm attend-button" %>
-            <%= render template: 'attendees/new', locals: { :event => event, :attendee => event.attendees.build } %>
-          </div>
-        </div>
-      </div>
+    <% if event.approved %>
+      <%= render partial: 'events/panel', locals: {event: event} %>
     <% end %>
-<% end %>
+  <% end %>
 </div>
 
 <h4>Want to create your own event?</h4>

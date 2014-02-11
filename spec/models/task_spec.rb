@@ -37,7 +37,7 @@ describe Task do
     let(:event) { FactoryGirl.create(:event) }
     let(:attendee) { FactoryGirl.create(:attendee, event: event)  }
     let(:task) { FactoryGirl.create(:task, event: event) }
-    before { task.assign!(attendee) }
+    before { task.assign!(attendee.id) }
 
     it {should be_assigned(attendee) }
     its(:assigned_attendees) { should include(attendee) }

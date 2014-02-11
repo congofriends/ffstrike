@@ -12,8 +12,8 @@ class Task < ActiveRecord::Base
     assignments.find_by(attendee_id: attendee.id)
   end
 
-  def assign! attendee
-    assignments.create(attendee_id: attendee.id)
+  def assign! attendee_id
+    assignments.create(attendee_id: attendee_id)
   end
 
   def unassign! attendee

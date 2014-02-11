@@ -34,7 +34,7 @@ describe AttendeesController do
 
       it "re-renders the same page" do
         post :create, event_id: event, attendee: FactoryGirl.attributes_for(:attendee_without_email)
-        expect(response).to redirect_to movement_path(movement, anchor: "events")
+        expect(response).to redirect_to new_event_attendee_path(event)
       end
 
       it "notifies user that attendee information is missing required email field" do
