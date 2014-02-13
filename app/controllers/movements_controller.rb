@@ -37,7 +37,10 @@ class MovementsController < ApplicationController
       unless current_user.nil?
         current_user.add_movement(@movement)
       end
-      flash[:notice] = "Congratulations! You just created a movement, try to create event type"
+      unless movement_params[:draft] == 1
+        @movement.publish
+      end
+      flash[:notice] = "Congratulations, you just created a movement!"
       redirect_to movement_path(@movement)
     else
       flash[:notice] = "There was an problem when saving your movement. Please try again."
@@ -70,7 +73,7 @@ class MovementsController < ApplicationController
   
   def movement_params
     params[:movement][:video]= extract_video_id(params[:movement][:video])
-    params.require(:movement).permit(:name, :category, :tagline, :call_to_action, :extended_description, :image, :video, :user_id)
+    params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :video, :user_id)
   end
 
   def load_movement

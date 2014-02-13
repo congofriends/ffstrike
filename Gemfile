@@ -64,6 +64,9 @@ group :test, :development do
   gem 'better_errors'
   gem 'assert_difference'
   gem 'jasmine-rails'
+  gem 'capybara'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
 end
 
 group :doc do

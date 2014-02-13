@@ -13,6 +13,8 @@ class Movement < ActiveRecord::Base
   scope :published, lambda {where(published: true)}
   alias_attribute :movement_name, :name
 
+  attr_accessor :draft
+
   def movement_events
     self.events  
   end
