@@ -10,7 +10,11 @@
 
     <div class='form-group'>
       <%= form.label :event_type %>
-      <%= form.select :event_type, TaskPopulator::EVENT_TYPE_FORM, {:selected=>params[:type].gsub(/_/, ' ').capitalize}, { class: 'form-control' }  %>
+      <% if params[:type].nil? %>
+        <%= form.select :event_type, TaskPopulator::EVENT_TYPE_FORM, { class: 'form-control' }, { class: 'form-control' } %>
+      <%else%>  
+        <%= form.select :event_type, TaskPopulator::EVENT_TYPE_FORM, {:selected=>params[:type].gsub(/_/, ' ').capitalize}, { class: 'form-control' }  %>
+      <%end%>
     </div>
 
     <div class='form-group'>
