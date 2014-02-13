@@ -7,7 +7,7 @@
   </div>
 </div>
 <br>
-<div class="row">
+<div class="task-list">
   <%=TaskPopulator.description(@event)%>
   <br>
   <br>
@@ -15,7 +15,7 @@
   <br>
   <br>
   <% TaskPopulator.host_tasks(@event).each do |task| %>
-    <ul><%= task %></ul>
+    <ul><li><%= task %></li></ul>
   <% end %>
   
 </div>
