@@ -4,27 +4,11 @@
       <h2> Event: <%= event.name %> (<%= event.event_type %>) </h2>
     </a>
     <div id="collapse<%=event.id%>" class="panel-collapse collapse">
-      <div id="small<%=event.id%>">
-        <h3> Tasks for Small Events </h3>
-        <% event.tasks_for("small_event").each do |task| %>
+      <div id="tasklist<%=event.id%>">
+        <% event.tasks.each do |task| %>
           <%= render "tasks/task", task: task, event: event %>
         <% end %>
       </div>
-
-      <div id="medium<%=event.id%>">
-        <h3> Tasks for Medium Events </h3>
-        <% event.tasks_for("medium_event").each do |task| %>
-          <%= render "tasks/task", task: task, event: event %>
-        <% end %>
-      </div>
-
-      <div id="big<%=event.id%>">
-        <h3> Tasks for Big Events </h3>
-        <% event.tasks_for("big_event").each do |task| %>
-          <%= render "tasks/task", task: task, event: event %>
-        <% end %>
-      </div>
-
       <%= render "tasks/form", event: event %> 
     </div>
   </div>

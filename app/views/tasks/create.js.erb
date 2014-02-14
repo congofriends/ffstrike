@@ -1,13 +1,3 @@
-<% if params[:task][:small_event] == "1" %>
-  $('#small<%=params[:event_id]%>').append("<%=j render "tasks/task", task: @task, event: @task.event %>");
-<% end %>
-
-<% if params[:task][:medium_event] == "1" %>
-  $('#medium<%=params[:event_id]%>').append("<%=j render "tasks/task", task: @task, event: @task.event %>");
-<% end %> 
-
-<% if params[:task][:big_event] == "1" %>
-  $('#big<%=params[:event_id]%>').append("<%=j render "tasks/task", task: @task, event: @task.event %>");
-<% end %> 
+$('#tasklist<%=params[:event_id]%>').append("<%=j render "tasks/task", task: @task, event: @task.event %>");
 
 $('#new_task<%=params[:event_id]%>').each(function(){ this.reset(); }) ;

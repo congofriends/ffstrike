@@ -32,7 +32,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:description, :small_event, :medium_event, :big_event)
+    params.require(:task).permit(:description)
   end
 
   def load_event

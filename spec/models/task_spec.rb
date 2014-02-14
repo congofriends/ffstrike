@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Task do
-  let(:event) { FactoryGirl.build(:event) }
+  let(:event) { FactoryGirl.create(:event) }
   let(:task)  { event.tasks.build(description: "Lorem ipsum is a good task name") }
 
   subject { task }
@@ -13,8 +13,7 @@ describe Task do
   it {should respond_to(:assigned?)}
   it {should respond_to(:assign!)}
 
-  #TODO: find out why this test is failing
-  # its(:movement) {should eq movement}
+  its(:event) {should eq event}
 
   it "is not valid without a description" do
     expect(FactoryGirl.build(:task_without_description)).to_not be_valid

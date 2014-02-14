@@ -1,12 +1,6 @@
 <h4>Add a new task to this event:</h4>
 <%= form_for ([event, @task=Task.new]), remote: true, html: {class: "form-inline", id: "new_task#{event.id}"} do |f| %>
   <%= f.text_area :description, placeholder: "Enter new task description here..." %>
-  <%= f.check_box :small_event %>
-  <%= f.label "small", :small_event %>
-  <%= f.check_box :medium_event %>
-  <%= f.label "medium", :medium_event %>
-  <%= f.check_box :big_event %>
-  <%= f.label "big", :big_event %>
   <% if event.movement.user == current_user %> 
     <%= f.submit "Create new task", :class=>"btn btn-success" %>
   <% else %>

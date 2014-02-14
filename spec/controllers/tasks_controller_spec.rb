@@ -37,10 +37,6 @@ describe TasksController do
         flash[:notice].should == "Description can't be blank"
       end
 
-      it "notifies user that task information is missing event size field" do
-        post :create, event_id: event, task: FactoryGirl.attributes_for(:task_without_event_size)
-        flash[:notice].should == "Event size warning Please choose at least one event category"
-      end
     end 
   end
 
