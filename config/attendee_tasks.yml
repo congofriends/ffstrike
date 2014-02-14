@@ -6,9 +6,7 @@
   - description: 'Arrive early to greet media representatives'
   - description: 'Send media release and photos to media representatives'
   # Materials
-  - description: 'Make 5 signs that showcase your message and arrive early to distribute them'
-  - description: 'Make 15 signs that showcase your message and arrive early to distribute them'
-  - description: 'Make 30 signs that showcase your message and arrive early to distribute them'
+  - description: 'Make signs that showcase your message and arrive early to distribute them'
   - description: 'Make petition sheets for attendees'
   - description: 'Bring lots of extra pens and clipboards or other hard surfaces to write on'
   # Recruitment
@@ -25,12 +23,29 @@
   - description: 'Arrive early to greet media representatives'
   - description: 'Send media release and photos to media representatives'
   # Signs
-  - description: 'Make 5 signs that showcase your message and arrive early to distribute them'
-  - description: 'Make 15 signs that showcase your message and arrive early to distribute them'
-  - description: 'Make 30 signs that showcase your message and arrive early to distribute them'
+  - description: 'Make signs that showcase your message and arrive early to distribute them'
   # Recruitment
   - description: 'Print and post recruitment fliers in public places'
   - description: 'Recruit 5-10 of your friends to come'
   - description: 'Contacted like-minded organizations and invite them to the rally'
   - description: 'Publicize your event via social media'
  
+'Movie Screening':
+  #Recruitment
+  - description: 'Call 5-10 friends and invite them to come'
+  - description: 'Publicize your event via social media (and ask others to do the same!) '
+  - description: 'Print and post recruitment fliers in public spaces'
+  - description: 'Bring snacks and plates/cups'
+  - description: 'Bring a friend (or several!)'
+  - description: 'Publicize the event via social media'
+
+'Public Forum':
+  #Recruitment
+  - description: 'Call 5-10 friends and invite them to come'
+  - description: 'Publicize your event via social media (and ask others to do the same!) '
+  - description: 'Print and post recruitment fliers in public spaces'
+  - description: 'Bring snacks and plates/cups'
+  - description: 'Bring a friend (or several!)'
+  - description: 'Publicize the event via social media'
+
+
