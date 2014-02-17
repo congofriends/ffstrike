@@ -4,6 +4,16 @@
   <p><%= @event.location %></p>
   <p><%= @event.notes %></p>
   <p><%= @event.date %></p>
+  
+  <%= link_to "Generate PDF", event_path(@event, :format => :pdf), :target => '_blank' %>
+  <p class="lead">Number of attendees: <span class="badge"> <%= @event.number_of_attendees %> </span></p>
+  <% @event.attendees.each do |attendee| %>
+    <li class="text-muted">
+      <%= attendee.name %>
+      <%= attendee.email %>
+    </li>
+  <% end %>
+  <%= render partial: "email_event.html.erb", locals: { event: @event, movement: @movement} %>
 </div>
  
 <p class="lead">Event tasks </p>

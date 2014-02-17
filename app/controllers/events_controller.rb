@@ -20,7 +20,15 @@ class EventsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = PDFKit.new(render_to_string('events/show'), :page_size=>'Letter').to_pdf
+        send_data(pdf, filename: 'event_details.pdf', type: 'application/pdf', disposition: 'inline')
+      end
+    end
+  end
 
   def create
     @event = @movement.events.build(event_params)

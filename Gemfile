@@ -29,6 +29,8 @@ gem 'jquery-rails'
 # File upload related
 gem "paperclip", "~> 3.0"
 gem "rmagick"
+gem 'pdfkit'
+gem 'wkhtmltopdf-binary', "0.9.9"
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
