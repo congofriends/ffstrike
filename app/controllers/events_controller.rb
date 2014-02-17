@@ -24,8 +24,10 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        pdf = PDFKit.new(render_to_string('events/show'), :page_size=>'Letter').to_pdf
-        send_data(pdf, filename: 'event_details.pdf', type: 'application/pdf', disposition: 'inline')
+        case params[:generate]
+        when 'event' then generate_pdf('events/show', 'event_details.pdf')
+        when 'tasks' then generate_pdf('tasks/index', 'event_tasks.pdf')
+        end
       end
     end
   end
@@ -82,5 +84,10 @@ class EventsController < ApplicationController
 
   def populate_tasks
     TaskPopulator.assign_tasks @event 
+  end
+
+  def generate_pdf(view_name, final_doc_name)
+    pdf = PDFKit.new(render_to_string(view_name), :page_size=>'Letter').to_pdf
+    send_data(pdf, filename: final_doc_name, type: 'application/pdf', disposition: 'inline')
   end
 end

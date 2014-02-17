@@ -5,7 +5,7 @@
   <p><%= @event.notes %></p>
   <p><%= @event.date %></p>
   
-  <%= link_to "Generate PDF", event_path(@event, :format => :pdf), :target => '_blank' %>
+  <%= link_to "Generate PDF with event summary", event_path(@event, {generate: :event, :format => :pdf}), :target => '_blank' %>
   <p class="lead">Number of attendees: <span class="badge"> <%= @event.number_of_attendees %> </span></p>
   <% @event.attendees.each do |attendee| %>
     <li class="text-muted">
@@ -22,6 +22,8 @@
       <%= link_to "I want to attend", new_event_attendee_path(event_id: @event), class: "btn btn-success btn-sm" %>
    </p>
 <% end %>
+
+<%= link_to "Generate PDF with tasks list", event_path(@event, {generate: :tasks, :format => :pdf} ), :target => '_blank' %>
 <% @event.tasks.each do |task| %>
   <%= render task %>
 <% end %>  
