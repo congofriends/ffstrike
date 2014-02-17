@@ -8,7 +8,7 @@ Ffstrike::Application.configure do
   config.cache_classes = true
 
   # Links need to work in actionmailer
-  config.action_mailer.default_url_options = { :host => "http://rally_qa.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => "http://rally-qa.herokuapp.com" }
 
 
   # Do not eager load code on boot. This avoids loading your whole application
