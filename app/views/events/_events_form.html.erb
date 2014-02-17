@@ -1,4 +1,4 @@
-<% if @movement.events.length == 0 %>
+<% if @movement.without_events? %>
   <h4> You have no events yet - Create one below! </h4>
 <% else %>
   <div class='form-inline'>

@@ -19,6 +19,10 @@ class Movement < ActiveRecord::Base
     self.events  
   end
 
+  def without_events?
+    movement_events.empty?
+  end
+
   def publish
     self.update(published: true)
   end
