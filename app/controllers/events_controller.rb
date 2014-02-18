@@ -65,7 +65,10 @@ class EventsController < ApplicationController
   def destroy 
     @event.destroy
     flash[:notice] = "Event deleted."
-    redirect_to dashboard_movement_path(@event.movement, anchor: "events")
+    respond_to do |format|
+      format.html { redirect_to dashboard_movement_path(@event.movement, anchor: "events") }
+      format.js
+    end
   end
 
   private
