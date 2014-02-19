@@ -24,6 +24,7 @@ class MovementsController < ApplicationController
 
   def dashboard
     @event = Event.new
+    @event_types = TaskPopulator::EVENT_TYPES
   end
 
   def new

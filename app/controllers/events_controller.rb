@@ -59,7 +59,10 @@ class EventsController < ApplicationController
   def update
     @event.update_attributes(event_params)
     flash[:notice] = "Event updated."
-    redirect_to dashboard_movement_path(@event.movement, anchor: "events") 
+    respond_to do |format|
+      format.html { redirect_to dashboard_movement_path(@event.movement, anchor: "events") }
+      format.json { head :ok }
+    end
   end
 
   def destroy 
@@ -74,6 +77,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
+    # params[:event][:event_type] = TaskPopulator.event_type(params[:event][:event_type])
     params.require(:event).permit(:event_type, :name, :address, :location_details, :city, :zip, :date, :time, :coordinator_id, :notes)
   end
 

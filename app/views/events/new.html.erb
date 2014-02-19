@@ -10,10 +10,10 @@
 
     <div class='form-group'>
       <%= form.label :event_type %>
-      <% if params[:type].nil? %>
-        <%= form.select :event_type, TaskPopulator::EVENT_TYPE_FORM, { class: 'form-control' }, { class: 'form-control' } %>
-      <%else%>  
-        <%= form.select :event_type, TaskPopulator::EVENT_TYPE_FORM, {:selected=>params[:type].gsub(/_/, ' ').capitalize}, { class: 'form-control' }  %>
+      <% if params[:type].nil?%>
+        <%= form.select :event_type, TaskPopulator::EVENT_TYPE_FORM.collect.each_with_index{|i,el| [i, el]}, { class: 'form-control' }, { class: 'form-control' }%>
+      <%else  %>
+        <%= form.select :event_type, TaskPopulator::EVENT_TYPE_FORM, {:selected=>params[:type].gsub(/_/, ' ').capitalize}, { class: 'form-control' } %>
       <%end%>
     </div>
 
@@ -43,13 +43,11 @@
     </div>
 
     <div class='form-group'>
-      <%= form.label :date %>
-      <%= form.text_field :date, class: 'form-control datepicker' %>
-    </div>
-
-    <div class='form-group'>
-      <%= form.label :time %>
-      <%= form.text_field :time, class: 'form-control timepicker' %>
+      <%= form.label "When:" %>
+      <div class="form-inline event-date">
+        <%= form.text_field :date, class: 'form-control datepicker' %>
+        <%= form.text_field :time, class: 'form-control timepicker' %>
+      </div>
     </div>
 
     <div class='form-group'>
