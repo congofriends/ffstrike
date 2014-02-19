@@ -29,18 +29,6 @@ class Event < ActiveRecord::Base
     [address, city, zip].join(", ")
   end
 
-  def size
-    case number_of_attendees
-      when 0..5 then :small_event
-      when 6..14 then :medium_event
-      when 15..50 then :big_event  
-    end
-  end
-
-  def tasks_for(event_size)
-    self.tasks.tasks_for(event_size)
-  end
-
   private
     def assign_coordinates
       lookup = Zipcode.find_by_zip(self.zip)
