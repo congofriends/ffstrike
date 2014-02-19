@@ -28,7 +28,6 @@ describe Event do
     end
   end
 
-
   describe "#self.near_zip" do
     context "with no distance" do
       it "returns []" do

@@ -61,4 +61,21 @@ describe UserMailer do
 
   end
 
+  describe "#notify_coordinator_of_event_size" do
+ 
+    let!(:user) { FactoryGirl.create(:user) }
+    let!(:movement) { FactoryGirl.create(:movement, user: user) }
+    let!(:event) { FactoryGirl.create(:event, movement: movement) }
+    let!(:attendees) { FactoryGirl.create_list(:attendee, 3, event: event) }
+    let(:mail) { UserMailer.notify_coordinator_of_event_size(event) }
+
+    it "sends to coordinator" do
+      mail.to.should eq([user.email])
+    end
+
+    it "has correct body" do
+      mail.body.encoded.should include("has reached 3 attendees")
+      mail.body.encoded.should include(event.name)
+    end
+  end
 end

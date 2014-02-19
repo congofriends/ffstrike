@@ -11,6 +11,7 @@ class AttendeesController < ApplicationController
       session[:current_attendee_id] = @attendee.id
 
       AttendeeMailer.signup_message(@movement, @event, @attendee).deliver
+      UserMailer.notify_coordinator_of_event_size(@event) if @event.threshold_size? 
       redirect_to event_path(@event), notice: "Thanks for signing up!"
     else
       redirect_to new_event_attendee_path(@event),  notice: "Email is required"

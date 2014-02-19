@@ -29,6 +29,10 @@ class Event < ActiveRecord::Base
     [address, city, zip].join(", ")
   end
 
+  def threshold_size?
+    [10, 50].include? self.number_of_attendees 
+  end
+
   private
     def assign_coordinates
       lookup = Zipcode.find_by_zip(self.zip)

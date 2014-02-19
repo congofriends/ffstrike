@@ -21,4 +21,11 @@ class UserMailer < ActionMailer::Base
     return false
   end
 
+  def notify_coordinator_of_event_size(event)
+    @event = event.name
+    @event_size = event.number_of_attendees.to_s
+    @coordinator = event.movement.user
+    mail(to: @coordinator.email, from: "MovementApp@Events.com") 
+  end
+
 end
