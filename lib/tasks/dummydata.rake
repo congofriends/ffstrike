@@ -2,7 +2,8 @@ namespace :db do
   desc "Fill database with sample data"
   task make_cats: :environment do
 
-    coordinator = User.create!(email: "coordinator@example.com",
+    coordinator = User.create!(name: "coordinator",
+                               email: "coordinator@example.com",
                                password: "password",
                                password_confirmation: "password")
 
@@ -25,15 +26,15 @@ namespace :db do
         host_id: coordinator.id)
 
     task = coordinator_event.tasks.create!(
-        description: "Bring your cat!",
-        small_event: true)
+        description: "Bring your cat!")
 
     attendee = coordinator_event.attendees.create!(
         email: "attendee@example.com",
         phone_number: "1234567890",
         point_person: false)
 
-    non_coordinator = User.create!(email: "noncoordinator@example.com",
+    non_coordinator = User.create!(name: "noncoordinator",
+                                   email: "noncoordinator@example.com",
                                    password: "password",
                                    password_confirmation: "password")
     
