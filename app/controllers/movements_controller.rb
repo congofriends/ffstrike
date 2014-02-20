@@ -24,7 +24,7 @@ class MovementsController < ApplicationController
 
   def dashboard
     @event = Event.new
-    @event_types = TaskPopulator::EVENT_TYPES
+    @event_types = EventType.all.map {|e| [e.id, e.name]}
   end
 
   def new

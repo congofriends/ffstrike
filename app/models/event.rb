@@ -4,6 +4,7 @@ class Event < ActiveRecord::Base
   belongs_to :coordinator, class_name: User
   belongs_to :host, class_name: User
   belongs_to :movement, class_name: Movement
+  belongs_to :event_type
   has_many :attendees, dependent: :destroy
   has_many :tasks, dependent: :destroy
   after_validation :assign_coordinates
@@ -19,6 +20,10 @@ class Event < ActiveRecord::Base
     lookup = Zipcode.find_by_zip(zipcode)
     return [] if lookup.nil? || distance.nil?
     Event.near([lookup.latitude, lookup.longitude], distance).joins(:movement).where(approved: true, movements: {published: true})
+  end
+
+  def type
+    event_type.name
   end
 
   def number_of_attendees

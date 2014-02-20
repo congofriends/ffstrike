@@ -20,7 +20,7 @@ event_type:
     full_description: "To take action, first we need to be educated. A movie screening can be a great first step for many people to 
             learn about important issues. Hosting a movie screen can be easy and quick to organize. Your movie screening might be for
             3, 5, or 100 people. You might also decide to add more to your screening like a speaker or a petition drive."
-  public_forums:
+  public_forum:
     short_description: "Assemble experts and host a public forum to educate the community on your issue"
     full_description: "Before we take action, we must be educated. Public forums are intended to inform the general population about
             important issues. Generally, public forums involve a slate of speakers who are experts in the issue you’re discussing who make their
@@ -29,7 +29,7 @@ event_type:
             should have a large turnout - depending on the size of your community you should aim for between 20 and 200 (or more!) people at 
             your event. These can be great events to grow your movement. Because this event requires a lot of logistics and recruitment,
             we suggest allowing yourself at least 1-3 months to plan and prepare."
-  meet_with_decision_makers:
+  meet_with_decision_maker:
     short_description: "Get key stakeholders together and present your case to an elected official or other decision-maker"
     full_description: "One thing is for sure - people in power definitely won’t do the right thing unless they’re asked
             (Often they don’t do it then either - that’s why things like rallies, speak-outs, and petition drives exist. But it’s worth 
@@ -37,7 +37,7 @@ event_type:
             or high school or college administrator - is to make sure they know of your demands. At this meeting, you’ll want 3-5 active
             movement leaders prepared to speak. Because it often takes time to secure a meeting with decision-makers and prepare your
             presentation, we recommend giving yourself at least 2 to 6 weeks to organize a meeting, although, in a pinch, you could do it quicker."
-  planning_meetings:
+  planning_meeting:
     short_description: "Get your friends and allies together to plan your next move"
     full_description: "Planning meetings are crucial to organizing more intricate actions and to building community that will last. A planning
             meeting could be an impromptu lunch with you and a few other leaders or it could be a larger full-group meeting you plan and

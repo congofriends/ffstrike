@@ -36,7 +36,9 @@ class Movement < ActiveRecord::Base
   end
 
   def locations
-    movement_events.map(&:city).uniq.reject(&:empty?).slice(0..8).join(", ")
+    #FIXME: why nil? instead of empty?
+    # movement_events.map(&:city).uniq.reject(&:empty?).slice(0..8).join(", ")
+    movement_events.map(&:city).uniq.reject(&:nil?).slice(0..8).join(", ")
   end
 
   def to_csv

@@ -56,9 +56,9 @@ ActiveRecord::Schema.define(version: 20140214171547) do
     t.string   "date"
     t.string   "time"
     t.string   "location_details"
-    t.string   "event_type"
     t.boolean  "approved"
     t.integer  "host_id"
+    t.string   "event_type"
   end
 
   add_index "events", ["host_id"], name: "index_events_on_host_id", using: :btree

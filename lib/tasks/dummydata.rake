@@ -21,7 +21,7 @@ namespace :db do
         zip: "60647",
         date: "02/19/2030",
         time: "9:00 PM",
-        event_type: "Speak Out",
+        event_type_id: 1,
         approved: true,
         host_id: coordinator.id)
 
@@ -46,7 +46,7 @@ namespace :db do
         zip: "60647",
         date: "02/19/2030",
         time: "9:00 PM",
-        event_type: "Rally",
+        event_type_id: 2,
         approved: false,
         host_id: non_coordinator.id)
   end
