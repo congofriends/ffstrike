@@ -1,4 +1,4 @@
-'Speak Out':
+'Public speak out':
   # Media
   - description: 'Look up media outlets in your area'
   - description: 'Email reporters and media outlets 3-7 days before the event'
@@ -30,7 +30,7 @@
   - description: 'Contacted like-minded organizations and invite them to the rally'
   - description: 'Publicize your event via social media'
  
-'Movie Screening':
+'Movie screening':
   #Recruitment
   - description: 'Call 5-10 friends and invite them to come'
   - description: 'Publicize your event via social media (and ask others to do the same!) '
@@ -39,7 +39,7 @@
   - description: 'Bring a friend (or several!)'
   - description: 'Publicize the event via social media'
 
-'Public Forums':
+'Public forums':
   #Recruitment
   - description: 'Call 5-10 friends and invite them to come'
   - description: 'Publicize your event via social media (and ask others to do the same!) '
