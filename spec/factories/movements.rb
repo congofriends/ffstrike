@@ -4,6 +4,14 @@ FactoryGirl.define do
     tagline 'Lovely life of a lovely little pony.'
     video "http://www.youtube.com/watch?v=EpnERlsfBFc"
     user
+
+    factory :published_movement do
+      published true
+    end
+
+    factory :unpublished_movement do
+      published false
+    end
   end
 
   factory :nameless_movement, class: Movement do
@@ -23,18 +31,4 @@ FactoryGirl.define do
     user
   end
 
-  factory :published_movement, class: Movement do
-    name "My Little Pony"
-    tagline "Lovely life of a lovely little pony."
-    video "http://www.youtube.com/watch?v=EpnERlsfBFc"
-    published true
-    user
-  end
-
-  factory :unpublished_movement, class: Movement do
-    name "My Little Pony"
-    tagline "Lovely life of a lovely little pony."
-    published false
-    user
-  end
 end

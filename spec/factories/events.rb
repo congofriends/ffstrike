@@ -1,7 +1,4 @@
 FactoryGirl.define do
-  factory :new_event, class: Event do
-  end
-  
   factory :invalid_event, class: Event do
     notes "I am invalid because I have only a notes attribute"
     event_type_id 2
