@@ -4,6 +4,7 @@ FactoryGirl.define do
   
   factory :invalid_event, class: Event do
     notes "I am invalid because I have only a notes attribute"
+    event_type_id 2
   end
 
   factory :event do
@@ -17,6 +18,7 @@ FactoryGirl.define do
     notes 'i am a valid event'
     association :coordinator, factory: :user
     approved true
+    event_type_id 2
     movement
   end
 end
