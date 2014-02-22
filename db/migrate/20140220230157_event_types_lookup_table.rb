@@ -9,6 +9,7 @@ class EventTypesLookupTable < ActiveRecord::Migration
       t.integer :event_type_id
     end
 
+    EventType.reset_column_information
     types = %w(Rally Public\ speak\ out Movie\ screening Public\ forum Meet\ with\ decision\ maker Planning\ meeting Own\ event)
     types.each { |type| EventType.create(name: type) }
   end
