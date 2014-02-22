@@ -6,3 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+types = %w(Rally Public\ speak\ out Movie\ screening Public\ forum Meet\ with\ decision\ maker Planning\ meeting Own\ event)
+types.each { |type| EventType.create(name: type)  }
+

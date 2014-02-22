@@ -9,7 +9,7 @@ describe TaskPopulator do
   end
 
   it "does not assign tasks to a custom event" do
-    own_type_event = FactoryGirl.build(:event, event_type_id: 6)
+    own_type_event = FactoryGirl.build(:event, event_type_id: 7)
     TaskPopulator.assign_tasks(own_type_event)
     expect(own_type_event.tasks).to be_empty
   end
