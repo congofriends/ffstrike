@@ -1,7 +1,6 @@
 class Event < ActiveRecord::Base
-  validates_presence_of :coordinator, :address, on: :create
+  validates_presence_of :host, :address, on: :create
   reverse_geocoded_by :latitude, :longitude
-  belongs_to :coordinator, class_name: User
   belongs_to :host, class_name: User
   belongs_to :movement, class_name: Movement
   belongs_to :event_type
@@ -11,8 +10,8 @@ class Event < ActiveRecord::Base
 
   delegate :movement_name, :image,     :to => :movement
   delegate :tagline,                   :to => :movement
-  delegate :coordinator_name,          :to => :coordinator
-  delegate :coordinator_email,         :to => :coordinator
+  delegate :host_name,          :to => :host
+  delegate :host_email,         :to => :host
 
   def self.near_zip(zipcode, distance)
     return [] if zipcode.nil?

@@ -43,15 +43,15 @@ describe AttendeesController do
       end
     end
 
-    context "coordinator notification" do
+    context "host notification" do
       
       user = FactoryGirl.create(:user)
       event = FactoryGirl.create(:event)
-      event.coordinator = user
+      event.host = user
     
       context "with fewer than 10 attendees" do
         it "doesn't call attendee_mailer" do
-          expect(UserMailer).not_to receive(:notify_coordinator_of_event_size)
+          expect(UserMailer).not_to receive(:notify_host_of_event_size)
           attendees = FactoryGirl.create_list(:attendee, 8, event: event)
           post :create, event_id: event, attendee: FactoryGirl.attributes_for(:attendee)
         end
@@ -59,7 +59,7 @@ describe AttendeesController do
 
       context "with 10 attendees" do
         it "calls UserMailer" do
-          expect(UserMailer).to receive(:notify_coordinator_of_event_size).with(event)
+          expect(UserMailer).to receive(:notify_host_of_event_size).with(event)
           attendees = FactoryGirl.create_list(:attendee, 9, event: event)
           post :create, event_id: event, attendee: FactoryGirl.attributes_for(:attendee)
         end
@@ -67,7 +67,7 @@ describe AttendeesController do
     
       context "with 50 attendees" do
         it "calls UserMailer" do
-          expect(UserMailer).to receive(:notify_coordinator_of_event_size).with(event)
+          expect(UserMailer).to receive(:notify_host_of_event_size).with(event)
           attendees = FactoryGirl.create_list(:attendee, 49, event: event)
           post :create, event_id: event, attendee: FactoryGirl.attributes_for(:attendee)
         end 

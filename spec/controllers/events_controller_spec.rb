@@ -57,16 +57,16 @@ describe EventsController do
 
   describe "POST #create" do
     let(:visitor){FactoryGirl.create(:user)}
-    before { post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id) }
+    before { post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(host_id: coordinator.id) }
 
     context "with valid attributes" do
       it "creates a event" do
-        expect{post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id)}.to change(Event, :count).by(1)
+        expect{post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(host_id: coordinator.id)}.to change(Event, :count).by(1)
       end
 
       it "calls the task prepopulator" do
         TaskPopulator.should_receive(:assign_tasks)
-        post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id)
+        post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(host_id: coordinator.id)
       end
 
       it "creates a event connected to the movement" do
@@ -76,7 +76,7 @@ describe EventsController do
       context "as a coordinator" do
         before :each do
           @controller.stub(:current_user).and_return(coordinator)
-          post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id)
+          post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(host_id: coordinator.id)
         end
 
         it "notifies the user that event was created" do
@@ -97,7 +97,7 @@ describe EventsController do
         before { @controller.stub(:current_user).and_return(visitor) }
 
         it "sets host to event creator" do
-          post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(coordinator_id: coordinator.id) 
+          post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(host_id: coordinator.id) 
           expect(Event.last.host).to eq(visitor)
         end
 
@@ -128,7 +128,7 @@ describe EventsController do
 
       it "notifies user that event had errors" do
         post :create, movement_id: movement, event: FactoryGirl.attributes_for(:invalid_event)
-        flash[:notice].should == "Coordinator can't be blank Address can't be blank"
+        flash[:notice].should == "Host can't be blank Address can't be blank"
       end
     end 
   end

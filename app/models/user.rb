@@ -8,9 +8,9 @@ class User < ActiveRecord::Base
   validates :name, presence: true
 
   has_many :movements
-  alias_attribute :coordinator_name, :name
-  alias_attribute :coordinator_email, :email
-
+  alias_attribute :host_name, :name
+  alias_attribute :host_email, :email
+    
   def self.find_for_facebook_oauth(auth)
     User.find_by(:provider => auth.provider, :uid => auth.uid)
   end

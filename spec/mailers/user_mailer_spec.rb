@@ -3,12 +3,12 @@ require "spec_helper"
 describe UserMailer do
 
   let(:another_user) { FactoryGirl.create(:user, email: "another_user@example.com") }
-  let(:another_event) { FactoryGirl.create(:event, coordinator: another_user) }
+  let(:another_event) { FactoryGirl.create(:event, host: another_user) }
 
   before :each do
     @movement = FactoryGirl.create(:movement) 
     @user = FactoryGirl.create(:user, movement_id: @movement.id)
-    @event = FactoryGirl.create(:event, movement_id: @movement.id, coordinator: @user)
+    @event = FactoryGirl.create(:event, movement_id: @movement.id, host: @user)
     @attendee = FactoryGirl.create(:attendee, movement_id: @movement.id, event: @event)
   end
  
@@ -61,13 +61,12 @@ describe UserMailer do
 
   end
 
-  describe "#notify_coordinator_of_event_size" do
+  describe "#notify_host_of_event_size" do
  
     let!(:user) { FactoryGirl.create(:user) }
-    let!(:movement) { FactoryGirl.create(:movement, user: user) }
-    let!(:event) { FactoryGirl.create(:event, movement: movement) }
+    let!(:event) { FactoryGirl.create(:event, host: user) }
     let!(:attendees) { FactoryGirl.create_list(:attendee, 3, event: event) }
-    let(:mail) { UserMailer.notify_coordinator_of_event_size(event) }
+    let(:mail) { UserMailer.notify_host_of_event_size(event) }
 
     it "sends to coordinator" do
       mail.to.should eq([user.email])

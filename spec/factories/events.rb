@@ -13,7 +13,7 @@ FactoryGirl.define do
     date '08/02/90'
     time '22:35'
     notes 'i am a valid event'
-    association :coordinator, factory: :user
+    association :host, factory: :user
     approved true
     event_type_id 2
     movement

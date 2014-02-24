@@ -11,10 +11,11 @@ namespace :db do
         name: "We Love Cats!",
         tagline: "Empowering the world through love of cats!",
         call_to_action: "Get your cat and help us change the world!",
+        published: true,
         extended_description: "We love cats.  We know you love cats to.  Together, we can use our feline friends to change the world.")
 
    coordinator_event = movement.events.create!(
-        coordinator_id: coordinator.id,
+        host_id: coordinator.id,
         name: "Speak Out for Cats",
         address: "Aon Center",
         city: "Chicago",
@@ -39,7 +40,6 @@ namespace :db do
                                    password_confirmation: "password")
     
     non_coordinator_event = movement.events.create!(
-        coordinator_id: coordinator.id,
         name: "Rally for Cats",
         address: "Aon Center",
         city: "Chicago",

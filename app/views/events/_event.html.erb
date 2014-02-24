@@ -15,11 +15,11 @@
         </p>
         <p>Location: <%= event.city %></p>
         <p>Time: <%= event.time %></p>
-        <p>Organizer: <%= event.coordinator_name || event.coordinator_email %> </p>
+        <p>Organizer: <%= event.host_name || event.host_email %> </p>
         <p>Summary:<em> <%= event.tagline %> </em> </p>
       </div>
       <%= button_tag "Yes! I want to attend", type: "button", class: "btn btn-success btn-sm attend-button" %>
-      <%= render template: 'attendees/new', locals: { :event => event, :attendee => event.attendees.build } %>
+      <%= render template: 'attendees/new', locals: {event: event, attendee: event.attendees.build } %>
     </div>
   </div>
 </div>
