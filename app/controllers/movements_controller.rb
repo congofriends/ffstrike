@@ -1,5 +1,5 @@
 class MovementsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:visitor, :search]
+  before_filter :authenticate_user!, :except => [:visitor, :search, :index, :show]
   before_filter :load_movement, :except => [:new, :create, :index, :user_movements]
   include YoutubeParserHelper
   include ZipHelper
