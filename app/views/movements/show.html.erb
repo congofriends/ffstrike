@@ -37,7 +37,7 @@ Search for an event near you!  Enter your zip code:
 <% if current_user %>
 <h4>Want to create your own event?</h4>
 <ul class="nav nav-pills nav-stacked">
-  <% EventType.all.map(&:name).each do |event_type| %>
+  <% @event_types.each do |event_type| %>
     <%= link_to event_type, new_movement_event_path(@movement, {type: event_type }), :class => "btn-info badge", 
         :rel=> "tooltip", :title => EVENT_DESCRIPTIONS["event_type"]["#{event_type.downcase.gsub(' ', '_')}"]["short_description"] %>
   <%end%>  

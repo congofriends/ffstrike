@@ -51,6 +51,7 @@ class MovementsController < ApplicationController
 
 	def show
     @events = @movement.events
+    @event_types = EventType.names
   end
 
   def export_csv
