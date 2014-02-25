@@ -157,7 +157,7 @@ describe EventsController do
   end
 
   describe "PUT #update" do
-    let(:event){FactoryGirl.create(:event, coordinator_id: coordinator.id)}
+    let(:event){FactoryGirl.create(:event, host_id: coordinator.id)}
 
     it "changes attributes" do
       put :update, movement_id: movement, id: event, event: {notes: "attribute changed"}
