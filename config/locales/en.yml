@@ -20,11 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  user_mailer:
-    custom_message_movement:
-      subject: "Message from your Movement Organizer" 
-    custom_message_event:
-      subject: "Message from your Movement Organizer"
+  # user_mailer:
+  #   custom_message_movement:
+  #     subject: "Message from your Movement Organizer" 
+  #   custom_message_event:
+  #     subject: "Message from your Movement Organizer"
   attendee_mailer:
     signup_message:
       subject: "You've signed up to attend an event!" 

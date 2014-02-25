@@ -1,24 +1,18 @@
 class UserMailer < ActionMailer::Base
   default from: "coordinator@events.com"
 
-  def custom_message_movement(movement, message)
-    @recipients = movement.attendees
+  def custom_message(action, message)
+    @recipients = action.attendees
     @message = message
     unless @recipients.empty?
-      mail(to: @recipients.collect(&:email).join(","))
+      mail(to: @recipients.collect(&:email).join(","), subject: "Message from your Movement Organizer")
       return true
     end
     return false
   end
-
-  def custom_message_event(event, message)
-    @recipients = event.attendees
-    @message = message
-    unless @recipients.empty?
-      mail(to: @recipients.collect(&:email).join(","))
-      return true
-    end
-    return false
+  
+  def self.successfully_deliver?(action, message)
+    custom_message(action, message).deliver
   end
 
   def notify_host_of_event_size(event)

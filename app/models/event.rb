@@ -33,6 +33,10 @@ class Event < ActiveRecord::Base
     [address, city, zip].join(", ")
   end
 
+  def assign_host_and_approve user
+    self.update(approved: user == self.movement.user, host: user)
+  end
+
   def threshold_size?
     [10, 50].include? self.number_of_attendees 
   end

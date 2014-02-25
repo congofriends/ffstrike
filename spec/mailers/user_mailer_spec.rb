@@ -14,7 +14,7 @@ describe UserMailer do
  
   describe "custom_message_all_attendees" do
 
-    let(:mail) { UserMailer.custom_message_movement(@movement, "Test Email Message") }
+    let(:mail) { UserMailer.custom_message(@movement, "Test Email Message") }
                                
     it "renders the headers" do
       mail.subject.should eq("Message from your Movement Organizer")
@@ -40,7 +40,7 @@ describe UserMailer do
 
   describe "custom_message_event" do
 
-    let(:mail) { UserMailer.custom_message_event(@event, "Test custom_message_event") }
+    let(:mail) { UserMailer.custom_message(@event, "Test custom_message_event") }
     
     it "renders the headers" do
       mail.subject.should eq("Message from your Movement Organizer")

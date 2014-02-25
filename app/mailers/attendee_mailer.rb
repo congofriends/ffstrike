@@ -5,7 +5,6 @@ class AttendeeMailer < ActionMailer::Base
     @movement = movement
     @event = event
     mail(to: user.email)
-
   end
   
 end

@@ -13,7 +13,7 @@ class EventsController < ApplicationController
   end
 
   def approve
-    @event.update_attribute(:approved, !@event.approved)
+    @event.update(approved: !@event.approved)
     respond_to do |format|
       format.html { render nothing: true }
       format.js
@@ -35,10 +35,9 @@ class EventsController < ApplicationController
   def create
     @event = @movement.events.build(event_params)
     if @event.save
-      @event.update_attributes(approved: current_user == @movement.user, host: current_user)
+      @event.assign_host_and_approve(current_user)
       if current_user == @movement.user
-        flash[:notice] = "Event created!"
-        redirect_to explanation_path(@event) and return
+        redirect_to explanation_path(@event), notice: "Event created!" and return
       end
       flash[:notice] = "Your event will be viewable to the public as soon as the movement coordinator approves it!"
       redirect_to explanation_path(@event) and return
@@ -57,7 +56,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event.update_attributes(event_params)
+    @event.update(event_params)
     flash[:notice] = "Event updated."
     respond_to do |format|
       format.html { redirect_to dashboard_movement_path(@event.movement, anchor: "events") }

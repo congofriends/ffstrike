@@ -2,7 +2,6 @@ class AssignmentsController < ApplicationController
   before_filter :load_task_and_event, :only => [:assign]   
 
   def assign
-
     unless @task.assigned_attendees.include?(Attendee.find(session[:current_attendee_id])).nil?
       flash[:notice] = "You've already taken this task!"
     end
@@ -19,10 +18,9 @@ class AssignmentsController < ApplicationController
       format.html { redirect_to event_path(@event) }
       format.js
     end
-
   end
 
-private
+  private
   def load_task_and_event
     @event = Event.find(params[:event_id])
     @task = Task.find(params[:id])
