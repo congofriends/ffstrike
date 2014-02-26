@@ -31,8 +31,7 @@ Ffstrike::Application.routes.draw do
   put 'events/:id/approve' => 'events#approve', as: 'approve'
 
   #mail
-  post 'mail_movement/:movement_id' => 'mail#mail_movement', as: 'mail_movement'
-  post 'mail_event/:event_id/:movement_id' => 'mail#mail_event', as: 'mail_event'
+  post 'mail_attendees(/:movement_id)(/:event_id)' => 'mail#mail_attendees', as: 'mail_attendees'
 
   #export CSV
   get 'export_csv/:id' => 'movements#export_csv', as: 'export_csv'
