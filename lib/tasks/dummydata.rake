@@ -24,6 +24,7 @@ namespace :db do
         time: "9:00 PM",
         event_type_id: 1,
         approved: true,
+        event_type_id: 1,
         host_id: coordinator.id)
 
     task = coordinator_event.tasks.create!(

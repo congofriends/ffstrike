@@ -1,6 +1,7 @@
 class MovementsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:visitor, :search, :index, :show]
-  before_filter :load_movement, :except => [:new, :create, :index, :user_movements]
+  before_filter :authenticate_user!, except: [:visitor, :search, :index, :show]
+  before_filter :load_movement, except: [:new, :create, :index, :user_movements]
+  before_filter :load_event_types, only: [:visitor, :show]
   include YoutubeParserHelper
   include ZipHelper
 
@@ -51,7 +52,6 @@ class MovementsController < ApplicationController
 
 	def show
     @events = @movement.events
-    @event_types = EventType.names
   end
 
   def export_csv
@@ -80,5 +80,9 @@ class MovementsController < ApplicationController
 
   def load_movement
 		@movement = Movement.find(params[:id])
+  end
+
+  def load_event_types
+    @event_types = EventType.names
   end
 end
