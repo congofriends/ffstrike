@@ -17,6 +17,7 @@ Ffstrike::Application.routes.draw do
     get 'search' => 'movements#search', on: :member, as: 'search'
 
     resources :events, shallow: true
+    resources :unauthenticated_events, only: [:new, :create] 
   end
   get 'visitor/:id' => 'movements#visitor', as: 'visitor' 
 
@@ -27,6 +28,7 @@ Ffstrike::Application.routes.draw do
     end
     resources :attendees
   end
+
   get 'events/:id/explanation' => 'events#explanation', as: 'explanation'
   put 'events/:id/approve' => 'events#approve', as: 'approve'
 

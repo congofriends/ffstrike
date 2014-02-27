@@ -34,5 +34,13 @@ class User < ActiveRecord::Base
   def add_movement(movement)
     self.update_attributes(movement_id: movement.id)
   end 
+  
+  def host_for_nonapproved_events? 
+    nonapproved_events.any?
+  end
+
+  def nonapproved_events
+    Event.where(host_id: self.id, approved: false)
+  end
 
 end

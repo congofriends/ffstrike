@@ -2,11 +2,12 @@ class MovementsController < ApplicationController
   before_filter :authenticate_user!, except: [:visitor, :search, :index, :show]
   before_filter :load_movement, except: [:new, :create, :index, :user_movements]
   before_filter :load_event_types, only: [:visitor, :show]
+  before_filter :get_assosiated_movement, :only => [:visitor, :show]
+
   include YoutubeParserHelper
   include ZipHelper
 
   def visitor
-    @events = @movement.events
   end
 
   def index
@@ -50,9 +51,7 @@ class MovementsController < ApplicationController
     end
   end
 
-	def show
-    @events = @movement.events
-  end
+	def show; end
 
   def export_csv
     send_data @movement.to_csv, filename: "Attendee List"
@@ -84,5 +83,9 @@ class MovementsController < ApplicationController
 
   def load_event_types
     @event_types = EventType.names
+  end
+
+  def get_assosiated_movement
+    @events = @movement.events
   end
 end

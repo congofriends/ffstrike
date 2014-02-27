@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_filter :load_movement, :only => [:new, :create]
-  before_filter :authenticate_user!, :only => [:new, :destroy]
+  before_filter :authenticate_user!, :only => [:destroy]
   before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation] 
   after_filter :populate_tasks, :only => [:create]
 
@@ -49,6 +49,7 @@ class EventsController < ApplicationController
       redirect_to visitor_path(@movement) and return
     end
   end
+
   
   def search
     @zip ||= extract_zip(params[:zip]) if valid_zip(params[:zip])
@@ -96,4 +97,5 @@ class EventsController < ApplicationController
     pdf = PDFKit.new(render_to_string(view_name), :page_size=>'Letter').to_pdf
     send_data(pdf, filename: final_doc_name, type: 'application/pdf', disposition: 'inline')
   end
+
 end
