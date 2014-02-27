@@ -50,7 +50,6 @@ class EventsController < ApplicationController
     end
   end
 
-  
   def search
     @zip ||= extract_zip(params[:zip]) if valid_zip(params[:zip])
     @events = Event.near_zip(@zip, 200)

@@ -7,27 +7,27 @@
 
   <%= form_tag movement_unauthenticated_events_path do %>
     <div class='form-group'>
-      <div class="form-inline event-date">
       <%= label :event, :event_type_id %>
       <% if params[:type].nil? %>
         <%= select :event, :event_type, EventType.all.map(&:name), class: 'form-control' %>
       <%else%>
         <%= select :event, :event_type, EventType.all.map(&:name), {:selected => params[:type] }, {class: 'form-control'} %>
       <%end%>
-
-    <%= label :event, :event_name %>
-    <%= text_field :event, :name %>
     </div>
+
+    <div class='form-group'>
+    <%= label :event, :event_name %>
+    <%= text_field :event, :name,  class: 'form-control' %>
     </div>
 
     <div class='form-group'>
     <%= label :event, :address %>
-    <%= text_field :event, :address %>
+    <%= text_field :event, :address, class: 'form-control' %>
     </div>
 
     <div class='form-group'>
     <%= label :event, :location_details %>
-    <%= text_field :event, :location_details %>
+    <%= text_field :event, :location_details, class: 'form-control' %>
     </div>
 
     <div class='form-group'>
@@ -39,15 +39,22 @@
     <%= text_field :event, :zip%>
     </div>
     </div>
- 
+
     <div class='form-group'>
-      <%= label :event, "When:" %>
-      <div class="form-inline event-date">
-        <%= text_field :event, :date, class: 'form-control datepicker' %>
-        <%= text_field :event, :time, class: 'form-control timepicker' %>
-      </div>
+     <div class='input-group'>
+       <span class='input-group-addon'>Date:</span>
+       <%= text_field :event, :date, class: 'form-control datepicker'%>
+     </div>
+    </div>
+    
+    <div class='form-group'>
+     <div class='input-group'>
+       <span class='input-group-addon'>Time:</span>
+       <%= text_field :event, :time, class: 'form-control timepicker' %>
+    </div>
     </div>
 
+ 
     <h3> Sign up to create an event</h3>
     <div class='form-group'>
     <%= label :user, :name %>
