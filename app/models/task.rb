@@ -20,5 +20,4 @@ class Task < ActiveRecord::Base
   def is_assigned_to? account
     self.assignments.map {|a| a.attendee_id == account.id }.any? 
   end
-
 end

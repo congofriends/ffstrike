@@ -3,5 +3,6 @@ class StaticPagesController < ApplicationController
     @featured_movements = Movement.random(3)
     render layout: 'application'
   end
+
   def about; end
 end

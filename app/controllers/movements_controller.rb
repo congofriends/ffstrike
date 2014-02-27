@@ -7,8 +7,7 @@ class MovementsController < ApplicationController
   include YoutubeParserHelper
   include ZipHelper
 
-  def visitor
-  end
+  def visitor; end
 
   def index
     @movements = Movement.published

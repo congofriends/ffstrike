@@ -21,5 +21,4 @@ class UserMailer < ActionMailer::Base
     @host = event.host
     mail(to: @host.email, from: "MovementApp@Events.com") 
   end
-
 end

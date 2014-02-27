@@ -1,4 +1,5 @@
 class VideoValidator < ActiveModel::Validator
+
   def validate(movement)
     if !movement.video.nil? && has_invalid_chars?(movement.video)
       movement.errors[:video] << "Error!!!"

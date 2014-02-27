@@ -42,5 +42,4 @@ class User < ActiveRecord::Base
   def nonapproved_events
     Event.where(host_id: self.id, approved: false)
   end
-
 end

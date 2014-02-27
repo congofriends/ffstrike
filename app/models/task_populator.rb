@@ -15,5 +15,4 @@ class TaskPopulator
     return HOST_TASKS[event.type] if HOST_TASKS.has_key? event.type
     return
   end
-
 end

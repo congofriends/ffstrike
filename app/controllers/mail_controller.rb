@@ -1,7 +1,6 @@
 class MailController < ApplicationController
 
   def mail_attendees
-
     if params[:movement_id]
       @movement = Movement.find(params[:movement_id])
       send_mail(@movement)
@@ -12,7 +11,6 @@ class MailController < ApplicationController
 
     @movement ||= @event.movement
     redirect_to movement_url(@movement)
-
   end
 
   private
@@ -25,6 +23,4 @@ class MailController < ApplicationController
       flash[:notice] = "You have no attendees to email."
     end
   end
-
-
 end
