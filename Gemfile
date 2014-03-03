@@ -32,6 +32,9 @@ gem "rmagick"
 gem 'pdfkit'
 gem 'wkhtmltopdf-binary', "0.9.9"
 
+gem 'aws-s3'
+gem 'aws-sdk'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 gem 'jquery-turbolinks'

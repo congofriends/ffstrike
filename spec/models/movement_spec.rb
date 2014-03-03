@@ -17,7 +17,7 @@ describe Movement do
 				allowing('image/png', 'image/gif', 'image/jpg', 'image/jpeg').
 				rejecting('text/plain', 'text/xml') }
  	it { should validate_attachment_size(:image).
-			                 less_than(2.megabytes) }	 
+			                 less_than(5.megabytes) }	 
 
   describe '.random' do
     before do
