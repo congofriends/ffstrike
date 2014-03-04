@@ -5,7 +5,7 @@ FactoryGirl.define do
   end
 
   factory :event do
-    name 'Super event'
+    name {10.times.map{('a'..'z').to_a.sample}.join}
     address '333 North Pole Road'
     location_details 'meet in the corner'
     city 'Chicago'

@@ -41,6 +41,14 @@ class Event < ActiveRecord::Base
     [10, 50].include? self.number_of_attendees 
   end
 
+  def to_param
+    name.gsub(/ /, '-')
+  end
+
+  def self.find_by_param input
+    find_by_name input
+  end
+
   private
     def assign_coordinates
       lookup = Zipcode.find_by_zip(self.zip)

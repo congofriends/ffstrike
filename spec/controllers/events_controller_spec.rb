@@ -162,7 +162,7 @@ describe EventsController do
 
     it "changes attributes" do
       put :update, movement_id: movement, id: event, event: {notes: "attribute changed"}
-      expect(Event.find(event.id).notes).to eql("attribute changed") 
+      expect(event.reload.notes).to eql("attribute changed") 
     end
 
     it "redirects to movement page anchored in event" do

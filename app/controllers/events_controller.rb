@@ -82,7 +82,7 @@ class EventsController < ApplicationController
   end
 
   def load_event
-    @event = Event.find(params[:id])
+    @event = Event.find_by_param params[:id].gsub(/-/, ' ')
   end
 
   def load_movement

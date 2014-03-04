@@ -2,10 +2,10 @@ class MailController < ApplicationController
 
   def mail_attendees
     if params[:movement_id]
-      @movement = Movement.find(params[:movement_id])
+      @movement = Movement.find_by_param params[:movement_id].gsub(/-/, ' ')
       send_mail(@movement)
     else
-      @event = Event.find(params[:event_id])
+      @event = Event.find_by_param params[:event_id].gsub(/-/, ' ')
       send_mail(@event)
     end
 

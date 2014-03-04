@@ -36,7 +36,7 @@ class TasksController < ApplicationController
   end
 
   def load_event
-    @event = Event.find(params[:event_id])
+    @event = Event.find_by_param params[:event_id].gsub(/-/, '-')
   end
 
   def load_task
