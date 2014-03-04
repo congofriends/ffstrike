@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
 
-  has_many :movements
+  has_many :ownerships
+  has_many :movements, through: :ownerships
   alias_attribute :host_name, :name
   alias_attribute :host_email, :email
     
@@ -32,7 +33,7 @@ class User < ActiveRecord::Base
   end
 
   def add_movement(movement)
-    self.update_attributes(movement_id: movement.id)
+    self.movements << movement
   end 
   
   def host_for_nonapproved_events? 

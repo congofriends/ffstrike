@@ -5,10 +5,10 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    if current_user.movement_id.nil?
+    if current_user.movements.empty?
       root_path
     else
-      movement_path(current_user.movement_id)
+      user_movements_path
     end
   end
 

@@ -3,8 +3,8 @@ class Movement < ActiveRecord::Base
   validates_presence_of :name, on: :create 
   has_many :events, dependent: :destroy
   has_many :attendees, through: :events
-  belongs_to :user
-  validates_presence_of :user, on: :create
+  has_many :ownerships
+  has_many :users, through: :ownerships
 
   has_attached_file :image, :default_url => 'cat.png'
 

@@ -1,5 +1,5 @@
 <h3>Events Created by Others</h3>
-<% @movement.movement_events.select{|event| event.host != @movement.user}.each do |event| %>
+<% @movement.movement_events.select{|event| !@movement.users.include?(event.host)}.each do |event| %>
   <div class='well <%= "approval-background" unless event.approved? %>' id="<%= "event#{event.id}"%>">
     <h4> Name: <%= event.name %> </h4>
     Type: <%= event.type %> <br>

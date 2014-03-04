@@ -16,6 +16,7 @@ class MovementsController < ApplicationController
   def search
     @zip ||= extract_zip(params[:zip]) if valid_zip(params[:zip])
     @events = @movement.events.near_zip(@zip, 200)
+    @attendee = Attendee.new
     render 'events/search'
   end
 
@@ -34,10 +35,9 @@ class MovementsController < ApplicationController
 
   def create
     @movement = Movement.new(movement_params)
-    @movement.user_id = current_user.id
     if @movement.save
       unless current_user.nil?
-        current_user.add_movement(@movement)
+        @movement.users << current_user
       end
       unless movement_params[:draft] == 1
         @movement.publish
@@ -73,7 +73,7 @@ class MovementsController < ApplicationController
   
   def movement_params
     params[:movement][:video]= extract_video_id(params[:movement][:video])
-    params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :video, :user_id)
+    params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :video)
   end
 
   def load_movement

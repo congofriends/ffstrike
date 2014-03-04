@@ -7,7 +7,7 @@ describe User do
       movement = FactoryGirl.build(:movement)
 
       user.add_movement(movement)
-      expect(user.movement_id).to eq(movement.id)
+      expect(user.movements).to include(movement)
     end
   end
 end

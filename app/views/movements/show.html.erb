@@ -1,4 +1,4 @@
-<% if current_user && @movement.user == current_user %>
+<% if current_user && @movement.users.include?(current_user) %>
   <p class="text-info pull-right">
     Update movement information on the <%= link_to "Coordinator's dashboard", dashboard_movement_path(@movement, anchor: "movement") %>
   </p>                                               
@@ -15,7 +15,7 @@
 <%=youtube_embed_url_for_(@movement.video) %>
 <br>
 Search for an event near you!  Enter your zip code:
-<%= form_tag "/search", method: "get", class: 'form-inline', id: 'zip-form' do %>
+<%= form_tag "/movements", method: "get", class: 'form-inline', id: 'zip-form' do %>
   <div class='form-group'>
     <%= search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control'}%>
     <%= hidden_field_tag 'id', value = @movement.id %>

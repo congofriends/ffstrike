@@ -12,7 +12,7 @@
       <div class='text-left'>
         <p class="text-right"><%= movement.number_of_attendees %> Attendees</p>
         <p class="small">Locations: <%= movement.locations %></p>
-        <p class="small">Organizer: <%= movement.user.email if !movement.user_id.nil? %> </p>
+        <p class="small">Organizers: <%= movement.users.map(&:email).join(", ") if !movement.users.empty? %> </p>
         <p class="small">Summary:<em> <%= movement.tagline %> </em> </p>
       </div>
       <%= link_to "See more details", visitor_path(movement), class: "btn btn-success btn-sm" %>

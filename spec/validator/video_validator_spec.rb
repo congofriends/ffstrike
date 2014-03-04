@@ -3,7 +3,7 @@ require 'spec_helper'
 describe VideoValidator do
   it "returns true if params don't have a video" do
     movement =  Movement.new(FactoryGirl.attributes_for(:movement_without_video))
-    movement.user = FactoryGirl.build(:user)    
+    movement.users << FactoryGirl.build(:user)    
     expect(movement.valid?).to be_true
   end
 
@@ -13,7 +13,7 @@ describe VideoValidator do
 
   it "returns true if params have valid video" do
     movement =  Movement.new(FactoryGirl.attributes_for(:movement))
-    movement.user = FactoryGirl.build(:user)
+    movement.users << FactoryGirl.build(:user)
     expect(movement.valid?).to be_true
   end
 end

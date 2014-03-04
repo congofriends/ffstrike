@@ -1,9 +1,11 @@
 require 'spec_helper'
 
 describe MovementsController do
-   
+
+  let(:user){FactoryGirl.create(:user)} 
+
   before :each do
-    controller.stub(:current_user).and_return( FactoryGirl.create(:user) )
+    controller.stub(:current_user).and_return( user )
     controller.stub(:authenticate_user!).and_return true 
   end
 

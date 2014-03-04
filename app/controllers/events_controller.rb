@@ -36,14 +36,14 @@ class EventsController < ApplicationController
     @event = @movement.events.build(event_params)
     if @event.save
       @event.assign_host_and_approve(current_user)
-      if current_user == @movement.user
+      if @movement.users.include?(current_user)
         redirect_to explanation_path(@event), notice: "Event created!" and return
       end
       flash[:notice] = "Your event will be viewable to the public as soon as the movement coordinator approves it!"
       redirect_to explanation_path(@event) and return
     else
       flash[:notice] = @event.errors.full_messages.flatten.join(' ')
-      if current_user == @movement.user
+      if @movement.users.include?(current_user)
        redirect_to dashboard_movement_path(@movement, anchor: "events") and return
       end
       redirect_to visitor_path(@movement) and return

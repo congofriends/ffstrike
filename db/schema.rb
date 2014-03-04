@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140225171552) do
+ActiveRecord::Schema.define(version: 20140303160446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,13 +77,17 @@ ActiveRecord::Schema.define(version: 20140225171552) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "video"
-    t.integer  "user_id"
     t.text     "call_to_action"
     t.text     "extended_description"
     t.boolean  "published",            default: false
   end
 
-  add_index "movements", ["user_id"], name: "index_movements_on_user_id", using: :btree
+  create_table "ownerships", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "movement_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tasks", force: true do |t|
     t.string   "description"
@@ -119,7 +123,6 @@ ActiveRecord::Schema.define(version: 20140225171552) do
     t.integer  "invitation_limit"
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
-    t.integer  "movement_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

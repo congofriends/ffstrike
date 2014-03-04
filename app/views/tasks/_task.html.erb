@@ -1,6 +1,6 @@
 <%= div_for task do %>  
  <li>
- <% if current_user && task.event.movement.user == current_user %>
+ <% if current_user && task.event.movement.users.include?(current_user) %>
     <%= link_to raw('<i class="glyphicon glyphicon-remove-circle"></i>') , event_task_path(@event, task.id), method: :delete,
       data: { confirm: "You sure about deleting task '#{task.description}'?"}, remote: true  %>
     <%= best_in_place task, :description, :path=>[@event, task], :type=> :input, :html_attrs => {:class=>"input"} %>

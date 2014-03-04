@@ -3,7 +3,9 @@ require "spec_helper"
 describe UserMailer do
 
   let!(:user) { FactoryGirl.create(:user) }
-  let(:movement) { FactoryGirl.create(:movement, user: user) }
+  let(:movement) { FactoryGirl.create(:movement) }
+  let!(:ownership) { FactoryGirl.create(:ownership, movement: movement, user: user) }
+
   let!(:another_user) { FactoryGirl.create(:user, email: "another_user@example.com") }
   let(:event) { FactoryGirl.create(:event, movement: movement, host: user) }
   let(:another_event) { FactoryGirl.create(:event, host: another_user, movement: movement) }

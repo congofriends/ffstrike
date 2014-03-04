@@ -34,7 +34,7 @@ class Event < ActiveRecord::Base
   end
 
   def assign_host_and_approve user
-    self.update(approved: user == self.movement.user, host: user)
+    self.update(approved: (self.movement.users.include?(user)), host: user)
   end
 
   def threshold_size?
