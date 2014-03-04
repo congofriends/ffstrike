@@ -39,34 +39,35 @@ describe EventsController do
   end
 
   describe "PUT #approve" do
-
     it "approves an unapproved event" do
-      event = FactoryGirl.create(:event, approved: false)
+      event = FactoryGirl.create(:event)
       put :approve, id: event 
       event.reload
       expect(event.approved).to be_true
     end
 
     it "disapproves an approved event" do
-      event = FactoryGirl.create(:event, approved: true)
+      event = FactoryGirl.create(:approved_event)
       put :approve, id: event 
       event.reload
       expect(event.approved).to be_false
     end
-
   end
 
   describe "POST #create" do
     let(:visitor){FactoryGirl.create(:user)}
-    before { post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(host_id: coordinator.id) }
+    let(:event) {FactoryGirl.attributes_for(:event, movement: movement).merge(host_id: coordinator.id)}
+    before { post :create, movement_id: movement, event: event }
 
     context "with valid attributes" do
       it "creates a event" do
+        #FIXME: refactor test to use data from the before and do not create a new object 
         expect{post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(host_id: coordinator.id)}.to change(Event, :count).by(1)
       end
 
       it "calls the task prepopulator" do
         TaskPopulator.should_receive(:assign_tasks)
+        #??? Why is the post request at the end?
         post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(host_id: coordinator.id)
       end
 
@@ -77,7 +78,7 @@ describe EventsController do
       context "as a coordinator" do
         before :each do
           @controller.stub(:current_user).and_return(coordinator)
-          post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(host_id: coordinator.id)
+          post :create, movement_id: movement, event: event
         end
 
         it "notifies the user that event was created" do
@@ -94,11 +95,10 @@ describe EventsController do
       end
 
       context "as a visitor" do
-
         before { @controller.stub(:current_user).and_return(visitor) }
 
         it "sets host to event creator" do
-          post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(host_id: coordinator.id) 
+          post :create, movement_id: movement, event: event 
           expect(Event.last.host).to eq(visitor)
         end
 
@@ -117,61 +117,67 @@ describe EventsController do
     end
 
     context "with invalid fields" do
+      let(:event_without_address) {FactoryGirl.attributes_for(:event_without_address)}
+
       it "does not save the event" do
-        expect{post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event)}.not_to change(Event, :count)
+        expect{post :create, movement_id: movement, event: event_without_address}.not_to change(Event, :count)
       end
 
       it "re-renders the new method" do
         @controller.stub(:current_user).and_return(coordinator)
-        post :create, movement_id: movement, event: FactoryGirl.attributes_for(:invalid_event).merge(coordinator_id: coordinator.id)
+        post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event_without_address).merge(coordinator_id: coordinator.id)
         expect(response).to redirect_to dashboard_movement_path(movement, anchor: "events")
       end
 
       it "notifies user that event had errors" do
-        post :create, movement_id: movement, event: FactoryGirl.attributes_for(:invalid_event)
+        post :create, movement_id: movement, event: event_without_address
         flash[:notice].should == "Host can't be blank Address can't be blank"
       end
     end 
   end
 
   describe "GET #search" do
+    #FIXME: the same tests are in the movements_controller, update accordingly
+    #after refactoring
     it "responds successfully" do
       get "search", zip: "60647"  
       expect(response).to be_success
     end
 
-    it "assigns @events" do
-      zip = FactoryGirl.create(:zipcode, zip: "60647", latitude: 10, longitude: 50)
-      movement = FactoryGirl.create(:published_movement)
-      event = FactoryGirl.create(:event, zip: "60647", approved: true, movement: movement) 
-      get "search", zip: "60647"
-      expect(assigns(:events)).to eq([event])
-    end
+    context "with published movement and existing zip code" do
+      before {FactoryGirl.create(:zipcode, zip: "60647", latitude: 10, longitude: 50)}
+      let(:published_movement) {FactoryGirl.create(:published_movement)}
+      let(:approved_event) {FactoryGirl.create(:approved_event, zip: "60647", movement: published_movement)}
+      let(:nonapproved_event) {FactoryGirl.create(:event, zip: "60647", movement: published_movement)}
 
-    it "doesn't assign unapproved events" do
-      zip = FactoryGirl.create(:zipcode, zip: "60647", latitude: 10, longitude: 50)
-      movement = FactoryGirl.create(:published_movement)
-      event = FactoryGirl.create(:event, zip: "60647", approved: false) 
-      get "search", zip: "60647"
-      expect(assigns(:events)).not_to include(event)
+      it "assigns only approved events" do
+        get "search", zip: "60647"
+        expect(assigns(:events)).to eq([approved_event])
+      end
+
+      it "doesn't assign nonapproved events" do
+        get "search", zip: "60647"
+        expect(assigns(:events)).not_to include(nonapproved_event)
+      end
     end
   end
 
   describe "PUT #update" do
-    let(:event){FactoryGirl.create(:event, host_id: coordinator.id)}
+    before {put :update, movement_id: movement, id: event, event: {notes: "attribute changed"}}
+
+    it "loads the requested movement" do
+      expect(assigns(:event)).to eq(event)
+    end
 
     it "changes attributes" do
-      put :update, movement_id: movement, id: event, event: {notes: "attribute changed"}
       expect(event.reload.notes).to eql("attribute changed") 
     end
 
     it "redirects to movement page anchored in event" do
-      put :update, movement_id: movement, id: event, event: FactoryGirl.attributes_for(:event) 
       expect(response).to redirect_to dashboard_movement_path(event.movement, anchor: "events")
     end
 
     it "notifies user that event was updated" do
-      put :update, movement_id: movement, id: event, event: {notes: "attribute changed"}
       flash[:notice].should == "Event updated."
     end
   end

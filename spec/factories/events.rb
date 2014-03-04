@@ -1,7 +1,7 @@
 FactoryGirl.define do
-  factory :invalid_event, class: Event do
+  factory :event_without_address, class: Event do
     notes "I am invalid because I have only a notes attribute"
-    event_type_id 2
+    event_type_id {EventType.all.map(&:id).sample}
   end
 
   factory :event do
@@ -14,8 +14,12 @@ FactoryGirl.define do
     time '22:35'
     notes 'i am a valid event'
     association :host, factory: :user
-    approved true
-    event_type_id 2
+    approved false
+    event_type_id {EventType.all.map(&:id).sample}
     movement
+
+    factory :approved_event do
+      approved true
+    end
   end
 end

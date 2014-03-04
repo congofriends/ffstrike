@@ -57,7 +57,7 @@ describe Event do
       end
 
       it "finds a nearby event if assosiated movement is published" do
-        event = FactoryGirl.create(:event, zip: @test_zip, latitude: @test_latitude, longitude: @test_longitude, movement: published_movement)
+        event = FactoryGirl.create(:approved_event, zip: @test_zip, latitude: @test_latitude, longitude: @test_longitude, movement: published_movement)
         expect(Event.near_zip(@test_zip, 50)).to eq([event])
       end
 
@@ -70,7 +70,7 @@ describe Event do
          zips = ["60247", "60250", "60240"]
          @events = []
          zips.each do |zip|
-           @events << FactoryGirl.create(:event, zip: @test_zip, latitude: @test_latitude, longitude: @test_longitude, movement: published_movement)
+           @events << FactoryGirl.create(:approved_event, zip: @test_zip, latitude: @test_latitude, longitude: @test_longitude, movement: published_movement)
          end
          events_near_zip = Event.near_zip(@test_zip, 50).to_a.sort_by(&:id)
          expected_events = @events.sort_by(&:id)
