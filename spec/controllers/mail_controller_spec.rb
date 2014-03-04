@@ -8,7 +8,7 @@ describe MailController do
 
   describe "POST #mail_movement" do
     it "tells usermailer to mail" do
-      post :mail_attendees, movement_id: movement, message: "TestMessage"
+      post :mail_attendees, movement_id: movement.id, message: "TestMessage"
       assert !ActionMailer::Base.deliveries.empty?
     end
   end

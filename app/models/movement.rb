@@ -5,6 +5,7 @@ class Movement < ActiveRecord::Base
   has_many :attendees, through: :events
   has_many :ownerships
   has_many :users, through: :ownerships
+  validates :name, uniqueness: true
 
   has_attached_file :image, :default_url => 'cat.png'
 
@@ -20,6 +21,14 @@ class Movement < ActiveRecord::Base
   alias_attribute :movement_name, :name
 
   attr_accessor :draft
+
+  def to_param
+    name.gsub(/ /, '-')
+  end
+
+  def self.find_by_param input
+    find_by_name input
+  end
 
   def movement_events
     self.events  

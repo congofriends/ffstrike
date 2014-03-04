@@ -3,13 +3,12 @@ require 'spec_helper'
 describe MovementsController do
 
   let(:user){FactoryGirl.create(:user)} 
+  let(:movement) { FactoryGirl.create(:movement) }
 
   before :each do
     controller.stub(:current_user).and_return( user )
     controller.stub(:authenticate_user!).and_return true 
   end
-
-  let(:movement) { FactoryGirl.create(:movement) }
 
   describe "GET #new" do
     it "responds successfully" do
@@ -20,12 +19,12 @@ describe MovementsController do
 
   describe "GET #search" do
 
-    let!(:zip) { FactoryGirl.create(:zipcode, zip: "60647", latitude: 10, longitude: 50) }
-    let(:movement) { FactoryGirl.create(:published_movement) }
-    let(:event) { movement.events.create(zip: "60647", approved: true, movement: movement) }
-    let(:unapproved_event) { movement.events.create(zip: "60647", approved: false) }
+    let(:zip) { FactoryGirl.create(:zipcode, zip: "60647", latitude: 10, longitude: 50) }
+    let(:published_movement) { FactoryGirl.create(:published_movement) }
+    let(:event) { published_movement.events.create(zip: "60647", approved: true) }
+    let(:unapproved_event) { published_movement.events.create(zip: "60647", approved: false) }
 
-    before { get "search", id: movement, zip: event.zip }
+    before { get "search", id: published_movement, zip: event.zip }
 
     it "redirects to search results" do
       expect(response).to be_success 
@@ -44,7 +43,6 @@ describe MovementsController do
   describe "GET #visitor" do
     it "responds successfully" do
       get "visitor", id: movement
-
       expect(response).to be_success
     end
   end
@@ -52,7 +50,6 @@ describe MovementsController do
   describe "POST #create" do
     it "responds successfully" do
       post :create, movement: FactoryGirl.attributes_for(:nameless_movement)
-
       expect(response).to be_success 
     end
 
@@ -97,20 +94,20 @@ describe MovementsController do
   end
 
 	describe "GET #show" do
-		it "assigns the new movement to @movement" do
-			get :show, id: movement
-			expect(assigns(:movement)).to eq(movement)	
-		end
+    it "assigns the new movement to @movement" do
+      get :show, id: movement
+      expect(assigns(:movement)).to eq(movement)	
+    end
 
 		it "renders the #show view" do
-			get :show, id: movement
+      get :show, id: movement
 			expect(response).to render_template :show
 		end
 	end
 
   describe "PUT #update" do
     video_url = "https://www.youtube.com/watch?v=_ZSbC09qgLI"
-    before { put :update, id: movement, movement: FactoryGirl.attributes_for(:movement, video: video_url) }
+    before { put :update, id: movement, movement: { video: video_url } }
 
     it "loads the requested movement" do
       expect(assigns(:movement)).to eq(movement)
@@ -126,6 +123,7 @@ describe MovementsController do
   end
 
   describe "PUT #publish" do
+
     it "publish an unpublished movements" do
       movement = FactoryGirl.create(:unpublished_movement)
       put :publish, id: movement 
@@ -135,6 +133,7 @@ describe MovementsController do
   end
 
   describe "GET #export_csv" do
+
     context "when format is csv" do
       it "should return a csv attachment" do
         @controller.should_receive(:send_data).with(movement.to_csv, filename: "Attendee List").

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :movement do
-    name 'My Little Pony'
+    name  { 10.times.map{('a'..'z').to_a.sample}.join }
     tagline 'Lovely life of a lovely little pony.'
     video "http://www.youtube.com/watch?v=EpnERlsfBFc"
 
@@ -18,13 +18,13 @@ FactoryGirl.define do
   end
 
   factory :movement_with_invalid_video, class: Movement do
-    name 'My Little Pony'
+    name  { 10.times.map{('a'..'z').to_a.sample}.join }
     tagline 'Lovely life of a lovely little pony.'
     video "http://www.youtube.com/watch?v=EpnERlsfBFc<7878>"
   end
 
   factory :movement_without_video, class: Movement do
-    name 'My Little Pony'
+    name  { 10.times.map{('a'..'z').to_a.sample}.join }
   end
 
 end

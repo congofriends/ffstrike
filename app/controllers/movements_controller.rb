@@ -77,7 +77,7 @@ class MovementsController < ApplicationController
   end
 
   def load_movement
-		@movement = Movement.find(params[:id])
+    @movement = Movement.find_by_param params[:id].gsub(/-/, ' ')
   end
 
   def load_event_types
