@@ -22,7 +22,7 @@ class AssignmentsController < ApplicationController
 
   private
   def load_task_and_event
-    @event = Event.find(params[:event_id])
+    @event = Event.find_by_param params[:event_id].gsub(/-/, ' ')
     @task = Task.find(params[:id])
   end
 end
