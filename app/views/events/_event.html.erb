@@ -18,8 +18,7 @@
         <p>Organizer: <%= event.host_name || event.host_email %> </p>
         <p>Summary:<em> <%= event.tagline %> </em> </p>
       </div>
-      <%= button_tag "Yes! I want to attend", type: "button", class: "btn btn-success btn-sm attend-button" %>
-      <%= render template: 'attendees/new', locals: {event: event, attendee: event.attendees.build } %>
+      <%= link_to "Yes! I want to attend", new_event_attendee_path(event, @attendee=event.attendees.build), class: "btn btn-success btn-sm" %>
     </div>
   </div>
 </div>
