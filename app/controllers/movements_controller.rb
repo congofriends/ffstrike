@@ -74,7 +74,7 @@ class MovementsController < ApplicationController
   private
   
   def movement_params
-    params[:movement][:video]= extract_video_id(params[:movement][:video])
+    params[:movement][:video]= extract_video_id(params[:movement][:video]) if !params[:movement][:video].nil?
     params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :video)
   end
 
