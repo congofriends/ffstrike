@@ -1,18 +1,18 @@
 FactoryGirl.define do
   factory :event_without_address, class: Event do
-    notes "I am invalid because I have only a notes attribute"
+    notes {Faker::Lorem.paragraph}
     event_type_id {EventType.all.map(&:id).sample}
   end
 
   factory :event do
-    name {10.times.map{('a'..'z').to_a.sample}.join}
-    address '333 North Pole Road'
-    location_details 'meet in the corner'
-    city 'Chicago'
-    zip '60606'
+    name {Faker::Lorem.words.join(' ')}
+    address {Faker::Address.street_address}
+    location_details {Faker::Lorem.sentence}
+    city {Faker::Address.city}
+    zip {Faker::Address.zip}
     date '08/02/90'
     time '22:35'
-    notes 'i am a valid event'
+    notes {Faker::Lorem.sentence}  
     association :host, factory: :user
     approved false
     event_type_id {EventType.all.map(&:id).sample}

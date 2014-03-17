@@ -1,17 +1,17 @@
 FactoryGirl.define do
   factory :attendee do
-    name "Lord Voldemort"
-    email "email@example.com"
+    name {Faker::Name.first_name}              
+    email {Faker::Internet.email}
     movement
     event
 
     factory :attendee_with_phone_number do
-      phone_number 9863459098
+      phone_number {Faker::PhoneNumber.cell_phone}
     end
   end
 
   factory :attendee_without_email, class: Attendee do
-    name "Harry Potter"
+    name {Faker::Name.first_name}              
     event
     movement
   end

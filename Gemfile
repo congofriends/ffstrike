@@ -62,6 +62,7 @@ gem 'geocoder'
 
 group :test, :development do
   gem 'rspec'
+  gem 'faker'
   gem 'rspec-rails'
   gem 'factory_girl'
   gem 'factory_girl_rails', "~> 4.0"

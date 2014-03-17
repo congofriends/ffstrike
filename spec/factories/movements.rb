@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :movement do
-    name  { 10.times.map{('a'..'z').to_a.sample}.join }
-    tagline 'Lovely life of a lovely little pony.'
+    name {Faker::Lorem.words.join(' ')}
+    tagline {Faker::Lorem.sentence}
     video "http://www.youtube.com/watch?v=EpnERlsfBFc"
-    about_creator "I've loved ponies since I was aged twelve"
+    about_creator {Faker::Lorem.sentence}
 
     factory :published_movement do
       published true
@@ -15,17 +15,17 @@ FactoryGirl.define do
   end
 
   factory :nameless_movement, class: Movement do
-    tagline 'I am an invalid movement because I have no name.'
+    tagline {Faker::Lorem.sentence}
   end
 
   factory :movement_with_invalid_video, class: Movement do
-    name  { 10.times.map{('a'..'z').to_a.sample}.join }
-    tagline 'Lovely life of a lovely little pony.'
+    name {Faker::Lorem.words.join(' ')}
+    tagline {Faker::Lorem.sentence}
     video "http://www.youtube.com/watch?v=EpnERlsfBFc<7878>"
   end
 
   factory :movement_without_video, class: Movement do
-    name  { 10.times.map{('a'..'z').to_a.sample}.join }
+    name {Faker::Lorem.words.join(' ')}
   end
 
 end

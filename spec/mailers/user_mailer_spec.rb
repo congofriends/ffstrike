@@ -18,7 +18,7 @@ describe UserMailer do
                                  
       it "renders the email" do
         mail.subject.should eq("Message from your Movement Organizer")
-        mail.to.should eq(["email@example.com"])
+        mail.to.should eq([attendee.email])
         mail.from.should eq(["coordinator@events.com"])
         mail.body.encoded.should match("Test Email Message")
       end
@@ -26,7 +26,7 @@ describe UserMailer do
       it "mails attendees across events" do
         another_attendee = FactoryGirl.create :attendee, email: "TestAllAttendees@example.com", event: another_event
         mail.to.should include("TestAllAttendees@example.com")
-        mail.to.should include("email@example.com")
+        mail.to.should include(attendee.email)
       end
 
       it "doesnt mail other movements" do 
