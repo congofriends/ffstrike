@@ -41,7 +41,7 @@ class MovementsController < ApplicationController
       unless current_user.nil?
         @movement.users << current_user
       end
-      unless movement_params[:draft] == 1
+      unless movement_params[:draft] == "1"
         @movement.publish
       end
       flash[:notice] = "Congratulations, you just created a movement!"

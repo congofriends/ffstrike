@@ -12,6 +12,14 @@ FactoryGirl.define do
     factory :unpublished_movement do
       published false
     end
+
+    factory :drafted_movement do
+      draft "1"
+    end
+
+    factory :undrafted_movement do
+      draft "0"
+    end
   end
 
   factory :nameless_movement, class: Movement do
@@ -27,5 +35,4 @@ FactoryGirl.define do
   factory :movement_without_video, class: Movement do
     name {Faker::Lorem.words.join(' ')}
   end
-
 end

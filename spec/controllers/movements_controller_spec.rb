@@ -87,6 +87,24 @@ describe MovementsController do
       end
     end
 
+    context "with published movement" do
+      let(:published_movement) {FactoryGirl.attributes_for(:undrafted_movement)}
+
+      it "is true" do
+        post :create, movement: published_movement
+        expect(assigns(:movement).published).to eq(true)
+      end
+    end
+
+    context "with unpublished movement" do
+      let(:unpublished_movement) {FactoryGirl.attributes_for(:drafted_movement)}
+
+      it "is false" do
+        post :create, movement: unpublished_movement
+        expect(assigns(:movement).published).to eq(false)
+      end
+    end
+
     context "with invalid video" do
       #FIXME: refactor test to use data from the before and do not create a new object 
       it "does not save the movement" do
