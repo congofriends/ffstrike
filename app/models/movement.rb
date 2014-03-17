@@ -1,6 +1,6 @@
 class Movement < ActiveRecord::Base
   validates_with VideoValidator, fields: [:video]
-  validates_presence_of :name, on: :create 
+  validates_presence_of :name 
   has_many :events, dependent: :destroy
   has_many :attendees, through: :events
   has_many :ownerships

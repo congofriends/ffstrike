@@ -127,6 +127,12 @@ describe MovementsController do
     it "redirects to show" do
       expect(response).to redirect_to movement_path(movement)
     end
+
+    it "updates name for existing movement with video" do
+      put :update, id: movement, movement: { name: "new name"  }
+      expect(movement.reload.video).to eq("_ZSbC09qgLI")
+      expect(movement.reload.name).to eq("new name")
+    end
   end
 
   describe "PUT #publish" do
