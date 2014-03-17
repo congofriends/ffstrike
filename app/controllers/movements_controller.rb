@@ -2,7 +2,8 @@ class MovementsController < ApplicationController
   before_filter :authenticate_user!, except: [:visitor, :search, :index, :show]
   before_filter :load_movement, except: [:new, :create, :index, :user_movements]
   before_filter :load_event_types, only: [:visitor, :show]
-  before_filter :get_assosiated_movement, :only => [:visitor, :show]
+  before_filter :get_assosiated_movement, only: [:visitor, :show]
+  before_filter :check_user_owns_movement, only: [:dashboard]
 
   include YoutubeParserHelper
   include ZipHelper
@@ -88,5 +89,13 @@ class MovementsController < ApplicationController
 
   def get_assosiated_movement
     @events = @movement.events
+  end
+
+  def check_user_owns_movement
+    @movement = Movement.find(params[:id])
+    unless @movement.users.to_a.include? current_user
+      flash[:notice] = "You don't own that movement!"
+      redirect_to root_path 
+    end
   end
 end

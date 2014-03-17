@@ -172,4 +172,19 @@ describe MovementsController do
     end
   end
 
+
+  describe "GET #dashboard" do
+    context "when user does not own movement" do
+      it "should redirect to sign in page" do
+        user = FactoryGirl.create(:user)
+        movement = FactoryGirl.create(:movement)
+        wrong_user = FactoryGirl.create(:user)
+        ownership = FactoryGirl.create(:ownership, movement: movement, user: user)
+        controller.stub(:current_user).and_return( wrong_user )
+        get :dashboard, id: movement
+        expect(response).to redirect_to root_path
+        flash[:notice].should == "You don't own that movement!"
+      end
+    end
+  end
 end
