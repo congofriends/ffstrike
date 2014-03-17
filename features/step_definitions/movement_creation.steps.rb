@@ -1,4 +1,3 @@
-#require "spec_helper"
 
 Given(/^a user account exists/) do
   user = FactoryGirl.create(:user, email: "leah@brodsky.com", password: "hitherefolks")

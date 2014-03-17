@@ -3,6 +3,7 @@ FactoryGirl.define do
     name  { 10.times.map{('a'..'z').to_a.sample}.join }
     tagline 'Lovely life of a lovely little pony.'
     video "http://www.youtube.com/watch?v=EpnERlsfBFc"
+    about_creator "I've loved ponies since I was aged twelve"
 
     factory :published_movement do
       published true

@@ -47,7 +47,7 @@ class MovementsController < ApplicationController
       flash[:notice] = "Congratulations, you just created a movement!"
       redirect_to movement_path(@movement)
     else
-      flash[:notice] = "There was an problem when saving your movement. Please try again."
+      flash[:notice] = "There was a problem when saving your movement. Please try again."
       render :new 
     end
   end
@@ -75,7 +75,7 @@ class MovementsController < ApplicationController
   
   def movement_params
     params[:movement][:video]= extract_video_id(params[:movement][:video]) if !params[:movement][:video].nil?
-    params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :video)
+    params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :video, :about_creator)
   end
 
   def load_movement
