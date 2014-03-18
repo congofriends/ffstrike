@@ -92,7 +92,6 @@ class MovementsController < ApplicationController
   end
 
   def check_user_owns_movement
-    @movement = Movement.find(params[:id])
     unless @movement.users.to_a.include? current_user
       flash[:notice] = "You don't own that movement!"
       redirect_to root_path 
