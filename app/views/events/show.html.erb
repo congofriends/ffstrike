@@ -1,10 +1,13 @@
 <div class='row'>
-  <h3>Event details page</h3>
+  <h3>Event details page
+    <%= link_to "Edit Event", edit_event_path(@event), class: "btn btn-success btn-sm" %>  
+  </h3>
   <p><%= @event.name %></p>
   <p><%= @event.location %></p>
   <p><%= @event.notes %></p>
   <p><%= @event.date %></p>
-  
+
+
   <%= link_to "Generate PDF with event summary", event_path(@event, {generate: :event, :format => :pdf}), :target => '_blank' %>
   <p class="lead">Number of attendees: <span class="badge"> <%= @event.number_of_attendees %> </span></p>
   <% @event.attendees.each do |attendee| %>

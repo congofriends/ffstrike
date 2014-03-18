@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
-  before_filter :load_movement, :only => [:new, :create]
+  before_filter :load_movement, :only => [:new, :create, :edit, :update]
   before_filter :authenticate_user!, :only => [:destroy]
-  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation] 
+  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit] 
   after_filter :populate_tasks, :only => [:create]
 
   include ZipHelper
@@ -58,12 +58,20 @@ class EventsController < ApplicationController
     @attendee = Attendee.new
   end
 
+  def edit
+    @event_types = EventType.all.map {|e| [e.id, e.name]}
+  end
+
   def update
     @event.update(event_params)
     flash[:notice] = "Event updated."
     respond_to do |format|
-      format.html { redirect_to dashboard_movement_path(@event.movement, anchor: "events") }
-      format.json { head :ok }
+      if @event.movement.users.include?(current_user)
+        format.html { redirect_to dashboard_movement_path(@event.movement, anchor: "events") }
+      else 
+        format.html { redirect_to event_path(@event) }
+      end
+        format.json { head :ok }
     end
   end
 

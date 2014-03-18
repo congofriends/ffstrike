@@ -163,7 +163,10 @@ describe EventsController do
   end
 
   describe "PUT #update" do
-    before {put :update, movement_id: movement, id: event, event: {notes: "attribute changed"}}
+    before do  
+      @controller.stub(:current_user).and_return(coordinator)
+      put :update, movement_id: movement, id: event, event: {notes: "attribute changed"}
+    end
 
     it "loads the requested movement" do
       expect(assigns(:event)).to eq(event)
@@ -173,7 +176,7 @@ describe EventsController do
       expect(event.reload.notes).to eql("attribute changed") 
     end
 
-    it "redirects to movement page anchored in event" do
+    it "redirects to movement page anchored in event when current user is coordinator" do
       expect(response).to redirect_to dashboard_movement_path(event.movement, anchor: "events")
     end
 
