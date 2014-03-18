@@ -23,7 +23,7 @@ class AttendeesController < ApplicationController
   end
 
   def load_event_and_movement 
-    @event = Event.find_by_param params[:event_id].gsub(/-/, ' ')
+    @event = Event.find_by_param params[:event_id]
     @movement = @event.movement
   end
 end

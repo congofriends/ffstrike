@@ -46,9 +46,9 @@ class Event < ActiveRecord::Base
   end
 
   def self.find_by_param input
-    find_by_name input
+    find_by_name input.gsub(/-/, ' ')
   end
-
+                                  
   private
     def assign_coordinates
       lookup = Zipcode.find_by_zip(self.zip)

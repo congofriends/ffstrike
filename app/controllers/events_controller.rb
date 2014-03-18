@@ -84,11 +84,11 @@ class EventsController < ApplicationController
   end
 
   def load_event
-    @event = Event.find_by_param params[:id].gsub(/-/, ' ')
+    @event = Event.find_by_param params[:id]
   end
 
   def load_movement
-    @movement = Movement.find_by_param params[:movement_id].gsub('-', ' ')
+    @movement = Movement.find_by_param params[:movement_id]
   end
 
   def populate_tasks
