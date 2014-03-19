@@ -1,5 +1,6 @@
 class AttendeesController < ApplicationController
   before_filter :load_event_and_movement, :only => [:new, :create]
+  before_filter :load_attendee, only: [:update]
 
   def new
     @attendee = Attendee.new
@@ -17,13 +18,25 @@ class AttendeesController < ApplicationController
     end
   end
 
+  def update
+    @attendee.update(attendee_params)
+    respond_to do |format|
+      format.html { redirect_to  movement_path(@attendee.event.movement, anchor: "attendees"), notice: "Attendee has been updated" }
+      format.json { head :ok  }
+    end
+  end
+
   private
   def attendee_params
-    params.require(:attendee).permit(:name, :email, :phone_number, :point_person)
+    params.require(:attendee).permit(:name, :notes, :email, :phone_number, :point_person)
   end
 
   def load_event_and_movement 
     @event = Event.find_by_param params[:event_id]
     @movement = @event.movement
+  end
+
+  def load_attendee
+    @attendee = Attendee.find(params[:id])
   end
 end
