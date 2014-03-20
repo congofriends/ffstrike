@@ -7,12 +7,12 @@ class Movement < ActiveRecord::Base
   has_many :users, through: :ownerships
   validates :name, uniqueness: true
 
-  has_attached_file :image, :default_url => 'cat.png'
+  has_attached_file :image, :default_url => 'dog.gif'
 
   #uncomment this rule after AWS S3 account will be bought
   # has_attached_file :image,
   #                   :styles => { :medium => '400x400', :thum => '50x50' },
-  #                   :default_url => 'cat.png'
+  #                   :default_url => 'dog.gif'
 
 	validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
 	validates_attachment_size :image, :less_than => 5.megabytes
