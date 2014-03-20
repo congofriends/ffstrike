@@ -1,0 +1,27 @@
+.panel.panel-default.col-md-4.col-md-offset-4
+  = form_for [@event ||= event, @attendee ||= attendee] do |f| 
+    .panel-heading 
+      .panel-title 
+        %h3 Please give us more information to sign up!
+    .panel-body
+   
+      .form-group
+        = f.label :name
+        = f.text_field :name, class: "form-control"
+   
+      .form-group
+        = f.label :phone_number
+        = f.text_field :phone_number, class: "form-control"
+   
+      .form-group
+        = f.label 'Email*'
+        = f.email_field :email, class: "form-control"
+   
+      .form-group
+        = f.label "I'd like to help organize this event!"
+        = f.check_box :point_person
+   
+      .form-group
+        = f.submit "Sign me up!", class: "btn btn-info col-md-12"
+   
+    %p.text-info.small * Your email address will be shared with the event host.
