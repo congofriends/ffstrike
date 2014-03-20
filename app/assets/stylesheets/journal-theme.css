@@ -41,6 +41,8 @@ html {
 
 body {
   margin: 0;
+  height: 100%;
+  margin-top: 70px;
 }
 
 a {
@@ -4870,7 +4872,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
     padding-bottom: 19.5px;
   }
   .navbar-nav.navbar-right:last-child {
-    margin-right: -15px;
   }
 }
 
@@ -7511,6 +7512,7 @@ td.visible-print {
   font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
   font-size: 18px;
   font-weight: 700;
+  background-color: rgba(255,255,255,0.6)
 }
 
 .navbar-brand {
