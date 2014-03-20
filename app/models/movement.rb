@@ -61,7 +61,7 @@ class Movement < ActiveRecord::Base
       column_names = ["Name", "Email", "Phone", "Event", "Zip", "City"]
       csv << column_names
       self.attendees.each do |attendee|
-        csv << [attendee.name, attendee.email, attendee.phone, attendee.event.name, attendee.event.zip, attendee.event.city] 
+        csv << [attendee.name, attendee.email, attendee.phone_number, attendee.event.name, attendee.event.zip, attendee.event.city] 
       end
     end
   end
