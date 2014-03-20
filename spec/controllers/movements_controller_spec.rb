@@ -6,7 +6,7 @@ describe MovementsController do
   let(:movement) { FactoryGirl.create(:movement) }
 
   before :each do
-    controller.stub(:current_user).and_return( user )
+    controller.stub(:current_user).and_return(user)
     controller.stub(:authenticate_user!).and_return true 
   end
 
@@ -146,10 +146,10 @@ describe MovementsController do
       expect(response).to redirect_to movement_path(movement)
     end
 
-    it "updates name for existing movement with video" do
+    it "updates name for existing movement and doesn't change video field value" do
       put :update, id: movement, movement: { name: "new name"  }
       expect(movement.reload.video).to eq("_ZSbC09qgLI")
-      expect(movement.reload.name).to eq("new name")
+      expect(movement.name).to eq("new name")
     end
   end
 
@@ -157,8 +157,7 @@ describe MovementsController do
     it "publish an unpublished movements" do
       movement = FactoryGirl.create(:unpublished_movement)
       put :publish, id: movement 
-      movement.reload
-      expect(movement.published).to be_true
+      expect(movement.reload.published).to be_true
     end
   end
 
@@ -172,15 +171,12 @@ describe MovementsController do
     end
   end
 
-
   describe "GET #dashboard" do
     context "when user does not own movement" do
       it "should redirect to sign in page" do
-        user = FactoryGirl.create(:user)
-        movement = FactoryGirl.create(:movement)
         wrong_user = FactoryGirl.create(:user)
         ownership = FactoryGirl.create(:ownership, movement: movement, user: user)
-        controller.stub(:current_user).and_return( wrong_user )
+        controller.stub(:current_user).and_return(wrong_user)
         get :dashboard, id: movement
         expect(response).to redirect_to root_path
         flash[:notice].should == "You don't own that movement!"

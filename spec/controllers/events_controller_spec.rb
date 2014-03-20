@@ -6,6 +6,7 @@ describe EventsController do
   let(:movement){FactoryGirl.create(:movement)}
   let!(:ownership){FactoryGirl.create(:ownership, user: coordinator, movement: movement)}
   let(:event) {FactoryGirl.create(:event, movement: movement)}
+  let(:attendee) {FactoryGirl.create(:attendee, event: event)}
 
   describe "GET #explanation" do
     it "responds successfully" do
@@ -163,25 +164,46 @@ describe EventsController do
   end
 
   describe "PUT #update" do
-    before do  
-      @controller.stub(:current_user).and_return(coordinator)
-      put :update, movement_id: movement, id: event, event: {notes: "attribute changed"}
+    context "when current user is coordinator" do
+      new_note_text = "attribute changed by coordinator"
+
+      before do  
+        @controller.stub(:current_user).and_return(coordinator)
+        put :update, movement_id: movement, id: event, event: {notes: new_note_text}
+      end
+
+      it "loads the requested movement" do
+        expect(assigns(:event)).to eq(event)
+      end
+
+      it "changes attributes" do
+        expect(event.reload.notes).to eql(new_note_text) 
+      end
+
+      it "redirects to movement page anchored in event" do
+        expect(response).to redirect_to dashboard_movement_path(event.movement, anchor: "events")
+      end
+
+      it "notifies user that event was updated" do
+        flash[:notice].should == "Event updated."
+      end
     end
 
-    it "loads the requested movement" do
-      expect(assigns(:event)).to eq(event)
-    end
+    context "when current user is attendee" do
+      new_note_text = "attribute changed by attendee"
 
-    it "changes attributes" do
-      expect(event.reload.notes).to eql("attribute changed") 
-    end
+      before do 
+        @controller.stub(:current_user).and_return(attendee)
+        put :update, movement_id: movement, id: event, event: {notes: new_note_text}
+      end
 
-    it "redirects to movement page anchored in event when current user is coordinator" do
-      expect(response).to redirect_to dashboard_movement_path(event.movement, anchor: "events")
-    end
+      it "redirects to event show page" do
+        expect(response).to redirect_to event_path(event)
+      end
 
-    it "notifies user that event was updated" do
-      flash[:notice].should == "Event updated."
+      it "changes attributes" do
+        expect(event.reload.notes).to eql(new_note_text)
+      end
     end
   end
 

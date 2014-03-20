@@ -36,14 +36,12 @@ describe TasksController do
         post :create, event_id: event, task: FactoryGirl.attributes_for(:task_without_description)
         flash[:notice].should == "Description can't be blank"
       end
-
     end 
   end
 
   describe "PUT #update" do
-    before :each do
-      put :update, event_id: event, id: task, task: FactoryGirl.attributes_for(:task, description: "New description goes here") 
-    end
+    new_task_desc = "New description goes here"
+    before(:each) {put :update, event_id: event, id: task, task: FactoryGirl.attributes_for(:task, description: new_task_desc)}
     
     it "loads the requested task" do
       expect(assigns(:task)).to eq(task)
@@ -51,7 +49,7 @@ describe TasksController do
 
     it "updates the task" do
       task.reload
-      expect(task.description).to eq("New description goes here")
+      expect(task.description).to eq(new_task_desc)
     end
 
     it "redirects to show" do

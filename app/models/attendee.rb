@@ -6,10 +6,6 @@ class Attendee < ActiveRecord::Base
   has_many :assignments, foreign_key: "attendee_id"
   has_many :assigned_tasks, through: :assignments, source: :task
 
-  def assigned? task
-    assignments.find_by(task_id: task.id)
-  end
-
   def assign! task
     assignments.create(task_id: task.id)
   end

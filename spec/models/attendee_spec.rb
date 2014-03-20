@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Attendee do
- let(:event)  { FactoryGirl.build(:event) }
+ let(:event)  { FactoryGirl.create(:event) }
  let(:attendee) { event.attendees.build(email: "ant_farm@com.com" ) }
 
  subject { attendee }
@@ -12,8 +12,8 @@ describe Attendee do
  it {should respond_to(:event)}
  it {should respond_to(:assignments)}
  it {should respond_to(:assigned_tasks)}
- it {should respond_to(:assigned?)}
  it {should respond_to(:assign!)}
+ it {should respond_to(:unassign!)}
 
   it "is not valid without an email" do
     expect(FactoryGirl.build(:attendee_without_email)).not_to be_valid
@@ -24,21 +24,23 @@ describe Attendee do
    it {should_not be_valid}
  end
 
- describe "assigned?" do
-   let(:event) { FactoryGirl.create(:event) }
+ describe "assign and unassign" do
    let(:attendee) { FactoryGirl.create(:attendee, event: event) }
    let(:task) { FactoryGirl.create(:task) }
 
-   before { attendee.assign!(task) }
+   context "#assign!" do
+     it "should assign task" do
+       attendee.assign! task
+       attendee.assigned_tasks.should include(task)
+     end
+   end
 
-   it { should be_assigned(task) }
-   its(:assigned_tasks) { should include(task) }
-
-   describe "and unassign" do
-     before { attendee.unassign!(task) }
-     
-     it { should_not be_assigned(task) }
-     its(:assigned_tasks) { should_not include(task) }
+   context "#unassign!" do
+     it "should unassign task" do
+       attendee.assign! task
+       attendee.unassign! task
+       attendee.assigned_tasks.should_not include(task)
+     end
    end
  end
 

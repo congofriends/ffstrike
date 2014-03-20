@@ -44,10 +44,8 @@ describe AttendeesController do
     end
 
     context "host notification" do
-      
       user = FactoryGirl.create(:user)
-      event = FactoryGirl.create(:event)
-      event.host = user
+      event = FactoryGirl.create(:event, host: user)
     
       context "with fewer than 10 attendees" do
         it "doesn't call attendee_mailer" do
