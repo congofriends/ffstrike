@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140317164018) do
+ActiveRecord::Schema.define(version: 20140320180937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20140317164018) do
     t.boolean  "approved"
     t.integer  "host_id"
     t.integer  "event_type_id"
+    t.string   "state"
   end
 
   add_index "events", ["host_id"], name: "index_events_on_host_id", using: :btree

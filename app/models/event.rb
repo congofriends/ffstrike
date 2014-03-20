@@ -30,7 +30,7 @@ class Event < ActiveRecord::Base
   end
 
   def location
-    [address, city, zip].join(", ")
+    [address, city, zip, state].join(", ")
   end
 
   def assign_host_and_approve user

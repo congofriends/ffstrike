@@ -10,6 +10,7 @@ FactoryGirl.define do
     location_details {Faker::Lorem.sentence}
     city {Faker::Address.city}
     zip {Faker::Address.zip}
+    state {Faker::Address.state}
     date '08/02/90'
     time '22:35'
     notes {Faker::Lorem.sentence}  
