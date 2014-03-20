@@ -8,7 +8,7 @@
 
           <%= form_tag "/events", method: "get", class: 'form-inline', id: 'zip-form' do %>
             <div class='form-group'>
-              <%= search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control'}%>
+              <%= search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control', maxlength: 5}%>
             </div>
             <div class='form-group'>
               <%= button_tag name="Search", class: 'btn btn-default' %>

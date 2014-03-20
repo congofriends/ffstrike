@@ -14,7 +14,6 @@
       <li><%= link_to "All movements", movements_path %></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "About", about_path %></li>
       <% if current_user%>
         <li><%= link_to "My movements", user_movements_path %></li>
       <% end %>
