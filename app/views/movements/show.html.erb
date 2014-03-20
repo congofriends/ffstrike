@@ -6,13 +6,18 @@
 
 <%= link_to "Create new movement", new_movement_path, class: "btn btn-primary btn-xs" %>
 
+<h4>About the Movement Creators</h4>
+<%= @movement.about_creator %>
+
 <h1><%= @movement.name %></h1>
 <h4> <%= @movement.tagline %> </h4>
 <h4> <%= @movement.call_to_action %> </h4>
 <h4> <%= @movement.extended_description %> </h4>
 <%= image_tag @movement.image, width: 200, :class=>"pull-right" %>
 
-<%=youtube_embed_url_for_(@movement.video) %>
+<% if @movement.video? %>
+  <%=youtube_embed_url_for_(@movement.video) %>
+<% end%>
 <br>
 Search for an event near you!  Enter your zip code:
 <%= form_tag "/movements", method: "get", class: 'form-inline', id: 'zip-form' do %>
@@ -47,5 +52,3 @@ Search for an event near you!  Enter your zip code:
   <%end%>  
 </ul>  
 <br>
-<h4>About the Movement Creators</h4>
-<%= @movement.about_creator %>

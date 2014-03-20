@@ -1,3 +1,5 @@
+<%= link_to "Create new movement", new_movement_path, class: "btn btn-primary btn-xs" %>
+
 <% if current_user.movements.any? %>
   <h3>You have <%= @movements.count %> movements </h3>
     <%= render @movements %>
