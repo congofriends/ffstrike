@@ -48,6 +48,10 @@ class Event < ActiveRecord::Base
   def self.find_by_param input
     find_by_name input.gsub(/-/, ' ')
   end
+
+  def host? user
+    user && self.host_id == user.id
+  end
                                   
   private
     def assign_coordinates
