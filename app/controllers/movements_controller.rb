@@ -4,6 +4,7 @@ class MovementsController < ApplicationController
   before_filter :load_event_types, only: [:visitor, :show]
   before_filter :get_assosiated_movement, only: [:visitor, :show]
   before_filter :check_user_owns_movement, only: [:dashboard]
+  before_filter :redirect_unauthorized_user, only: [:visitor, :show]
 
   include YoutubeParserHelper
   include ZipHelper
@@ -53,7 +54,7 @@ class MovementsController < ApplicationController
     end
   end
 
-	def show; end
+	def show;end
 
   def export_csv
     send_data @movement.to_csv, filename: "Attendee List"
@@ -95,6 +96,13 @@ class MovementsController < ApplicationController
     unless @movement.users.to_a.include? current_user
       flash[:notice] = "You don't own that movement!"
       redirect_to root_path 
+    end
+  end
+
+  def redirect_unauthorized_user
+    unless @movement.authorized?(current_user)
+      flash[:notice] = "That movement isn't public yet!"
+      redirect_to root_path
     end
   end
 end

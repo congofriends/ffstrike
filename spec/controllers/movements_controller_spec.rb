@@ -2,12 +2,12 @@ require 'spec_helper'
 
 describe MovementsController do
 
-  let(:user){FactoryGirl.create(:user)} 
-  let(:movement) { FactoryGirl.create(:movement) }
+  let(:user){FactoryGirl.create(:user)}
+  let(:movement) { FactoryGirl.create(:published_movement) }
 
   before :each do
     controller.stub(:current_user).and_return(user)
-    controller.stub(:authenticate_user!).and_return true 
+    controller.stub(:authenticate_user!).and_return true
   end
 
   describe "GET #new" do
@@ -33,7 +33,7 @@ describe MovementsController do
     before { get "search", id: published_movement, zip: event.zip }
 
     it "redirects to search results" do
-      expect(response).to be_success 
+      expect(response).to be_success
     end
 
     it "assigns events" do
@@ -50,6 +50,24 @@ describe MovementsController do
       get "visitor", id: movement
       expect(response).to be_success
     end
+
+    context 'when I view an unpublished movement' do
+      before :each do
+        movement = FactoryGirl.create(:unpublished_movement)
+        user = FactoryGirl.create(:user)
+        controller.stub(:current_user).and_return(user)
+        get :visitor, id: movement
+      end
+
+      it 'redirects me to the home page' do
+        expect(response).to redirect_to root_path
+      end
+
+      it 'notifies me that the movement does not exist' do
+        flash[:notice].should eq("That movement isn't public yet!")
+      end
+    end
+
   end
 
   describe "POST #create" do
@@ -128,6 +146,24 @@ describe MovementsController do
       get :show, id: movement
 			expect(response).to render_template :show
 		end
+    context 'as a visitor to movement page' do
+      context 'when I view an unpublished movement' do
+        before :each do
+          movement = FactoryGirl.create(:unpublished_movement)
+          user = FactoryGirl.create(:user)
+          controller.stub(:current_user).and_return(user)
+          get :show, id: movement
+        end
+
+        it 'redirects me to the home page' do
+          expect(response).to redirect_to root_path
+        end
+
+        it 'notifies me that the movement does not exist' do
+          flash[:notice].should eq("That movement isn't public yet!")
+        end
+      end
+    end
 	end
 
   describe "PUT #update" do

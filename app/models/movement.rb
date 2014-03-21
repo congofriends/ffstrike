@@ -43,11 +43,15 @@ class Movement < ActiveRecord::Base
   end
 
   def self.random(number_of_events = 1)
-    Movement.offset(rand(Movement.count - number_of_events + 1)).first(number_of_events) 
+    Movement.where(published: true).offset(rand(Movement.where(published: true).count - number_of_events + 1)).first(number_of_events) 
   end
 
   def number_of_attendees
     movement_events.inject(0) { |sum, event| sum+event.attendees.count }
+  end
+
+  def authorized?(user)
+    (self.users.include?(user))||(self.published?)
   end
 
   def locations
