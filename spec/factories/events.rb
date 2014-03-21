@@ -23,4 +23,18 @@ FactoryGirl.define do
       approved true
     end
   end
+
+  factory :invalid_event, class: Event do
+    name {Faker::Lorem.words.join(' ')}
+    location_details {Faker::Lorem.sentence}
+    city {Faker::Address.city}
+    zip {Faker::Address.zip}
+    state {Faker::Address.state}
+    date '08/02/90'
+    time '22:35'
+    notes {Faker::Lorem.sentence}  
+    approved false
+    event_type_id {EventType.all.map(&:id).sample}
+    movement
+  end
 end

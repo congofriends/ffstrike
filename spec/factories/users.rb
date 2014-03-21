@@ -4,4 +4,9 @@ FactoryGirl.define do
     email {Faker::Internet.email}
     password 'password'
   end
+
+  factory :invalid_user, class: User do
+    email {Faker::Internet.email}
+  end
+  
 end

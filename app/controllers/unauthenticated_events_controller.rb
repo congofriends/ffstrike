@@ -6,12 +6,23 @@ class UnauthenticatedEventsController < ApplicationController
 
   def create
     @movement = Movement.find_by_param params[:movement_id]
-    user = User.create user_params
-    sign_in(:user, user)
-    event = @movement.events.build(event_params)
-    event.assign_host_and_approve user
-    TaskPopulator.assign_tasks event
-    redirect_to event_path(event)
+    @user = User.new user_params
+    @event = Event.new event_params
+    if @user.save
+      sign_in(:user, @user)
+      @event = @movement.events.build(event_params)
+      @event.assign_host_and_approve @user
+      TaskPopulator.assign_tasks @event
+      if @event.save
+        redirect_to event_path(@event)
+      else
+        flash[:notice]="Your account was created but there was a problem with your event."
+        redirect_to new_movement_event_path(@movement)
+      end
+    else
+      flash[:notice] = "Invalid user credentials"
+      render 'new'
+    end
   end
 
   private
