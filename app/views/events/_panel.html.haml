@@ -1,0 +1,28 @@
+.col-md-3
+  .panel.panel-default
+    .panel-heading
+      %h3.text-center= link_to event.name, event_path(event)
+      %p.text-info.small.text-right 
+        Type: 
+        = event.type
+
+    .panel-footer
+      .text-left
+        .leadltext-right
+          = event.number_of_attendees
+          Attendees
+        %p 
+          Location: 
+          = event.city
+        %p 
+          Time: 
+          = event.time
+        %p 
+          Organizer: 
+          = event.host_name || event.host_email
+        %p 
+          Summary:
+          %em
+            = event.tagline
+      = link_to "Yes! I want to attend", new_event_attendee_path(event), class: "btn btn-success btn-sm"
+

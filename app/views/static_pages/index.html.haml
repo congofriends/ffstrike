@@ -1,0 +1,27 @@
+%section.front-banner
+  .homepage-banner
+    .homepage-jumbotron
+      .row
+        .col-md-6.col-md-offset-6.homepage-jumbotron-text
+          %h1 Make A Difference
+          %p Find a Movement near you.
+          = form_tag "/events", method: "get", class: 'form-inline', id: 'zip-form' do
+            .form-group
+              = search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control', maxlength: 5}
+            .form-group
+              = button_tag name="Search", class: 'btn btn-default'
+          = link_to "Feeling inspired? Create A Movement.", new_movement_path, id: 'create-movement-link'
+
+%section.featured-movements
+  .container
+    .row
+      %h1 Awesome Movements
+    .row
+      - @featured_movements.each do |featured_movement|
+        .col-md-4
+          .panel.panel-default
+            .panel-body
+              = image_tag featured_movement.image.url, { class:'front-page img-responsive center-block' }
+            .panel-footer
+              .text-center
+                %h3= link_to featured_movement.name, visitor_path(featured_movement)
