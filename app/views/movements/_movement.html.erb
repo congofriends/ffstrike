@@ -15,7 +15,7 @@
         <p class="small">Organizers: <%= movement.users.map(&:email).join(", ") if !movement.users.empty? %> </p>
         <p class="small">Summary:<em> <%= movement.tagline %> </em> </p>
       </div>
-      <%= link_to "See more details", visitor_path(movement), class: "btn btn-success btn-sm" %>
+      <%= link_to "See more details", movement_path(movement), class: "btn btn-success btn-sm" %>
       <p class="text-muted small"><em> Created <%= time_ago_in_words(movement.created_at) %> ago </em></p>
     </div>
   </div>

@@ -46,7 +46,7 @@ class EventsController < ApplicationController
       if @movement.users.include?(current_user)
        redirect_to dashboard_movement_path(@movement, anchor: "events") and return
       end
-      redirect_to visitor_path(@movement) and return
+      redirect_to movement_path(@movement) and return
     end
   end
 

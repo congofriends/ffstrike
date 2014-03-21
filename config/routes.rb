@@ -19,7 +19,6 @@ Ffstrike::Application.routes.draw do
     resources :events, shallow: true
     resources :unauthenticated_events, only: [:new, :create] 
   end
-  get 'visitor/:id' => 'movements#visitor', as: 'visitor' 
 
   #events
   resources :events do

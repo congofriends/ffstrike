@@ -45,31 +45,6 @@ describe MovementsController do
     end
   end
 
-  describe "GET #visitor" do
-    it "responds successfully" do
-      get "visitor", id: movement
-      expect(response).to be_success
-    end
-
-    context 'when I view an unpublished movement' do
-      before :each do
-        movement = FactoryGirl.create(:unpublished_movement)
-        user = FactoryGirl.create(:user)
-        controller.stub(:current_user).and_return(user)
-        get :visitor, id: movement
-      end
-
-      it 'redirects me to the home page' do
-        expect(response).to redirect_to root_path
-      end
-
-      it 'notifies me that the movement does not exist' do
-        flash[:notice].should eq("That movement isn't public yet!")
-      end
-    end
-
-  end
-
   describe "POST #create" do
     context "with valid attributes" do
       before { post :create, movement: FactoryGirl.attributes_for(:movement) }
