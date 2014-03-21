@@ -21,7 +21,7 @@ describe Movement do
 
   describe '.random' do
     before do
-      FactoryGirl.create_list(:movement, 10)
+      FactoryGirl.create_list(:published_movement, 10)
     end
 
     it 'returns an array of 3 movements when n = 3' do
