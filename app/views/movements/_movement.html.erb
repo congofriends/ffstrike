@@ -11,9 +11,9 @@
     <div class='panel-footer'>
       <div class='text-left'>
         <p class="text-right"><%= movement.number_of_attendees %> Attendees</p>
-        <p class="small">Locations: <%= movement.locations %></p>
-        <p class="small">Organizers: <%= movement.users.map(&:email).join(", ") if !movement.users.empty? %> </p>
-        <p class="small">Summary:<em> <%= movement.tagline %> </em> </p>
+        <p class="small">Locations: <%= truncate( movement.locations , :length=>24) %></p>
+        <p class="small">Organizers: <%= truncate( (movement.users.map(&:email).join(", ") if !movement.users.empty?), :length=>20 ) %> </p>
+        <p class="small">Summary:<em> <%= truncate( movement.tagline , :length=>50) %> </em> </p>
       </div>
       <%= link_to "See more details", movement_path(movement), class: "btn btn-success btn-sm" %>
       <p class="text-muted small"><em> Created <%= time_ago_in_words(movement.created_at) %> ago </em></p>

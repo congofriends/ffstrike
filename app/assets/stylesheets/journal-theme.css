@@ -6009,6 +6009,7 @@ a.list-group-item.active:focus .list-group-item-text {
   border-top: 1px solid #dddddd;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
+  height: 215px;
 }
 
 .panel-group .panel {
