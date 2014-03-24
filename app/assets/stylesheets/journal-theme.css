@@ -212,6 +212,10 @@ table {
   border-spacing: 0;
 }
 
+.table {
+  width: 100%;
+}
+
 @media print {
   * {
     color: #000 !important;
@@ -556,10 +560,6 @@ cite {
 
 .text-info {
   color: #3a87ad;
-}
-
-.text-info:hover {
-  color: #2d6987;
 }
 
 .text-left {
@@ -1723,11 +1723,6 @@ table {
 
 th {
   text-align: left;
-}
-
-.table {
-  width: 100%;
-  margin-bottom: 21px;
 }
 
 .table > thead > tr > th,
@@ -4203,46 +4198,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
-}
-
-.nav:before,
-.nav:after {
-  display: table;
-  content: " ";
-}
-
-.nav:after {
-  clear: both;
-}
-
-.nav:before,
-.nav:after {
-  display: table;
-  content: " ";
-}
-
-.nav:after {
-  clear: both;
-}
-
-.nav:before,
-.nav:after {
-  display: table;
-  content: " ";
-}
-
-.nav:after {
-  clear: both;
-}
-
-.nav:before,
-.nav:after {
-  display: table;
-  content: " ";
-}
-
-.nav:after {
-  clear: both;
 }
 
 .nav:before,
