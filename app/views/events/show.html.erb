@@ -1,36 +1,50 @@
+<div class="col-sm-6">
 <div class='row'>
-  <h3>Event details page
+  <h3>Event details for <%= @event.name %>  
     <% if @event.host?(current_user) %>
       <%= link_to "Edit Event", edit_event_path(@event), class: "btn btn-success btn-sm" %>  
     <%end%>
   </h3>
-  <p><%= @event.name %></p>
-  <p><%= @event.location %></p>
-  <p><%= @event.notes %></p>
-  <p><%= @event.date %></p>
+
+  <h4>Location</h4>
+    <p><%= @event.location %></p>
+  
+  <h4>Notes</h4>
+    <p><%= @event.notes %></p>
+
+  <h4>Date</h4>
+    <p><%= @event.date %></p>
 
 
   <%= link_to "Generate PDF with event summary", event_path(@event, {generate: :event, :format => :pdf}), :target => '_blank' %>
-  <p class="lead">Number of attendees: <span class="badge"> <%= @event.number_of_attendees %> </span></p>
+  <h3>Number of attendees: <span class="badge"> <%= @event.number_of_attendees %> </span></h3>
   <% @event.attendees.each do |attendee| %>
-    <li class="text-muted">
-      <%= attendee.name %>
-      <%= attendee.email %>
-    </li>
+    <ul>
+      <li class="text-muted">
+        <%= attendee.name %>
+        <%= attendee.email %>
+      </li>
+    </ul>
   <% end %>
   <%= render partial: "email_event.html.erb", locals: { event: @event, movement: @movement} %>
 </div>
  
-<p class="lead">Event tasks </p>
+<div class="row">
+  <h3>Event tasks </h3>
+</div>
 <% if session[:current_attendee_id].nil? %>
    <p class="text-info">You need to attend this event in order to sign up for tasks!
       <%= link_to "I want to attend", new_event_attendee_path(event_id: @event), class: "btn btn-success btn-sm" %>
    </p>
 <% end %>
 
-<%= link_to "Generate PDF with tasks list", event_path(@event, {generate: :tasks, :format => :pdf} ), :target => '_blank' %>
 <% @event.tasks.each do |task| %>
   <%= render task %>
 <% end %>  
+
+<div class="row">
+  <%= link_to "Generate PDF with tasks list", event_path(@event, {generate: :tasks, :format => :pdf} ), :target => '_blank' %>
+</div>
+</div>
 
 <%= render 'social/share' %>
