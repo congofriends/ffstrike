@@ -24,6 +24,7 @@ class MovementsController < ApplicationController
 
   def user_movements
     @movements = current_user.movements
+    @events = current_user.host_for_nonapproved_events?
   end
 
   def dashboard

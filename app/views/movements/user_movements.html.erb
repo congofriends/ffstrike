@@ -8,7 +8,6 @@
 <% if current_user.host_for_nonapproved_events? %>
   <% current_user.nonapproved_events.each do |event| %>
   <p>Coordinator of the <%= link_to event.movement.name, movement_path(@movement) %> did not approve your event yet</p>
-     <%= link_to event.name, event_path(event)%>
-     <%= render @events  %>
+     <%= render event %>
   <%end%>
 <%end%>
