@@ -9,7 +9,7 @@
   <div id="collapseTwo" class="panel-collapse collapse">
     <div class="panel-body">
       <div class='row'>
-        <%= form_tag(mail_attendees_path(event_id: event), method: "post") do %>
+        <%= form_tag(mail_attendees_path(movement_id: event.movement, event_id: event), method: "post") do %>
           <div class="col-md-9">
             <%= text_area_tag "message", nil, placeholder: 'Enter a message to send to event attendees', class: 'form-control' %>
           </div>
