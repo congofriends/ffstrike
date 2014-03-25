@@ -1,0 +1,22 @@
+%h3 Events Created by Others
+- @movement.movement_events.select{|event| !@movement.users.include?(event.host)}.each do |event|
+  .well{id: "event#{event.id}", class: ("approval-background" unless event.approved?)}
+    %h4 
+      Name: 
+      = event.name
+    Type: 
+    = event.type
+    %br
+    Location: 
+    = event.location
+    %br
+    Message to attendees:  
+    = event.notes
+    %br
+    Date: 
+    = event.date
+    %br
+    Approved:  
+    %span{id: "approval_status#{event.id}"}= event.approved?
+    %br
+    = link_to event.approved? ? 'Disapprove' : 'Approve', approve_path(event), method: :put, remote: true, id: "approve#{event.id}", class: "btn btn-primary"
