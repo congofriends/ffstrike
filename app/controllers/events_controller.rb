@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
-  before_filter :load_movement, :only => [:new, :create, :edit, :update]
   before_filter :authenticate_user!, :only => [:destroy]
   before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit] 
+  before_filter :load_movement, :only => [:new, :create, :edit, :update]
   after_filter :populate_tasks, :only => [:create]
 
   include ZipHelper
@@ -95,7 +95,12 @@ class EventsController < ApplicationController
   end
 
   def load_movement
-    @movement = Movement.find_by_param params[:movement_id]
+#    binding.pry
+    if params[:movement_id]
+      @movement = Movement.find_by_param params[:movement_id]
+    else
+      @movement = @event.movement
+    end
   end
 
   def populate_tasks
