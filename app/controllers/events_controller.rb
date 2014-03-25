@@ -7,7 +7,6 @@ class EventsController < ApplicationController
   include ZipHelper
 
   def explanation; end
-
   def new
     @event = Event.new      
   end
