@@ -1,0 +1,25 @@
+.col-md-3
+  .panel.panel-default
+    .panel-heading
+      %p.text-center= link_to event.movement_name, movement_path(event.movement)
+    .panel-body
+      = link_to image_tag(event.image.url, class: 'front-page img-responsive center-block'), movement_path(event.movement)
+
+    .panel-footer
+      .text-left
+        %p
+          = link_to event.name, event_path(event)
+          .lead.text-right= event.number_of_attendees.to_s + " Attendees"
+        %p
+          Location: 
+          = event.city
+        %p
+          Time: 
+          = event.time
+        %p
+          Organizer: 
+          = event.host_name || event.host_email
+        %p
+          Summary:
+          %em= event.tagline
+      = link_to "Yes! I want to attend", new_event_attendee_path(event, @attendee=event.attendees.build), class: "btn btn-success btn-sm"
