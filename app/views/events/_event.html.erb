@@ -10,7 +10,7 @@
 
     <div class='panel-footer'>
       <div class='text-left'>
-        <p><%= link_to event.name, movement_events_path(event.movement, event) %>
+        <p><%= link_to event.name, event_path(event) %>
            <p class="lead text-right"><%= event.number_of_attendees %> Attendees</p>
         </p>
         <p>Location: <%= event.city %></p>
