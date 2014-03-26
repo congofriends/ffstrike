@@ -5,7 +5,7 @@ class UserMailer < ActionMailer::Base
     @recipients = event.attendees
     @event = event
     unless @recipients.empty?
-      mail(to: @recipients.collect(&:email).join(","), subject: "Your event has been canceled.")
+      mail(to: @recipients.collect(&:email).join(","), subject: "Your event has been canceled.").deliver
       return true
     end
     return false
