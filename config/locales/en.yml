@@ -28,3 +28,33 @@ en:
   attendee_mailer:
     signup_message:
       subject: "You've signed up to attend an event!" 
+  user:
+    invalid_credentials: "Invalid user credentials"
+  event:
+    created: "Event created!"
+    updated: "Event updated."
+    deleted: "Event deleted."
+    created_by_attendee: "Your event will be viewable to the public as soon as the movement coordinator approves it!"
+    failure: "Your account was created but there was a problem with your event." 
+  movement:
+    created: "Congratulations, you just created a movement!"
+    updated: "Movement has been updated"
+    not_created: "There was a problem when saving your movement. Please try again."
+    published: "Movement has been published"
+    not_yours: "You don't own that movement!"
+    not_public: "That movement isn't public yet!"
+  attendee:
+    created: "Thanks for signing up!"
+    updated: "Attendee has been updated"
+    email_is_required: "Email is required"
+  mail:
+    sent: "Sending Emails!"
+    no_attendees: "You have no attendees to email."
+  task:
+    created: "New task is created"
+    updated: "Task has been updated"
+    deleted: "Task deleted"
+  assignment:
+    already_taken: "You've already taken this task!"
+    signed_up: "Thanks for signing up!"
+    for_attendees_only: "Tasks are for attendees only"

@@ -58,7 +58,7 @@ describe MovementsController do
         expect(response).to redirect_to movement_path(Movement.last)
       end
 
-      it "notifies user that event was updated" do
+      it "notifies user that movement has been created" do
         flash[:notice].should == "Congratulations, you just created a movement!"
       end
     end
@@ -157,7 +157,13 @@ describe MovementsController do
       expect(response).to redirect_to movement_path(movement)
     end
 
+    it "notifies user that movement has been updated" do
+      flash[:notice].should eq("Movement has been updated")
+    end
+
     it "updates name for existing movement and doesn't change video field value" do
+      #FIXME refactor it to context to not to make PUT twice(one comes from
+      #before filter)
       put :update, id: movement, movement: { name: "new name"  }
       expect(movement.reload.video).to eq("_ZSbC09qgLI")
       expect(movement.name).to eq("new name")

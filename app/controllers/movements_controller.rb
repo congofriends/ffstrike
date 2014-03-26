@@ -45,11 +45,9 @@ class MovementsController < ApplicationController
       unless movement_params[:draft] == "1"
         @movement.publish
       end
-      flash[:notice] = "Congratulations, you just created a movement!"
-      redirect_to movement_path(@movement)
+      redirect_to movement_path(@movement), notice: t('movement.created')
     else
-      flash[:notice] = "There was a problem when saving your movement. Please try again."
-      render :new 
+      render :new, notice: t('movement.not_created')
     end
   end
 
@@ -62,14 +60,14 @@ class MovementsController < ApplicationController
   def publish
     @movement.publish
     respond_to do |format|
-      format.html { redirect_to movement_path(@movement), notice: "Movement has been published" }
+      format.html { redirect_to movement_path(@movement), notice: t('movement.published')}
       format.js
     end
   end
 
   def update
     @movement.update_attributes(movement_params)
-    redirect_to movement_path(@movement) 
+    redirect_to movement_path(@movement), notice: t('movement.updated') 
   end
 
   private
@@ -93,15 +91,13 @@ class MovementsController < ApplicationController
 
   def check_user_owns_movement
     unless @movement.users.to_a.include? current_user
-      flash[:notice] = "You don't own that movement!"
-      redirect_to root_path 
+      redirect_to root_path, notice: t('movement.not_yours') 
     end
   end
 
   def redirect_unauthorized_user
     unless @movement.authorized?(current_user)
-      flash[:notice] = "That movement isn't public yet!"
-      redirect_to root_path
+      redirect_to root_path, notice: t('movement.not_public')
     end
   end
 end

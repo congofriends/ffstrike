@@ -12,16 +12,16 @@ class AttendeesController < ApplicationController
       session[:current_attendee_id] = @attendee.id
       AttendeeMailer.signup_message(@movement, @event, @attendee).deliver
       UserMailer.notify_host_of_event_size(@event) if @event.threshold_size? 
-      redirect_to event_path(@event), notice: "Thanks for signing up!"
+      redirect_to event_path(@event), notice: t('attendee.created')
     else
-      redirect_to new_event_attendee_path(@event),  notice: "Email is required"
+      redirect_to new_event_attendee_path(@event), notice: t('attendee.email_is_required')
     end
   end
 
   def update
     @attendee.update(attendee_params)
     respond_to do |format|
-      format.html { redirect_to  movement_path(@attendee.event.movement, anchor: "attendees"), notice: "Attendee has been updated" }
+      format.html { redirect_to movement_path(@attendee.event.movement, anchor: "attendees"), notice: t('attendee.updated') }
       format.json { head :ok  }
     end
   end

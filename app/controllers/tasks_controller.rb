@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   def create
     @task = @event.tasks.build(task_params)
     flash[:notice] = 
-      @task.save ? "New task is created" : @task.errors.full_messages.flatten.join('. ')
+      @task.save ? t('task.created') : @task.errors.full_messages.flatten.join('. ')
     respond_to do |format|
       format.html { redirect_to movement_path(@event.movement, anchor: "tasks") }
       format.js
@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     respond_to do |format|
-      format.html { redirect_to  movement_path(@event.movement, anchor: "tasks"), notice: "Task deleted" }
+      format.html { redirect_to  movement_path(@event.movement, anchor: "tasks"), notice: t('task.deleted') }
       format.js
     end
   end
@@ -25,7 +25,7 @@ class TasksController < ApplicationController
   def update
     @task.update_attributes(task_params)
     respond_to do |format|
-      format.html { redirect_to  movement_path(@event.movement, anchor: "tasks"), notice: "Task has been updated" }
+      format.html { redirect_to  movement_path(@event.movement, anchor: "tasks"), notice: t('task.updated')}
       format.json { head :ok  }
     end
   end

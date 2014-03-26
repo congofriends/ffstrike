@@ -3,14 +3,14 @@ class AssignmentsController < ApplicationController
 
   def assign
     unless @task.assigned_attendees.include?(Attendee.find(session[:current_attendee_id])).nil?
-      flash[:notice] = "You've already taken this task!"
+      flash[:notice] = t('assignment.already_taken')
     end
 
     unless session[:current_attendee_id].nil?
       @task.assign!(session[:current_attendee_id])
-      flash[:notice] = "Thanks for signing up!" 
+      flash[:notice] = t('assignment.signed_up') 
     else
-      flash[:notice] =  "Tasks are for attendees only"
+      flash[:notice] = t('assignment.for_attendees_only') 
       format.js
     end
 

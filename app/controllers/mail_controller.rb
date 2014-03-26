@@ -18,9 +18,9 @@ class MailController < ApplicationController
   def send_mail(action)
     message = params[:message]
     if UserMailer.successfully_deliver?(action, message)
-      flash[:notice] = "Sending Emails!"
+      flash[:notice] = t('mail.sent')
     else
-      flash[:notice] = "You have no attendees to email."
+      flash[:notice] = t('mail.no_attendees')
     end
   end
 end

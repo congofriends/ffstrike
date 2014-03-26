@@ -16,11 +16,10 @@ class UnauthenticatedEventsController < ApplicationController
       if @event.save
         redirect_to event_path(@event)
       else
-        flash[:notice]="Your account was created but there was a problem with your event."
-        redirect_to new_movement_event_path(@movement)
+        redirect_to new_movement_event_path(@movement), notice: t('event.failure')
       end
     else
-      flash[:notice] = "Invalid user credentials"
+      flash[:notice] = t('user.invalid_credentials')
       render 'new'
     end
   end

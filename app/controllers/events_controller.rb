@@ -36,10 +36,9 @@ class EventsController < ApplicationController
     if @event.save
       @event.assign_host_and_approve(current_user)
       if @movement.users.include?(current_user)
-        redirect_to explanation_path(@event), notice: "Event created!" and return
+        redirect_to explanation_path(@event), notice: t('event.created') and return
       end
-      flash[:notice] = "Your event will be viewable to the public as soon as the movement coordinator approves it!"
-      redirect_to explanation_path(@event) and return
+      redirect_to explanation_path(@event), notice: t('event.created_by_attendee') and return
     else
       flash[:notice] = @event.errors.full_messages.flatten.join(' ')
       if @movement.users.include?(current_user)
@@ -63,7 +62,7 @@ class EventsController < ApplicationController
 
   def update
     @event.update(event_params)
-    flash[:notice] = "Event updated."
+    flash[:notice] = t('event.updated')
     respond_to do |format|
       if @event.movement.users.include?(current_user)
         format.html { redirect_to dashboard_movement_path(@event.movement, anchor: "events") }
@@ -77,9 +76,8 @@ class EventsController < ApplicationController
   def destroy 
     UserMailer.delete_event_message(@event)
     @event.destroy
-    flash[:notice] = "Event deleted."
     respond_to do |format|
-      format.html { redirect_to dashboard_movement_path(@event.movement, anchor: "events") }
+      format.html { redirect_to dashboard_movement_path(@event.movement, anchor: "events"), notice: t('event.deleted') }
       format.js
     end
   end
@@ -96,7 +94,6 @@ class EventsController < ApplicationController
   end
 
   def load_movement
-#    binding.pry
     if params[:movement_id]
       @movement = Movement.find_by_param params[:movement_id]
     else
