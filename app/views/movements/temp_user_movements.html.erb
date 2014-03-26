@@ -5,9 +5,9 @@
     <%= render @movements %>
 <% end %> 
 
-<% if current_user.host_for_nonapproved_events? %>
-  <% current_user.nonapproved_events.each do |event| %>
-  <p>Coordinator of the <%= link_to event.movement.name, movement_path(@movement) %> did not approve your event yet</p>
+<% if current_user.events %><br/>
+  <h3>You have <%= current_user.events.count %> events </h3>
+  <% current_user.events.each do |event| %>
      <%= render event %>
   <%end%>
 <%end%>

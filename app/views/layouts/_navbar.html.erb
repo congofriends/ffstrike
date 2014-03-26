@@ -15,12 +15,11 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <% if current_user%>
-        <li><%= link_to "My movements", user_movements_path %></li>
+        <li><%= link_to "#{user_name_or_email.capitalize}'s Stuff", user_movements_path %></li>
       <% end %>
       <% if current_user.nil? %> 
         <li><%= link_to "Sign In", new_session_path(:user) %></li>
       <% else %>
-        <li><%= link_to user_name_or_email %></li>
         <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
       <% end %>
     </ul>
