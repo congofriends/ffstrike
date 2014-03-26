@@ -1,29 +1,23 @@
-- if current_user && @movement.users.include?(current_user)
-  %p.text-info.pull-right
-    Update movement information on the 
-    = link_to "Coordinator's dashboard", dashboard_movement_path(@movement, anchor: "movement") 
+.row
+  = image_tag @movement.image, width: 200, :class => "movement_avatar"
+  %div{:class=> "movement_info"}
+    %h1
+      = @movement.name
+      - if current_user && @movement.users.include?(current_user)
+        = link_to "Edit Movement", dashboard_movement_path(@movement, anchor: "movement"), :class=> "btn btn-success btn-sm" 
+    %h2{:class=> "tagline"}= @movement.tagline
+    %h3 Call To Action
+    %p= @movement.call_to_action
+    %h3 Description
+    %p= @movement.extended_description
 
-= link_to "Create new movement", new_movement_path, class: "btn btn-primary btn-xs"
+    - if @movement.video?
+      =youtube_embed_url_for_(@movement.video)
+    %br
+    %h4 About the Movement Creators
+    = @movement.about_creator
 
-%h4 About the Movement Creators
-= @movement.about_creator
-
-%h1= @movement.name
-%h4= @movement.tagline
-%h4= @movement.call_to_action
-%h4= @movement.extended_description
-= image_tag @movement.image, width: 200, :class=>"pull-right"
-
-- if @movement.video?
-  =youtube_embed_url_for_(@movement.video)
 %br
-Search for an event near you!  Enter your zip code:
-= form_tag "/movements", method: "get", class: 'form-inline', id: 'zip-form' do
-  .form-group
-    = search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control'}
-    = hidden_field_tag 'id', value = @movement.id
-  .form-group
-    = button_tag name="Search", class: 'btn btn-default'
 
 .row
   %h3 Events:
@@ -40,3 +34,16 @@ Search for an event near you!  Enter your zip code:
     - else
       = link_to event_type, new_movement_unauthenticated_event_path(@movement, {type: event_type }), :class => "btn-info badge", 
         :rel=> "tooltip", :title => EVENT_DESCRIPTIONS["event_type"]["#{event_type.downcase.gsub(' ', '_')}"]["short_description"]
+
+.row.more_movements_row
+  = link_to "Create new movement", new_movement_path, class: "btn btn-primary btn-xl"
+  \- OR -
+  Search for an event near you!  Enter your zip code:
+  = form_tag "/movements", method: "get", class: 'form-inline', id: 'zip-form' do
+    .form-group
+      = search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control'}
+      = hidden_field_tag 'id', value = @movement.id
+    .form-group
+      = button_tag name="Search", class: 'btn btn-default'
+
+
