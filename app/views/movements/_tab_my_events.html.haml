@@ -3,4 +3,4 @@
     %legend My Events
     .panel.panel-default
       .panel-body
-        = render @events
+        = render partial: 'events/panel', collection: @events, as: :event
