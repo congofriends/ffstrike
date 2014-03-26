@@ -22,6 +22,11 @@ describe EventsController do
       delete :destroy, id: event
       expect { Event.all == [] }
     end
+    it "emails attendees" do
+      sign_in coordinator
+      UserMailer.should_receive(:delete_event_message).with(event)
+      delete :destroy, id: event
+    end
   end
 
   describe "GET #new" do
@@ -68,7 +73,6 @@ describe EventsController do
 
       it "calls the task prepopulator" do
         TaskPopulator.should_receive(:assign_tasks)
-        #??? Why is the post request at the end?
         post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(host_id: coordinator.id)
       end
 

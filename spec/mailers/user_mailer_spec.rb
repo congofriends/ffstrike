@@ -66,4 +66,21 @@ describe UserMailer do
       mail.body.encoded.should include(event.name)
     end
   end
+
+  describe "#delete_event_message" do
+
+    let(:mail) { UserMailer.delete_event_message(event) }
+
+    it "sends to attendees" do
+      mail.to.should eq [attendee.email]
+    end
+    it "has correct body" do
+      mail.body.encoded.should include "We're sorry, your event,"
+      mail.body.encoded.should include event.name
+      mail.body.encoded.should include "has been canceled!"
+    end
+    it "has correct subject" do
+      mail.subject.should eq "Your event has been canceled."
+    end
+  end
 end

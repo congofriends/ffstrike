@@ -1,6 +1,16 @@
 class UserMailer < ActionMailer::Base
   default from: "coordinator@events.com"
 
+  def delete_event_message(event)
+    @recipients = event.attendees
+    @event = event
+    unless @recipients.empty?
+      mail(to: @recipients.collect(&:email).join(","), subject: "Your event has been canceled.")
+      return true
+    end
+    return false
+  end
+
   def custom_message(action, message)
     @recipients = action.attendees
     @message = message

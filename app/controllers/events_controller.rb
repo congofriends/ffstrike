@@ -75,6 +75,7 @@ class EventsController < ApplicationController
   end
 
   def destroy 
+    UserMailer.delete_event_message(@event)
     @event.destroy
     flash[:notice] = "Event deleted."
     respond_to do |format|
