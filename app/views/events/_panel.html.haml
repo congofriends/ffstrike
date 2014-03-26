@@ -1,28 +1,28 @@
 .col-md-3
   .panel.panel-default
-    .panel-heading
-      %h3.text-center= link_to event.name, event_path(event)
+    .panel-heading.event-panel-header
+      %h3.text-center= link_to truncate(event.name, :length=>48), event_path(event)
       %p.text-info.small.text-right 
         Type: 
         = event.type
 
-    .panel-footer
+    .panel-footer.event-panel-footer
       .text-left
         .leadltext-right
           = event.number_of_attendees
           Attendees
         %p 
           Location: 
-          = event.city
+          = truncate( event.city, :length=>24 )
         %p 
           Time: 
           = event.time
         %p 
           Organizer: 
-          = event.host_name || event.host_email
+          = truncate( event.host_name || event.host_email , :length=>20)
         %p 
           Summary:
           %em
-            = event.tagline
+            = truncate( event.tagline , :length=>50)
       = link_to "Yes! I want to attend", new_event_attendee_path(event), class: "btn btn-success btn-sm"
 

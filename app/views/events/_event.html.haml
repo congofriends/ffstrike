@@ -12,14 +12,14 @@
           .lead.text-right= event.number_of_attendees.to_s + " Attendees"
         %p
           Location: 
-          = event.city
+          = truncate( event.city, :length=>24 )
         %p
           Time: 
           = event.time
         %p
           Organizer: 
-          = event.host_name || event.host_email
+          = truncate( event.host_name || event.host_email , :length=>20)
         %p
           Summary:
-          %em= event.tagline
+          %em= truncate( event.tagline , :length=>50)
       = link_to "Yes! I want to attend", new_event_attendee_path(event, @attendee=event.attendees.build), class: "btn btn-success btn-sm"
