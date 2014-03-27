@@ -1,16 +1,15 @@
 class MailController < ApplicationController
 
   def mail_attendees
-    if params[:movement_id]
-      @movement = Movement.find_by_param params[:movement_id]
-      send_mail(@movement)
-    else
+    if params[:event_id]
       @event = Event.find_by_param params[:event_id]
       send_mail(@event)
+      redirect_to event_path(@event)
+    else
+      @movement = Movement.find_by_param params[:movement_id]
+      send_mail(@movement)
+      redirect_to dashboard_movement_path(@movement)
     end
-
-    @movement ||= @event.movement
-    redirect_to movement_url(@movement)
   end
 
   private
