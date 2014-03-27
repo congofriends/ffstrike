@@ -50,8 +50,8 @@ describe MovementsController do
       before { post :create, movement: FactoryGirl.attributes_for(:movement) }
 
       it "creates a movement" do
-        #FIXME: refactor test to use data from the before and do not create a new object 
-        expect{post :create, movement: FactoryGirl.attributes_for(:movement)}.to change(Movement, :count).by(1) 
+        #FIXME: refactor test to use data from the before and do not create a new object
+        expect{post :create, movement: FactoryGirl.attributes_for(:movement)}.to change(Movement, :count).by(1)
       end
 
       it "redirects to the movement page" do
@@ -67,16 +67,16 @@ describe MovementsController do
       before {post :create, movement: FactoryGirl.attributes_for(:nameless_movement)}
 
       it "responds successfully" do
-        expect(response).to be_success 
+        expect(response).to be_success
       end
 
       it "does not save the movement" do
-        #FIXME: refactor test to use data from the before and do not create a new object 
-        expect{ post :create, movement: FactoryGirl.attributes_for(:nameless_movement) }.to_not change(Movement, :count) 
+        #FIXME: refactor test to use data from the before and do not create a new object
+        expect{ post :create, movement: FactoryGirl.attributes_for(:nameless_movement) }.to_not change(Movement, :count)
       end
 
       it "re-renders the new method" do
-        expect(response).to render_template :new 
+        expect(response).to render_template :new
       end
     end
 
@@ -99,14 +99,14 @@ describe MovementsController do
     end
 
     context "with invalid video" do
-      #FIXME: refactor test to use data from the before and do not create a new object 
+      #FIXME: refactor test to use data from the before and do not create a new object
       it "does not save the movement" do
-        expect{ post :create, movement: FactoryGirl.attributes_for(:movement_with_invalid_video) }.to_not change(Movement, :count) 
+        expect{ post :create, movement: FactoryGirl.attributes_for(:movement_with_invalid_video) }.to_not change(Movement, :count)
       end
 
       it "re-renders the new method" do
-        post :create, movement: FactoryGirl.attributes_for(:movement_with_invalid_video) 
-        expect(response).to render_template :new 
+        post :create, movement: FactoryGirl.attributes_for(:movement_with_invalid_video)
+        expect(response).to render_template :new
       end
     end
   end
@@ -114,7 +114,7 @@ describe MovementsController do
 	describe "GET #show" do
     it "assigns the new movement to @movement" do
       get :show, id: movement
-      expect(assigns(:movement)).to eq(movement)	
+      expect(assigns(:movement)).to eq(movement)
     end
 
 		it "renders the #show view" do
@@ -176,7 +176,7 @@ describe MovementsController do
   describe "PUT #publish" do
     it "publish an unpublished movements" do
       movement = FactoryGirl.create(:unpublished_movement)
-      put :publish, id: movement 
+      put :publish, id: movement
       expect(movement.reload.published).to be_true
     end
   end

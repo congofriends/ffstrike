@@ -6,7 +6,7 @@
       <div class="event-<%= event.id %>-details">
       <% if @movement.users.include?(event.host) %>
         <%= link_to "'#{event.name}' event summary", event_path(event) %> 
-        <%= link_to "Remove event", event, method: :delete, data: { confirm: "Are you sure you want to delete this event?"}, remote: true, class:'btn btn-primary btn-xs' %> 
+        <%= link_to " Delete event", event, method: :delete, data: { confirm: "Are you sure you want to delete this event?"}, remote: true, class:'btn btn-primary btn-xs' %> 
         <form class="form-horizontal" role="form">
           <div class="form-group">
             <label class="col-sm-1 event-list">Name</label>
