@@ -11,7 +11,7 @@ Given(/^I am logged in as a user/) do
 end
 
 Given(/^I have an existing movement/) do 
-  click_link_or_button 'create-movement-link'
+  visit "/movements/new"
   fill_in 'movement_name', with: 'Cats Move'
   fill_in 'movement_tagline', with: 'Move yo cat!'
   fill_in 'movement_call_to_action', with: 'Call yo cat'
@@ -37,7 +37,7 @@ When(/^I create an event/)do
 end
 
 When(/^I try to create a movement/) do
-  click_link_or_button 'create-movement-link'
+  visit "/movements/new"
 end
 
 When(/^I submit all the information that I can/) do
