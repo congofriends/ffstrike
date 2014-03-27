@@ -1,11 +1,11 @@
-.row
+.row.movements
   = image_tag @movement.image, width: 200, :class => "movement_avatar"
   %div{:class=> "movement_info"}
     %h1
       = @movement.name
-      - if current_user && @movement.users.include?(current_user)
-        = link_to "Edit Movement", dashboard_movement_path(@movement, anchor: "movement"), :class=> "btn btn-success btn-sm" 
     %h2{:class=> "tagline"}= @movement.tagline
+    - if current_user && @movement.users.include?(current_user)
+      = link_to @movement.name + "'s Dashboard", dashboard_movement_path(@movement, anchor: "movement"), :class=> "btn btn-success btn-sm" 
     %h3 Call To Action
     %p= @movement.call_to_action
     %h3 Description
@@ -19,7 +19,7 @@
 
 %br
 
-.row
+.row.movements
   %h3 Events:
   - @events.each do |event|
     - if event.approved
@@ -35,7 +35,7 @@
       = link_to event_type, new_movement_unauthenticated_event_path(@movement, {type: event_type }), :class => "btn-info badge", 
         :rel=> "tooltip", :title => EVENT_DESCRIPTIONS["event_type"]["#{event_type.downcase.gsub(' ', '_')}"]["short_description"]
 
-.row.more_movements_row
+.row.more_movements_row.movements
   %span{:class=> "create_movement_span"}
     = link_to "Create new movement", new_movement_path, class: "btn btn-primary btn-xl"
   %span{:class=> "search_event_span"}
