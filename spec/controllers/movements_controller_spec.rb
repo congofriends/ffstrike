@@ -142,31 +142,34 @@ describe MovementsController do
 	end
 
   describe "PUT #update" do
-    video_url = "https://www.youtube.com/watch?v=_ZSbC09qgLI"
-    before { put :update, id: movement, movement: { video: video_url } }
+    context "video attribute" do
+      video_url = "https://www.youtube.com/watch?v=_ZSbC09qgLI"
+      before { put :update, id: movement, movement: { video: video_url } }
 
-    it "loads the requested movement" do
-      expect(assigns(:movement)).to eq(movement)
+      it "loads the requested movement" do
+        expect(assigns(:movement)).to eq(movement)
+      end
+
+      it "updates the movement" do
+        expect(movement.reload.video).to eq("_ZSbC09qgLI")
+      end
+
+      it "redirects to show" do
+        expect(response).to redirect_to movement_path(movement)
+      end
+
+      it "notifies user that movement has been updated" do
+        flash[:notice].should eq("Movement has been updated")
+      end
     end
 
-    it "updates the movement" do
-      expect(movement.reload.video).to eq("_ZSbC09qgLI")
-    end
-
-    it "redirects to show" do
-      expect(response).to redirect_to movement_path(movement)
-    end
-
-    it "notifies user that movement has been updated" do
-      flash[:notice].should eq("Movement has been updated")
-    end
-
-    it "updates name for existing movement and doesn't change video field value" do
-      #FIXME refactor it to context to not to make PUT twice(one comes from
-      #before filter)
-      put :update, id: movement, movement: { name: "new name"  }
-      expect(movement.reload.video).to eq("_ZSbC09qgLI")
-      expect(movement.name).to eq("new name")
+    context "name for existing movement with a video" do
+      it "should update the name and should not reset the video field value" do
+        video = movement.video
+        put :update, id: movement, movement: { name: "new name"  }
+        expect(movement.reload.video).to eq(video)
+        expect(movement.name).to eq("new name")
+      end
     end
   end
 
