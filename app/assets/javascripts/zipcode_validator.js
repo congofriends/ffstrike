@@ -18,6 +18,7 @@ $(document).ready(function(){
     },
     errorElement: "div",
     errorClass: "text-danger",
+    errorId: "zip_error",
     errorPlacement: function (error, element) {
       error.insertAfter(element)
     }

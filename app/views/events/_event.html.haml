@@ -1,7 +1,7 @@
 .col-md-3
   .panel.panel-default
     .panel-heading
-      %p.text-center= link_to event.movement_name, movement_path(event.movement)
+      %p.text-center= link_to event.movement_name, movement_path(event.movement), id: 'movement_name'
     .panel-body
       = link_to image_tag(event.image.url, class: 'front-page img-responsive center-block'), movement_path(event.movement)
 
