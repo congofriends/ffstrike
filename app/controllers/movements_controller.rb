@@ -1,10 +1,10 @@
 class MovementsController < ApplicationController
-  before_filter :authenticate_user!, except: [:visitor, :search, :index, :show]
+  before_filter :authenticate_user!, except: [:search, :index, :show]
   before_filter :load_movement, except: [:new, :create, :index, :user_movements]
-  before_filter :load_event_types, only: [:visitor, :show]
-  before_filter :get_assosiated_movement, only: [:visitor, :show]
+  before_filter :load_event_types, only: [:show]
+  before_filter :get_assosiated_movement, only: [:show]
   before_filter :check_user_owns_movement, only: [:dashboard]
-  before_filter :redirect_unauthorized_user, only: [:visitor, :show]
+  before_filter :redirect_unauthorized_user, only: [:show]
 
   include YoutubeParserHelper
   include ZipHelper
@@ -74,7 +74,7 @@ class MovementsController < ApplicationController
   private
   
   def movement_params
-    params[:movement][:video]= extract_video_id(params[:movement][:video]) if !params[:movement][:video].nil?
+    params[:movement][:video] = extract_video_id(params[:movement][:video]) if !params[:movement][:video].nil?
     params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :video, :about_creator)
   end
 
@@ -87,18 +87,18 @@ class MovementsController < ApplicationController
   end
 
   def get_assosiated_movement
-    @events = @movement.events
+    unless @movement
+      redirect_to root_path, notice: t('movement.not_yours') 
+    else
+      @events = @movement.events
+    end
   end
 
   def check_user_owns_movement
-    unless @movement.users.to_a.include? current_user
-      redirect_to root_path, notice: t('movement.not_yours') 
-    end
+      redirect_to root_path, notice: t('movement.not_yours') unless @movement.users.to_a.include? current_user
   end
 
   def redirect_unauthorized_user
-    unless @movement.authorized?(current_user)
-      redirect_to root_path, notice: t('movement.not_public')
-    end
+      redirect_to root_path, notice: t('movement.not_public') unless @movement.authorized?(current_user)
   end
 end
