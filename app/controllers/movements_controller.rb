@@ -25,6 +25,7 @@ class MovementsController < ApplicationController
   def user_movements
     @movements = current_user.movements
     @events = current_user.events
+    @unapproved_events = current_user.nonapproved_events
   end
 
   def dashboard
