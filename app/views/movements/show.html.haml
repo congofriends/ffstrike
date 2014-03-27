@@ -25,7 +25,7 @@
     - if event.approved
       = render partial: 'events/panel', locals: {event: event}
 
-%h4 Want to create your own event?
+%h3 Want to create your own event?
 %ul.nav.nav-pills.nav-stacked
   - @event_types.each do |event_type|
     - if current_user
@@ -36,14 +36,13 @@
         :rel=> "tooltip", :title => EVENT_DESCRIPTIONS["event_type"]["#{event_type.downcase.gsub(' ', '_')}"]["short_description"]
 
 .row.more_movements_row
-  = link_to "Create new movement", new_movement_path, class: "btn btn-primary btn-xl"
-  \- OR -
-  Search for an event near you!  Enter your zip code:
-  = form_tag "/movements", method: "get", class: 'form-inline', id: 'zip-form' do
-    .form-group
-      = search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control'}
-      = hidden_field_tag 'id', value = @movement.id
-    .form-group
-      = button_tag name="Search", class: 'btn btn-default'
-
-
+  %span{:class=> "create_movement_span"}
+    = link_to "Create new movement", new_movement_path, class: "btn btn-primary btn-xl"
+  %span{:class=> "search_event_span"}
+    Search for an event near you!  Enter your zip code:
+    = form_tag "/movements", method: "get", class: 'form-inline', id: 'zip-form' do
+      .form-group
+        = search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control'}
+        = hidden_field_tag 'id', value = @movement.id
+      .form-group
+        = button_tag name="Search", class: 'btn btn-default'
