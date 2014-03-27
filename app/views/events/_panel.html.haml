@@ -2,15 +2,18 @@
   .panel.panel-default
     .panel-heading.event-panel-header
       %h3.text-center= link_to truncate(event.name, :length=>48), event_path(event)
-      %p.text-info.small.text-right 
-        Type: 
-        = event.type
 
     .panel-footer.event-panel-footer
       .text-left
-        .leadltext-right
+        %p.leadltext-right
           = event.number_of_attendees
           Attendees
+        %p 
+          Type: 
+          = event.type
+        %p 
+          Movement: 
+          = link_to event.movement.name, movement_path(event.movement) 
         %p 
           Location: 
           = truncate( event.city, :length=>24 )
