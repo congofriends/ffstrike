@@ -1,15 +1,11 @@
 class MailController < ApplicationController
 
   def mail_attendees
-    if params[:event_id]
-      @event = Event.find_by_param params[:event_id]
-      send_mail(@event)
-      redirect_to event_path(@event)
-    else
-      @movement = Movement.find_by_param params[:movement_id]
-      send_mail(@movement)
-      redirect_to dashboard_movement_path(@movement)
-    end
+    @scope = find_scope params
+    send_mail @scope
+    redirect_to :back
+  rescue ActionController::RedirectBackError
+    redirect_to root_path
   end
 
   private
@@ -20,6 +16,14 @@ class MailController < ApplicationController
       flash[:notice] = t('mail.sent')
     else
       flash[:notice] = t('mail.no_attendees')
+    end
+  end
+
+  def find_scope data
+    if data[:event_id]
+      Event.find_by_param data[:event_id]
+    else
+      Movement.find_by_param data[:movement_id]
     end
   end
 end
