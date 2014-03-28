@@ -1,10 +1,8 @@
-<!-- break out of container --!>
 </div>
 </div>
 </div>
 
 <section id="slide-1">
-  <!-- image courtesy of James Cridland --!>
   <div class="bcg">
     <div class="content">
       <h1>People around the world are organizing.</h1>
@@ -14,17 +12,16 @@
 
 
 <section id="slide-2">
-  <!-- image courtesy of Jonas Nilsson Lee --!> 
   <div class="bcg">
     <div class="content">
       <h1> They've created events near you to change the world.  Find one. </h1>
       <br><br>
       <%= form_tag "/events", method: "get", class: 'form-inline', id: 'zip-form' do %>
         <div class="form-group" >
-          <%= search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control', maxlength: 5} %>
+          <%= search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control', maxlength: 5, id: 'zip'} %>
         </div>
         <div class="form-group">
-          <%= button_tag name="Search", class: 'btn btn-default' %>
+          <%= button_tag name="Search", class: 'btn btn-default', id: 'search_zip' %>
         </div>
       <% end %>
     </div>
@@ -32,7 +29,6 @@
 </section>
 
 <section id="slide-3">
-  <!-- image courtesy of Sebastian Muller --!>
   <div class="bcg">
     <div class="content">
       <h1> 
@@ -43,7 +39,6 @@
   </div>
 </section>
 
-<!-- reenter div to make layout work properly --!>
 <div>
 <div>
 <div>
