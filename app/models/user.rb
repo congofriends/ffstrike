@@ -48,6 +48,10 @@ class User < ActiveRecord::Base
     Event.where(host_id: self.id, approved: false)
   end
 
+  def approved_events
+    Event.where(host_id: self.id, approved: true)
+  end
+
   def events
     Event.where(host_id: self.id)
   end
