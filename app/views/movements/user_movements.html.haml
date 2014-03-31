@@ -1,11 +1,11 @@
 %ul#movementTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}
   %li
-    %a{href: '#movements', data: {toggle: 'tab'}} Movements
+    %a{href: '#movements', data: {toggle: 'tab'}} Movements (#{current_user.movements.count.to_s})
   %li
-    %a{href: '#events', data: {toggle: 'tab'}} Events
+    %a{href: '#events', data: {toggle: 'tab'}} Events (#{current_user.approved_events.count.to_s})
   -if current_user.host_for_nonapproved_events?
     %li
-      %a{href: '#unapproved_events', data: {toggle: 'tab'}} Unapproved Events
+      = link_to "Unapproved Events (#{current_user.nonapproved_events.count.to_s}) " ,  "#unapproved_events", :data=> {toggle: 'tab'} 
 .tab-content
   .tab-pane.fade.in#movements
     = render "tab_my_movement"
