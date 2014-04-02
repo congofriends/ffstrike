@@ -2,7 +2,7 @@
   %li
     %a{href: '#movements', data: {toggle: 'tab'}} Movements (#{current_user.movements.count.to_s})
   %li
-    %a{href: '#events', data: {toggle: 'tab'}} Events (#{current_user.approved_events.count.to_s})
+    %a{href: '#events',id:'event_tab' ,data: {toggle: 'tab'}} Events (#{current_user.approved_events.count.to_s})
   -if current_user.host_for_nonapproved_events?
     %li
       = link_to "Unapproved Events (#{current_user.nonapproved_events.count.to_s}) " ,  "#unapproved_events", :data=> {toggle: 'tab'} 

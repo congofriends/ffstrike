@@ -6,7 +6,7 @@ Background:
   Given I am on the home page
   Given I have an existing movement
 
- Scenario:
+ Scenario: Creating an Event as a Coordinator
  When I select the Rally button
  And I create an event
  Then I can see the confirmation page

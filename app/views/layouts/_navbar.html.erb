@@ -11,7 +11,7 @@
   
   <div class="navbar-collapse collapse navbar-responsive-collapse" id='collapse-1'>
     <ul class="nav navbar-nav">
-      <li><%= link_to "All movements", movements_path %></li>
+      <li><%= link_to "All movements", movements_path, :id=>"all_movements" %></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <% unless current_user.nil? || current_user.movements.empty? %>
@@ -25,7 +25,7 @@
         </li>
       <% end %>
       <% if current_user%>
-        <li><%= link_to "#{user_name_or_email.capitalize}'s Stuff", user_movements_path %></li>
+        <li><%= link_to "#{user_name_or_email.capitalize}'s Stuff", user_movements_path, :id=>"stuff" %></li>
       <% end %>
       <% if current_user.nil? %> 
         <li><%= link_to "Sign In", new_session_path(:user) %></li>
