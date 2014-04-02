@@ -14,6 +14,16 @@
       <li><%= link_to "All movements", movements_path %></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+      <% unless current_user.nil? || current_user.movements.empty? %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dashboards <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <% current_user.movements.each do |movement| %>
+            <li><%= link_to movement.name.capitalize, dashboard_movement_path(movement) %></li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
       <% if current_user%>
         <li><%= link_to "#{user_name_or_email.capitalize}'s Stuff", user_movements_path %></li>
       <% end %>
@@ -22,6 +32,7 @@
       <% else %>
         <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
       <% end %>
+
     </ul>
   </div>
 </nav>
