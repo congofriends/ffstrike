@@ -3,7 +3,7 @@
   .well{id: "event#{event.id}", class: ("approval-background" unless event.approved?)}
     %h4 
       Name: 
-      = event.name
+      = link_to event.name, event_path(event)
     Type: 
     = event.type
     %br

@@ -56,17 +56,12 @@
     <div class='col-md-7'>
       <div class='well'>
         <legend>Coordinator Controls</legend>
-        <% if @movement.published? %>
-          <%= link_to "Published", publish_movement_path(@movement), class: 'btn btn-xs btn-success', disabled: true %>
-        <%else%>
-          <%= link_to "Publish", publish_movement_path(@movement), class: 'btn btn-xs btn-success' %>
-        <%end%>
-        <%= link_to "Review summary page", movement_path(@movement), class: "btn btn-xs btn-primary" %>
-        <%= link_to "Create new movement", new_movement_path, class: "btn btn-default btn-xs" %><br>
-        <%= link_to "Review my all movements", user_movements_path, { class: 'h4 panel-title panel-heading' } %>
+        <%= link_to "Publish", publish_movement_path(@movement), class: 'btn btn-m btn-success' unless @movement.published?%>
+        <%= link_to "Movement Profile", movement_path(@movement), class: "btn btn-xs btn-primary" %>
+        <%= link_to "Create new movement", new_movement_path, class: "btn btn-default btn-xs" %>
+        <%= link_to "Invite More Coordinators", new_user_invitation_path, { class: 'btn btn-xs btn-success' } %>
+        <%= link_to "Export Attendee List", export_csv_path(@movement), class: 'btn btn-xs btn-success' %>
         <%= render "email" %>      
-        <%= link_to "Invite More Coordinators", new_user_invitation_path, { class: 'h4 panel-title panel-heading' } %>
-        <%= link_to "Export Attendee List", export_csv_path(@movement), class: 'btn' %>
       </div>
     </div>
   </div>
