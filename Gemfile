@@ -32,6 +32,8 @@ gem "rmagick"
 gem 'pdfkit'
 gem 'wkhtmltopdf-binary', "0.9.9"
 
+gem 'activerecord-reset-pk-sequence'
+
 gem 'aws-s3'
 gem 'aws-sdk'
 

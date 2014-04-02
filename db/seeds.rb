@@ -8,8 +8,9 @@
 
 Zipcode.destroy_all
 EventType.destroy_all
+EventType.reset_pk_sequence
 
-types = %w(Rally Public\ speak\ out Movie\ screening Public\ forum Meet\ with\ decision\ maker Planning\ meeting Own\ event)
+EVENT_DESCRIPTIONS["event_type"].keys.each { |key| EventType.create(name: key.gsub(/_/, ' ').camelize) }
 
 # Load Zipcodes beginning with 6
 file = "lib/assets/US.txt"
