@@ -16,6 +16,9 @@
         <p class="small">Summary:<em> <%= truncate( movement.tagline , :length=>50) %> </em> </p>
       </div>
       <p class="text-muted small"><em> Created <%= time_ago_in_words(movement.created_at) %> ago </em></p>
+      <% if current_user && movement.users.include?(current_user) %>
+        <p class="small"><%= link_to movement.name + "'s Dashboard", dashboard_movement_path(movement, anchor: "movement"), :class=> "btn btn-success btn-sm" %></p>
+      <% end%>
     </div>
   </div>
 </div>

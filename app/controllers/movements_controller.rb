@@ -24,7 +24,7 @@ class MovementsController < ApplicationController
 
   def user_movements
     @movements = current_user.movements
-    @events = current_user.approved_events
+    @events = current_user.events
     @unapproved_events = current_user.nonapproved_events
   end
 
@@ -68,13 +68,13 @@ class MovementsController < ApplicationController
 
   def update
     @movement.update_attributes(movement_params)
-    redirect_to movement_path(@movement), notice: t('movement.updated') 
+    redirect_to movement_path(@movement), notice: t('movement.updated')
   end
 
   private
-  
+
   def movement_params
-    params[:movement][:video] = extract_video_id(params[:movement][:video]) if !params[:movement][:video].nil?
+    params[:movement][:video]= extract_video_id(params[:movement][:video]) if !params[:movement][:video].nil?
     params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :video, :about_creator)
   end
 
@@ -87,18 +87,18 @@ class MovementsController < ApplicationController
   end
 
   def get_assosiated_movement
-    unless @movement
-      redirect_to root_path, notice: t('movement.not_yours') 
-    else
-      @events = @movement.events
-    end
+    @events = @movement.events
   end
 
   def check_user_owns_movement
-      redirect_to root_path, notice: t('movement.not_yours') unless @movement.users.to_a.include? current_user
+    unless @movement.users.to_a.include? current_user
+      redirect_to root_path, notice: t('movement.not_yours')
+    end
   end
 
   def redirect_unauthorized_user
-      redirect_to root_path, notice: t('movement.not_public') unless @movement.authorized?(current_user)
+    unless @movement.authorized?(current_user)
+      redirect_to root_path, notice: t('movement.not_public')
+    end
   end
 end
