@@ -36,6 +36,7 @@ en:
     deleted: "Event deleted."
     created_by_attendee: "Your event will be viewable to the public as soon as the movement coordinator approves it!"
     failure: "Your account was created but there was a problem with your event." 
+    share: "Share your event"
   movement:
     created: "Congratulations, you just created a movement!"
     updated: "Movement has been updated"
@@ -43,6 +44,7 @@ en:
     published: "Movement has been published"
     not_yours: "You don't own that movement!"
     not_public: "That movement isn't public yet!"
+    share: "Share your passion"
   attendee:
     created: "Thanks for signing up!"
     updated: "Attendee has been updated"

@@ -35,4 +35,4 @@
   .row
     =link_to "Generate PDF with tasks list", event_path(@event, {generate: :tasks, :format => :pdf} ), :target => '_blank' 
 
-=render 'social/share'  
+=render 'social/share', locals: { text: @text = t('event.share') }  
