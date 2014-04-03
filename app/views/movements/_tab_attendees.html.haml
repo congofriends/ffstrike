@@ -16,7 +16,7 @@
           %td= event.notes
           %td 
             %button.btn{type: "button", data: {toggle: "collapse", target: "#event#{event.id}"}}
-              Attendees 
+              Attendees (#{event.attendees.count}) 
               %span.glyphicon.glyphicon-hand-down
         %tr.collapse{id: "event#{event.id}"}
           %td{colspan: "4"}
