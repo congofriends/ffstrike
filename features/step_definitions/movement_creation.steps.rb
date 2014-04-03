@@ -52,6 +52,6 @@ end
 Then(/^A visitor can view my movement/) do
   Capybara.reset_sessions!
   visit movement_path(Movement.last)
-  page.should have_text("Cats Move")
+  page.should have_text("Cats MoveMOVE")
 end
 
