@@ -10,7 +10,8 @@ When(/^I unapprove an event$/) do
 end
 
 When(/^I delete the event$/) do
-  click_link_or_button 'stuff'
+  click_link_or_button @user.name 
+  click_link_or_button 'Profile'
   click_link_or_button 'event_tab'
   click_link('Crazy Event')
   click_link('Edit Event')
