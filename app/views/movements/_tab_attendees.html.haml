@@ -1,6 +1,6 @@
 .tab-pane#attendees
   .well
-    %table.table.table-bordered.table-striped
+    %table.table.table-bordered.table-striped.sortable
       %tr
         %th Event location 
         %th Date
@@ -20,7 +20,7 @@
               %span.glyphicon.glyphicon-hand-down
         %tr.collapse{id: "event#{event.id}"}
           %td{colspan: "4"}
-            %table.table.table-bordered.table-striped
+            %table.table.table-bordered.table-striped.sortable
               %tr
                 %th Name
                 %th Email
