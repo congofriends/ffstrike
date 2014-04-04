@@ -1,0 +1,19 @@
+%ul#eventTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}
+  %li
+    %a{href: '#events', data: {toggle: 'tab'}} Events
+  %li
+    %a{href: '#attendee-events', data: {toggle: 'tab'}} Attendee-Events
+  %li
+    %a{href: '#tasks', data: {toggle: 'tab'}} Tasks
+  %li
+    %a{href: '#attendees', data: {toggle: 'tab'}} Attendees
+
+.tab-content
+  .tab-pane.fade.in#events
+    = render "movements/tab_events"
+  .tab-pane.fade.in#attendee-events
+    = render "movements/tab_attendee_events"
+  .tab-pane.fade.in#tasks
+    = render "movements/tab_tasks"
+  .tab-pane.fade.in#attendees
+    = render "movements/tab_attendees"

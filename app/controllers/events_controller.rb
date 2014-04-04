@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_filter :authenticate_user!, :only => [:destroy]
-  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit] 
-  before_filter :load_movement, :only => [:new, :create, :edit, :update]
+  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit, :dashboard] 
+  before_filter :load_movement, :only => [:new, :create, :edit, :update, :dashboard]
   after_filter :populate_tasks, :only => [:create]
 
   include ZipHelper
@@ -47,6 +47,10 @@ class EventsController < ApplicationController
       redirect_to movement_path(@movement) and return
     end
   end
+  
+  def dashboard
+  end
+
 
   def search
     #FIXME: refactor this method here and in the movements_controller, currently it

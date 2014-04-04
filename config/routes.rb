@@ -22,6 +22,8 @@ Ffstrike::Application.routes.draw do
 
   #events
   resources :events do
+    
+    get 'dashboard' => 'events#dashboard', on: :member,  as: 'dashboard' 
     resources :tasks do
       get 'assign' => 'assignments#assign', on: :member, as: 'assign'
     end
