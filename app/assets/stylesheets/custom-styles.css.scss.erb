@@ -10,14 +10,13 @@
   margin-bottom: 4px;
 }
 
-.best_in_place input {
-  width: 400px;
-}
-
-.best_in_place:hover, .do_hover {
-  padding-right: 1.5em;
-  background: url(<%= asset_path "pencil_icon.png" %>) no-repeat right;
-  cursor: pointer;
+.best_in_place {
+  &:hover, .do_hover {
+    padding-right: 1.5em;
+    background: url(<%= asset_path "pencil_icon.png" %>) no-repeat right;
+    cursor: pointer;
+    }
+  input {width: 400px;}
 }
 
 .tooltip-inner {
@@ -34,11 +33,7 @@
   padding-left: 25px;
 }
 
-#events .col-sm-1 {
-  margin-bottom: 0px;
-}
-
-#events .form-group {
+#events .col-sm-1, .form-group {
   margin-bottom: 0px;
 }
 
