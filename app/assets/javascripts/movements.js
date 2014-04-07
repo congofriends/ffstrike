@@ -2,7 +2,7 @@ $(document).ready(function() {
 /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
 
- //activate first nav-tab and tab-content if nothing is activated currently 
+ //activate first nav-tab and tab-content if nothing is activated currently
  var elementAlreadyActive = false;
  $('.nav-tabs li').each(function(index, li) {
    var element = $(li);
@@ -32,10 +32,11 @@ $(document).ready(function() {
    $this.tab('show');
  });
 
- function refreshHash(){ 
+ function refreshHash(){
    navbox.find('a[href="'+window.location.hash+'"]').tab('show');
+   navbox1.find('a[href="'+window.location.hash+'"]').tab('show');
  }
-  
+
  $(window).bind('hashchange', refreshHash);
  if(window.location.hash) {
    refreshHash();

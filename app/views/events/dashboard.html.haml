@@ -1,6 +1,6 @@
 %ul#eventTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}
   %li
-    %a{href: '#events', data: {toggle: 'tab'}} Events
+    %a{href: '#event', data: {toggle: 'tab'}} Event
   %li
     %a{href: '#attendee-events', data: {toggle: 'tab'}} Attendee-Events
   %li
@@ -9,8 +9,8 @@
     %a{href: '#attendees', data: {toggle: 'tab'}} Attendees
 
 .tab-content
-  .tab-pane.fade.in#events
-    = render "movements/tab_events"
+  .tab-pane.fade.in#event
+    = render "tab_event"
   .tab-pane.fade.in#attendee-events
     = render "movements/tab_attendee_events"
   .tab-pane.fade.in#tasks

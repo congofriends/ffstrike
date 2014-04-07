@@ -19,7 +19,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dashboards <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <% current_user.movements.each do |movement| %>
-            <li><%= link_to movement.name.capitalize, dashboard_movement_path(movement) %></li>
+            <li><%= link_to movement.name.capitalize, dashboard_movement_path(movement, anchor: "movement") %></li>
             <% end %>
           </ul>
         </li>
