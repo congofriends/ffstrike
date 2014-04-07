@@ -15,8 +15,12 @@ $(document).ready(function() {
    $('.tab-content div:first').addClass('active');
  }
 
+function not_movement_dashboard_page() {
+  return location.pathname.match(/movements/) == null;
+};
+
  //redirect to certain tab after CRUD operations on associated models
- var navbox = $('#movementTabs');
+ var navbox = not_movement_dashboard_page() ? $('#eventTabs') : $('#movementTabs');
  navbox.on('click', 'a', function(e) {
    var $this = $(this);
    e.preventDefault();
