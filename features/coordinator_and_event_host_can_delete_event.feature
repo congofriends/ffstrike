@@ -2,7 +2,7 @@ Feature: Coordinator and event host can delete an event
 
 Background:
 Given a user account exists
-Given I am logged in as a user
+Given I am logged in as a Movement Coordinator
 Given I am on the home page
 
 Scenario: Coordinator can delete an event

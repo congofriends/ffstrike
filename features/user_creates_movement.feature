@@ -2,7 +2,7 @@ Feature: Creating a movement as a user
 
 Background:
   Given a user account exists
-  Given I am logged in as a user
+  Given I am logged in as a Movement Coordinator
   Given I am on the home page
 
 Scenario: User creates a complete movement

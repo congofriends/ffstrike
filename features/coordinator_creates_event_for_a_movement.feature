@@ -2,7 +2,7 @@ Feature: Creating an event as a Coordinator with an existing movement
 
 Background:
   Given a user account exists
-  Given I am logged in as a user
+  Given I am logged in as a Movement Coordinator
   Given I am on the home page
   Given I have an existing movement
 
