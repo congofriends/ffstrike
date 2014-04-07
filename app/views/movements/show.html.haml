@@ -26,6 +26,8 @@
       = render partial: 'events/panel', locals: {event: event}
 
 %h3 Want to create your own event?
+
+
 %ul.nav.nav-pills.nav-stacked
   - @event_types.each do |event_type|
     - if current_user

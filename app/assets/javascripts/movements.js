@@ -40,11 +40,28 @@ $(document).ready(function() {
  if(window.location.hash) {
    refreshHash();
  }
+ 
+function update_event_url(type){
+  var eventType = type.replace(/ /g, '+');
+  var url = window.location.origin +  $('#new_event').attr('action') + '/new?type=' + eventType;
+  return url;
+};
+
+function get_description(type) {
+  var eventType = type.toLocaleLowerCase().replace(/ /g, '_');
+  var lookup_val = 'event_type.'.concat(eventType).concat('.full_description');
+  $('.event-description').text(I18n.t(lookup_val));
+};
+
+function not_dashboard_page() {
+  return location.pathname.match(/dashboard/) == null;
+};
 
  $('#event_event_type').on('change', function(){
-   var eventType = this.value.toLocaleLowerCase().replace(/ /g, '_');
-   var lookup = 'event_type.'; 
-   var lookup_val = lookup.concat(eventType).concat('.full_description');
-   $('.event-description').text(I18n.t(lookup_val));
+   get_description(this.value);
+   if(not_dashboard_page) {
+      location.href = update_event_url(this.value);
+   }
  });
+
 });

@@ -1,5 +1,5 @@
 <div class='well'>
-  <legend>Create an <em><%= params[:type]%></em> event!</legend>
+  <legend>Create your <em><%= params[:type]%></em>!</legend>
 
 <% if params[:type]%>
   <% event_desc = 'event_type.' + params[:type].downcase.gsub(' ', '_') + '.full_description' %>
