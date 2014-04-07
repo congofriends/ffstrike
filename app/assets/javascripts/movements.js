@@ -24,17 +24,8 @@ $(document).ready(function() {
    $this.tab('show');
  });
 
- var navbox1 = $('#eventTabs');
- navbox1.on('click', 'a', function(e) {
-   var $this = $(this);
-   e.preventDefault();
-   window.location.hash = $this.attr('href');
-   $this.tab('show');
- });
-
  function refreshHash(){
    navbox.find('a[href="'+window.location.hash+'"]').tab('show');
-   navbox1.find('a[href="'+window.location.hash+'"]').tab('show');
  }
 
  $(window).bind('hashchange', refreshHash);

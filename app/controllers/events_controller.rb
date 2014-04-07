@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   before_filter :authenticate_user!, :only => [:destroy]
   before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit, :dashboard] 
   before_filter :load_movement, :only => [:new, :create, :edit, :update, :dashboard]
+  before_filter :load_event_types, :only => [:edit, :dashboard]
   after_filter :populate_tasks, :only => [:create]
 
   include ZipHelper
@@ -25,8 +26,8 @@ class EventsController < ApplicationController
       format.html
       format.pdf do
         case params[:generate]
-        when 'event' then generate_pdf('events/show', 'event_details.pdf')
-        when 'tasks' then generate_pdf('tasks/index', 'event_tasks.pdf')
+          when 'event' then generate_pdf('events/show', 'event_details.pdf')
+          when 'tasks' then generate_pdf('tasks/index', 'event_tasks.pdf')
         end
       end
     end
@@ -49,9 +50,7 @@ class EventsController < ApplicationController
     end
   end
   
-  def dashboard
-  end
-
+  def dashboard; end
 
   def search
     #FIXME: refactor this method here and in the movements_controller, currently it
@@ -61,9 +60,7 @@ class EventsController < ApplicationController
     @attendee = Attendee.new
   end
 
-  def edit
-    @event_types = EventType.all.map {|e| [e.id, e.name]}
-  end
+  def edit; end
 
   def update
     @event.update(event_params)
@@ -77,8 +74,7 @@ class EventsController < ApplicationController
         format.html { redirect_to event_path(@event) }
       end
         format.json { head :ok }
-    end
-  end
+    endend
 
   def destroy 
     UserMailer.delete_event_message(@event)
@@ -106,6 +102,10 @@ class EventsController < ApplicationController
     else
       @movement = @event.movement
     end
+  end
+
+  def load_event_types
+    @event_types = EventType.all.map {|e| [e.id, e.name]}
   end
 
   def populate_tasks
