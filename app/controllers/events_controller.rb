@@ -74,7 +74,8 @@ class EventsController < ApplicationController
         format.html { redirect_to event_path(@event) }
       end
         format.json { head :ok }
-    endend
+    end
+  end
 
   def destroy 
     UserMailer.delete_event_message(@event)
