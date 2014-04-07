@@ -16,6 +16,8 @@
 //= require turbolinks
 //= require best_in_place
 //= require_tree .
+//= require i18n
+//= require i18n/translations
 //= require jquery.validate
 //= require bootstrap-datepicker
 //= require bootstrap-timepicker

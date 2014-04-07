@@ -60,3 +60,51 @@ en:
     already_taken: "You've already taken this task!"
     signed_up: "Thanks for signing up!"
     for_attendees_only: "Tasks are for attendees only"
+  event_type:
+    rally:
+      short_description: "Host a large public rally or march to garner public and media attention to your cause"
+      full_description: "Rallies are large events (ideally 20 or more people) intended to garner public and media attention to sway 
+              public opinion on an important issue. Rallies can look very different from one another, but generally they have at least
+              1-3 speakers, signs, and chants. They can last anywhere from 10 minutes to all day, but most rallies are 30 minutes to an 
+              hour long. With some time and effort, a good rally can come together in just a few days when necessary, but, if you can, 
+              we suggest giving yourself and your team at least a week to a month to organize a successful rally."
+    public_speak_out:
+      short_description: "Organize a public speak-out to gather concerned citizens together and make your voice heard" 
+      full_description: "The purpose of a public speak-out is to bring together individuals with a similar concern and to garner
+              positive public attention for your cause. You may also chose to invite the media to cover your event. A public speak-out may be
+              smaller than a rally - you can have a successful speak-out and petition event with just 3-10 people. Although not all speak-out 
+              events include a petitioning component, adding a petition can be a good way to engage the public, identify potential activists,
+              and show decision-makers that your issue is popular. A public speak-out could be anywhere from 15 minutes to a whole afternoon of 
+              petitioning. Unlike a rally, speak-out’s are very easy to organize. With a few friends, you could have a speak-out in a few days,
+              but, if you’re planning something more elaborate, you might want to give yourself a week to a month to plan."
+    movie_screening:
+      short_description: "Show a relevant movie to educate the community about your issue"
+      full_description: "To take action, first we need to be educated. A movie screening can be a great first step for many people to 
+              learn about important issues. Hosting a movie screen can be easy and quick to organize. Your movie screening might be for
+              3, 5, or 100 people. You might also decide to add more to your screening like a speaker or a petition drive."
+    public_forum:
+      short_description: "Assemble experts and host a public forum to educate the community on your issue"
+      full_description: "Before we take action, we must be educated. Public forums are intended to inform the general population about
+              important issues. Generally, public forums involve a slate of speakers who are experts in the issue you’re discussing who make their
+              own statements and take questions from the audience. Generally, public forums are polite events where people come to learn information,
+              however, if your topic is controversial you should be prepared for opposition. (clip of health care forums?) A successful public form
+              should have a large turnout - depending on the size of your community you should aim for between 20 and 200 (or more!) people at 
+              your event. These can be great events to grow your movement. Because this event requires a lot of logistics and recruitment,
+              we suggest allowing yourself at least 1-3 months to plan and prepare."
+    meet_with_decision_maker:
+      short_description: "Get key stakeholders together and present your case to an elected official or other decision-maker"
+      full_description: "One thing is for sure - people in power definitely won’t do the right thing unless they’re asked
+              (Often they don’t do it then either - that’s why things like rallies, speak-outs, and petition drives exist. But it’s worth 
+              it to ask!). The intention of a meeting with a decision-maker - be it a city councilperson, state or federal representative,
+              or high school or college administrator - is to make sure they know of your demands. At this meeting, you’ll want 3-5 active
+              movement leaders prepared to speak. Because it often takes time to secure a meeting with decision-makers and prepare your
+              presentation, we recommend giving yourself at least 2 to 6 weeks to organize a meeting, although, in a pinch, you could do it quicker."
+    planning_meeting:
+      short_description: "Get your friends and allies together to plan your next move"
+      full_description: "Planning meetings are crucial to organizing more intricate actions and to building community that will last. A planning
+              meeting could be an impromptu lunch with you and a few other leaders or it could be a larger full-group meeting you plan and
+              schedule weeks in advance. Meetings could to primarily to share information, to make decisions, or to delegate tasks. Just make
+              sure you have a goal and strong agenda to keep things moving (and maybe snacks too...)"
+    own_event:
+      short_description: "Have an idea for a creative event? Use this tool to create tasks and assign them"
+      full_description: "Have an idea for a creative event? Use this tool to create tasks and assign them."

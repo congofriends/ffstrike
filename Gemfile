@@ -61,6 +61,9 @@ gem 'devise_invitable'
 # Geocoding 
 gem 'geocoder'
 
+# Localizing JavaScript 
+gem 'i18n-js'
+
 group :test, :development do
   gem 'rspec'
   gem 'faker'

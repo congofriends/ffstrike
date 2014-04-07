@@ -40,4 +40,11 @@ $(document).ready(function() {
  if(window.location.hash) {
    refreshHash();
  }
+
+ $('#event_event_type').on('change', function(){
+   var eventType = this.value.toLocaleLowerCase().replace(/ /g, '_');
+   var lookup = 'event_type.'; 
+   var lookup_val = lookup.concat(eventType).concat('.full_description');
+   $('.event-description').text(I18n.t(lookup_val));
+ });
 });

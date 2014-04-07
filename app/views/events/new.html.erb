@@ -2,7 +2,10 @@
   <legend>Create an <em><%= params[:type]%></em> event!</legend>
 
 <% if params[:type]%>
-  <%= EVENT_DESCRIPTIONS["event_type"]["#{params[:type].downcase.gsub(' ', '_')}"]["full_description"]%>
+  <% event_desc = 'event_type.' + params[:type].downcase.gsub(' ', '_') + '.full_description' %>
+  <%= t(event_desc)%>
+<%else%>
+  <div class="event-description"><%= t('event_type.rally.full_description') %> </div>
 <% end%>
 
   <%= form_for ([@movement, @event]) do |form| %>
