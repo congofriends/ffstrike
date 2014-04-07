@@ -1,16 +1,15 @@
+home_page = HomePage.new
+
 When(/^I enter a valid zipcode to search$/) do
-  fill_in 'zip', with: '60649'
-  click_link_or_button 'search_zip'
+  home_page.search_by_valid_zipcode()
 end
 
 When(/^I search for a movement with an invalid zipcode$/) do
-  fill_in 'zip', with: 'asdff'
-  click_link_or_button 'search_zip'
+  home_page.search_by_invalid_zipcode()
 end
 
 When(/^I search for a movement with no zipcode$/) do
-  fill_in 'zip', with: ''
-  click_link_or_button 'search_zip'
+	home_page.search_with_no_zipcode()
 end
 
 Then(/^I see movements within the zipcode given$/) do

@@ -1,4 +1,4 @@
-event_dashboard_page = EventDashboardPage.new
+event_show_page = EventShowPage.new
 event_actions_page = EventActionsPage.new
 
 Given(/^I have an existing event$/) do
@@ -9,12 +9,20 @@ Given(/^I have an existing event for the movement with attendees$/) do
   event_actions_page.existing_event_with_attendees(@user)
 end
 
+Given "I am on the $n dashboard" do |name|
+  event_show_page.navigate_to(name)
+end
+
 When(/^I unapprove an event$/) do
   event_actions_page.unapprove_an_event(@user)
 end
 
 When(/^I delete the event$/) do 
-  event_dashboard_page.delete_event(@user)
+  event_show_page.delete_event(@user)
+end
+
+When(/^as an attendee I create an event/)do
+  event_actions_page.create_new_event_as_an_attendee()
 end
 
 When(/^I create an event/)do
@@ -30,19 +38,20 @@ When "I unapprove an event, $n" do |name|
   click_link_or_button('Unapprove')
 end
 
-Then "the event, $n, no longer exists" do |name|
-  visit root_path
-  fill_in 'zip', with: '60649'
-  click_link_or_button 'search_zip'
-  page.should_not have_content(name)
+When(/^I email my attendees for the event/)do
+  event_actions_page.email_attendees_for_an_event()
 end
 
-Then(/^I can provide an email and have it sent out$/) do
-  fill_in 'user_email', with: 'johnjacob@gmail.com'
-  click_link_or_button('Send an invitation')
-  # currently asserting that a movement coordinator can send an email the feature to send it is currently broken
+Then "the event, $n, no longer exists" do |name|
+  visit root_path
+  event_actions_page.event_should_not_exist()
+  page.should_not have_content(name)
 end
 
 Then(/^I can see the confirmation page/)do
   page.should have_text("successfully created a Rally")
+end
+
+Then(/^I am taken to my event page$/) do
+  page.should have_text(Event.last.name)
 end

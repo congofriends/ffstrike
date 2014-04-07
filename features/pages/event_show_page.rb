@@ -1,4 +1,4 @@
-class EventDashboardPage
+class EventShowPage
 include Capybara::DSL
 
 	def delete_event (user)
@@ -8,6 +8,10 @@ include Capybara::DSL
   		click_link('Crazy Event')
   		click_link('Edit Event')
   		click_link('Remove event')		
+	end
+
+	def navigate_to(name)
+		visit "/events/" + name.gsub(/ /, '-') 
 	end
 
 end

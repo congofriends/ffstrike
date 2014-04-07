@@ -25,4 +25,10 @@ include Capybara::DSL
 	def publish_movement
 		click_link_or_button 'create_movement'
 	end
+
+	def create_existing_movement(user)
+		movement = FactoryGirl.create(:published_movement, name: "go Dogs")
+  		ownership = FactoryGirl.create(:ownership, movement: movement, user: user)
+  		visit "movements/"+ movement.name.gsub(/ /, '-')
+	end
 end

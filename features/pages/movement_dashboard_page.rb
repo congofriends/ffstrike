@@ -16,4 +16,9 @@ include Capybara::DSL
 		click_link_or_button('Invite More Coordinators')
 	end
 
+	def can_create_an_email_to_invite_more_corrdinators
+		fill_in 'user_email', with: 'johnjacob@gmail.com'
+  		click_link_or_button('Send an invitation')
+	end
+
 end
