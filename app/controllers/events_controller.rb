@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   before_filter :authenticate_user!, :only => [:destroy]
   before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit, :dashboard] 
   before_filter :load_movement, :only => [:new, :create, :edit, :update, :dashboard]
+  before_filter :redirect_unauthorized_user, :only => [:dashboard, :edit]
   before_filter :load_event_types, :only => [:edit, :dashboard]
   after_filter :populate_tasks, :only => [:create]
 
@@ -118,4 +119,9 @@ class EventsController < ApplicationController
     send_data(pdf, filename: final_doc_name, type: 'application/pdf', disposition: 'inline')
   end
 
+  def redirect_unauthorized_user
+    unless @event.host?(current_user)
+      redirect_to root_path, notice: t('event.not_yours')
+    end
+  end
 end

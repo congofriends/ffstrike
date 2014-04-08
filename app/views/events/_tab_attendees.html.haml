@@ -1,0 +1,39 @@
+.tab-pane#attendees
+  .well
+    %table.table.table-bordered.table-striped.sortable
+      %tr
+        %th Event location 
+        %th Date
+        %th Details 
+        %th See Attendees
+      - @movement.events.each do |event|
+        %tr
+          %td
+            = link_to(event.name, event_path(event))
+            = ":"
+            = event.location 
+          %td= event.date
+          %td= event.notes
+          %td 
+            %button.btn{type: "button", data: {toggle: "collapse", target: "#event#{event.id}"}}
+              Attendees (#{event.attendees.count}) 
+              %span.glyphicon.glyphicon-hand-down
+        %tr.collapse{id: "event#{event.id}"}
+          %td{colspan: "4"}
+            %table.table.table-bordered.table-striped.sortable
+              %tr
+                %th Name
+                %th Email
+                %th Phone number
+                %th Point person?
+                %th Notes
+              - event.attendees.each do |attendee|
+                %tr
+                  %td= attendee.name
+                  %td= attendee.email
+                  %td= attendee.phone_number
+                  %td= attendee.assignments.count > 0 ? "yes" : "no"
+                  %td= best_in_place attendee, :notes, :path=>[event, attendee], :type => :input, :html_attrs => {:class=>"input"}
+              
+
+

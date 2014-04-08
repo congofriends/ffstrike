@@ -2,7 +2,8 @@
   .panel.panel-default
     .panel-heading.event-panel-header
       %h3.text-center= link_to truncate(event.name, :length=>48), event_path(event)
-
+      - if event.host? current_user
+        .text-center= link_to "Dashboard", dashboard_event_path(event, anchor: "event"), :class=> "btn btn-success btn-sm" 
     .panel-footer.event-panel-footer
       .text-left
         %p.leadltext-right

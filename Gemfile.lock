@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/bernat/best_in_place.git
+  revision: df178520bf9ba405baee9528d5dbb630d6ff760c
+  specs:
+    best_in_place (2.1.0)
+      jquery-rails
+      rails (>= 3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -37,8 +45,6 @@ GEM
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt (3.1.7)
-    best_in_place (0.2.3)
-      rails (>= 3.0.0)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -263,7 +269,7 @@ DEPENDENCIES
   assert_difference
   aws-s3
   aws-sdk
-  best_in_place
+  best_in_place!
   better_errors
   capybara
   coffee-rails (~> 4.0.0)

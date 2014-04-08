@@ -41,7 +41,7 @@ gem 'aws-sdk'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 
-gem 'best_in_place'
+gem 'best_in_place', github: 'bernat/best_in_place'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'

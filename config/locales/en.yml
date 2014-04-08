@@ -35,6 +35,7 @@ en:
     updated: "Event updated."
     deleted: "Event deleted."
     created_by_attendee: "Your event will be viewable to the public as soon as the movement coordinator approves it!"
+    not_yours: "You don't own that event!"
     failure: "Your account was created but there was a problem with your event." 
     share: "Share your event"
   movement:

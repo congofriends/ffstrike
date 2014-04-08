@@ -1,10 +1,11 @@
 <div class='well'>
-  <legend>Create your <em><%= params[:type]%></em>!</legend>
 
 <% if params[:type]%>
+  <legend>Create your <em><%= params[:type]%></em>!</legend>
   <% event_desc = 'event_type.' + params[:type].downcase.gsub(' ', '_') + '.full_description' %>
   <%= t(event_desc)%>
 <%else%>
+  <legend>Create your Rally!</legend>
   <div class="event-description"><%= t('event_type.rally.full_description') %> </div>
 <% end%>
 
