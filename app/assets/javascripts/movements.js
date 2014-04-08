@@ -55,7 +55,7 @@ function not_dashboard_page() {
 
  $('#event_event_type').on('change', function(){
    get_description(this.value);
-   if(not_dashboard_page) {
+   if(not_dashboard_page()) {
       location.href = update_event_url(this.value);
    }
  });
