@@ -3,13 +3,6 @@
     <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%=event.id%>">
       <h2> Event: <%= event.name %> (<%= event.type %>) </h2>
     </a>
-    <div id="collapse<%=event.id%>" class="panel-collapse collapse">
-      <div id="tasklist<%=event.id%>">
-        <% event.tasks.each do |task| %>
-          <%= render "tasks/task", task: task, :@event => event %>
-        <% end %>
-      </div>
-      <%= render "tasks/form", event: event %> 
-    </div>
+    <%= render template: "tasks/show", :locals => { event: event} %> 
   </div>
 <% end %>

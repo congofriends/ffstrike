@@ -62,13 +62,10 @@
     <div class='form-group'>
       <%= form.label "Message to attendees" %>
       <%= form.text_field :notes, class: 'form-control' %>
-    </div>
+    </div></br>
 
     <% if current_user %>
-      <div class='form-group'>
-        <%= form.label :host %>
-        <%= form.select :host_id, [[current_user.email, current_user.id]], { class: 'form-control' }, { class: 'form-control' } %>
-      </div>
+        <%= form.hidden_field :host_id, value: current_user.id %>
     <%end%>
       <div class='form-group'>
         <%= form.submit 'Create Event', class: 'btn btn-primary', id: 'create_movement' %>

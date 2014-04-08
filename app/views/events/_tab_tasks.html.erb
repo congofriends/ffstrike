@@ -1,6 +1,7 @@
 <div class='tab-pane' id='tasks'>
   <div class='well'>
-    <h1>Modify Tasks for Events Here</h1>
-    <%= render template: 'tasks/index' %>
+    <h1>Modify Tasks for <%=@event.name%></h1>
+    <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%=@event.id%>"></a>
+    <%= render template: "tasks/show", :locals => {event: @event} %> 
   </div>
 </div>
