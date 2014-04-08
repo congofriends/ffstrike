@@ -3,5 +3,5 @@
     %legend Events
     .panel.panel-default
       .panel-body
-        = render 'events/events_form' 
+        = render partial: 'events/edit_event', collection: @events, as: :event
   = render template: 'events/new'

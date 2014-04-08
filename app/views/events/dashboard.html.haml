@@ -2,18 +2,14 @@
   %li
     %a{href: '#event', data: {toggle: 'tab'}} Event
   %li
-    %a{href: '#attendee-events', data: {toggle: 'tab'}} Attendee-Events
-  %li
     %a{href: '#tasks', data: {toggle: 'tab'}} Tasks
   %li
     %a{href: '#attendees', data: {toggle: 'tab'}} Attendees
 
 .tab-content
   .tab-pane.fade.in#event
-    = render "tab_event"
-  .tab-pane.fade.in#attendee-events
-    = render "movements/tab_attendee_events"
+    = render "tab_event", event: @event
   .tab-pane.fade.in#tasks
-    = render "movements/tab_tasks"
+    = render "tab_tasks"
   .tab-pane.fade.in#attendees
-    = render "movements/tab_attendees"
+    = render "tab_attendees"

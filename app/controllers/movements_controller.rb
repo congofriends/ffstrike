@@ -30,6 +30,7 @@ class MovementsController < ApplicationController
 
   def dashboard
     @event = Event.new
+    @events = current_user.events
     @event_types = EventType.all.map {|e| [e.id, e.name]}
   end
 
