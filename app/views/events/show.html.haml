@@ -30,7 +30,7 @@
       = link_to "I want to attend", new_event_attendee_path(event_id: @event), class: "btn btn-success btn-sm"
 
   - @event.tasks.each do |task|
-    =render task
+    =render task, event: @event
 
   .row
     =link_to "Generate PDF with tasks list", event_path(@event, {generate: :tasks, :format => :pdf} ), :target => '_blank' 
