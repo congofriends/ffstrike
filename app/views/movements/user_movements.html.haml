@@ -6,6 +6,8 @@
   -if current_user.host_for_nonapproved_events?
     %li
       = link_to "Unapproved Events (#{current_user.nonapproved_events.count.to_s}) " ,  "#unapproved_events", :data=> {toggle: 'tab'} 
+  %li
+    %a{href: '#attendees',id:'attendee_tab' ,data: {toggle: 'tab'}} Attendees
 .tab-content
   .tab-pane.fade.in#movements
     = render "tab_my_movement"
@@ -13,3 +15,5 @@
     = render "tab_my_events"
   .tab-pane.fade.in#unapproved_events
     = render "tab_my_unapproved_events"
+  .tab-pane.fade.in#attendees
+    = render "tab_my_attendees", events: @events 
