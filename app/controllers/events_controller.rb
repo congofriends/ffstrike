@@ -69,6 +69,8 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.movement.users.include?(current_user)
         format.html { redirect_to dashboard_movement_path(@event.movement, anchor: "events")} 
+        #if current_page(dashboard_movement_path(@event.movement))
+          #redirect_to dashboard_event_path(@event, anchor: "event") if current_page(dashboard_event_path(@event))}
       else 
         format.html { redirect_to event_path(@event) }
       end

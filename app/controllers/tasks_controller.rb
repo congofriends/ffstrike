@@ -1,10 +1,10 @@
-class TasksController < ApplicationController
+class TasksController < ApplicationController 
   before_action :load_event
   before_action :load_task, :only => [:destroy, :edit, :show, :update]
 
   def create
     @task = @event.tasks.build(task_params)
-    flash[:notice] =
+    flash[:notice] = 
       @task.save ? t('task.created') : @task.errors.full_messages.flatten.join('. ')
     respond_to do |format|
       format.html { redirect_to movement_path(@event.movement, anchor: "tasks") }
