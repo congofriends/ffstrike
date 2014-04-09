@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  validates_presence_of :host, :address, :zip, on: :create
+  validates_presence_of :host, :address, :zip, :name,  on: :create
   reverse_geocoded_by :latitude, :longitude
   belongs_to :host, class_name: User
   belongs_to :movement, class_name: Movement

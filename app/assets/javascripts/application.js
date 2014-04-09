@@ -21,4 +21,3 @@
 //= require jquery.validate
 //= require bootstrap-datepicker
 //= require bootstrap-timepicker
-//= require best_in_place.purr

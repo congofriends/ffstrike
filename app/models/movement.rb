@@ -31,7 +31,7 @@ class Movement < ActiveRecord::Base
   end
 
   def movement_events
-    self.events  
+    self.events
   end
 
   def without_events?
