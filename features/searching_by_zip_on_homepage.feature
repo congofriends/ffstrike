@@ -1,4 +1,4 @@
-Feature: Searching for movements by valid zipcode on the homepage and movement page
+Feature: Searching for movements by valid zipcode on the homepage
 
 Scenario: Searching with a valid zipcode
 Given I am on the home page
