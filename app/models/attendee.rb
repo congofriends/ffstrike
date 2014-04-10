@@ -3,7 +3,6 @@ class Attendee < ActiveRecord::Base
   belongs_to :movement
   validates :email, presence: true
   validates :event_id, presence: true
-  validates_presence_of :movement_id
   has_many :assignments, foreign_key: "attendee_id"
   has_many :assigned_tasks, through: :assignments, source: :task
 
