@@ -30,7 +30,7 @@ class MovementsController < ApplicationController
 
   def dashboard
     @event = Event.new
-    @events = @movement.movement_events
+    @events = @movement.events
     @event_types = EventType.all.map {|e| [e.id, e.name]}
   end
 

@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :event_without_address, class: Event do
+    date '2014-04-25'
     notes {Faker::Lorem.paragraph}
     event_type_id {EventType.all.map(&:id).sample}
   end
@@ -11,7 +12,7 @@ FactoryGirl.define do
     city {Faker::Address.city}
     zip {Faker::Address.zip}
     state {Faker::Address.state}
-    date '08/02/90'
+    date '2014-04-25'
     time '22:35'
     notes {Faker::Lorem.sentence}  
     association :host, factory: :user
@@ -30,7 +31,7 @@ FactoryGirl.define do
     city {Faker::Address.city}
     zip {Faker::Address.zip}
     state {Faker::Address.state}
-    date '08/02/90'
+    date '2014-04-25'
     time '22:35'
     notes {Faker::Lorem.sentence}  
     approved false

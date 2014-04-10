@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   validates_presence_of :host, :address, :zip, :name,  on: :create
   reverse_geocoded_by :latitude, :longitude
+  validate :event_date_cannot_be_in_the_past
   belongs_to :host, class_name: User
   belongs_to :movement, class_name: Movement
   belongs_to :event_type
@@ -58,5 +59,9 @@ class Event < ActiveRecord::Base
       lookup = Zipcode.find_by_zip(self.zip)
       self.update_attribute(:latitude, lookup.latitude) unless lookup.nil?
       self.update_attribute(:longitude, lookup.longitude) unless lookup.nil?
+    end
+
+    def event_date_cannot_be_in_the_past
+      errors.add(:date, "can't be in the past") unless (date.empty? || Date.parse(date) > Date.today)
     end
 end
