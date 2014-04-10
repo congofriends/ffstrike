@@ -9,6 +9,9 @@ class Event < ActiveRecord::Base
   has_many :tasks, dependent: :destroy
   after_validation :assign_coordinates
 
+  validates_presence_of :movement_id
+  validates_presence_of :event_type_id
+
   delegate :movement_name, :image,     :to => :movement
   delegate :tagline,                   :to => :movement
   delegate :host_name,          :to => :host
