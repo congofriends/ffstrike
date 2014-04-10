@@ -3,7 +3,6 @@ require 'spec_helper'
 describe AttendeesController do
   let(:movement) { FactoryGirl.create(:movement) }
   let(:event) { FactoryGirl.create(:event, movement: movement) }
-  let(:attendee) { FactoryGirl.create(:attendee, event: event) }
 
   describe "POST #create" do
     context "with valid information" do

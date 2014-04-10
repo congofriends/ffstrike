@@ -28,6 +28,20 @@ describe Event do
     end
   end
 
+  describe "date validation"  do
+    it "is valid if date is not provided" do
+      event = FactoryGirl.build(:event_without_date)
+      expect(event.save).to be_true
+      expect(event.date).to eql("")
+    end
+
+    it "not valid with date which is passed already" do 
+      invalid_event = FactoryGirl.build(:event_with_passed_date)
+      expect(invalid_event.save).to be_false
+      expect(invalid_event.errors.full_messages).to eql(["Date can't be in the past"])
+    end
+  end
+
   describe "#self.near_zip" do
     context "with no distance" do
       it "returns []" do

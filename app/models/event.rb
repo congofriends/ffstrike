@@ -1,13 +1,16 @@
 class Event < ActiveRecord::Base
-  validates_presence_of :host, :address, :zip, :name,  on: :create
   reverse_geocoded_by :latitude, :longitude
-  validate :event_date_cannot_be_in_the_past
   belongs_to :host, class_name: User
   belongs_to :movement, class_name: Movement
   belongs_to :event_type
   has_many :attendees, dependent: :destroy
   has_many :tasks, dependent: :destroy
   after_validation :assign_coordinates
+
+  validates_presence_of :host, :address, :zip, :name,  on: :create
+  validate :event_date_cannot_be_in_the_past
+  validates :movement_id, presence: true
+  validates :event_type_id, presence: true
 
   delegate :movement_name, :image,     :to => :movement
   delegate :tagline,                   :to => :movement

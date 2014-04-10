@@ -1,6 +1,8 @@
 class Attendee < ActiveRecord::Base
   belongs_to :event, class_name: Event
+  #FIXME: why do we have movement if it is always nil 
   belongs_to :movement
+
   validates :email, presence: true
   validates :event_id, presence: true
   has_many :assignments, foreign_key: "attendee_id"

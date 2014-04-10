@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :event_without_address, class: Event do
-    date '2014-04-25'
+    date Date.tomorrow.strftime("%Y-%m-%d") 
     notes {Faker::Lorem.paragraph}
     event_type_id {EventType.all.map(&:id).sample}
   end
@@ -12,7 +12,7 @@ FactoryGirl.define do
     city {Faker::Address.city}
     zip {Faker::Address.zip}
     state {Faker::Address.state}
-    date '2014-04-25'
+    date Date.tomorrow.strftime("%Y-%m-%d")
     time '22:35'
     notes {Faker::Lorem.sentence}  
     association :host, factory: :user
@@ -23,6 +23,14 @@ FactoryGirl.define do
     factory :approved_event do
       approved true
     end
+
+    factory :event_with_passed_date, class: Event do
+      date Date.yesterday.strftime("%Y-%m-%d")
+    end
+
+    factory :event_without_date, class: Event do
+      date ""
+    end
   end
 
   factory :invalid_event, class: Event do
@@ -31,7 +39,7 @@ FactoryGirl.define do
     city {Faker::Address.city}
     zip {Faker::Address.zip}
     state {Faker::Address.state}
-    date '2014-04-25'
+    date Date.tomorrow.strftime("%Y-%m-%d") 
     time '22:35'
     notes {Faker::Lorem.sentence}  
     approved false

@@ -1,11 +1,11 @@
 class Movement < ActiveRecord::Base
   validates_with VideoValidator, fields: [:video]
-  validates_presence_of :name 
   has_many :events, dependent: :destroy
   has_many :attendees, through: :events
   has_many :ownerships
   has_many :users, through: :ownerships
   validates :name, uniqueness: true
+  validates :name, presence: true 
 
   has_attached_file :image, :default_url => 'dog.gif'
 
