@@ -62,6 +62,6 @@ class Event < ActiveRecord::Base
     end
 
     def event_date_cannot_be_in_the_past
-      errors.add(:date, "can't be in the past") unless (date.empty? || Date.parse(date) > Date.today)
+      errors.add(:date, "can't be in the past") if !date.blank? && Date.parse(date) < Date.today
     end
 end
