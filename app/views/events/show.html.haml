@@ -10,8 +10,9 @@
   %p= @event.notes
   %h4 date
   %p= @event.date
-
   = link_to "Generate PDF with event summary", event_path(@event, {generate: :event, :format => :pdf}), :target => '_blank'
+  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.longitude}%2C#{@event.latitude}"
+
   %h3
     Number of attendees:
     %span.badge= @event.number_of_attendees
