@@ -72,6 +72,7 @@ group :test, :development do
   gem 'factory_girl_rails', "~> 4.0"
   gem 'pry'
   gem 'pry-rails'
+  gem 'pry-plus'
   gem 'better_errors'
   gem 'assert_difference'
   gem 'jasmine-rails'

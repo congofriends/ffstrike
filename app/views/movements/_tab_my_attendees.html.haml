@@ -12,7 +12,7 @@
         - event.attendees.each do |attendee|
           %tr
             %td= attendee.name
-            %td= event.name
+            %td= link_to event.name, event_path(event)
             %td= attendee.email
             %td= attendee.phone_number
             %td= attendee.assignments.count > 0 ? "yes" : "no"
