@@ -11,8 +11,8 @@
   %h4 date
   %p= @event.date
   = link_to "Generate PDF with event summary", event_path(@event, {generate: :event, :format => :pdf}), :target => '_blank'
-  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.longitude}%2C#{@event.latitude}"
-
+  = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}"
+  %iframe{frameborder: "0", height: "450", src: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg\r\n    &q=#{@event.latitude}, #{@event.longitude}", style: "border:0", width: "600"}
   %h3
     Number of attendees:
     %span.badge= @event.number_of_attendees

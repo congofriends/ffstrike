@@ -5,7 +5,7 @@
       = @movement.name
     %h2{:class=> "tagline"}= @movement.tagline
     - if current_user && @movement.users.include?(current_user)
-      = link_to @movement.name + "'s Dashboard", dashboard_movement_path(@movement, anchor: "movement"), :class=> "btn btn-success btn-sm" 
+      = link_to @movement.name + "'s Dashboard", dashboard_movement_path(@movement, anchor: "movement"), :class=> "btn btn-success btn-sm"
     %h3 Call To Action
     %p= @movement.call_to_action
     %h3 Description
@@ -16,7 +16,7 @@
     %br
     %h4 About the Movement Creators
     = @movement.about_creator
-
+    = render 'map'
 %br
 
 .row.movements
@@ -31,10 +31,10 @@
 %ul.nav.nav-pills.nav-stacked
   - @event_types.each do |event_type|
     - if current_user
-      = link_to event_type, new_movement_event_path(@movement, {type: event_type }), :id => "#{event_type.downcase.gsub(' ', '_')}", :class => "btn-info badge", 
+      = link_to event_type, new_movement_event_path(@movement, {type: event_type }), :id => "#{event_type.downcase.gsub(' ', '_')}", :class => "btn-info badge",
         :rel=> "tooltip", :title => EVENT_DESCRIPTIONS["event_type"]["#{event_type.downcase.gsub(' ', '_')}"]["short_description"]
     - else
-      = link_to event_type, new_movement_unauthenticated_event_path(@movement, {type: event_type }), :class => "btn-info badge", 
+      = link_to event_type, new_movement_unauthenticated_event_path(@movement, {type: event_type }), :class => "btn-info badge",
         :rel=> "tooltip", :title => EVENT_DESCRIPTIONS["event_type"]["#{event_type.downcase.gsub(' ', '_')}"]["short_description"]
 
 .row.more_movements_row.movements
