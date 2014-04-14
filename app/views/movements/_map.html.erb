@@ -8,6 +8,7 @@
 
       var location_array = [];
       var event_array = [];
+      var event_url_array = [];
       var marker;
       var map;
 
@@ -15,6 +16,7 @@
         if(<%= event.latitude && event.longitude %>){
             location_array.push(new google.maps.LatLng(<%=event.latitude %>, <%=event.longitude %>));
             event_array.push("<%=event.name %>");
+            event_url_array.push("/events/" + "<%=event.to_param %>");
       };
       <% end %>
       var center_location = location_array[0];
@@ -43,7 +45,7 @@
 
           google.maps.event.addListener(marker, 'click', function(marker, i) {
             return function() {
-              infowindow.setContent('<h3>' + event_array[i] + '</h3>');
+              infowindow.setContent('<a href =' + event_url_array[i]+'>' + event_array[i] + '</a>');
               infowindow.open(map, marker);
             }
           }(marker, i));
