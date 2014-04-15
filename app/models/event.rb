@@ -50,7 +50,9 @@ class Event < ActiveRecord::Base
   end
 
   def self.find_by_param input
-    find_by_name input.gsub(/-/, ' ')
+    #TODO: find a more efficiennt solution.
+    Event.all.each {| event| return event if event.to_param == input}
+    #find_by_name input.gsub(/-/, ' ')
   end
 
   def host? user
