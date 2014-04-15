@@ -1,4 +1,4 @@
-class CreateNewMovementPage
+class CreateMovementPage
 include Capybara::DSL
 	def fill_form_and_submit
 		visit "/movements/new"
@@ -27,8 +27,8 @@ include Capybara::DSL
 	end
 
 	def create_existing_movement(user)
-		movement = FactoryGirl.create(:published_movement, name: "go Dogs")
-  		ownership = FactoryGirl.create(:ownership, movement: movement, user: user)
+		@movement = FactoryGirl.create(:published_movement, name: "go Dogs")
+  		ownership = FactoryGirl.create(:ownership, movement: @movement, user: user)
   		visit "movements/"+ movement.name.gsub(/ /, '-')
 	end
 end

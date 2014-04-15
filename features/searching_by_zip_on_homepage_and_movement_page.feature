@@ -5,7 +5,7 @@ Given I am on the home page
 And a user account exists
 And I have an existing event
 When I enter a valid zipcode to search
-Then I see movements within the zipcode given
+Then I see events within the zipcode given
 
 Scenario: Searching with an invalid zipcode
 Given I am on the home page

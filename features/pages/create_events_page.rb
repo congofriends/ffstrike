@@ -1,4 +1,4 @@
-class EventActionsPage
+class CreateEventsPage
 include Capybara::DSL
 	def create_new_event
 		fill_in 'event_name', with: 'Cats and Dogs'
@@ -27,15 +27,19 @@ include Capybara::DSL
 	end
 
 	def existing_event_with_attendees(user)
-		movement = Movement.last
-  		ownership = FactoryGirl.create(:ownership, movement: movement, user: user)
-  		event = FactoryGirl.create(:approved_event, host: user, zip: '60649', movement: movement, name: "Crazy Event")
-	  	attendee = FactoryGirl.create(:attendee, movement: movement, event: event)
+		@movement = Movement.last
+  		ownership = FactoryGirl.create(:ownership, movement: @movement, user: user)
+  		@event = FactoryGirl.create(:approved_event, host: user, zip: '60649', movement: @movement, name: "Crazy Event")
+	  	attendee = FactoryGirl.create(:attendee, movement: @movement, event: @event)
 	end
 
-	def unapprove_an_event(user)
-		movement = FactoryGirl.create(:published_movement, name: "go Dogs")
-  		event = FactoryGirl.create(:event, host: user, zip: '60649', movement: movement, name: "Crazy Event", approved: "false")
+	def unapprove_event(event)
+		event.update(approved: "false")
+	end
+
+	def navigate_to()
+		name = Movement.last.name
+		visit "/movements/" + name.gsub(/ /, '-')
 	end
 
 	def select_rally
@@ -48,6 +52,8 @@ include Capybara::DSL
 	end
 
 	def email_attendees_for_an_event ()
+		name = Event.last.name
+		visit "/events/"+ name.gsub(/ /, '-') 
 		click_link ('Email Event Attendees')
   		fill_in 'message', with: 'Chicago, New York and Tennessee events went great, keep up the good work!!!'
   		click_link_or_button ('Send Email')	

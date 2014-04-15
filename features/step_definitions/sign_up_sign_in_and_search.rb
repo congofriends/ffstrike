@@ -25,7 +25,7 @@ When(/^provide my new login credentials$/) do
   	home_page.fill_in_sign_up_form()
 end		
 
-Then(/^I see movements within the zipcode given$/) do
+Then(/^I see events within the zipcode given$/) do
   page.has_selector? 'movement_name'
 end
 
