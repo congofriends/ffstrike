@@ -9,7 +9,7 @@
     - if params[:type]
       = EVENT_DESCRIPTIONS["event_type"]["#{params[:type].downcase.gsub(' ', '_')}"]["full_description"]
 
-  = form_tag movement_unauthenticated_events_path do
+  = form_tag movement_unauthenticated_events_path, id: 'new_event' do
     .form-group.col-sm-6
       = label :event, :event_type_id
       - if params[:type].nil?

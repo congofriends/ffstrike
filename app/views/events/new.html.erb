@@ -5,7 +5,7 @@
   <% event_desc = 'event_type.' + params[:type].downcase.gsub(' ', '_') + '.full_description' %>
   <%= t(event_desc)%>
 <%else%>
-  <legend>Create your Rally!</legend>
+  <legend>Create your Event!</legend>
   <div class="event-description"><%= t('event_type.rally.full_description') %> </div>
 <% end%>
 
