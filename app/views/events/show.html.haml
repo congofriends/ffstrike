@@ -1,3 +1,6 @@
+= content_for :head do
+  = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg&sensor=false"
+
 .col-sm-6
   .row
     %h3 event details for #{@event.name}

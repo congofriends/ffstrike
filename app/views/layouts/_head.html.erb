@@ -8,7 +8,5 @@
   <%= stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= favicon_link_tag '/favicon.ico' %>
-  <script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg&sensor=false">
-  </script>
+  <%= yield :head %>
 </head>
