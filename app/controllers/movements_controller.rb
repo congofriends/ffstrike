@@ -53,7 +53,16 @@ class MovementsController < ApplicationController
     end
   end
 
-	def show;end
+	def show
+    # gon.events = @movement.events.map { |e| [e.latitude, e.longitude, e.name, '/events/'+e.to_param] }
+    # gon.movement = @movement
+    # @zips = @movement.events.map {|e| [e.latitude, e.longitude]} 
+    @events = @movement.events
+    respond_to do |format|
+      format.html { render 'show' }
+      format.json { render json: @events }
+    end
+  end
 
   def export_csv
     send_data @movement.to_csv, filename: "Attendee List"

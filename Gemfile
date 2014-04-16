@@ -64,6 +64,8 @@ gem 'geocoder'
 # Localizing JavaScript 
 gem 'i18n-js'
 
+gem 'gon'
+
 group :test, :development do
   gem 'rspec'
   gem 'faker'
