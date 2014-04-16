@@ -39,6 +39,7 @@ class MovementsController < ApplicationController
   end
 
   def new_submovement
+    session[:parent_id] = session[:movement_id]
     @movement = Movement.new
     render :new
   end
@@ -60,7 +61,7 @@ class MovementsController < ApplicationController
 
   def show
     gon.events = @movement.events.reject { |e| e.latitude.nil? || e.longitude.nil? }
-    #session[:movement] = @movement.id
+    session[:movement_id] = @movement.id
   end
 
   def export_csv
@@ -83,8 +84,9 @@ class MovementsController < ApplicationController
   private
 
   def movement_params
+    params[:movement][:parent_id] ||= session[:parent_id]
     params[:movement][:video]= extract_video_id(params[:movement][:video]) if !params[:movement][:video].nil?
-    params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :video, :about_creator)
+    params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :video, :about_creator, :parent_id)
   end
 
   def load_movement
