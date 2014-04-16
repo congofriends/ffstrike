@@ -1,6 +1,6 @@
 class MovementsController < ApplicationController
   before_filter :authenticate_user!, except: [:search, :index, :show]
-  before_filter :load_movement, except: [:new, :create, :index, :user_movements]
+  before_filter :load_movement, except: [:new, :create, :index, :user_movements, :new_submovement]
   before_filter :load_event_types, only: [:show]
   before_filter :get_assosiated_movement, only: [:show]
   before_filter :check_user_owns_movement, only: [:dashboard]
@@ -38,6 +38,11 @@ class MovementsController < ApplicationController
     @movement = Movement.new
   end
 
+  def new_submovement
+    @movement = Movement.new
+    render :new
+  end
+
   def create
     @movement = Movement.new(movement_params)
     if @movement.save
@@ -53,8 +58,9 @@ class MovementsController < ApplicationController
     end
   end
 
-	def show
+  def show
     gon.events = @movement.events.reject { |e| e.latitude.nil? || e.longitude.nil? }
+    #session[:movement] = @movement.id
   end
 
   def export_csv

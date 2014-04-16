@@ -30,6 +30,14 @@ class Movement < ActiveRecord::Base
     find_by_name input.gsub(/-/, ' ')
   end
 
+  def sub_movements
+    Movement.where(parent_id: self.id)
+  end
+
+  def parent
+    Movement.find(self.parent_id )
+  end
+  
   def movement_events
     self.events
   end
@@ -43,7 +51,7 @@ class Movement < ActiveRecord::Base
   end
 
   def self.random(number_of_events = 1)
-    Movement.where(published: true).offset(rand(Movement.where(published: true).count - number_of_events + 1)).first(number_of_events) 
+    where(published: true).offset(rand(where(published: true).count - number_of_events + 1)).first(number_of_events) 
   end
 
   def number_of_attendees
