@@ -1,5 +1,9 @@
 home_page = HomePage.new
 
+Given(/^I am an attendee$/)do
+  visit root_path
+end
+
 When(/^I search for an event from the home page$/) do
   visit root_path
   home_page.search_by_valid_zipcode()
@@ -35,4 +39,16 @@ end
 
 Then(/^I see an error message to provide a valid zipcode$/) do
   page.has_selector? 'zip_error'
+end
+
+Then(/^I can see that I have created a new account$/) do
+  attendee = User.last.name
+  page.should have_content(attendee)
+end
+
+Then(/^I see that I have created a new account and new event$/) do
+  attendee = User.last.name
+  new_event = Event.last.name
+  page.should have_content(attendee)
+  page.should have_content(new_event)
 end

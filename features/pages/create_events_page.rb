@@ -33,10 +33,6 @@ include Capybara::DSL
 	  	attendee = FactoryGirl.create(:attendee, movement: @movement, event: @event)
 	end
 
-	def unapprove_event(event)
-		event.update(approved: "false")
-	end
-
 	def navigate_to()
 		name = Movement.last.name
 		visit "/movements/" + name.gsub(/ /, '-')
@@ -44,11 +40,6 @@ include Capybara::DSL
 
 	def select_rally
 		click_link_or_button('rally')	
-	end
-
-	def event_should_not_exist
-  		fill_in 'zip', with: '60649'
-  		click_link_or_button 'search_zip'
 	end
 
 	def email_attendees_for_an_event ()

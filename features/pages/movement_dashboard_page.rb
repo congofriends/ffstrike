@@ -21,4 +21,8 @@ include Capybara::DSL
   		click_link_or_button('Send an invitation')
 	end
 
+	def unapprove_event(event)
+		event.update(approved: "false")
+	end
+
 end
