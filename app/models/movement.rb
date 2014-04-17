@@ -33,9 +33,9 @@ class Movement < ActiveRecord::Base
   def sub_movements
     Movement.where(parent_id: self.id)
   end
-
+  
   def parent
-    Movement.find(self.parent_id )
+    Movement.find(self.parent_id ) if self.parent_id
   end
   
   def movement_events

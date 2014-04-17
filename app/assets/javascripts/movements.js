@@ -60,4 +60,11 @@ function not_dashboard_page() {
    }
  });
 
+$("#map").on("click", function() {
+  $("#map-canvas").slideToggle();
+});
+
+$(".sub_movements").on("click", function() {
+  $("#sub_movements").slideToggle();
+});
 });

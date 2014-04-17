@@ -5,6 +5,7 @@ class MovementsController < ApplicationController
   before_filter :get_assosiated_movement, only: [:show]
   before_filter :check_user_owns_movement, only: [:dashboard]
   before_filter :redirect_unauthorized_user, only: [:show]
+  before_filter :clear_session_parent_id, except: [:create]
 
   include YoutubeParserHelper
   include ZipHelper
@@ -29,6 +30,7 @@ class MovementsController < ApplicationController
   end
 
   def dashboard
+    session[:movement] = @movement.id
     @event = Event.new
     @events = @movement.events
     @event_types = EventType.all.map {|e| [e.id, e.name]}
@@ -82,6 +84,9 @@ class MovementsController < ApplicationController
   end
 
   private
+  def clear_session_parent_id
+    session[:parent_id] = nil
+  end
 
   def movement_params
     params[:movement][:parent_id] ||= session[:parent_id]

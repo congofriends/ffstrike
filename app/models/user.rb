@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :movements, through: :ownerships
   alias_attribute :host_name, :name
   alias_attribute :host_email, :email
-    
+
   def self.find_for_facebook_oauth(auth)
     User.find_by(:provider => auth.provider, :uid => auth.uid)
   end
