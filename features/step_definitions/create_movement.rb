@@ -11,7 +11,7 @@ end
 
 Given(/^I am logged in as a Movement Coordinator/) do
   visit new_user_session_path
-  home_page.coordinator_log_in()
+  home_page.coordinator_login()
 end
 
 Given(/^I have an existing movement/) do 

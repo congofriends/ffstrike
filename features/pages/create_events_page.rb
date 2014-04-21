@@ -18,6 +18,7 @@ include Capybara::DSL
   		fill_in 'user_password', with: 'movement1234'
   		fill_in 'user_password_confirmation', with: 'movement1234'
   		click_link_or_button('Create a user and event')
+		return self
 	end
 
 	def create_existing_event(user)
@@ -36,10 +37,13 @@ include Capybara::DSL
 	def navigate_to()
 		name = Movement.last.name
 		visit "/movements/" + name.gsub(/ /, '-')
+		return self
 	end
 
 	def select_rally
 		click_link_or_button('rally')	
+		return self
+
 	end
 
 	def email_attendees_for_an_event ()
