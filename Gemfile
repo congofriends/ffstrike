@@ -79,6 +79,8 @@ group :test, :development do
   gem 'assert_difference'
   gem 'jasmine-rails'
   gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'selenium-webdriver'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
 end

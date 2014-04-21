@@ -6,6 +6,11 @@ class Users::InvitationsController < Devise::InvitationsController
     resource_class.invite!(custom_params, current_inviter, &block)
   end
 
+  def new
+    self.resource = resource_class.new
+    render :new
+  end
+
   def edit
     @movement = Movement.find resource.name
     resource.name = nil
@@ -14,7 +19,6 @@ class Users::InvitationsController < Devise::InvitationsController
   end
 
   def update
-    binding.pry
     self.resource = resource_class.accept_invitation!(update_resource_params)
     inviter = User.find(resource.invited_by_id)
     movement = Movement.find(params[:movement_id])

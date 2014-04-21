@@ -1,10 +1,10 @@
 class EventDashboardPage
 include Capybara::DSL
+include BestInPlace::TestHelpers
 	
 	def edit_event
 		# new_address = Event.last.address
   		click_link_or_button('Dashboard')
-  		click_link_or_button('best_in_place')
   		# need to grab the id of the event to grab the element
   		fill_in 'address', with: '123 this street'
   		click_link_or_button('Update')

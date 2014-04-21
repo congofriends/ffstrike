@@ -31,6 +31,13 @@
 %h3.sub_movements Sub Movements
 %div#sub_movements= render @movement.sub_movements 
 .row.movements
+
+%h3 Sub_Events:
+- @sub_events.each do |event|
+  - if event.approved
+    %li= link_to event.name, event_path(event)
+
+.row.movements
   %h3 Events:
   - @events.each do |event|
     - if event.approved

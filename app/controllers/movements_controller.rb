@@ -2,7 +2,7 @@ class MovementsController < ApplicationController
   before_filter :authenticate_user!, except: [:search, :index, :show]
   before_filter :load_movement, except: [:new, :create, :index, :user_movements, :new_submovement]
   before_filter :load_event_types, only: [:show]
-  before_filter :get_assosiated_movement, only: [:show]
+  before_filter :get_events, only: [:show]
   before_filter :check_user_owns_movement, only: [:dashboard]
   before_filter :redirect_unauthorized_user, only: [:show]
   before_filter :clear_session_parent_id, except: [:create]
@@ -64,6 +64,8 @@ class MovementsController < ApplicationController
   def show
     gon.events = @movement.events.reject { |e| e.latitude.nil? || e.longitude.nil? }
     session[:movement_id] = @movement.id
+    @sub_events = []
+    @movement.sub_movements.each { |sub_movement| @sub_events.concat sub_movement.events }
   end
 
   def export_csv
@@ -102,7 +104,7 @@ class MovementsController < ApplicationController
     @event_types = EventType.names
   end
 
-  def get_assosiated_movement
+  def get_events
     @events = @movement.events
   end
 
