@@ -1,24 +1,32 @@
-<div class="col-md-3">
-  <div class='panel panel-default'>
-    <div class='panel-heading'>
-      <p class='text-center'><%= link_to movement.name, movement_path(movement) %></p> 
-    </div>
+<div class="row">
+  <div class="col-md-8">
+    <div class="bs-component">
+    <div class='panel panel-default'>
 
-    <div class='panel-body'>
-      <%= link_to image_tag(movement.image.url, class: 'front-page img-responsive center-block'), movement_path(movement) %>
-    </div>
-
-    <div class='panel-footer movement-panel-footer'>
-      <div class='text-left'>
-        <p class="text-right"><%= movement.number_of_attendees %> Attendees</p>
-        <p class="small">Locations: <%= truncate( movement.locations , :length=>24) %></p>
-        <p class="small">Organizers: <%= truncate( (movement.users.map(&:email).join(", ") if !movement.users.empty?), :length=>20 ) %> </p>
-        <p class="small">Summary:<em> <%= truncate( movement.tagline , :length=>50) %> </em> </p>
+    <div class='panel-body move'>
+      <div class='media-move'>
+        <div class="move-img">
+          <%= link_to image_tag(movement.image.url, class: 'front-page img-movement'), movement_path(movement) %>
+        </div>
+        <div class="move-name"> 
+          <%= movement.name %>
+          <p><%= movement.tagline %></p>
+          <p><%= movement.call_to_action %></p>
+          <div class="mvmt-details">
+            <div class="mvmt-attendee"><%= movement.number_of_attendees %> Attendees</div>
+            <div class="mvmt-location">Locations: <%= truncate(movement.locations, :length=>24) %></div>
+          </div>  
+        </div>
       </div>
-      <p class="text-muted small"><em> Created <%= time_ago_in_words(movement.created_at) %> ago </em></p>
-      <% if current_user && movement.users.include?(current_user) %>
-        <p class="small"><%= link_to movement.name + "'s Dashboard", dashboard_movement_path(movement, anchor: "movement"), :class=> "btn btn-success btn-sm" %></p>
-      <% end%>
+        <div class="actions pull-right">
+          <% if current_user && movement.users.include?(current_user) %>
+            <p class="small"><%= link_to "Dashboard", dashboard_movement_path(movement, anchor: "movement") %></p>
+          <% end%>
+        </div>
+
     </div>
+
+  </div>
+  </div>
   </div>
 </div>
