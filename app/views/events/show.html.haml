@@ -19,11 +19,6 @@
   %h3
     Number of attendees:
     %span.badge= @event.number_of_attendees
-  - @event.attendees.each do |attendee|
-    %ul
-      %li.text-muted
-        =attendee.name
-        =attendee.email
   = render partial: "email_event", locals: { event: @event, movement: @movement }
 
   .row
