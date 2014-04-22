@@ -11,7 +11,7 @@
         <div class="move-name"> 
           <%= movement.name %>
           <p><%= movement.tagline %></p>
-          <p><%= movement.call_to_action %></p>
+          <p class="txt-sm"><%= truncate(movement.call_to_action, :length => 200) %></p>
           <div class="mvmt-details">
             <div class="mvmt-attendee"><%= movement.number_of_attendees %> Attendees</div>
             <div class="mvmt-location">Locations: <%= truncate(movement.locations, :length=>24) %></div>
