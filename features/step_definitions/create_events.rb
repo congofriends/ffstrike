@@ -13,8 +13,8 @@ When(/^I make an event/)do
   # create_events_page.navigate_to()
   # create_events_page.select_rally()
   # create_events_page.create_new_event_as_an_attendee()
+  binding.pry
   create_events_page.navigate_to.select_rally.create_new_event_as_an_attendee()
-
 end
 
 When(/^I create an event/)do

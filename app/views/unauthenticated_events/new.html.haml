@@ -18,11 +18,11 @@
         = select :event, :event_type, EventType.all.map(&:name), {:selected => params[:type] }, {class: 'form-control'}
   
     .form-group.col-sm-6
-      = label :event, :event_name
+      = label :event, :event_name, "Event Name *"
       = text_field :event, :name,  class: 'form-control'
   
     .form-group.col-sm-6
-      = label :event, :address
+      = label :event, :address, "Address *"
       = text_field :event, :address, class: 'form-control'
   
     .form-group.col-sm-6
@@ -34,7 +34,7 @@
       = text_field :event, :city, class: 'form-control'
   
     .form-group.col-sm-6
-      = label :event, :zip
+      = label :event, :zip, "Zip *"
       = text_field :event, :zip, class: 'form-control'
   
     .form-group.col-sm-6
