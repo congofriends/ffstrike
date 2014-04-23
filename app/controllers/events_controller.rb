@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_filter :authenticate_user!, :only => [:destroy]
   before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit, :dashboard] 
-  before_filter :load_movement, :only => [:new, :create, :edit, :update, :dashboard]
+  before_filter :load_movement, :only => [:new, :create, :edit, :update, :dashboard, :index]
   before_filter :redirect_unauthorized_user, :only => [:dashboard, :edit]
   before_filter :load_event_types, :only => [:edit, :dashboard]
   after_filter :populate_tasks, :only => [:create]
@@ -13,6 +13,8 @@ class EventsController < ApplicationController
   def new
     @event = Event.new      
   end
+
+  def index; end
 
   def approve
     @event.update(approved: !@event.approved)

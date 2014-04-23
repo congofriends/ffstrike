@@ -9,7 +9,7 @@ describe Event do
 
   it "geocodes" do
     zip = FactoryGirl.create(:zipcode)
-    event = FactoryGirl.create(:event, zip: "60647")
+    event = FactoryGirl.create(:event, zip: zip.zip)
     expect(event.latitude).not_to be_nil 
     expect(event.longitude).not_to be_nil
   end

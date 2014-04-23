@@ -3,14 +3,14 @@
     <div class="bs-component">
     <div class='panel panel-default'>
 
-    <div class='panel-body move'>
+      <div class='panel-body move'>
       <div class='media-move'>
         <div class="move-img">
           <%= link_to image_tag(movement.image.url, class: 'front-page img-movement'), movement_path(movement) %>
         </div>
         <div class="move-name"> 
-          <%= movement.name %>
-          <p><%= movement.tagline %></p>
+          <%= link_to movement.name, movement_path(movement), class: "mvmt-navigation" %>
+          <p><%= link_to truncate(movement.tagline, :length => 200), movement_path(movement), class: "mvmt-navigation" %></p>
           <p class="txt-sm"><%= truncate(movement.call_to_action, :length => 200) %></p>
           <div class="mvmt-details">
             <div class="mvmt-attendee"><%= movement.number_of_attendees %> Attendees</div>
@@ -19,8 +19,9 @@
         </div>
       </div>
         <div class="actions pull-right">
+          <div><%= link_to "Events", movement_events_path(movement) %></div>
           <% if current_user && movement.users.include?(current_user) %>
-            <p class="small"><%= link_to "Dashboard", dashboard_movement_path(movement, anchor: "movement") %></p>
+            <div><p><%= link_to "Dashboard", dashboard_movement_path(movement, anchor: "movement") %></p></div>
           <% end%>
         </div>
 

@@ -107,7 +107,7 @@
 
 #sub_movements { }
 
-.panel-body {
+.move {
   padding: 0px;
   height: 120px;
   .front-page { height: 120px; }
@@ -135,6 +135,24 @@ div > .mvmt-attendee { color: blue; }
 
 .mvmt-details { display: -webkit-box; }
 
-.actions { display: none;}
+.actions {
+  display: none; 
+}
 
-.bs-component:hover .actions{ display: block;  }
+.bs-component:hover .actions{ 
+  display: inline-flex;
+  font-size: 11px; 
+  margin: -120px 5px 0px 0px;
+
+  a { margin: 0px 5px 5px 0px; }
+  div { z-index: 1; }
+}
+
+a.mvmt-navigation {
+  color: #191d1d;
+
+  &:hover {
+    color: #49b1ba;
+    text-decoration: none;
+  }
+}
