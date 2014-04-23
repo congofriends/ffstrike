@@ -15,19 +15,12 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require best_in_place
-//= require_self
 //= require_tree .
+//= stub google_maps
 //= require i18n
 //= require i18n/translations
 //= require jquery.validate
 //= require bootstrap-datepicker
 //= require bootstrap-timepicker
 //= require underscore
-// application.js
-window.onLoad = function(callback) {
-  // binds ready event and turbolink page:load event
-  $(document).ready(callback);
-  $(document).on('page:load',callback);
-};
-
 

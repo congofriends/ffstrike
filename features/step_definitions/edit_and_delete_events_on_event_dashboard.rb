@@ -4,6 +4,7 @@ movement_show_page = MovementShowPage.new
 
 
 When(/^I edit my event$/)do
+binding.pry
   event_dashboard_page.navigate_to()
   event_dashboard_page.edit_event()
 end

@@ -6,12 +6,14 @@ include BestInPlace::TestHelpers
 		# new_address = Event.last.address
   		click_link_or_button('Dashboard')
   		# need to grab the id of the event to grab the element
-  		fill_in 'address', with: '123 this street'
 		event_id = Event.last.id
-		edit_address_id = "span#best_in_place_event_" + event_id.to_s + "_address"
+		edit_address_selector = "span#best_in_place_event_" + event_id.to_s + "_address.best_in_place"
+		edit_address_id = "best_in_place_event_" + event_id.to_s + "_address"
 		click_link_or_button('Dashboard')
-  		within(:css, edit_address_id) do
-	  		fill_in(edit_address_id, with: '123 this street')
+    binding.pry
+  		within(:css, edit_address_selector) do
+	  		binding.pry
+        fill_in(edit_address_id, with: '123 this street')
     	end
   		click_link_or_button('Update')
 	end

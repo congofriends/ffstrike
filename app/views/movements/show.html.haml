@@ -1,5 +1,6 @@
 = content_for :head do
   = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg&sensor=false"
+  = javascript_include_tag "google_maps"
 
 .row.movements
   = image_tag @movement.image, width: 200, :class => "movement_avatar"
@@ -43,7 +44,6 @@
       = render partial: 'events/panel', locals: {event: event}
 
 %h3 Want to create your own event?
-
 
 %ul.nav.nav-pills.nav-stacked
   - @event_types.each do |event_type|
