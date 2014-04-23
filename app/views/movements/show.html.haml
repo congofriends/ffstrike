@@ -1,6 +1,5 @@
 = content_for :head do
   = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg&sensor=false"
-  = javascript_include_tag "google_maps"
 
 .row.movements
   = image_tag @movement.image, width: 200, :class => "movement_avatar"
@@ -64,3 +63,4 @@
         = hidden_field_tag 'id', value = @movement.id
       .form-group
         = button_tag name="Search", class: 'btn btn-default'
+

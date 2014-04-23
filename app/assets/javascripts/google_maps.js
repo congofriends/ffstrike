@@ -45,5 +45,14 @@ ready = function () {
   google.maps.event.addDomListener(window, 'load', initialize);
 };
 
+
+function addEvent(element, event, fn) {
+    if (element.addEventListener)
+        element.addEventListener(event, fn, false);
+    else if (element.attachEvent)
+        element.attachEvent('on' + event, fn);
+}
+addEvent(window, 'load', ready);
+
 $(document).ready(ready);
 $(document).on('page:load', ready);
