@@ -4,7 +4,6 @@ movement_show_page = MovementShowPage.new
 
 
 When(/^I edit my event$/)do
-binding.pry
   event_dashboard_page.navigate_to()
   event_dashboard_page.edit_event()
 end
@@ -25,5 +24,5 @@ end
 
 
 Then(/^I am able to see my changes for the event$/) do
-  pending
+  expect(@event.reload.address).to eq("123 this street")
 end
