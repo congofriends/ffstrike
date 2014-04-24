@@ -8,7 +8,6 @@ Dir[Rails.root.join("features/support/*.rb")].each { |f| require f }
 
 DatabaseCleaner.logger = Rails.logger
 
-
 Cucumber::Rails::Database.javascript_strategy = :transaction
 
 # RSpec.configure do |config|
