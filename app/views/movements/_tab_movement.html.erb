@@ -3,7 +3,7 @@
     <div class= col-md-5>
       <div class='well'>
         <legend>Details</legend>
-        <div class='form-horizontal'> 
+        <div class='form-horizontal'>
           <%= form_for @movement do |form| %>
             <fieldset>
             <div class='form-group'>
@@ -35,6 +35,13 @@
             </div>
 
             <div class='form-group'>
+              <%= form.label :location, class: 'col-md-3 control-label' %>
+              <div class='col-md-9'>
+                <%= form.text_area :location, class: 'form-control' %>
+              </div>
+            </div>
+
+            <div class='form-group'>
               <%= form.label :about_creator, class: 'col-md-3 control-label' %>
               <div class='col-md-9'>
                 <%= form.text_area :about_creator, class: 'form-control' %>
@@ -62,7 +69,7 @@
         <%= link_to "Create new movement", new_movement_path, class: "btn btn-default btn-xs" %>
         <%= link_to "Invite More Coordinators", new_user_invitation_path, { class: 'btn btn-xs btn-success' } %>
         <%= link_to "Export Attendee List", export_csv_path(@movement), class: 'btn btn-xs btn-success' %>
-        <%= render "movements/email" %>      
+        <%= render "movements/email" %>
       </div>
     </div>
   </div>

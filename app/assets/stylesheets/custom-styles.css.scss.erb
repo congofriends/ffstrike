@@ -98,11 +98,11 @@
 }
 
 #map-canvas {
-  height: 100%; 
-  width: 100%; 
-  min-height: 400px; 
-  min-width: 400px;  
-  margin: 10px; 
+  height: 100%;
+  width: 100%;
+  min-height: 400px;
+  min-width: 400px;
+  margin: 10px;
 }
 
 #sub_movements { }
@@ -127,13 +127,36 @@
 }
 
 div > .mvmt-attendee, div > .mvmt-location {
-  font-size: 12px; 
-  margin: 0px 10px 10px 0px; 
+  font-size: 12px;
+  margin: 0px 10px 10px 0px;
 }
 
 div > .mvmt-attendee { color: blue; }
 
 .mvmt-details { display: -webkit-box; }
+
+.actions {
+  display: none;
+}
+
+.bs-component:hover .actions{
+  display: inline-flex;
+  font-size: 11px;
+  margin: -120px 5px 0px 0px;
+
+  a { margin: 0px 5px 5px 0px; }
+  div { z-index: 1; }
+}
+
+.eventName{
+  float: left;
+  margin-right: 10px;
+}
+
+.attendBtn{
+  float: left;
+  margin-top: 25px;
+}
 
 a.mvmt-navigation {
   color: #191d1d;
