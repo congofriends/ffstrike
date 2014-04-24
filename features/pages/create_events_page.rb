@@ -2,22 +2,22 @@ class CreateEventsPage
 include Capybara::DSL
 	def create_new_event
 		fill_in 'event_name', with: 'Cats and Dogs'
-  		fill_in 'event_address', with: '2373'
-  		fill_in 'event_city', with: 'Chicago'
-  		fill_in 'event_zip', with: '60649'
-  		click_link_or_button'create_movement'
+		fill_in 'event_address', with: '2373'
+		fill_in 'event_city', with: 'Chicago'
+		fill_in 'event_zip', with: '60649'
+		click_link_or_button'create_movement'
 	end
 
 	def create_new_event_as_an_attendee
 		fill_in 'event_name', with: 'Cats and Dogs'
-  		fill_in 'event_address', with: '2373'
-  		fill_in 'event_city', with: 'Chicago'
-  		fill_in 'event_zip', with: '60649'
-  		fill_in 'user_name', with: 'Mackenzie'
-  		fill_in 'user_email', with: 'mack@gmail.com'
-  		fill_in 'user_password', with: 'movement1234'
-  		fill_in 'user_password_confirmation', with: 'movement1234'
-  		click_link_or_button('Create a user and event')
+		fill_in 'event_address', with: '2373'
+		fill_in 'event_city', with: 'Chicago'
+		fill_in 'event_zip', with: '60649'
+		fill_in 'user_name', with: 'Mackenzie'
+		fill_in 'user_email', with: 'mack@gmail.com'
+		fill_in 'user_password', with: 'movement1234'
+		fill_in 'user_password_confirmation', with: 'movement1234'
+		click_link_or_button('Create a user and event')
 		return self
 	end
 
@@ -50,8 +50,8 @@ include Capybara::DSL
 		name = Event.last.name
 		visit "/events/"+ name.gsub(/ /, '-')
 		click_link ('Email Event Attendees')
-  		fill_in 'message', with: 'Chicago, New York and Tennessee events went great, keep up the good work!!!'
-  		click_link_or_button ('Send Email')
+  	fill_in 'message', with: 'Chicago, New York and Tennessee events went great, keep up the good work!!!'
+  	click_link_or_button ('Send Email')
 	end
 
 end
