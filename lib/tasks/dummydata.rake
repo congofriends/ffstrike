@@ -67,7 +67,9 @@ namespace :db do
         call_to_action: "Raising consciousness about the challenge of the Congo and supporting Congolese institutions as they strive to bring about peaceful and lasting change",
         published: true,
         video: "vLV9szEu9Ag",
-        extended_description: "Imagine that millions have been killed and continue to die, hundreds of thousands of women have been systematically raped and are still being brutalized, corporate plundering reigns, the 2nd largest rainforest in the world, being destroyed and mass crimes have been committed and remain widespread - yet the world has been deadly silent. This is modern-day Congo. Join the global movement - Break the Silence!")
+        extended_description: "Imagine that millions have been killed and continue to die, hundreds of thousands of women have been systematically raped and are still being brutalized, corporate plundering reigns, the 2nd largest rainforest in the world, being destroyed and mass crimes have been committed and remain widespread - yet the world has been deadly silent. This is modern-day Congo. Join the global movement - Break the Silence!",
+        location: "Global")
+
     movement.users << coordinator
 
     fotc_event1 = movement.events.where(name: "Crisis in the Congo: Building Solidarity in Southern Africa").first_or_create!(
@@ -134,7 +136,8 @@ namespace :db do
         published: true,
         parent_id: movement.id,
         video: "vLV9szEu9Ag",
-        extended_description: "People throughout the globe are taking action and Friends of Congo is amassing the diverse actions to build a unified global movement in support of the Congo. Youth in Japan have organized forums, students in New Zealand have held demonstrations and cell outs, activists in California have passed resolutions in their city councils, house wives in Minnesota have raised funds, grandmothers in Tennessee have written to corporations, professionals in Washington State have divested from bad acting corporations, musicians in Columbia South America have written songs, journalists in Sweden have translated documents and much more is happening than we can list on this page.")
+        extended_description: "People throughout the globe are taking action and Friends of Congo is amassing the diverse actions to build a unified global movement in support of the Congo. Youth in Japan have organized forums, students in New Zealand have held demonstrations and cell outs, activists in California have passed resolutions in their city councils, house wives in Minnesota have raised funds, grandmothers in Tennessee have written to corporations, professionals in Washington State have divested from bad acting corporations, musicians in Columbia South America have written songs, journalists in Sweden have translated documents and much more is happening than we can list on this page.",
+        location: "Global")
 
     sub_movement1.users << coordinator
 
@@ -150,7 +153,8 @@ namespace :db do
         published: true,
         parent_id: movement.id,
         video: "89rKdJjumdA",
-        extended_description: "An historic opportunity exists for ordinary people throughout the globe to participate in a global movement in partnership with the Congolese people as they strive to establish a peaceful and prosperous Congo wherein current and future generations are able to fulfill their enormous human and natural potential.")
+        extended_description: "An historic opportunity exists for ordinary people throughout the globe to participate in a global movement in partnership with the Congolese people as they strive to establish a peaceful and prosperous Congo wherein current and future generations are able to fulfill their enormous human and natural potential.",
+        location: "Global")
 
     sub_movement2.users << submovement_owner
 
@@ -176,5 +180,4 @@ namespace :db do
         approved: true,
         host_id: coordinator.id)
  end
-
 end
