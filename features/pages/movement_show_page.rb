@@ -6,7 +6,7 @@ include Capybara::DSL
 		# Capybara.reset_sessions!
   		# visit movement_path(Movement.last)
 	end
-	
+
 	def visit_movement_show_page (name)
 		visit "/movements/" + name.gsub(/ /, '-')
 	end

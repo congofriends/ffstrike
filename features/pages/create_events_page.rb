@@ -23,15 +23,15 @@ include Capybara::DSL
 
 	def create_existing_event(user)
 		movement = FactoryGirl.create(:published_movement, name: "go Dogs")
-  		ownership = FactoryGirl.create(:ownership, movement: movement, user: user)
-  		event = FactoryGirl.create(:approved_event, host: user, zip: '60649', movement: movement, name: "Crazy Event")	
+  	ownership = FactoryGirl.create(:ownership, movement: movement, user: user)
+  	event = FactoryGirl.create(:approved_event, host: user, zip: '60649', movement: movement, name: "Crazy Event")
 	end
 
 	def existing_event_with_attendees(user)
 		@movement = Movement.last
-  		ownership = FactoryGirl.create(:ownership, movement: @movement, user: user)
-  		@event = FactoryGirl.create(:approved_event, host: user, zip: '60649', movement: @movement, name: "Crazy Event")
-	  	attendee = FactoryGirl.create(:attendee, movement: @movement, event: @event)
+  	ownership = FactoryGirl.create(:ownership, movement: @movement, user: user)
+  	@event = FactoryGirl.create(:approved_event, host: user, zip: '60649', movement: @movement, name: "Crazy Event")
+	  attendee = FactoryGirl.create(:attendee, movement: @movement, event: @event)
 	end
 
 	def navigate_to()
@@ -41,17 +41,17 @@ include Capybara::DSL
 	end
 
 	def select_rally
-		click_link_or_button('rally')	
+		click_link_or_button('rally')
 		return self
 
 	end
 
 	def email_attendees_for_an_event ()
 		name = Event.last.name
-		visit "/events/"+ name.gsub(/ /, '-') 
+		visit "/events/"+ name.gsub(/ /, '-')
 		click_link ('Email Event Attendees')
   		fill_in 'message', with: 'Chicago, New York and Tennessee events went great, keep up the good work!!!'
-  		click_link_or_button ('Send Email')	
+  		click_link_or_button ('Send Email')
 	end
 
 end
