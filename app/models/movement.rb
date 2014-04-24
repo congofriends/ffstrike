@@ -37,6 +37,10 @@ class Movement < ActiveRecord::Base
   def parent
     Movement.find(self.parent_id ) if self.parent_id
   end
+
+  def parent?
+    parent.nil?
+  end
   
   def movement_events
     self.events

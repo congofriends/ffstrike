@@ -8,15 +8,16 @@
     %h1
       = @movement.name
     %h2{:class=> "tagline"}= @movement.tagline
-    - if @movement.parent 
+    - unless @movement.parent? 
       Spawned from:
       = link_to @movement.parent.name, movement_path(@movement.parent.name)
-    - if current_user && @movement.users.include?(current_user)
-      = link_to @movement.name + "'s Dashboard", dashboard_movement_path(@movement, anchor: "movement"), :class=> "btn btn-success btn-sm"
-    - if current_user  
-      = link_to "Create a sub Movement!", new_submovement_path(), :class=> "btn btn-success btn-sm"
-    - else
-      = link_to "Create a sub Movement!", new_unauthenticated_submovement_path(), :class => "btn btn-success btn-sm"
+    - else  
+      - if current_user && @movement.users.include?(current_user)
+        = link_to @movement.name + "'s Dashboard", dashboard_movement_path(@movement, anchor: "movement"), :class=> "btn btn-success btn-sm"
+      - if current_user  
+        = link_to "Create a sub Movement!", new_submovement_path(), :class=> "btn btn-success btn-sm"
+      - else
+        = link_to "Create a sub Movement!", new_unauthenticated_submovement_path(), :class => "btn btn-success btn-sm"
 
     %h3 Call To Action
     %p= @movement.call_to_action
@@ -28,8 +29,10 @@
     %br
     %h4 About the Movement Creators
     = @movement.about_creator
-    #map Events Near you 
-    #map-canvas
+
+    - if @movement.parent?
+      #map Events Near you 
+      #map-canvas
 %br
 
 %h3.sub_movements Sub Movements
