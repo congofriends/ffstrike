@@ -6,6 +6,7 @@ class UnauthenticatedSubmovementsController < ApplicationController
     @user = User.create user_params
     @submovement = Movement.create movement_params
     @submovement.update(parent_id: session[:movement_id])
+    @submovement.users.push(@user)
     sign_in(:user, @user)
     redirect_to dashboard_movement_path(@submovement)
   end
