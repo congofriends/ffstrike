@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require default-theme
+ *= require default-theme.css.scss.erb
  *= require_tree .
  *= require font-awesome
  *= require datepicker 
