@@ -3,6 +3,13 @@ Ffstrike::Application.configure do
   ENV['FACEBOOK_APP_SECRET'] = 'da81b9d419f0dcce05cc2d370411364f'  
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
+  if Rails.env.development? && File.exists?('.env')
+    File.new('.env').each do |line|
+      var, val = line.split('=').map(&:strip)
+      ENV[var] = val
+    end
+  end
+
   config.paperclip_defaults = {
     :storage => :s3, 
     :s3_credentials => { :bucket => ENV['AWS_BUCKET'], 
