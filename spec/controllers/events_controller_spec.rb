@@ -16,7 +16,7 @@ describe EventsController do
     end
   end
 
-  describe "DELETE #delete" do 
+  describe "DELETE #delete" do
     it "deletes the event" do
       sign_in coordinator
       delete :destroy, id: event
@@ -32,7 +32,7 @@ describe EventsController do
   describe "GET #new" do
     before :each do
       sign_in coordinator
-      get "new", movement_id: movement 
+      get "new", movement_id: movement
     end
 
     it "responds successfully" do
@@ -40,21 +40,21 @@ describe EventsController do
     end
 
     it "creates new event" do
-      expect(assigns(:event)).not_to be(nil)       
+      expect(assigns(:event)).not_to be(nil)
     end
   end
 
   describe "PUT #approve" do
     it "approves an unapproved event" do
       event = FactoryGirl.create(:event)
-      put :approve, id: event 
+      put :approve, id: event
       event.reload
       expect(event.approved).to be_true
     end
 
     it "disapproves an approved event" do
       event = FactoryGirl.create(:approved_event)
-      put :approve, id: event 
+      put :approve, id: event
       event.reload
       expect(event.approved).to be_false
     end
@@ -66,8 +66,8 @@ describe EventsController do
     before { post :create, movement_id: movement, event: event }
 
     context "with valid attributes" do
-      it "creates a event" do
-        #FIXME: refactor test to use data from the before and do not create a new object 
+      it "creates an event" do
+        #FIXME: refactor test to use data from the before and do not create a new object
         expect{post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(host_id: coordinator.id)}.to change(Event, :count).by(1)
       end
 
@@ -79,7 +79,7 @@ describe EventsController do
       it "creates a event connected to the movement" do
         expect(Event.last.movement_id).to eq(movement.id)
       end
-          
+
       context "as a coordinator" do
         before :each do
           @controller.stub(:current_user).and_return(coordinator)
@@ -103,7 +103,7 @@ describe EventsController do
         before { @controller.stub(:current_user).and_return(visitor) }
 
         it "sets host to event creator" do
-          post :create, movement_id: movement, event: event 
+          post :create, movement_id: movement, event: event
           expect(Event.last.host).to eq(visitor)
         end
 
@@ -138,14 +138,14 @@ describe EventsController do
         post :create, movement_id: movement, event: event_without_address
         flash[:notice].should == "Host can't be blank Address can't be blank Zip can't be blank Name can't be blank"
       end
-    end 
+    end
   end
 
   describe "GET #search" do
     #FIXME: the same tests are in the movements_controller, update accordingly
     #after refactoring
     it "responds successfully" do
-      get "search", zip: "60647"  
+      get "search", zip: "60647"
       expect(response).to be_success
     end
 
@@ -171,7 +171,7 @@ describe EventsController do
     context "when current user is coordinator" do
       new_note_text = "attribute changed by coordinator"
 
-      before do  
+      before do
         @controller.stub(:current_user).and_return(coordinator)
         put :update, movement_id: movement, id: event, event: {notes: new_note_text}
       end
@@ -181,7 +181,7 @@ describe EventsController do
       end
 
       it "changes attributes" do
-        expect(event.reload.notes).to eql(new_note_text) 
+        expect(event.reload.notes).to eql(new_note_text)
       end
 
       it "redirects to movement page anchored in event" do
@@ -196,7 +196,7 @@ describe EventsController do
     context "when current user is attendee" do
       new_note_text = "attribute changed by attendee"
 
-      before do 
+      before do
         @controller.stub(:current_user).and_return(attendee)
         put :update, movement_id: movement, id: event, event: {notes: new_note_text}
       end

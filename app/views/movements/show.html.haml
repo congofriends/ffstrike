@@ -9,13 +9,13 @@
       %h1
         = @movement.name
       %h2{:class=> "tagline"}= @movement.tagline
-      - unless @movement.parent? 
+      - unless @movement.parent?
         Spawned from:
         = link_to @movement.parent.name, movement_path(@movement.parent.name)
-      - else  
+      - else
         - if current_user && @movement.users.include?(current_user)
           = link_to @movement.name + "'s Dashboard", dashboard_movement_path(@movement, anchor: "movement"), :class=> "btn btn-success btn-sm"
-        - if current_user  
+        - if current_user
           = link_to "Create a sub Movement!", new_submovement_path(), :class=> "btn btn-success btn-sm"
         - else
           = link_to "Create a sub Movement!", new_unauthenticated_submovement_path(), :class => "btn btn-success btn-sm"
@@ -54,23 +54,18 @@
 %div#sub_movements= render @movement.sub_movements
 .row.movements
 
-%h3 Sub_Events:
-- @sub_events.each do |event|
-  - if event.approved
-    %li= link_to event.name, event_path(event)
-
 .row.movements
   %h3 Events:
   - @events.each do |event|
     - if event.approved
       = render partial: 'events/panel', locals: {event: event}
 
-.row.more_movements_row.movements
-  %span{:class=> "search_event_span"}
-    Search for an event near you!  Enter your zip code:
-    = form_tag "/movements", method: "get", class: 'form-inline', id: 'zip-form' do
-      .form-group
-        = search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control'}
-        = hidden_field_tag 'id', value = @movement.id
-      .form-group
-        = button_tag name="Search", class: 'btn btn-default'
+/ .row.more_movements_row.movements
+/   %span{:class=> "search_event_span"}
+/     Search for an event near you!  Enter your zip code:
+/     = form_tag "/movements", method: "get", class: 'form-inline', id: 'zip-form' do
+/       .form-group
+/         = search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control'}
+/         = hidden_field_tag 'id', value = @movement.id
+/       .form-group
+/         = button_tag name="Search", class: 'btn btn-default'

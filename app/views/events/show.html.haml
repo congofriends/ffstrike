@@ -5,8 +5,8 @@
   .row
     %h3.eventName= @event.name
     .attendBtn= link_to "I want to attend", new_event_attendee_path(event_id: @event), class: "btn btn-success btn-sm"
-    - if @event.host?(current_user)
-      = link_to @event.name + "'s Dashboard", dashboard_event_path(@event, anchor: "event"), :class=> "btn btn-success btn-sm"
+  - if @event.host?(current_user)
+    = link_to @event.name + "'s Dashboard", dashboard_event_path(@event, anchor: "event"), :class=> "btn btn-success btn-sm"
   %h4 From the Movement: #{link_to @event.movement.name, movement_path(@event.movement)}
   %h4 Location:
   %p= @event.location
@@ -16,7 +16,9 @@
   %h4 Date:
   %p= @event.date
   = link_to "Generate PDF with event summary", event_path(@event, {generate: :event, :format => :pdf}), :target => '_blank'
+
   / = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}"
+
   %iframe{frameborder: "0", height: "450", src: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg\r\n    &q=#{@event.latitude}, #{@event.longitude}", style: "border:0", width: "600"}
   %h3
     Number of attendees:
