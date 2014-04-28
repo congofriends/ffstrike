@@ -3,14 +3,13 @@ Ffstrike::Application.configure do
   ENV['FACEBOOK_APP_SECRET'] = 'da81b9d419f0dcce05cc2d370411364f'  
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
-  #uncomment this rule after AWS S3 account will be bought
-  # config.paperclip_defaults = {
-  #   :storage => :s3, 
-  #   :s3_credentials => { :bucket => ENV['aws_bucket'], 
-  #                        :access_key_id => ENV['aws_access_key'], 
-  #                        :secret_access_key => ENV['aws_secret_access_key'] },
-  #   :path => 'attachments/:id/:style.:extension'
-  # }
+  config.paperclip_defaults = {
+    :storage => :s3, 
+    :s3_credentials => { :bucket => ENV['AWS_BUCKET'], 
+                         :access_key_id => ENV['AWS_ACCESS_KEY'], 
+                         :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'] },
+    :path => 'attachments/:id/:style.:extension'
+  }
 
   # Settings specified here will take precedence over those in config/application.rb.
 
