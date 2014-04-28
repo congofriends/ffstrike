@@ -41,6 +41,17 @@
   .host-event
     %h2 Host an event for congo week!
 
+    
+    .row.more_movements_row.movements
+      %span{:class=> "search_event_span"}
+        Search for an event near you!  Enter your zip code:
+        = form_tag "/movements", method: "get", class: 'form-inline', id: 'zip-form' do
+          .form-group
+            = search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control'}
+            = hidden_field_tag 'id', value = @movement.id
+          .form-group
+            = button_tag name="Search", class: 'btn btn-sm btn-info'
+
     %ul.nav.nav-pills.nav-stacked
       - @event_types.each do |event_type|
         - if current_user
@@ -59,12 +70,3 @@
     - if event.approved
       = render partial: 'events/panel', locals: {event: event}
 
-/ .row.more_movements_row.movements
-/   %span{:class=> "search_event_span"}
-/     Search for an event near you!  Enter your zip code:
-/     = form_tag "/movements", method: "get", class: 'form-inline', id: 'zip-form' do
-/       .form-group
-/         = search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control'}
-/         = hidden_field_tag 'id', value = @movement.id
-/       .form-group
-/         = button_tag name="Search", class: 'btn btn-default'
