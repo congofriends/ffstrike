@@ -11,13 +11,13 @@
           = link_to event.name, event_path(event)
           .lead.text-right= event.number_of_attendees.to_s + " Attendees"
         %p
-          Location: 
+          Location:
           = truncate( event.city, :length=>24 )
         %p
-          Time: 
-          = event.time
+          Time:
+          = event.start_time + " to " + event.end_time
         %p
-          Organizer: 
+          Organizer:
           = truncate( event.host_name || event.host_email , :length=>20)
         %p
           Summary:

@@ -1,8 +1,9 @@
 FactoryGirl.define do
   factory :event_without_address, class: Event do
-    date Date.tomorrow.strftime("%Y-%m-%d") 
     notes {Faker::Lorem.paragraph}
     event_type_id {EventType.all.map(&:id).sample}
+    start_time DateTime.now+1000
+    end_time DateTime.now + 10000
   end
 
   factory :event do
@@ -12,9 +13,9 @@ FactoryGirl.define do
     city {Faker::Address.city}
     zip {Faker::Address.zip}
     state {Faker::Address.state}
-    date Date.tomorrow.strftime("%Y-%m-%d")
-    time '22:35'
-    notes {Faker::Lorem.sentence}  
+    start_time DateTime.now
+    end_time DateTime.now + 6000
+    notes {Faker::Lorem.sentence}
     association :host, factory: :user
     approved false
     event_type_id {EventType.all.map(&:id).sample}
@@ -25,11 +26,12 @@ FactoryGirl.define do
     end
 
     factory :event_with_passed_date, class: Event do
-      date Date.yesterday.strftime("%Y-%m-%d")
+      start_time DateTime.now - 100000
+      end_time DateTime.now + 6000
     end
 
     factory :event_without_date, class: Event do
-      date ""
+      date nil
     end
   end
 
@@ -39,9 +41,9 @@ FactoryGirl.define do
     city {Faker::Address.city}
     zip {Faker::Address.zip}
     state {Faker::Address.state}
-    date Date.tomorrow.strftime("%Y-%m-%d") 
-    time '22:35'
-    notes {Faker::Lorem.sentence}  
+    start_time DateTime.now + 10000
+    end_time DateTime.now + 16000
+    notes {Faker::Lorem.sentence}
     approved false
     event_type_id {EventType.all.map(&:id).sample}
     movement
