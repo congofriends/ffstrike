@@ -1,6 +1,7 @@
 class CreateEventsPage
 include Capybara::DSL
 	def create_new_event
+		# select "option_name_here", :from => "organizationSelect"
 		fill_in 'event_name', with: 'Cats and Dogs'
 		fill_in 'event_address', with: '2373'
 		fill_in 'event_city', with: 'Chicago'

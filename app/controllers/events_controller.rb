@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_filter :authenticate_user!, :only => [:destroy]
-  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit, :dashboard] 
+  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit, :dashboard]
   before_filter :load_movement, :only => [:new, :create, :edit, :update, :dashboard, :index]
   before_filter :redirect_unauthorized_user, :only => [:dashboard, :edit]
   before_filter :load_event_types, :only => [:edit, :dashboard]
@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   def explanation; end
 
   def new
-    @event = Event.new      
+    @event = Event.new
   end
 
   def index; end
@@ -37,6 +37,7 @@ class EventsController < ApplicationController
   end
 
   def create
+    @movement = Movement.find_by_name(params["event"]["movement"]) if params["event"]["movement"] && params["event"]["movement"] != ""
     @event = @movement.events.build(event_params)
     if @event.save
       @event.assign_host_and_approve(current_user)
@@ -52,7 +53,7 @@ class EventsController < ApplicationController
       redirect_to movement_path(@movement) and return
     end
   end
-  
+
   def dashboard; end
 
   def search
@@ -70,15 +71,15 @@ class EventsController < ApplicationController
     flash[:notice] = t('event.updated')
     respond_to do |format|
       if @event.movement.users.include?(current_user)
-        format.html { redirect_to dashboard_movement_path(@event.movement, anchor: "events")} 
-      else 
+        format.html { redirect_to dashboard_movement_path(@event.movement, anchor: "events")}
+      else
         format.html { redirect_to event_path(@event) }
       end
         format.json { head :ok }
     end
   end
 
-  def destroy 
+  def destroy
     UserMailer.delete_event_message(@event)
     @event.destroy
     respond_to do |format|
@@ -111,7 +112,7 @@ class EventsController < ApplicationController
   end
 
   def populate_tasks
-    TaskPopulator.assign_tasks @event 
+    TaskPopulator.assign_tasks @event
   end
 
   def generate_pdf(view_name, final_doc_name)

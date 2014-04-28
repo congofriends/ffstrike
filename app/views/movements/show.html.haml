@@ -2,50 +2,57 @@
   = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg&sensor=false"
   = javascript_include_tag "google_maps"
 
-.row.movements
-  = image_tag @movement.image, width: 200, :class => "movement_avatar"
-  %div{:class=> "movement_info"}
-    %h1
-      = @movement.name
-    %h2{:class=> "tagline"}= @movement.tagline
-    - unless @movement.parent?
-      Spawned from:
-      = link_to @movement.parent.name, movement_path(@movement.parent.name)
-    - else
-      - if current_user && @movement.users.include?(current_user)
-        = link_to @movement.name + "'s Dashboard", dashboard_movement_path(@movement, anchor: "movement"), :class=> "btn btn-success btn-sm"
-      - if current_user
-        = link_to "Create a sub Movement!", new_submovement_path(), :class=> "btn btn-success btn-sm"
+.movement-content
+  .row.movements
+    = image_tag @movement.image, width: 200, :class => "movement_avatar"
+    %div{:class=> "movement_info"}
+      %h1
+        = @movement.name
+      %h2{:class=> "tagline"}= @movement.tagline
+      - unless @movement.parent?
+        Spawned from:
+        = link_to @movement.parent.name, movement_path(@movement.parent.name)
       - else
-        = link_to "Create a sub Movement!", new_unauthenticated_submovement_path(), :class => "btn btn-success btn-sm"
+        - if current_user && @movement.users.include?(current_user)
+          = link_to @movement.name + "'s Dashboard", dashboard_movement_path(@movement, anchor: "movement"), :class=> "btn btn-success btn-sm"
+        - if current_user
+          = link_to "Create a sub Movement!", new_submovement_path(), :class=> "btn btn-success btn-sm"
+        - else
+          = link_to "Create a sub Movement!", new_unauthenticated_submovement_path(), :class => "btn btn-success btn-sm"
 
-    %h3 Call To Action
-    %p= @movement.call_to_action
-    %h3 Description
-    %p= @movement.extended_description
+      %h3 Call To Action
+      %p= @movement.call_to_action
+      %h3 Description
+      %p= @movement.extended_description
 
-    - if @movement.location
-      =@movement.location
+      - if @movement.video?
+        =youtube_embed_url_for_(@movement.video)
 
-    - if @movement.video?
-      =youtube_embed_url_for_(@movement.video)
-    %br
+      - if @movement.location
+        =@movement.location
+
     %h4 About the Movement Creators
     = @movement.about_creator
 
     - if @movement.parent?
       #map Events Near you
       #map-canvas
-%br
+
+  .host-event
+    %h2 Host an event for congo week!
+
+    %ul.nav.nav-pills.nav-stacked
+      - @event_types.each do |event_type|
+        - if current_user
+          = link_to event_type, new_movement_event_path(@movement, {type: event_type }), :id => "#{event_type.downcase.gsub(' ', '_')}", :class => "btn-info badge",
+            :rel=> "tooltip", :title => EVENT_DESCRIPTIONS["event_type"]["#{event_type.downcase.gsub(' ', '_')}"]["short_description"]
+        - else
+          = link_to event_type, new_movement_unauthenticated_event_path(@movement, {type: event_type }), :class => "btn-info badge",
+            :rel=> "tooltip", :title => EVENT_DESCRIPTIONS["event_type"]["#{event_type.downcase.gsub(' ', '_')}"]["short_description"]
 
 %h3.sub_movements Sub Movements
 %div#sub_movements= render @movement.sub_movements
 .row.movements
-
-%h3 Sub_Events:
-- @sub_events.each do |event|
-  - if event.approved
-    %li= link_to event.name, event_path(event)
 
 .row.movements
   %h3 Events:
@@ -53,41 +60,12 @@
     - if event.approved
       = render partial: 'events/panel', locals: {event: event}
 
-%h3 Want to create your own event?
-
-%ul.nav.nav-pills.nav-stacked
-  - @event_types.each do |event_type|
-    - if current_user
-      = link_to event_type, new_movement_event_path(@movement, {type: event_type }), :id => "#{event_type.downcase.gsub(' ', '_')}", :class => "btn-info badge",
-        :rel=> "tooltip", :title => EVENT_DESCRIPTIONS["event_type"]["#{event_type.downcase.gsub(' ', '_')}"]["short_description"]
-    - else
-      = link_to event_type, new_movement_unauthenticated_event_path(@movement, {type: event_type }), :class => "btn-info badge",
-        :rel=> "tooltip", :title => EVENT_DESCRIPTIONS["event_type"]["#{event_type.downcase.gsub(' ', '_')}"]["short_description"]
-
-.row.more_movements_row.movements
-  %span{:class=> "search_event_span"}
-    Search for an event near you!  Enter your zip code:
-    = form_tag "/movements", method: "get", class: 'form-inline', id: 'zip-form' do
-      .form-group
-        = search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control'}
-        = hidden_field_tag 'id', value = @movement.id
-      .form-group
-        = button_tag name="Search", class: 'btn btn-default'
-
-#disqus_thread
-:javascript
-  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-  var disqus_shortname = 'shiftengage'; // required: replace example with your forum shortname
-
-  /* * * DON'T EDIT BELOW THIS LINE * * */
-  (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-%noscript
-  Please enable JavaScript to view the
-  %a{href: "http://disqus.com/?ref_noscript"} comments powered by Disqus.
-%a.dsq-brlink{href: "http://disqus.com"}
-  comments powered by
-  %span.logo-disqus Disqus
+/ .row.more_movements_row.movements
+/   %span{:class=> "search_event_span"}
+/     Search for an event near you!  Enter your zip code:
+/     = form_tag "/movements", method: "get", class: 'form-inline', id: 'zip-form' do
+/       .form-group
+/         = search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control'}
+/         = hidden_field_tag 'id', value = @movement.id
+/       .form-group
+/         = button_tag name="Search", class: 'btn btn-default'
