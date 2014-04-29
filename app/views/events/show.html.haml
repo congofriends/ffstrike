@@ -21,7 +21,7 @@
       %p= @event.notes
   
   
-    .attendBtn= link_to "Become the #{@event.number_of_attendees.ordinalize} attendee!", new_event_attendee_path(event_id: @event), class: "btn btn-success btn-sm", id: "attend-button"
+    .attendBtn= link_to "Become the #{(@event.number_of_attendees + 1).ordinalize} attendee!", new_event_attendee_path(event_id: @event), class: "btn btn-success btn-sm", id: "attend-button"
     %br
   
     %h4.desc find out more about #{link_to @event.movement.name, movement_path(@event.movement)}
