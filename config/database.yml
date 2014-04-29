@@ -16,7 +16,7 @@ test:
 
 production:
   adapter: postgresql
-  database: db/rally_production
+  database: db/rally_development
   pool: 5
   timeout: 5000
   username: 
