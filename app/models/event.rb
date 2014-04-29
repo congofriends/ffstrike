@@ -34,7 +34,7 @@ class Event < ActiveRecord::Base
   end
 
   def date
-    start_time.to_date
+    start_time.to_date if start_time
   end
 
   def location
