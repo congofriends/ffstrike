@@ -68,16 +68,16 @@
     </div>
 
     <div class='form-group'>
-      <%= form.label "Date:" %>
+      <%= form.label "Start Time:" %>
       <div class="form-inline event-date">
-        <%= form.text_field :date, class: 'form-control datepicker'%>
+        <%= form.datetime_select :start_time %>
       </div>
     </div>
 
     <div class='form-group'>
-      <%= form.label "Time:" %>
+      <%= form.label "End Time:" %>
       <div class="form-inline event-date">
-        <%= form.text_field :time, class: 'form-control timepicker' %>
+        <%= form.datetime_select :end_time %>
       </div>
     </div>
 

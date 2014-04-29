@@ -27,8 +27,8 @@ describe MovementsController do
     #after refactoring
     let(:zip) { FactoryGirl.create(:zipcode, zip: "60647") }
     let(:published_movement) { FactoryGirl.create(:published_movement) }
-    let(:event) { published_movement.events.create(zip: zip.zip, approved: true, date: Date.today.strftime("%Y-%m-%d")) }
-    let(:unapproved_event) { published_movement.events.create(zip: zip.zip, approved: false, date: Date.today.strftime("%Y-%m-%d")) }
+    let(:event) { published_movement.events.create(zip: zip.zip, approved: true, start_time: DateTime.now - 1000 ) }
+    let(:unapproved_event) { published_movement.events.create(zip: zip.zip, approved: false, start_time: DateTime.now - 1000) }
 
     before { get "search", id: published_movement, zip: event.zip }
 

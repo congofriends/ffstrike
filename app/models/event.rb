@@ -33,6 +33,10 @@ class Event < ActiveRecord::Base
     attendees.count
   end
 
+  def date
+    start_time.to_date
+  end
+
   def location
     [address, city, zip, state].join(", ")
   end
@@ -42,7 +46,7 @@ class Event < ActiveRecord::Base
   end
 
   def threshold_size?
-    [10, 50].include? self.number_of_attendees 
+    [10, 50].include? self.number_of_attendees
   end
 
   def to_param
@@ -58,7 +62,7 @@ class Event < ActiveRecord::Base
   def host? user
     user && self.host_id == user.id
   end
-                                  
+
   private
     def assign_coordinates
       lookup = Zipcode.find_by_zip(self.zip)
@@ -67,6 +71,6 @@ class Event < ActiveRecord::Base
     end
 
     def event_date_cannot_be_in_the_past
-      errors.add(:date, "can't be in the past") if !date.blank? && Date.parse(date) < Date.today
+      errors.add(:date, "can't be in the past") if date < Date.today
     end
 end

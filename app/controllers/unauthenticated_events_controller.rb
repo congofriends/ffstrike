@@ -1,7 +1,7 @@
 class UnauthenticatedEventsController < ApplicationController
 
   def new
-    @event = Event.new      
+    @event = Event.new
   end
 
   def create
@@ -27,7 +27,7 @@ class UnauthenticatedEventsController < ApplicationController
   private
   def event_params
     params[:event][:event_type_id] = EventType.find_by(name: params[:event][:event_type]).id if params[:event][:event_type]
-    params.require(:event).permit(:event_type_id, :name, :address, :location_details, :city, :zip, :date, :time, :host_id, :notes)
+    params.require(:event).permit(:event_type_id, :name, :address, :location_details, :city, :zip, :start_time, :end_time, :host_id, :notes)
   end
 
   def user_params

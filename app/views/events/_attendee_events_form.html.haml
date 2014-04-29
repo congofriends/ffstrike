@@ -1,23 +1,20 @@
 %h3 Events Created by Others
 - @movement.movement_events.select{|event| !@movement.users.include?(event.host)}.each do |event|
   .well{id: "event#{event.id}", class: ("approval-background" unless event.approved?)}
-    %h4 
-      Name: 
+    %h4
+      Name:
       = link_to event.name, event_path(event)
-    Type: 
+    Type:
     = event.type
     %br
-    Location: 
+    Location:
     = event.location
     %br
-    Message to attendees:  
+    Message to attendees:
     = event.notes
     %br
-    Date: 
-    = event.date
-    %br
-    Approved:  
-    %span{id: "approval_status#{event.id}"} 
+    Approved:
+    %span{id: "approval_status#{event.id}"}
       - case event.approved?
       - when true
         = "Yes"

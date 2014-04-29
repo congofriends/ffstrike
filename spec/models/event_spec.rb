@@ -10,12 +10,12 @@ describe Event do
   it "geocodes" do
     zip = FactoryGirl.create(:zipcode)
     event = FactoryGirl.create(:event, zip: zip.zip)
-    expect(event.latitude).not_to be_nil 
+    expect(event.latitude).not_to be_nil
     expect(event.longitude).not_to be_nil
   end
 
   describe "task assosiation" do
-    before do 
+    before do
       event.save
       2.times { FactoryGirl.create(:task, event: event) }
     end
@@ -29,13 +29,7 @@ describe Event do
   end
 
   describe "date validation"  do
-    it "is valid if date is not provided" do
-      event = FactoryGirl.build(:event_without_date)
-      expect(event.save).to be_true
-      expect(event.date).to eql("")
-    end
-
-    it "not valid with date which is passed already" do 
+    it "not valid with date which is passed already" do
       invalid_event = FactoryGirl.build(:event_with_passed_date)
       expect(invalid_event.save).to be_false
       expect(invalid_event.errors.full_messages).to eql(["Date can't be in the past"])
