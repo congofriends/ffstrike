@@ -6,8 +6,10 @@
             <%= link_to image_tag(movement.image.url, class: 'front-page img-movement'), movement_path(movement) %>
           </div>
           <div class="move-name">
-            <%= link_to movement.name, movement_path(movement), class: "mvmt-navigation" %>
-            <p><%= link_to truncate(movement.tagline, :length => 200, omission: "... See more"), movement_path(movement), class: "mvmt-navigation" %></p>
+            <div class="mvmnt-details">
+              <%= link_to movement.name, movement_path(movement), class: "mvmt-navigation" %>
+              <p><%= link_to truncate(movement.tagline, :length => 200, omission: "... See more"), movement_path(movement), class: "mvmt-navigation" %></p>
+            </div>
             <p class="txt-sm">
               <%= truncate(movement.call_to_action, :length => 200, omission: "... %s") % link_to('See more', movement_path(movement)) %>
             </p>
