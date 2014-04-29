@@ -15,7 +15,7 @@
           = truncate( event.city, :length=>24 )
         %p
           Time:
-          = event.start_time + " to " + event.end_time
+          = event.start_time.to_s + " to " + event.end_time.to_s
         %p
           Organizer:
           = truncate( event.host_name || event.host_email , :length=>20)
