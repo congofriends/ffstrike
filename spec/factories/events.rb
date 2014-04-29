@@ -30,8 +30,12 @@ FactoryGirl.define do
       end_time DateTime.now + 6000
     end
 
+    factory :event_with_end_time_before_start_time, class: Event do
+      start_time DateTime.now + 100000
+      end_time DateTime.now - 6000
+    end
+
     factory :event_without_date, class: Event do
-      date nil
     end
   end
 

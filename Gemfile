@@ -25,6 +25,7 @@ gem 'font-awesome-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # File upload related
 gem "paperclip", "~> 3.0"
@@ -58,10 +59,10 @@ gem 'devise'
 # Invitation system
 gem 'devise_invitable'
 
-# Geocoding 
+# Geocoding
 gem 'geocoder'
 
-# Localizing JavaScript 
+# Localizing JavaScript
 gem 'i18n-js'
 
 gem 'gon'

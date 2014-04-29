@@ -9,6 +9,7 @@ class Event < ActiveRecord::Base
 
   validates_presence_of :host, :address, :zip, :name,  on: :create
   validate :event_date_cannot_be_in_the_past
+  validate :end_time_cannot_be_before_start_time
   validates :movement_id, presence: true
   validates :event_type_id, presence: true
 
@@ -68,6 +69,10 @@ class Event < ActiveRecord::Base
       lookup = Zipcode.find_by_zip(self.zip)
       self.update_attribute(:latitude, lookup.latitude) unless lookup.nil?
       self.update_attribute(:longitude, lookup.longitude) unless lookup.nil?
+    end
+
+    def end_time_cannot_be_before_start_time
+      errors.add(:end_time, "can't be before start time") if end_time < start_time
     end
 
     def event_date_cannot_be_in_the_past

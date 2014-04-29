@@ -13,8 +13,8 @@
   -if @event.notes
     %h4 Notes:
     %p= @event.notes
-  %h4 Date:
-  %p= @event.date
+  %h4 When:
+  %p= @event.start_time.to_formatted_s(:long) + " to " + @event.end_time.to_formatted_s(:long)
   = link_to "Generate PDF with event summary", event_path(@event, {generate: :event, :format => :pdf}), :target => '_blank'
 
   / = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}"

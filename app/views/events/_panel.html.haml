@@ -19,8 +19,8 @@
           Location:
           = truncate( event.city, :length=>24 )
         %p
-          Time:
-          = event.start_time
+          Date:
+          = event.date
         %p
           Organizer:
           = truncate( event.host_name || event.host_email , :length=>20)
