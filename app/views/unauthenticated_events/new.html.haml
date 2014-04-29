@@ -39,12 +39,12 @@
 
     .form-group.col-sm-6
       .input-group
-        %span.input-group-addon Start Time:
-        = datetime_select  :event, :start_time, class: 'form-control datetimepicker'
+        %span.input-group-addon.float_left Start Time:
+        = text_field  :event, :start_time, class: 'form-control datetimepicker'
     .form-group.col-sm-6
       .input-group
         %span.input-group-addon End Time:
-        = datetime_select :event, :end_time, class: 'form-control datetimepicker'
+        = text_field :event, :end_time, class: 'form-control datetimepicker'
 
     %h3.col-sm-12 Sign up to create an event
 

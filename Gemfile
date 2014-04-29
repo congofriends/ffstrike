@@ -26,6 +26,7 @@ gem 'font-awesome-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'rails_serve_static_assets'
 
 # File upload related
 gem "paperclip", "~> 3.0"
