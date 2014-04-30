@@ -62,15 +62,14 @@
           - else
             = link_to event_type, new_movement_unauthenticated_event_path(@movement, {type: event_type }), :class => "btn-info badge",
               :rel=> "tooltip", :title => EVENT_DESCRIPTIONS["event_type"]["#{event_type.downcase.gsub(' ', '_')}"]["short_description"]
-  
+
   %h3.sub_movements Sub Movements
   %div#sub_movements= render @movement.sub_movements
-  
-  .row.movements
-    %h3 Events:
-    - @events.each do |event|
-      - if event.approved
-        = render partial: 'events/panel', locals: {event: event}
+
+  %h3 Events:
+  - @events.each do |event|
+    - if event.approved
+      = render partial: 'events/panel', locals: {event: event}
   
   #disqus_thread
   :javascript
