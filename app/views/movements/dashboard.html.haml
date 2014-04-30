@@ -1,27 +1,28 @@
-%ul#movementTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}
-  %li
-    %a{href: '#movement', data: {toggle: 'tab'}} Movement
-  %li 
-    %a{href: '#events', data: {toggle: 'tab'}} Events 
-  %li 
-    %a{href: '#attendee-events', data: {toggle: 'tab'}} Attendee-Events
-  %li
-    %a{href: '#tasks', data: {toggle: 'tab'}} Tasks
-  %li 
-    %a{href: '#attendees', data: {toggle: 'tab'}} Attendees
-  %li 
-    %a{href: '#successes', data: {toggle: 'tab'}} Successes
-
-.tab-content
-  .tab-pane.fade.in#movement
-    = render "tab_movement"
-  .tab-pane.fade.in#events
-    = render "tab_events"
-  .tab-pane.fade.in#attendee-events
-    = render "tab_attendee_events" 
-  .tab-pane.fade.in#tasks
-    = render "tab_tasks" 
-  .tab-pane.fade.in#attendees
-    = render "tab_attendees"
-  .tab-pane.fade.in#successes
-    = render "tab_successes"
+.container
+  %ul#movementTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}
+    %li
+      %a{href: '#movement', data: {toggle: 'tab'}} Movement
+    %li 
+      %a{href: '#events', data: {toggle: 'tab'}} Events 
+    %li 
+      %a{href: '#attendee-events', data: {toggle: 'tab'}} Attendee-Events
+    %li
+      %a{href: '#tasks', data: {toggle: 'tab'}} Tasks
+    %li 
+      %a{href: '#attendees', data: {toggle: 'tab'}} Attendees
+    %li 
+      %a{href: '#successes', data: {toggle: 'tab'}} Successes
+  
+  .tab-content
+    .tab-pane.fade.in#movement
+      = render "tab_movement"
+    .tab-pane.fade.in#events
+      = render "tab_events"
+    .tab-pane.fade.in#attendee-events
+      = render "tab_attendee_events" 
+    .tab-pane.fade.in#tasks
+      = render "tab_tasks" 
+    .tab-pane.fade.in#attendees
+      = render "tab_attendees"
+    .tab-pane.fade.in#successes
+      = render "tab_successes"

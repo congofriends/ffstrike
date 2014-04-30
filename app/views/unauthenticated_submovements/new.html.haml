@@ -1,64 +1,65 @@
-.row
-  .col-md-10
-    .well
-      .form-horizontal
-        = form_tag unauthenticated_submovements_path do
-          %fieldset
-            .form-group
-              = label :movement, :name, 'Name *', { class: 'col-md-4 control-label' }
-              .col-md-8 
-                = text_field :movement, :name , { class: 'form-control' }
-       
-            .form-group
-              = label :movement, :tagline, { class: 'col-md-4 control-label' } 
-              .col-md-8
-                = text_area :movement,  :tagline, { class: 'form-control' }
-
-            .form-group
-              = label :movement, :call_to_action, { class: 'col-md-4 control-label' } 
-              .col-md-8
-                = text_area :movement, :call_to_action, { class: 'form-control' } 
-
-            .form-group
-              = label :movement, :extended_description, { class: 'col-md-4 control-label' }
-              .col-md-8
-                = text_area :movement, :extended_description, { class: 'form-control' }
-
-            .form-group
-              = label :movement, :about_creator, { class: 'col-md-4 control-label' } 
-              .col-md-8
-                = text_area :movement, :about_creator, { class: 'form-control' } 
-
-            .form-group
-              = label :movement, :image, { class: 'col-md-4 control-label' } 
-              .col-md-8
-                = file_field :movement, :image 
-
-            .form-group
-              = label :movement, :video, "Youtube Link", { class: 'col-md-4 control-label' }
-              .col-md-8
-                = text_field :movement, :video, { class: 'form-control' }
-
-            .form-group
-              = label :movement, :draft, "Save as draft", class: 'col-md-4 control-label' 
-              .col-md-8
-                = check_box :movement, :draft
-
-            .form-group
-              = label :user, :name, 'Name *'
-              = text_field :user, :name, class: 'form-control'
-
-            .form-group.col-sm-6
-              = label :user, :email, 'Email *'
-              = email_field :user, :email, class: 'form-control'
-
-            .form-group.col-sm-6
-              = label :user, :password, 'Password *'
-              = password_field :user, :password, class: 'form-control'
-
-            .form-group.col-sm-6
-              = label :user, :password_confirmation, 'Password confirmation *'
-              = password_field :user, :password_confirmation, class: 'form-control'
-
-            = submit_tag "Create a user and submovement", class: 'btn btn-primary col-sm-12'
-
+.container
+  .row
+    .col-md-10
+      .well
+        .form-horizontal
+          = form_tag unauthenticated_submovements_path do
+            %fieldset
+              .form-group
+                = label :movement, :name, 'Name *', { class: 'col-md-4 control-label' }
+                .col-md-8 
+                  = text_field :movement, :name , { class: 'form-control' }
+         
+              .form-group
+                = label :movement, :tagline, { class: 'col-md-4 control-label' } 
+                .col-md-8
+                  = text_area :movement,  :tagline, { class: 'form-control' }
+  
+              .form-group
+                = label :movement, :call_to_action, { class: 'col-md-4 control-label' } 
+                .col-md-8
+                  = text_area :movement, :call_to_action, { class: 'form-control' } 
+  
+              .form-group
+                = label :movement, :extended_description, { class: 'col-md-4 control-label' }
+                .col-md-8
+                  = text_area :movement, :extended_description, { class: 'form-control' }
+  
+              .form-group
+                = label :movement, :about_creator, { class: 'col-md-4 control-label' } 
+                .col-md-8
+                  = text_area :movement, :about_creator, { class: 'form-control' } 
+  
+              .form-group
+                = label :movement, :image, { class: 'col-md-4 control-label' } 
+                .col-md-8
+                  = file_field :movement, :image 
+  
+              .form-group
+                = label :movement, :video, "Youtube Link", { class: 'col-md-4 control-label' }
+                .col-md-8
+                  = text_field :movement, :video, { class: 'form-control' }
+  
+              .form-group
+                = label :movement, :draft, "Save as draft", class: 'col-md-4 control-label' 
+                .col-md-8
+                  = check_box :movement, :draft
+  
+              .form-group
+                = label :user, :name, 'Name *'
+                = text_field :user, :name, class: 'form-control'
+  
+              .form-group.col-sm-6
+                = label :user, :email, 'Email *'
+                = email_field :user, :email, class: 'form-control'
+  
+              .form-group.col-sm-6
+                = label :user, :password, 'Password *'
+                = password_field :user, :password, class: 'form-control'
+  
+              .form-group.col-sm-6
+                = label :user, :password_confirmation, 'Password confirmation *'
+                = password_field :user, :password_confirmation, class: 'form-control'
+  
+              = submit_tag "Create a user and submovement", class: 'btn btn-primary col-sm-12'
+  

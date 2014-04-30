@@ -3,15 +3,15 @@
 <%= render "layouts/head" %>
 <%= render "layouts/navbar" %>
   <body>
-    <div class= "container1">
+    <div>
     <% flash.each do |key, value| %>
       <div class='flash alert alert-success alert-<%= key %>'><%= value %></div>
     <% end %>
     <div class="whitespace-for-flash container">
       <div class="row">
       </div>
-      <%= yield %>
-      </div>
+    </div>
+    <%= yield %>
     </div>
   </body>
   <%= render "layouts/footer" %>

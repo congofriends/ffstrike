@@ -56,7 +56,9 @@
         </div>
       </div>
     </div>
-    <%= render "social/share", locals: { text: @text= t('movement.share') } %>
+    <div class='col-md-3'>
+      <%= render "social/share", locals: { text: @text= t('movement.share') } %>
+    </div>
   </div>
 
   <div class='row'>

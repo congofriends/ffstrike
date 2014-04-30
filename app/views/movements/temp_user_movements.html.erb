@@ -1,13 +1,15 @@
-<%= link_to "Create new movement", new_movement_path, class: "btn btn-primary btn-xl" %>
-
-<% if current_user.movements.any? %>
-  <h3>You have <%= @movements.count %> movements </h3>
-    <%= render @movements %>
-<% end %> 
-
-<% if current_user.events %><br/>
-  <h3>You have <%= current_user.events.count %> events </h3>
-  <% current_user.events.each do |event| %>
-     <%= render event %>
+<div class="container">
+  <%= link_to "Create new movement", new_movement_path, class: "btn btn-primary btn-xl" %>
+  
+  <% if current_user.movements.any? %>
+    <h3>You have <%= @movements.count %> movements </h3>
+      <%= render @movements %>
+  <% end %> 
+  
+  <% if current_user.events %><br/>
+    <h3>You have <%= current_user.events.count %> events </h3>
+    <% current_user.events.each do |event| %>
+       <%= render event %>
+    <%end%>
   <%end%>
-<%end%>
+</div>

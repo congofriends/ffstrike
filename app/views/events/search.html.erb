@@ -1,7 +1,9 @@
-<% if @events.length == 0 %>
-  <div class='well'>
-    No events were found near the zipcode you provided.
-  </div>
-<% else %>
-  <%= render @events %>
-<% end %>
+<div class="container">
+  <% if @events.length == 0 %>
+    <div class='well'>
+      No events were found near the zipcode you provided.
+    </div>
+  <% else %>
+    <%= render @events %>
+  <% end %>
+</div>
