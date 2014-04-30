@@ -7,8 +7,6 @@ class UnauthenticatedEventsController < ApplicationController
   def create
     @movement = Movement.find_by_param params[:movement_id]
     @user = User.new user_params
-    binding.pry
-
     @event = Event.new event_params
     if @user.save
       sign_in(:user, @user)

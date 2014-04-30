@@ -38,7 +38,6 @@ class EventsController < ApplicationController
 
   def create
     @movement = Movement.find_by_name(params["event"]["movement"]) if params["event"]["movement"] && params["event"]["movement"] != ""
-binding.pry
     @event = @movement.events.build(event_params)
     if @event.save
       @event.assign_host_and_approve(current_user)
