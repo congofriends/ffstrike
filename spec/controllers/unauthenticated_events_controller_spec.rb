@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe UnauthenticatedEventsController do
-  
+
   describe 'Post #create' do
     let!(:invalid_user){FactoryGirl.attributes_for(:invalid_user)}
     let!(:user){FactoryGirl.attributes_for(:user)}
@@ -17,7 +17,7 @@ describe UnauthenticatedEventsController do
         response.should render_template "new"
       end
       it 'shows a message for invalid credentials' do
-        flash[:notice].should eq("Invalid user credentials") 
+        flash[:notice].should eq("Invalid user credentials")
       end
     end
     context 'invalid event details' do
@@ -40,15 +40,12 @@ describe UnauthenticatedEventsController do
         post :create, user: user, event: invalid_event, movement_id: movement
         flash[:notice].should eq("Your account was created but there was a problem with your event.")
       end
-
     end
     context 'valid user & event' do
       it "redirects to event show page" do
         post :create, user: user, event: event, movement_id: movement
         expect(response).to redirect_to event_path(Event.last)
       end
-
-
     end
   end
 end
