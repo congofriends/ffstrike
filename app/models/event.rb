@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+  include Filterable
   reverse_geocoded_by :latitude, :longitude
   belongs_to :host, class_name: User
   belongs_to :movement, class_name: Movement

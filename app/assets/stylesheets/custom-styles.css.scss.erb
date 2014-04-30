@@ -48,11 +48,29 @@
   margin-right: -60px;
 }
 
+.header {
+  background: #999;
+}
+
 .footer {
-  bottom: 0;
-  display: block;
-  position: relative;
   font-size: .9em;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:30px;
+  margin-top: 40px;
+  width: 100%;
+  background: #999;
+  opacity: 0.4;
+}
+
+.footer:hover{
+    opacity: 0.6;
+}
+
+.chapters {
+  width: 80%;
+  float:right;
 }
 
 .movement-panel-footer {
@@ -108,9 +126,9 @@
 #sub_movements { }
 
 .move {
-  padding: 0px;
-  height: 120px;
-  .front-page { height: 120px; }
+  padding: 10px;
+  height: 100%;
+  .front-page { height: 160px; }
 }
 
 .media-move {
@@ -171,12 +189,42 @@ div > .mvmt-attendee { color: blue; }
   }
 }
 
+.mvmt-location  {
+  float: left;
+}
+
+.mvmt-chapters  {
+  float: right;
+  font-size: 10px;
+}
+
+.mvmt-chapters:hover {
+  color: #49b1ba;
+  text-decoration: none;
+}
+
+.format_chapter{
+  width: 80%;
+  float: right;
+}
+
 .float_left{
   float: left;
   width: 40%;
 
 }
 
+.move-name{
+  width: 70%;
+}
+.img-movement{
+    display: block;
+    width: 30%;
+    max-width:200px;
+    max-height:95px;
+    width: auto;
+    height: auto;
+}
 .movement-content {
   display: -webkit-box;
 
