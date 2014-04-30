@@ -1,4 +1,4 @@
-<div class="col-md-8">
+<div class="col-md-7">
   <div class="bs-component">
     <div class='panel panel-default move'>
         <div class='media-move'>
@@ -11,7 +11,9 @@
               <p><%= link_to truncate(movement.tagline, :length => 200, omission: "... See more"), movement_path(movement), class: "mvmt-navigation" %></p>
             </div>
             <p class="txt-sm">
-              <%= truncate(movement.call_to_action, :length => 200, omission: "... %s") % link_to('See more', movement_path(movement)) %>
+            <% if movement.call_to_action? %>
+              <%= truncate(movement.call_to_action, :length => 300, omission: "... %s") % link_to('See more', movement_path(movement))%>
+            <%end%>
             </p>
             <% if movement.location %>
               <div class="mvmt-location">Location: <%= movement.location%></div>
