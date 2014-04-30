@@ -11,7 +11,7 @@ class MovementsController < ApplicationController
   include ZipHelper
 
   def index
-    @movements = Movement.published
+    @movements = Movement.where(published: true, parent_id: nil)
   end
 
   def search

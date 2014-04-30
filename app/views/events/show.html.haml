@@ -1,34 +1,42 @@
 = content_for :head do
   = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg&sensor=false"
 
-.col-sm-6
+.col-sm-4
+  .well
+    .row
+      %h2.event-header= @event.name
+    - if @event.host?(current_user)
+      = link_to @event.name + "'s Dashboard", dashboard_event_path(@event, anchor: "event"), :class=> "btn btn-success btn-sm"
+  
+    %br
+  
+    %p.desc= @event.start_time.to_formatted_s(:long) + " to " + @event.end_time.to_formatted_s(:long)
+  
+    %br
+  
+    %p.desc= @event.location
+  
+    -if @event.notes
+      %h4 Notes:
+      %p= @event.notes
+  
+  
+    .attendBtn= link_to "Become the #{(@event.number_of_attendees + 1).ordinalize} attendee!", new_event_attendee_path(event_id: @event), class: "btn btn-success btn-sm", id: "attend-button"
+    %br
+  
+    %h4.desc find out more about #{link_to @event.movement.name, movement_path(@event.movement)}
+
+  =render 'social/share', locals: { text: @text = t('event.share') }
+
+.col-sm-4
+  %iframe{frameborder: "0", height: "550", src: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg\r\n    &q=#{@event.location}", style: "border:0", width: "100%"}
+
+.col-sm-4
   .row
-    %h3.eventName= @event.name
-    .attendBtn= link_to "I want to attend", new_event_attendee_path(event_id: @event), class: "btn btn-success btn-sm"
-  - if @event.host?(current_user)
-    = link_to @event.name + "'s Dashboard", dashboard_event_path(@event, anchor: "event"), :class=> "btn btn-success btn-sm"
-  %h4 From the Movement: #{link_to @event.movement.name, movement_path(@event.movement)}
-  %h4 Location:
-  %p= @event.location
-  -if @event.notes
-    %h4 Notes:
-    %p= @event.notes
-  %h4 Date:
-  %p= @event.date
-  = link_to "Generate PDF with event summary", event_path(@event, {generate: :event, :format => :pdf}), :target => '_blank'
+  %h3.event-header Event tasks
 
-  / = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}"
-
-  %iframe{frameborder: "0", height: "450", src: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg\r\n    &q=#{@event.latitude}, #{@event.longitude}", style: "border:0", width: "600"}
-  %h3
-    Number of attendees:
-    %span.badge= @event.number_of_attendees
-  = render partial: "email_event", locals: { event: @event, movement: @movement }
-
-  .row
-    %h3 Event tasks
   - if session[:current_attendee_id].nil?
-    %p.text-info
+    %p.text-info.desc
       You need to attend this event in order to sign up for tasks!
 
 
@@ -36,7 +44,14 @@
     =render task, event: @event
 
   .row
-    =link_to "Generate PDF with tasks list", event_path(@event, {generate: :tasks, :format => :pdf} ), :target => '_blank'
+    %br
+    %br
+  
+    .desc= link_to "Generate PDF with event summary", event_path(@event, {generate: :event, :format => :pdf}), :target => '_blank'
+    %br
+    .desc=link_to "Generate PDF with tasks list", event_path(@event, {generate: :tasks, :format => :pdf} ), :target => '_blank'
+    .desc= render partial: "email_event", locals: { event: @event, movement: @movement }
+  
 
 =render 'social/share', locals: { text: @text = t('event.share') }
 

@@ -29,6 +29,7 @@
         =youtube_embed_url_for_(@movement.video)
 
       - if @movement.location
+        %p Location:
         =@movement.location
 
     %h4 About the Movement Creators
@@ -41,11 +42,11 @@
   .host-event
     %h2 Host an event for congo week!
 
-    
+
     .row.more_movements_row.movements
       %span{:class=> "search_event_span"}
         Search for an event near you!  Enter your zip code:
-        = form_tag "/movements", method: "get", class: 'form-inline', id: 'zip-form' do
+        = form_tag search_movement_path, method: "get", class: 'form-inline', id: 'zip-form' do
           .form-group
             = search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control'}
             = hidden_field_tag 'id', value = @movement.id

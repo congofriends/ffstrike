@@ -16,7 +16,7 @@ include Capybara::DSL
 	end
 
 	def attend_event
-		click_link_or_button 'I want to attend'
+		click_link_or_button 'attend-button'
 	end
 
 	def fill_out_attendee_details

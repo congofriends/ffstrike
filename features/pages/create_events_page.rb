@@ -1,12 +1,13 @@
 class CreateEventsPage
 include Capybara::DSL
 	def create_new_event
-		# select "option_name_here", :from => "organizationSelect"
 		fill_in 'event_name', with: 'Cats and Dogs'
 		fill_in 'event_address', with: '2373'
 		fill_in 'event_city', with: 'Chicago'
 		fill_in 'event_zip', with: '60649'
-		click_link_or_button'create_movement'
+		fill_in "event_start_time", with: DateTime.new(2015, 05, 16, 15, 30)
+		fill_in "event_end_time", with: DateTime.new(2015, 05, 17, 15, 30)
+		click_link_or_button'Create Event'
 	end
 
 	def create_new_event_as_an_attendee
@@ -14,6 +15,8 @@ include Capybara::DSL
 		fill_in 'event_address', with: '2373'
 		fill_in 'event_city', with: 'Chicago'
 		fill_in 'event_zip', with: '60649'
+		fill_in "event_start_time", with: DateTime.new(2015, 05, 16, 15, 30)
+		fill_in "event_end_time", with: DateTime.new(2015, 05, 17, 15, 30)
 		fill_in 'user_name', with: 'Mackenzie'
 		fill_in 'user_email', with: 'mack@gmail.com'
 		fill_in 'user_password', with: 'movement1234'

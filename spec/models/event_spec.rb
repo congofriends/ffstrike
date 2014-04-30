@@ -28,11 +28,17 @@ describe Event do
     end
   end
 
-  describe "date validation"  do
-    it "not valid with date which is passed already" do
+  describe "time validation"  do
+    it "is not valid with date which is passed already" do
       invalid_event = FactoryGirl.build(:event_with_passed_date)
       expect(invalid_event.save).to be_false
       expect(invalid_event.errors.full_messages).to eql(["Date can't be in the past"])
+    end
+
+    it "is not valid with end time before start time" do
+      invalid_event = FactoryGirl.build(:event_with_end_time_before_start_time)
+      expect(invalid_event.save).to be_false
+      expect(invalid_event.errors.full_messages).to eql(["End time can't be before start time"])
     end
   end
 

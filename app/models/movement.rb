@@ -1,11 +1,12 @@
 class Movement < ActiveRecord::Base
+  include Filterable
   validates_with VideoValidator, fields: [:video]
   has_many :events, dependent: :destroy
   has_many :attendees, through: :events
   has_many :ownerships
   has_many :users, through: :ownerships
   validates :name, uniqueness: true
-  validates :name, presence: true 
+  validates :name, presence: true
 
   has_attached_file :image,
                     :styles => { :medium => '400x400', :thum => '50x50' },
@@ -15,6 +16,8 @@ class Movement < ActiveRecord::Base
 	validates_attachment_size :image, :less_than => 5.megabytes
 
   scope :published, lambda {where(published: true)}
+  scope :starts_with, -> (name) { where("name like ?", "#{name}%")}
+
   alias_attribute :movement_name, :name
 
   attr_accessor :draft
@@ -30,7 +33,7 @@ class Movement < ActiveRecord::Base
   def sub_movements
     Movement.where(parent_id: self.id)
   end
-  
+
   def parent
     Movement.find(self.parent_id ) if self.parent_id
   end
@@ -38,7 +41,7 @@ class Movement < ActiveRecord::Base
   def parent?
     parent.nil?
   end
-  
+
   def movement_events
     self.events
   end
@@ -52,7 +55,7 @@ class Movement < ActiveRecord::Base
   end
 
   def self.random(number_of_events = 1)
-    where(published: true).offset(rand(where(published: true).count - number_of_events + 1)).first(number_of_events) 
+    where(published: true).offset(rand(where(published: true).count - number_of_events + 1)).first(number_of_events)
   end
 
   def number_of_attendees
@@ -74,7 +77,7 @@ class Movement < ActiveRecord::Base
       column_names = ["Name", "Email", "Phone", "Event", "Zip", "City"]
       csv << column_names
       self.attendees.each do |attendee|
-        csv << [attendee.name, attendee.email, attendee.phone_number, attendee.event.name, attendee.event.zip, attendee.event.city] 
+        csv << [attendee.name, attendee.email, attendee.phone_number, attendee.event.name, attendee.event.zip, attendee.event.city]
       end
     end
   end

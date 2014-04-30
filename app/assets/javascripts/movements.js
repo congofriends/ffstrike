@@ -36,7 +36,7 @@ function not_movement_dashboard_page() {
  if(window.location.hash) {
    refreshHash();
  }
- 
+
 function update_event_url(type){
   var eventType = type.replace(/ /g, '+');
   var url = window.location.origin +  $('#new_event').attr('action') + '/new?type=' + eventType;
