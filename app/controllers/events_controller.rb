@@ -38,6 +38,7 @@ class EventsController < ApplicationController
 
   def create
     @movement = Movement.find_by_name(params["event"]["movement"]) if params["event"]["movement"] && params["event"]["movement"] != ""
+binding.pry
     @event = @movement.events.build(event_params)
     if @event.save
       @event.assign_host_and_approve(current_user)
@@ -92,7 +93,7 @@ class EventsController < ApplicationController
 
   def event_params
     params[:event][:event_type_id] = EventType.find_by(name: params[:event][:event_type]).id if params[:event][:event_type]
-    params.require(:event).permit(:event_type_id, :name, :address, :location_details, :city, :zip, :state, :start_time, :end_time, :host_id, :notes)
+    params.require(:event).permit(:event_type_id, :address2, :name, :address, :location_details, :city, :zip, :state, :start_time, :end_time, :host_id, :notes)
   end
 
   def load_event
