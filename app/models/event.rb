@@ -9,6 +9,7 @@ class Event < ActiveRecord::Base
   after_validation :assign_coordinates
 
   validates_presence_of :host, :address, :zip, :name,  on: :create
+  validates :name, uniqueness: true
   validate :event_date_cannot_be_in_the_past
   validate :end_time_cannot_be_before_start_time
   validate :times_cannot_be_blank
