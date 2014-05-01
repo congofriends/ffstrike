@@ -7,48 +7,48 @@
       .row
         %h2.event-header= @event.name
       - if @event.host?(current_user)
-        = link_to @event.name + "'s Dashboard", dashboard_event_path(@event, anchor: "event"), :class=> "btn btn-success btn-sm"
-    
+        = link_to "Dashboard", dashboard_event_path(@event, anchor: "event"), :class=> "btn btn-success btn-sm"
+
       %br
-    
+
       %p.desc= @event.start_time.to_formatted_s(:long) + " to " + @event.end_time.to_formatted_s(:long)
-    
+
       %br
-    
+
       %p.desc= @event.location
-    
+
       -if @event.notes
         %h4 Notes:
         %p= @event.notes
-    
-    
+
+
       .attend-button= link_to "Become the #{(@event.number_of_attendees + 1).ordinalize} attendee!", new_event_attendee_path(event_id: @event), class: "btn btn-success btn-sm", id: "attend-button"
-  
+
       %br
-    
+
       %h4.desc find out more about #{link_to @event.movement.name, movement_path(@event.movement)}
-  
+
     =render 'social/share', locals: { text: @text = t('event.share') }
-  
+
   .col-sm-4
     %iframe{frameborder: "0", height: "550", src: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg\r\n    &q=#{@event.location}", style: "border:0", width: "100%"}
-  
+
   .col-sm-4
     .row
     %h3.event-header Event tasks
-  
+
     - if session[:current_attendee_id].nil?
       %p.text-info.desc
         You need to attend this event in order to sign up for tasks!
-    
-    
+
+
     - @event.tasks.each do |task|
       =render task, event: @event
-    
+
     .row
       %br
       %br
-    
+
       .desc= link_to "Generate PDF with event summary", event_path(@event, {generate: :event, :format => :pdf}), :target => '_blank'
       %br
       .desc=link_to "Generate PDF with tasks list", event_path(@event, {generate: :tasks, :format => :pdf} ), :target => '_blank'

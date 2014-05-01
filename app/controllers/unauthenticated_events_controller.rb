@@ -25,6 +25,7 @@ class UnauthenticatedEventsController < ApplicationController
   end
 
   private
+
   def event_params
     params[:event][:event_type_id] = EventType.find_by(name: params[:event][:event_type]).id if params[:event][:event_type]
     params.require(:event).permit(:event_type_id, :name, :address, :address2, :location_details, :city, :zip, :start_time, :end_time, :host_id, :notes)
