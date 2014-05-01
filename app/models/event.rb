@@ -78,7 +78,6 @@ class Event < ActiveRecord::Base
       errors.add(:start_time, "can't be empty") if start_time.nil? || end_time.nil?
     end
 
-
     def end_time_cannot_be_before_start_time
       errors.add(:end_time, "can't be before start time") if !(start_time.nil? || end_time.nil?) && end_time < start_time
     end

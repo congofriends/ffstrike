@@ -5,5 +5,5 @@ $(document).ready(function() {
    $('.flash').css('margin-left', 'auto');
    $('.flash').css('margin-right', 'auto');
    $('.flash').css('z-index', '9999');
-   $('.flash').delay(1300).fadeOut();
+   $('.flash').delay(3000).fadeOut();
 });

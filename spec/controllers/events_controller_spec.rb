@@ -83,6 +83,7 @@ describe EventsController do
       context "as a coordinator" do
         before :each do
           @controller.stub(:current_user).and_return(coordinator)
+          event = FactoryGirl.attributes_for(:event, movement: movement).merge(host_id: coordinator.id)
           post :create, movement_id: movement, event: event
         end
 
@@ -103,6 +104,7 @@ describe EventsController do
         before { @controller.stub(:current_user).and_return(visitor) }
 
         it "sets host to event creator" do
+          event = FactoryGirl.attributes_for(:event, movement: movement).merge(host_id: coordinator.id)
           post :create, movement_id: movement, event: event
           expect(Event.last.host).to eq(visitor)
         end
