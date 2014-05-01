@@ -13,6 +13,6 @@ module YoutubeParserHelper
   end
 
   def youtube_embed_url_for_(youtube_id)
-    %(<iframe src="http://www.youtube.com/embed/#{youtube_id}" frameborder="0" allowfullscreen></iframe>).html_safe
+    %(<iframe src="http://www.youtube.com/embed/#{youtube_id}" id="video" frameborder="0" allowfullscreen></iframe>).html_safe
   end
 end   

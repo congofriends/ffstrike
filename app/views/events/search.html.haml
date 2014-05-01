@@ -1,0 +1,18 @@
+.container
+  -if @events.length == 0
+    %h3 No events were found near the zipcode you provided.
+      
+    %h4 If there is an event that you know if, add that event to the existing movement:
+    - @movements.each do |mvmt|
+      .panel.panel-default.panel-mvmt-sm
+        .panel-body
+          .lead= link_to mvmt.name, movement_path(mvmt)
+          = mvmt.tagline
+          - if mvmt.video?
+            =youtube_embed_url_for_(mvmt.video)
+          - else
+            =link_to image_tag(mvmt.image(:medium)), movement_path(mvmt)
+          %p
+            %em.pull-right.location= mvmt.location
+  -else
+    =render @events

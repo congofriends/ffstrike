@@ -4,6 +4,7 @@ class EventsController < ApplicationController
   before_filter :load_movement, :only => [:new, :create, :edit, :update, :dashboard, :index]
   before_filter :redirect_unauthorized_user, :only => [:dashboard, :edit]
   before_filter :load_event_types, :only => [:edit, :dashboard]
+  before_filter :load_all_movements, :only => [:search]
   after_filter :populate_tasks, :only => [:create]
 
   include ZipHelper
@@ -116,6 +117,10 @@ class EventsController < ApplicationController
     else
       @movement = @event.movement
     end
+  end
+
+  def load_all_movements
+    @movements = Movement.all.published
   end
 
   def load_event_types

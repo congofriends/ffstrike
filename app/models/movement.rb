@@ -9,7 +9,7 @@ class Movement < ActiveRecord::Base
   validates :name, presence: true
 
   has_attached_file :image,
-                    :styles => { :medium => '400x400', :thum => '50x50' },
+                    :styles => { :medium => '280x150', :thum => '50x50' },
                     :default_url => 'dog.gif'
 
 	validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
