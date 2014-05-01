@@ -2,7 +2,7 @@ class MovementsController < ApplicationController
   before_filter :authenticate_user!, except: [:search, :index, :show]
   before_filter :load_movement, except: [:new, :create, :index, :user_movements, :new_submovement]
   before_filter :load_event_types, only: [:show]
-  before_filter :get_events, only: [:show]
+  before_filter :get_approved_events, only: [:show]
   before_filter :check_user_owns_movement, only: [:dashboard]
   before_filter :redirect_unauthorized_user, only: [:show]
   before_filter :clear_session_parent_id, except: [:create]
@@ -104,8 +104,8 @@ class MovementsController < ApplicationController
     @event_types = EventType.names
   end
 
-  def get_events
-    @events = @movement.events
+  def get_approved_events
+    @approved_events = @movement.events.select {|e| e.approved == true}
   end
 
   def check_user_owns_movement
