@@ -13,8 +13,8 @@ class Event < ActiveRecord::Base
   validate :event_date_cannot_be_in_the_past
   validate :end_time_cannot_be_before_start_time
   validate :times_cannot_be_blank
-  validates :movement_id, presence: true
-  validates :event_type_id, presence: true
+  validates :movement, presence: true
+  validates :event_type, presence: true
 
   delegate :movement_name, :image,     :to => :movement
   delegate :tagline,                   :to => :movement

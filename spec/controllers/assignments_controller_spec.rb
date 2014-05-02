@@ -4,6 +4,7 @@ describe AssignmentsController do
   let(:movement) { FactoryGirl.create(:movement) }
   let(:event) { FactoryGirl.create(:event, movement: movement) }
   let(:task) { FactoryGirl.create(:task) }
+  let(:attendee) {FactoryGirl.create(:attendee, movement: movement, event: event)}
 
   describe "Get #assign" do
 
@@ -15,7 +16,7 @@ describe AssignmentsController do
     end
     
     context "a valid attendee signs up" do
-      before { session[:current_attendee_id] = 7}
+      before { session[:current_attendee_id] = attendee.id }
 
       it "notifies that attendee has signed up" do
         get "assign", id: task, event_id: event, session: session

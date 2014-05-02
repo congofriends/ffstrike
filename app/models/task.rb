@@ -1,6 +1,6 @@
 class Task < ActiveRecord::Base
   belongs_to :event, class_name: Event
-  validates :event_id, presence: true
+  validates :event, presence: true
   validates :description, presence: true, length: { maximum: 250 }
   has_many :assignments, foreign_key: "task_id"
   has_many :assigned_attendees, through: :assignments, source: :attendee
