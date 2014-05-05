@@ -20,30 +20,30 @@
             = link_to "Create a sub Movement!", new_submovement_path(), :class=> "btn btn-success btn-sm"
           - else
             = link_to "Create a sub Movement!", new_unauthenticated_submovement_path(), :class => "btn btn-success btn-sm"
-  
+
         %h3 Call To Action
         %p= @movement.call_to_action
         %h3 Description
         %p= @movement.extended_description
-  
+
         - if @movement.video?
           =youtube_embed_url_for_(@movement.video)
-  
+
         - if @movement.location
           %p Location:
           =@movement.location
-  
+
       %h4 About the Movement Creators
       = @movement.about_creator
-  
+
       - if @movement.parent?
         #map Events Near you
         #map-canvas
-  
+
     -if @movement.parent?
       .host-event
         %h2 Host an event for Congo Week!
-    
+
         .row.more_movements_row.movements
           %span{:class=> "search_event_span"}
             Search for an event near you!  Enter your zip code:
@@ -77,15 +77,11 @@
     - @approved_events.each do |event|
       - if event.approved
         = render partial: 'events/panel', locals: {event: event}
-  
+
   -else
     %br
     %h4 Want to see more activity on this issue? Apply to host an event and we will be in touch!
     = render 'nav_pills_event'
-
-<<<<<<< HEAD
-  %br
-=======
   %br
   #disqus_thread
   :javascript
@@ -109,5 +105,3 @@
     $(document).ready(function(){
       ready();
     });
-
->>>>>>> cleaned up rspec tests and factories
