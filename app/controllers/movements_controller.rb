@@ -1,6 +1,7 @@
 class MovementsController < ApplicationController
   before_filter :authenticate_user!, except: [:search, :index, :show]
   before_filter :load_movement, except: [:new, :create, :index, :user_movements, :new_submovement]
+  before_filter :load_movements, only: [:index, :search]
   before_filter :load_event_types, only: [:show]
   before_filter :get_approved_events, only: [:show]
   before_filter :check_user_owns_movement, only: [:dashboard]
@@ -10,9 +11,7 @@ class MovementsController < ApplicationController
   include YoutubeParserHelper
   include ZipHelper
 
-  def index
-    @movements = Movement.where(published: true, parent_id: nil)
-  end
+  def index; end
 
   def search
     #FIXME: refactor this method here and in the events_controller, currently it
@@ -96,6 +95,9 @@ class MovementsController < ApplicationController
     params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :video, :about_creator, :parent_id, :location)
   end
 
+  def load_movements
+    @movements = Movement.all.published.where(parent_id: nil)
+  end
   def load_movement
     @movement = Movement.find_by_param params[:id]
   end
