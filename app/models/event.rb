@@ -68,10 +68,16 @@ class Event < ActiveRecord::Base
   end
 
   private
+    # def assign_coordinates
+    #   lookup = Zipcode.find_by_zip(self.zip)
+    #   self.update_attribute(:latitude, lookup.latitude) unless lookup.nil?
+    #   self.update_attribute(:longitude, lookup.longitude) unless lookup.nil?
+    # end
+
     def assign_coordinates
-      lookup = Zipcode.find_by_zip(self.zip)
-      self.update_attribute(:latitude, lookup.latitude) unless lookup.nil?
-      self.update_attribute(:longitude, lookup.longitude) unless lookup.nil?
+      coordinates = Geocoder.coordinates(location)
+      self.update_attribute(:latitude,coordinates.first) unless coordinates.nil?
+      self.update_attribute(:longitude,coordinates.last) unless coordinates.nil?
     end
 
     def times_cannot_be_blank
