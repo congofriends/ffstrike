@@ -68,12 +68,12 @@ describe EventsController do
     context "with valid attributes" do
       it "creates an event" do
         #FIXME: refactor test to use data from the before and do not create a new object
-        expect{post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(host_id: coordinator.id)}.to change(Event, :count).by(1)
+        expect{post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event, movement: movement).merge(host_id: coordinator.id)}.to change(Event, :count).by(1)
       end
 
       it "calls the task prepopulator" do
         TaskPopulator.should_receive(:assign_tasks)
-        post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event).merge(host_id: coordinator.id)
+        post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event, movement: movement).merge(host_id: coordinator.id)
       end
 
       it "creates a event connected to the movement" do
