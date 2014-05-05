@@ -13,8 +13,8 @@ class Event < ActiveRecord::Base
   validate :event_date_cannot_be_in_the_past
   validate :end_time_cannot_be_before_start_time
   validate :times_cannot_be_blank
-  validates :movement_id, presence: true
-  validates :event_type_id, presence: true
+  validates :movement, presence: true
+  validates :event_type, presence: true
 
   delegate :movement_name, :image,     :to => :movement
   delegate :tagline,                   :to => :movement
@@ -24,9 +24,7 @@ class Event < ActiveRecord::Base
   def self.near_zip(zipcode, distance)
     return [] if zipcode.nil?
     zipcode = zipcode.strip
-    lookup = Zipcode.find_by_zip(zipcode)
-    return [] if lookup.nil? || distance.nil?
-    Event.near([lookup.latitude, lookup.longitude], distance).joins(:movement).where(approved: true, movements: {published: true})
+    Event.near(zipcode, distance).joins(:movement).where(approved: true, movements: {published: true})
   end
 
   def type
@@ -68,18 +66,10 @@ class Event < ActiveRecord::Base
   end
 
   private
-    # def assign_coordinates
-    #   lookup = Zipcode.find_by_zip(self.zip)
-    #   self.update_attribute(:latitude, lookup.latitude) unless lookup.nil?
-    #   self.update_attribute(:longitude, lookup.longitude) unless lookup.nil?
-    # end
-
     def assign_coordinates
-      if self.latitude.nil? || self.longitude.nil?
-        coordinates = Geocoder.coordinates(location)
-        self.update_attribute(:latitude,coordinates.first) unless coordinates.nil?
-        self.update_attribute(:longitude,coordinates.last) unless coordinates.nil?
-      end
+      latitude,longitude = Geocoder.coordinates(self.zip);
+      self.update_attribute(:latitude, latitude) unless latitude.nil?
+      self.update_attribute(:longitude, longitude) unless longitude.nil?
     end
 
     def times_cannot_be_blank
