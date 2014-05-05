@@ -13,8 +13,8 @@ class Event < ActiveRecord::Base
   validate :event_date_cannot_be_in_the_past
   validate :end_time_cannot_be_before_start_time
   validate :times_cannot_be_blank
-  validates :movement, presence: true
-  validates :event_type, presence: true
+  validates :movement_id, presence: true
+  validates :event_type_id, presence: true
 
   delegate :movement_name, :image,     :to => :movement
   delegate :tagline,                   :to => :movement
@@ -75,9 +75,11 @@ class Event < ActiveRecord::Base
     # end
 
     def assign_coordinates
-      coordinates = Geocoder.coordinates(location)
-      self.update_attribute(:latitude,coordinates.first) unless coordinates.nil?
-      self.update_attribute(:longitude,coordinates.last) unless coordinates.nil?
+      if self.latitude.nil? || self.longitude.nil?
+        coordinates = Geocoder.coordinates(location)
+        self.update_attribute(:latitude,coordinates.first) unless coordinates.nil?
+        self.update_attribute(:longitude,coordinates.last) unless coordinates.nil?
+      end
     end
 
     def times_cannot_be_blank
