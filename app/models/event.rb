@@ -24,7 +24,9 @@ class Event < ActiveRecord::Base
   def self.near_zip(zipcode, distance)
     return [] if zipcode.nil?
     zipcode = zipcode.strip
-    Event.near(zipcode, distance).joins(:movement).where(approved: true, movements: {published: true})
+    lookup = Zipcode.find_by_zip(zipcode)
+    return [] if lookup.nil? || distance.nil?
+    Event.near([lookup.latitude, lookup.longitude], distance).joins(:movement).where(approved: true, movements: {published: true})
   end
 
   def type
@@ -67,7 +69,8 @@ class Event < ActiveRecord::Base
 
   private
     def assign_coordinates
-      if latitude.nil? || longitude.nil?
+      if self.latitude.nil? || self.longitude.nil?
+        binding.pry
         coordinates = Geocoder.coordinates(location)
         self.update_attribute(:latitude,coordinates.first) unless coordinates.nil?
         self.update_attribute(:longitude,coordinates.last) unless coordinates.nil?

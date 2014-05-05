@@ -20,3 +20,4 @@ Geocoder.configure(
   # :cache => Redis.new,
   # :cache_prefix => "..."
 )
+#

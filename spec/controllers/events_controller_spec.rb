@@ -59,7 +59,7 @@ describe EventsController do
       expect(event.approved).to be_false
     end
   end
-
+# these tests use geocoder.
   describe "POST #create" do
     let(:visitor){FactoryGirl.create(:user)}
     let(:event) {FactoryGirl.attributes_for(:event, movement: movement).merge(host_id: coordinator.id)}
