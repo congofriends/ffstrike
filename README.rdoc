@@ -1,28 +1,20 @@
-== README
+Shift Engage
+========
+Shift Engage is a toolkit for activists to organize, host events, communicate, and track interest.
+We believe that paradigm changes will be driven by empowered, passionate individuals.
+Our mission is to provide tools for these people to organize and mobilize.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Tech Stack
+=========
+Ruby on Rails 4
+Heroku
+Amazon S3
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Deployment
+=========
+Asset precompilation is not configured in the deployment pipeline.
+To deploy changes to assets, before deployment, run:
+
+rake assets:clobber
+rake assets:precompile RAILS_ENV="test"
