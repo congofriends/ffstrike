@@ -67,9 +67,11 @@ class Event < ActiveRecord::Base
 
   private
     def assign_coordinates
-      latitude,longitude = Geocoder.coordinates(self.zip);
-      self.update_attribute(:latitude, latitude) unless latitude.nil?
-      self.update_attribute(:longitude, longitude) unless longitude.nil?
+      if latitude.nil? || longitude.nil?
+        coordinates = Geocoder.coordinates(location)
+        self.update_attribute(:latitude,coordinates.first) unless coordinates.nil?
+        self.update_attribute(:longitude,coordinates.last) unless coordinates.nil?
+      end
     end
 
     def times_cannot_be_blank
