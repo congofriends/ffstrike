@@ -13,7 +13,3 @@ Scenario: Sending an Email to Attendees in a movement
 Scenario: Sending an Email to Invite more Coordinators
 	When I invite more coordinators via email
 	Then I can provide an email and have it sent out
-
-Scenario: Sending an Email to Attendees in an Event
-	When I email my attendees for the event
-	Then I receive a message stating that my email has been sent

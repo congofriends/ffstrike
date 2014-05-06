@@ -17,7 +17,7 @@
 
       %p.desc= @event.location
 
-      -unless @event.notes.empty?
+      -unless @event.notes.nil? || @event.notes.empty?
         %h4 Notes:
         %p= @event.notes
 
