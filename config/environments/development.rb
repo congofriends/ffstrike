@@ -1,6 +1,8 @@
 Ffstrike::Application.configure do
   ENV['FACEBOOK_ID'] = '426624144117081'
-  ENV['FACEBOOK_APP_SECRET'] = 'da81b9d419f0dcce05cc2d370411364f'  
+  ENV['FACEBOOK_APP_SECRET'] = 'da81b9d419f0dcce05cc2d370411364f'
+  ENV['DISQUS_SECRET_KEY'] = 'D6iC3R7DXCHyND7EVtD2EMSLyshTgNpXR4BhmfRlubUaveq6u8S3Tx1nO0ZcmIzA'
+  ENV['DISQUS_PUBLIC_KEY'] = 'ktIZfaLEncECpFj6lUSZKfGjdzn71kbv9XJhPSROw9wwHAdlOcSQcZCPDjfyiqVI'
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
   if Rails.env.development? && File.exists?('.env')

@@ -38,10 +38,6 @@ Ffstrike::Application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
-  if Rails.env.test? && File.exists?('.env')
-    File.new('.env').each do |line|
-      var, val = line.split('=').map(&:strip)
-      ENV[var] = val
-    end
-  end
+  ENV['DISQUS_SECRET_KEY'] = 'D6iC3R7DXCHyND7EVtD2EMSLyshTgNpXR4BhmfRlubUaveq6u8S3Tx1nO0ZcmIzA'
+  ENV['DISQUS_PUBLIC_KEY'] = 'ktIZfaLEncECpFj6lUSZKfGjdzn71kbv9XJhPSROw9wwHAdlOcSQcZCPDjfyiqVI'
 end
