@@ -11,7 +11,7 @@
           = @movement.name
         %h2{:class=> "tagline"}= @movement.tagline
         - unless @movement.parent?
-          Spawned from:
+          A member of: 
           = link_to @movement.parent.name, movement_path(@movement.parent.name)
         - else
           - if current_user && @movement.users.include?(current_user)

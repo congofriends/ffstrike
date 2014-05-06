@@ -26,7 +26,7 @@
 
       %br
 
-      %h4.desc find out more about #{link_to @event.movement.name, movement_path(@event.movement)}
+      %h4.desc Organized by #{link_to @event.movement.name, movement_path(@event.movement)}
 
     =render 'social/share', locals: { text: @text = t('event.share') }
 
