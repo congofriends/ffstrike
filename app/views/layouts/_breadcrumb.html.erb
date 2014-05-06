@@ -1,0 +1,20 @@
+<div class="breadcrumb-nav">
+  <ol class="breadcrumb">
+
+    <% unless (@event.nil? || @event.id.nil?) %>
+      <% unless @event.movement.parent.nil? %>
+        <li><a href="#"><%= @event.movement.parent.name %></a></li>
+      <% end %>
+      <li><a href="#"><%= @event.movement.name %></a></li>
+      <li><a href="#"><%= @event.name ||= "new event" %></a></li>
+    <% end %>
+
+    <% unless @movement.nil? %>
+      <% unless @movement.parent.nil? %>
+        <li><a href="#"><%= @movement.parent.name %></a></li>
+      <% end %>
+      <li><a href="#"><%= @movement.name || "new movement" %></a></li>
+    <% end %>
+
+  </ol>
+</div>
