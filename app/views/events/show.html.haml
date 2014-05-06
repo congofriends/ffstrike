@@ -17,7 +17,7 @@
 
       %p.desc= @event.location
 
-      -if @event.notes
+      -unless @event.notes.empty?
         %h4 Notes:
         %p= @event.notes
 
@@ -25,8 +25,6 @@
       .attend-button= link_to "Become the #{(@event.number_of_attendees + 1).ordinalize} attendee!", new_event_attendee_path(event_id: @event), class: "btn btn-success btn-sm", id: "attend-button"
 
       %br
-
-      %h4.desc Organized by #{link_to @event.movement.name, movement_path(@event.movement)}
 
     =render 'social/share', locals: { text: @text = t('event.share') }
 
@@ -52,7 +50,6 @@
       .desc= link_to "Generate PDF with event summary", event_path(@event, {generate: :event, :format => :pdf}), :target => '_blank'
       %br
       .desc=link_to "Generate PDF with tasks list", event_path(@event, {generate: :tasks, :format => :pdf} ), :target => '_blank'
-      .desc= render partial: "email_event", locals: { event: @event, movement: @movement }
 
 .container
   #disqus_div
