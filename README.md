@@ -10,11 +10,3 @@ Ruby on Rails 4
 Heroku
 Amazon S3
 
-
-Deployment
-=========
-Asset precompilation is not configured in the deployment pipeline.
-To deploy changes to assets, before deployment, run:
-
-rake assets:clobber
-rake assets:precompile RAILS_ENV="test"
