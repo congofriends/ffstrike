@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable 
+         :omniauthable
 
   validates :name, presence: true
 
@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   end
 
   def self.create_from_facebook_oauth(auth)
-    User.create(:name => auth.info.name, 
+    User.create(:name => auth.info.name,
                 :provider => auth.provider,
                 :uid => auth.uid,
                 :email => auth.info.email,
@@ -34,10 +34,14 @@ class User < ActiveRecord::Base
 
   def add_movement(movement)
     self.movements << movement
-  end 
-  
-  def host_for_nonapproved_events? 
+  end
+
+  def host_for_nonapproved_events?
     nonapproved_events.any?
+  end
+
+  def parent_movements
+    self.movements.where(parent_id: nil)
   end
 
   def nonapproved_events

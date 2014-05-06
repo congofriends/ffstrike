@@ -1,12 +1,12 @@
 .container
   %ul#movementTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}
     %li
-      %a{href: '#movements', data: {toggle: 'tab'}} Movements (#{current_user.movements.count.to_s})
+      %a{href: '#movements', data: {toggle: 'tab'}} Movements (#{@movements.count.to_s})
     %li
-      %a{href: '#events',id:'event_tab' ,data: {toggle: 'tab'}} Events (#{current_user.approved_events.count.to_s})
+      %a{href: '#events',id:'event_tab' ,data: {toggle: 'tab'}} Events (#{@events.count.to_s})
     -if current_user.host_for_nonapproved_events?
       %li
-        = link_to "Unapproved Events (#{current_user.nonapproved_events.count.to_s}) " ,  "#unapproved_events", :data=> {toggle: 'tab'} 
+        = link_to "Unapproved Events (#{current_user.nonapproved_events.count.to_s}) " ,  "#unapproved_events", :data=> {toggle: 'tab'}
     %li
       %a{href: '#attendees',id:'attendee_tab' ,data: {toggle: 'tab'}} Attendees
   .tab-content
@@ -17,4 +17,4 @@
     .tab-pane.fade.in#unapproved_events
       = render "tab_my_unapproved_events"
     .tab-pane.fade.in#attendees
-      = render "tab_my_attendees", events: @events 
+      = render "tab_my_attendees", events: @events

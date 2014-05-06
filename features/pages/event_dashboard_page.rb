@@ -5,13 +5,8 @@ include BestInPlace::TestHelpers
 	def edit_event
 		click_link_or_button('Dashboard')
 		event_id = Event.last.id
-		# edit_address_selector = "span#best_in_place_event_" + event_id.to_s + "_address.best_in_place"
 		edit_address_id = "#best_in_place_event_" + event_id.to_s + "_address"
-		# click_link_or_button('Dashboard')
 		find(edit_address_id).click
-		# within(:css, edit_address_selector) do
-  #     bip_text Event.find(event_id), :address, "123 this street"
-  # 	end
     fill_in("address", with: "123 this street")
 		click_link_or_button('Update')
 	end
