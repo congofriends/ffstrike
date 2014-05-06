@@ -42,6 +42,14 @@ class Event < ActiveRecord::Base
     attendees.count
   end
 
+  def formatted_time
+    if start_time.to_date == end_time.to_date
+      start_time.strftime("%m/%d/%Y,%l:%M %p to") + end_time.strftime("%l:%M %p")
+    else
+      start_time.strftime("%m/%d/%Y,%l:%M %p to ") + end_time.strftime("%m/%d/%Y,%l:%M %p")
+    end
+  end
+
   def date
     start_time.to_date if start_time
   end
