@@ -3,17 +3,17 @@
 
     <% unless (@event.nil? || @event.id.nil?) %>
       <% unless @event.movement.parent.nil? %>
-        <li><a href="#"><%= @event.movement.parent.name %></a></li>
+        <li><%= link_to @event.movement.parent.name, movement_path(@event.movement.parent) %></li>
       <% end %>
-      <li><a href="#"><%= @event.movement.name %></a></li>
-      <li><a href="#"><%= @event.name ||= "new event" %></a></li>
+      <li><%= link_to @event.movement.name, movement_path(@event.movement) %></li>
+      <li class="active"><%= @event.name %></li>
     <% end %>
 
     <% unless @movement.nil? %>
       <% unless @movement.parent.nil? %>
-        <li><a href="#"><%= @movement.parent.name %></a></li>
+        <li><%= link_to @movement.parent.name, movement_path(@movement.parent) %></li>
       <% end %>
-      <li><a href="#"><%= @movement.name || "new movement" %></a></li>
+      <li class="active"><%= @movement.name %></li>
     <% end %>
 
   </ol>
