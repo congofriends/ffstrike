@@ -46,7 +46,7 @@ FactoryGirl.define do
   factory :invalid_event, class: Event do
     name {Faker::Lorem.words.join(' ')}
     location_details {Faker::Lorem.sentence}
-    start_time DateTime.now + 10000
+    start_time DateTime.now - 10000
     end_time DateTime.now + 16000
     latitude 41.9215421
     longitude -87.70248169999999

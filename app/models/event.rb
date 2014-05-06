@@ -24,9 +24,13 @@ class Event < ActiveRecord::Base
   def self.near_zip(zipcode, distance)
     return [] if zipcode.nil?
     zipcode = zipcode.strip
-    lookup = Zipcode.find_by_zip(zipcode)
-    return [] if lookup.nil? || distance.nil?
-    Event.near([lookup.latitude, lookup.longitude], distance).joins(:movement).where(approved: true, movements: {published: true})
+    if Rails.env.test?
+      lookup = Zipcode.find_by_zip(zipcode)
+      return [] if lookup.nil? || distance.nil?
+      Event.near([lookup.latitude, lookup.longitude], distance).joins(:movement).where(approved: true, movements: {published: true})
+    else
+      Event.near(zipcode, distance).joins(:movement).where(approved: true, movements: {published: true})
+    end
   end
 
   def type
@@ -68,21 +72,18 @@ class Event < ActiveRecord::Base
   end
 
   private
-
     def assign_coordinates
-      lookup = Zipcode.find_by_zip(self.zip)
-      self.update_attribute(:latitude, lookup.latitude) unless lookup.nil?
-      self.update_attribute(:longitude, lookup.longitude) unless lookup.nil?
+      if self.latitude.nil? || self.longitude.nil?
+        if Rails.env.test?
+          self.update_attribute(:latitude, 41.9215421 )
+          self.update_attribute(:longitude, -87.70248169999999)
+        else
+          coordinates = Geocoder.coordinates(location)
+          self.update_attribute(:latitude,coordinates.first) unless coordinates.nil?
+          self.update_attribute(:longitude,coordinates.last) unless coordinates.nil?
+        end
+      end
     end
-
-    # Uses geocoder to map to address
-    # def assign_coordinates
-    #   if self.latitude.nil? || self.longitude.nil?
-    #     coordinates = Geocoder.coordinates(location)
-    #     self.update_attribute(:latitude,coordinates.first) unless coordinates.nil?
-    #     self.update_attribute(:longitude,coordinates.last) unless coordinates.nil?
-    #   end
-    # end
 
     def times_cannot_be_blank
       errors.add(:start_time, "can't be empty") if start_time.nil? || end_time.nil?

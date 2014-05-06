@@ -8,7 +8,7 @@ When(/^I edit my event$/)do
   event_dashboard_page.edit_event()
 end
 
-When(/^I delete the event$/) do 
+When(/^I delete the event$/) do
   event_show_page.delete_event(@user)
 end
 

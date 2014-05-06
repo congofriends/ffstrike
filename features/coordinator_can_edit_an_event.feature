@@ -7,7 +7,6 @@ Background:
 	And I have an existing event
 
 @javascript
-@ignore
 Scenario: Editing an event on the event dashboard
 	When I edit my event
 	Then I am able to see my changes for the event

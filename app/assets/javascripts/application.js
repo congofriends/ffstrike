@@ -13,10 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
-//= require turbolinks
 //= require best_in_place
 //= require_tree .
-//= stub google_maps
 //= require i18n
 //= require i18n/translations
 //= require jquery.validate
