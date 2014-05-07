@@ -8,10 +8,11 @@
         %h2{:class=> "tagline"}= @movement.tagline
         - if current_user && @movement.users.include?(current_user)
           = link_to @movement.name + "'s Dashboard", dashboard_movement_path(@movement, anchor: "movement"), :class=> "btn btn-success btn-sm"
-        - if current_user
-          = link_to "Create a sub Movement!", new_submovement_path(), :class=> "btn btn-success btn-sm"
-        - else
-          = link_to "Create a sub Movement!", new_unauthenticated_submovement_path(), :class => "btn btn-success btn-sm"
+        - if @movement.parent?
+          - if current_user
+            = link_to "Create a Chapter!", new_submovement_path(), :class=> "btn btn-success btn-sm"
+          - else
+            = link_to "Create a Chapter!", new_unauthenticated_submovement_path(), :class => "btn btn-success btn-sm"
 
         %h3 Call To Action
         %p= @movement.call_to_action
@@ -24,13 +25,11 @@
         - if @movement.location
           %p Location:
           =@movement.location
+      - if @movement.about_creator
+        %h4 About the Movement Creators
+        = @movement.about_creator
 
-      %h4 About the Movement Creators
-      = @movement.about_creator
 
-      - if @movement.parent?
-        #map Events Near you
-        #map-canvas
 
     -if @movement.parent?
       .host-event
@@ -75,3 +74,7 @@
     %h4 Want to see more activity on this issue? Apply to host an event and we will be in touch!
     = render 'nav_pills_event'
   %br
+
+- if @movement.parent?
+  #map Events Near you
+  #map-canvas

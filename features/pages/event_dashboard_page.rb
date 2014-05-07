@@ -20,5 +20,4 @@ include BestInPlace::TestHelpers
 		name = Event.last.name
 		visit "/events/" + name.gsub(/ /, '-') +"/dashboard#event/"
 	end
-
 end
