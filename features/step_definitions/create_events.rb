@@ -10,7 +10,7 @@ Given(/^I have an existing event for the movement with attendees$/) do
 end
 
 When(/^I make an event/)do 
-  create_events_page.navigate_to.select_rally.create_new_event_as_an_attendee()
+  create_events_page.navigate_to.create_chapter.create_new_event_as_an_attendee()
 end
 
 When(/^I create an event/)do
@@ -18,7 +18,7 @@ When(/^I create an event/)do
 end
 
 When(/^I select the Rally button/)do
-  create_events_page.select_rally()
+  create_events_page.create_chapter()
 end
 
 Then(/^I can see the confirmation page/)do

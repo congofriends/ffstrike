@@ -44,8 +44,8 @@ include Capybara::DSL
 		return self
 	end
 
-	def select_rally
-		click_link_or_button('rally')
+	def create_chapter
+		click_link_or_button('Create a Chapter!')
 		return self
 
 	end
