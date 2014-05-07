@@ -15,8 +15,8 @@ FactoryGirl.define do
     city {Faker::Address.city}
     zip {Faker::Address.zip}
     state {Faker::Address.state}
-    start_time DateTime.now
-    end_time DateTime.now + 6000
+    start_time DateTime.now + 1000
+    end_time DateTime.now + 16000
     latitude 41.9215421
     longitude -87.70248169999999
     notes {Faker::Lorem.sentence}

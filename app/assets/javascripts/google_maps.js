@@ -1,54 +1,56 @@
 var ready;
 ready = function () {
-  var location_array = [];
   var map;
   var events;
-  // var map_boundary;
+  var event_types = [];
+  var location_array = [];
   var event_names = [];
   var event_path = [];
   var addresses = [];
+  var dates = []
 
-  if(window.gon.events != undefined) {
+  if(window.gon.events != undefined || window.gon.event_types != undefined) {
     events = window.gon.events;
 
     for (var i=0; i < events.length; i++) {
       location_array.push(new google.maps.LatLng(events[i].latitude, events[i].longitude));
       event_names.push(events[i].name);
-      addresses.push(events[i].location_details);
+      event_types.push(window.gon.event_types[events[i].event_type_id - 1].name);
+      addresses.push(events[i].address + ", " + events[i].city + ", " + events[i].state + ", " + events[i].zip);
       event_path.push('/events/'+ events[i].name.replace(/ /g, '-'));
+      dates.push(events[i].start_time)
     }
 
     function initialize() {
       var mapOptions = {
+        scrollwheel: false,
         center: location_array[0],
-        zoom: 7,
+        zoom: 3,
       };
 
       map = new google.maps.Map(document.getElementById("map-canvas"),
           mapOptions);
 
-      // map_boundary = new google.maps.LatLngBounds();
+      var infowindow = new google.maps.InfoWindow();
 
-
-      for (i = 0; i < location_array.length; i++) {
+      for (var i = 0; i < location_array.length; i++) {
         marker = new google.maps.Marker({
           map:map,
           draggable:false,
           animation: google.maps.Animation.DROP,
           position: location_array[i],
           title: event_names[i],
-          // map_boundary.extend(location_array[i])
         });
-
-        // map.fitBounds(map_boundary);
-        var infowindow = new google.maps.InfoWindow();
-
-        var content = '<a href =' + event_path[i]+'>' + event_names[i] + '</a>' +
-        '<div>' + addresses[i] + '</div>';
 
         google.maps.event.addListener(marker, 'click', function(marker, i) {
           return function() {
-            infowindow.setContent(content);
+
+            infowindow.setContent('<a href =' + event_path[i]+'>' + event_names[i] + '</a>' +
+        '<div>' + event_types[i] + '</div>' + '<hr>' +
+        '<div>' + addresses[i] + '</div>' +
+        '<div>' + dates[i] + '</div>');
+
+
             infowindow.open(map, marker);
           }
         }(marker, i));
@@ -57,7 +59,6 @@ ready = function () {
     google.maps.event.addDomListener(window, 'load', initialize);
   };
 };
-
 
 function addEvent(element, event, fn) {
     if (element.addEventListener)

@@ -71,6 +71,7 @@
     = render 'nav_pills_event'
   %br
 
-- if @movement.parent?
-  #map Events Near you
-  #map-canvas
+  - if @movement.parent?
+    .div
+      #map Events Near you
+      #map-canvas

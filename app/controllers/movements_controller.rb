@@ -62,6 +62,7 @@ class MovementsController < ApplicationController
 
   def show
     gon.events = @movement.events.reject { |e| e.latitude.nil? || e.longitude.nil? }
+    gon.event_types = EventType.all
     session[:movement_id] = @movement.id
     @sub_events = []
     @movement.sub_movements.each { |sub_movement| @sub_events.concat sub_movement.events }

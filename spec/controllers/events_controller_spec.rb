@@ -138,7 +138,7 @@ describe EventsController do
 
       it "notifies user that event had errors" do
         post :create, movement_id: movement, event: event_without_address
-        flash[:notice].should == "Host can't be blank Address can't be blank Zip can't be blank Name can't be blank"
+        flash[:notice].should == "Host can't be blank Address can't be blank City can't be blank State can't be blank Zip can't be blank Name can't be blank"
       end
     end
   end
