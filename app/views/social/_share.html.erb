@@ -1,20 +1,22 @@
-  <div class='well'>
-    <legend><%= @text %></legend>
-    <div class='row'>
-      <div class='col-xs-6 col-md-3'>
-        <a id="fb-share" style='text-decoration:none;' type="icon_link"
-          onClick="window.open('http://www.facebook.com/sharer.php?u=https://rally-qa.herokuapp.com','sharer','toolbar=0,status=0,width=580,height=325');"
-          href="javascript: void(0)" class='social facebook'>
-          Share on Facebook
-        </a>
+<div class='well'>
+  <legend><%= @text %></legend>
+  <div class='row'>
+    <div class='col-xs-6 col-md-3'>
+      <a id="fb-share" 
+        style='text-decoration:none;' type="icon_link"
+        onClick="window.open('http://www.facebook.com/sharer.php?u=http://shift-engage-qa.herokuapp.com/movements/Friends-of-the-Congo', 'sharer','toolbar=0,status=0,width=580,height=325');"
+        href="javascript: void(0)" class='social facebook'>
+        Share on Facebook
+      </a>
+      <a
+        onClick="window.open('http://twitter.com/share?text=Join%20me%20in%20changing%20the%20world%2C%20one%20movement%20at%20a%20time%21','sharer','toolbar=0,status=0,width=580,height=325');"
+        href="javascript: void(0)" class='social twitter'>
+        Share on twitter
+      </a>
 
-        <a href="http://twitter.com/share?text=Join%20me%20in%20changing%20the%20world%2C%20one%20movement%20at%20a%20time%21" target="_blank" class='social twitter'>
-          Share on twitter
-        </a>
-
-        <a href="mailto:#" class='social mailto'>
-          Email your friends
-        </a>
-      </div>
+      <a href="mailto:#" class='social mailto'>
+        Email your friends
+      </a>
     </div>
   </div>
+</div>
