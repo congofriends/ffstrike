@@ -22,9 +22,6 @@
         - if @movement.video?
           =youtube_embed_url_for_(@movement.video)
 
-        - if @movement.location
-          %p Location:
-          =@movement.location
       - if @movement.about_creator
         %h4 About the Movement Creators
         = @movement.about_creator

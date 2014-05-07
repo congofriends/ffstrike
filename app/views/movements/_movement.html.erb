@@ -15,9 +15,6 @@
               <%= truncate(movement.call_to_action, :length => 300, omission: "... %s") % link_to('See more', movement_path(movement))%>
             <%end%>
             </p>
-            <% if movement.location %>
-              <div class="mvmt-location">Location: <%= movement.location%></div>
-            <% end %>
             <% unless movement.parent %>
             <% parent_id = movement.id.to_s + "chapters"%>
               <div class="mvmt-chapters btn" type= "button" data-target="#<%=movement.id.to_s + "chapters"%>"  data-toggle="collapse"> Support Network</div>
