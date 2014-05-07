@@ -10,17 +10,14 @@
           = link_to @movement.name + "'s Dashboard", dashboard_movement_path(@movement, anchor: "movement"), :class=> "btn btn-success btn-sm"
         %h3= @movement.call_to_action
 
-        - if @movement.video?
-          =youtube_embed_url_for_(@movement.video)
-
       - if @movement.about_creator
         %h4 About the Movement Creators
         = @movement.about_creator
 
-
-
     -if @movement.parent?
       .host-event
+        =render 'movement_video'
+
         %h2 Host an event for Congo Week!
         = render 'nav_pills_event'
 
@@ -43,6 +40,8 @@
 
     -else
       .host-event
+        =render 'movement_video'
+
         %h3 Events:
         - @approved_events.each do |event|
           - if event.approved
@@ -58,6 +57,7 @@
 
   - if @movement.parent?
     %h3.sub_movements Our Support Network
+    %em Our support network is made up of campuses, churches, and communities supporting justice in the Congo
     %div#sub_movements= render @movement.sub_movements
 
     %h3 Events:
