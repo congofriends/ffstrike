@@ -1,15 +1,6 @@
 <div class='container'>
   <div class='well'>
 
- <!--  <% if params[:type]%>
-    <legend>Thanks for volunteering to host an event</legend>
-    <% event_desc = 'event_type.' + params[:type].downcase.gsub(' ', '_') + '.full_description' %>
-    <%= t(event_desc)%>
-  <%else%>
-    <legend>Thanks for volunteering to host an event!</legend>
-    <div class="event-description"><%= t('event_type.rally.full_description') %> </div>
-  <% end%> -->
-
     <%= form_for ([@movement, @event]) do |form| %>
       <fieldset>
 
