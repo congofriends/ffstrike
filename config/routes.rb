@@ -15,8 +15,9 @@ Ffstrike::Application.routes.draw do
     get 'profile' => 'movements#user_movements', on: :collection, as: 'user'
     get 'dashboard' => 'movements#dashboard', on: :member, as: 'dashboard' 
     get 'search' => 'movements#search', on: :member, as: 'search'
+    get 'event_type' => 'movements#event_type', on: :member, as: 'event_type'
     resources :events, shallow: true
-    resources :unauthenticated_events, only: [:new, :create] 
+    resources :unauthenticated_events, only: [:new, :create]
   end
 
   resources :unauthenticated_submovements, only: [:new, :create]

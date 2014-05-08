@@ -17,11 +17,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    if current_user.movements.empty?
-      session[:previous_url] || root_path
-    else
-      user_movements_path
-    end
+    session[:previous_url] || root_path
+  end
+
+  def after_sign_out_path_for(resource)
+    session[:previous_url] || root_path
   end
 
   protected

@@ -46,18 +46,28 @@ include Capybara::DSL
 		return self
 	end
 
-	def select_rally
-		click_link_or_button('rally')
+	def select_create_event
+		click_link_or_button('Create an Event!')
 		return self
-
 	end
 
-	def email_attendees_for_an_event ()
-		name = Event.last.name
-		visit "/events/"+ name.gsub(/ /, '-')
-		click_link ('Email Event Attendees')
-  	fill_in 'message', with: 'Chicago, New York and Tennessee events went great, keep up the good work!!!'
-  	click_link_or_button ('Send Email')
-	end
+  def select_event_type
+    click_link_or_button('Rally')
+    return self
+  end
+
+  def select_rally
+    click_link_or_button('Rally')
+    return self
+  end
+
+  def email_attendees_for_an_event ()
+    name = Event.last.name
+    visit "/events/"+ name.gsub(/ /, '-')
+    click_link ('Email Event Attendees')
+    fill_in 'message', with: 'Chicago, New York and Tennessee events went great, keep up the good work!!!'
+    click_link_or_button ('Send Email')
+  end
+
 
 end

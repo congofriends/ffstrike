@@ -1,8 +1,5 @@
 %ul.nav.nav-pills.nav-stacked
-  - @event_types.each do |event_type|
-    - if current_user
-      = link_to event_type, new_movement_event_path(@movement, {type: event_type }), :id => "#{event_type.downcase.gsub(' ', '_')}", :class => "btn-info badge",
-        :rel=> "tooltip", :title => EVENT_DESCRIPTIONS["event_type"]["#{event_type.downcase.gsub(' ', '_')}"]["short_description"]
-    - else
-      = link_to event_type, new_movement_unauthenticated_event_path(@movement, {type: event_type }), :class => "btn-info badge",
-        :rel=> "tooltip", :title => EVENT_DESCRIPTIONS["event_type"]["#{event_type.downcase.gsub(' ', '_')}"]["short_description"]
+  - if current_user
+    = link_to "Create an Event!", event_type_movement_path(@movement), :class=> "btn btn-success btn-lg"
+  - else
+    = link_to "Create an Event!", new_movement_unauthenticated_event_path(@movement), :class => "btn btn-success btn-lg"

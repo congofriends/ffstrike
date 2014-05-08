@@ -92,6 +92,10 @@ class MovementsController < ApplicationController
     redirect_to movement_path(@movement), notice: t('movement.updated')
   end
 
+  def event_type
+    load_event_types
+  end
+
   private
   def clear_session_parent_id
     session[:parent_id] = nil

@@ -1,4 +1,7 @@
 class UnauthenticatedEventsController < ApplicationController
+  before_filter :load_event_types, only: [:show]
+  before_filter :load_movement, except: [:new, :create, :index, :user_movements, :new_submovement]
+  before_filter :load_movements, only: [:index, :search]
 
   def new
     @event = Event.new
@@ -22,6 +25,22 @@ class UnauthenticatedEventsController < ApplicationController
       flash[:notice] = t('user.invalid_credentials')
       render 'new'
     end
+  end
+
+  def load_movements
+    @movements = Movement.all.published.where(parent_id: nil)
+  end
+
+  def load_movement
+    @movement = Movement.find_by_param params[:id]
+  end
+
+  def load_event_types
+    @event_types = EventType.names
+  end
+
+  def event_type
+    load_event_types
   end
 
   private
