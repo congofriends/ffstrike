@@ -91,20 +91,9 @@ class EventsController < ApplicationController
 
   private
 
-  # def convertDate
-  #   if (params[:event][:start_time].class == String)
-  #     params[:event][:start_time] = s_to_datetime(params[:event][:start_time])
-  #     params[:event][:end_time] = s_to_datetime(params[:event][:end_time])
-  #   end
-  # end
-
-  # def s_to_datetime(string)
-  #   DateTime.strptime(string, '%m/%d/%Y %I:%M %p') unless string.blank?
-  # end
-
   def event_params
     params[:event][:event_type_id] = EventType.find_by(name: params[:event][:event_type]).id if params[:event][:event_type]
-    params.require(:event).permit(:event_type_id, :address2, :name, :address, :location_details, :city, :zip, :state, :start_time, :end_time, :host_id, :notes, :forum_option)
+    params.require(:event).permit(:event_type_id, :address2, :name, :address, :location_details, :city, :zip, :state, :start_time, :image, :end_time, :host_id, :notes, :forum_option)
   end
 
   def load_event

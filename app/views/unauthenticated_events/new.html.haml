@@ -46,6 +46,10 @@
       = text_field :event, :zip, class: 'form-control'
 
     .form-group.col-sm-6
+      = label :event, :image
+      = file_field :event, :image, class: 'form-control'
+
+    .form-group.col-sm-6
       .input-group
         %span.input-group-addon Start Time:
         = text_field  :event, :start_time, class: 'form-control datetimepicker'

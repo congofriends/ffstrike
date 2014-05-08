@@ -7,6 +7,7 @@ class MovementsController < ApplicationController
   before_filter :check_user_owns_movement, only: [:dashboard]
   before_filter :redirect_unauthorized_user, only: [:show]
   before_filter :clear_session_parent_id, except: [:create]
+  before_filter :load_map_vars, only: [:show]
 
   include YoutubeParserHelper
   include ZipHelper
@@ -61,8 +62,7 @@ class MovementsController < ApplicationController
   end
 
   def show
-    gon.events = @movement.events.reject { |e| e.latitude.nil? || e.longitude.nil? }
-    gon.event_types = EventType.all
+    load_map_vars
     session[:movement_id] = @movement.id
     @sub_events = []
     @movement.sub_movements.each { |sub_movement| @sub_events.concat sub_movement.events }
@@ -112,6 +112,13 @@ class MovementsController < ApplicationController
 
   def load_event_types
     @event_types = EventType.names
+  end
+
+  def load_map_vars
+    gon.events = @movement.events.reject { |e| e.latitude.nil? || e.longitude.nil? }
+    gon.event_types = EventType.all
+    gon.times = []
+    gon.events.each {|e| gon.times << e.formatted_time}
   end
 
   def get_approved_events

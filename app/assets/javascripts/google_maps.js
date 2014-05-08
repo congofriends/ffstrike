@@ -2,23 +2,22 @@ var ready;
 ready = function () {
   var map;
   var events;
+  var times;
   var event_types = [];
   var location_array = [];
   var event_names = [];
   var event_path = [];
   var addresses = [];
-  var dates = []
 
   if(window.gon.events != undefined || window.gon.event_types != undefined) {
     events = window.gon.events;
-
+    times = window.gon.times
     for (var i=0; i < events.length; i++) {
       location_array.push(new google.maps.LatLng(events[i].latitude, events[i].longitude));
       event_names.push(events[i].name);
       event_types.push(window.gon.event_types[events[i].event_type_id - 1].name);
       addresses.push(events[i].address + ", " + events[i].city + ", " + events[i].state + ", " + events[i].zip);
       event_path.push('/events/'+ events[i].name.replace(/ /g, '-'));
-      dates.push(events[i].start_time)
     }
 
     function initialize() {
@@ -45,10 +44,15 @@ ready = function () {
         google.maps.event.addListener(marker, 'click', function(marker, i) {
           return function() {
 
-            infowindow.setContent('<a href =' + event_path[i]+'>' + event_names[i] + '</a>' +
+            infowindow.setContent('<div class="contentWindow"><h4><a href =' + event_path[i]+'>' + event_names[i] + '</a></h4>' +
         '<div>' + event_types[i] + '</div>' + '<hr>' +
+        '<h6>Location:</h6>' +
         '<div>' + addresses[i] + '</div>' +
-        '<div>' + dates[i] + '</div>');
+        '<h6>When:</h6>' +
+        '<div>' + times[i] + '</div></br>' +
+        '<div>Would you like more information about this event? </div>' +
+        '<div>Contact the host</div>' +
+        '</div>');
 
 
             infowindow.open(map, marker);

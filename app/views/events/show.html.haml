@@ -7,8 +7,9 @@
       .row
         %h2.event-header= @event.name
       - if @event.host?(current_user)
-        = link_to "Dashboard", dashboard_event_path(@event, anchor: "event"), :class=> "btn btn-success btn-sm"
-
+        = link_to "Dashboard", dashboard_event_path(@event, anchor: "event"), :class=> "btn btn-success btn-sm dash_btn"
+      - if @event.image
+        = image_tag @event.image(:medium), width: 200, :class => "event_avatar"
       %br
 
       %p.desc= @event.formatted_time

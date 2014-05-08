@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140508155952) do
+=======
+ActiveRecord::Schema.define(version: 20140508170234) do
+>>>>>>> added images to events
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,7 +68,14 @@ ActiveRecord::Schema.define(version: 20140508155952) do
     t.string   "address2"
     t.datetime "start_time"
     t.datetime "end_time"
+<<<<<<< HEAD
     t.boolean  "forum_option",     default: false
+=======
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+>>>>>>> added images to events
   end
 
   add_index "events", ["host_id"], name: "index_events_on_host_id", using: :btree
