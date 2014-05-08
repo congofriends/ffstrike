@@ -66,6 +66,13 @@ class MovementsController < ApplicationController
     session[:movement_id] = @movement.id
     @sub_events = []
     @movement.sub_movements.each { |sub_movement| @sub_events.concat sub_movement.events }
+
+    if @movement.parent.nil?
+      render "show"
+    else
+      render "show_chapter"
+    end
+
   end
 
   def export_csv
