@@ -19,7 +19,7 @@ class Event < ActiveRecord::Base
 
   has_attached_file :image,
                     :styles => { :medium => '280x150', :thum => '50x50' },
-                    :default_url => 'dog.gif'
+                    :default_url => 'fotc.jpg'
 
   validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
   validates_attachment_size :image, :less_than => 5.megabytes
