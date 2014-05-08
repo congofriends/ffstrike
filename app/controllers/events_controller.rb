@@ -104,7 +104,7 @@ class EventsController < ApplicationController
 
   def event_params
     params[:event][:event_type_id] = EventType.find_by(name: params[:event][:event_type]).id if params[:event][:event_type]
-    params.require(:event).permit(:event_type_id, :address2, :name, :address, :location_details, :city, :zip, :state, :start_time, :end_time, :host_id, :notes)
+    params.require(:event).permit(:event_type_id, :address2, :name, :address, :location_details, :city, :zip, :state, :start_time, :end_time, :host_id, :notes, :forum_option)
   end
 
   def load_event

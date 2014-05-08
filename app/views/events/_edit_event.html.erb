@@ -56,6 +56,14 @@
         <%= best_in_place event, :approved, :type => :checkbox, :html_attrs => {:class => "input"}%>
       </div>
     </div>
+
+    <div class="form-group" id="events-list">
+      <label class="col-sm-1">Disqus</label>
+      <div class="col-sm-10">
+        <%= best_in_place event, :forum_option, :type => :checkbox, :html_attrs => {:class => "input"} %>
+      </div>  
+    </div>
+
   </form>
 
   <div class="form-inline">
