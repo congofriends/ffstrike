@@ -117,8 +117,12 @@ class MovementsController < ApplicationController
   def load_map_vars
     gon.events = @movement.events.reject { |e| e.latitude.nil? || e.longitude.nil? }
     gon.event_types = EventType.all
+    gon.event_images = []
     gon.times = []
-    gon.events.each {|e| gon.times << e.formatted_time}
+    gon.events.each do |e|
+      gon.times << e.formatted_time
+      gon.event_images << e.image.url
+    end
   end
 
   def get_approved_events

@@ -3,6 +3,7 @@ ready = function () {
   var map;
   var events;
   var times;
+  var event_images;
   var event_types = [];
   var location_array = [];
   var event_names = [];
@@ -11,7 +12,9 @@ ready = function () {
 
   if(window.gon.events != undefined || window.gon.event_types != undefined) {
     events = window.gon.events;
-    times = window.gon.times
+    times = window.gon.times;
+    event_images = window.gon.event_images;
+
     for (var i=0; i < events.length; i++) {
       location_array.push(new google.maps.LatLng(events[i].latitude, events[i].longitude));
       event_names.push(events[i].name);
@@ -44,7 +47,8 @@ ready = function () {
         google.maps.event.addListener(marker, 'click', function(marker, i) {
           return function() {
 
-            infowindow.setContent('<div class="contentWindow"><h4><a href =' + event_path[i]+'>' + event_names[i] + '</a></h4>' +
+            infowindow.setContent('<div class="contentWindow"><h4><a href =' + event_path[i]+'>' + event_names[i] + '</a>' +
+        '<img src="' + event_images[i] + '" class="marker_image"></h4>' +
         '<div>' + event_types[i] + '</div>' + '<hr>' +
         '<h6>Location:</h6>' +
         '<div>' + addresses[i] + '</div>' +
