@@ -4,22 +4,22 @@ ready = function () {
   var events;
   var times;
   var event_images;
+  var addresses;
   var event_types = [];
   var location_array = [];
   var event_names = [];
   var event_path = [];
-  var addresses = [];
 
   if(window.gon.events != undefined || window.gon.event_types != undefined) {
     events = window.gon.events;
     times = window.gon.times;
     event_images = window.gon.event_images;
+    addresses = window.gon.addresses;
 
     for (var i=0; i < events.length; i++) {
       location_array.push(new google.maps.LatLng(events[i].latitude, events[i].longitude));
       event_names.push(events[i].name);
       event_types.push(window.gon.event_types[events[i].event_type_id - 1].name);
-      addresses.push(events[i].address + ", " + events[i].city + ", " + events[i].state + ", " + events[i].zip);
       event_path.push('/events/'+ events[i].name.replace(/ /g, '-'));
     }
 

@@ -119,7 +119,9 @@ class MovementsController < ApplicationController
     gon.event_types = EventType.all
     gon.event_images = []
     gon.times = []
+    gon.addresses = []
     gon.events.each do |e|
+      gon.addresses << e.location
       gon.times << e.formatted_time
       gon.event_images << e.image.url
     end
