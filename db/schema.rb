@@ -64,11 +64,11 @@ ActiveRecord::Schema.define(version: 20140508170234) do
     t.string   "address2"
     t.datetime "start_time"
     t.datetime "end_time"
+    t.boolean  "forum_option",       default: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.boolean  "forum_option",       default: false
   end
 
   add_index "events", ["host_id"], name: "index_events_on_host_id", using: :btree
