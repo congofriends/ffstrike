@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6faa1fc4-3ff9-475b-8a2c-ae85166d167e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/movements/event_type.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/movements/_nav_pills_event.html.haml" afterPath="$PROJECT_DIR$/app/views/movements/_nav_pills_event.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/coordinator_creates_an_event.feature" afterPath="$PROJECT_DIR$/features/coordinator_creates_an_event.feature" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/step_definitions/create_events.rb" afterPath="$PROJECT_DIR$/features/step_definitions/create_events.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/pages/create_events_page.rb" afterPath="$PROJECT_DIR$/features/pages/create_events_page.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/default-theme.css.scss.erb" afterPath="$PROJECT_DIR$/app/assets/stylesheets/default-theme.css.scss.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ffstrike.iml" afterPath="$PROJECT_DIR$/.idea/ffstrike.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/movements_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/movements_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/events/show.html.haml" afterPath="$PROJECT_DIR$/app/views/events/show.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/movements/show.html.haml" afterPath="$PROJECT_DIR$/app/views/movements/show.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/unauthenticated_events_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/unauthenticated_events_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ffstrike.iws" />
@@ -815,13 +802,18 @@
       <created>1399415257180</created>
       <updated>1399415257180</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="[Ayanga] Changed User flow when creating event when User is signed in">
+      <created>1399579764317</created>
+      <updated>1399579764317</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="22" width="1420" height="790" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -837,7 +829,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32931727" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -884,7 +875,8 @@
     <MESSAGE value="[Ayanga] Removed Geocoder dependencies on zipcode lookup table" />
     <MESSAGE value="[Ayanga] Enabled Single Sign-In for Disqus comment thread on Events page" />
     <MESSAGE value="[Ayanga] Fixed Defect card #222: Redirects User to current page after Sign-in" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Ayanga] Fixed Defect card #222: Redirects User to current page after Sign-in" />
+    <MESSAGE value="[Ayanga] Changed User flow when creating event when User is signed in" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Ayanga] Changed User flow when creating event when User is signed in" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
