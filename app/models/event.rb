@@ -19,14 +19,14 @@ class Event < ActiveRecord::Base
 
   has_attached_file :image,
                     :styles => { :medium => '280x150', :thum => '50x50' },
-                    :default_url => '/assets/fotc.jpg'
+                    :default_url => 'fotc.jpg'
 
   validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
   validates_attachment_size :image, :less_than => 5.megabytes
 
 
-  # delegate :movement_name, :image,     :to => :movement
-  delegate :tagline,                   :to => :movement
+  delegate :movement_name,      :to => :movement
+  delegate :tagline,            :to => :movement
   delegate :host_name,          :to => :host
   delegate :host_email,         :to => :host
 
@@ -113,4 +113,5 @@ class Event < ActiveRecord::Base
     def event_date_cannot_be_in_the_past
       errors.add(:date, "can't be in the past") if !date.nil? && date < Date.today
     end
+
 end

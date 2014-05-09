@@ -57,8 +57,6 @@ ready = function () {
         '<div>Would you like more information about this event? </div>' +
         '<div>Contact the host</div>' +
         '</div>');
-
-
             infowindow.open(map, marker);
           }
         }(marker, i));
