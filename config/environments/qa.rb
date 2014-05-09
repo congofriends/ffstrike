@@ -16,5 +16,6 @@ Ffstrike::Application.configure do
   config.action_mailer.default_url_options = { :host => "http://rally-qa.herokuapp.com" }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
+  config.action_controller.include_all_helpers = true
 
 end
