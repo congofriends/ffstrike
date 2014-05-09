@@ -1,21 +1,21 @@
 home_page = HomePage.new
 
 Given(/^I am an attendee$/)do
-  visit root_path
+  visit splash_path
 end
 
 When(/^I search for an event from the home page$/) do
-  visit root_path
+  visit splash_path
   home_page.search_by_valid_zipcode()
 end
 
 When(/^I search for a movement with an invalid zipcode$/) do
-  visit root_path
+  visit splash_path
   home_page.search_by_invalid_zipcode()
 end
 
 When(/^I search for a movement with no zipcode$/) do
-	visit root_path
+	visit splash_path
   home_page.search_with_no_zipcode()
 end
 

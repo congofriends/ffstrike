@@ -13,7 +13,7 @@ When(/^I delete the event$/) do
 end
 
 Then "the event no longer exists" do
-  visit root_path
+  visit splash_path
   event_dashboard_page.event_should_not_exist()
   page.should_not have_content(@event.name)
 end

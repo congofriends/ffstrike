@@ -2,7 +2,9 @@ Ffstrike::Application.routes.draw do
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "users", :invitations => 'users/invitations'  }
 
-  root 'static_pages#index'
+  root 'movements#index'
+
+  get 'splash' => 'static_pages#index'
 
   get 'events' => 'events#search'  
 
