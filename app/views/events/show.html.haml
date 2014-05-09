@@ -33,24 +33,25 @@
     %iframe{frameborder: "0", height: "550", src: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg\r\n    &q=#{@event.location}", style: "border:0", width: "100%"}
 
   .col-sm-4
-    .row
-    %h3.event-header Event tasks
+    .well
+      .row
+      %h3.event-header Event tasks
 
-    - if session[:current_attendee_id].nil?
-      %p.text-info.desc
-        You need to attend this event in order to sign up for tasks!
+      - if session[:current_attendee_id].nil?
+        %p.text-info.desc
+          You need to attend this event in order to sign up for tasks!
 
 
-    - @event.tasks.each do |task|
-      =render task, event: @event
+      - @event.tasks.each do |task|
+        =render task, event: @event
 
-    .row
-      %br
-      %br
+      .row
+        %br
+        %br
 
-      .desc= link_to "Generate PDF with event summary", event_path(@event, {generate: :event, :format => :pdf}), :target => '_blank'
-      %br
-      .desc=link_to "Generate PDF with tasks list", event_path(@event, {generate: :tasks, :format => :pdf} ), :target => '_blank'
+        .desc= link_to "Generate PDF with event summary", event_path(@event, {generate: :event, :format => :pdf}), :target => '_blank'
+        %br
+        .desc=link_to "Generate PDF with tasks list", event_path(@event, {generate: :tasks, :format => :pdf} ), :target => '_blank'
 
 - if @event.forum_option
   .container

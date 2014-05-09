@@ -47,7 +47,7 @@ include Capybara::DSL
 	end
 
 	def select_create_event
-		click_link_or_button('Create an Event!')
+		click_link_or_button('Create an event for Congo Week!')
 		return self
 	end
 
