@@ -1,5 +1,5 @@
 class MovementsController < ApplicationController
-  before_filter :authenticate_user!, except: [:search, :index, :show]
+  # before_filter :authenticate_user!, except: [:search, :index, :show]
   before_filter :load_movement, except: [:new, :create, :index, :user_movements, :new_submovement]
   before_filter :load_movements, only: [:index, :search]
   before_filter :load_event_types, only: [:show]
