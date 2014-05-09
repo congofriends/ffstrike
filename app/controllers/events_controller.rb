@@ -8,7 +8,6 @@ class EventsController < ApplicationController
   after_filter :populate_tasks, :only => [:create]
 
   include ZipHelper
-  include StatesHelper
 
   def explanation; end
 
