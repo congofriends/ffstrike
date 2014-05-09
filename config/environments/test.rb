@@ -9,7 +9,7 @@ Ffstrike::Application.configure do
 
   # Links need to work in actionmailer
   config.action_mailer.default_url_options = { :host => "http://rally-qa.herokuapp.com" }
-  config.action_controller.include_all_helpers = true
+
 
   # Do not eager load code on boot. This avoids loading your whole application
   # just for the purpose of running a single test. If you are using a tool that

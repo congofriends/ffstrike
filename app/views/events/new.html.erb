@@ -3,6 +3,7 @@
 
     <%= form_for ([@movement, @event]) do |form| %>
       <fieldset>
+
       <div class='form-group'>
         <%= form.label :event_name, "Event Name *" %>
         <%= form.text_field :name, class: 'form-control' %>
