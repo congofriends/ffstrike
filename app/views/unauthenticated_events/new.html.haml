@@ -39,7 +39,7 @@
 
     .form-group.col-sm-6
       = label :event, :state, "State *"
-      = select_tag :state, options_for_select(us_states, "IL"), class: 'form-control'  
+      = text_field :event, :state, class: 'form-control'
 
     .form-group.col-sm-6
       = label :event, :zip, "Zip *"
