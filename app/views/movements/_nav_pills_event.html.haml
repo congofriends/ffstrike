@@ -1,5 +1,0 @@
-%ul.nav.nav-pills.nav-stacked
-  - if current_user
-    = link_to "Create an Event!", event_type_movement_path(@movement), :class=> "btn btn-success btn-lg"
-  - else
-    = link_to "Create an Event!", new_movement_unauthenticated_event_path(@movement), :class => "btn btn-success btn-lg"
