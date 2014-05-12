@@ -81,7 +81,7 @@ group :test, :development do
   gem 'assert_difference'
   gem 'jasmine-rails'
   gem 'capybara'
-  # gem 'selenium-webdriver'
+  gem 'selenium-webdriver'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'poltergeist'
