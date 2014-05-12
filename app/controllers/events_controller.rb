@@ -66,7 +66,7 @@ class EventsController < ApplicationController
   end
 
   def edit; end
-
+1
   def update
     @event.update(event_params)
     flash[:notice] = t('event.updated')
@@ -77,6 +77,7 @@ class EventsController < ApplicationController
         format.html { redirect_to event_path(@event) }
       end
         format.json { head :ok }
+        format.js
     end
   end
 

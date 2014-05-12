@@ -64,18 +64,17 @@ $("#map").on("click", function() {
   $("#map-canvas").slideToggle();
 });
 
-// $(".mvmt-chapters").on("click", function() {
-//   content.innerHTML = 'Your new phrase';
-//   $(".mvmt-chapters").slideToggle();
-// });
+function click_event(id) {
+  $(".edit-event").hide('fast');
+  $('.event-' + id +'-details').show('slow');
+}
 
-// function chapArrow(img)
-// {
-//    if(img.src.match(/blank/)) img.src = "down_arrow.png";
-//    else img.src = "up_arrow.png";
-// }
+$(".edit-event-dash").on("click", function() {
+  click_event(this.id);
+});
 
 $(".sub_movements").on("click", function() {
   $("#sub_movements").slideToggle();
 });
+
 });

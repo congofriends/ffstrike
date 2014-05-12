@@ -68,6 +68,7 @@
         <legend>Coordinator Controls</legend>
         <%= link_to "Publish", publish_movement_path(@movement), class: 'btn btn-m btn-success' unless @movement.published?%>
         <%= link_to "Movement Profile", movement_path(@movement), class: "btn btn-xs btn-primary" %>
+        <%= link_to "Add Event", event_type_movement_path(@movement), class: "btn btn-xs btn-success" %>
         <%= link_to "Invite More Coordinators", new_user_invitation_path, { class: 'btn btn-xs btn-success' } %>
         <%= link_to "Export Attendee List", export_csv_path(@movement), class: 'btn btn-xs btn-success' %>
         <%= render "movements/email" %>
