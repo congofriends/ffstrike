@@ -32,7 +32,7 @@
 
     .row
       - @approved_events.each do |event|
-        = render partial: 'events/panel', locals: {event: event}
+        = render event 
 
     .row
       .col-md-12
