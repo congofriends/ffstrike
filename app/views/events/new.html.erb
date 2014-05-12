@@ -1,96 +1,104 @@
 <div class='container'>
-  <div class='well'>
+  <div class='row'>
+    <div class="col-md-6 col-md-offset-3">
+      <div class='well'>
 
-    <%= form_for ([@movement, @event]) do |form| %>
-      <fieldset>
-      <div class='form-group'>
-        <%= form.label :event_name, "Event Name *" %>
-        <%= form.text_field :name, class: 'form-control' %>
-      </div>
-
-
-        <div class="form-group">
-          <%= form.label :address, 'Address *' %>
-          <%= form.text_field :address, class: 'form-control' %>
-        </div>
-
-        <div class='form-group'>
-          <%= form.label :location_details %>
-          <%= form.text_field :location_details, class: 'form-control' %>
-        </div>
-
-        <div class="row">
-        <div class="col-xs-6">
-          <%= form.label :city, 'City *' %>
-          <%= form.text_field :city, class: 'form-control' %>
-        </div>
-          <div class="col-xs-2">
-            <%= form.label :state, 'State *' %>
-            <%= form.text_field :state, class: 'form-control' %>
+        <%= form_for ([@movement, @event]) do |form| %>
+          <fieldset>
+          <div class='form-group'>
+            <%= form.label :event_name, "Event Name *" %>
+            <%= form.text_field :name, class: 'form-control' %>
           </div>
-          <div class="col-xs-3">
-          <%= form.label :zip, 'Zip *' %>
-          <%= form.text_field :zip, class: 'form-control' %>
-        </div>
+
+          <div class="form-group">
+            <%= form.label :address, 'Address *' %>
+            <%= form.text_field :address, class: 'form-control' %>
+          </div>
+
+          <div class='form-group'>
+            <%= form.label :location_details %>
+            <%= form.text_field :location_details, class: 'form-control' %>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              <%= form.label :city, 'City *' %>
+              <%= form.text_field :city, class: 'form-control' %>
+            </div>
+            <div class="col-xs-2">
+              <%= form.label :state, 'State *' %>
+              <%= form.text_field :state, class: 'form-control' %>
+            </div>
+            <div class="col-xs-3">
+            <%= form.label :zip, 'Zip *' %>
+            <%= form.text_field :zip, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class='row'>
+            <div class ="col-xs-6">
+              <div class='form-group'>
+                <%= form.label "Start date & time:" %>
+                <div class="form-inline event-date">
+                  <%= form.text_field :start_time, class: 'form-control datetimepicker' %>
+                </div>
+              </div>
+            </div>
+            <div class ="col-xs-6">
+              <div class='form-group'>
+                <%= form.label "End date & time:" %>
+                <div class="form-inline event-date">
+                  <%= form.text_field :end_time, class: 'form-control datetimepicker' %>
+                </div>
+              </div></br></br>
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <%= form.label "Message to attendees" %>
+            <%= form.text_area :notes, :rows => "2" , class: 'form-control' %>
+          </div></br>
+
+          <div class='form-group'>
+            <%= form.label :event_type_id, "Event Type *" %>
+            <% if params[:type].nil? %>
+              <%= form.select :event_type, EventType.all.map(&:name), {class: 'form-control'}, {class: 'form-control'} %>
+            <%else%>
+              <%= form.select :event_type, EventType.all.map(&:name), {:selected=>params[:type] }, {class: 'form-control'}%>
+            <%end%>
+          </div></br>
+
+          <div class='form-group'>
+            <%unless @movement.sub_movements.empty? %>
+              <%= form.label :movement, "Would one of our chapters be a better fit for this event?" %>
+              <%= form.select :movement, @movement.sub_movements.map(&:name), {:include_blank => "Stay under the parent movement: " + @movement.name}, {class: 'form-control'}%>
+            <%end%>
+            <%if @movement.parent %>
+              Is this event under a chapter?</br>
+              <%= form.label :movement, "Would one of our other chapters be a better fit for this event?"%>
+              <%= form.select :movement, @movement.parent.sub_movements.map(&:name), {selected: @movement.name, include_blank: "Stay under the parent movement: " + @movement.parent.name}, {class: 'form-control'}%>
+            <%end%>
+          </div></br>
+
+          <div class='form-group'>
+            <%= form.label :include_disqus, "Include Disqus Comment Thread"%>
+            <%= form.check_box :forum_option %>
+          </div></br>
+
+           <div class='form-group'>
+            <%= form.label :image %>
+            <%= form.file_field :image, class: 'form-control' %>
+          </div></br>
+
+          <% if current_user %>
+              <%= form.hidden_field :host_id, value: current_user.id %>
+          <%end%>
+            <div class='form-group'>
+              <%= form.submit 'Create Event', class: 'btn btn-primary', id: 'create_event' %>
+            </div>
+          </fieldset>
+        <%end%>
       </div>
-
-      <div class='form-group float_left'>
-        <%= form.label "Start date & time:" %>
-        <div class="form-inline event-date">
-          <%= form.text_field :start_time, class: 'form-control datetimepicker' %>
-        </div>
-      </div>
-
-      <div class='form-group'>
-        <%= form.label "End date & time:" %>
-        <div class="form-inline event-date">
-          <%= form.text_field :end_time, class: 'form-control datetimepicker' %>
-        </div>
-      </div></br></br>
-
-      <div class='form-group'>
-        <%= form.label "Message to attendees" %>
-        <%= form.text_area :notes, :rows => "2" , class: 'form-control' %>
-      </div></br>
-
-      <div class='form-group'>
-        <%= form.label :event_type_id, "Event Type *" %>
-        <% if params[:type].nil? %>
-          <%= form.select :event_type, EventType.all.map(&:name), {class: 'form-control'}, {class: 'form-control'} %>
-        <%else%>
-          <%= form.select :event_type, EventType.all.map(&:name), {:selected=>params[:type] }, {class: 'form-control'}%>
-        <%end%>
-      </div></br>
-
-      <div class='form-group'>
-        <%unless @movement.sub_movements.empty? %>
-          <%= form.label :movement, "Would one of our chapters be a better fit for this event?" %>
-          <%= form.select :movement, @movement.sub_movements.map(&:name), {:include_blank => "Stay under the parent movement: " + @movement.name}, {class: 'form-control'}%>
-        <%end%>
-        <%if @movement.parent %>
-          Is this event under a chapter?</br>
-          <%= form.label :movement, "Would one of our other chapters be a better fit for this event?"%>
-          <%= form.select :movement, @movement.parent.sub_movements.map(&:name), {selected: @movement.name, include_blank: "Stay under the parent movement: " + @movement.parent.name}, {class: 'form-control'}%>
-        <%end%>
-      </div></br>
-
-      <div class='form-group'>
-        <%= form.label :include_disqus, "Include Disqus Comment Thread"%>
-        <%= form.check_box :forum_option %>
-      </div></br>
-
-       <div class='form-group'>
-        <%= form.label :image %>
-        <%= form.file_field :image, class: 'form-control' %>
-      </div></br>
-
-      <% if current_user %>
-          <%= form.hidden_field :host_id, value: current_user.id %>
-      <%end%>
-        <div class='form-group'>
-          <%= form.submit 'Create Event', class: 'btn btn-primary', id: 'create_event' %>
-        </div>
-      </fieldset>
-    <%end%>
+    </div>
   </div>
 </div>
