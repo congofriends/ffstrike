@@ -1,0 +1,8 @@
+.col-md-5
+  .panel.panel-default
+    = link_to image_tag(movement.image.url, class: 'front-page img-movement'), movement_path(movement)
+    %h3= link_to movement.name, movement_path(movement), class: "mvmt-navigation" 
+    %h4= truncate(movement.tagline, :length => 200, omission: "... See more")
+    %p.txt-sm
+      - if movement.call_to_action?
+        = truncate(movement.call_to_action, :length => 300, omission: "... %s") % link_to('See more', movement_path(movement))
