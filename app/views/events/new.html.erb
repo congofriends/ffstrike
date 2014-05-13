@@ -1,27 +1,46 @@
 <div class='container'>
-  <div class='row'>
-    <div class="col-md-6 col-md-offset-3">
-      <div class='well'>
+  <div class='well new-event'>
 
-        <%= form_for ([@movement, @event]) do |form| %>
-          <fieldset>
+    <%= form_for ([@movement, @event]), html: { id: 'new-event-form' } do |form| %>
+      <fieldset>
+
+        <fieldset class="event_details">  
+          <legend> Event details</legend>
           <div class='form-group'>
             <%= form.label :event_name, "Event Name *" %>
             <%= form.text_field :name, class: 'form-control' %>
           </div>
-
-          <div class="form-group">
-            <%= form.label :address, 'Address *' %>
-            <%= form.text_field :address, class: 'form-control' %>
+          <div class='form-group'>
+            <%= form.label "Start date & time:" %>
+            <%= form.text_field :start_time, class: 'form-control datetimepicker' %>
           </div>
 
           <div class='form-group'>
-            <%= form.label :location_details %>
-            <%= form.text_field :location_details, class: 'form-control' %>
+            <%= form.label "End date & time:" %>
+            <%= form.text_field :end_time, class: 'form-control datetimepicker' %>
+          </div>
+           <div class='form-group'>
+            <%= form.label :image %>
+            <%= form.file_field :image%>
+          </div>
+          <button type="button", class="btn btn-success next"> Next </button>
+        </fieldset>
+
+        <fieldset class="event_address">  
+          <legend> Event address</legend>
+          <div class="row">
+            <div class="col-xs-6">
+              <%= form.label :address, 'Address 1 *' %>
+              <%= form.text_field :address, class: 'form-control' %>
+            </div>
+            <div class="col-xs-6">
+              <%= form.label :address2, 'Address 2' %>
+              <%= form.text_field :address2, class: 'form-control' %>
+            </div>
           </div>
 
           <div class="row">
-            <div class="col-xs-6">
+            <div class="col-xs-5">
               <%= form.label :city, 'City *' %>
               <%= form.text_field :city, class: 'form-control' %>
             </div>
@@ -29,35 +48,30 @@
               <%= form.label :state, 'State *' %>
               <%= form.text_field :state, class: 'form-control' %>
             </div>
-            <div class="col-xs-3">
-            <%= form.label :zip, 'Zip *' %>
-            <%= form.text_field :zip, class: 'form-control' %>
+            <div class="col-xs-5">
+              <%= form.label :zip, 'Zip *' %>
+              <%= form.text_field :zip, class: 'form-control' %>
             </div>
           </div>
+          <div class='form-group'>
+            <%= form.label :location_details %>
+            <%= form.text_field :location_details, class: 'form-control' %>
+          </div>
+          <button type="button", class="btn btn-primary previous"> Previous </button>
+          <button type="button", class="btn btn-success next"> Next </button>
+        </fieldset>
 
-          <div class='row'>
-            <div class ="col-xs-6">
-              <div class='form-group'>
-                <%= form.label "Start date & time: *" %>
-                <div class="form-inline event-date">
-                  <%= form.text_field :start_time, class: 'form-control datetimepicker' %>
-                </div>
-              </div>
-            </div>
-            <div class ="col-xs-6">
-              <div class='form-group'>
-                <%= form.label "End date & time:" %>
-                <div class="form-inline event-date">
-                  <%= form.text_field :end_time, class: 'form-control datetimepicker' %>
-                </div>
-              </div></br></br>
-            </div>
+        <fieldset class="event_additional_details">
+          <legend> Event additional details</legend>
+          <div class='form-group'>
+            <%= form.label "Message to attendees" %>
+            <%= form.text_field :notes, class: 'form-control' %>
           </div>
 
           <div class='form-group'>
-            <%= form.label "Message to attendees" %>
-            <%= form.text_area :notes, :rows => "2" , class: 'form-control' %>
-          </div></br>
+            <%= form.label "Include Disqus"%>
+            <%= form.check_box :forum_option, class: 'form-control' %>
+          </div>
 
           <div class='form-group'>
             <%= form.label :event_type_id, "Event Type *" %>
@@ -66,7 +80,7 @@
             <%else%>
               <%= form.select :event_type, EventType.all.map(&:name), {:selected=>params[:type] }, {class: 'form-control'}%>
             <%end%>
-          </div></br>
+          </div>
 
           <div class='form-group'>
             <%unless @movement.sub_movements.empty? %>
@@ -78,27 +92,17 @@
               <%= form.label :movement, "Would one of our other chapters be a better fit for this event?"%>
               <%= form.select :movement, @movement.parent.sub_movements.map(&:name), {selected: @movement.name, include_blank: "Stay under the parent movement: " + @movement.parent.name}, {class: 'form-control'}%>
             <%end%>
-          </div></br>
-
-          <div class='form-group'>
-            <%= form.label :include_disqus, "Include Disqus Comment Thread"%>
-            <%= form.check_box :forum_option %>
-          </div></br>
-
-           <div class='form-group'>
-            <%= form.label :image %>
-            <%= form.file_field :image, class: 'form-control' %>
-          </div></br>
+          </div>
 
           <% if current_user %>
               <%= form.hidden_field :host_id, value: current_user.id %>
           <%end%>
-            <div class='form-group'>
-              <%= form.submit 'Create Event', class: 'btn btn-primary', id: 'create_event' %>
-            </div>
-          </fieldset>
-        <%end%>
-      </div>
-    </div>
+          <div class='form-group'>
+            <button type="button", class="btn btn-primary previous"> Previous </button>
+            <%= form.submit 'Create Event', class: 'btn btn-success', id: 'create_event' %>
+          </div>
+        </fieldset>
+      </fieldset>
+    <%end%>
   </div>
 </div>
