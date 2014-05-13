@@ -1,7 +1,7 @@
 class MovementsController < ApplicationController
   # before_filter :authenticate_user!, except: [:search, :index, :show]
   before_filter :load_movement, except: [:new, :create, :index, :user_movements, :new_submovement]
-  before_filter :load_movements, only: [:search]
+  before_filter :load_movements, only: [:index, :search]
   before_filter :load_event_types, only: [:show]
   before_filter :get_approved_events, only: [:show]
   before_filter :check_user_owns_movement, only: [:dashboard]
@@ -12,10 +12,7 @@ class MovementsController < ApplicationController
   include YoutubeParserHelper
   include ZipHelper
 
-  def index
-    @movement = Movement.find_by_name("Friends of the Congo")
-    @chapters = @movement.sub_movements
-  end
+  def index; end
 
   def search
     #FIXME: refactor this method here and in the events_controller, currently it
