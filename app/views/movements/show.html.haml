@@ -17,22 +17,20 @@
     =render 'movement_video'
 
   .support-network.row
-    %h3 Our support network is made up of communities supporting justice in the Congo:
-
-    .row
-      = render @movement.sub_movements
-
+    %h3.sub_movements Our support network is made up of communities supporting justice in the Congo:
+    %div#sub_movements= render @movement.sub_movements
     - if current_user
       = link_to "Join our support network!", new_submovement_path(), :class=> "btn btn-success btn-sm"
     - else
       = link_to "Join our support network!", new_unauthenticated_submovement_path(), :class => "btn btn-success btn-lg"
 
-  .event.row
+  .events.row
     %h3 We are spreading awareness and promoting engagement through these events:
 
     .row
       - @approved_events.each do |event|
-        = render partial: 'events/panel', locals: {event: event}
+        - if event.approved
+          = render partial: 'events/panel', locals: {event: event}
 
     .row
       .col-md-12

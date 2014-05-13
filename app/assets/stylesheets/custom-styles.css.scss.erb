@@ -9,6 +9,11 @@ body {
   background-color: $secondary-color1;
 }
 
+.events {
+  padding: 10px;
+  background-color: $secondary-color2;
+}
+
 .alert {
   padding: 4px;
 }
@@ -133,8 +138,47 @@ body {
   font-weight: bold;
 }
 
+#sub_movements { }
+
+.move {
+  padding: 10px;
+  height: 100%;
+  .front-page { height: 160px; }
+}
+
+.media-move {
+  display: inline-flex;
+}
+
+.move-name {
+  font-size: 21px;
+  font-style: normal;
+  margin-left: 40px;
+
+  > p { font-size: 16px; }
+  > p.txt-sm { font-size: 10px; }
+}
+
+div > .mvmt-attendee, div > .mvmt-location {
+  font-size: 12px;
+  margin: 0px 10px 10px 0px;
+}
+
+div > .mvmt-attendee { color: blue; }
+
+.mvmt-details { display: -webkit-box; }
+
 .actions {
   display: none;
+}
+
+.bs-component:hover .actions{
+  display: inline-flex;
+  font-size: 11px;
+  margin: -120px 5px 0px 0px;
+
+  a { margin: 0px 5px 5px 0px; }
+  div { z-index: 1; }
 }
 
 .event-header{
@@ -149,6 +193,19 @@ body {
 .attend-button{
   text-align: center;
   margin-top: 25px;
+}
+
+.mvmnt-details {
+  a.mvmt-navigation { color: #191d1d; }
+
+  &:hover a {
+    color: #49b1ba;
+    text-decoration: none;
+  }
+}
+
+.mvmt-location  {
+  float: left;
 }
 
 .mvmt-chapters  {
@@ -187,6 +244,9 @@ body {
     width: auto;
     height: auto;
 }
+.movement-content {
+  display: -webkit-box;
+}
 
 .badge {
   font-weight: 100;
@@ -200,6 +260,8 @@ body {
   width: 250px;
   float: left;
 }
+
+#sub_movements > .col-md-7 { float: none; }
 
 .breadcrumb-nav {
   padding-top: 7px;
