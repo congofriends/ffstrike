@@ -1,18 +1,31 @@
-.col-md-4
+.col-md-3
   .panel.panel-default
-    = link_to image_tag(event.image.url, class: 'front-page img-movement'), event_path(event)
-    %h3= link_to truncate(event.name, :length=>48), event_path(event)
-    - if event.host? current_user
-      .span= link_to "Dashboard", dashboard_event_path(event, anchor: "event"), :class=> "btn btn-success btn-sm"
-
-    %p
-      = event.number_of_attendees
-      Attendees
-    %br
-
-    = event.location
-
-    %br
-    = event.formatted_time
-
-    = link_to "Yes! I want to attend", new_event_attendee_path(event), class: "btn btn-success btn-sm"
+    .panel-heading.event-panel-header
+      %h3.text-center= link_to truncate(event.name, :length=>48), event_path(event)
+      - if event.host? current_user
+        .text-center= link_to "Dashboard", dashboard_event_path(event, anchor: "event"), :class=> "btn btn-success btn-sm"
+    .panel-footer.event-panel-footer
+      .text-left
+        %p.leadltext-right
+          = event.number_of_attendees
+          Attendees
+        %p
+          Type:
+          = event.type
+        %p
+          Movement:
+          = link_to event.movement.name, movement_path(event.movement)
+        %p
+          Location:
+          = truncate( event.city, :length=>24 )
+        %p
+          Date:
+          = event.date
+        %p
+          Organizer:
+          = truncate( event.host_name || event.host_email , :length=>20)
+        %p
+          Summary:
+          %em
+            = truncate( event.tagline , :length=>50)
+      = link_to "Yes! I want to attend", new_event_attendee_path(event), class: "btn btn-success btn-sm"

@@ -1,30 +1,38 @@
 .container
-  .movement.row
-    = image_tag @movement.image(:medium), width: 200, class: "movement-avatar"
-    .movement_info
-      %h1
-        = @movement.name
-      %h2{:class=> "tagline"}= @movement.tagline
+  .movement-content
+    .row.movements
+      = image_tag @movement.image(:medium), width: 200, :class => "movement_avatar"
+      %div{:class=> "movement_info"}
+        %h1
+          = @movement.name
+        %h2{:class=> "tagline"}= @movement.tagline
+        - if current_user && @movement.users.include?(current_user)
+          = link_to @movement.name + "'s Dashboard", dashboard_movement_path(@movement, anchor: "movement"), :class=> "btn btn-success btn-sm"
+        %h3= @movement.call_to_action
 
-      - if current_user && @movement.users.include?(current_user)
-        = link_to @movement.name + "'s Dashboard", dashboard_movement_path(@movement, anchor: "movement"), :class=> "btn btn-success btn-sm"
-      %h3= @movement.call_to_action
+      - if @movement.about_creator
+        %h4 About the Movement Creators
+        = @movement.about_creator
 
-    - if @movement.about_creator
-      %h4 About the Movement Creators
-      = @movement.about_creator
+    
+    .host-event
+      =render 'movement_video'
 
-    =render 'movement_video'
-
-  .event.row
-    %h3 Events:
-    .row
+      %h3 Events:
       - @approved_events.each do |event|
         - if event.approved
-          = render partial: 'events/panel', locals: {event: event}
-    .row
-      .col-md-12
+          .panel.panel-default
+            .panel-body
+              = link_to event.name, event_path(event)
+              on
+              %strong= event.date.readable_inspect
+              at
+              = event.location
+              %p
+                %em.pull-right.cite= event.type
 
-        %h4 Want to see more activity on this issue? Apply to host an event and we will be in touch!
-        = render 'create_event_button'
+  %br
+  %h4 Want to see more activity on this issue? Apply to host an event and we will be in touch!
+  = render 'nav_pills_event'
+  %br
 

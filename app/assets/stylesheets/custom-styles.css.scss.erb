@@ -101,6 +101,11 @@ body {
   height: 380px;
 }
 
+.movement_avatar, .event_avatar {
+  float: right;
+  margin: 50px;
+}
+
 .tagline {
   font-style: oblique;
   font-size: 20px;
@@ -128,10 +133,15 @@ body {
 
 #map-canvas {
   height: 100%;
+  width: 100%;
   min-height: 400px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #map {
+  padding-left: 8em;
   margin-left: auto;
   margin-right: auto;
   color: blue;
@@ -234,10 +244,8 @@ div > .mvmt-attendee { color: blue; }
 .move-name{
   width: 70%;
 }
-
 .img-movement{
     display: block;
-    float: left;
     width: 30%;
     max-width:200px;
     max-height:95px;
@@ -246,6 +254,9 @@ div > .mvmt-attendee { color: blue; }
 }
 .movement-content {
   display: -webkit-box;
+
+  .movements { width: 65%; margin-right: 70px; }
+  .host-event { width: 35%; }
 }
 
 .badge {
