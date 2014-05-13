@@ -1,6 +1,6 @@
 @import 'colors';
 
-body { 
+body {
   background: $primary-color;
 }
 
@@ -22,7 +22,10 @@ body {
 }
 
 .best_in_place {
+  background-color: white;
+  padding: 2px;
   &:hover, .do_hover {
+    border-style: none;
     padding-right: 1.5em;
     background: url(<%= asset_path "pencil_icon.png" %>) no-repeat right;
     cursor: pointer;
@@ -214,49 +217,4 @@ body {
 .marker_image {
   float: right;
   height: 42px;
-}
-
-.new_event_btn{
-  float: right;
-}
-
-.col-left{
-  width: 40%;
-  float: left;
-  background-color: #f5f5f5;
-  background-color: rgba(164, 227, 195, 1);
-  max-height: 600px;
-  overflow:scroll;
-  padding: 10px;
-}
-
-.event_dash_legend{
-}
-
-.edit-event-dash{
-  float: left;
-}
-
-.event-img-dash{
-  float: left;
-}
-
-.event-name-dash{
-
-}
-
-.edit-event {
-  display: none;
-  background-color: #f5f5f5;
-  padding: 10px;
-  margin: 10px;
-}
-
-.col-sm-1 {
-  min-width: 6em;
-}
-
-.col-right {
-  width: 55%;
-  float: right;
 }
