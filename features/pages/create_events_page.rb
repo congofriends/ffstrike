@@ -46,10 +46,10 @@ include Capybara::DSL
 		return self
 	end
 
-	def select_create_event
-		click_link_or_button('Create an Event!')
-		return self
-	end
+  def select_create_event
+    click_link_or_button('Create an event for Congo Week!')
+    return self
+  end
 
   def select_event_type
     click_link_or_button('Rally')
