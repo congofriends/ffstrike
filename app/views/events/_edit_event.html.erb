@@ -1,6 +1,6 @@
 <div class="event-<%= event.id %>-details edit-event">
   <%= link_to "'#{event.name}' event summary", event_path(event) %>
-  <%= link_to "Remove event", event, method: :delete, data: { confirm: "Are you sure you want to delete this event?"}, remote: true, class:'btn btn-primary btn-xs ' %>
+  <%= link_to "Remove event", event, method: :delete, data: { confirm: "Are you sure you want to delete this event?"}, remote: true, class:'btn btn-primary btn-xs delete-btn ' %>
   <form class="form-horizontal" role="form">
     <div class="form-group" id="events-list">
       <label class="col-sm-1">Type:</label>
@@ -83,8 +83,9 @@
       <div class='form-group'>
         <%= f.label "End date & time:"%></br>
         <%= f.text_field :end_time, class: 'form-control datetimepicker' %></br></br>
-        <%= f.submit "Update" %>
+        <%= f.submit "Update", class: 'float_left' %>
       </div>
     <%end%>
   </div>
 </div>
+
