@@ -15,7 +15,7 @@ describe UserMailer do
     context "movement" do
 
       let(:mail) { UserMailer.custom_message(movement, "Test Email Message") }
-                                 
+
       it "renders the email" do
         mail.subject.should eq("Message from your Movement Organizer")
         mail.to.should eq([attendee.email])
@@ -29,7 +29,7 @@ describe UserMailer do
         mail.to.should include(attendee.email)
       end
 
-      it "doesnt mail other movements" do 
+      it "doesnt mail other movements" do
         different_movement_event = FactoryGirl.create :event, movement_id: movement.id + 1, host: another_user
         different_movement_attendee = FactoryGirl.create :attendee, email: "AnotherMovement@example.com", event: different_movement_event
         mail.to.should_not include("AnotherMovement@example.com")
@@ -53,7 +53,7 @@ describe UserMailer do
   end
 
   describe "#notify_host_of_event_size" do
- 
+
     let(:mail) { UserMailer.notify_host_of_event_size(event) }
     let!(:attendees) { FactoryGirl.create_list(:attendee, 2, event: event) }
 
