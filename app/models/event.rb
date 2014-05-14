@@ -83,6 +83,8 @@ class Event < ActiveRecord::Base
     end_time.to_date if end_time
   end
 
+  def date; start_date; end
+
   def formatted_time
     if end_time.nil?
      start_time.strftime("%m/%d/%Y,%l:%M %p") 
