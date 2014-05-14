@@ -21,7 +21,7 @@ describe AttendeeMailer do
     mail.body.should match(event.address)
     mail.body.should match(event.city)
     mail.body.should match(event.zip)
-    mail.body.should include(event.date)
+    mail.body.should include(event.start_date)
     mail.body.should include(event.start_time)
     mail.body.should include(event.end_time)
   end

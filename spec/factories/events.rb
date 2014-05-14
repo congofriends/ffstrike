@@ -5,7 +5,6 @@ FactoryGirl.define do
     latitude 41.9215421
     longitude -87.70248169999999
     start_time DateTime.now+1000
-    end_time DateTime.now + 10000
   end
 
   factory :event do
@@ -16,7 +15,6 @@ FactoryGirl.define do
     zip {Faker::Address.zip}
     state {Faker::Address.state}
     start_time DateTime.now + 1000
-    end_time DateTime.now + 16000
     latitude 41.9215421
     longitude -87.70248169999999
     notes {Faker::Lorem.sentence}
@@ -31,7 +29,6 @@ FactoryGirl.define do
 
     factory :event_with_passed_date, class: Event do
       start_time DateTime.now - 10000
-      end_time DateTime.now + 6000
     end
 
     factory :event_with_end_time_before_start_time, class: Event do
@@ -47,7 +44,6 @@ FactoryGirl.define do
     name {Faker::Lorem.words.join(' ')}
     location_details {Faker::Lorem.sentence}
     start_time DateTime.now - 10000
-    end_time DateTime.now + 16000
     latitude 41.9215421
     longitude -87.70248169999999
     notes {Faker::Lorem.sentence}

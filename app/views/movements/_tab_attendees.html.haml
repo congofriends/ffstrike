@@ -12,7 +12,7 @@
             = link_to(event.name, event_path(event))
             = ":"
             = event.location 
-          %td= event.date
+          %td= event.start_date
           %td= event.notes
           %td 
             %button.btn{type: "button", data: {toggle: "collapse", target: "#event#{event.id}"}}

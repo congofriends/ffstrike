@@ -8,12 +8,12 @@ class Event < ActiveRecord::Base
   has_many :tasks, dependent: :destroy
   after_validation :assign_coordinates
 
-  # validates_presence_of :host, :address, :zip, :name,  on: :create
   validates :host, :address, :city, :state, :zip, :name, presence: true
   validates :name, uniqueness: true
-  validate :event_date_cannot_be_in_the_past
-  validate :end_time_cannot_be_before_start_time
-  validate :times_cannot_be_blank
+
+  validate :start_date_cannot_be_in_the_past
+  validate :end_time_cannot_be_before_start_time 
+  validates :start_time, presence: true
   validates :movement, presence: true
   validates :event_type, presence: true
 
@@ -23,7 +23,6 @@ class Event < ActiveRecord::Base
 
   validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
   validates_attachment_size :image, :less_than => 5.megabytes
-
 
   delegate :movement_name,      :to => :movement
   delegate :tagline,            :to => :movement
@@ -48,18 +47,6 @@ class Event < ActiveRecord::Base
 
   def number_of_attendees
     attendees.count
-  end
-
-  def formatted_time
-    if start_time.to_date == end_time.to_date
-      start_time.strftime("%m/%d/%Y,%l:%M %p to") + end_time.strftime("%l:%M %p")
-    else
-      start_time.strftime("%m/%d/%Y,%l:%M %p to ") + end_time.strftime("%m/%d/%Y,%l:%M %p")
-    end
-  end
-
-  def date
-    start_time.to_date if start_time
   end
 
   def location
@@ -88,6 +75,28 @@ class Event < ActiveRecord::Base
     user && self.host_id == user.id
   end
 
+  def start_date
+    start_time.to_date if start_time
+  end
+
+  def end_date
+    end_time.to_date if end_time
+  end
+
+  def formatted_time
+    if end_time.nil?
+     start_time.strftime("%m/%d/%Y,%l:%M %p") 
+    elsif (start_date == end_date)
+      build_datetime( "%m/%d/%Y,%l:%M %p to", "%l:%M %p") 
+    else
+      build_datetime("%m/%d/%Y,%l:%M %p to ", "%m/%d/%Y,%l:%M %p")
+    end
+  end
+
+  def build_datetime(start_date, end_date)
+    start_time.strftime(start_date) + end_time.strftime(end_date)
+  end
+
   private
     def assign_coordinates
       if self.latitude.nil? || self.longitude.nil?
@@ -102,16 +111,12 @@ class Event < ActiveRecord::Base
       end
     end
 
-    def times_cannot_be_blank
-      errors.add(:start_time, "can't be empty") if start_time.nil? || end_time.nil?
-    end
-
     def end_time_cannot_be_before_start_time
-      errors.add(:end_time, "can't be before start time") if !(start_time.nil? || end_time.nil?) && end_time < start_time
+      errors.add(:end_time, "can't be before start time") if (end_time? && start_time) && (end_time < start_time)
     end
 
-    def event_date_cannot_be_in_the_past
-      errors.add(:date, "can't be in the past") if !date.nil? && date < Date.today
+    def start_date_cannot_be_in_the_past
+      errors.add(:start_date, "can't be in the past") if !start_date.nil? && start_date < Date.today
     end
 
 end
