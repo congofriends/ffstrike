@@ -5,7 +5,6 @@ class EventsController < ApplicationController
   before_filter :redirect_unauthorized_user, :only => [:dashboard, :edit]
   before_filter :load_event_types, :only => [:edit, :dashboard]
   before_filter :load_all_movements, :only => [:search]
-  after_filter :populate_tasks, :only => [:create]
 
   include ZipHelper
 
@@ -115,10 +114,6 @@ class EventsController < ApplicationController
 
   def load_event_types
     @event_types = EventType.all.map {|e| [e.id, e.name]}
-  end
-
-  def populate_tasks
-    TaskPopulator.assign_tasks @event
   end
 
   def generate_pdf(view_name, final_doc_name)

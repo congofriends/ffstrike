@@ -23,12 +23,10 @@ describe MovementsController do
   end
 
   describe "GET #search" do
-    #FIXME: the same tests are in the events_controller, update accordingly
-    #after refactoring
     let(:zip) { FactoryGirl.create(:zipcode, zip: "60647") }
     let(:published_movement) { FactoryGirl.create(:published_movement) }
-    let(:event) { published_movement.events.create(zip: zip.zip, approved: true, start_time: DateTime.now + 1000, end_time: DateTime.now + 10000 ) }
-    let(:unapproved_event) { published_movement.events.create(zip: zip.zip, approved: false, start_time: DateTime.now + 1000, end_time: DateTime.now + 10000 ) }
+    let(:event) { published_movement.events.create(FactoryGirl.attributes_for(:event, approved: true, zip: zip.zip, host_id: user.id)) }
+    let(:unapproved_event) { published_movement.events.create(FactoryGirl.attributes_for(:event, approved: false, zip: zip.zip, host_id: user.id )) }
 
     before { get "search", id: published_movement, zip: event.zip }
 

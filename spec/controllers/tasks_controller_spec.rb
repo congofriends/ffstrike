@@ -8,6 +8,7 @@ describe TasksController do
   describe "POST #create" do
     context "with valid information" do
       it "creates a task" do
+        event.reload
         expect{post :create, event_id: event, task: FactoryGirl.attributes_for(:task)}.to change(Task, :count).by(1)
       end
 
@@ -24,6 +25,7 @@ describe TasksController do
 
     context "with invalid information" do
       it "does not save the task" do
+        event.reload
         expect{post :create, event_id: event, task: FactoryGirl.attributes_for(:task_without_description)}.not_to change(Task, :count)
       end
 

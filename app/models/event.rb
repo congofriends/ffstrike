@@ -7,6 +7,7 @@ class Event < ActiveRecord::Base
   has_many :attendees, dependent: :destroy
   has_many :tasks, dependent: :destroy
   after_validation :assign_coordinates
+  after_create :populate_tasks
 
   validates :host, :address, :city, :state, :zip, :name, presence: true
   validates :name, uniqueness: true
@@ -67,13 +68,15 @@ class Event < ActiveRecord::Base
 
   def self.find_by_param input
     #TODO: find a more efficiennt solution.
-    Event.all.each {| event| return event if event.to_param == input}
-    #find_by_name input.gsub(/-/, ' ')
+    # Event.all.each {| event| return event if event.to_param == input}
+    find_by_name input.gsub(/-/, ' ')
   end
 
   def host? user
     user && self.host_id == user.id
   end
+
+  def date; start_date; end
 
   def start_date
     start_time.to_date if start_time
@@ -82,8 +85,6 @@ class Event < ActiveRecord::Base
   def end_date
     end_time.to_date if end_time
   end
-
-  def date; start_date; end
 
   def formatted_time
     if end_time.nil?
@@ -111,6 +112,10 @@ class Event < ActiveRecord::Base
           self.update_attribute(:longitude,coordinates.last) unless coordinates.nil?
         end
       end
+    end
+
+    def populate_tasks
+      TaskPopulator.assign_tasks self
     end
 
     def end_time_cannot_be_before_start_time
