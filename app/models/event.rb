@@ -28,7 +28,6 @@ class Event < ActiveRecord::Base
   delegate :tagline,            :to => :movement
   delegate :host_name,          :to => :host
   delegate :host_email,         :to => :host
-  alias_method :date, :start_date
 
   def self.near_zip(zipcode, distance)
     return [] if zipcode.nil?
@@ -83,6 +82,8 @@ class Event < ActiveRecord::Base
   def end_date
     end_time.to_date if end_time
   end
+
+  def date; start_date; end
 
   def formatted_time
     if end_time.nil?
