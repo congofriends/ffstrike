@@ -6,4 +6,6 @@ class AttendeeMailer < ActionMailer::Base
     @event = event
     mail(to: user.email)
   end
+
+
 end
