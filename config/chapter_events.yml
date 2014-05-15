@@ -1,0 +1,17 @@
+-
+  name: "The Congolese Tragedy: From Causes to Sustainable Solutions"
+  address: "720 Rutland Avenue"
+  city: "Baltimore"
+  zip: "21205"
+  state: "MD"
+  event_type_id: 3
+  approved: true
+
+-
+  name: "The Crisis of Sexual Violence and Rape as a Weapon of War"
+  address: "152 Pearl Street"
+  city: "Burlington"
+  zip: "05401"
+  state: "VT"
+  event_type_id: 4
+  approved: true

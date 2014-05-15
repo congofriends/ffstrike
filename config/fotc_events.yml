@@ -1,0 +1,47 @@
+-
+  name: "Screening Crisis in the Congo: Building Solidarity in Southern Africa"
+  address: "200 E Randolph St"
+  city: "Chicago"
+  zip: "60634"
+  state: "IL"
+  event_type_id: 1
+  approved: true
+
+-
+  name: "Breaking the Silence for Congo Women"
+  address: "265 Chatham Drive"
+  city: "Chapel Hill"
+  zip: "27516"
+  state: "NC"
+  event_type_id: 3
+  approved: true
+
+-
+  name: "Screening Crisis in the Congo: Uncovering the Truth"
+  address: "409 Riverside Drive"
+  city: "New York"
+  zip: "10027"
+  state: "NY"
+  event_type_id: 4
+  approved: true
+
+ 
+-
+  name: "Discussion: Conflict Minerals in the Congo"
+  address: "240 E. 2nd St"
+  city: "Elmhurst"
+  zip: "60126"
+  state: "IL"
+  event_type_id: 3
+  approved: true
+
+-
+  name: "Screening Crisis in the Congo"
+  address: "3805 N Linden Lane"
+  city: "Peoria"
+  zip: "61614"
+  state: "IL"
+  event_type_id: 4
+  approved: true
+
+
