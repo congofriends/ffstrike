@@ -1,7 +1,7 @@
 .container
   .movement-content
     .row.movements
-      = image_tag @movement.image(:medium), width: 200, :class => "movement_avatar"
+      = image_tag @movement.image,:class => "movement_avatar"
       %div{:class=> "movement_info"}
         %h1
           = @movement.name
