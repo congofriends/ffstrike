@@ -1,10 +1,11 @@
 class ContactMailer < ActionMailer::Base
-  default :from => "noreply@youdomain.dev"
-  default :to => "you@youremail.dev"
+  default :from => "attendee@events.com"
+  default :to => "host@events.com"
 
   def new_message(message)
+  	@event = Event.find(message.event_id)
     @message = message
-    mail(:subject => "[YourWebsite.tld] #{message.subject}")
+    mail(to: @event.host.email, from: @message.email, subject: "[#{@event.name}] #{message.subject}")
   end
 
 end

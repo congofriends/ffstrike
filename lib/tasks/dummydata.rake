@@ -25,20 +25,20 @@ namespace :db do
       chapter.users << host unless chapter.users.include? host
       return chapter
     end
-    
+
 
 
     coordinator = User.where(email: fotc_data["fotc_coordinator"]["email"]).first_or_create!(fotc_data["fotc_coordinator"])
     movement = Movement.where(name: fotc_data["fotc"]["name"]).first_or_create!(fotc_data["fotc"])
 
     movement.users << coordinator unless movement.users.include? coordinator
-    
 
-    fotc_events.each do |event| 
+
+    fotc_events.each do |event|
       create_event(event, movement, coordinator, rand(6))
     end
-    
-   
+
+
     non_coordinator = User.where(email: "noncoordinator@example.com").first_or_create!(name: "noncoordinator",
                                    email: "noncoordinator@example.com",
                                    password: "password",
@@ -60,7 +60,7 @@ namespace :db do
                                    email: "subowner@example.com",
                                    password: "password",
                                    password_confirmation: "password")
-    
+
 
     chapter1 = create_chapter(fotc_chapters.first, movement, coordinator)
     chapter2 = create_chapter(fotc_chapters.second, movement, submovement_owner)
@@ -76,3 +76,4 @@ namespace :db do
 
  end
 end
+

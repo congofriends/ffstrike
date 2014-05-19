@@ -65,7 +65,7 @@ class EventsController < ApplicationController
   end
 
   def edit; end
-1
+
   def update
     @event.update(event_params)
     flash[:notice] = t('event.updated')

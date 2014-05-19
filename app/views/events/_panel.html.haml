@@ -29,3 +29,4 @@
           %em
             = truncate( event.tagline , :length=>50)
       = link_to "Yes! I want to attend", new_event_attendee_path(event), class: "btn btn-success btn-sm"
+    = link_to_modal "Contact Us for more info", new_contact_path(event), class: "contact-link"

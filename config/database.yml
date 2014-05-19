@@ -3,7 +3,7 @@ development:
   database: db/rally_development
   pool: 5
   timeout: 5000
-  username: 
+  username:
   password:
 
 test:
@@ -11,7 +11,7 @@ test:
   database: db/rally_test
   pool: 5
   timeout: 5000
-  username: 
+  username:
   password:
 
 production:
@@ -19,5 +19,6 @@ production:
   database: db/rally_production
   pool: 5
   timeout: 5000
-  username: 
+  username:
   password:
+

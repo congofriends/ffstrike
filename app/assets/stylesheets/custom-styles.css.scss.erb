@@ -23,9 +23,11 @@
 }
 
 .best_in_place {
-  background-color: white;
+  background-color: rgb(70, 105, 156);
+  color: white;
   padding: 2px;
   &:hover, .do_hover {
+    color: black;
     border-style: none;
     padding-right: 1.5em;
     background: url(<%= asset_path "pencil_icon.png" %>) no-repeat right;
@@ -292,6 +294,48 @@ div > .mvmt-attendee { color: blue; }
   height: 42px;
 }
 
+.new-message {
+  height: 100px;
+}
+
 .contact-event-host {
   height: 600px;
+}
+
+.modal-field  {
+  float: left;
+  width: 25%;
+}
+
+.contact-send {
+  bottom: 0px;
+}
+
+.contact-send-btn {
+  background: #0E5780;
+  height: 40px;
+  position: absolute;
+  bottom: 10px;
+  color: white;
+  font-size: large;
+}
+
+.contact-body {
+  height: 100px;
+}
+
+.modal-input {
+  width: 75%;
+}
+
+.modal {
+  background: image-url('close.png') no-repeat 0 0;
+  background: image-url('spinner.png') no-repeat 0 0;
+  width: 450px;
+  height: 500px;
+  line-height: 1.25;
+  text-align: center;
+  text-indent: 0;
+  background: #8EB3B8;
+  border: 2px solid #fff;
 }

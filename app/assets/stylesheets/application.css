@@ -10,10 +10,10 @@
  *
  *= require_self
  *= require default-theme.css.scss.erb
- *= require_tree .
  *= require font-awesome
  *= require datepicker
  *= require timepicker
  *= require jquery.ui.all
  *= require jquery.modal
+ *= require_tree .
  */

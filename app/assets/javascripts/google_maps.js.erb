@@ -5,6 +5,7 @@ ready = function () {
   var times;
   var event_images;
   var addresses;
+  var event_ids;
   var event_types = [];
   var location_array = [];
   var event_names = [];
@@ -15,6 +16,7 @@ ready = function () {
     times = window.gon.times;
     event_images = window.gon.event_images;
     addresses = window.gon.addresses;
+    event_ids = window.gon.event_ids
 
     for (var i=0; i < events.length; i++) {
       location_array.push(new google.maps.LatLng(events[i].latitude, events[i].longitude));
@@ -54,9 +56,9 @@ ready = function () {
         '<div>' + addresses[i] + '</div>' +
         '<h6>When:</h6>' +
         '<div>' + times[i] + '</div></br>' +
-        '<div>Would you like more information about this event? </div>' +
-        '<div>Contact the host</div>' +
-        '</div>');
+        '<div>Would you like more information about this event?  ' +
+        '<a href="/contact/' + event_ids[i] + '" rel="modal:open">Contact the Host</a>' +
+        '</div></div>');
             infowindow.open(map, marker);
           }
         }(marker, i));

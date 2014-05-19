@@ -1,21 +1,26 @@
-<%= form_for @message, :url => contact_path do |form| %>
-    <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-    </div>
+  <h4>Contact the Host for the </h4>
+  <h5><%=@event.name%></h5>
+  <%= form_for @message, :method => :post, remote: true,  :url => contact_path, html: { id: 'contact-form' } do |form| %>
+      <div class="field">
+        <%= form.label :name, class: "modal-field" %>
+        <%= form.text_field :name, class: "modal-input" %>
+      </div></br>
 
-    <div class="field">
-      <%= form.label :email %>
-      <%= form.text_field :email %>
-    </div>
-    <div class="field">
-      <%= form.label :subject %>
-      <%= form.text_field :subject %>
-    </div>
+      <div class="field">
+        <%= form.label :email, class: "modal-field" %>
+        <%= form.text_field :email, class: "modal-input" %>
+      </div></br>
+      <div class="field">
+        <%= form.label :subject, class: "modal-field" %>
+        <%= form.text_field :subject, class: "modal-input" %>
+      </div></br>
 
-    <div class="field">
-      <%= form.label :body %>
-      <%= form.text_area :body %>
-      <%= form.submit "Send" %>
-    </div>
-<% end %>
+      <div class="field">
+        <%= form.label :body, class: "modal-field" %>
+        <%= form.text_area :body, class: "modal-input contact-body" %>
+      </div>
+
+      <%= form.hidden_field :event_id, value: @event.id %>
+
+      <div class = "contact-send"><%= form.submit "Submit", class: "contact-send-btn" %></div>
+  <% end %>

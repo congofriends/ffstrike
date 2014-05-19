@@ -44,7 +44,10 @@ Ffstrike::Application.routes.draw do
   #export CSV
   get 'export_csv/:id' => 'movements#export_csv', as: 'export_csv'
 
-  match 'contact' => 'contact#new', :as => 'new_contact', :via => :get
-  match 'contact' => 'contact#create', :as => 'contact', :via => :post
+  # match 'contact' => 'contact#new', :as => 'new_contact', :via => :get
+  # match 'contact' => 'contact#create', :as => 'contact', :via => :post
+
+  get 'contact/:id' => 'contact#new', :as => 'new_contact'
+  post 'contact' => 'contact#create', :as => 'contact'
 
 end

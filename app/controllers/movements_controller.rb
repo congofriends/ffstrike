@@ -125,7 +125,9 @@ class MovementsController < ApplicationController
     gon.event_images = []
     gon.times = []
     gon.addresses = []
+    gon.event_ids = []
     gon.events.each do |e|
+      gon.event_ids << e.to_param
       gon.addresses << e.location
       gon.times << e.formatted_time
       gon.event_images << ActionController::Base.helpers.asset_path(e.image.url)
