@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140508170234) do
+ActiveRecord::Schema.define(version: 20140519202047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 20140508170234) do
   add_index "assignments", ["attendee_id", "task_id"], name: "index_assignments_on_attendee_id_and_task_id", unique: true, using: :btree
   add_index "assignments", ["attendee_id"], name: "index_assignments_on_attendee_id", using: :btree
   add_index "assignments", ["task_id"], name: "index_assignments_on_task_id", using: :btree
+
+  create_table "attendances", force: true do |t|
+    t.integer "user_id"
+    t.integer "event_id"
+  end
+
+  add_index "attendances", ["event_id"], name: "index_attendances_on_event_id", using: :btree
+  add_index "attendances", ["user_id", "event_id"], name: "index_attendances_on_user_id_and_event_id", unique: true, using: :btree
+  add_index "attendances", ["user_id"], name: "index_attendances_on_user_id", using: :btree
 
   create_table "attendees", force: true do |t|
     t.string   "email"
@@ -109,12 +118,12 @@ ActiveRecord::Schema.define(version: 20140508170234) do
   add_index "tasks", ["event_id"], name: "index_tasks_on_event_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
+    t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -133,6 +142,8 @@ ActiveRecord::Schema.define(version: 20140508170234) do
     t.integer  "invitation_limit"
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
+    t.string   "phone"
+    t.boolean  "point_person",           default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -4,7 +4,9 @@ class Event < ActiveRecord::Base
   belongs_to :host, class_name: User
   belongs_to :movement, class_name: Movement
   belongs_to :event_type
-  has_many :attendees, dependent: :destroy
+  has_many :attendances, dependent: :destroy
+  has_many :attendees, through: :attendances, source: :user
+
   has_many :tasks, dependent: :destroy
   after_validation :assign_coordinates
   after_create :populate_tasks

@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
 
+  has_many :attendances
+
   has_many :ownerships
   has_many :movements, through: :ownerships
   alias_attribute :host_name, :name
@@ -50,6 +52,10 @@ class User < ActiveRecord::Base
 
   def approved_events
     Event.where(host_id: self.id, approved: true)
+  end
+
+  def events_attending 
+    Event.find(self.attendances.map(&:event_id))
   end
 
   def events
