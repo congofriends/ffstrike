@@ -1,22 +1,8 @@
-<% unless (@event.nil? || @event.id.nil?) && (@movement.nil? || @movement.id.nil?) %>
   <div class="breadcrumb-nav">
     <ol class="breadcrumb">
-  
-      <% unless (@event.nil? || @event.id.nil?) %>
-        <% unless @event.movement.parent.nil? %>
-          <li><%= link_to @event.movement.parent.name, movement_path(@event.movement.parent) %></li>
-        <% end %>
-        <li><%= link_to @event.movement.name, movement_path(@event.movement) %></li>
-        <li class="active"><%= @event.name %></li>
-      <% end %>
-  
-      <% unless @movement.nil? %>
-        <% unless @movement.parent.nil? %>
-          <li><%= link_to @movement.parent.name, movement_path(@movement.parent) %></li>
-        <% end %>
-        <li class="active"><%= @movement.name %></li>
-      <% end %>
-  
+    <% movement = Movement.where(name: "Friends of the Congo").first %>
+    <% unless movement.nil? %>
+      <li><%= link_to "Friends of the Congo", movement_path(movement) %></li>
+    <% end %>
     </ol>
   </div>
-<% end %>

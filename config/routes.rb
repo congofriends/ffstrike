@@ -18,6 +18,7 @@ Ffstrike::Application.routes.draw do
     get 'dashboard' => 'movements#dashboard', on: :member, as: 'dashboard'
     get 'search' => 'movements#search', on: :member, as: 'search'
     get 'event_type' => 'movements#event_type', on: :member, as: 'event_type'
+    get 'support_network' => 'movements#support_network', on: :member, as: 'support_network'
     resources :events, shallow: true
     resources :unauthenticated_events, only: [:new, :create]
   end
