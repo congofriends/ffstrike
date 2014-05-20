@@ -1,10 +1,14 @@
-.canvas
-  = image_tag @movement.image,:class => "movement_avatar"
-  .movements-buttons
-    = link_to image_tag('events_button.jpg'), movement_events_path(@movement), :class => 'events-button'
-    = link_to image_tag('network_button.jpg'), movement_events_path(@movement), :class => 'events-button'
-  %blockquote
-    %em "Our mission and vision is to raise the consciousness of the world community on the challenge of the Congo and support Congolese institutions in bringing about a peaceful and lasting change."
+.container
+  .row
+    = image_tag @movement.image,:class => "movement_avatar"
+  .row
+    .col-sm-6.events-button
+      = link_to image_tag('events_button.jpg'), movement_events_path(@movement)    
+    .col-sm-6.events-button
+      = link_to image_tag('network_button.jpg'), movement_events_path(@movement)
+  .row
+    %blockquote
+      %em "Our mission and vision is to raise the consciousness of the world community on the challenge of the Congo and support Congolese institutions in bringing about a peaceful and lasting change."
 
 
 

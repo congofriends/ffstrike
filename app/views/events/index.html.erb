@@ -1,28 +1,41 @@
-<div class="canvas">
+<div class="container">
   <% @movement.events.each do |event| %>
-      <article class="event-list">
+    <div class="event-list row">
+      <div class="col-sm-4">
+        <%= link_to image_tag(event), event_path(event), class: "event-image" %>
+      </div>
+      <div class="col-sm-8">
         <div class="event-data">
-          <%= link_to image_tag(event), event_path(event), class: "event-image" %>
-            <div class="event-details">
-              <div class="event-name">
-                <h3><%= event.name %></h3>
-              </div>
-              <p class="lead"> Event Type: <%= event.type %></p>
-              <div class="event-actions">
-                    <%= link_to "ATTEND", new_event_attendee_path(event), class: 'btn event-buttons' %>
-                    <%= link_to "VOLUNTEER", new_event_attendee_path(event), class: 'btn event-buttons' %>
-                </div>
-              <div class="event-datetime">
-                Start Time: <%=event.start_time %> <br>
-                End Time: <%=event.end_time %>
-              </div>
-              <div class="location">
-                Location: <%=event.location %>
-                <%= link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"%>
-              </div>
+
+          <div class="row">
+            <h3><%= event.name %></h3>
+            <p class="lead"> Event Type: <%= event.type %></p>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              <%= link_to "ATTEND", new_event_attendee_path(event), class: 'btn event-buttons' %>
             </div>
+
+            <div class="col-xs-6">
+              <%= link_to "VOLUNTEER", new_event_attendee_path(event), class: 'btn event-buttons' %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="event-datetime">
+              Start Time: <%=event.start_time %> <br>
+              End Time: <%=event.end_time %>
+            </div>
+            <div class="location">
+              Location: <%=event.location %>
+              <%= link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"%>
+            </div>
+          </div>
+
         </div>
-      </article>
+      </div>
+    </div>
   <% end  %>
 </div>
 
