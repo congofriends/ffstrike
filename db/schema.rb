@@ -11,44 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140519202047) do
+ActiveRecord::Schema.define(version: 20140520145955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "assignments", force: true do |t|
-    t.integer  "attendee_id"
     t.integer  "task_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "attendance_id"
   end
 
-  add_index "assignments", ["attendee_id", "task_id"], name: "index_assignments_on_attendee_id_and_task_id", unique: true, using: :btree
-  add_index "assignments", ["attendee_id"], name: "index_assignments_on_attendee_id", using: :btree
   add_index "assignments", ["task_id"], name: "index_assignments_on_task_id", using: :btree
 
   create_table "attendances", force: true do |t|
     t.integer "user_id"
     t.integer "event_id"
+    t.boolean "point_person", default: false
+    t.text    "notes"
   end
 
   add_index "attendances", ["event_id"], name: "index_attendances_on_event_id", using: :btree
   add_index "attendances", ["user_id", "event_id"], name: "index_attendances_on_user_id_and_event_id", unique: true, using: :btree
   add_index "attendances", ["user_id"], name: "index_attendances_on_user_id", using: :btree
-
-  create_table "attendees", force: true do |t|
-    t.string   "email"
-    t.integer  "movement_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "event_id"
-    t.string   "name"
-    t.text     "notes"
-    t.boolean  "point_person"
-    t.text     "phone_number"
-  end
-
-  add_index "attendees", ["event_id"], name: "index_attendees_on_event_id", using: :btree
 
   create_table "event_types", force: true do |t|
     t.string "name"
@@ -118,12 +104,12 @@ ActiveRecord::Schema.define(version: 20140519202047) do
   add_index "tasks", ["event_id"], name: "index_tasks_on_event_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "",    null: false
+    t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -143,7 +129,6 @@ ActiveRecord::Schema.define(version: 20140519202047) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.string   "phone"
-    t.boolean  "point_person",           default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

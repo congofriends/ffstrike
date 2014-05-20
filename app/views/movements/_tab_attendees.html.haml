@@ -2,21 +2,21 @@
   .well
     %table.table.table-bordered.table-striped.sortable
       %tr
-        %th Event location 
+        %th Event location
         %th Date
-        %th Details 
+        %th Details
         %th See Attendees
       - @movement.events.each do |event|
         %tr
           %td
             = link_to(event.name, event_path(event))
             = ":"
-            = event.location 
+            = event.location
           %td= event.start_date
           %td= event.notes
-          %td 
+          %td
             %button.btn{type: "button", data: {toggle: "collapse", target: "#event#{event.id}"}}
-              Attendees (#{event.attendees.count}) 
+              Attendees (#{event.attendees.count})
               %span.glyphicon.glyphicon-hand-down
         %tr.collapse{id: "event#{event.id}"}
           %td{colspan: "4"}
@@ -31,9 +31,10 @@
                 %tr
                   %td= attendee.name
                   %td= attendee.email
-                  %td= attendee.phone_number
-                  %td= attendee.assignments.count > 0 ? "yes" : "no"
-                  %td= best_in_place attendee, :notes, :path=>[event, attendee], :type => :input, :html_attrs => {:class=>"input"}
-              
+                  %td= attendee.phone
+                  %td= attendee.attendances.count > 0 ? "yes" : "no"
+                  %td= attendee.notes_for(event.id)
+
+
 
 

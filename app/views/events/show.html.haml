@@ -1,6 +1,6 @@
 = content_for :head do
   = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg&sensor=false"
-= content_for :title, @event.name  
+= content_for :title, @event.name
 
 .container
   .row
@@ -14,10 +14,10 @@
         =@event.notes
       .row
         %br
-        .col-sm-6
-          =link_to 'ATTEND', new_event_attendee_path(@event), class: 'btn'
-        .col-sm-6
-          .btn VOLUNTEER
+        .col-sm-12
+          - unless event.with_attendee? current_user
+            = link_to "Yes! I want to attend!", new_attendee_user_path({:event => event.id}), {class: "btn"}
+
   .row
     .col-sm-12
       %br

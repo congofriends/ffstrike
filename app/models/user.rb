@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   validates :name, presence: true
 
   has_many :attendances
-
+# verify this works
+  # has_many :assignments, foreign_key: "attendee_id"
   has_many :ownerships
   has_many :movements, through: :ownerships
   alias_attribute :host_name, :name
@@ -34,6 +35,14 @@ class User < ActiveRecord::Base
     end
   end
 
+  def assign! task
+    assignments.create(task_id: task.id)
+  end
+
+  def unassign! task
+    assignments.find_by(task_id: task.id).destroy
+  end
+
   def add_movement(movement)
     self.movements << movement
   end
@@ -46,6 +55,10 @@ class User < ActiveRecord::Base
     self.movements.where(parent_id: nil)
   end
 
+  def notes_for(event_id)
+    attendances.find_by(event_id: event_id).notes
+  end
+
   def nonapproved_events
     Event.where(host_id: self.id, approved: false)
   end
@@ -54,7 +67,7 @@ class User < ActiveRecord::Base
     Event.where(host_id: self.id, approved: true)
   end
 
-  def events_attending 
+  def events_attending
     Event.find(self.attendances.map(&:event_id))
   end
 

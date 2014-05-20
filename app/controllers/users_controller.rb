@@ -5,29 +5,39 @@ class UsersController < Devise::RegistrationsController
   end
 
   def new_attendee_user
-    @user = User.new
-    @event_id = params[:event_id]
+    @event_id = params[:event]
+    @attendance = Attendance.new
+    @user = current_user ? current_user : User.new
   end
 
   def create_attendee_user
-    binding.pry
-    generated_password = Devise.friendly_token.first(10)
-    @user = User.new(user_params.merge(password: generated_password))
+    # generated_password = Devise.friendly_token.first(10)
+    # @user = User.new(user_params.merge(password: generated_password)) unless current_user
+    # @user = current_user ? current_user : User.new(user_params.merge(password: generated_password))
+    if current_user
+    	@user = current_user
+    	@user.update(phone: params[:user][:phone]) if params[:user][:phone]
+    	@message = "Thanks for attending!"
+    else
+   		@generated_password = Devise.friendly_token.first(10)
+   		@user = User.new(user_params.merge(password: @generated_password))
+   		@message = "Thanks for attending! If you need to login again, we've sent you an email with a temporary password"
+    end
     @event_id = params[:user][:event_id]
     @event ||= Event.find(@event_id)
 
     if @user.save
       sign_in(:user, @user)
 
-      Attendance.create(user: @user, event: @event)
+      Attendance.create(user: @user, event: @event, point_person: params[:attendance][:point_person])
 
-      flash[:success] = ("Thanks for attending!  If you need to log in again, we've sent you an email with a temporary password")
-      
-      ##UserMailer.welcome(user, generated_password).deliver
+      flash[:success] = @message
+
+      ##UserMailer.welcome(@user, @generated_password).deliver if @generated_password
       redirect_to event_path(@event)
     else
 
-      flash[:notice] = @user.errors.full_messages.flatten.join(' ') 
+      flash[:notice] = @user.errors.full_messages.flatten.join(' ')
       render 'new_attendee_user'
     end
   end
@@ -36,5 +46,16 @@ class UsersController < Devise::RegistrationsController
   def user_params
     params.require(:user).permit(:email, :name, :phone)
   end
+
+  # def check_attendance_record
+  # 	unless attendance_exists?
+  # 		flash[:error] = "You have already signed up!"
+  #     #redirect_to event_path(@event)
+  # 	end
+  # end
+
+  # def attendance_exists?
+  # 	Attendance.find_by(user_id: @user.id, event_id: @event.id).nil?
+  # end
 
 end

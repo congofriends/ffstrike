@@ -1,0 +1,25 @@
+.container
+  .panel.panel-default.col-md-4.col-md-offset-4
+    = form_for @user, method: "post", url: create_attendee_user_path do |f|
+      .panel-heading
+        .panel-title
+          %h3 Enter your phone number, so we can keep in touch with you!
+      .panel-body
+        .form-group
+          = f.label :phone
+          = f.text_field :phone, class: "form-control"
+
+        .form-group
+          = fields_for :attendance, @attendance do |a|
+            = a.label "I'd like to volunteer for this event!"
+            = a.check_box :point_person
+
+          = f.hidden_field :event_id, value: @event_id
+          = f.hidden_field :name, value: @user.name
+          = f.hidden_field :email, value: @user.email
+
+        .form-group
+          = f.submit "Sign me up!", class: "btn btn-info col-md-12"
+
+
+      %p.text-info.small * Your email address will be shared with the event host.

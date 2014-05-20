@@ -14,8 +14,8 @@
             %td= attendee.name
             %td= link_to event.name, event_path(event)
             %td= attendee.email
-            %td= attendee.phone_number
+            %td= attendee.phone
             %td= attendee.assignments.count > 0 ? "yes" : "no"
-            %td= best_in_place attendee, :notes, :path=>[event, attendee], :type => :input, :html_attrs => {:class=>"input"}
+            %td= attendee.notes_for(event.id)
 
 

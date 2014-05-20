@@ -2,7 +2,8 @@ class Movement < ActiveRecord::Base
   include Filterable
   validates_with VideoValidator, fields: [:video]
   has_many :events, dependent: :destroy
-  has_many :attendees, through: :events
+  #has_many :attendees, through: :events #, source: :user
+  has_many :attendances, through: :events #, source: :user
   has_many :ownerships
   has_many :users, through: :ownerships
   validates :name, uniqueness: true
@@ -76,8 +77,8 @@ class Movement < ActiveRecord::Base
     CSV.generate do |csv|
       column_names = ["Name", "Email", "Phone", "Event", "Zip", "City"]
       csv << column_names
-      self.attendees.each do |attendee|
-        csv << [attendee.name, attendee.email, attendee.phone_number, attendee.event.name, attendee.event.zip, attendee.event.city]
+      self.attendances.each do |attendance|
+        csv << [attendance.user.name, attendance.user.email, attendance.user.phone, attendance.event.name, attendance.event.city, attendance.event.zip]
       end
     end
   end

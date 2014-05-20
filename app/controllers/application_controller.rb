@@ -21,7 +21,8 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource)
-    session[:previous_url] || root_path
+    return root_path if session[:previous_url] == user_movements_path || session[:previous_url].nil?
+    session[:previous_url]
   end
 
   protected

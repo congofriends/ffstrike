@@ -20,7 +20,11 @@ class UserMailer < ActionMailer::Base
     end
     return false
   end
-  
+
+  # def welcome(user, password)
+
+  # end
+
   def self.successfully_deliver?(action, message)
     custom_message(action, message).deliver
   end
@@ -29,6 +33,6 @@ class UserMailer < ActionMailer::Base
     @event = event.name
     @event_size = event.number_of_attendees.to_s
     @host = event.host
-    mail(to: @host.email, from: "MovementApp@Events.com") 
+    mail(to: @host.email, from: "MovementApp@Events.com")
   end
 end

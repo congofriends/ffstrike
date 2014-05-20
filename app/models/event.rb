@@ -15,7 +15,7 @@ class Event < ActiveRecord::Base
   validates :name, uniqueness: true
 
   validate :start_date_cannot_be_in_the_past
-  validate :end_time_cannot_be_before_start_time 
+  validate :end_time_cannot_be_before_start_time
   validates :start_time, presence: true
   validates :movement, presence: true
   validates :event_type, presence: true
@@ -50,6 +50,10 @@ class Event < ActiveRecord::Base
 
   def number_of_attendees
     attendees.count
+  end
+
+  def with_attendee? user
+    attendees.include? user
   end
 
   def location
@@ -90,9 +94,9 @@ class Event < ActiveRecord::Base
 
   def formatted_time
     if end_time.nil?
-     start_time.strftime("%m/%d/%Y,%l:%M %p") 
+     start_time.strftime("%m/%d/%Y,%l:%M %p")
     elsif (start_date == end_date)
-      build_datetime( "%m/%d/%Y,%l:%M %p to", "%l:%M %p") 
+      build_datetime( "%m/%d/%Y,%l:%M %p to", "%l:%M %p")
     else
       build_datetime("%m/%d/%Y,%l:%M %p to ", "%m/%d/%Y,%l:%M %p")
     end

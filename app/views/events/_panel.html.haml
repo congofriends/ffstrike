@@ -28,4 +28,5 @@
           Summary:
           %em
             = truncate( event.tagline , :length=>50)
-      = link_to "Yes! I want to attend", new_attendee_user_path, class: "btn btn-success btn-sm"
+        - unless event.with_attendee? current_user
+          = link_to "Yes! I want to attend!", new_attendee_user_path({:event => event.id}), {class: "btn btn-success btn-sm"}
