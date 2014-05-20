@@ -96,6 +96,10 @@ class MovementsController < ApplicationController
     load_event_types
   end
 
+  def support_network
+    @support_network =  Movement.where(parent_id: @movement)
+  end
+
   private
   def clear_session_parent_id
     session[:parent_id] = nil
