@@ -5,74 +5,62 @@
       <fieldset>
 
         <fieldset class="event_details">  
-          <legend> Event details</legend>
+          <legend> Event Basic Information</legend>
           <div class='form-group'>
             <%= form.label :event_name, "Event Name *" %>
             <%= form.text_field :name, class: 'form-control' %>
           </div>
-          <div class='form-group'>
-            <%= form.label "Start date & time:" %>
-            <%= form.text_field :start_time, class: 'form-control datetimepicker' %>
+          <div class="event-date-time">
+            <div class='form-group'>
+              <%= form.label "Start date & time: *" %>
+              <%= form.text_field :start_time, class: 'form-control datetimepicker' %>
+            </div>
+
+            <div class='form-group'>
+              <%= form.label "End date & time:" %>
+              <%= form.text_field :end_time, class: 'form-control datetimepicker' %>
+            </div>
           </div>
 
-          <div class='form-group'>
-            <%= form.label "End date & time:" %>
-            <%= form.text_field :end_time, class: 'form-control datetimepicker' %>
-          </div>
-           <div class='form-group'>
-            <%= form.label :image %>
-            <%= form.file_field :image%>
-          </div>
-          <button type="button", class="btn btn-success next"> Next </button>
-        </fieldset>
-
-        <fieldset class="event_address">  
           <legend> Event address</legend>
           <div class="row">
-            <div class="col-xs-6">
+            <div class="form-group col-xs-6">
               <%= form.label :address, 'Address 1 *' %>
               <%= form.text_field :address, class: 'form-control' %>
             </div>
-            <div class="col-xs-6">
+            <div class="form-group col-xs-6">
               <%= form.label :address2, 'Address 2' %>
               <%= form.text_field :address2, class: 'form-control' %>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-xs-5">
+            <div class="form-group col-xs-5">
               <%= form.label :city, 'City *' %>
               <%= form.text_field :city, class: 'form-control' %>
             </div>
-            <div class="col-xs-2">
+            <div class="form-group col-xs-2">
               <%= form.label :state, 'State *' %>
               <%= form.text_field :state, class: 'form-control' %>
             </div>
-            <div class="col-xs-5">
+            <div class="form-group col-xs-5">
               <%= form.label :zip, 'Zip *' %>
               <%= form.text_field :zip, class: 'form-control' %>
             </div>
           </div>
           <div class='form-group'>
             <%= form.label :location_details %>
-            <%= form.text_field :location_details, class: 'form-control' %>
+            <%= form.text_field :location_details, placeholder: "meet at the coner of Belmont & Sheridan", class: 'form-control' %>
           </div>
-          <button type="button", class="btn btn-primary previous"> Previous </button>
           <button type="button", class="btn btn-success next"> Next </button>
         </fieldset>
 
-        <fieldset class="event_additional_details">
-          <legend> Event additional details</legend>
-          <div class='form-group'>
-            <%= form.label "Message to attendees" %>
-            <%= form.text_field :notes, class: 'form-control' %>
+        <fieldset class="event_address">  
+          <legend> Event details</legend>
+           <div class='form-group'>
+            <%= form.label :image %>
+            <%= form.file_field :image%>
           </div>
-
-          <div class='form-group'>
-            <%= form.label "Include Disqus"%>
-            <%= form.check_box :forum_option, class: 'form-control' %>
-          </div>
-
           <div class='form-group'>
             <%= form.label :event_type_id, "Event Type *" %>
             <% if params[:type].nil? %>
@@ -92,6 +80,21 @@
               <%= form.label :movement, "Would one of our other chapters be a better fit for this event?"%>
               <%= form.select :movement, @movement.parent.sub_movements.map(&:name), {selected: @movement.name, include_blank: "Stay under the parent movement: " + @movement.parent.name}, {class: 'form-control'}%>
             <%end%>
+          </div>
+          <button type="button", class="btn btn-primary previous"> Previous </button>
+          <button type="button", class="btn btn-success next"> Next </button>
+        </fieldset>
+
+        <fieldset class="event_additional_details">
+          <legend> Event details </legend>
+          <div class='form-group'>
+            <%= form.label "Message to attendees after sign up" %>
+            <%= form.text_field :notes, class: 'form-control' %>
+          </div>
+
+          <div class='form-group'>
+            <%= form.label "Include Disqus Comment Thread"%>
+            <%= form.check_box :forum_option, class: 'form-control' %>
           </div>
 
           <% if current_user %>

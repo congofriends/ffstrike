@@ -3,20 +3,24 @@ function initializeValidations() {
     rules: {
       'event[name]': { required: true },
       'event[start_time]': { required: true },
-      'event[end_time]': { required: true },
       'event[address]': { required: true },
       'event[city]': { required: true },
       'event[state]': { required: true },
-      'event[zip]': { required: true }
+      'event[zip]': { 
+        required: true,
+        number: true,
+        rangelength: [5, 5] }
     },
     messages: {
       'event[name]': "Name is required",
       'event[start_time]': "Start date & time is required",
-      'event[end_time]': 'End date & time is required',
       'event[address]': 'Address is required',
       'event[city]': 'City is required',
       'event[state]': 'State is required',
-      'event[zip]': 'Zip is required'
+      'event[zip]': { 
+        required: 'Zip is required',
+        number: "Zip should contain only numbers",
+        rangelength: "Zip should be 5 digits long"}
     },
     errorElement: "div",
     errorClass: "text-danger",
@@ -26,8 +30,7 @@ function initializeValidations() {
       element.closest('div').addClass('has-error');
     },
     success: function (label) {
-        label.closest('.form-group').removeClass('has-error').addClass('has-success');
-        label.next('.help-block').hide();
+      label.closest('.form-group').removeClass('has-error').addClass('has-success');
     }
   });
 };  
@@ -53,8 +56,18 @@ function goToPreviousStep(button) {
   previous_fieldset.show();
 }  
 
+function populate_end_time() {
+  start_date = new Date($('#event_start_time').val());
+  end_time = start_date.setHours(start_date.getHours() + 1);
+  $('#event_end_time').val(new Date(end_time));
+}
+
 $(document).ready(function() {
   initializeValidations();
+
+  $('#event_start_time').change(function() {
+    populate_end_time();
+  });
 
   $(".next").click(function() {
     goToNextStep(this);

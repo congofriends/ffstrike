@@ -10,3 +10,24 @@
   font-size: 18px;
   height: 40px;
 }
+
+#new-event-form { 
+  #event_forum_option { 
+    width: 10%;
+    height: 25px;
+    display: initial;}
+
+  #event_start_time, #event_end_time,
+  #event_location_details { font-size: 14px;}                  
+}
+
+.has-success .form-control {
+  border-color: #4BB14D;
+
+  &:focus { border-color: #4BB14D; }
+}
+
+.event-date-time > .form-group:first-child {
+  float: left;
+  margin-right: 10px;
+}

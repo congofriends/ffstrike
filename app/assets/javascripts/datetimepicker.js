@@ -1,8 +1,8 @@
 $(function() {
     $( ".datetimepicker" ).datetimepicker({
     	timeFormat: 'hh:mm tt',
-    	dateFormat: "DD, d MM, yy",
-			timezone: 'MT',
+    	dateFormat: "D, d MM, yy",
+      timezone: 'MT',
 			timezoneList: [
 				{ value: 'ET', label: 'Eastern'},
 				{ value: 'CT', label: 'Central' },
