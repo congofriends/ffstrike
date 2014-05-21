@@ -10,7 +10,3 @@
 # 	And I select the type of event
 #    And I create an event
 # 	Then I can see the confirmation page for the event I created
-#
-#
-#
-#

@@ -1,4 +1,7 @@
 .container
+  .row
+    = image_tag image_url('congo_banner.jpg'), class: "movement_avatar"
+ 
   -@movement.events.each do |event|
     .event-list.row
       .col-sm-4
@@ -6,7 +9,7 @@
       .col-sm-8
         .event-data
           .row
-            %h3= event.name
+            %h3= link_to event.name, event_path(event)
             %p.lead 
               Event Type:
               = event.type
