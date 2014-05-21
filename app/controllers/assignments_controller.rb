@@ -2,8 +2,8 @@ class AssignmentsController < ApplicationController
   before_filter :load_task_and_event, :only => [:assign]   
 
   def assign
-    if session[:current_attendee_id]
-      @task.assign!(session[:current_attendee_id])
+    if current_user && (@task.is_not_assigned_to? current_user)
+      @task.assign! current_user 
       flash[:notice] = t('assignment.signed_up') 
     else
       flash[:notice] = t('assignment.for_attendees_only') 

@@ -35,14 +35,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  def assign! task
-    assignments.create(task_id: task.id)
-  end
-
-  def unassign! task
-    assignments.find_by(task_id: task.id).destroy
-  end
-
   def add_movement(movement)
     self.movements << movement
   end

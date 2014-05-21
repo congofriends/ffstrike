@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140520145955) do
     t.integer  "attendance_id"
   end
 
+  add_index "assignments", ["attendance_id", "task_id"], name: "index_assignments_on_attendance_id_and_task_id", unique: true, using: :btree
   add_index "assignments", ["task_id"], name: "index_assignments_on_task_id", using: :btree
 
   create_table "attendances", force: true do |t|
@@ -33,7 +34,6 @@ ActiveRecord::Schema.define(version: 20140520145955) do
   end
 
   add_index "attendances", ["event_id"], name: "index_attendances_on_event_id", using: :btree
-  add_index "attendances", ["user_id", "event_id"], name: "index_attendances_on_user_id_and_event_id", unique: true, using: :btree
   add_index "attendances", ["user_id"], name: "index_attendances_on_user_id", using: :btree
 
   create_table "event_types", force: true do |t|

@@ -9,8 +9,6 @@ describe Task do
   it {should respond_to(:event_id)}
   it {should respond_to(:event)}
   it {should respond_to(:assignments)}
-  it {should respond_to(:assigned_attendees)}
-  it {should respond_to(:assigned?)}
   it {should respond_to(:assign!)}
 
   its(:event) {should eq event}
@@ -32,7 +30,7 @@ describe Task do
     it {should_not be_valid}
   end
 
-  describe "assigned?" do
+  describe "assigned!" do
     let(:event) { FactoryGirl.create(:event) }
     let(:attendee) { FactoryGirl.create(:attendee, event: event)  }
     let(:task) { FactoryGirl.create(:task, event: event) }
@@ -41,11 +39,5 @@ describe Task do
     it {should be_assigned(attendee) }
     its(:assigned_attendees) { should include(attendee) }
 
-   describe "and unassign" do
-     before { task.unassign! (attendee) }
-     
-     it { should_not be_assigned(attendee) }
-     its(:assigned_attendees) { should_not include(attendee) }
-   end
   end
 end

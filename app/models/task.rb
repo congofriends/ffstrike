@@ -3,21 +3,21 @@ class Task < ActiveRecord::Base
   validates :event, presence: true
   validates :description, presence: true, length: { maximum: 250 }
   has_many :assignments, foreign_key: "task_id"
-  # has_many :assigned_attendees, through: :assignments, source: :attendee
 
-  def assigned? attendee
-    assignments.find_by(attendee_id: attendee.id)
+  def assign! user
+    attendance = user.attendances.find_by(event_id: self.event_id)
+    assignments.create(attendance_id: attendance.id)
   end
 
-  def assign! attendee_id
-    assignments.create(attendee_id: attendee_id)
+  def is_assigned_to? user
+    assignments.map {|a| a.attendance_id == user.id }.any?
   end
 
-  def unassign! attendee
-   assignments.find_by(attendee_id: attendee.id).destroy
+  def is_not_assigned_to? user
+    assignments.select { |a| a.attendance_id == user.id }.empty?
   end
 
-  def is_assigned_to? account
-    self.assignments.map {|a| a.attendee_id == account.id }.any?
+  def is_allowed_to_update_by? user
+    event.movement.users.include? user
   end
 end
