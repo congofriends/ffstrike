@@ -4,17 +4,22 @@
   .row.event-list
     .col-sm-8
       %h2 Support Network
-    .col-sm-4
-      =link_to 'CREATE A CHAPTER', new_unauthenticated_submovement_path(@movement), class: 'btn'
+    .col-sm-2
+      - if !current_user.nil?
+        =link_to 'CREATE A CHAPTER', new_submovement_path(@movement), class: 'btn'
+      - else
+        =link_to 'CREATE A CHAPTER', new_unauthenticated_submovement_path(@movement), class: 'btn'
   - @support_network.each do |chapter|
     .row.event-list
       .col-sm-4
         =image_tag chapter.image, :class => "movement_avatar"
       .col-sm-8
         .row
-          %h3= chapter.name
+          %h3.text-center= link_to chapter.name, movement_path(chapter)
         .row
           .col-xs-6
-            .btn JOIN CHAPTER
+            .text-center
+              .btn JOIN CHAPTER
           .col-xs-6
-            =link_to 'EVENTS', movement_events_path(chapter), class: 'btn'
+            .text-center
+              =link_to 'EVENTS', movement_events_path(chapter), class: 'btn text-center'

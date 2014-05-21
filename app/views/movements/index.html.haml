@@ -1,7 +1,12 @@
 .container
-  .support-network.row
-    .h3 All Movements
-    = render @movements
-  .event.row
-    .h3 All Events
+  .row
+    = image_tag @movements.first.image(:medium), width: 200, :class => "movement_avatar"
+  .row
+    %h1.text-center Parent Movement:
+    = render @movements 
+  .row
+    %h1.text-center All Movements:
+    = render Movement.all
+  .row
+    %h1.text-center All Events:
     = render Event.all

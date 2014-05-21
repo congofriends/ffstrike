@@ -1,21 +1,25 @@
 @import 'colors';
 
+h3 {
+  color: $text-color;
+  margin-top: 0px;
+
+  a, a:active, a:focus, a:visited {
+    color: $text-color;
+  }
+
+  a:hover {
+    color: LightGray;
+  }
+}
+
+
 .custom-footer {
   padding-top: 20px;
   padding-bottom: 20px;
   margin-left: -15px;
   margin-right: -15px;
   border-top: 1px solid #e7e7e7;
-}
-
-.support-network {
-  padding: 10px;
-  background-color: $secondary-color1;
-}
-
-.events {
-  padding: 10px;
-  background-color: $secondary-color2;
 }
 
 .alert {
@@ -261,12 +265,6 @@ div > .mvmt-attendee { color: blue; }
     max-height:95px;
     width: auto;
     height: auto;
-}
-.movement-content {
-  display: -webkit-box;
-
-  .movements { width: 65%; margin-right: 70px; }
-  .host-event { width: 35%; }
 }
 
 .badge {

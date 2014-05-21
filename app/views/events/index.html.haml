@@ -1,0 +1,33 @@
+.container
+  -@movement.events.each do |event|
+    .event-list.row
+      .col-sm-4
+        = link_to image_tag(event.image, class: "event_avatar"), event_path(event)
+      .col-sm-8
+        .event-data
+          .row
+            %h3= event.name
+            %p.lead 
+              Event Type:
+              = event.type
+
+          .row
+            .col-xs-6
+              = link_to "ATTEND", new_event_attendee_path(event), class: 'btn event-buttons'
+
+            .col-xs-6
+              = link_to "VOLUNTEER", new_event_attendee_path(event), class: 'btn event-buttons'
+
+          .row
+            .event-datetime
+              Start Time: 
+              =event.start_time
+              %br
+              End Time: 
+              =event.end_time
+            .location
+              Location: 
+              =event.location
+              = link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"
+
+
