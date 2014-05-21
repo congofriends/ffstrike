@@ -61,7 +61,6 @@ class EventsController < ApplicationController
     #is just clear dublication
     @zip ||= extract_zip(params[:zip]) if valid_zip(params[:zip])
     @events = Event.near_zip(@zip, 200)
-    @attendee = Attendee.new
   end
 
   def edit; end

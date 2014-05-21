@@ -1,21 +1,21 @@
 require 'spec_helper'
 
 describe Assignment do
-  let(:attendee) { FactoryGirl.create(:attendee) }
+  let(:attendance) { FactoryGirl.create(:attendance) }
   let(:task) { FactoryGirl.create(:task) }
-  let(:assignment) { attendee.assignments.build(task_id: task.id) }
-  
+  let(:assignment) { attendance.assignments.build(task_id: task.id) }
+
   subject { assignment }
-  
+
   it { should be_valid }
 
-  describe "attendee methods" do
-    it { should respond_to(:attendee) }
+  describe "attendance methods" do
+    it { should respond_to(:attendance) }
     it { should respond_to(:task) }
   end
 
-  describe "when attendee id is not present" do
-    before { assignment.attendee_id = nil }
+  describe "when attendance id is not present" do
+    before { assignment.attendance_id = nil }
     it { should_not be_valid }
   end
 

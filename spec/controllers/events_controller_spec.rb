@@ -6,7 +6,6 @@ describe EventsController do
   let(:movement){FactoryGirl.create(:movement)}
   let!(:ownership){FactoryGirl.create(:ownership, user: coordinator, movement: movement)}
   let(:event) {FactoryGirl.create(:event, movement: movement)}
-  let(:attendee) {FactoryGirl.create(:attendee, event: event)}
 
   describe "GET #explanation" do
     it "responds successfully" do
@@ -192,23 +191,6 @@ describe EventsController do
 
       it "notifies user that event was updated" do
         flash[:notice].should == "Event updated."
-      end
-    end
-
-    context "when current user is attendee" do
-      new_note_text = "attribute changed by attendee"
-
-      before do
-        @controller.stub(:current_user).and_return(attendee)
-        put :update, movement_id: movement, id: event, event: {notes: new_note_text}
-      end
-
-      it "redirects to event show page" do
-        expect(response).to redirect_to event_path(event)
-      end
-
-      it "changes attributes" do
-        expect(event.reload.notes).to eql(new_note_text)
       end
     end
   end

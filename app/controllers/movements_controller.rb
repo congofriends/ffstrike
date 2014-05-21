@@ -19,7 +19,6 @@ class MovementsController < ApplicationController
     #is just clear dublication
     @zip ||= extract_zip(params[:zip]) if valid_zip(params[:zip])
     @events = @movement.events.near_zip(@zip, 200)
-    @attendee = Attendee.new
     render 'events/search'
   end
 

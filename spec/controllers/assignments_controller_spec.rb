@@ -3,29 +3,18 @@ require 'spec_helper'
 describe AssignmentsController do
   let(:movement) { FactoryGirl.create(:movement) }
   let(:event) { FactoryGirl.create(:event, movement: movement) }
-  let(:task) { FactoryGirl.create(:task) }
-  let(:attendee) {FactoryGirl.create(:attendee, movement: movement, event: event)}
+  let(:task) { FactoryGirl.create(:task, event: event) }
+  let(:user) {FactoryGirl.create(:user)}
+  let!(:attendance) {FactoryGirl.create(:attendance, user: user, event: event)}
 
   describe "Get #assign" do
 
-    context "a non-attendee signs up" do
-      it "notifies the user that only attendess can sign up" do
-        get "assign", id: task, event_id: event
-        flash[:notice].should == "Tasks are for attendees only"
-      end
-    end
-    
-    context "a valid attendee signs up" do
-      before { session[:current_attendee_id] = attendee.id }
-
-      it "notifies that attendee has signed up" do
-        get "assign", id: task, event_id: event, session: session
-        flash[:notice].should == "Thanks for signing up!"
-      end
+    context "a user attending the event signs up" do
+      before { @controller.stub(:current_user).and_return(user) }
 
       it "assigns task to attendee" do
-        get "assign", id: task, event_id: event, session: session
-        Assignment.last.attendee_id.should == session[:current_attendee_id]
+        get "assign", id: task, event_id: event
+        Assignment.last.attendance_id.should == attendance.id
       end
     end
   end

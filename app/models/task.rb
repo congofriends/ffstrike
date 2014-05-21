@@ -10,11 +10,11 @@ class Task < ActiveRecord::Base
   end
 
   def is_assigned_to? user
-    assignments.map {|a| a.attendance_id == user.id }.any?
+    assignments.map {|a| a.attendance.user_id == user.id }.any?
   end
 
   def is_not_assigned_to? user
-    assignments.select { |a| a.attendance_id == user.id }.empty?
+    assignments.select { |a| a.attendance.user_id == user.id }.empty?
   end
 
   def is_allowed_to_update_by? user

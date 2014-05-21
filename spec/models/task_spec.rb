@@ -32,12 +32,14 @@ describe Task do
 
   describe "assigned!" do
     let(:event) { FactoryGirl.create(:event) }
-    let(:attendee) { FactoryGirl.create(:attendee, event: event)  }
+    let(:user) { FactoryGirl.create(:user)}
+    let!(:attendance) { FactoryGirl.create(:attendance, event: event, user: user)  }
     let(:task) { FactoryGirl.create(:task, event: event) }
-    before { task.assign!(attendee.id) }
 
-    it {should be_assigned(attendee) }
-    its(:assigned_attendees) { should include(attendee) }
-
+    it 'should create an assignment with task and attendance ids' do
+      expect{task.assign!(user)}.to change(Assignment, :count).by(1)
+      Assignment.last.task_id.should eq(task.id)
+      Assignment.last.attendance_id.should eq(attendance.id)
+    end
   end
 end
