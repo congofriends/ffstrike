@@ -16,7 +16,7 @@
 
           .row
             .col-xs-6
-              = link_to "ATTEND", new_event_attendee_path(event), class: 'btn event-buttons'
+              = link_to "ATTEND", new_attendee_user_path({:event => event.id}), class: "btn event-buttons"
 
             .col-xs-6
               = link_to "VOLUNTEER", new_event_attendee_path(event), class: 'btn event-buttons'
