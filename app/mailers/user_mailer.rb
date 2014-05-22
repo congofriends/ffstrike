@@ -21,9 +21,12 @@ class UserMailer < ActionMailer::Base
     return false
   end
 
-  # def welcome(user, password)
-
-  # end
+  def welcome(user, password, event)
+    @password = password
+    @recipient = user
+    @event = event
+    mail(to: @recipient.email, subject: "Thanks for participating in the event").deliver
+  end
 
   def self.successfully_deliver?(action, message)
     custom_message(action, message).deliver

@@ -1,4 +1,8 @@
-Thank you for signing up for an event with <%= @movement.name %> <br><br>
+Hello, <%= @recipient.name %>
+
+Welcome to Shift Engage.
+
+Thank you for signing up for an event with <%= @event.movement.name %> <br><br>
 
 Your event details are below: <br>
 Name: <%= @event.name %> <br>
@@ -9,5 +13,6 @@ Date: <%= @event.start_date %> <br>
 Start Time: <%= @event.start_time %> <br>
 End Time: <%= @event.end_time %> <br>
 
-You can visit the movement homepage for <%= @movement.name %> by clicking <a href="<%= movement_url(@movement) %>">here</a>.
+You can find out more about <%= @event.name %> by clicking <a href="<%= event_url(@event) %>">here</a>.
 
+Your password is: <%= @password %>

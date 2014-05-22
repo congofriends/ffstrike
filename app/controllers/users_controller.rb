@@ -33,7 +33,8 @@ class UsersController < Devise::RegistrationsController
 
       flash[:success] = @message
 
-      ##UserMailer.welcome(@user, @generated_password).deliver if @generated_password
+      UserMailer.welcome(@user, @generated_password, @event).deliver if @generated_password
+
       redirect_to event_path(@event)
     else
 

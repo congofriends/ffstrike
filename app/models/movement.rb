@@ -43,6 +43,10 @@ class Movement < ActiveRecord::Base
     parent.nil?
   end
 
+  def attendees
+    User.find(attendances.map(&:user_id).uniq)
+  end
+
   def movement_events
     self.events
   end
