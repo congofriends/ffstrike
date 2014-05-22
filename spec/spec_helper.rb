@@ -7,6 +7,7 @@ require 'simplecov'
 require 'paperclip/matchers'
 require 'pry-rescue/minitest'
 require 'pry-rescue/rspec'
+require 'factory_girl'
 
 # Code coverage runs when you run rspec. This NEEDS to be at the top.
 SimpleCov.start
