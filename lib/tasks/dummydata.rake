@@ -9,16 +9,13 @@ namespace :db do
     fotc_chapters = YAML.load_file(Rails.root.join("config", "fotc_chapters.yml"))
     chapter_events = YAML.load_file(Rails.root.join("config", "chapter_events.yml"))
 
-    def create_event(params, movement, coordinator, number_of_attendees)
+    def create_event(params, movement, coordinator)
       event = movement.events.where(name: params["name"]).first_or_create!(
         params.merge({
           host_id: coordinator.id,
           start_time: DateTime.new(2015, 05, 16, 15, 30),
           end_time: DateTime.new(2015, 05, 16, 17, 30),
           host_id: coordinator.id}))
-      number_of_attendees.times do
-        FactoryGirl.create(:attendee, movement: movement, event: event)
-      end
     end
 
     def create_chapter(params, parent_movement, host)
@@ -37,7 +34,7 @@ namespace :db do
 
 
     fotc_events.each do |event|
-      create_event(event, movement, coordinator, rand(6))
+      create_event(event, movement, coordinator)
     end
 
 
@@ -72,8 +69,8 @@ namespace :db do
       create_chapter(chapter, movement, submovement_owner)
     end
 
-    create_event(chapter_events[0], chapter1, coordinator, 5)
-    create_event(chapter_events[1], chapter2, coordinator, 5)
+    create_event(chapter_events[0], chapter1, coordinator)
+    create_event(chapter_events[1], chapter2, coordinator)
 
 
  end
