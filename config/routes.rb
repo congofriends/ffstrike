@@ -41,7 +41,6 @@ Ffstrike::Application.routes.draw do
     resources :tasks do
       get 'assign' => 'assignments#assign', on: :member, as: 'assign'
     end
-    resources :attendees
   end
 
   get 'events/:id/explanation' => 'events#explanation', as: 'explanation'
