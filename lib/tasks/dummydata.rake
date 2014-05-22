@@ -14,9 +14,6 @@ namespace :db do
           start_time: DateTime.new(2015, 05, 16, 15, 30),
           end_time: DateTime.new(2015, 05, 16, 17, 30),
           host_id: coordinator.id}))
-      number_of_attendees.times do
-        FactoryGirl.create(:attendee, movement: movement, event: event)
-      end
     end
 
     def create_chapter(params, parent_movement, host)
