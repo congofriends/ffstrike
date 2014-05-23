@@ -11,7 +11,7 @@ function initializeValidations() {
         'message[name]': "Name is required",
         'message[email]': "Email is required",
         'message[subject]': "Subject is required",
-        'message[body]': "Body is required"
+        'message[body]': "Message is required"
       },
       errorElement: "div",
       errorClass: "text-danger",
@@ -31,10 +31,10 @@ function initializeValidations() {
     opacity: 0.75,          // Overlay opacity
     zIndex: 1,              // Overlay z-index.
     escapeClose: true,      // Allows the user to close the modal by pressing `ESC`
-    clickClose: false,       // Allows the user to close the modal by clicking the overlay
-    closeText: 'Close',     // Text content for the close <a> tag.
+    clickClose: true,       // Allows the user to close the modal by clicking the overlay
+    closeText: 'X',     // Text content for the close <a> tag.
     closeClass: '',         // Add additional class(es) to the close <a> tag.
-    showClose: true,        // Shows a (X) icon/link in the top-right corner
+    showClose: false,        // Shows a (X) icon/link in the top-right corner
     modalClass: "modal",    // CSS class added to the element being displayed in the modal.
     spinnerHtml: null,      // HTML appended to the default spinner during AJAX requests.
     showSpinner: false,      // Enable/disable the default spinner during AJAX requests.
@@ -46,29 +46,29 @@ function initializeValidations() {
 
 </script>
 
-  <h4>Contact the Host for the </h4>
+  <h4>Contact the host for: </h4>
   <h5><%=@event.name%></h5>
   <%= form_for @message, :method => :post, remote: true,  :url => contact_path, html: { id: 'contact-form' } do |form| %>
       <div class="field">
-        <%= form.label :name, class: "modal-field" %>
-        <%= form.text_field :name, class: "modal-input" %>
+        <%= form.label "Your name: *", class: "modal-field form-label" %>
+        <%= form.text_field :name, class: "modal-input form-inline form-control" %>
       </div></br>
 
       <div class="field">
-        <%= form.label :email, class: "modal-field" %>
-        <%= form.text_field :email, class: "modal-input" %>
+        <%= form.label "Your email: *", class: "modal-field form-label" %>
+        <%= form.text_field :email, class: "modal-input form-inline form-control" %>
       </div></br>
       <div class="field">
-        <%= form.label :subject, class: "modal-field" %>
-        <%= form.text_field :subject, class: "modal-input" %>
+        <%= form.label "Subject: *", class: "modal-field form-label" %>
+        <%= form.text_field :subject, value: "Question about #{@event.name}",  class: "modal-input form-inline form-control" %>
       </div></br>
 
       <div class="field">
-        <%= form.label :body, class: "modal-field" %>
-        <%= form.text_area :body, class: "modal-input contact-body" %>
+        <%= form.label "Your message: *", class: "modal-field" %>
+        <%= form.text_area :body, class: "modal-input contact-body form-control", rows: "6" %>
       </div>
 
       <%= form.hidden_field :event_id, value: @event.id %>
 
-      <div class = "contact-send"><%= form.submit "Submit", class: "contact-send-btn" %></div>
-  <% end %>
+      <%= form.submit "Submit", class: "contact-send-btn btn" %>
+    <% end %>
