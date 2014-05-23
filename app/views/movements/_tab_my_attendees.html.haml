@@ -15,7 +15,7 @@
             %td= link_to event.name, event_path(event)
             %td= attendee.email
             %td= attendee.phone
-            %td= attendee.assignments.count > 0 ? "yes" : "no"
+            %td= attendee.point_for(event) ? "yes" : "no"
             %td= attendee.notes_for(event.id)
 
 
