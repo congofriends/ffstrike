@@ -11,7 +11,7 @@ describe ContactMailer do
   end
 
   it "renders the header" do
-    @mail.subject.should eq("[#{event.name}] #{@message.subject}")
+    @mail.subject.should eq(@message.subject)
     @mail.to.should eq([event.host.email])
     @mail.from.should eq([@message.email])
   end

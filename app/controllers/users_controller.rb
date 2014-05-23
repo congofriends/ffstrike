@@ -11,9 +11,6 @@ class UsersController < Devise::RegistrationsController
   end
 
   def create_attendee_user
-    # generated_password = Devise.friendly_token.first(10)
-    # @user = User.new(user_params.merge(password: generated_password)) unless current_user
-    # @user = current_user ? current_user : User.new(user_params.merge(password: generated_password))
     if current_user
     	@user = current_user
     	@user.update(phone: params[:user][:phone]) if params[:user][:phone]
@@ -28,9 +25,7 @@ class UsersController < Devise::RegistrationsController
 
     if @user.save
       sign_in(:user, @user)
-
-      Attendance.create(user: @user, event: @event, point_person: params[:attendance][:point_person])
-
+      Attendance.where(user: @user, event: @event).first_or_create(user: @user, event: @event, point_person: params[:attendance][:point_person])
       flash[:success] = @message
 
       UserMailer.welcome(@user, @generated_password, @event).deliver if @generated_password

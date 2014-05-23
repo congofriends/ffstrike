@@ -105,8 +105,7 @@ class MovementsController < ApplicationController
   end
 
   def movement_params
-     # ? session[:parent_id] : @movement.parent_id
-    params[:movement][:parent_id] = session[:parent_id]
+    params[:movement][:parent_id] = session[:parent_id] unless session[:parent_id].nil?
     params[:movement][:video]= extract_video_id(params[:movement][:video]) if !params[:movement][:video].nil?
     params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :video, :about_creator, :parent_id, :location)
   end
