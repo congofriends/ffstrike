@@ -1,5 +1,5 @@
 -  
-  name: "Iowa University Chapter"
+  name: "Iowa University"
   tagline: "Iowa University supports justice in the Congo."
   call_to_action: "Each and everyone of us can do something to bring an end to the suffering in the Congo and work with our Congolese brothers and sisters to bring about change."
   published: true
@@ -17,7 +17,7 @@
  location: "Global" 
 
 -
-  name: "Berkeley College Chapter"
+  name: "Berkeley College"
   tagline: "Supporting justice in the Congo since 2003."
   call_to_action: "Let's unite to end suffering in the Congo and bring about lasting positive institutions."
   published: true
@@ -26,7 +26,7 @@
   location: "Global"
 
 -
-  name: "Miami University Chapter"
+  name: "Miami University"
   tagline: "Supporting justice in the Congo since 2003."
   call_to_action: "Let's unite to end suffering in the Congo and bring about lasting positive institutions."
   published: true
@@ -35,7 +35,7 @@
   location: "Global"
 
 -
-  name: "Unitarian Church of Pompadou Chapter"
+  name: "Unitarian Church of Pompadou"
   tagline: "Supporting justice in the Congo."
   call_to_action: "Let's unite to end suffering in the Congo and bring about lasting positive institutions."
   published: true
@@ -44,7 +44,7 @@
   location: "Global"
 
 -
-  name: "Active Transport Alliance Chapter"
+  name: "Active Transport Alliance"
   tagline: "The ATA supports justice in the Congo!"
   call_to_action: "Let's unite to end suffering in the Congo and bring about lasting positive institutions."
   published: true
@@ -53,7 +53,7 @@
   location: "Global"
 
 -
-  name: "Loosely Federated Musicians Chapter"
+  name: "Loosely Federated Musicians"
   tagline: "Jam for Justice in the Congo."
   call_to_action: "Let's unite to end suffering in the Congo and bring about lasting positive institutions."
   published: true
@@ -62,7 +62,7 @@
   location: "Global"
 
 -
-  name: "North Carolina College Chapter"
+  name: "North Carolina College"
   tagline: "Supporting justice in the Congo."
   call_to_action: "Let's unite to end suffering in the Congo and bring about lasting positive institutions."
   published: true
@@ -71,7 +71,7 @@
   location: "Global"
 
 -
-  name: "Broadway Theater Group Chapter"
+  name: "Broadway Theater Group"
   tagline: "Using theater to spread awareness of the Congo crisis."
   call_to_action: "Let's unite to end suffering in the Congo and bring about lasting positive institutions."
   published: true
@@ -80,7 +80,7 @@
   location: "Global"
 
 -
-  name: "Activist Bicyclists Chapter"
+  name: "Activist Bicyclists"
   tagline: "Mobilize for justice in the Congo!"
   call_to_action: "Let's ride to end suffering in the Congo and bring about lasting positive institutions."
   published: true

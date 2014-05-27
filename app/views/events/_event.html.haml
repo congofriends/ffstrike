@@ -5,22 +5,19 @@
     .event-data
       .row
         %h3= link_to event.name, event_path(event)
-        %p.lead
-          Event Type:
-          = event.type
-
       .row
-        .col-xs-6
-          = link_to "Yes! I want to attend!", new_attendee_user_path({:event => event.id}), {class: "btn btn-success btn-sm"}
+        .col-sm-8
+          %p.lead
+            Event Type:
+            = event.type
+          .event-datetime
+            When:
+            =event.formatted_time
+          .location
+            Where:
+            =event.location
+            = link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"
+        .col-xs-4
+          = link_to "ATTEND", new_attendee_user_path({:event => event.id}), {class: "btn"}
 
-      .row
-        .event-datetime
-          Start Time:
-          =event.start_time
-          %br
-          End Time:
-          =event.end_time
-        .location
-          Location:
-          =event.location
-          = link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"
+        

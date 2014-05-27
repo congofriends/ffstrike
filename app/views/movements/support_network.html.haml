@@ -3,13 +3,14 @@
   .row
     =image_tag @movement.image, :class => "movement_avatar"
   .row.event-list
-    .col-sm-8
-      %h2 Support Network
-    .col-sm-2
+    .col-sm-6
+      %h2 Our Support Network:
+    .col-sm-2.col-sm-offset-4
       - if !current_user.nil?
-        =link_to 'CREATE A CHAPTER', new_movement_path(@movement, {parent_id: @movement.id}), class: 'btn'
+        =link_to 'JOIN', new_movement_path(@movement, {parent_id: @movement.id}), class: 'btn'
       - else
-        =link_to 'CREATE A CHAPTER', new_unauthenticated_submovement_path(@movement, {parent_id: @movement.id}), class: 'btn'
+        =link_to 'JOIN', new_unauthenticated_submovement_path(@movement, {parent_id: @movement.id}), class: 'btn'
+
   - @support_network.each do |chapter|
     .row.event-list
       .col-sm-4
@@ -18,9 +19,6 @@
         .row
           %h3.text-center= link_to chapter.name, movement_path(chapter)
         .row
-          .col-xs-6
-            .text-center
-              .btn JOIN CHAPTER
-          .col-xs-6
+          .col-xs-12
             .text-center
               =link_to 'EVENTS', movement_events_path(chapter), class: 'btn text-center'

@@ -16,39 +16,15 @@
       .row
         .col-xs-12
           .text-center
-            .btn JOIN
+            - if current_user
+              = link_to "CREATE YOUR OWN EVENT", new_movement_event_path(@movement), class: "btn"
+            - else
+              = link_to "CREATE YOUR OWN EVENT", new_movement_unauthenticated_event_path(@movement), class: "btn"
       .row
         .spacer10
   .row
-    %h2 Events
-  -@movement.events.each do |event|
-    .event-list.row
-      .col-sm-4
-        = link_to image_tag(event.image, class: "event_avatar"), event_path(event)
-      .col-sm-8
-        .event-data
-          .row
-            %h3= link_to event.name, event_path(event)
-            %p.lead 
-              Event Type:
-              = event.type
+    - unless @movement.events.empty?
+      %h2 Events
 
-          .row
-            .col-xs-6
-              = link_to "ATTEND", new_attendee_user_path({:event => event.id}), class: "btn event-buttons"
-
-            .col-xs-6
-              = link_to "VOLUNTEER", new_attendee_user_path({:event => event.id}), class: "btn event-buttons" 
-
-          .row
-            .event-datetime
-              Start Time: 
-              =event.start_time
-              %br
-              End Time: 
-              =event.end_time
-            .location
-              Location: 
-              =event.location
-              = link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"
- 
+  = render partial: 'events/event', collection: @movement.events, as: :event
+    
