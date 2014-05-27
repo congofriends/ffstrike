@@ -23,6 +23,8 @@
       %br
       %iframe{frameborder: "0", height: "250", src: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg\r\n    &q=#{@event.location}", style: "border:0", width: "100%"}
 
+  =render "social/share_event"
+
 - if @event.forum_option
   .container
     #disqus_div
