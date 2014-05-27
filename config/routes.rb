@@ -33,7 +33,6 @@ Ffstrike::Application.routes.draw do
 
   resources :unauthenticated_submovements, only: [:new, :create]
 
-    get 'new_submovement' => 'movements#new_submovement',  as: 'new_submovement'
   #events
   resources :events do
 

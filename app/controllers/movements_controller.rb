@@ -6,7 +6,6 @@ class MovementsController < ApplicationController
   before_filter :get_approved_events, only: [:show]
   before_filter :check_user_owns_movement, only: [:dashboard]
   before_filter :redirect_unauthorized_user, only: [:show]
-  before_filter :clear_session_parent_id, except: [:create]
   before_filter :load_map_vars, only: [:show]
 
   include YoutubeParserHelper
@@ -39,12 +38,6 @@ class MovementsController < ApplicationController
     @movement = Movement.new
   end
 
-  def new_submovement
-    session[:parent_id] = session[:movement_id]
-    @movement = Movement.new
-    render :new
-  end
-
   def create
     @movement = Movement.new(movement_params)
     if @movement.save
@@ -62,7 +55,6 @@ class MovementsController < ApplicationController
 
   def show
     load_map_vars
-    session[:movement_id] = @movement.id
     @sub_events = []
     @movement.sub_movements.each { |sub_movement| @sub_events.concat sub_movement.events }
 
@@ -100,12 +92,9 @@ class MovementsController < ApplicationController
   end
 
   private
-  def clear_session_parent_id
-    session[:parent_id] = nil
-  end
+
 
   def movement_params
-    params[:movement][:parent_id] = session[:parent_id] unless session[:parent_id].nil?
     params[:movement][:video]= extract_video_id(params[:movement][:video]) if !params[:movement][:video].nil?
     params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :video, :about_creator, :parent_id, :location)
   end

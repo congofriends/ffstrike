@@ -7,9 +7,9 @@
       %h2 Support Network
     .col-sm-2
       - if !current_user.nil?
-        =link_to 'CREATE A CHAPTER', new_submovement_path(@movement), class: 'btn'
+        =link_to 'CREATE A CHAPTER', new_movement_path(@movement, {parent_id: @movement.id}), class: 'btn'
       - else
-        =link_to 'CREATE A CHAPTER', new_unauthenticated_submovement_path(@movement), class: 'btn'
+        =link_to 'CREATE A CHAPTER', new_unauthenticated_submovement_path(@movement, {parent_id: @movement.id}), class: 'btn'
   - @support_network.each do |chapter|
     .row.event-list
       .col-sm-4

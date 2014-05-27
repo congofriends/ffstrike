@@ -54,6 +54,8 @@
                 .col-md-8
                   = form.check_box :draft
 
+              = form.hidden_field :parent_id, value:  params[:parent_id]
+
               .form-group
                 .col-md-8.col-md-offset-4
                   = form.submit 'Create Movement', class: "btn btn-primary", id: "create_movement"

@@ -45,6 +45,8 @@
                 .col-md-8
                   = check_box :movement, :draft
 
+              = hidden_field :parent_id, value:  params[:parent_id]
+
               .col-sm-5
                 .form-group
                   = label :user, :name, 'Name *', class: 'control-label'
@@ -64,6 +66,5 @@
                 .form-group
                   = label :user, :password_confirmation, 'Password confirmation *'
                   = password_field :user, :password_confirmation, class: 'form-control'
-
               = submit_tag "Create a user and chapter", class: 'btn btn-primary col-sm-12'
 
