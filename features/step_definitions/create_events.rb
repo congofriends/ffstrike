@@ -6,10 +6,11 @@ Given(/^I have an existing event$/) do
 end
 
 Given(/^I have an existing event for the movement with attendees$/) do
-  create_events_page.existing_event_with_attendees(@user)
+  # create_events_page.existing_event_with_attendees(@user)
 end
 
-When(/^I make an event/)do 
+When(/^I make an event/)do
+binding.pry
   create_events_page.navigate_to.select_create_event.select_event_type.create_new_event_as_an_attendee()
 end
 

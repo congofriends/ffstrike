@@ -1,10 +1,10 @@
 Feature: Coordinator Emails all Attendees for a Movement
 
 Background:
-	# Given a user account exists
- # 	And I am logged in as a Movement Coordinator
- # 	And I have an existing movement
- # 	And I have an existing event for the movement with attendees
+	Given a user account exists
+ 	And I am logged in as a Movement Coordinator
+ 	And I have an existing movement
+ 	And I have an existing event for the movement with attendees
 
 @ignore
 Scenario: Sending an Email to Attendees in a movement
