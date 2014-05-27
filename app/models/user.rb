@@ -51,6 +51,10 @@ class User < ActiveRecord::Base
     attendances.find_by(event_id: event_id).notes
   end
 
+  def point_for(event)
+    attendances.find_by(event: event).point_person
+  end
+
   def nonapproved_events
     Event.where(host_id: self.id, approved: false)
   end

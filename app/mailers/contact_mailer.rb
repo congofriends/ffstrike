@@ -5,7 +5,7 @@ class ContactMailer < ActionMailer::Base
   def new_message(message)
   	@event = Event.find(message.event_id)
     @message = message
-    mail(to: @event.host.email, from: @message.email, subject: "[#{@event.name}] #{message.subject}")
+    mail(to: @event.host.email, from: @message.email, subject: @message.subject)
   end
 
 end

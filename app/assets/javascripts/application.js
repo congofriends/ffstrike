@@ -23,5 +23,4 @@
 //= require underscore
 //= require jquery-ui-1.10.4.custom.min
 //= require jquery-ui-timepicker-addon
-//= require jquery.ui.all
 //= require jquery.modal

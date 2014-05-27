@@ -52,12 +52,11 @@ ready = function () {
             infowindow.setContent('<div class="contentWindow"><h4><a href =' + event_path[i]+'>' + event_names[i] + '</a>' +
         '<img src="' + event_images[i] + '" class="marker_image"></h4>' +
         '<div>' + event_types[i] + '</div>' + '<hr>' +
-        '<h6>Location:</h6>' +
+        '<h6>Where:</h6>' +
         '<div>' + addresses[i] + '</div>' +
         '<h6>When:</h6>' +
         '<div>' + times[i] + '</div></br>' +
-        '<div>Would you like more information about this event?  ' +
-        '<a href="/contact/' + event_ids[i] + '" rel="modal:open">Contact the Host</a>' +
+        '<div><a href="/contact/' + event_ids[i] + '" rel="modal:open">Contact the host</a>' +
         '</div></div>');
             infowindow.open(map, marker);
           }

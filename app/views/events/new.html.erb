@@ -19,7 +19,7 @@
             </div>
 
             <div class='form-group'>
-              <%= form.label "End date & time:" %>
+              <%= form.label "End date & time:(optional)" %>
               <%= form.text_field :end_time, class: 'form-control datetimepicker' %>
             </div>
           </div>
@@ -52,7 +52,7 @@
           </div>
           <div class='form-group'>
             <%= form.label :location_details %>
-            <%= form.text_field :location_details, placeholder: "meet at the coner of Belmont & Sheridan", class: 'form-control' %>
+            <%= form.text_field :location_details, placeholder: "meet at the corner of Belmont & Sheridan", class: 'form-control' %>
           </div>
           <button type="button", class="btn btn-success next"> Next </button>
         </fieldset>
@@ -72,17 +72,6 @@
             <%end%>
           </div>
 
-          <div class='form-group'>
-            <%unless @movement.sub_movements.empty? %>
-              <%= form.label :movement, "Would one of our chapters be a better fit for this event?" %>
-              <%= form.select :movement, @movement.sub_movements.map(&:name), {:include_blank => "Stay under the parent movement: " + @movement.name}, {class: 'form-control'}%>
-            <%end%>
-            <%if @movement.parent %>
-              Is this event under a chapter?</br>
-              <%= form.label :movement, "Would one of our other chapters be a better fit for this event?"%>
-              <%= form.select :movement, @movement.parent.sub_movements.map(&:name), {selected: @movement.name, include_blank: "Stay under the parent movement: " + @movement.parent.name}, {class: 'form-control'}%>
-            <%end%>
-          </div>
           <button type="button", class="btn btn-primary previous"> Previous </button>
           <button type="button", class="btn btn-success next"> Next </button>
         </fieldset>
@@ -95,7 +84,18 @@
           </div>
 
           <div class='form-group'>
-            <%= form.label "Include Disqus Comment Thread"%>
+            <%unless @movement.sub_movements.empty? %>
+              <%= form.label :movement, "If this event is associated with a chapter, please choose it here:" %>
+              <%= form.select :movement, @movement.sub_movements.map(&:name), {:include_blank => "Stay under the parent movement: " + @movement.name}, {class: 'form-control'}%>
+            <%end%>
+            <%if @movement.parent %>
+              <%= form.label :movement, "If this event is associated with a chapter, please choose it here:"%>
+              <%= form.select :movement, @movement.parent.sub_movements.map(&:name), {selected: @movement.name, include_blank: "Stay under the parent movement: " + @movement.parent.name}, {class: 'form-control'}%>
+            <%end%>
+          </div>
+
+          <div class='form-group'>
+            <%= form.label "Include an attendee discussion forum on this event:"%>
             <%= form.check_box :forum_option, class: 'form-control' %>
           </div>
 

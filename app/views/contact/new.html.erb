@@ -1,26 +1,74 @@
-  <h4>Contact the Host for the </h4>
+<script type="text/javascript">
+function initializeValidations() {
+    $('#contact-form').validate({
+      rules: {
+        'message[name]': { required: true },
+        'message[email]': { required: true },
+        'message[subject]': { required: true },
+        'message[body]': { required: true }
+      },
+      messages: {
+        'message[name]': "Name is required",
+        'message[email]': "Email is required",
+        'message[subject]': "Subject is required",
+        'message[body]': "Message is required"
+      },
+      errorElement: "div",
+      errorClass: "text-danger",
+      errorId: "event_error",
+      errorPlacement: function (error, element) {
+        error.insertAfter(element);
+        element.closest('div').addClass('has-error');
+      },
+      success: function (label) {
+          label.closest('.form-group').removeClass('has-error').addClass('has-success');
+          label.next('.help-block').hide();
+      }
+    });
+  };
+  $.modal.defaults = {
+    overlay: "#000",        // Overlay color
+    opacity: 0.75,          // Overlay opacity
+    zIndex: 1,              // Overlay z-index.
+    escapeClose: true,      // Allows the user to close the modal by pressing `ESC`
+    clickClose: true,       // Allows the user to close the modal by clicking the overlay
+    closeText: 'X',     // Text content for the close <a> tag.
+    closeClass: '',         // Add additional class(es) to the close <a> tag.
+    showClose: false,        // Shows a (X) icon/link in the top-right corner
+    modalClass: "modal",    // CSS class added to the element being displayed in the modal.
+    spinnerHtml: null,      // HTML appended to the default spinner during AJAX requests.
+    showSpinner: false,      // Enable/disable the default spinner during AJAX requests.
+    fadeDuration: null,     // Number of milliseconds the fade transition takes (null means no transition)
+    fadeDelay: 1.0          // Point during the overlay's fade-in that the modal begins to fade in (.5 = 50%, 1.5 = 150%, etc.)
+  };
+
+  initializeValidations();
+
+</script>
+
+  <h4>Contact the host for: </h4>
   <h5><%=@event.name%></h5>
   <%= form_for @message, :method => :post, remote: true,  :url => contact_path, html: { id: 'contact-form' } do |form| %>
       <div class="field">
-        <%= form.label :name, class: "modal-field" %>
-        <%= form.text_field :name, class: "modal-input" %>
+        <%= form.label "Your name: *", class: "modal-field form-label" %>
+        <%= form.text_field :name, class: "modal-input form-inline form-control" %>
       </div></br>
 
       <div class="field">
-        <%= form.label :email, class: "modal-field" %>
-        <%= form.text_field :email, class: "modal-input" %>
+        <%= form.label "Your email: *", class: "modal-field form-label" %>
+        <%= form.text_field :email, class: "modal-input form-inline form-control" %>
       </div></br>
       <div class="field">
-        <%= form.label :subject, class: "modal-field" %>
-        <%= form.text_field :subject, class: "modal-input" %>
+        <%= form.label "Subject: *", class: "modal-field form-label" %>
+        <%= form.text_field :subject, value: "Question about #{@event.name}",  class: "modal-input form-inline form-control" %>
       </div></br>
 
       <div class="field">
-        <%= form.label :body, class: "modal-field" %>
-        <%= form.text_area :body, class: "modal-input contact-body" %>
+        <%= form.label "Your message: *", class: "modal-field" %>
+        <%= form.text_area :body, class: "modal-input contact-body form-control", rows: "6" %>
       </div>
 
       <%= form.hidden_field :event_id, value: @event.id %>
 
-      <div class = "contact-send"><%= form.submit "Submit", class: "contact-send-btn" %></div>
-  <% end %>
+      <%= form.submit "Submit", class: "contact-send-btn btn" %>
+    <% end %>

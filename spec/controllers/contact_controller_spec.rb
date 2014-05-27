@@ -10,5 +10,4 @@ describe ContactController do
   	@mail = ContactMailer.new_message(@message)
   end
 
-
 end
