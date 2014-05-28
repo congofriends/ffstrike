@@ -24,5 +24,5 @@ end
 
 
 Then(/^I am able to see my changes for the event$/) do
-  expect(@event.reload.address).to eq("123 this street")
+  expect(Event.last.reload.address).to eq("123 this street")
 end
