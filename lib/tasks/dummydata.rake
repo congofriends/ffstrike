@@ -41,7 +41,7 @@ namespace :db do
                                    password: "password",
                                    password_confirmation: "password")
 
-    non_coordinator_event = movement.events.where(name: "FOTC info session").first_or_create!(
+    approved_event = movement.events.where(name: "FOTC info session").first_or_create!(
         name: "FOTC info session",
         address: "700 W Van Buren",
         city: "Chicago",
@@ -52,6 +52,19 @@ namespace :db do
         event_type_id: 2,
         approved: true,
         host_id: non_coordinator.id)
+
+    unapproved_event = movement.events.where(name: "Screening Cats, the Musical").first_or_create!(
+        name: "Screening Cats, the Musical",
+        address: "700 W Van Buren",
+        city: "Chicago",
+        zip: "60634",
+        state: "IL",
+        start_time: DateTime.new(2015, 05, 14, 15, 30),
+        end_time: DateTime.new(2015, 05, 14, 17, 30),
+        event_type_id: 3,
+        approved: false,
+        host_id: non_coordinator.id)
+
 
     submovement_owner = User.where(email: "subowner@example.com").first_or_create!(name: "subowner",
                                    email: "subowner@example.com",
