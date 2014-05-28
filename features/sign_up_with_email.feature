@@ -1,6 +1,8 @@
 Feature: Signing up as a movement coordinator for the application using their email
 
-@ignore
+Background:
+	Given a chapter exists
+
 Scenario: Signing up as a coordinator with my email address
 	When I select the sign up link
 	And provide my new login credentials
