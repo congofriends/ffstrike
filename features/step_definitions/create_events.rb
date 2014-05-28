@@ -6,7 +6,7 @@ Given(/^I have an existing event$/) do
 end
 
 Given(/^I have an existing event for the movement with attendees$/) do
-  # create_events_page.existing_event_with_attendees(@user)
+  create_events_page.existing_event_with_attendees(@user)
 end
 
 When(/^I make an event/)do

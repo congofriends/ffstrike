@@ -36,9 +36,10 @@ include Capybara::DSL
 
 	def existing_event_with_attendees(user)
 		@movement = Movement.last
-  	ownership = FactoryGirl.create(:ownership, movement: @movement, user: user)
-  	@event = FactoryGirl.create(:approved_event, host: user, zip: '60649', movement: @movement, name: "Crazy Event")
-	  attendee = FactoryGirl.create(:attendee, movement: @movement, event: @event)
+  		ownership = FactoryGirl.create(:ownership, movement: @movement, user: user)
+  		@event = FactoryGirl.create(:approved_event, host: user, zip: '60649', movement: @movement, name: "Crazy Event")
+	  	attendee = FactoryGirl.create(:user)
+	  	attendance = FactoryGirl.create(:attendance, user: attendee, event: @event)
 	end
 
 	def navigate_to()
