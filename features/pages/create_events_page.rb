@@ -1,6 +1,7 @@
 class CreateEventsPage
 include Capybara::DSL
 	def create_new_event
+		binding.pry
 		fill_in 'event_name', with: 'Cats and Dogs'
 		fill_in 'event_address', with: '2373'
 		fill_in 'event_city', with: 'Chicago'
@@ -49,14 +50,21 @@ include Capybara::DSL
 	end
 
   def select_create_event
-    click_link_or_button('CREATE YOUR OWN EVENT')
+  	navigate_to_events
+    click_link_or_button('CREATE AN EVENT')
     return self
   end
 
-  # def select_event_type
-  #   click_link_or_button('Rally')
-  #   return self
-  # end
+  def navigate_to_events()
+  	name = Movement.last.name
+  	visit "/movements/" + name.gsub(/ /, '-') + "/events/"
+  	return self
+  end
+
+  def select_event_type
+    click_link_or_button('Rally')
+    return self
+  end
 
   # def select_rally
   #   click_link_or_button('Rally')
