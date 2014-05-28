@@ -31,6 +31,7 @@ include Capybara::DSL
 		movement = FactoryGirl.create(:published_movement, name: "go Dogs")
   	ownership = FactoryGirl.create(:ownership, movement: movement, user: user)
   	event = FactoryGirl.create(:approved_event, host: user, zip: '60649', movement: movement, name: "Crazy Event")
+		chapter = FactoryGirl.create(:published_movement, parent_id: movement.id)
 	end
 
 	def existing_event_with_attendees(user)
@@ -47,19 +48,19 @@ include Capybara::DSL
 	end
 
   def select_create_event
-    click_link_or_button('CREATE AN EVENT')
+    click_link_or_button('CREATE YOUR OWN EVENT')
     return self
   end
 
-  def select_event_type
-    click_link_or_button('Rally')
-    return self
-  end
+  # def select_event_type
+  #   click_link_or_button('Rally')
+  #   return self
+  # end
 
-  def select_rally
-    click_link_or_button('Rally')
-    return self
-  end
+  # def select_rally
+  #   click_link_or_button('Rally')
+  #   return self
+  # end
 
   def email_attendees_for_an_event ()
     name = Event.last.name

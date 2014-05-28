@@ -1,9 +1,5 @@
 home_page = HomePage.new
 
-Given(/^I am an attendee$/)do
-  visit splash_path
-end
-
 When(/^I search for an event from the home page$/) do
   visit splash_path
   home_page.search_by_valid_zipcode()
@@ -27,7 +23,7 @@ end
 
 When(/^provide my new login credentials$/) do
   	home_page.fill_in_sign_up_form()
-end		
+end
 
 Then(/^I see events within the zipcode given$/) do
   page.has_selector? 'movement_name'

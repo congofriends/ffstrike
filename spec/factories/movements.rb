@@ -4,7 +4,7 @@ FactoryGirl.define do
     tagline {Faker::Lorem.sentence}
     video "http://www.youtube.com/watch?v=EpnERlsfBFc"
     about_creator {Faker::Lorem.sentence}
-
+    parent_id nil
     factory :published_movement do
       published true
     end

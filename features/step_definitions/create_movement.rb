@@ -14,7 +14,12 @@ Given(/^I am logged in as a Movement Coordinator/) do
   home_page.coordinator_login()
 end
 
-Given(/^I have an existing movement/) do 
+Given(/^a chapter exists$/) do
+  @parent = FactoryGirl.create(:published_movement)
+  @chapter = FactoryGirl.create(:published_movement, parent_id: @parent.id)
+end
+
+Given(/^I have an existing movement/) do
   create_movement_page.fill_form_and_submit()
 end
 
