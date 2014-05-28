@@ -1,7 +1,6 @@
 class CreateEventsPage
 include Capybara::DSL
 	def create_new_event
-		binding.pry
 		fill_in 'event_name', with: 'Cats and Dogs'
 		fill_in 'event_address', with: '2373'
 		fill_in 'event_city', with: 'Chicago'
@@ -30,9 +29,10 @@ include Capybara::DSL
 
 	def create_existing_event(user)
 		movement = FactoryGirl.create(:published_movement, name: "go Dogs")
-  	ownership = FactoryGirl.create(:ownership, movement: movement, user: user)
-  	event = FactoryGirl.create(:approved_event, host: user, zip: '60649', movement: movement, name: "Crazy Event")
+  		ownership = FactoryGirl.create(:ownership, movement: movement, user: user)
+  		event = FactoryGirl.create(:approved_event, host: user, zip: '60649', movement: movement, name: "Crazy Event")
 		chapter = FactoryGirl.create(:published_movement, parent_id: movement.id)
+		return self
 	end
 
 	def existing_event_with_attendees(user)

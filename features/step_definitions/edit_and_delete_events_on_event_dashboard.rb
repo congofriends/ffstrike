@@ -15,7 +15,7 @@ end
 Then "the event no longer exists" do
   visit splash_path
   event_dashboard_page.event_should_not_exist()
-  page.should_not have_content(@event.name)
+  page.should_not have_content(Event.last.name)
 end
 
 Then(/^I am taken to my event page$/) do

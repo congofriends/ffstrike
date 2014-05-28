@@ -4,7 +4,7 @@ Background:
 	Given a user account exists
 	And I am logged in as a Movement Coordinator
  	And I have an existing movement
-@ignore
+
 Scenario: Creating an Event as a Coordinator
  When I select the Create Event button
 	And I select the type of event
