@@ -1,23 +1,24 @@
-.event-list.row
-  .col-sm-4
-    = link_to image_tag(event.image, class: "event_avatar"), event_path(event)
-  .col-sm-8
-    .event-data
-      .row
-        %h3= link_to event.name, event_path(event)
-      .row
-        .col-sm-8
-          %p.lead
-            Event Type:
-            = event.type
-          .event-datetime
-            When:
-            =event.formatted_time
-          .location
-            Where:
-            =event.location
-            = link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"
-        .col-xs-4
-          = link_to "ATTEND", new_attendee_user_path({:event => event.id}), {class: "btn"}
+.row
+  - unless event.type === "Own event"
+    %h3.text-center= link_to event.type + ": " +  event.name, event_path(event)
+  - else 
+    %h3.text-center= link_to event.name, event_path(event)
+  .row
+    .col-sm-4
+      = link_to image_tag(event.image, class: "event_avatar"), event_path(event)
+    .col-sm-4.event-data
+      %strong When:
+      =event.formatted_time
+      %br
+      %br
+      %strong Where:
+      =event.location
+      = link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"
+      %br
+      %br
+      %strong Organized by:
+      =link_to event.movement.name, movement_path(event.movement)
+    .col-xs-4.text-center.event-actions
+      = link_to "ATTEND", new_attendee_user_path({:event => event.id}), {class: "btn btn-attend"}
 
         

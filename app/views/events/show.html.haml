@@ -3,24 +3,9 @@
 = content_for :title, @event.name
 
 .container
-  .row
-    .col-sm-6
-      %h2= @event.name
-      .event-datetime= @event.formatted_time
-      =@event.location
-    .col-sm-6
-      .row
-        %br
-        =@event.notes
-      .row
-        %br
-        .col-sm-12
-          - unless @event.with_attendee? current_user
-            = link_to "Yes! I want to attend!", new_attendee_user_path({:event => @event.id}), {class: "btn"}
-
+  = render partial: "event", locals: {event: @event}
   .row
     .col-sm-12
-      %br
       %iframe{frameborder: "0", height: "250", src: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg\r\n    &q=#{@event.location}", style: "border:0", width: "100%"}
 
   =render "social/share_event"

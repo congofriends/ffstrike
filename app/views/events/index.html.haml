@@ -8,34 +8,6 @@
       =link_to 'CREATE AN EVENT', event_type_movement_path(@movement), class: 'btn'
   
   -@movement.events.select{|event| event.approved?}.each do |event|
-    .event-list.row
-      .col-sm-4
-        = link_to image_tag(event.image, class: "event_avatar"), event_path(event)
-      .col-sm-8
-        .event-data
-          .row
-            %h3= link_to event.name, event_path(event)
-            %p.lead 
-              Event Type:
-              = event.type
-
-          .row
-            .col-xs-6
-              = link_to "ATTEND", new_attendee_user_path({:event => event.id}), class: "btn event-buttons"
-
-            .col-xs-6
-              = link_to "VOLUNTEER", new_attendee_user_path({:event => event.id}), class: "btn event-buttons" 
-
-          .row
-            .event-datetime
-              Start Time: 
-              =event.start_time
-              %br
-              End Time: 
-              =event.end_time
-            .location
-              Location: 
-              =event.location
-              = link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"
-
+    .event-list
+      = render partial: "events/event", locals: {event: event}
 
