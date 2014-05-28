@@ -49,7 +49,6 @@ end
 
 Then(/^a visitor can view my movement/) do
   Capybara.reset_sessions!
-  visit movement_path(Movement.last)
-  page.should have_text(Movement.last.name)
+  page.has_title? Movement.last.name
 end
 
