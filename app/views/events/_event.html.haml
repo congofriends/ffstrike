@@ -3,6 +3,7 @@
     %h3.text-center= link_to event.type + ": " +  event.name, event_path(event)
   - else 
     %h3.text-center= link_to event.name, event_path(event)
+  %p.text-center= event.description
   .row
     .col-sm-4
       = link_to image_tag(event.image, class: "event_avatar"), event_path(event)

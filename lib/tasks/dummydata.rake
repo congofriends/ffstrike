@@ -51,6 +51,7 @@ namespace :db do
         end_time: DateTime.new(2015, 05, 14, 17, 30),
         event_type_id: 2,
         approved: true,
+        description: "We will be discussing who Friends of the Congo are, and how you can be involved.",
         host_id: non_coordinator.id)
 
     unapproved_event = movement.events.where(name: "Screening Cats, the Musical").first_or_create!(
@@ -63,6 +64,7 @@ namespace :db do
         end_time: DateTime.new(2015, 05, 14, 17, 30),
         event_type_id: 3,
         approved: false,
+        description:  "Just like the title says, we will LITERALLY be screening CATS, THE MUSICAL",
         host_id: non_coordinator.id)
 
 

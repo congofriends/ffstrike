@@ -6,6 +6,7 @@
   state: "MD"
   event_type_id: 3
   approved: true
+  description: "We will be screening The Congolese Tragedy: From Causes to Sustainable Solutions, a hallmark synthesis about the situation in the Congo."
 
 -
   name: "The Crisis of Sexual Violence and Rape as a Weapon of War"
@@ -15,3 +16,4 @@
   state: "VT"
   event_type_id: 4
   approved: true
+  description: "We will be discussing the use of sexual violence and rape as a weapon of war by genocide perpetrators in the Congo."

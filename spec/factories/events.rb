@@ -17,6 +17,7 @@ FactoryGirl.define do
     start_time DateTime.now + 1000
     latitude 41.9215421
     longitude -87.70248169999999
+    description {Faker::Lorem.sentence}
     notes {Faker::Lorem.sentence}
     association :host, factory: :user
     approved false

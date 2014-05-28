@@ -50,6 +50,14 @@
         <%= best_in_place event, :notes, :type => :input, :html_attrs => {:class => "input"}%>
       </div>
     </div>
+
+    <div class="form-group" id="events-list">
+      <label class="col-sm-1">Description</label>
+      <div class="col-sm-10">
+        <%= best_in_place event, :description, :type => :input, :html_attrs => {:class => "input"}%>
+      </div>
+    </div>
+ 
     <div class="form-group" id="events-list">
       <label class="col-sm-1">Approved:</label>
       <div class="col-sm-10">

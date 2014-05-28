@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
   after_validation :assign_coordinates
   after_create :populate_tasks
 
-  validates :host, :address, :city, :state, :zip, :name, presence: true
+  validates :host, :address, :city, :state, :zip, :name, :description, presence: true
   validates :name, uniqueness: true
 
   validate :start_date_cannot_be_in_the_past

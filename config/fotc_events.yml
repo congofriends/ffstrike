@@ -6,6 +6,7 @@
   state: "IL"
   event_type_id: 1
   approved: true
+  description:  "We will be screening Crisis in the Congo, an seminal work on the modern Congo situation."
 
 -
   name: "Breaking the Silence for Congo Women"
@@ -15,6 +16,7 @@
   state: "NC"
   event_type_id: 3
   approved: true
+  description: "An open discussion about the absurd silence with which the so-called developed world treats the crises facing the women of the Congo."
 
 -
   name: "Screening Crisis in the Congo: Uncovering the Truth"
@@ -24,6 +26,7 @@
   state: "NY"
   event_type_id: 4
   approved: true
+  description: "We will be screening Crisis in the Congo, an seminal work on the modern Congo situation."
 
  
 -
@@ -34,6 +37,7 @@
   state: "IL"
   event_type_id: 3
   approved: true
+  description: "We'll be discussing how we are all affected by the exploitation of conflict minerals in the Congo"
 
 -
   name: "Screening Crisis in the Congo"
@@ -43,5 +47,5 @@
   state: "IL"
   event_type_id: 4
   approved: true
-
+  description: "We will be screening Crisis in the Congo, an seminal work on the modern Congo situation."
 

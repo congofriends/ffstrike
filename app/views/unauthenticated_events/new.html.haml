@@ -22,6 +22,10 @@
         = label :event, :event_name, "Event Name *"
         = text_field :event, :name,  class: 'form-control'
 
+      .form-group.col-sm-12
+        = label :description, :event_description, "Event Description *"
+        = text_field :event, :description,  class: 'form-control'
+
       .form-group.col-sm-6
         = label :event, :address, "Street 1 *"
         = text_field :event, :address, class: 'form-control'

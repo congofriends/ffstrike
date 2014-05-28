@@ -5,6 +5,7 @@ function initializeValidations() {
       'event[start_time]': { required: true },
       'event[address]': { required: true },
       'event[city]': { required: true },
+      'event[description]': { required: true },
       'event[state]': { required: true },
       'event[zip]': { 
         required: true,
@@ -16,6 +17,7 @@ function initializeValidations() {
       'event[start_time]': "Start date & time is required",
       'event[address]': 'Address is required',
       'event[city]': 'City is required',
+      'event[description]': 'Description is required',
       'event[state]': 'State is required',
       'event[zip]': { 
         required: 'Zip is required',
