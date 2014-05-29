@@ -324,8 +324,6 @@ div > .mvmt-attendee { color: blue; }
 }
 
 .modal {
-  background: image-url('close.png') no-repeat 0 0;
-  background: image-url('spinner.png') no-repeat 0 0;
   width: 450px;
   height: 500px;
   line-height: 1.25;
@@ -334,3 +332,9 @@ div > .mvmt-attendee { color: blue; }
   background: $background-color;
   border: 2px solid #fff;
 }
+
+.modal a.close-modal {
+margin: 10px;
+background: url(<%= asset_path "close.png" %>) no-repeat 7px 7px;
+}
+
