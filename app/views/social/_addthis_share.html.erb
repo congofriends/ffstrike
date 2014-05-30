@@ -1,9 +1,9 @@
 <!-- AddThis Button BEGIN -->
 <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-<a class="addthis_button_facebook"></a>
-<a class="addthis_button_twitter"></a>
-<a class="addthis_button_google_plusone_share"></a>
-<a class="addthis_button_gmail"></a>
+<a id ="btn1" class="addthis_button_facebook"></a>
+<a id ="btn2"  class="addthis_button_twitter"></a>
+<a id ="btn3"  class="addthis_button_google_plusone_share"></a>
+<a id ="btn4"  class="addthis_button_gmail"></a>
 <a class="addthis_button_compact"></a>
 <a class="addthis_counter addthis_bubble_style"></a>
 </div>
@@ -15,4 +15,23 @@
 	};
 </script>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53864152525b7737"></script>
+
+<a id="btn5"></a>
+<script type="text/javascript">
+var addthis_ui_config =
+{
+    services_compact: 'facebook, myspace, igoogle, netvibes, windows, dashboard, more'
+}
+var addthis_share_config =
+{
+    url: "http://www.addthis.com/pages/embedded-example-js",
+    title: "AddThis Tour",
+    description: "Watch the AddThis Tour video.",
+    swfurl: "http://www.youtube.com/v/1F7DKyFt5pY&hl=en&fs=1",
+    width: "560",
+    height: "340",
+    screenshot: "http://i2.ytimg.com/vi/1F7DKyFt5pY/default.jpg"
+}
+addthis.button("#btn1","#btn2","#btn3","#btn4","#btn5", addthis_ui_config, addthis_share_config);
+</script>
 <!-- AddThis Button END -->
