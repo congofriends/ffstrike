@@ -113,7 +113,7 @@ describe EventsController do
         end
 
         it "creates an unapproved event" do
-          expect(Event.last.approved).to eq(nil)
+          expect(Event.last.approved).to eq(false)
         end
 
         it "notifies the creator that coordinator will approve event" do

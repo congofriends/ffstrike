@@ -6,7 +6,7 @@
     .panel-body
 
       .form-group
-        = f.label :name
+        = f.label :name, 'Name*'
         = f.text_field :name, class: "form-control"
 
       .form-group
@@ -29,4 +29,4 @@
       .form-group
         = f.submit "Sign me up!", class: "btn btn-info col-md-12"
 
-    %p.text-info.small * Your email address will be shared with the event host.
+    %p.text-info.small Expect to hear from the host with event updates

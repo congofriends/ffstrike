@@ -66,7 +66,7 @@ class EventsController < ApplicationController
   def edit; end
 
   def update
-    @event.update(event_params)
+    @event.update_attributes(event_params)
     flash[:notice] = t('event.updated')
     respond_to do |format|
       if @event.movement.users.include?(current_user)
@@ -92,7 +92,7 @@ class EventsController < ApplicationController
 
   def event_params
     params[:event][:event_type_id] = EventType.find_by(name: params[:event][:event_type]).id if params[:event][:event_type]
-    params.require(:event).permit(:event_type_id, :address2, :name, :address, :location_details, :description, :city, :zip, :state, :start_time, :image, :end_time, :host_id, :notes, :forum_option)
+    params.require(:event).permit(:event_type_id, :address2, :name, :address, :location_details, :description, :city, :zip, :state, :start_time, :image, :end_time, :host_id, :notes, :forum_option, :approved)
   end
 
   def load_event
