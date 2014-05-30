@@ -6,7 +6,7 @@
       %h2 Events
     .col-sm-2
       =link_to 'CREATE AN EVENT', event_type_movement_path(@movement), class: 'btn'
-  
+
   -@movement.events.select{|event| event.approved?}.each do |event|
     .event-list
       = render partial: "events/event", locals: {event: event}
