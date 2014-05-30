@@ -22,9 +22,15 @@
               = link_to "CREATE YOUR OWN EVENT", new_movement_unauthenticated_event_path(@movement), class: "btn"
       .row
         .spacer10
+      .row
+        .col-xs-12
+          .text-center
+            =link_to_modal 'CONTACT ORGANIZER', new_mvmt_contact_path(@movement), class: "btn"
+      .row
+        .spacer10
   .row
     - unless @movement.events.empty?
       %h2 Events
 
   = render partial: 'events/event', collection: @movement.events, as: :event
-    
+

@@ -54,7 +54,9 @@ Ffstrike::Application.routes.draw do
   # match 'contact' => 'contact#new', :as => 'new_contact', :via => :get
   # match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
-  get 'contact/:id' => 'contact#new', :as => 'new_contact'
-  post 'contact' => 'contact#create', :as => 'contact'
+  get 'contact/:id' => 'contact#new_event_msg', :as => 'new_contact'
+  post 'contact' => 'contact#create_event_msg', :as => 'contact'
 
+  get 'contact/:id/mvmt' => 'contact#new_movement_msg', :as => 'new_mvmt_contact'
+  post 'contact/mvmt' => 'contact#create_movement_msg', :as => 'mvmt_contact'
 end
