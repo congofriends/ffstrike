@@ -92,6 +92,8 @@
             <%= form.check_box :forum_option, class: 'form-control' %>
           </div>
 
+          <%= form.hidden_field :event_type, value: params[:type] %>
+
           <% if current_user %>
               <%= form.hidden_field :host_id, value: current_user.id %>
           <%end%>

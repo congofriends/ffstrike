@@ -6,7 +6,7 @@ Background:
  	And I have an existing movement
 
 Scenario: Creating an Event as a Coordinator
- When I select the Create Event button
+ 	When I select the Create Event button
 	And I select the type of event
-   	And I create an event
+  And I create an event
 	Then I can see the confirmation page for the event I created
