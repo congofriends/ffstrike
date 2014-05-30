@@ -3,7 +3,6 @@
     %h3.text-center= link_to event.type + ": " +  event.name, event_path(event)
   - else
     %h3.text-center= link_to event.name, event_path(event)
-  %p.text-center= event.description
   .row
     .col-sm-4
       = link_to image_tag(event.image, class: "event_avatar"), event_path(event)
@@ -15,14 +14,25 @@
       %strong Where:
       =event.location
       = link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"
+
+      - if !event.location_details.nil? && current_user
+        %br
+        %br
+        %strong Location Details:
+        = event.location_details
       %br
       %br
       %strong Organized by:
       =link_to event.movement.name, movement_path(event.movement)
+      %br
+      %br
+      - unless event.description.nil?
+        %strong Description:
+        = event.description
     .col-xs-4.text-center.event-actions
       = link_to "ATTEND", new_attendee_user_path({:event => event.id}), {class: "btn btn-attend"}
       %br
       %br
-      =link_to_modal 'CONTACT HOST', new_contact_path(@event), {class: "btn"}
+      =link_to_modal 'CONTACT HOST', new_contact_path(event), {class: "btn"}
 
 

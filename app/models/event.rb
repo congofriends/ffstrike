@@ -94,11 +94,11 @@ class Event < ActiveRecord::Base
 
   def formatted_time
     if end_time.nil?
-     start_time.strftime("%m/%d/%Y,%l:%M %p")
+     start_time.strftime("%A, %b %d, %Y,%l:%M %p")
     elsif (start_date == end_date)
-      build_datetime( "%m/%d/%Y,%l:%M %p to", "%l:%M %p")
+      build_datetime( "%A, %b %d, %Y,%l:%M %p to", "%l:%M %p")
     else
-      build_datetime("%m/%d/%Y,%l:%M %p to ", "%m/%d/%Y,%l:%M %p")
+      build_datetime("%A, %b %d, %Y,%l:%M %p to ", "%A, %b %d, %Y,%l:%M %p")
     end
   end
 

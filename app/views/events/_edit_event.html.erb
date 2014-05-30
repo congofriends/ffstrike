@@ -24,6 +24,13 @@
     </div>
 
     <div class="form-group" id="events-list">
+      <label class="col-sm-1">Location Details:</label>
+      <div class="col-sm-10">
+        <%= best_in_place event, :location_details, :type => :input, :html_attrs => {:class => "input"}%>
+      </div>
+    </div>
+
+    <div class="form-group" id="events-list">
       <label class="col-sm-1">City:</label>
       <div class="col-sm-10">
         <%= best_in_place event, :city, :type => :input, :html_attrs => {:class => "input"}%>
@@ -57,7 +64,7 @@
         <%= best_in_place event, :description, :type => :input, :html_attrs => {:class => "input"}%>
       </div>
     </div>
- 
+
     <div class="form-group" id="events-list">
       <label class="col-sm-1">Approved:</label>
       <div class="col-sm-10">
