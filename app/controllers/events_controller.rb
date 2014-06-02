@@ -18,10 +18,15 @@ class EventsController < ApplicationController
     @events = @movement.events.where(approved: true)
     @events = @events.query_results(params[:query]) if params[:query].present?
     respond_to do |format|
-      # format.js if params[:query].present?
-      format.html {render :index}
-    end
+      if params[:query].present?
+        # format.html { render nothing: true }
+        format.html {redirect_to movement_events_path}
 
+        format.js
+      else
+        format.html { render action: "index" }
+      end
+    end
   end
 
 

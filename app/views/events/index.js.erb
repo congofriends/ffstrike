@@ -1,1 +1,1 @@
-$("events").update("<%= escape_javascript(render(@events))%>");
+$(".events").html("<%= escape_javascript(render partial: 'events/event', collection: @events, as: :event)%>");

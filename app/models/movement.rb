@@ -1,5 +1,4 @@
 class Movement < ActiveRecord::Base
-  include Filterable
   validates_with VideoValidator, fields: [:video]
   has_many :events, dependent: :destroy
   #has_many :attendees, through: :events #, source: :user

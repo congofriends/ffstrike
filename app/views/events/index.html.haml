@@ -8,14 +8,12 @@
     .col-sm-2
       =link_to 'CREATE AN EVENT', event_type_movement_path(@movement), class: 'btn search'
   .row.event-list
-    = form_tag movement_events_path, :method => :get do
+    = form_tag movement_events_path, :method => :get, remote: true do
       .col-sm-4
       .col-sm-8
         = text_field_tag :query, params[:query], placeholder: "Find an event by name or city"
         = button_tag "Search", class: 'btn'
 
-
-  -@events.each do |event|
-    .event-list
-      = render partial: "events/event", locals: {event: event}
+  .event-list.events
+    = render partial: 'events/event', collection: @events, as: :event
 
