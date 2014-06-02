@@ -7,7 +7,7 @@ function initializeValidations() {
       'event[city]': { required: true },
       'event[description]': { required: true },
       'event[state]': { required: true },
-      'event[zip]': { 
+      'event[zip]': {
         required: true,
         number: true,
         rangelength: [5, 5] }
@@ -19,7 +19,7 @@ function initializeValidations() {
       'event[city]': 'City is required',
       'event[description]': 'Description is required',
       'event[state]': 'State is required',
-      'event[zip]': { 
+      'event[zip]': {
         required: 'Zip is required',
         number: "Zip should contain only numbers",
         rangelength: "Zip should be 5 digits long"}
@@ -35,7 +35,48 @@ function initializeValidations() {
       label.closest('.form-group').removeClass('has-error').addClass('has-success');
     }
   });
-};  
+};
+
+ function initializeValidations2() {
+    $('#edit-event-form').validate({
+      rules: {
+        'event[name]': { required: true },
+        'event[city]': { required: true },
+        'event[state]': { required: true },
+        'event[address]': { required: true },
+        'event[description]': { required: true },
+        'event[zip]': {
+        required: true,
+        number: true,
+        rangelength: [5, 5] }
+
+      },
+      messages: {
+        'event[name]': "Name is required",
+        'event[start_time]': "Start date & time is required",
+        'event[city]': "City is required",
+        'event[state]': "State is required",
+        'event[address]': "Address is required",
+        'event[description]': "Description is required",
+        'event[zip]': {
+        required: 'Zip is required',
+        number: "Zip should contain only numbers",
+        rangelength: "Zip should be 5 digits long"}
+      },
+
+      errorElement: "div",
+      errorClass: "text-danger",
+      errorId: "event_error",
+      errorPlacement: function (error, element) {
+        error.insertAfter(element);
+        element.closest('div').addClass('has-error');
+      },
+      success: function (label) {
+          label.closest('.form-group').removeClass('has-error').addClass('has-success');
+          label.next('.help-block').hide();
+      }
+    });
+  };
 
 function formValid(nextButton, fieldset){
     return $('#new-event-form').valid();
@@ -43,7 +84,7 @@ function formValid(nextButton, fieldset){
 
 function goToNextStep(button) {
   current_fieldset = $(button).closest('fieldset');
-  
+
   if(!formValid(button, current_fieldset))
     return false;
 
@@ -56,7 +97,7 @@ function goToPreviousStep(button) {
   previous_fieldset = current_fieldset.prev('fieldset');
   current_fieldset.hide();
   previous_fieldset.show();
-}  
+}
 
 function populate_end_time() {
   start_date = new Date($('#event_start_time').val());
@@ -66,6 +107,7 @@ function populate_end_time() {
 
 $(document).ready(function() {
   initializeValidations();
+  initializeValidations2();
 
   $('#event_start_time').change(function() {
     populate_end_time();
@@ -78,4 +120,4 @@ $(document).ready(function() {
   $(".previous").click(function() {
     goToPreviousStep(this);
   });
-});  
+});
