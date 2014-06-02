@@ -168,6 +168,21 @@ describe EventsController do
     end
   end
 
+  describe "search_by_keyword" do
+    context "when user searches for event by keyword" do
+      let!(:published_movement) {FactoryGirl.create(:published_movement)}
+      let!(:event1) {FactoryGirl.create(:approved_event, name: "My event 1", movement: published_movement)}
+      let!(:event2) {FactoryGirl.create(:approved_event, name: "My event 2", movement: published_movement)}
+      let!(:event3) {FactoryGirl.create(:approved_event, name: "My event 3", movement: published_movement)}
+
+      it "filters the events to display results matching search" do
+        get "index", query: "My event 3", movement_id: published_movement
+        expect(assigns(:events)).not_to include(event2)
+      end
+    end
+  end
+
+
   describe "PUT #update" do
     context "when current user is coordinator" do
       new_note_text = "attribute changed by coordinator"

@@ -1,4 +1,6 @@
 class UsersController < Devise::RegistrationsController
+  def edit
+  end
 
   def show
     @user = User.find(params[:id])

@@ -15,7 +15,6 @@ Ffstrike::Application.routes.draw do
     post 'create_attendee_user' => 'users#create_attendee_user'
   end
 
-
   #home
   get 'about' => 'static_pages#about',  as: 'about'
 

@@ -32,6 +32,8 @@ class Event < ActiveRecord::Base
   delegate :host_name,          :to => :host
   delegate :host_email,         :to => :host
 
+  scope :query_results, lambda{|l|  where("name LIKE :l OR city LIKE :l OR address LIKE :l", l: "%#{l}%")}
+
   def self.near_zip(zipcode, distance)
     return [] if zipcode.nil?
     zipcode = zipcode.strip

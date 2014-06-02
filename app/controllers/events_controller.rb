@@ -14,7 +14,16 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
-  def index; end
+  def index
+    @events = @movement.events.where(approved: true)
+    @events = @events.query_results(params[:query]) if params[:query].present?
+    respond_to do |format|
+      # format.js if params[:query].present?
+      format.html {render :index}
+    end
+
+  end
+
 
   def approve
     @event.update(approved: !@event.approved)
@@ -62,6 +71,11 @@ class EventsController < ApplicationController
     @zip ||= extract_zip(params[:zip]) if valid_zip(params[:zip])
     @events = Event.near_zip(@zip, 200)
   end
+
+  def search_by_keyword
+
+  end
+
 
   def edit; end
 
