@@ -1,16 +1,36 @@
+<script>
+    $(function() {
+        $('#search_input').fastLiveFilter('#search_events');
+    });
+
+    $('#search_input').fastLiveFilter('#search_events', {
+    timeout: 200,
+    callback: function(total) { $('#num_results').html(total); }
+});
+</script>
+
+
+
+
 <div class="tab-pane" id="events">
   <div class="well">
     <legend>Event Details</legend>
     <div class="panel panel-default">
       <div class="panel-body">
+        <input id="search_input" placeholder="Type to filter">
+
         <h4 class = "event_dash_legend">Select an Event to Edit</h3>
+
         <div class= "col-left">
+
+          <ul id="search_events">
        		<% @events.each do |e| %>
-       		<button class= "edit-event-dash btn-block btn-info" id= "<%=e.id%>">
+       		<li><button class= "edit-event-dash btn-block btn-info" id= "<%=e.id%>">
        			<span class= "event-img-dash"><%= image_tag(e.image(:medium), width: 50) %></span>&nbsp;&nbsp;
        			<span class="event-name-dash"><%= e.name %></span>
-       		</button>
+       		</button></li>
        		<% end %>
+          </ul>
       	</div>
         <div class= "col-right">
         	<%= render partial: 'events/edit_event', collection: @events, as: :event %>

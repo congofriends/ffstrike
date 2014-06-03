@@ -1,28 +1,31 @@
-<div class="panel-group" id="accordion">
-  <div class="panel-heading">
-    <h4 class="panel-title">
-      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-        Email Your Attendees 
-      </a>
-    </h4>
-  </div>
-  <div id="collapseOne" class="panel-collapse collapse">
-    <div class="panel-body">
-      <div class='row'>
-        <%= form_tag(mail_attendees_path(movement_id: @movement), method: "post") do %>
-          <div class='form-group'>
-            <div class='col-md-9'>
-              <%= text_area_tag "message", nil, placeholder: 'Enter a message to send to all attendees', class: 'form-control' %>
-            </div>
-          </div>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#dialog" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });
 
-          <div class='form-group'>
-            <div class='col-md-3'>
-              <%= submit_tag "Send Email", class: 'btn btn-primary', id: 'Send_Email' %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div> 
+    $( "#opener" ).click(function() {
+      $( "#dialog" ).dialog( "open" );
+    });
+  });
+  </script>
+</head>
+
+<div id="dialog" title="Email your Attendees">
+  <%= form_tag(mail_attendees_path(movement_id: @movement), method: "post") do %>
+    <%= text_area_tag "message", nil, placeholder: 'Enter a message to send to all attendees', class: 'form-control' %>
+    <%= submit_tag "SEND EMAIL", class: 'btn ctrl-btn', id: 'Send_Email' %>
+  <% end %>
+</div>
+
+<button id="opener"  class= 'btn ctrl-btn' >EMAIL YOUR ATTENDEES</button>
+
