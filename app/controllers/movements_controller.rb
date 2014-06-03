@@ -22,6 +22,7 @@ class MovementsController < ApplicationController
   end
 
   def user_movements
+    redirect_to root_path and return unless current_user
     @movements = current_user.parent_movements
     @events = current_user.approved_events
     @unapproved_events = current_user.nonapproved_events
