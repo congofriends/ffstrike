@@ -20,9 +20,11 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
-  
+
   require "omniauth-facebook"
-  config.omniauth :facebook, ENV['FACEBOOK_ID'], ENV['FACEBOOK_APP_SECRET'], :display => "popup"
+  # config.omniauth :facebook, ENV['FACEBOOK_ID'], ENV['FACEBOOK_APP_SECRET'], :display => "popup"
+  config.omniauth :facebook, ENV['FACEBOOK_ID'], ENV['FACEBOOK_APP_SECRET'],
+      {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -66,7 +68,7 @@ Devise.setup do |config|
 
   # If http headers should be returned for AJAX requests. True by default.
   # config.http_authenticatable_on_xhr = true
-  config.http_authenticatable_on_xhr = true 
+  config.http_authenticatable_on_xhr = true
 
   # The realm used in Http Basic Authentication. 'Application' by default.
   # config.http_authentication_realm = 'Application'

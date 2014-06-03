@@ -1,6 +1,8 @@
 .container
   %ul#movementTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}
     %li
+      %a{href: '#edit_account', data: {toggle: 'tab'}} Edit Account
+    %li
       %a{href: '#movements', data: {toggle: 'tab'}} Movements (#{@movements.count.to_s})
     %li
       %a{href: '#events',id:'event_tab' ,data: {toggle: 'tab'}} Events (#{@events.count.to_s})
@@ -10,6 +12,8 @@
     %li
       %a{href: '#attendees',id:'attendee_tab' ,data: {toggle: 'tab'}} Attendees
   .tab-content
+    .tab-pane.fade.in#edit_account
+      = render "tab_edit_account"
     .tab-pane.fade.in#movements
       = render "tab_my_movement"
     .tab-pane.fade.in#events

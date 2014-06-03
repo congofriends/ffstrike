@@ -7,10 +7,11 @@
       .tagline.text-center= movement.tagline
       %br
       - if current_user && movement.users.include?(current_user)
-        = link_to movement.name + "'s Dashboard", dashboard_movement_path(movement, anchor: "movement"), :class=> "btn btn-success btn-sm"
-      - if movement.about_creator
-        %h4 About the Creators
-        = movement.about_creator
+        = link_to "DASHBOARD", dashboard_movement_path(movement, anchor: "movement"), class: "btn"
+      / - if movement.about_creator
+      /   %h4 About the Creators
+      /   = movement.about_creator
+      %br
     .row
       .col-xs-6
         .text-center
