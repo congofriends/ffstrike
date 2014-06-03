@@ -2,7 +2,7 @@
 
   <h4>Contact the host for: </h4>
   <h5><%=@event.name%></h5>
-  <%= form_for @message, :method => :post, :url => contact_path, html: { id: 'contact-form' } do |form| %>
+  <%= form_for @message, :method => :post, url: contact_path, html: { id: 'contact-form' } do |form| %>
       <div class="field">
         <%= form.label "Your name: *", class: "modal-field form-label" %>
         <%= form.text_field :name, class: "modal-input form-inline form-control" %>

@@ -5,6 +5,7 @@
   .row
     .col-sm-6
       =image_tag @movement.image, class: "movement_avatar"
+      =render "social/addthis_share"
     .col-sm-6
       .row
         %h3.text-center= @movement.name

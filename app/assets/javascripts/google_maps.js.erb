@@ -17,6 +17,7 @@ ready = function () {
     event_images = window.gon.event_images;
     addresses = window.gon.addresses;
     event_ids = window.gon.event_ids
+    event_pks = window.gon.event_pks
 
     for (var i=0; i < events.length; i++) {
       location_array.push(new google.maps.LatLng(events[i].latitude, events[i].longitude));
@@ -56,7 +57,8 @@ ready = function () {
         '<div>' + addresses[i] + '</div>' +
         '<h6>When:</h6>' +
         '<div>' + times[i] + '</div></br>' +
-        '<div><a class ="contact-link" href="/contact/' + event_ids[i] + '" rel="modal:open">Contact the host</a>' +
+        '<div><a class ="btn contact-link" href="/contact/' + event_ids[i] + '" rel="modal:open">CONTACT HOST</a>' +
+        '<a class="btn floatRight" href="/new_attendee_user?event=' + event_pks[i] +  '" rel="modal:open">ATTEND</a>' +
         '</div></div>');
             infowindow.open(map, marker);
           }

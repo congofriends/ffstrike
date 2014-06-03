@@ -119,7 +119,9 @@ class MovementsController < ApplicationController
     gon.times = []
     gon.addresses = []
     gon.event_ids = []
+    gon.event_pks = []
     gon.events.each do |e|
+      gon.event_pks << e.id
       gon.event_ids << e.to_param
       gon.addresses << e.location
       gon.times << e.formatted_time
