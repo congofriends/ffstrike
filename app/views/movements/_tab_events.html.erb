@@ -1,14 +1,3 @@
-<script>
-    $(function() {
-        $('#search_input').fastLiveFilter('#search_events');
-    });
-
-    $('#search_input').fastLiveFilter('#search_events', {
-    timeout: 200,
-    callback: function(total) { $('#num_results').html(total); }
-});
-</script>
-
 <div class="tab-pane" id="events">
   <div class="well">
     <legend>Event Details</legend>

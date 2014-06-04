@@ -146,4 +146,14 @@ $(document).ready(function() {
   $(".previous").click(function() {
     goToPreviousStep(this);
   });
+
+  $(function() {
+      $('#search_input').fastLiveFilter('#search_events');
+  });
+
+  $('#search_input').fastLiveFilter('#search_events', {
+  timeout: 200,
+  callback: function(total) { $('#num_results').html(total); }
+  });
+
 });
