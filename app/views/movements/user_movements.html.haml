@@ -4,8 +4,12 @@
       %a{href: '#edit_account', data: {toggle: 'tab'}} Details
     %li
       %a{href: '#movements', data: {toggle: 'tab'}} Movements (#{@movements.count.to_s})
-    %li
-      %a{href: '#events',id:'event_tab' ,data: {toggle: 'tab'}} Events (#{@events.count.to_s})
+    -unless @events_hosting.empty?
+      %li
+        %a{href: '#events',id:'event_tab' ,data: {toggle: 'tab'}} Events Hosting (#{@events_hosting.count.to_s})
+    -unless @events_attending.empty?
+      %li
+        %a{href: '#attending_events', id:'event_tab' ,data: {toggle: 'tab'}} Events Attending (#{@events_attending.count.to_s})
     -if current_user.host_for_nonapproved_events?
       %li
         = link_to "Unapproved Events (#{current_user.nonapproved_events.count.to_s}) " ,  "#unapproved_events", :data=> {toggle: 'tab'}
@@ -17,8 +21,10 @@
     .tab-pane.fade.in#movements
       = render "tab_my_movement"
     .tab-pane.fade.in#events
-      = render "tab_my_events"
+      = render "tab_my_events", events: @events_hosting, description: "Events Hosting"
+    .tab-pane.fade.in#attending_events
+      = render "tab_my_events", events: @events_attending, description: "Events Attending"
     .tab-pane.fade.in#unapproved_events
-      = render "tab_my_unapproved_events"
+      = render "tab_my_events", events: @unapproved_events, description: "Unapproved Events"
     .tab-pane.fade.in#attendees
-      = render "tab_my_attendees", events: @events
+      = render "tab_my_attendees", events: @events_hosting

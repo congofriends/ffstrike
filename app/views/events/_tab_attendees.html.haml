@@ -12,7 +12,7 @@
           %td= attendee.name
           %td= attendee.email
           %td= attendee.phone
-          %td= attendee.assignments.count > 0 ? "yes" : "no"
-          %td= best_in_place attendee, :notes, :path=>[event, attendee], :type => :input, :html_attrs => {:class=>"input"}
+          %td= attendee.point_for(event) ? "yes" : "no"
+          %td= attendee.notes_for(event.id)
 
 

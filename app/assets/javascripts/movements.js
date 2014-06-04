@@ -19,6 +19,10 @@ function not_movement_dashboard_page() {
   return location.pathname.match(/movements/) == null;
 };
 
+if(not_movement_dashboard_page()){
+  $(".edit-event").show();
+}
+
  //redirect to certain tab after CRUD operations on associated models
  var navbox = not_movement_dashboard_page() ? $('#eventTabs') : $('#movementTabs');
  navbox.on('click', 'a', function(e) {
