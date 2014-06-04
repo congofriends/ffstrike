@@ -85,8 +85,13 @@ class EventsController < ApplicationController
   def edit; end
 
   def update
-    @event.update_attributes(event_params)
-    flash[:notice] = t('event.updated')
+    if @event.update_attributes(event_params)
+
+      # params[:flyer].each {|attachment| @event.attachments.create(flyer: attachment)}
+      @event.attachments.create(flyer: params[:flyer])
+      flash[:notice] = t('event.updated')
+    end
+
     respond_to do |format|
       if @event.movement.users.include?(current_user)
         format.html { redirect_to dashboard_movement_path(@event.movement, anchor: "events")}

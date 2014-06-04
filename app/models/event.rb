@@ -5,8 +5,9 @@ class Event < ActiveRecord::Base
   belongs_to :event_type
   has_many :attendances, dependent: :destroy
   has_many :attendees, through: :attendances, source: :user
-
+  has_many :attachments, dependent: :destroy
   has_many :tasks, dependent: :destroy
+
   after_validation :assign_coordinates
   after_create :populate_tasks
 
@@ -105,6 +106,10 @@ class Event < ActiveRecord::Base
 
   def build_datetime(start_date, end_date)
     start_time.strftime(start_date) + end_time.strftime(end_date)
+  end
+
+  def flyer
+    attachments.first.flyer if attachments.first
   end
 
   private

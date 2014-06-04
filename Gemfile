@@ -30,7 +30,8 @@ gem 'jquery-modal-rails'
 gem 'rails_serve_static_assets'
 
 # File upload related
-gem "paperclip", "~> 3.0"
+# gem "paperclip", "~> 3.0"
+gem 'paperclip', github: 'thoughtbot/paperclip'
 gem "rmagick"
 gem 'pdfkit'
 gem 'wkhtmltopdf-binary', "0.9.9"

@@ -2,7 +2,7 @@
   <%= link_to "'#{event.name}' event summary", event_path(event) %>
   <%= link_to "Remove event", event, method: :delete, data: { confirm: "Are you sure you want to delete this event?"}, remote: true, class:'btn btn-primary btn-xs delete-btn ' %>
 
-  <div class=" edit_form">
+  <div class=" edit_form event-<%= event.id %>">
     <%= form_for event, html: { id: 'edit-event-form' } do |f| %>
       <div class='form-group'>
         <%= f.label "Start date & time:"%>
@@ -75,7 +75,13 @@
       </div>
 
       <div class='form-group'>
-        <%= f.label :image %>
+        <%= f.label "Flyer:"%>
+        <%= image_tag event.flyer, class: 'front-page img-responsive' %>
+        <%= file_field_tag :flyer, multiple: true  %>
+      </div>
+
+      <div class='form-group'>
+        <%= f.label "Avatar:" %>
           <%= image_tag event.image, class: 'front-page img-responsive' %><br/>
           <%= f.file_field :image %>
           <%= f.submit "Update", class: 'float_right' %>

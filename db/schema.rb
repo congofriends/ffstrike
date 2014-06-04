@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140528194505) do
+ActiveRecord::Schema.define(version: 20140604210456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20140528194505) do
 
   add_index "assignments", ["attendance_id", "task_id"], name: "index_assignments_on_attendance_id_and_task_id", unique: true, using: :btree
   add_index "assignments", ["task_id"], name: "index_assignments_on_task_id", using: :btree
+
+  create_table "attachments", force: true do |t|
+    t.integer  "event_id"
+    t.integer  "movement_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "flyer_file_name"
+    t.string   "flyer_content_type"
+    t.integer  "flyer_file_size"
+    t.datetime "flyer_updated_at"
+  end
 
   create_table "attendances", force: true do |t|
     t.integer "user_id"
