@@ -1,8 +1,7 @@
 .tab-pane#unapproved_events
   .well
     %legend Edit Account Details
-    .panel.panel-default
-      .panel-body
-      = render :template => 'devise/registrations/edit', :locals => { :resource => current_user, :resource_name => 'user' }
+    .attend-form
+    = render :template => 'devise/registrations/edit', :locals => { :resource => current_user, :resource_name => 'user' }
 
 
