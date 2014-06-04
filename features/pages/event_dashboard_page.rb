@@ -21,6 +21,7 @@ include BestInPlace::TestHelpers
 
 	def navigate_to
 		name = Event.last.name
-		visit "/events/" + name.gsub(/ /, '-') +"/dashboard#event/"
+		id = "-" + Event.last.id.to_s
+		visit "/events/" + name.gsub(/ /, '-') + id + "/dashboard#event/"
 	end
 end

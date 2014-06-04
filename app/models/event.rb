@@ -11,7 +11,6 @@ class Event < ActiveRecord::Base
   after_create :populate_tasks
 
   validates :host, :address, :city, :state, :zip, :name, :description, presence: true
-  validates :name, uniqueness: true
 
   validate :start_date_cannot_be_in_the_past
   validate :end_time_cannot_be_before_start_time
@@ -70,13 +69,14 @@ class Event < ActiveRecord::Base
   end
 
   def to_param
-    name.gsub(/ /, '-')
+    name.gsub(/ /, '-') + '-' + id.to_s
   end
 
   def self.find_by_param input
-    #TODO: find a more efficiennt solution.
+    id = input.split('-').pop.to_i
     # Event.all.each {| event| return event if event.to_param == input}
-    find_by_name input.gsub(/-/, ' ')
+    # find_by_name input.gsub(/-/, ' ')
+    find id
   end
 
   def host? user
