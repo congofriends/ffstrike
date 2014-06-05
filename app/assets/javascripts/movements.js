@@ -1,3 +1,44 @@
+function initializeValidations2(id) {
+  $('#edit-event' + id + '-form').validate({
+    rules: {
+      'event[name]': { required: true },
+      'event[city]': { required: true },
+      'event[state]': { required: true },
+      'event[address]': { required: true },
+      'event[description]': { required: true },
+      'event[zip]': {
+      required: true,
+      number: true,
+      rangelength: [5, 5] }
+
+    },
+    messages: {
+      'event[name]': "Name is required",
+      'event[start_time]': "Start date & time is required",
+      'event[city]': "City is required",
+      'event[state]': "State is required",
+      'event[address]': "Address is required",
+      'event[description]': "Description is required",
+      'event[zip]': {
+      required: 'Zip is required',
+      number: "Zip should contain only numbers",
+      rangelength: "Zip should be 5 digits long"}
+    },
+
+    errorElement: "div",
+    errorClass: "text-danger",
+    errorId: "event_error",
+    errorPlacement: function (error, element) {
+      error.insertAfter(element);
+      element.closest('div').addClass('has-error');
+    },
+    success: function (label) {
+        label.closest('.form-group').removeClass('has-error').addClass('has-success');
+        label.next('.help-block').hide();
+    }
+  });
+};
+
 $(document).ready(function() {
 /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
@@ -70,16 +111,19 @@ $("#map").on("click", function() {
 
 function click_event(id) {
   $(".edit-event").hide('fast');
-  $('.event-' + id +'-details').show('slow');
+  $('.event-' + id + '-details').show('slow');
 }
 
 $(".edit-event-dash").on("click", function() {
   click_event(this.id);
+  initializeValidations2(this.id);
 });
 
 $(".sub_movements").on("click", function() {
   $("#sub_movements").slideToggle();
 });
+
+
 
 
 });

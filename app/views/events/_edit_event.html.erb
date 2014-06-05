@@ -3,7 +3,7 @@
   <%= link_to "Remove event", event, method: :delete, data: { confirm: "Are you sure you want to delete this event?"}, remote: true, class:'btn btn-primary btn-xs delete-btn ' %>
 
   <div class=" edit_form event-<%= event.id %>">
-    <%= form_for event, html: { id: 'edit-event-form' } do |f| %>
+    <%= form_for event, html: { id: 'edit-event' + event.id.to_s + '-form' } do |f| %>
       <div class='form-group'>
         <%= f.label "Start date & time:"%>
         <%= f.text_field :start_time, class: 'form-control datetimepicker' %>
