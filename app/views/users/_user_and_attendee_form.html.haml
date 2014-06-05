@@ -4,21 +4,21 @@
       %h3 Please give us more information to sign up!
   .panel-body
 
-    .form-group
+    .form-group.label-field
       = f.label :name, 'Name*'
       = f.text_field :name, class: "form-control"
 
-    .form-group
+    .form-group.label-field
       = f.label :phone
       = f.text_field :phone, class: "form-control"
 
-    .form-group
+    .form-group.label-field
       = f.label 'Email*'
       = f.email_field :email, class: "form-control"
 
       = f.hidden_field :event_id, value: @event_id
 
-    .form-group
+    .form-group.label-field
       = fields_for :attendance, @attendance do |a|
         = a.label "I'd like to volunteer for this event!"
         = a.check_box :point_person

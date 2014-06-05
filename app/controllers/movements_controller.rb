@@ -11,7 +11,9 @@ class MovementsController < ApplicationController
   include YoutubeParserHelper
   include ZipHelper
 
-  def index; end
+  def index
+    redirect_to movement_path(Movement.first)
+  end
 
   def search
     #FIXME: refactor this method here and in the events_controller, currently it
