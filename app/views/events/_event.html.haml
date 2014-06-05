@@ -27,9 +27,11 @@
         %strong Description:
         = event.description
     .col-xs-4.text-center.event-actions
-      = link_to_modal "ATTEND", new_attendee_user_path({:event => event.id}), {class: "btn btn-attend"}
-      %br
-      %br
-      =link_to_modal 'CONTACT HOST', new_contact_path(event), {class: "btn"}
+      -unless event.with_attendee? current_user
+        = link_to_modal "ATTEND", new_attendee_user_path({:event => event.id}), {class: "btn btn-attend"}
+        %br
+        %br
+      -unless event.host? current_user
+        =link_to_modal 'CONTACT HOST', new_contact_path(event), {class: "btn"}
 
 

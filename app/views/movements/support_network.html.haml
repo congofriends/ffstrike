@@ -12,13 +12,14 @@
         =link_to 'CREATE GROUP', new_unauthenticated_submovement_path(@movement, {parent_id: @movement.id}), class: 'btn'
 
   - @support_network.each do |chapter|
-    .row.event-list
-      .col-sm-4
-        =image_tag chapter.image, :class => "movement_avatar"
-      .col-sm-8
-        .row
-          %h3.text-center= link_to chapter.name, movement_path(chapter)
-        .row
-          .col-xs-12
-            .text-center
-              =link_to 'EVENTS', movement_events_path(chapter), class: 'btn text-center'
+    = render 'group_panel', chapter: chapter
+
+    / .row.event-list
+    /   .col-sm-4
+    /     =image_tag chapter.image, :class => "movement_avatar"
+    /   .col-sm-8
+    /     .row
+    /       %h3.text-center= link_to chapter.name, movement_path(chapter)
+
+
+
