@@ -77,6 +77,11 @@
           </div>
 
           <div class='form-group'>
+            <%= form.label :event_type_id, "Event Type *" %>
+            <%= form.select :event_type, EventType.all.map(&:name), {class: 'form-control'} %>
+          </div>
+
+          <div class='form-group'>
             <%unless @movement.sub_movements.empty? %>
               <%= form.label :movement, "If this event is associated with a chapter, please choose it here:" %>
               <%= form.select :movement, @movement.sub_movements.map(&:name), {include_blank: ""}, {class: 'form-control'}%>
@@ -91,8 +96,6 @@
             <%= form.label "Include an attendee discussion forum on this event:"%>
             <%= form.check_box :forum_option, class: 'form-control' %>
           </div>
-
-          <%= form.hidden_field :event_type, value: params[:type] %>
 
           <% if current_user %>
               <%= form.hidden_field :host_id, value: current_user.id %>

@@ -18,7 +18,7 @@
         .col-xs-12
           .text-center
             - if current_user
-              = link_to "CREATE AN EVENT", event_type_movement_path(@movement), class: "btn"
+              = link_to "CREATE AN EVENT", new_movement_event_path(@movement), class: "btn"
             - else
               = link_to "CREATE AN EVENT", new_movement_unauthenticated_event_path(@movement), class: "btn"
       .row

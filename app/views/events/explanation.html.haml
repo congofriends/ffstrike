@@ -3,10 +3,10 @@
     .col8
       %h2 Congrats - You've successfully created a #{@event.type}
     .col4
-      Know what you're doing? 
-      = link_to("Go right to your movement dashboard.", dashboard_movement_path(@event.movement, anchor: "movement"))
-  %br    
-  
+      Know what you're doing?
+      = link_to("Go right to your event dashboard.", dashboard_event_path(@event, anchor: "event"))
+  %br
+
   .task-list
     Here are some things you might want to do to make your event a success:
     - TaskPopulator.host_tasks(@event).each do |task|
