@@ -108,6 +108,16 @@ class Event < ActiveRecord::Base
     start_time.strftime(start_date) + end_time.strftime(end_date)
   end
 
+  def start_time_formatted
+    start_time.strftime("%b %d, %Y,%l:%M %p")
+
+  end
+
+  def end_time_formatted
+    end_time.strftime("%b %d, %Y,%l:%M %p")
+
+  end
+
   def flyer
     attachments.first.flyer if attachments.first
   end
