@@ -23,7 +23,7 @@ include Capybara::DSL
 	end
 
 	def sign_in
-		click_link_or_button'Sign In'
+		click_link 'sign-in'
 	end
 
 	def sign_up
