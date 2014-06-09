@@ -98,9 +98,14 @@ function not_dashboard_page() {
   return location.pathname.match(/dashboard/) == null;
 };
 
+function new_unauthenticated_event_page() {
+  return location.pathname.match(/unauthenticated_events/) != null;
+};
+
+
  $('#event_event_type').on('change', function(){
    get_description(this.value);
-   if(not_dashboard_page()) {
+   if(new_unauthenticated_event_page()) {
       location.href = update_event_url(this.value);
    }
  });

@@ -40,7 +40,7 @@ function initializeValidations() {
 
 function formValid(nextButton, fieldset){
     return $('#new-event-form').valid();
-  }
+}
 
 function goToNextStep(button) {
   current_fieldset = $(button).closest('fieldset');
