@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_filter :authenticate_user!, :only => [:destroy]
-  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit, :dashboard]
+  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit, :dashboard, :download]
   before_filter :load_movement, :only => [:new, :create, :edit, :update, :dashboard, :index]
   before_filter :redirect_unauthorized_user, :only => [:dashboard, :edit]
   before_filter :load_event_types, :only => [:edit, :dashboard]
@@ -29,6 +29,9 @@ class EventsController < ApplicationController
     end
   end
 
+  def download
+    send_file @event.flyer, :type=>"application/pdf"
+  end
 
   def approve
     @event.update(approved: !@event.approved)

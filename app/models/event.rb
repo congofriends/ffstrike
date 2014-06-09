@@ -31,7 +31,7 @@ class Event < ActiveRecord::Base
   delegate :host_name,          :to => :host
   delegate :host_email,         :to => :host
 
-  scope :query_results, lambda{|l|  where("name LIKE :l OR city LIKE :l OR address LIKE :l", l: "%#{l}%")}
+  scope :query_results, lambda{|l|  where("name ILIKE :l OR city ILIKE :l OR address ILIKE :l", l: "%#{l}%")}
 
   def self.near_zip(zipcode, distance)
     return [] if zipcode.nil?
@@ -55,6 +55,10 @@ class Event < ActiveRecord::Base
 
   def with_attendee? user
     attendees.include? user
+  end
+
+  def flyer?
+   !attachments.first.flyer_file_name.nil? if attachments.first
   end
 
   def location
