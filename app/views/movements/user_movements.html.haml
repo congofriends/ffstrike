@@ -4,15 +4,12 @@
       %a{href: '#edit_account', data: {toggle: 'tab'}} Details
     %li
       %a{href: '#movements', data: {toggle: 'tab'}} Movements (#{@movements.count.to_s})
-    -unless @events_hosting.empty?
-      %li
-        %a{href: '#events',id:'event_tab' ,data: {toggle: 'tab'}} Events Hosting (#{@events_hosting.count.to_s})
-    -unless @events_attending.empty?
-      %li
-        %a{href: '#attending_events', id:'event_tab' ,data: {toggle: 'tab'}} Events Attending (#{@events_attending.count.to_s})
-    -if current_user.host_for_nonapproved_events?
-      %li
-        = link_to "Unapproved Events (#{current_user.nonapproved_events.count.to_s}) " ,  "#unapproved_events", :data=> {toggle: 'tab'}
+    %li
+      %a{href: '#events',id:'event_tab' ,data: {toggle: 'tab'}} Events Hosting (#{@events_hosting.count.to_s})
+    %li
+      %a{href: '#attending_events', id:'event_tab' ,data: {toggle: 'tab'}} Events Attending (#{@events_attending.count.to_s})
+    %li
+      = link_to "Unapproved Events (#{current_user.nonapproved_events.count.to_s}) " ,  "#unapproved_events", :data=> {toggle: 'tab'}
     %li
       %a{href: '#attendees',id:'attendee_tab' ,data: {toggle: 'tab'}} Attendees
   .tab-content
