@@ -10,7 +10,6 @@ Ffstrike::Application.routes.draw do
 
   #users
   devise_scope :user do
-  ##  get 'new_attendee_user/:event_id' => 'users#new_attendee_user', as: 'new_attendee_user'
     get 'new_attendee_user' => 'users#new_attendee_user'
     post 'create_attendee_user' => 'users#create_attendee_user'
   end
