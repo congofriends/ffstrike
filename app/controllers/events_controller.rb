@@ -115,6 +115,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
+    binding.pry
     params[:event][:event_type_id] = EventType.find_by(name: params[:event][:event_type]).id if params[:event][:event_type]
     params.require(:event).permit(:event_type_id, :address2, :name, :address, :location_details, :description, :city, :zip, :state, :start_time, :image, :end_time, :host_id, :notes, :forum_option, :approved)
   end
