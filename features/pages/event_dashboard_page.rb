@@ -3,13 +3,7 @@ include Capybara::DSL
 include BestInPlace::TestHelpers
 
 	def edit_event
-		click_link_or_button('Dashboards')
-		click_link_or_button(Event.last.movement.name.capitalize)
-		click_link_or_button('Events')
 		find(".edit-event-dash").click
-		event_id = Event.last.id
-		# edit_address_id = "#best_in_place_event_" + event_id.to_s + "_address"
-		# find(edit_address_id).click
     fill_in("event[address]", with: "123 this street")
 		click_link_or_button('Update')
 	end
@@ -24,4 +18,10 @@ include BestInPlace::TestHelpers
 		id = "-" + Event.last.id.to_s
 		visit "/events/" + name.gsub(/ /, '-') + id + "/dashboard#event/"
 	end
+
+	def navigate_to_movement_dash
+		name = Event.last.movement.name
+		visit "/movements/" + name.gsub(/ /, '-') + "/dashboard#events/"
+	end
+
 end

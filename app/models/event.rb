@@ -114,7 +114,7 @@ class Event < ActiveRecord::Base
   end
 
   def end_time_formatted
-    end_time.strftime("%b %d, %Y,%l:%M %p")
+    end_time.strftime("%b %d, %Y,%l:%M %p") if end_time
 
   end
 
