@@ -63,11 +63,6 @@ include Capybara::DSL
   	return self
   end
 
-  def select_event_type
-    click_link_or_button('Rally')
-    return self
-  end
-
   # def select_rally
   #   click_link_or_button('Rally')
   #   return self
