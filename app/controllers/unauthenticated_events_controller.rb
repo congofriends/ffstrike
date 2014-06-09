@@ -2,6 +2,7 @@ class UnauthenticatedEventsController < ApplicationController
   before_filter :load_event_types, only: [:show]
   before_filter :load_movement, except: [:new, :create, :index, :user_movements, :new_submovement]
   before_filter :load_movements, only: [:index, :search]
+  before_filter :redirect_unauthorized_user, only: [:new]
 
   def new
     @event = Event.new
@@ -52,5 +53,9 @@ class UnauthenticatedEventsController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def redirect_unauthorized_user
+    redirect_to root_path, notice: t('event.already_signed_in') if current_user
   end
 end
