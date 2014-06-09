@@ -77,7 +77,7 @@
       <div class='form-group'>
         <%= f.label "Flyer:"%>
         <%= image_tag event.flyer, class: 'front-page img-responsive' %>
-        <%= file_field_tag :flyer, multiple: true  %>
+        <%= f.file_field :flyer %>
       </div>
 
       <div class='form-group'>

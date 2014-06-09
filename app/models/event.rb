@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
   belongs_to :event_type
   has_many :attendances, dependent: :destroy
   has_many :attendees, through: :attendances, source: :user
-  has_many :attachments, dependent: :destroy
+  # has_many :attachments, dependent: :destroy
   has_many :tasks, dependent: :destroy
 
   after_validation :assign_coordinates
@@ -25,6 +25,13 @@ class Event < ActiveRecord::Base
 
   validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
   validates_attachment_size :image, :less_than => 5.megabytes
+
+  has_attached_file :flyer,
+                    :styles => { :medium => '280x150', :thum => '50x50' },
+                    :default_url => 'fotc.jpg'
+
+  validates_attachment_content_type :flyer, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg', 'image/pdf']
+  validates_attachment_size :flyer, :less_than => 5.megabytes
 
   delegate :movement_name,      :to => :movement
   delegate :tagline,            :to => :movement
@@ -57,9 +64,9 @@ class Event < ActiveRecord::Base
     attendees.include? user
   end
 
-  def flyer?
-   !attachments.first.flyer_file_name.nil? if attachments.first
-  end
+  # def flyer?
+  #  !attachments.first.flyer_file_name.nil? if attachments.first
+  # end
 
   def location
     [address, address2, city, state, zip].reject{|i| i.nil? || i.empty?}.join(", ")
@@ -122,9 +129,9 @@ class Event < ActiveRecord::Base
 
   end
 
-  def flyer
-    attachments.first.flyer if attachments.first
-  end
+  # def flyer
+  #   attachments.first.flyer if attachments.first
+  # end
 
   private
     def assign_coordinates

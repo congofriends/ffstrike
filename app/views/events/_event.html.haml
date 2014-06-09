@@ -34,10 +34,9 @@
       -unless event.host? current_user
         =link_to_modal 'CONTACT HOST', new_contact_path(event), {class: "btn"}
     .col-xs-4
-      -if event.flyer?
-        %strong Help Us promote this event
-        %div (click on the image to download)
-        %a{download: event.name + "_flyer", href: event.flyer, title: event.name + "_flyer"}
-          %img{alt: event.name + "_flyer", src: event.flyer, class: "event_avatar"}/
+      %strong Help Us promote this event
+      %div (click on the image to download)
+      %a{download: event.name + "_flyer", href: event.flyer, title: event.name + "_flyer"}
+        %img{alt: event.name + "_flyer", src: asset_path(event.flyer.url), class: "event_avatar"}/
 
 

@@ -29,10 +29,6 @@ class EventsController < ApplicationController
     end
   end
 
-  def download
-    send_file @event.flyer, :type=>"application/pdf"
-  end
-
   def approve
     @event.update(approved: !@event.approved)
     respond_to do |format|
@@ -91,7 +87,7 @@ class EventsController < ApplicationController
     if @event.update_attributes(event_params)
 
       # params[:flyer].each {|attachment| @event.attachments.create(flyer: attachment)}
-      @event.attachments.create(flyer: params[:flyer]) if params[:flyer]
+      # @event.attachments.create(flyer: params[:flyer]) if params[:flyer]
       flash[:notice] = t('event.updated')
     end
 
@@ -119,7 +115,7 @@ class EventsController < ApplicationController
 
   def event_params
     params[:event][:event_type_id] = EventType.find_by(name: params[:event][:event_type]).id if params[:event][:event_type]
-    params.require(:event).permit(:event_type_id, :address2, :name, :address, :location_details, :description, :city, :zip, :state, :start_time, :image, :end_time, :host_id, :notes, :forum_option, :approved)
+    params.require(:event).permit(:event_type_id, :address2, :name, :address, :location_details, :description, :city, :zip, :state, :start_time, :image, :flyer, :end_time, :host_id, :notes, :forum_option, :approved)
   end
 
   def load_event
