@@ -19,7 +19,7 @@ class ContactController < ApplicationController
   end
 
   def create_movement_msg
-    @movement =  Movement.find @message.host_id
+    @movement = Movement.find @message.host_id
 
     if @message.valid?
       ContactMailer.new_mvmt_message(@message).deliver
