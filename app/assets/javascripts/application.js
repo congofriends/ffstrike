@@ -18,6 +18,8 @@
 //= require i18n
 //= require i18n/translations
 //= require jquery.validate
+//= require bootstrap
+//= require sorttable
 //= require bootstrap-datepicker
 //= require bootstrap-timepicker
 //= require underscore

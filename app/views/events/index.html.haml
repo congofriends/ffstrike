@@ -11,10 +11,9 @@
       -else
         = link_to "CREATE AN EVENT", new_movement_unauthenticated_event_path(@movement), class: 'btn'
   .row.event-list
-    = form_tag movement_events_path, :method => :get, remote: true do
-      .col-sm-4
-      .col-sm-8
-        = text_field_tag :query, params[:query], placeholder: "Find an event by name or city"
+    .form-inline.col-sm-12
+      = form_tag movement_events_path, method: :get, remote: true do
+        = text_field_tag :query, params[:query], placeholder: "Find an event by name or city", class: "form-control"
         = button_tag "Search", class: 'btn'
 
   .event-list.events
