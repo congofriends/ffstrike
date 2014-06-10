@@ -51,6 +51,7 @@ namespace :db do
         end_time: DateTime.new(2015, 05, 14, 17, 30),
         event_type_id: 2,
         approved: true,
+        notes: "Thanks for attending! We will all be wearing red to this event, to show our solidarity.",
         description: "We will be discussing who Friends of the Congo are, and how you can be involved.",
         host_id: non_coordinator.id)
 
@@ -64,6 +65,7 @@ namespace :db do
         end_time: DateTime.new(2015, 05, 14, 17, 30),
         event_type_id: 3,
         approved: false,
+        notes: "Thanks for attending! We will all be wearing red to this event, to show our solidarity.",
         description:  "Just like the title says, we will LITERALLY be screening CATS, THE MUSICAL",
         host_id: non_coordinator.id)
 

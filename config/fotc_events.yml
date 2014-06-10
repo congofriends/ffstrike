@@ -7,6 +7,7 @@
   event_type_id: 1
   approved: true
   description:  "We will be screening Crisis in the Congo, an seminal work on the modern Congo situation."
+  notes: "Thanks for attending! Tweet about this event to let your friends know!"
 
 -
   name: "Breaking the Silence for Congo Women"
@@ -17,6 +18,7 @@
   event_type_id: 3
   approved: true
   description: "An open discussion about the absurd silence with which the so-called developed world treats the crises facing the women of the Congo."
+  notes: "Thanks for attending! We look forward to seeing you."
 
 -
   name: "Screening Crisis in the Congo: Uncovering the Truth"
@@ -27,6 +29,7 @@
   event_type_id: 4
   approved: true
   description: "We will be screening Crisis in the Congo, an seminal work on the modern Congo situation."
+  notes: "Thanks for attending! We'll all be wearing red to this event to show our solidarity."
 
  
 -
@@ -38,6 +41,7 @@
   event_type_id: 3
   approved: true
   description: "We'll be discussing how we are all affected by the exploitation of conflict minerals in the Congo"
+  notes: "Thanks for attending! We'll all be wearing red to this event to show our solidarity."
 
 -
   name: "Screening Crisis in the Congo"
@@ -48,4 +52,5 @@
   event_type_id: 4
   approved: true
   description: "We will be screening Crisis in the Congo, an seminal work on the modern Congo situation."
+  notes: "Thanks for attending! We'll all be wearing red to this event to show our solidarity."
 
