@@ -26,4 +26,5 @@ class MailController < ApplicationController
       Movement.find_by_param data[:movement_id]
     end
   end
+
 end

@@ -1,4 +1,5 @@
 class ContactController < ApplicationController
+
   def new_event_msg
     @event = Event.find_by_param(params[:id])
     @message = Message.new
@@ -28,4 +29,5 @@ class ContactController < ApplicationController
           redirect_to(root_path, :notice => "Message was successfully sent.")
         end
     end
+
 end

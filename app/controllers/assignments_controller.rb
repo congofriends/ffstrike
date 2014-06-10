@@ -17,8 +17,10 @@ class AssignmentsController < ApplicationController
   end
 
   private
+
   def load_task_and_event
     @event = Event.find_by_param params[:event_id]
     @task = Task.find(params[:id])
   end
+
 end
