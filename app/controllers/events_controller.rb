@@ -71,7 +71,7 @@ class EventsController < ApplicationController
 
   def search
     #FIXME: refactor this method here and in the movements_controller, currently it
-    #is just clear dublication
+    #is just clear duplication
     @zip ||= extract_zip(params[:zip]) if valid_zip(params[:zip])
     @events = Event.near_zip(@zip, 200)
   end
