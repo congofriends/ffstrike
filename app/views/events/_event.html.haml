@@ -27,7 +27,7 @@
         %strong Description:
         = event.description
     .col-xs-4.text-center.event-actions
-      -unless event.with_attendee? current_user
+      -unless event.attended_by? current_user
         = link_to_modal "ATTEND", new_attendee_user_path({:event => event.id}), {class: "btn btn-attend"}
         %br
         %br

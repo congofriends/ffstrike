@@ -10,14 +10,17 @@ class Task < ActiveRecord::Base
   end
 
   def is_assigned_to? user
+    return false if user.nil?
     assignments.map {|a| a.attendance.user_id == user.id }.any?
   end
 
   def is_not_assigned_to? user
+    return false if user.nil?
     assignments.select { |a| a.attendance.user_id == user.id }.empty?
   end
 
   def is_allowed_to_update_by? user
+    return false if user.nil?
     event.movement.users.include? user
   end
 end

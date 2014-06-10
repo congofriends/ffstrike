@@ -39,7 +39,11 @@ class EventsController < ApplicationController
 
   def show
     respond_to do |format|
-      format.html
+      format.html do
+        render 'show' unless @event.attendees.include?(current_user)
+        render 'attendee' if @event.attendees.include?(current_user)
+      end
+
       format.pdf do
         case params[:generate]
           when 'event' then generate_pdf('events/show', 'event_details.pdf')

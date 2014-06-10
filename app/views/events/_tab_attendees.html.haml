@@ -12,7 +12,7 @@
           %td= attendee.name
           %td= attendee.email
           %td= attendee.phone
-          %td= attendee.point_for(event) ? "yes" : "no"
+          %td= attendee.volunteer_for(event) ? "yes" : "no"
           %td= attendee.notes_for(event.id)
 
 

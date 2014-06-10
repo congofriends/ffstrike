@@ -62,7 +62,7 @@ class Event < ActiveRecord::Base
     attendees.count
   end
 
-  def with_attendee? user
+  def attended_by? user
     attendees.include? user
   end
 
