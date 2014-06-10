@@ -39,19 +39,9 @@ class UsersController < Devise::RegistrationsController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:email, :name, :phone)
   end
-
-  # def check_attendance_record
-  # 	unless attendance_exists?
-  # 		flash[:error] = "You have already signed up!"
-  #     #redirect_to event_path(@event)
-  # 	end
-  # end
-
-  # def attendance_exists?
-  # 	Attendance.find_by(user_id: @user.id, event_id: @event.id).nil?
-  # end
 
 end
