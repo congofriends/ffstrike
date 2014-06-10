@@ -1,0 +1,6 @@
+%li
+  - if task.is_allowed_to_update_by? current_user
+    = link_to raw('<i class="glyphicon glyphicon-remove-circle"></i>') , event_task_path(event, task.id), method: :delete, data: { confirm: "You sure about deleting task '#{task.description}'?"}, remote: true  
+    = best_in_place task, :description, :path=>[event, task], type: :input, html_attrs: {class: "input"} 
+
+

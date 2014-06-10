@@ -1,8 +1,6 @@
 <% @movement.events.each do |event| %>
   <div class="well">
-    <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%=event.id%>">
-      <h2> Event: <%= event.name %> (<%= event.type %>) </h2>
-    </a>
+    <h2> Event: <%= event.name %> (<%= event.type %>) </h2>
     <%= render "tasks/form", event: event %> 
   </div>
 <% end %>
