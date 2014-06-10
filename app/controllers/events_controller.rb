@@ -96,7 +96,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    authenticate_user
+    authenticate_user!
     UserMailer.delete_event_message(@event)
     @event.destroy
     respond_to do |format|

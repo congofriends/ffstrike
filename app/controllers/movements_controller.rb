@@ -53,7 +53,7 @@ class MovementsController < ApplicationController
   end
 
   def show
-    redirect_unauthorized_user
+    return if redirect_unauthorized_user
     load_event_types
     get_approved_events
     load_map_vars
@@ -143,7 +143,9 @@ class MovementsController < ApplicationController
 
   def redirect_unauthorized_user
     unless @movement.authorized?(current_user)
-      redirect_to root_path, notice: t('movement.not_public')
+      redirect_to root_path, notice: t('movement.not_public') 
+      return true
     end
+    return false
   end
 end
