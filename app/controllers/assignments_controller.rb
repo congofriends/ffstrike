@@ -1,7 +1,8 @@
 class AssignmentsController < ApplicationController
-  before_filter :load_task_and_event, :only => [:assign]
 
   def assign
+    load_task_and_event
+
     if current_user && (@task.is_not_assigned_to? current_user)
       @task.assign! current_user
       flash[:notice] = t('assignment.signed_up')
