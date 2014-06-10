@@ -69,21 +69,12 @@ class EventsController < ApplicationController
     end
   end
 
-  def dashboard; end
-
   def search
     #FIXME: refactor this method here and in the movements_controller, currently it
     #is just clear dublication
     @zip ||= extract_zip(params[:zip]) if valid_zip(params[:zip])
     @events = Event.near_zip(@zip, 200)
   end
-
-  def search_by_keyword
-
-  end
-
-
-  def edit; end
 
   def update
     if @event.update_attributes(event_params)
@@ -113,6 +104,14 @@ class EventsController < ApplicationController
       format.js
     end
   end
+
+  def explanation; end
+
+  def search_by_keyword; end
+
+  def edit; end
+
+  def dashboard; end
 
   private
 
