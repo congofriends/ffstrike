@@ -1,14 +1,10 @@
 class EventsController < ApplicationController
-  before_filter :authenticate_user!, :only => [:destroy]
   before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit, :dashboard, :download]
   before_filter :load_movement, :only => [:new, :create, :edit, :update, :dashboard, :index]
   before_filter :redirect_unauthorized_user, :only => [:dashboard, :edit]
   before_filter :load_event_types, :only => [:edit, :dashboard]
-  before_filter :load_all_movements, :only => [:search]
 
   include ZipHelper
-
-  def explanation; end
 
   def new
     @event = Event.new
@@ -38,6 +34,8 @@ class EventsController < ApplicationController
   end
 
   def show
+    load_all_movements
+
     respond_to do |format|
       format.html do
         render 'show' unless @event.attendees.include?(current_user)
@@ -71,21 +69,12 @@ class EventsController < ApplicationController
     end
   end
 
-  def dashboard; end
-
   def search
     #FIXME: refactor this method here and in the movements_controller, currently it
-    #is just clear dublication
+    #is just clear duplication
     @zip ||= extract_zip(params[:zip]) if valid_zip(params[:zip])
     @events = Event.near_zip(@zip, 200)
   end
-
-  def search_by_keyword
-
-  end
-
-
-  def edit; end
 
   def update
     if @event.update_attributes(event_params)
@@ -107,6 +96,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    authenticate_user
     UserMailer.delete_event_message(@event)
     @event.destroy
     respond_to do |format|
@@ -114,6 +104,14 @@ class EventsController < ApplicationController
       format.js
     end
   end
+
+  def explanation; end
+
+  def search_by_keyword; end
+
+  def edit; end
+
+  def dashboard; end
 
   private
 
