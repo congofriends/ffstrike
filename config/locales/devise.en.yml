@@ -50,6 +50,7 @@ en:
     users:
       user:
         signed_up: "Welcome! You have signed up successfully."
+        updated: "You have just updated your account details."
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"
@@ -58,9 +59,3 @@ en:
       not_found: "is not associated with any account."
       not_locked: "was not locked"
       not_saved: "We could not process your request:"
-
-en:
-  devise:
-    users:
-      user:
-        updated: "You have just updated your account details."

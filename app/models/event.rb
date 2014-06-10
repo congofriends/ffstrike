@@ -30,7 +30,9 @@ class Event < ActiveRecord::Base
                     :styles => { :medium => '280x150', :thum => '50x50' },
                     :default_url => 'fotc.jpg'
 
-  validates_attachment_content_type :flyer, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg', 'image/pdf']
+  validates_attachment_content_type :flyer, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
+  # validates_attachment :flyer, :content_type => { :not => "application/zip" }
+
   validates_attachment_size :flyer, :less_than => 5.megabytes
 
   delegate :movement_name,      :to => :movement

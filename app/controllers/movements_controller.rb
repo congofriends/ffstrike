@@ -8,6 +8,7 @@ class MovementsController < ApplicationController
   before_filter :redirect_unauthorized_user, only: [:show]
   before_filter :load_map_vars, only: [:show]
 
+
   include YoutubeParserHelper
   include ZipHelper
 
