@@ -1,3 +1,3 @@
-var buttonText = $("#<%= dom_id(@task) %> li a").last();
+var buttonText = $("#<%= dom_id(@task) %> a").last();
 buttonText.text('Just signed up!');
 buttonText.removeClass("btn-primary").addClass("btn-success");

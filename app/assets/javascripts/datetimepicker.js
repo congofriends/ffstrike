@@ -12,4 +12,3 @@ $(function() {
     });
 });
 
-// $( ".datetimepicker" ).datepicker({ dateFormat: "yy-mm-dd" })

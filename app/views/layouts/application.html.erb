@@ -2,17 +2,15 @@
 <html lang="en">
 <%= render "layouts/head" %>
 <%= render "layouts/navbar" %>
-  <body>
-    <div>
+<body>
+  <div class="container">
     <% flash.each do |key, value| %>
-      <div class='flash alert alert-success alert-<%= key %>'><%= value %></div>
-    <% end %>
-    <div class=" container">
       <div class="row">
+        <div class='flash alert alert-success alert-<%= key %>'><%= value %></div>
       </div>
-    </div>
-    <%= yield %>
-    </div>
-  </body>
-  <%= render "layouts/footer" %>
+    <% end %>
+  </div>
+<%= yield %>
+</body>
+<%= render "layouts/footer" %>
 </html>
