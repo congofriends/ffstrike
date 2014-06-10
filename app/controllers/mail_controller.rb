@@ -12,10 +12,16 @@ class MailController < ApplicationController
 
   def send_mail(action)
     message = params[:message]
-    if UserMailer.successfully_deliver?(action, message)
-      flash[:notice] = t('mail.sent')
-    else
+    if action.attendees.empty?
       flash[:notice] = t('mail.no_attendees')
+    else
+
+      #todo: move to queue
+      action.attendees.each do |attendee|
+        UserMailer.custom_message(message, attendee.email)
+      end
+
+      flash[:notice] = t('mail.sent')
     end
   end
 

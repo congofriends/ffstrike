@@ -96,7 +96,12 @@ class EventsController < ApplicationController
 
   def destroy
     authenticate_user!
-    UserMailer.delete_event_message(@event)
+
+    #todo: move to queue!
+    @event.attendees.each do |attendee|
+      UserMailer.delete_event_message(@event, attendee.email)
+    end
+
     @event.destroy
     respond_to do |format|
       format.html { redirect_to dashboard_movement_path(@event.movement, anchor: "events"), notice: t('event.deleted') }

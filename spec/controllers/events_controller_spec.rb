@@ -16,16 +16,13 @@ describe EventsController do
   end
 
   describe "DELETE #delete" do
+
     it "deletes the event" do
       sign_in coordinator
       delete :destroy, id: event
       expect { Event.all == [] }
     end
-    it "emails attendees" do
-      sign_in coordinator
-      UserMailer.should_receive(:delete_event_message).with(event)
-      delete :destroy, id: event
-    end
+
   end
 
   describe "GET #new" do
