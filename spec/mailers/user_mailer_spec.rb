@@ -14,7 +14,7 @@ describe UserMailer do
   describe "custom_message" do
     context "movement" do
 
-      let(:mail) { UserMailer.custom_message(movement, "Test Email Message") }
+      let(:mail) { UserMailer.custom_message("Test Email Message", user_attendee.email) }
 
       it "renders the email" do
         mail.subject.should eq("Message from your Movement Organizer")
@@ -25,15 +25,15 @@ describe UserMailer do
 
       it "mails attendees across events" do
         another_user_attendee = FactoryGirl.create :user, email: "testallattendees@example.com"
-        another_attendance = FactoryGirl.create(:attendance, event: another_event, user: another_user_attendee)
-        mail.to.should include("testallattendees@example.com")
+        FactoryGirl.create(:attendance, event: another_event, user: another_user_attendee)
         mail.to.should include(user_attendee.email)
       end
+
 # add movement model method to return all attendees associated with movement
       it "doesnt mail other movements" do
         different_movement_event = FactoryGirl.create :event, host: another_user
         different_movement_attendee = FactoryGirl.create :user, email: "AnotherMovement@example.com"
-        different_attendance = FactoryGirl.create(:attendance, event: different_movement_event, user: different_movement_attendee)
+        FactoryGirl.create(:attendance, event: different_movement_event, user: different_movement_attendee)
 
         mail.to.should_not include("AnotherMovement@example.com")
       end
@@ -41,17 +41,20 @@ describe UserMailer do
 
     context "event" do
 
-      let(:mail) { UserMailer.custom_message(event, "Test custom_message_event") }
+      let(:mail) { UserMailer.custom_message("Test custom_message_event", another_user_attendee.email) }
+      let(:another_user_attendee) { FactoryGirl.create :user, email: "testallmultipleattendees@example.com" }
+
+      before do
+        FactoryGirl.create(:attendance, event: event, user: another_user_attendee)
+      end
 
       it "mails multiple attendees in event" do
-        another_user_attendee = FactoryGirl.create :user, email: "testallmultipleattendees@example.com"
-        another_attendance = FactoryGirl.create(:attendance, event: event, user: another_user_attendee)
         mail.to.should include("testallmultipleattendees@example.com")
       end
 
       it "doesn't mail attendee in other event" do
         other_user_attendee = FactoryGirl.create :user, email: "OtherEvent@example.com"
-        other_attendance = FactoryGirl.create(:attendance, event: another_event, user: other_user_attendee)
+        FactoryGirl.create(:attendance, event: another_event, user: other_user_attendee)
         mail.to.should_not include("OtherEvent@example.com")
       end
     end
@@ -78,7 +81,7 @@ describe UserMailer do
 
   describe "#delete_event_message" do
 
-    let(:mail) { UserMailer.delete_event_message(event) }
+    let(:mail) { UserMailer.delete_event_message(event, user_attendee.email) }
 
     it "sends to attendees" do
       mail.to.should eq [user_attendee.email]

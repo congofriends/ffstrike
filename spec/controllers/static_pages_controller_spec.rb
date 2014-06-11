@@ -8,11 +8,6 @@ describe StaticPagesController do
       expect(response).to be_success
     end
 
-    it "assigns 3 movements to @featured_movements" do
-      FactoryGirl.create_list(:published_movement, 3)
-      get 'index'
-      expect(assigns(:featured_movements).count).to be(3)
-    end
   end
 
   describe "GET #about" do
