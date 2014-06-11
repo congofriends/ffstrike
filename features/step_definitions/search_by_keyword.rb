@@ -9,9 +9,9 @@ Given(/^multiple events exist$/) do
 end
 
 When(/^I search for an event by name$/) do
-		visit movement_events_path(@movement)
-		fill_in 'query', with: 'Crazy'
-		click_link_or_button 'Search'
+	visit movement_events_path(@movement)
+	fill_in 'query', with: 'Crazy'
+  find('input.query-btn').click
 end
 
 Then(/^I see a filtered list$/) do
