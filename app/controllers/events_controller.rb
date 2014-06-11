@@ -11,9 +11,10 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = @movement.events.where(approved: true)
-    @events = @events.query_results(params[:query]) if params[:query].present?
+    @current_location = request.location.data["city"].empty? ? "Chicago, IL" : request.location.data["city"]
 
+    @events = @movement.events.where(approved: true)
+    @events = @events.query_results(params[:query]).order(:start_time) if params[:query].present?
     respond_to do |format|
       if params[:query].present?
         format.html {redirect_to movement_events_path}

@@ -25,5 +25,4 @@ function initializeProfileValidations() {
 
 $(document).ready(function() {
   initializeProfileValidations();
-
 });

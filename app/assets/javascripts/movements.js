@@ -128,7 +128,8 @@ $(".sub_movements").on("click", function() {
   $("#sub_movements").slideToggle();
 });
 
-
-
+$('.dropdown-toggle').click(function(){
+  $(this).next(".dropdown-menu").toggle();
+});
 
 });

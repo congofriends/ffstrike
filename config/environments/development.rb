@@ -1,8 +1,4 @@
 Ffstrike::Application.configure do
-  ENV['FACEBOOK_ID'] = '426624144117081'
-  ENV['FACEBOOK_APP_SECRET'] = 'da81b9d419f0dcce05cc2d370411364f'
-  ENV['DISQUS_SECRET_KEY'] = 'D6iC3R7DXCHyND7EVtD2EMSLyshTgNpXR4BhmfRlubUaveq6u8S3Tx1nO0ZcmIzA'
-  ENV['DISQUS_PUBLIC_KEY'] = 'ktIZfaLEncECpFj6lUSZKfGjdzn71kbv9XJhPSROw9wwHAdlOcSQcZCPDjfyiqVI'
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
   if Rails.env.development? && File.exists?('.env')
@@ -13,9 +9,9 @@ Ffstrike::Application.configure do
   end
 
   config.paperclip_defaults = {
-    :storage => :s3, 
-    :s3_credentials => { :bucket => ENV['AWS_BUCKET'], 
-                         :access_key_id => ENV['AWS_ACCESS_KEY'], 
+    :storage => :s3,
+    :s3_credentials => { :bucket => ENV['AWS_BUCKET'],
+                         :access_key_id => ENV['AWS_ACCESS_KEY'],
                          :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'] },
     :path => 'attachments/:id/:style.:extension'
   }
@@ -36,7 +32,7 @@ Ffstrike::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = true 
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :test
 
