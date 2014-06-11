@@ -83,15 +83,7 @@ class EventsController < ApplicationController
       flash[:notice] = t('event.updated')
     end
 
-    respond_to do |format|
-      if @event.movement.users.include?(current_user)
-        format.html { redirect_to dashboard_movement_path(@event.movement, anchor: "events")}
-      else
-        format.html { redirect_to event_path(@event) }
-      end
-        format.json { head :ok }
-        format.js
-    end
+    redirect_to request.referer + '#events'
   end
 
   def destroy

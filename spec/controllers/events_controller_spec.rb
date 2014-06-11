@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe EventsController do
 
+  
   let(:coordinator){FactoryGirl.create(:user)}
   let(:movement){FactoryGirl.create(:movement)}
   let!(:ownership){FactoryGirl.create(:ownership, user: coordinator, movement: movement)}
@@ -181,11 +182,13 @@ describe EventsController do
 
 
   describe "PUT #update" do
+
     context "when current user is coordinator" do
       new_note_text = "attribute changed by coordinator"
 
       before do
         @controller.stub(:current_user).and_return(coordinator)
+        @controller.request.stub referer: dashboard_movement_path(movement) 
         put :update, movement_id: movement, id: event, event: {notes: new_note_text}
       end
 
