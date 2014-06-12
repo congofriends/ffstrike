@@ -5,7 +5,7 @@ class UsersController < Devise::RegistrationsController
   end
 
   def new_attendee_user
-    @event_id = params[:event]
+    @event = Event.find params[:event]
     @attendance = Attendance.new
     @user = current_user ? current_user : User.new
   end
