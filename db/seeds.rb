@@ -13,4 +13,3 @@ File.foreach(file) do |line|
     Zipcode.create(zip: data[1], city: data[2], state: data[3], state_abbreviation: data[4], latitude: data[9].to_f, longitude: data[10].to_f)
   end
 end
-

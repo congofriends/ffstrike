@@ -30,8 +30,6 @@
       .row
         .spacer10
   .row
-    - unless @movement.events.empty?
-      %h2 Events
 
   = render partial: 'events/event', collection: @movement.events, as: :event
 

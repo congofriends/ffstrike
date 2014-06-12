@@ -36,9 +36,10 @@
                 </li>
               <% end %>
 
-                <li><%= link_to "Profile", user_movements_path %></li>
+                <li><%= link_to "My Profile", user_movements_path %></li>
                 <li class="divider"/>
-                <li><%= link_to "Create New Movement", new_movement_path %></li>
+                <li><%= link_to "Create Group", new_movement_path %></li>
+                <li><%= link_to "Create Event", new_movement_event_path(Movement.first) if Movement.first %></li>
                 <li class="divider"/>
                 <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
               </ul>

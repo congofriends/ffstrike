@@ -14,7 +14,6 @@ describe ContactController do
 
 	# describe "POST #mail_movement" do
  #    it "tells usermailer to mail" do
- #    	binding.pry
  #      post :create_event_msg, params: @params
  #      assert !ActionMailer::Base.deliveries.empty?
  #    end

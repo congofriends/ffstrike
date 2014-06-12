@@ -9,7 +9,7 @@ include Capybara::DSL
 		fill_in 'event_state', with: 'IL'
 		fill_in "event_start_time", with: DateTime.new(2015, 05, 16, 15, 30)
 		fill_in "event_end_time", with: DateTime.new(2015, 05, 17, 15, 30)
-		click_link_or_button'Create Event'
+		find('input#create_event').click
 	end
 
 	def create_new_event_as_an_attendee

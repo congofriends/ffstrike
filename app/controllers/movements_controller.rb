@@ -38,6 +38,7 @@ class MovementsController < ApplicationController
   end
 
   def create
+    params[:movement][:parent_id] = Movement.first.id if Movement.first
     @movement = Movement.new(movement_params)
     if @movement.save
       unless current_user.nil?
@@ -143,7 +144,7 @@ class MovementsController < ApplicationController
 
   def redirect_unauthorized_user
     unless @movement.authorized?(current_user)
-      redirect_to root_path, notice: t('movement.not_public') 
+      redirect_to root_path, notice: t('movement.not_public')
       return true
     end
     return false
