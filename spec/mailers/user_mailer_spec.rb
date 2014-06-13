@@ -5,11 +5,27 @@ describe UserMailer do
   let!(:user_attendee) { FactoryGirl.create(:user) }
   let!(:movement) { FactoryGirl.create(:movement) }
   #let!(:ownership) { FactoryGirl.create(:ownership, movement: movement, user: user) }
-
   let!(:another_user) { FactoryGirl.create(:user, email: "another_user@example.com") }
   let(:event) { FactoryGirl.create(:event, movement: movement, host: user_attendee) }
+  let(:task) { FactoryGirl.create(:task, event: event) }
   let(:another_event) { FactoryGirl.create(:event, host: another_user, movement: movement) }
   let!(:attendance) { FactoryGirl.create(:attendance, event: event, user: user_attendee) }
+
+  describe "#dtask_signup_message" do
+
+    let(:mail) { UserMailer.task_signup_message(event, task, user_attendee) }
+
+    it "sends to attendees" do
+      mail.to.should eq [user_attendee.email]
+    end
+    it "has correct body" do
+      mail.body.encoded.should include "Welcome to Shift Engage."
+      mail.body.encoded.should include event.name
+    end
+    it "has correct subject" do
+      mail.subject.should eq "Thanks for Volunteering."
+    end
+  end
 
   describe "custom_message" do
     context "movement" do

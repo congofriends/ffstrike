@@ -7,6 +7,13 @@ class UserMailer < ActionMailer::Base
     mail(to: attendee_email, subject: "Your event has been canceled.").deliver
   end
 
+  def task_signup_message(event, task, attendee)
+    @event = event
+    @task = task
+    @attendee = attendee
+    mail(to: attendee.email, subject: "Thanks for Volunteering.").deliver
+  end
+
   def custom_message(message, attendee_email)
     @message = message
 
