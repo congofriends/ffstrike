@@ -1,4 +1,4 @@
-= form_for @user, method: "post", url: create_attendee_user_path do |f|
+= form_for @user, method: "post", url: create_attendee_user_path, html: { id: 'attendee-form' } do |f|
   .panel-heading
     .panel-title
       %h3 Hello #{@user.name},

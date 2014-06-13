@@ -72,6 +72,7 @@ class Event < ActiveRecord::Base
 
   def location
     [address, address2, city, state, zip].reject{|i| i.nil? || i.empty?}.join(", ")
+      # "#{address}, #{address2} #{city}, #{state}, #{zip}"
   end
 
   def assign_host_and_approve user

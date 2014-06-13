@@ -1,6 +1,6 @@
 <%= render 'contact_validations' %>
 
-  <h4>Contact the host for: </h4>
+  <h4>Contact the coordinator for: </h4>
   <h5><%=@movement.name%></h5>
   <%= form_for @message, :method => :post, :url => mvmt_contact_path, html: { id: 'contact-form' } do |form| %>
       <div class="field">
