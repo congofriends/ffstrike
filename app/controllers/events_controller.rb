@@ -16,14 +16,16 @@ class EventsController < ApplicationController
     @events = Event.near_zip(params[:zip], 200)
     respond_to do |format|
       unless @events.empty?
+        @coordinates = Geocoder.coordinates(params[:zip])
         load_map_vars
         format.html {redirect_to movement_events_path}
         format.js
       else
-        @events = @movement.events.where(approved: true)
+        @events = Event.where(approved: true)
         load_map_vars
         flash[:notice] = "Sorry your search returned no results." if params[:zip].present?
         format.html { render action: "index"}
+        format.js{ render "errors"}
       end
     end
   end
