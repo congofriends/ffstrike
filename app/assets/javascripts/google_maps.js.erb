@@ -1,6 +1,7 @@
 var ready;
+var map;
+
 ready = function () {
-  var map;
   var events;
   var times;
   var event_images;
@@ -68,6 +69,7 @@ ready = function () {
     }
     google.maps.event.addDomListener(window, 'load', initialize);
   };
+
 };
 
 function addEvent(element, event, fn) {
@@ -76,6 +78,7 @@ function addEvent(element, event, fn) {
     else if (element.attachEvent)
         element.attachEvent('on' + event, fn);
 }
+
 addEvent(window, 'load', ready);
 $(document).ready(ready);
 $(document).on('page:load', ready);
