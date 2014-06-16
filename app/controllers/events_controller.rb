@@ -11,14 +11,19 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = @movement.events.where(approved: true)
-    @events = @events.query_results(params[:query]).order(:start_time) if params[:query].present?
+    # @events = @movement.events.where(approved: true)
+    # @events = @events.query_results(params[:query]).order(:start_time) if params[:query].present?
+    @events = Event.near_zip(params[:zip], 200)
     respond_to do |format|
-      if params[:query].present?
+      unless @events.empty?
+        load_map_vars
         format.html {redirect_to movement_events_path}
         format.js
       else
-        format.html { render action: "index" }
+        @events = @movement.events.where(approved: true)
+        load_map_vars
+        flash[:notice] = "Sorry your search returned no results." if params[:zip].present?
+        format.html { render action: "index"}
       end
     end
   end
@@ -113,6 +118,23 @@ class EventsController < ApplicationController
   def event_params
     params[:event][:event_type_id] = EventType.find_by(name: params[:event][:event_type]).id if params[:event][:event_type]
     params.require(:event).permit(:event_type_id, :address2, :name, :address, :location_details, :description, :city, :zip, :state, :start_time, :image, :flyer, :end_time, :host_id, :notes, :forum_option, :approved)
+  end
+
+  def load_map_vars
+    gon.events = @events.reject { |e| e.latitude.nil? || e.longitude.nil? }
+    gon.event_types = EventType.all
+    gon.event_images = []
+    gon.times = []
+    gon.addresses = []
+    gon.event_ids = []
+    gon.event_pks = []
+    gon.events.each do |e|
+      gon.event_pks << e.id
+      gon.event_ids << e.to_param
+      gon.addresses << e.location
+      gon.times << e.formatted_time
+      gon.event_images << ActionController::Base.helpers.asset_path(e.image.url)
+    end
   end
 
   def load_event

@@ -55,6 +55,10 @@ class User < ActiveRecord::Base
     attendances.find_by(event: event).point_person
   end
 
+  def tasks_for(event)
+     attendances.find_by(event: event).assignments.map(&:task)
+  end
+
   def nonapproved_events
     Event.where(host_id: self.id, approved: false)
   end

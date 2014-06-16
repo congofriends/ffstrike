@@ -13,10 +13,12 @@
   .row.event-list
     .form-inline.col-sm-12
       = form_tag movement_events_path, :method => :get, remote: true do
-        = text_field_tag :query, params[:query], placeholder: "Find an event by name or city"
+        = text_field_tag 'zip', value = nil, id: 'query', placeholder: "Find an event by location"
         %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
-        %span.query-filter
-          / within #{render 'proximity_query'} of #{@current_location}
+  .row
+    #map-canvas
+
   .event-list.events
     = render partial: 'events/event', collection: @events, as: :event
+
 
