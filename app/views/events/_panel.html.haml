@@ -33,4 +33,13 @@
         %br
       -else
         =link_to_modal 'CONTACT HOST', new_contact_path(event), {class: "btn"}
+  - unless current_user.tasks_for(event).first.nil?
+    .row
+      .col-sm-3
+        %strong Tasks signed up for:
+      .col-sm-10
+        - current_user.tasks_for(event).each do |task|
+          = task.description
+          %br
+  %hr
 
