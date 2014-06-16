@@ -1,7 +1,7 @@
 .container
   %ul#movementTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}
     %li
-      %a{href: '#edit_account', data: {toggle: 'tab'}} Details
+      %a{href: '#edit_account', data: {toggle: 'tab'}} Personal Details
     %li
       %a{href: '#attending_events', id:'event_tab' ,data: {toggle: 'tab'}} Events Attending (#{@events_attending.count.to_s})
   .tab-content
