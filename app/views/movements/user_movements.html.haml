@@ -9,5 +9,3 @@
       = render "tab_edit_account", user: current_user
     .tab-pane.fade.in#attending_events
       = render "tab_my_events", events: @events_attending, description: "Events Attending"
-    .tab-pane.fade.in#attendees
-      = render "tab_my_attendees", events: @events_hosting

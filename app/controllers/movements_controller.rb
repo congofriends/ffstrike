@@ -19,17 +19,15 @@ class MovementsController < ApplicationController
 
   def user_movements
     redirect_to root_path and return unless current_user
-    @movements = current_user.parent_movements
     @events_attending = current_user.events_attending
     @events_hosting = current_user.approved_events
-    @unapproved_events = current_user.nonapproved_events
   end
 
   def my_groups
     redirect_to root_path and return unless current_user
     @groups = current_user.movements
     @group = Movement.find(params[:name][:id]) if params[:name]
-    
+
     respond_to do |format|
       format.html {render action: 'my_groups'}
       format.js
