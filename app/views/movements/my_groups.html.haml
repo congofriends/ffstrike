@@ -18,6 +18,6 @@
     .tab-pane.fade.in#group
       = render "tab_groups", group: @group if @group
     .tab-pane.fade.in#events
-      / = render "tab_events"
+      = render "tab_group_events", events: @group.events if @group
     .tab-pane.fade.in#support
       / = render "tab_attendees"
