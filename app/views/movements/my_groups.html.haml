@@ -4,7 +4,8 @@
   %h2 Manage My Groups 
   = form_tag my_groups_path, :method => :get, remote: true do
     = select("name", "id", @groups.map {|group| [group.name, group.id]})
-    = submit_tag "GO"
+    = submit_tag "SHOW"
+  %br
 
   %ul#groupTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}
     %li

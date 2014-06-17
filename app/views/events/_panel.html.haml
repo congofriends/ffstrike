@@ -27,11 +27,7 @@
         %strong Description:
         = event.description
     .col-xs-4.text-center.event-actions
-      -if event.host? current_user
-        = link_to "DASHBOARD", dashboard_event_path(event, anchor: "event"), :class=> "btn"
-        %br
-        %br
-      -else
+      -unless event.host? current_user
         =link_to_modal 'CONTACT HOST', new_contact_path(event), {class: "btn"}
   - unless current_user.tasks_for(event).first.nil?
     .row
