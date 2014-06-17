@@ -21,6 +21,6 @@ class Task < ActiveRecord::Base
 
   def is_allowed_to_update_by? user
     return false if user.nil?
-    event.movement.users.include? user
+    (event.movement.users.include? user) || event.host == user
   end
 end

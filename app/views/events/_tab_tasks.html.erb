@@ -1,7 +1,16 @@
 <div class='tab-pane' id='tasks'>
   <div class='well'>
-    <h1>Modify Tasks for <%=@event.name%></h1>
+    <h1>Tasks for <%=event.name%></h1>
     <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%=@event.id%>"></a>
-    <%= render template: "tasks/show", locals: {event: @event} %> 
+    <hr>
+    <h3>SIGN UP</h3>
+    <%= render template: "tasks/show", locals: {event: event} %>
+		<hr>
+    <h3>MODIFY/DELETE</h3>
+    <%= render partial: "tasks/form", locals: {event: event} %>
+    <hr>
+    <h3>VOLUNTEERS</h3>
+    <%= render partial: "tasks/volunteer_table", locals: {event: event} %>
+
   </div>
 </div>

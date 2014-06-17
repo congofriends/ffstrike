@@ -1,0 +1,16 @@
+.tab-pane#task_attendees
+  .well
+    %table.table.table-bordered.table-striped.sortable
+      %tr
+        %th Task
+        %th Volunteer
+        %th Date Signed Up
+        %th Notes
+      - event.task_assignments.each do |assignment|
+        %tr
+          %td= assignment.task ? assignment.task.description : "Task has been deleted"
+          %td= assignment.attendee.email
+          %td= assignment.updated_at.to_date
+          %td= assignment.attendance.notes
+
+

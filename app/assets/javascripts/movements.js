@@ -56,16 +56,20 @@ $(document).ready(function() {
    $('.tab-content div:first').addClass('active');
  }
 
-function not_movement_dashboard_page() {
+function not_movement_page() {
   return location.pathname.match(/movements/) == null;
 };
 
-if(not_movement_dashboard_page()){
+if(not_movement_page()){
   $(".edit-event").show();
 }
 
+if(!not_movement_page()){
+  $("div#flyer_download").hide();
+}
+
  //redirect to certain tab after CRUD operations on associated models
- var navbox = not_movement_dashboard_page() ? $('#eventTabs') : $('#movementTabs');
+ var navbox = not_movement_page() ? $('#eventTabs') : $('#movementTabs');
  navbox.on('click', 'a', function(e) {
    var $this = $(this);
    e.preventDefault();

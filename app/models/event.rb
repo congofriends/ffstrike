@@ -66,13 +66,12 @@ class Event < ActiveRecord::Base
     attendees.include? user
   end
 
-  # def flyer?
-  #  !attachments.first.flyer_file_name.nil? if attachments.first
-  # end
+  def task_assignments
+    attendances.map(&:assignments).flatten
+  end
 
   def location
     [address, address2, city, state, zip].reject{|i| i.nil? || i.empty?}.join(", ")
-      # "#{address}, #{address2} #{city}, #{state}, #{zip}"
   end
 
   def assign_host_and_approve user

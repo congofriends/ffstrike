@@ -1,0 +1,5 @@
+$("#event").html("<%= escape_javascript(render partial: 'events/tab_event', event: @event)%>");
+$("#tasks").html("<%= escape_javascript(render partial: 'events/tab_tasks'%>");
+$("#attendees").html("<%= escape_javascript(render partial: 'events/tab_attendees', event: @event)%>");
+
+

@@ -35,7 +35,6 @@ Ffstrike::Application.routes.draw do
 
   #events
   resources :events do
-
     get 'dashboard' => 'events#dashboard', on: :member,  as: 'dashboard'
     get 'download' => 'events#download', on: :member,  as: 'download'
     resources :tasks do
@@ -43,6 +42,7 @@ Ffstrike::Application.routes.draw do
     end
   end
 
+  get 'my_events' => 'events#my_events', as: 'my_events'
   get 'events/:id/explanation' => 'events#explanation', as: 'explanation'
   put 'events/:id/approve' => 'events#approve', as: 'approve'
 

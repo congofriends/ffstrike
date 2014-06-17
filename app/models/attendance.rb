@@ -13,4 +13,5 @@ class Attendance < ActiveRecord::Base
   def unassign! task
     assignments.find_by(task_id: task.id).destroy
   end
+
 end

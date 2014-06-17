@@ -4,8 +4,9 @@
       = render "tasks/admin_task", task: task, event: event
 
 - if ((event.movement.users.include? current_user) || (event.host? current_user))
-  %h3 Add a new task to this event:
+  %hr
+  %h3 ADD NEW TASK:
   = form_for ([event, @task=Task.new]), remote: true, html: {class: "form-group", id: "new_task#{event.id}"} do |f|
     .row
       .col-xs-8= f.text_area :description, placeholder: "Add a new task description here...", class: "form-control", rows: "3"
-      .col-xs-4= f.submit "CREATE NEW TASK", :class=>"btn" 
+      .col-xs-4= f.submit "CREATE NEW TASK", :class=>"btn"

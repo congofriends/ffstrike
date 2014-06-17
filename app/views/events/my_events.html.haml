@@ -1,0 +1,23 @@
+.container
+  %ul#eventTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}
+    %li
+      %a{href: '#event', data: {toggle: 'tab'}} Event
+    %li
+      %a{href: '#tasks', data: {toggle: 'tab'}} Tasks
+    %li
+      %a{href: '#attendees', data: {toggle: 'tab'}} Attendees
+    %li
+      = form_tag my_events_path, :method => :get do
+        - if @event
+          = select("name", "id", @events.collect {|e| [ e.name, e.id ]}, selected: @event.id)
+        - else
+          = select("name", "id", @events.collect {|e| [ e.name, e.id ]})
+        = submit_tag "SHOW", class: "btn-small"
+
+  .tab-content
+    .tab-pane.fade.in#event
+      = render "tab_event", event: @event if @event
+    .tab-pane.fade.in#tasks
+      = render "tab_tasks", event: @event if @event
+    .tab-pane.fade.in#attendees
+      = render "tab_attendees", event: @event if @event

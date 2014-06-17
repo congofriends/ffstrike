@@ -74,6 +74,11 @@ class EventsController < ApplicationController
     end
   end
 
+  def my_events
+    @events = current_user.events
+    @event = Event.find params[:name][:id] if params[:name]
+  end
+
   def search
     #FIXME: refactor this method here and in the movements_controller, currently it
     #is just clear duplication
