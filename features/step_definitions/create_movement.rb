@@ -44,6 +44,7 @@ Then(/^I receive a message stating that my email has been sent$/) do
 end
 
 Then(/^I get a confirmation that I created a new movement$/)do
+  visit my_groups_path
   page.should have_content(Movement.last.name)
 end
 

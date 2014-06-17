@@ -1,0 +1,23 @@
+=content_for :title, "My Groups"
+= javascript_include_tag :defaults
+.container
+  %h2 Manage My Groups 
+  = form_tag my_groups_path, :method => :get, remote: true do
+    = select("name", "id", @groups.map {|group| [group.name, group.id]})
+    = submit_tag "GO"
+
+  %ul#groupTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}
+    %li
+      %a{href: '#group', data: {toggle: 'tab'}} Group Details
+    %li
+      %a{href: '#events', data: {toggle: 'tab'}} Group Events
+    %li         
+      %a{href: '#support', data: {toggle: 'tab'}} Manage Support
+
+  .tab-content
+    .tab-pane.fade.in#group
+      = render "tab_groups", group: @group if @group
+    .tab-pane.fade.in#events
+      / = render "tab_events"
+    .tab-pane.fade.in#support
+      / = render "tab_attendees"
