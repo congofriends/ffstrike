@@ -1,2 +1,3 @@
 $("#group").html("<%= escape_javascript(render partial: 'movements/tab_groups', group: @group)%>");
 $("#events").html("<%= escape_javascript(render partial: 'movements/tab_group_events', events: @group.events)%>");
+$("#support").html("<%= escape_javascript(render partial: 'movements/tab_group_attendees', events: @group.events)%>");

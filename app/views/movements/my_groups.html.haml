@@ -20,4 +20,4 @@
     .tab-pane.fade.in#events
       = render "tab_group_events", events: @group.events if @group
     .tab-pane.fade.in#support
-      / = render "tab_attendees"
+      = render "tab_attendees", events: @group.events if @group

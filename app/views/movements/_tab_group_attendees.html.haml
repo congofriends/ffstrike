@@ -1,4 +1,4 @@
-.tab-pane#attendees
+.tab-pane#support
   .well
     %table.table.table-bordered.table-striped.sortable
       %tr
@@ -8,7 +8,7 @@
         %th Phone number
         %th Point person?
         %th Notes
-      - events.each do |event|
+      - @group.events.each do |event|
         - event.attendees.each do |attendee|
           %tr
             %td= attendee.name
