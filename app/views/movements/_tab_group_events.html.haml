@@ -11,7 +11,7 @@
 						%th Description
 					- @group.events.each do |event|
 						%tr
-							%td= link_to event.name, event_path(event)
+							%td= link_to event.name, my_events_path(:name => {:id => event.id})
 							%td= event.formatted_time
 							%td= event.location
 							%td= event.movement.name
