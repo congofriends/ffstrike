@@ -14,7 +14,7 @@ describe TasksController do
 
       it "redirects to the index page" do
         post :create, event_id: event, task: FactoryGirl.attributes_for(:task)
-        expect(response).to redirect_to movement_path(movement, anchor: "tasks")
+        expect(response).to redirect_to my_events_path(:name => { :id => event.id }, anchor: "tasks")
       end
 
       it "notifies the user that task was created" do
@@ -31,20 +31,20 @@ describe TasksController do
 
       it "re-renders the new method" do
         post :create, event_id: event, task: FactoryGirl.attributes_for(:task_without_description)
-        expect(response).to redirect_to movement_path(movement, anchor: "tasks")
+        expect(response).to redirect_to my_events_path(:name => { :id => event.id }, anchor: "tasks")
       end
 
       it "notifies user that task information is missing description field" do
         post :create, event_id: event, task: FactoryGirl.attributes_for(:task_without_description)
         flash[:notice].should == "Description can't be blank"
       end
-    end 
+    end
   end
 
   describe "PUT #update" do
     new_task_desc = "New description goes here"
     before(:each) {put :update, event_id: event, id: task, task: FactoryGirl.attributes_for(:task, description: new_task_desc)}
-    
+
     it "loads the requested task" do
       expect(assigns(:task)).to eq(task)
     end

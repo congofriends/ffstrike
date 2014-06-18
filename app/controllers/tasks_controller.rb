@@ -7,6 +7,7 @@ class TasksController < ApplicationController
     flash[:notice] =
       @task.save ? t('task.created') : @task.errors.full_messages.flatten.join('. ')
     respond_to do |format|
+      # format.html { redirect_to movement_path(@event.movement, anchor: "tasks") }
       format.html { redirect_to my_events_path(:name => { :id => @event.id }, anchor: "tasks") }
       # format.html {  render nothing: true }
       format.js

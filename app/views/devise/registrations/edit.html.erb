@@ -4,13 +4,13 @@
   <%= devise_error_messages! %>
 
   <div><%= f.label :name, "Name *" %><br />
-  <%= f.text_field :name, class: 'form-control edit-form', :autofocus => true, :validate => true %></div><br />
+  <%= f.text_field :name, class: 'form-control edit-form' %></div><br />
 
   <div><%= f.label :email, "Email *" %><br />
-  <%= f.text_field :email, class: 'form-control edit-form', :autofocus => true, :validate => true %></div><br />
+  <%= f.text_field :email, class: 'form-control edit-form' %></div><br />
 
    <div><%= f.label :phone %><br />
-  <%= f.text_field :phone, class: 'form-control edit-form', :autofocus => true, :validate => true %></div><br /><br /><br />
+  <%= f.text_field :phone, class: 'form-control edit-form' %></div><br /><br /><br />
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

@@ -4,7 +4,7 @@ movement_show_page = MovementShowPage.new
 
 
 When(/^I edit my event$/)do
-  event_dashboard_page.navigate_to_movement_dash()
+  event_dashboard_page.navigate_to_event_dash()
   event_dashboard_page.edit_event()
 end
 
@@ -21,7 +21,6 @@ end
 Then(/^I am taken to my event page$/) do
   page.should have_text(Event.last.name)
 end
-
 
 Then(/^I am able to see my changes for the event$/) do
   expect(Event.last.reload.address).to eq("123 this street")
