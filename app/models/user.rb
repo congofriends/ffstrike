@@ -67,6 +67,10 @@ class User < ActiveRecord::Base
     Event.where(host_id: self.id, approved: true)
   end
 
+  def date_signed_up_for(task)
+    task.assignment_for(self).updated_at.to_date
+  end
+
   def events_attending
     Event.find(self.attendances.map(&:event_id))
   end

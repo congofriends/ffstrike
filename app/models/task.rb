@@ -14,6 +14,10 @@ class Task < ActiveRecord::Base
     assignments.map {|a| a.attendance.user_id == user.id }.any?
   end
 
+  def assignment_for user
+    assignments.map {|a| return a if a.attendance.user_id == user.id }
+  end
+
   def is_not_assigned_to? user
     return false if user.nil?
     assignments.select { |a| a.attendance.user_id == user.id }.empty?
@@ -23,4 +27,9 @@ class Task < ActiveRecord::Base
     return false if user.nil?
     (event.movement.users.include? user) || event.host == user
   end
+
+  def volunteers
+     assignments.map(&:attendance).map(&:user)
+  end
+
 end

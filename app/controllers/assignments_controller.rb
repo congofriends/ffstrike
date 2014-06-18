@@ -13,7 +13,7 @@ class AssignmentsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to event_path(@event) }
+      # format.html { redirect_to event_path(@event) }
       format.js
     end
   end

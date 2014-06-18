@@ -1,4 +1,3 @@
 $('#task_list<%=@event.id%>').append("<%=j render "tasks/admin_task", task: @task, event: @event %>");
 $('#tasklist<%=@event.id%>').append("<%=j render "tasks/task", task: @task, event: @event %>");
-
 $('#new_task<%=@event.id%>').each(function(){ this.reset(); }) ;

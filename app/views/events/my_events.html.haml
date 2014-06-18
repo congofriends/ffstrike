@@ -7,7 +7,7 @@
     - else
       = select("name", "id", @events.collect {|e| [ e.name, e.id ]})
     = submit_tag "SHOW", class: "btn-small"
-    %br 
+    %br
     %br
 
     %ul#eventTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}

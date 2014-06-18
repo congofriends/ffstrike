@@ -1,6 +1,6 @@
 =content_for :title, "My Groups"
 .container
-  %h2 Manage My Groups 
+  %h2 Manage My Groups
   = form_tag my_groups_path, :method => :get, remote: true do
     = select("name", "id", @groups.map {|group| [group.name, group.id]})
     = submit_tag "SHOW"
@@ -11,13 +11,10 @@
       %a{href: '#group', data: {toggle: 'tab'}} Group Details
     %li
       %a{href: '#events', data: {toggle: 'tab'}} Group Events
-    %li         
+    %li
       %a{href: '#support', data: {toggle: 'tab'}} Manage Support
 
   .tab-content
     .tab-pane.fade.in#group
-      = render "tab_groups", group: @group if @group
     .tab-pane.fade.in#events
-      = render "tab_group_events", events: @group.events if @group
     .tab-pane.fade.in#support
-      = render "tab_attendees", events: @group.events if @group

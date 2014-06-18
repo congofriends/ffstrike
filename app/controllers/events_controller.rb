@@ -77,6 +77,10 @@ class EventsController < ApplicationController
   def my_events
     @events = current_user.events
     @event = Event.find params[:name][:id] if params[:name]
+    # respond_to do |format|
+    #   format.html {render action: 'my_events'}
+    #   format.js
+    # end
   end
 
   def search

@@ -6,13 +6,9 @@
         %th Email
         %th Phone number
         %th Point person?
-        %th Notes
       - event.attendees.each do |attendee|
         %tr
           %td= attendee.name
           %td= attendee.email
           %td= attendee.phone
           %td= attendee.volunteer_for(event) ? "yes" : "no"
-          %td= attendee.notes_for(event.id)
-
-
