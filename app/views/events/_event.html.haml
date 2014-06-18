@@ -19,8 +19,9 @@
         = event.location_details
       %br
       %br
-      %strong Organized by:
-      =link_to event.movement.name, movement_path(event.movement)
+      - if event.movement
+        %strong Organized by:
+        =link_to event.movement.name, movement_path(event.movement)
       %br
       %br
       - unless event.description.nil?

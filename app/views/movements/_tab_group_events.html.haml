@@ -4,15 +4,14 @@
 			.panel-body
 				%table.table.table-bordered.table-striped.sortable
 					%tr
-						%th Event Name
+						%th Event Name (click to Edit)
 						%th When
 						%th Where
-						%th Organized By
-						%th Description
+						%th Approved
 					- @group.events.each do |event|
 						%tr
 							%td= link_to event.name, my_events_path(:name => {:id => event.id})
-							%td= event.formatted_time
+							%td= event.start_date
 							%td= event.location
-							%td= event.movement.name
-							%td= event.description
+							%td= event.approved
+

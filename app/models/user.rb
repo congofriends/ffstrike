@@ -76,6 +76,11 @@ class User < ActiveRecord::Base
   end
 
   def events
-    Event.where(host_id: self.id)
+    movements.map(&:events).flatten.uniq
+  end
+
+  def movements_and_groups
+    movement_array = movements
+    (movement_array << movements.map(&:sub_movements)).flatten.uniq
   end
 end
