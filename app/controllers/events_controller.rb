@@ -91,7 +91,6 @@ class EventsController < ApplicationController
   end
 
   def update
-    binding.pry
     if @event.update_attributes(event_params)
       # params[:flyer].each {|attachment| @event.attachments.create(flyer: attachment)}
       # @event.attachments.create(flyer: params[:flyer]) if params[:flyer]

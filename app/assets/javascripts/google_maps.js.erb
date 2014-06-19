@@ -24,7 +24,7 @@ ready = function () {
       location_array.push(new google.maps.LatLng(events[i].latitude, events[i].longitude));
       event_names.push(events[i].name);
       event_types.push(window.gon.event_types[events[i].event_type_id - 1].name);
-      event_path.push('/events/'+ events[i].name.replace(/ /g, '-'));
+      event_path.push('/events/'+ event_ids[i]);
     }
 
     function initialize() {
