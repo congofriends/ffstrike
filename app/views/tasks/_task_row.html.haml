@@ -1,0 +1,21 @@
+%tr{id: "task_row_#{task.id}"}
+  %td= best_in_place task, :description, :path=>[event, task], type: :input, html_attrs: {class: "input"}
+  %td
+    %button.btn{type: "button", data: {toggle: "collapse", target: "#task#{task.id}"}}
+      Volunteers (#{task.volunteers.count})
+      %span.glyphicon.glyphicon-hand-down
+  %td= link_to raw('<i class="glyphicon glyphicon-remove"></i>') , event_task_path(event, task.id), method: :delete, data: { confirm: "You sure about deleting task '#{task.description}'?"}, remote: true
+%tr.collapse{id: "task#{task.id}"}
+  %td{colspan: "4"}
+    %table.table.table-bordered.table-striped.sortable#task-attendee-table
+      %tr
+        %th Name
+        %th Email
+        %th Notes
+        %th Date Signed Up
+      - task.volunteers.each do |volunteer|
+        %tr
+          %td= volunteer.name
+          %td= volunteer.email
+          %td= volunteer.notes_for(event.id)
+          %td= volunteer.date_signed_up_for(task)
