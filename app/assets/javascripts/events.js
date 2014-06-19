@@ -108,6 +108,7 @@ function populate_end_time() {
 
 $(document).ready(function() {
   initializeValidations();
+  initializeValidations2();
 
   $('#event_start_time').change(function() {
     populate_end_time();

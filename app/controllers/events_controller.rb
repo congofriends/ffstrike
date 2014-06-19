@@ -77,10 +77,10 @@ class EventsController < ApplicationController
   def my_events
     @events = current_user.events
     @event = Event.find params[:name][:id] if params[:name] && (Event.where(id: params[:name][:id]).count > 0)
-    # respond_to do |format|
-    #   format.html {render action: 'my_events'}
-    #   format.js
-    # end
+    respond_to do |format|
+      format.html {render action: 'my_events'}
+      format.js
+    end
   end
 
   def search
@@ -91,9 +91,8 @@ class EventsController < ApplicationController
   end
 
   def update
-    # binding.pry
+    binding.pry
     if @event.update_attributes(event_params)
-
       # params[:flyer].each {|attachment| @event.attachments.create(flyer: attachment)}
       # @event.attachments.create(flyer: params[:flyer]) if params[:flyer]
       flash[:notice] = t('event.updated')

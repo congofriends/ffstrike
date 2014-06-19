@@ -1,7 +1,7 @@
 =content_for :title, "My Events"
 .container
   %h2 Manage My Events
-  = form_tag my_events_path, :method => :get do
+  = form_tag my_events_path, :method => :get, remote: true do
     - if @event
       = select("name", "id", @events.collect {|e| [ e.name, e.id ]}, selected: @event.id)
     - else

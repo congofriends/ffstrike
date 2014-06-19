@@ -60,9 +60,9 @@ function not_movement_page() {
   return location.pathname.match(/movements/) == null;
 };
 
-if(not_movement_page()){
-  $(".edit-event").show();
-}
+// if(not_movement_page()){
+//   $(".edit-event").show();
+// }
 
 if(!not_movement_page()){
   $("div#flyer_download").hide();
