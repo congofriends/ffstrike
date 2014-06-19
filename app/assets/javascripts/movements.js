@@ -118,15 +118,15 @@ $("#map").on("click", function() {
   $("#map-canvas").slideToggle();
 });
 
-function click_event(id) {
-  $(".edit-event").hide('fast');
-  $('.event-' + id + '-details').show('slow');
-}
+// function click_event(id) {
+//   $(".edit-event").hide('fast');
+//   $('.event-' + id + '-details').show('slow');
+// }
 
-$(".edit-event-dash").on("click", function() {
-  click_event(this.id);
-  initializeValidations2(this.id);
-});
+// $(".edit-event-dash").on("click", function() {
+//   click_event(this.id);
+//   initializeValidations2(this.id);
+// });
 
 $(".sub_movements").on("click", function() {
   $("#sub_movements").slideToggle();

@@ -40,9 +40,6 @@
         = f.label "Type:"
         = f.select :event_type, EventType.all.map(&:name), class: 'form-control', selected: event.type
       .form-group
-        = f.label "Approved:"
-        = f.check_box :approved, class: 'float_right'
-      .form-group
         = f.label "Forum (Disqus):"
         = f.check_box :forum_option, class: 'float_right'
       .form-group

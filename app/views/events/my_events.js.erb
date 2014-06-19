@@ -3,4 +3,4 @@ $("#tasks").html("<%= escape_javascript(render partial: 'events/tab_tasks', loca
 $("#attendees").html("<%= escape_javascript(render partial: 'events/tab_attendees', locals: {event: @event})%>");
 sorttable.makeSortable(document.getElementById('attendee-table'));
 sorttable.makeSortable(document.getElementById('task-table'));
-// sorttable.makeSortable(document.getElementById('task-attendee-table'));
+jQuery(".best_in_place").best_in_place();

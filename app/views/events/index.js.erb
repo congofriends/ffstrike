@@ -4,5 +4,6 @@ function pan() {
 			map.panTo(panPoint);
 }
 $(".events").html("<%= escape_javascript(render partial: 'events/event', collection: @events, as: :event)%>");
-
+$(".events").show();
+$("#no-results").hide();
 pan();

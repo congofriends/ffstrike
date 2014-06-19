@@ -1,1 +1,10 @@
-location.reload();
+function pan() {
+      var panPoint = new google.maps.LatLng(40, -23);
+			map.setZoom(2);
+			map.panTo(panPoint);
+}
+
+$("#no-results").show();
+$(".events").hide();
+pan();
+
