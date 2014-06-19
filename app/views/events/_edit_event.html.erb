@@ -4,8 +4,8 @@
 
   <div class=" edit_form event-<%= event.id %>">
 
-  <form action="/events/#{event.id}" class="edit_person" id="edit_person_#{event.id}" method="post">
-  <!-- form tags not showing in html???? -->
+  <form action="/events/<%= event.id%>" class="edit_person" id="edit_person_#{event.id}" method="post">
+  <!-- form tags not showing in html???? works on firefox-->
     <%= form_for(event, html: { id: 'edit-event-form' }) do |f| %>
       <div class='form-group'>
         <%= f.label "Start date & time:"%>
@@ -79,7 +79,7 @@
 
       <div class='form-group'>
         <%= f.label "Flyer:"%>
-        <%= image_tag event.flyer, class: 'front-page img-responsive' %>
+        <%= image_tag event.flyer, class: 'front-page img-responsive' %><br/>
         <%= f.file_field :flyer %>
       </div>
 

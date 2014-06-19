@@ -1,6 +1,6 @@
 .tab-pane#tasks
   .well
-    %table.table.table-bordered.table-striped.sortable
+    %table.table.table-bordered.table-striped.sortable#task-table
       %tr
         %th Delete
         %th Task (click to Edit)
@@ -15,7 +15,7 @@
               %span.glyphicon.glyphicon-hand-down
         %tr.collapse{id: "task#{task.id}"}
           %td{colspan: "4"}
-            %table.table.table-bordered.table-striped.sortable
+            %table.table.table-bordered.table-striped.sortable#task-attendee-table
               %tr
                 %th Name
                 %th Email
