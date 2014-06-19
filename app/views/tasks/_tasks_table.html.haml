@@ -2,17 +2,17 @@
   .well
     %table.table.table-bordered.table-striped.sortable#task-table
       %tr
-        %th Delete
         %th Task (click to Edit)
         %th Volunteers
-      - event.tasks.each do |task|
+        %th Delete
+      - event.tasks.uniq.each do |task|
         %tr{id: "task_row_#{task.id}"}
-          %td= link_to raw('<i class="glyphicon glyphicon-remove-circle"></i>') , event_task_path(event, task.id), method: :delete, data: { confirm: "You sure about deleting task '#{task.description}'?"}, remote: true
           %td= best_in_place task, :description, :path=>[event, task], type: :input, html_attrs: {class: "input"}
           %td
             %button.btn{type: "button", data: {toggle: "collapse", target: "#task#{task.id}"}}
               Volunteers (#{task.volunteers.count})
               %span.glyphicon.glyphicon-hand-down
+          %td= link_to raw('<i class="glyphicon glyphicon-remove"></i>') , event_task_path(event, task.id), method: :delete, data: { confirm: "You sure about deleting task '#{task.description}'?"}, remote: true
         %tr.collapse{id: "task#{task.id}"}
           %td{colspan: "4"}
             %table.table.table-bordered.table-striped.sortable#task-attendee-table

@@ -4,7 +4,7 @@
 
   .row
     .col-sm-8
-      %h2 Events
+      
     .col-sm-2
       -if current_user
         = link_to 'CREATE AN EVENT', new_movement_event_path(@movement), class: 'btn search'
@@ -13,13 +13,13 @@
   .row.event-list
     .form-inline.col-sm-12
       = form_tag movement_events_path, :method => :get, remote: true do
-        = text_field_tag 'zip', value = nil, id: 'query', placeholder: "Find an event by location"
+        = text_field_tag 'zip', value = nil, id: 'query', placeholder: "Search Events by City, State or Zip Code"
         %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
   .row
     #map-canvas
 
   %hr
   .event-list.events
-    = render partial: 'events/event', collection: @events, as: :event
+    
 
 
