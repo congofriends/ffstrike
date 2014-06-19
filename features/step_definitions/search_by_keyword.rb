@@ -15,7 +15,6 @@ When(/^I search for an event by zipcode$/) do
 end
 
 When(/^I wait for the ajax request to finish$/) do
-  sleep 5
 end
 
 Then(/^I see a filtered list$/) do
