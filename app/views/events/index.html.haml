@@ -7,9 +7,9 @@
 
     .col-sm-2
       -if current_user
-        = link_to 'CREATE AN EVENT', new_movement_event_path(@movement), class: 'btn search'
+        = link_to 'HOST AN EVENT', new_movement_event_path(@movement), class: 'btn search'
       -else
-        = link_to "CREATE AN EVENT", new_movement_unauthenticated_event_path(@movement), class: 'btn'
+        = link_to "HOST AN EVENT", new_movement_unauthenticated_event_path(@movement), class: 'btn'
   .row.event-list
     .form-inline.col-sm-12
       = form_tag movement_events_path, :method => :get, remote: true do

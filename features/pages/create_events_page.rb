@@ -53,7 +53,7 @@ include Capybara::DSL
 
   def select_create_event
   	navigate_to_events
-    click_link_or_button('CREATE AN EVENT')
+    click_link_or_button('HOST AN EVENT')
     return self
   end
 

@@ -3,6 +3,7 @@
     .col-md-12
       .well
         .form-horizontal
+          %h2= link_to @group.name, movement_path(@group)
           = form_for @group do |form|
             %fieldset
               .form-group

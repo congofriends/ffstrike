@@ -1,6 +1,5 @@
 %div{class: "event-#{event.id}-details edit-event"}
   = link_to "'#{event.name}' event summary", event_path(event)
-  = link_to "Remove event", event, method: :delete, data: { confirm: "Are you sure you want to delete this event?"}, remote: true, class:'btn btn-primary btn-xs delete-btn '
   %div{class: " edit_form event-#{event.id}"}
     = form_for event, html: { id: 'edit-event-form' } do |f|
       .form-group
@@ -51,5 +50,9 @@
         = image_tag event.image, class: 'front-page img-responsive'
         %br/
         = f.file_field :image
-        = f.submit "Update", class: 'float_right'
-      %br/
+        = f.submit "Update", class: 'btn btn-primary float_right'
+        %br/
+        %br
+        %br
+        = link_to "Cancel Event", event, method: :delete, data: { confirm: "Are you sure you want to delete this event?"}, remote: true, class:'btn btn-primary delete-btn '
+      
