@@ -11,8 +11,6 @@ class EventsController < ApplicationController
   end
 
   def index
-    # @events = @movement.events.where(approved: true)
-    # @events = @events.query_results(params[:query]).order(:start_time) if params[:query].present?
     @events = Event.near_zip(params[:zip], 200)
     respond_to do |format|
       unless @events.empty?
@@ -92,8 +90,6 @@ class EventsController < ApplicationController
 
   def update
     if @event.update_attributes(event_params)
-      # params[:flyer].each {|attachment| @event.attachments.create(flyer: attachment)}
-      # @event.attachments.create(flyer: params[:flyer]) if params[:flyer]
       flash[:notice] = t('event.updated')
     end
 
