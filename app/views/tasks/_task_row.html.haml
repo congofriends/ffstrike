@@ -11,9 +11,11 @@
       %tr
         %th Name
         %th Email
+        %th Phone
         %th Notes
       - task.volunteers.each do |volunteer|
         %tr
           %td= volunteer.name
           %td= volunteer.email
+          %td= volunteer.phone
           %td= volunteer.notes_for(event.id)

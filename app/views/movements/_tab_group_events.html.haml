@@ -10,8 +10,10 @@
 						%th Approved
 					- @group.events.each do |event|
 						%tr
-							%td= link_to event.name, my_events_path(:name => {:id => event.id})
-							%td= event.start_date
+							%td
+								= event.name
+								= link_to('(View Event/', event_path(event))
+								= link_to('Edit Event)', my_events_path(:name => {:id => event.id})) 
+							%td= event.start_time_formatted
 							%td= event.location
 							%td= link_to event.approved? ? 'Unapprove' : 'Approve', approve_path(event), method: :put, remote: true, id: "approve#{event.id}", class: "btn"
-
