@@ -3,12 +3,14 @@ function initializeProfileValidations() {
     rules: {
       'user[name]': { required: true },
       'user[email]': { required: true },
-      'user[current_password]': { required: true }
+      'user[current_password]': { required: true },
+      'user[password_confirmation]': {equalTo : "#user_password"}
     },
     messages: {
       'user[name]': "Name is required",
       'user[email]': "Email is required",
-      'user[current_password]': 'Current Password is required'
+      'user[current_password]': 'Current Password is required',
+      'user[password_confirmation]': "Confirmation Password must equal Password"
     },
     errorElement: "div",
     errorClass: "text-danger",

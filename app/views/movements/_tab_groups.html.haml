@@ -4,7 +4,7 @@
       .well
         .form-horizontal
           %h2= link_to @group.name, movement_path(@group)
-          = form_for @group do |form|
+          = form_for @group, html: { id: 'edit-group-form' } do |form|
             %fieldset
               .form-group
                 = form.label :name, class: 'col-md-3 control-label'

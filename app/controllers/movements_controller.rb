@@ -1,5 +1,5 @@
 class MovementsController < ApplicationController
-  before_filter :load_movement, except: [:new, :create, :index, :user_movements, :new_submovement, :my_groups]
+  before_filter :load_movement, except: [:new, :create, :index, :my_profile, :new_submovement, :my_groups]
   before_filter :load_movements, only: [:index, :search]
 
   include YoutubeParserHelper
@@ -17,7 +17,7 @@ class MovementsController < ApplicationController
     render 'events/search'
   end
 
-  def user_movements
+  def my_profile
     redirect_to root_path and return unless current_user
     @events_attending = current_user.events_attending
     @events_hosting = current_user.approved_events

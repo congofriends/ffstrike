@@ -20,7 +20,7 @@ Ffstrike::Application.routes.draw do
   #movements
   resources :movements do
     get 'publish' => 'movements#publish', on: :member, as: 'publish'
-    get 'profile' => 'movements#user_movements', on: :collection, as: 'user'
+    get 'profile' => 'movements#my_profile', on: :collection, as: 'user'
     get 'dashboard' => 'movements#dashboard', on: :member, as: 'dashboard'
     get 'search' => 'movements#search', on: :member, as: 'search'
     get 'event_type' => 'movements#event_type', on: :member, as: 'event_type'
