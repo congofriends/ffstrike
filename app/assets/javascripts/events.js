@@ -14,8 +14,7 @@ function initializeValidations() {
       'user[name]': {required: true},
       'user[email]': {required: true},
       'user[password]': {required: true},
-      'user[password_confirmation]': {
-        required: true}
+      'user[password_confirmation]': {equalTo : "#user_password"}
     },
     messages: {
       'event[name]': "Name is required",
@@ -31,8 +30,7 @@ function initializeValidations() {
       'user[name]': "Name is required",
       'user[email]': "Email is required",
       'user[password]': "Password is required",
-      'user[password_confirmation]': {
-        required: "Password Confirmation is required"}
+      'user[password_confirmation]': "Confirmation Password must equal Password"
     },
     errorElement: "div",
     errorClass: "text-danger",

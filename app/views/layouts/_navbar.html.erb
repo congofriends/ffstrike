@@ -28,7 +28,7 @@
               <% unless current_user.movements.empty? %>
                 <li><%= link_to "Manage My Groups", my_groups_path %></li>
               <% end %>
-              <% if current_user.host? %>
+              <% unless current_user.events_owned.empty? %>
                 <li><%= link_to "Manage My Events", my_events_path %></li>
               <% end %>
                 <li class="divider"/>
