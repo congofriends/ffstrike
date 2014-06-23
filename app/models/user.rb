@@ -43,6 +43,10 @@ class User < ActiveRecord::Base
     nonapproved_events.any?
   end
 
+  def host?
+    nonapproved_events.any? || approved_events.any?
+  end
+
   def parent_movements
     self.movements.where(parent_id: nil)
   end
@@ -65,6 +69,10 @@ class User < ActiveRecord::Base
 
   def approved_events
     Event.where(host_id: self.id, approved: true)
+  end
+
+  def events_owned
+    (approved_events.concat(nonapproved_events).concat(events)).flatten.compact.uniq
   end
 
   def date_signed_up_for(task)

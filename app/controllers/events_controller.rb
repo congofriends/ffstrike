@@ -73,7 +73,7 @@ class EventsController < ApplicationController
   end
 
   def my_events
-    @events = current_user.events
+    @events = current_user.events_owned
     @event = Event.find params[:name][:id] if params[:name] && (Event.where(id: params[:name][:id]).count > 0)
     respond_to do |format|
       format.html {render action: 'my_events'}

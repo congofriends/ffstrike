@@ -1,5 +1,5 @@
 %div{class: "event-#{event.id}-details edit-event"}
-  = link_to "'#{event.name}' event summary", event_path(event)
+  %h3= link_to "#{event.name}", event_path(event)
   %div{class: " edit_form event-#{event.id}"}
     = form_for event, html: { id: 'edit-event-form' } do |f|
       .form-group

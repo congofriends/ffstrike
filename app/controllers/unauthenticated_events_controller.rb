@@ -1,7 +1,5 @@
 class UnauthenticatedEventsController < ApplicationController
-  before_filter :load_event_types, only: [:show]
-  before_filter :load_movement, except: [:new, :create, :index, :user_movements, :new_submovement]
-  before_filter :load_movements, only: [:index, :search]
+  before_filter :load_movement
   before_filter :redirect_unauthorized_user, only: [:new]
 
   def new
@@ -9,7 +7,6 @@ class UnauthenticatedEventsController < ApplicationController
   end
 
   def create
-    @movement = Movement.find_by_param params[:movement_id]
     @user = User.new user_params
     @event = Event.new event_params
     if @user.save
@@ -28,23 +25,11 @@ class UnauthenticatedEventsController < ApplicationController
     end
   end
 
-  def load_movements
-    @movements = Movement.all.published.where(parent_id: nil)
-  end
-
-  def load_movement
-    @movement = Movement.find_by_param params[:id]
-  end
-
-  def load_event_types
-    @event_types = EventType.names
-  end
-
-  def event_type
-    load_event_types
-  end
 
   private
+  def load_movement
+    @movement = Movement.find_by_param params[:movement_id]
+  end
 
   def event_params
     params[:event][:event_type_id] = EventType.find_by(name: params[:event][:event_type]).id if params[:event][:event_type]

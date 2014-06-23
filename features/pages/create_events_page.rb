@@ -25,7 +25,7 @@ include Capybara::DSL
 		fill_in 'user_email', with: 'mack@gmail.com'
 		fill_in 'user_password', with: 'movement1234'
 		fill_in 'user_password_confirmation', with: 'movement1234'
-		click_link_or_button('Create a user and event')
+		click_link_or_button('CREATE EVENT')
 		return self
 	end
 

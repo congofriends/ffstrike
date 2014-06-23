@@ -28,7 +28,9 @@
               <% unless current_user.movements.empty? %>
                 <li><%= link_to "Manage My Groups", my_groups_path %></li>
               <% end %>
+              <% if current_user.host? %>
                 <li><%= link_to "Manage My Events", my_events_path %></li>
+              <% end %>
                 <li class="divider"/>
                 <li><%= link_to "Create Group", new_movement_path %></li>
                 <li><%= link_to "Create Event", new_movement_event_path(Movement.first) if Movement.first %></li>

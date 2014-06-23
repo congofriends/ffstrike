@@ -10,7 +10,12 @@ function initializeValidations() {
       'event[zip]': {
         required: true,
         number: true,
-        rangelength: [5, 5] }
+        rangelength: [5, 5] },
+      'user[name]': {required: true},
+      'user[email]': {required: true},
+      'user[password]': {required: true},
+      'user[password_confirmation]': {
+        required: true}
     },
     messages: {
       'event[name]': "Name is required",
@@ -22,7 +27,12 @@ function initializeValidations() {
       'event[zip]': {
         required: 'Zip is required',
         number: "Zip should contain only numbers",
-        rangelength: "Zip should be 5 digits long"}
+        rangelength: "Zip should be 5 digits long"},
+      'user[name]': "Name is required",
+      'user[email]': "Email is required",
+      'user[password]': "Password is required",
+      'user[password_confirmation]': {
+        required: "Password Confirmation is required"}
     },
     errorElement: "div",
     errorClass: "text-danger",

@@ -16,7 +16,7 @@
         = text_field_tag 'zip', value = nil, id: 'query', placeholder: "Search Events by City, State or Zip Code"
         %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
   .row
-    %h4#no-results  No events found nearby, check your search paramaters or #{current_user ? (link_to 'host your own event!', new_movement_event_path(@movement)) : (link_to "host your own event!", new_movement_unauthenticated_event_path(@movement))}
+    %h4#no-results  There are no events registered near you. #{current_user ? (link_to 'Click here to host your own!', new_movement_event_path(@movement)) : (link_to "Click here to host your own!", new_movement_unauthenticated_event_path(@movement))}
     #map-canvas
 
   %hr
