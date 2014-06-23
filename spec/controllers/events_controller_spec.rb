@@ -202,7 +202,7 @@ describe EventsController do
       end
 
       it "redirects to movement page anchored in event" do
-        expect(response).to redirect_to dashboard_movement_path(event.movement, anchor: "events")
+        expect(response).to redirect_to dashboard_movement_path(event.movement)
       end
 
       it "notifies user that event was updated" do
@@ -210,6 +210,4 @@ describe EventsController do
       end
     end
   end
-
 end
-

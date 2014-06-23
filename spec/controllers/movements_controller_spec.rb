@@ -142,7 +142,10 @@ describe MovementsController do
   describe "PUT #update" do
     context "video attribute" do
       video_url = "https://www.youtube.com/watch?v=_ZSbC09qgLI"
-      before { put :update, id: movement, movement: { video: video_url } }
+      before do
+        @controller.request.stub referer: movement_path(movement)
+        put :update, id: movement, movement: { video: video_url }
+      end
 
       it "loads the requested movement" do
         expect(assigns(:movement)).to eq(movement)
@@ -155,15 +158,12 @@ describe MovementsController do
       it "redirects to show" do
         expect(response).to redirect_to movement_path(movement)
       end
-
-      it "notifies user that movement has been updated" do
-        flash[:notice].should eq("Movement has been updated")
-      end
     end
 
     context "name for existing movement with a video" do
       it "should update the name and should not reset the video field value" do
         video = movement.video
+        @controller.request.stub referer: movement_path(movement)
         put :update, id: movement, movement: { name: "new name"  }
         expect(movement.reload.video).to eq(video)
         expect(movement.name).to eq("new name")

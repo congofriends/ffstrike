@@ -96,7 +96,7 @@ class MovementsController < ApplicationController
 
   def update
     @movement.update_attributes(movement_params)
-    redirect_to movement_path(@movement), notice: t('movement.updated')
+    redirect_to request.referer
   end
 
   def event_type

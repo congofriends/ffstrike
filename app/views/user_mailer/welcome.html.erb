@@ -10,10 +10,10 @@ Address: <%= @event.address %> <br>
 City: <%= @event.city %> <br>
 Zip: <%= @event.zip %> <br>
 Date: <%= @event.start_date %> <br>
-Start Time: <%= @event.start_time %> <br>
-End Time: <%= @event.end_time %> <br>
+Start Time: <%= @event.start_time_formatted %> <br>
+End Time: <%= @event.end_time_formatted %> <br>
 
-You can find out more about <%= @event.name %> by clicking <a href="<%= event_url(@event) %>">here</a>.
+You can find out more about <%= @event.name %> by clicking <a href="<%= event_path(@event) %>">here</a>.
 
 We are looking forward to seeing you at the event. If you want to comment or create your own events, here is a temporary password you can use to log into the site:
 <%= @password %>

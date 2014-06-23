@@ -93,7 +93,7 @@ class EventsController < ApplicationController
       flash[:notice] = t('event.updated')
     end
 
-    redirect_to request.referer + '#events'
+    redirect_to request.referer
   end
 
   def destroy

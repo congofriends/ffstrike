@@ -1,4 +1,4 @@
-class TaskPopulator 
+class TaskPopulator
 
   def self.assign_tasks(event)
     event_type = event.type.downcase.gsub(/ /, '_')
