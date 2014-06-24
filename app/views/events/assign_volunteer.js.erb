@@ -1,0 +1,6 @@
+$("#assign_volunteer<%= @event.id %>").bind('ajax:success', function(){
+  $(this).text("<%= @attendance.point_person ? 'X' : 'O' %>");
+  // $("#approval_status<%= @event.id %>").text("<%= @event.approved? %>");
+  // $("#event<%= @event.id %>").toggleClass("approval-background", <%= !@event.approved? %>);
+});
+

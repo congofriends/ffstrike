@@ -11,4 +11,4 @@
           %td= attendee.name
           %td= attendee.email
           %td= attendee.phone
-          %td= attendee.volunteer_for(event) ? "yes" : "no"
+          %td= link_to( attendee.volunteer_for(event) ? 'X' : 'O', assign_volunteer_path(attendee_id: attendee.id, event_id: event.id), method: :put, remote: true, id: "assign_volunteer#{event.id}", class: "btn")

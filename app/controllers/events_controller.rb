@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit, :dashboard, :download]
+  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit, :dashboard]
   before_filter :load_movement, :only => [:new, :create, :edit, :update, :dashboard, :index]
   before_filter :redirect_unauthorized_user, :only => [:dashboard, :edit]
   before_filter :load_event_types, :only => [:edit, :dashboard]
@@ -30,6 +30,17 @@ class EventsController < ApplicationController
 
   def approve
     @event.update(approved: !@event.approved)
+    respond_to do |format|
+      format.html { render nothing: true }
+      format.js
+    end
+  end
+
+  def assign_volunteer
+    @event = Event.find params[:event_id]
+    @attendee = User.find params[:attendee_id]
+    @attendance = @attendee.attendances.find_by(event_id: @event.id)
+    @attendance.update(point_person: !@attendance.point_person)
     respond_to do |format|
       format.html { render nothing: true }
       format.js

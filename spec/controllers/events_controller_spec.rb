@@ -166,13 +166,23 @@ describe EventsController do
     end
   end
 
+  describe "PUT #assign_volunteer" do
+    context "when a host makes an attendee a volunteer" do
+      let!(:published_movement) {FactoryGirl.create(:published_movement)}
+      let!(:event1) {FactoryGirl.create(:approved_event, name: "My event 1", movement: published_movement)}
+      let(:visitor){FactoryGirl.create(:user)}
+
+      it "sets point_person for attendance to be true" do
+        attendance = FactoryGirl.create(:attendance, event: event1, user: visitor, point_person: false)
+        put "assign_volunteer", event_id: event1.id, attendee_id: visitor.id
+        expect(attendance.reload.point_person).to be_true
+      end
+    end
+  end
 
   # describe "search_by_keyword" do
   #   context "when user searches for event by keyword" do
-  #     let!(:published_movement) {FactoryGirl.create(:published_movement)}
-  #     let!(:event1) {FactoryGirl.create(:approved_event, name: "My event 1", movement: published_movement)}
-  #     let!(:event2) {FactoryGirl.create(:approved_event, name: "My event 2", movement: published_movement)}
-  #     let!(:event3) {FactoryGirl.create(:approved_event, name: "My event 3", movement: published_movement)}
+  #
 
   #     it "filters the events to display results matching search" do
   #       get "index", query: "My event 3", movement_id: published_movement
