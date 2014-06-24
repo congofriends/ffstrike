@@ -18,6 +18,6 @@
             %td= attendee.volunteer_for(event) ? "yes" : "no"
             %td= attendee.notes_for(event.id)
 
-/ = link_to_modal "INVITE COORDINATORS", new_user_invitation_path, { class: 'btn ctrl-btn' }
+= link_to_modal "INVITE COORDINATORS", new_user_invitation_path, { class: 'btn ctrl-btn' }
 = link_to "EXPORT ATTENDEE LIST", export_csv_path(@group), class: 'btn ctrl-btn'
-/ = render "movements/email"
+= render "movements/email"

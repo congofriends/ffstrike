@@ -1,8 +1,18 @@
 class MovementDashboardPage
 include Capybara::DSL
 
-	def visit_movement_dashboard (name)
-		visit "/movements/" + name.gsub(/ /, '-') + "/dashboard"
+	def visit_group_support_tab
+		visit "/my_groups#support"
+	  select "#{Movement.last.name}", from: "name_id"
+	  click_link_or_button "SHOW"
+	end
+
+	def visit_movement_dashboard (user)
+		click_link "#{user.name}"
+	  click_link "Manage My Groups"
+	  select "#{Movement.last.name}", from: "name_id"
+	  click_link_or_button "SHOW"
+	  click_link_or_button "Manage Supporters"
 	end
 
 	def email_attendees_in_movement

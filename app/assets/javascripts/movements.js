@@ -60,6 +60,10 @@ function not_movement_page() {
   return location.pathname.match(/movements/) == null;
 };
 
+function not_group_page() {
+  return location.pathname.match(/my_groups/) == null;
+};
+
 // if(not_movement_page()){
 //   $(".edit-event").show();
 // }
@@ -69,7 +73,7 @@ if(!not_movement_page()){
 }
 
  //redirect to certain tab after CRUD operations on associated models
- var navbox = not_movement_page() ? $('#eventTabs') : $('#movementTabs');
+ var navbox = not_group_page() ? $('#eventTabs') : $('#groupTabs');
  navbox.on('click', 'a', function(e) {
    var $this = $(this);
    e.preventDefault();

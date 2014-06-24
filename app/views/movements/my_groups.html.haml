@@ -4,15 +4,14 @@
   = form_tag my_groups_path, :method => :get, remote: true do
     = select("name", "id", @groups.map {|group| [group.name, group.id]})
     = submit_tag "SHOW"
-  %h3 Select a Group and click SHOW
-
-  %ul#groupTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}
-    %li
-      %a{href: '#group', data: {toggle: 'tab'}} Group Details
-    %li
-      %a{href: '#events', data: {toggle: 'tab'}} Group Events
-    %li
-      %a{href: '#support', data: {toggle: 'tab'}} Manage Supporters
+    %h3 Select a Group and click SHOW
+    %ul#groupTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}
+      %li
+        %a{href: '#group', data: {toggle: 'tab'}} Group Details
+      %li
+        %a{href: '#events', data: {toggle: 'tab'}} Group Events
+      %li
+        %a{href: '#support', data: {toggle: 'tab'}} Manage Supporters
 
   .tab-content
     .tab-pane.fade.in#group

@@ -2,16 +2,16 @@ create_events_page = CreateEventsPage.new
 movement_dashboard_page = MovementDashboardPage.new
 
 Given "I am on the dashboard for $n" do |name|
-  movement_dashboard_page.visit_movement_dashboard(name)
+  movement_dashboard_page.visit_group_support_tab
 end
 
 When(/^I email my attendees for the movement$/) do
-  movement_dashboard_page.visit_movement_dashboard(Movement.last.name)
+  movement_dashboard_page.visit_group_support_tab
   movement_dashboard_page.email_attendees_in_movement()
 end
 
 When(/^I invite more coordinators via email$/) do
-  movement_dashboard_page.visit_movement_dashboard(Movement.last.name)
+  movement_dashboard_page.visit_movement_dashboard(@user)
   movement_dashboard_page.invite_coordinators_by_email()
 end
 
