@@ -113,7 +113,7 @@ class MovementsController < ApplicationController
 
   def movement_params
     params[:movement][:video]= extract_video_id(params[:movement][:video]) if !params[:movement][:video].nil?
-    params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :video, :about_creator, :parent_id, :location)
+    params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :avatar, :video, :about_creator, :parent_id, :location)
   end
 
   def load_movements

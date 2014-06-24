@@ -12,8 +12,16 @@ class Movement < ActiveRecord::Base
                     :styles => { :medium => '280x150', :thum => '50x50' },
                     :default_url => 'congo_banner.jpg'
 
-	validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
-	validates_attachment_size :image, :less_than => 5.megabytes
+
+  validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
+  validates_attachment_size :image, :less_than => 5.megabytes
+
+  has_attached_file :avatar,
+                    :styles => { :medium => '280x150', :thum => '50x50' },
+                    :default_url => 'break_the_silence.jpg'
+
+  validates_attachment_content_type :avatar, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
+  validates_attachment_size :avatar, :less_than => 5.megabytes
 
   scope :published, lambda {where(published: true)}
   scope :starts_with, -> (name) { where("name like ?", "#{name}%")}

@@ -31,10 +31,10 @@
                 .col-md-9
                   = form.text_area :about_creator, class: 'form-control'
               .form-group
-                = form.label :image, class: 'col-md-3 control-label'
+                = form.label :avatar, class: 'col-md-3 control-label'
                 .col-md-9
-                  = image_tag @group.image.url, { class: 'front-page img-responsive' }
-                  = form.file_field :image
+                  = image_tag @group.avatar, { class: 'front-page img-responsive' }
+                  = form.file_field :avatar
               .form-group
                 = form.label :video, class: 'col-md-3 control-label'
                 .col-md-9
