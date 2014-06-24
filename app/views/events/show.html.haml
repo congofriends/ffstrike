@@ -2,12 +2,14 @@
   = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg&sensor=false"
 = content_for :title, @event.name
 
-.container
-  = render partial: "event", locals: {event: @event}
-  .row
-    .col-sm-4
-    .col-sm-8
-      =render "social/addthis_share"
+.container  
+  - if current_user && (current_user.volunteer_for @event)
+    %h2 Here are some things you can do to help out:
+    = render template: "tasks/show", locals: {event: @event}
+  %br
+  =render partial: "event", locals: {event: @event}
+  =render "social/rrssb"
+  %br
   .row
     .col-sm-12
       %iframe{frameborder: "0", height: "250", src: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg\r\n    &q=#{@event.location}", style: "border:0", width: "100%"}

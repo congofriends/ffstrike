@@ -27,3 +27,4 @@
 //= require jquery-ui-timepicker-addon
 //= require jquery.modal
 //= require jquery.fastLiveFilter
+//= require RRSSB

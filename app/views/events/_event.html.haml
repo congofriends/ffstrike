@@ -35,8 +35,8 @@
       -unless event.host? current_user
         =link_to_modal 'CONTACT HOST', new_contact_path(event), {class: "btn"}
     .col-xs-4#flyer_download
-      %strong Help Us promote this event
-      %div (click on the image to download)
+      %strong Use this flyer to promote this event!
+      %div (click on the flyer to download)
       %a{download: event.name + "_flyer", href: event.flyer, title: event.name + "_flyer"}
-        %img{alt: event.name + "_flyer", src: asset_path(event.flyer.url), class: "event_avatar"}
-%hr
+        %img{alt: event.name + "_flyer", src: asset_path(event.flyer.url), class: "event_flyer"}
+%br

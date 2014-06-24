@@ -52,8 +52,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       format.html do
-        render 'show' unless @event.attendees.include?(current_user)
-        render 'attendee' if @event.attendees.include?(current_user)
+        render 'show'
       end
 
       format.pdf do

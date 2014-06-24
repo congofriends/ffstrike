@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
   end
 
   def volunteer_for(event)
-    attendances.find_by(event: event).point_person
+    attendances.find_by(event: event).point_person if attendances.find_by(event: event)
   end
 
   def tasks_for(event)

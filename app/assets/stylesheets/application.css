@@ -16,4 +16,5 @@
  *= require jquery.ui.all
  *= require jquery.modal
  *= require_tree .
+ *= require RRSSB/scss/rrssb
  */
