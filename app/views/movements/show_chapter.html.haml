@@ -5,7 +5,6 @@
   .row
     .col-sm-6
       =image_tag @movement.avatar, class: "movement_avatar"
-      =render "social/addthis_share"
     .col-sm-6
       .row
         %h3.text-center= @movement.name
@@ -29,6 +28,7 @@
             =link_to_modal 'CONTACT THE GROUP COORDINATOR', new_mvmt_contact_path(@movement), class: "btn"
       .row
         .spacer10
+  =render "social/rrssb"
   .row
 
   = render partial: 'events/event', collection: @movement.events, as: :event
