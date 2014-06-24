@@ -43,6 +43,10 @@ Then(/^I receive a message stating that my email has been sent$/) do
   page.should have_selector ".alert", text: "Sending Emails!"
 end
 
+Then(/^I receive an alert stating that my email has been sent$/) do
+  page.should have_selector ".alert", text: "An invitation email has been sent"
+end
+
 Then(/^I get a confirmation that I created a new movement$/)do
   visit my_groups_path
   page.should have_content(Movement.last.name)

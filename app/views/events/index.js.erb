@@ -6,4 +6,5 @@ function pan() {
 $(".events").html("<%= escape_javascript(render partial: 'events/event', collection: @events, as: :event)%>");
 $(".events").show();
 $("#no-results").hide();
+$("div#flyer_download").hide();
 pan();

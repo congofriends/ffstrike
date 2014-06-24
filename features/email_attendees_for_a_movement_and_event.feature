@@ -6,12 +6,13 @@ Background:
  	And I have an existing event for the movement with attendees
  	And I am logged in as a Movement Coordinator
 
-@ignore
+@ignore @javascript
 Scenario: Sending an Email to Attendees in a movement
 	When I email my attendees for the movement
 	Then I receive a message stating that my email has been sent
 
-@ignore
+@ignore @javascript
 Scenario: Sending an Email to Invite more Coordinators
 	When I invite more coordinators via email
-	Then I can provide an email and have it sent out
+	Then I receive an alert stating that my email has been sent
+

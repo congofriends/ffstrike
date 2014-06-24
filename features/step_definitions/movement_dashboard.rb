@@ -13,9 +13,5 @@ end
 When(/^I invite more coordinators via email$/) do
   movement_dashboard_page.visit_movement_dashboard(@user)
   movement_dashboard_page.invite_coordinators_by_email()
-end
-
-Then(/^I can provide an email and have it sent out$/) do
   movement_dashboard_page.can_create_an_email_to_invite_more_corrdinators()
-  # currently asserting that a movement coordinator can send an email the feature to send it is currently broken
 end
