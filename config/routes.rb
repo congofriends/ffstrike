@@ -12,8 +12,10 @@ Ffstrike::Application.routes.draw do
   devise_scope :user do
     get 'new_attendee_user' => 'users#new_attendee_user'
     post 'create_attendee_user' => 'users#create_attendee_user'
+    get 'check_email' => 'users#check_email'
   end
 
+  
   #home
   get 'about' => 'static_pages#about',  as: 'about'
 
