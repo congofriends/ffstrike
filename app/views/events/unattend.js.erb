@@ -1,0 +1,3 @@
+$("#remove_attendance<%= @event.id %>").bind('ajax:success', function(){
+	$("#event_<%=@event.id %>").hide();
+});

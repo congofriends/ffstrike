@@ -48,6 +48,7 @@ Ffstrike::Application.routes.draw do
   get 'events/:id/explanation' => 'events#explanation', as: 'explanation'
   put 'events/:id/approve' => 'events#approve', as: 'approve'
   put 'assign_volunteer' => 'events#assign_volunteer', as: 'assign_volunteer'
+  put 'unattend' => 'events#unattend', as: 'unattend'
 
   #mail
   post 'mail_attendees(/:movement_id)(/:event_id)' => 'mail#mail_attendees', as: 'mail_attendees'

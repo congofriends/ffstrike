@@ -8,7 +8,7 @@ class UnauthenticatedSubmovementsController < ApplicationController
     @submovement.update(parent_id: session[:movement_id])
     @submovement.users.push(@user)
     sign_in(:user, @user)
-    redirect_to dashboard_movement_path(@submovement)
+    redirect_to root_path
   end
 
   private
@@ -20,4 +20,4 @@ class UnauthenticatedSubmovementsController < ApplicationController
   def movement_params
     params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :video, :about_creator, :parent_id)
   end
-end 
+end

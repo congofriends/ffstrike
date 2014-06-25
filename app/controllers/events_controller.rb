@@ -47,6 +47,17 @@ class EventsController < ApplicationController
     end
   end
 
+  def unattend
+    @event = Event.find params[:event_id]
+    @attendee = User.find params[:attendee_id]
+    attendance = @attendee.attendances.find_by(event_id: @event.id)
+    attendance.destroy if attendance
+    respond_to do |format|
+      format.html { render nothing: true }
+      format.js
+    end
+  end
+
   def show
     load_all_movements
 
