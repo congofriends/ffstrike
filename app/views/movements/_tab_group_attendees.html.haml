@@ -1,5 +1,35 @@
 .tab-pane#support
   .well
+    %h3 COORDINATORS
+    %table.table.table-bordered.table-striped.sortable#group-attendees-table
+      %tr
+        %th Name
+        %th Group
+        %th Email
+        %th Phone number
+      - @groups.each do |group|
+        - group.ownerships.each do |ownership|
+          %tr
+            %td= ownership.user.name
+            %td= link_to group.name, movement_path(group)
+            %td= ownership.user.email
+            %td= ownership.user.phone
+
+    %h3 HOSTS
+    %table.table.table-bordered.table-striped.sortable#group-attendees-table
+      %tr
+        %th Name
+        %th Event
+        %th Email
+        %th Phone number
+      - @group.events.each do |event|
+        %tr
+          %td= event.host.name
+          %td= link_to event.name, event_path(event)
+          %td= event.host.email
+          %td= event.host.phone
+
+    %h3 ATTENDEES
     %table.table.table-bordered.table-striped.sortable#group-attendees-table
       %tr
         %th Name
@@ -18,4 +48,4 @@
 
 = link_to_modal "INVITE COORDINATORS", new_user_invitation_path, { class: 'btn ctrl-btn' }
 = link_to "EXPORT ATTENDEE LIST", export_csv_path(@group), class: 'btn ctrl-btn'
-= render "movements/email"
+= render "movements/email_modal"

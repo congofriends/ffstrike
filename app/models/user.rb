@@ -88,7 +88,7 @@ class User < ActiveRecord::Base
   end
 
   def movements_and_groups
-    movement_array = movements
+    movement_array = parent_movements
     (movement_array << movements.map(&:sub_movements)).flatten.uniq
   end
 end

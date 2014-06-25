@@ -7,12 +7,11 @@ Background:
  	And I am logged in as a Movement Coordinator
 
 @ignore @javascript
-Scenario: Sending an Email to Attendees in a movement
-	When I email my attendees for the movement
-	Then I receive a message stating that my email has been sent
-
-@ignore @javascript
 Scenario: Sending an Email to Invite more Coordinators
 	When I invite more coordinators via email
 	Then I receive an alert stating that my email has been sent
 
+@ignore @javascript
+Scenario: Sending an Email to Attendees in a movement
+	When I email my attendees for the movement
+	Then I receive a message stating that my email has been sent

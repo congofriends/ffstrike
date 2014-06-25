@@ -1,6 +1,5 @@
 $("#assign_volunteer<%= @event.id %>").bind('ajax:success', function(){
-  $(this).text("<%= @attendance.point_person ? 'X' : 'O' %>");
-  // $("#approval_status<%= @event.id %>").text("<%= @event.approved? %>");
-  // $("#event<%= @event.id %>").toggleClass("approval-background", <%= !@event.approved? %>);
+  // $(this).html("<%= @attendance.point_person ? image_tag(image_url('check_box.png'), class: 'check-box') : image_tag(image_url('uncheck_box.png'), class: 'check-box') %>");
+  $(this).text("<%= @attendance.point_person ? 'Y' : 'N' %>");
 });
 

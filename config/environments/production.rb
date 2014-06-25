@@ -20,7 +20,7 @@ Ffstrike::Application.configure do
   }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { :host => "http://rally-qa.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => "http://shift-engage-staging.herokuapp.com" }
 
   # Code is not reloaded between requests.
   config.cache_classes = true

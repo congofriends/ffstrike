@@ -11,4 +11,5 @@
           %td= attendee.name
           %td= attendee.email
           %td= attendee.phone
-          %td= link_to( attendee.volunteer_for(event) ? 'X' : 'O', assign_volunteer_path(attendee_id: attendee.id, event_id: event.id), method: :put, remote: true, id: "assign_volunteer#{event.id}", class: "btn")
+          %td= link_to( attendee.volunteer_for(event) ? "Y" : "N", assign_volunteer_path(attendee_id: attendee.id, event_id: event.id), method: :put, remote: true, class: "check-box btn", id: "assign_volunteer#{event.id}")
+          / %td= link_to( attendee.volunteer_for(event) ? image_tag(image_url('check_box.png'), class: 'check-box') : image_tag(image_url("uncheck_box.png"), class: 'check-box'), assign_volunteer_path(attendee_id: attendee.id, event_id: event.id), method: :put, remote: true, id: "assign_volunteer#{event.id}")
