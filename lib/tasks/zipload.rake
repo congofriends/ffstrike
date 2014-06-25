@@ -1,7 +1,7 @@
 task :load_zip_codes => :environment do
   puts "destroying old zip codes"
-  unless Zipcode.all.length == 0 
-    Zipcode.destroy_all  
+  unless Zipcode.all.length == 0
+    Zipcode.destroy_all
   end
   file = "lib/assets/US.txt"
   puts "loading zip codes from #{file}"
@@ -13,8 +13,8 @@ end
 
 task :load_zip_codes_starting_with_6 => :environment do
   puts "destroying old zip codes"
-  unless Zipcode.all.length == 0 
-    Zipcode.destroy_all  
+  unless Zipcode.all.length == 0
+    Zipcode.destroy_all
   end
   file = "lib/assets/US.txt"
   puts "loading zip codes from #{file}"
