@@ -30,12 +30,18 @@
       -unless event.host? current_user
         =link_to_modal 'CONTACT HOST', new_contact_path(event), {class: "btn"}
       =link_to('UNATTEND EVENT',  unattend_path(attendee_id: current_user.id, event_id: event.id), method: :put, remote: true, class: "btn", id: "remove_attendance#{event.id}")
+      %br
+      %br
+      %h3 VOLUNTEER STATUS
       =link_to( current_user.volunteer_for(event) ? "Y" : "N", assign_volunteer_path(attendee_id: current_user.id, event_id: event.id), method: :put, remote: true, class: "check-box btn", id: "assign_volunteer#{event.id}")
 
-    - if current_user && (current_user.volunteer_for event)
-      .row{id: "tasks_for_event_#{event.id}"}
-        .col-sm-10
-          %h2 Tasks Signed Up For:
-          = render template: "tasks/show", locals: {event: event}
+    - unless current_user.volunteer_for(event)
+      :javascript
+        $("#tasks_for_event_\#{event.id}").addClass("hide");
+
+    .row{id: "tasks_for_event_#{event.id}"}
+      .col-sm-10
+        %h2 Tasks Signed Up For:
+        = render template: "tasks/show", locals: {event: event}
   %hr
 

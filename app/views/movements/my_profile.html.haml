@@ -3,7 +3,7 @@
     %li
       %a{href: '#edit_account', data: {toggle: 'tab'}} Personal Details
     %li
-      %a{href: '#attending_events', id:'event_tab' ,data: {toggle: 'tab'}} Events Attending (#{@events_attending.count.to_s})
+      %a{href: '#attending_events', id:'event_tab' ,data: {toggle: 'tab'}} Events Attending
   .tab-content
     .tab-pane.fade.in#edit_account
       = render "tab_edit_account", user: current_user
