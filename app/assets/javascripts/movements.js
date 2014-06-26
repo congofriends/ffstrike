@@ -39,9 +39,41 @@ function initializeValidations2(id) {
   });
 };
 
+function initializeGroupValidations() {
+  $('#new-group-form').validate({
+    rules: {
+      'movement[name]': { required: true },
+      'user[name]': {required: true},
+      'user[email]': {required: true},
+      'user[password]': {required: true},
+      'user[password_confirmation]': {equalTo : "#user_password"}
+    },
+    messages: {
+      'movement[name]': "Name is required",
+      'user[name]': "Name is required",
+      'user[email]': "Email is required",
+      'user[password]': "Password is required",
+      'user[password_confirmation]': "Confirmation Password must equal Password"
+    },
+    errorElement: "div",
+    errorClass: "text-danger",
+    errorId: "event_error",
+    errorPlacement: function (error, element) {
+      error.insertAfter(element);
+      element.closest('div').addClass('has-error');
+    },
+    success: function (label) {
+      label.closest('.form-group').removeClass('has-error').addClass('has-success');
+    }
+  });
+};
+
+
+
 $(document).ready(function() {
 /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
+  initializeGroupValidations();
 
  //activate first nav-tab and tab-content if nothing is activated currently
  var elementAlreadyActive = false;

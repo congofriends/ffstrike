@@ -45,8 +45,6 @@ function initializeValidations() {
   });
 };
 
-
-
 function formValid(nextButton, fieldset){
     return $('#new-event-form').valid();
 }

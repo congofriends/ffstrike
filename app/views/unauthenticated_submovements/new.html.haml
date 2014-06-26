@@ -3,7 +3,7 @@
     .col-md-12
       .well
         .form-horizontal
-          = form_tag unauthenticated_submovements_path do
+          = form_tag unauthenticated_submovements_path, id: 'new-group-form', method: :post do
             %fieldset
               .form-group
                 = label :movement, :name, 'Name *', { class: 'col-md-4 control-label' }

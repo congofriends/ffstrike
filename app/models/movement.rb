@@ -89,7 +89,7 @@ class Movement < ActiveRecord::Base
       column_names = ["Name", "Email", "Phone", "Event", "Zip", "City"]
       csv << column_names
       self.attendances.each do |attendance|
-        csv << [attendance.user.name, attendance.user.email, attendance.user.phone, attendance.event.name, attendance.event.city, attendance.event.zip]
+        csv << [attendance.user.name, attendance.user.email, attendance.user.phone, attendance.event.name, attendance.event.city, attendance.event.zip] if (attendance.event && attendance.user)
       end
     end
   end
