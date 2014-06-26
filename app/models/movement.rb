@@ -3,7 +3,7 @@ class Movement < ActiveRecord::Base
   has_many :events, dependent: :destroy
   #has_many :attendees, through: :events #, source: :user
   has_many :attendances, through: :events #, source: :user
-  has_many :ownerships
+  has_many :ownerships, dependent: :destroy
   has_many :users, through: :ownerships
   validates :name, uniqueness: true
   validates :name, presence: true

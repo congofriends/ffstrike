@@ -20,7 +20,7 @@ class Task < ActiveRecord::Base
 
   def is_not_assigned_to? user
     return false if user.nil?
-    assignments.select { |a| a.attendance.user_id == user.id }.empty?
+    assignments.select { |a| a.attendance.user_id == user.id if a.attendance}.empty?
   end
 
   def is_allowed_to_update_by? user
@@ -29,6 +29,7 @@ class Task < ActiveRecord::Base
   end
 
   def volunteers
+     return [] unless (assignments.map &:attendance).first
      assignments.map(&:attendance).map(&:user)
   end
 

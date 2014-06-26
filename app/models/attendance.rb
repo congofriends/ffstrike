@@ -1,7 +1,7 @@
 class Attendance < ActiveRecord::Base
   belongs_to :user
   belongs_to :event
-  has_many :assignments
+  has_many :assignments, dependent: :destroy
 
   validates :user, presence: true
   validates :event, presence: true
