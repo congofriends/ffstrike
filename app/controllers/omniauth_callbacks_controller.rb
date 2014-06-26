@@ -20,7 +20,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       User.create_from_facebook_oauth(oauth)
   end
 
-  def oath
+  def oauth
     @oauth ||= request.env['omniauth.auth']
   end
 
