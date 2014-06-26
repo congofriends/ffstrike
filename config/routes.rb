@@ -31,6 +31,8 @@ Ffstrike::Application.routes.draw do
     resources :unauthenticated_events, only: [:new, :create]
   end
 
+  get 'check_name' => 'movements#check_name'
+
   get 'my_groups' => 'movements#my_groups', as: 'my_groups'
 
   resources :unauthenticated_submovements, only: [:new, :create]

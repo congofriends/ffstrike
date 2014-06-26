@@ -1,5 +1,5 @@
 class MovementsController < ApplicationController
-  before_filter :load_movement, except: [:new, :create, :index, :my_profile, :new_submovement, :my_groups]
+  before_filter :load_movement, except: [:new, :create, :index, :my_profile, :new_submovement, :my_groups, :check_name]
   before_filter :load_movements, only: [:index, :search]
 
   include YoutubeParserHelper
@@ -106,6 +106,15 @@ class MovementsController < ApplicationController
 
   def support_network
     @support_network =  Movement.where(parent_id: @movement)
+  end
+
+  def check_name
+    @movement = Movement.find_by_name(params[:movement][:name])
+
+    respond_to do |format|
+      format.json {render :json => !@movement}
+      format.js
+    end
   end
 
   private
