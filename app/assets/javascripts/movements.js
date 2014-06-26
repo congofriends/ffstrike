@@ -1,4 +1,4 @@
-function initializeValidations2(id) {
+function initializeEditEventValidations(id) {
   $('#edit-event' + id + '-form').validate({
     rules: {
       'event[name]': { required: true },
@@ -78,9 +78,37 @@ function initializeGroupValidations() {
   });
 };
 
+function formValid(nextButton, fieldset){
+    return $('#new-group-form').valid();
+}
 
+function goToNextStep(button) {
+  current_fieldset = $(button).closest('fieldset');
+
+  if(!formValid(button, current_fieldset))
+    return false;
+
+  next_fieldset = current_fieldset.next().show();
+  current_fieldset.hide();
+  };
+
+function goToPreviousStep(button) {
+  current_fieldset = $(button).closest('fieldset');
+  previous_fieldset = current_fieldset.prev('fieldset');
+  current_fieldset.hide();
+  previous_fieldset.show();
+}
 
 $(document).ready(function() {
+
+  $(".next").click(function() {
+    goToNextStep(this);
+  });
+
+  $(".previous").click(function() {
+    goToPreviousStep(this);
+  });
+
 /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
   initializeGroupValidations();
