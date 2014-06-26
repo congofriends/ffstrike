@@ -2,7 +2,7 @@ function initializeProfileValidations() {
   $('#edit-user-details').validate({
     rules: {
       'user[name]': { required: true },
-      'user[email]': { 
+      'user[email]': {
         required: true,
         email: true},
       'user[current_password]': { required: true },

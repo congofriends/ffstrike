@@ -12,7 +12,10 @@ function initializeValidations() {
         number: true,
         rangelength: [5, 5] },
       'user[name]': {required: true},
-      'user[email]': {required: true},
+      'user[email]': {
+            required: true,
+            email: true,
+            remote: "/check_email" },
       'user[password]': {required: true},
       'user[password_confirmation]': {equalTo : "#user_password"}
     },
@@ -28,7 +31,10 @@ function initializeValidations() {
         number: "Zip should contain only numbers",
         rangelength: "Zip should be 5 digits long"},
       'user[name]': "Name is required",
-      'user[email]': "Email is required",
+      'user[email]': {
+            required: "Email is required",
+            email: "Please enter a valid email address",
+            remote: "Email has already been taken"},
       'user[password]': "Password is required",
       'user[password_confirmation]': "Confirmation Password must equal Password"
     },

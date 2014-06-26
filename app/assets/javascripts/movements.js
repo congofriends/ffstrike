@@ -42,16 +42,26 @@ function initializeValidations2(id) {
 function initializeGroupValidations() {
   $('#new-group-form').validate({
     rules: {
-      'movement[name]': { required: true },
+      'movement[name]': {
+        required: true,
+        remote: "/check_name"},
       'user[name]': {required: true},
-      'user[email]': {required: true},
+      'user[email]': {
+            required: true,
+            email: true,
+            remote: "/check_email" },
       'user[password]': {required: true},
       'user[password_confirmation]': {equalTo : "#user_password"}
     },
     messages: {
-      'movement[name]': "Name is required",
+      'movement[name]': {
+        required: "Name is required",
+        remote: "Name is already in use"},
       'user[name]': "Name is required",
-      'user[email]': "Email is required",
+      'user[email]': {
+            required: "Email is required",
+            email: "Please enter a valid email address",
+            remote: "Email has already been taken"},
       'user[password]': "Password is required",
       'user[password_confirmation]': "Confirmation Password must equal Password"
     },

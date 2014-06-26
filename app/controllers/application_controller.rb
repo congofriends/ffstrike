@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
   before_filter :configure_permitted_parameters, if: :devise_controller?
   after_filter :store_location
+  after_filter :discard_flash_if_xhr
 
   def store_location
     # store last url - this is needed for post-login redirect to whatever the user last visited.
@@ -36,6 +37,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:invite).concat [:movement]
     devise_parameter_sanitizer.for(:account_update) << :name
     devise_parameter_sanitizer.for(:account_update) << :phone
+  end
+
+  def discard_flash_if_xhr
+    flash.discard if request.xhr?
   end
 
 end

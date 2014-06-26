@@ -51,6 +51,7 @@ en:
       user:
         signed_up: "Welcome! You have signed up successfully."
         updated: "You have just updated your account details."
+        destroyed: "You have just deactivated your account."
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"
