@@ -9,6 +9,7 @@
   <p><%= f.label field %><br />
   <%= f.text_field field %></p>
 <% end -%>
+   <%= f.hidden_field :mvmt_id, value: @movement.id %>
 
   <p><%= f.submit t("devise.invitations.new.submit_button") %></p>
 <% end %>

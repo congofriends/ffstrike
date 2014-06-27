@@ -27,7 +27,6 @@ class MovementsController < ApplicationController
     redirect_to root_path and return unless current_user
     @groups = current_user.movements_and_groups
     @group = Movement.find(params[:name][:id]) if params[:name]
-    session[:movement] = @group.id if @group
 
     respond_to do |format|
       format.html {render action: 'my_groups'}

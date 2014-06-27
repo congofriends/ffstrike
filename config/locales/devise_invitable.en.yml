@@ -6,6 +6,7 @@ en:
       updated: 'Your password was set successfully. You are now signed in.'
       no_invitations_remaining: "No invitations remaining"
       invitation_removed: 'Your invitation was removed.'
+      signed_in_and_coordinator: "You are now signed in and a coordinator for %{movement_name}."
       new:
         header: "Send invitation"
         submit_button: "Send an invitation"

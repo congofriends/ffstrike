@@ -2,16 +2,20 @@
   function initializeValidations() {
       $('#invitation-form').validate({
         rules: {
-          'user[email]': { 
+          'user[name]': {required: true},
+          'user[password]': {required: true},
+          'user[password_confirmation]': {equalTo : "#user_password"},
+          'user[email]': {
             required: true,
-            email: true,
-            remote: "/check_email" }
+            email: true }
         },
         messages: {
+          'user[name]': "Name is required",
+          'user[password]': "Password is required",
+          'user[password_confirmation]': "Confirmation Password must equal Password",
           'user[email]': {
             required: "Email is required",
-            email: "Please enter a valid email address",
-            remote: "Email has already been sent to this address"}
+            email: "Please enter a valid email address"}
         },
         errorElement: "div",
         errorClass: "text-danger",
