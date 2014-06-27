@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe EventsController do
 
-
   let(:coordinator){FactoryGirl.create(:user)}
   let(:movement){FactoryGirl.create(:movement)}
   let!(:ownership){FactoryGirl.create(:ownership, user: coordinator, movement: movement)}
