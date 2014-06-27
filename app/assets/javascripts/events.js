@@ -46,7 +46,7 @@ function initializeValidations() {
       element.closest('div').addClass('has-error');
     },
     success: function (label) {
-      label.closest('.form-group').removeClass('has-error').addClass('has-success');
+      label.closest('.form-event').removeClass('has-error').addClass('has-success');
     }
   });
 };
@@ -74,8 +74,9 @@ function goToPreviousStep(button) {
 
 function populate_end_time() {
   start_date = new Date($('#event_start_time').val());
-  end_time = start_date.setHours(start_date.getHours() + 1);
-  $('#event_end_time').val(new Date(end_time));
+  end_date = new Date(start_date.setHours(start_date.getHours() + 1));
+  end_date.toString('ddd, d MMMM, yyyy h:mm tt');
+  $('#event_end_time').val(end_date);
 }
 
 $(document).ready(function() {

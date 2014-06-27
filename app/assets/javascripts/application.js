@@ -28,3 +28,4 @@
 //= require jquery.modal
 //= require jquery.fastLiveFilter
 //= require RRSSB
+//= require date

@@ -1,44 +1,3 @@
-function initializeEditEventValidations(id) {
-  $('#edit-event' + id + '-form').validate({
-    rules: {
-      'event[name]': { required: true },
-      'event[city]': { required: true },
-      'event[state]': { required: true },
-      'event[address]': { required: true },
-      'event[description]': { required: true },
-      'event[zip]': {
-      required: true,
-      number: true,
-      rangelength: [5, 5] }
-
-    },
-    messages: {
-      'event[name]': "Name is required",
-      'event[start_time]': "Start date & time is required",
-      'event[city]': "City is required",
-      'event[state]': "State is required",
-      'event[address]': "Address is required",
-      'event[description]': "Description is required",
-      'event[zip]': {
-      required: 'Zip is required',
-      number: "Zip should contain only numbers",
-      rangelength: "Zip should be 5 digits long"}
-    },
-
-    errorElement: "div",
-    errorClass: "text-danger",
-    errorId: "event_error",
-    errorPlacement: function (error, element) {
-      error.insertAfter(element);
-      element.closest('div').addClass('has-error');
-    },
-    success: function (label) {
-        label.closest('.form-group').removeClass('has-error').addClass('has-success');
-        label.next('.help-block').hide();
-    }
-  });
-};
-
 function initializeGroupValidations() {
   $('#new-group-form').validate({
     rules: {
@@ -78,21 +37,21 @@ function initializeGroupValidations() {
   });
 };
 
-function formValid(nextButton, fieldset){
+function groupFormValid(nextButton, fieldset){
     return $('#new-group-form').valid();
 }
 
-function goToNextStep(button) {
+function goToGroupNextStep(button) {
   current_fieldset = $(button).closest('fieldset');
 
-  if(!formValid(button, current_fieldset))
+  if(!groupFormValid(button, current_fieldset))
     return false;
 
   next_fieldset = current_fieldset.next().show();
   current_fieldset.hide();
   };
 
-function goToPreviousStep(button) {
+function goToGroupPreviousStep(button) {
   current_fieldset = $(button).closest('fieldset');
   previous_fieldset = current_fieldset.prev('fieldset');
   current_fieldset.hide();
@@ -102,11 +61,11 @@ function goToPreviousStep(button) {
 $(document).ready(function() {
 
   $(".next").click(function() {
-    goToNextStep(this);
+    goToGroupNextStep(this);
   });
 
   $(".previous").click(function() {
-    goToPreviousStep(this);
+    goToGroupPreviousStep(this);
   });
 
 /* Activating Best In Place */

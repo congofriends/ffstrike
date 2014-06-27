@@ -1,6 +1,6 @@
 $(function() {
     $( ".datetimepicker" ).datetimepicker({
-    	timeFormat: 'hh:mm tt',
+    	timeFormat: 'h:mm tt',
     	dateFormat: "D, d MM, yy",
       timezone: 'MT',
 			timezoneList: [
