@@ -2,7 +2,15 @@ class MailController < ApplicationController
 
   def mail_attendees
     @scope = find_scope params
-    send_mail @scope
+    send_attendees_mail @scope
+    redirect_to :back
+  rescue ActionController::RedirectBackError
+    redirect_to root_path
+  end
+
+  def mail_hosts
+    @scope = find_scope params
+    send_hosts_mail @scope
     redirect_to :back
   rescue ActionController::RedirectBackError
     redirect_to root_path
@@ -10,7 +18,7 @@ class MailController < ApplicationController
 
   private
 
-  def send_mail(action)
+  def send_attendees_mail(action)
     message = params[:message]
     if action.attendees.empty?
       flash[:notice] = t('mail.no_attendees')
@@ -19,6 +27,21 @@ class MailController < ApplicationController
       #todo: move to queue
       action.attendees.each do |attendee|
         UserMailer.custom_message(message, attendee.email)
+      end
+
+      flash[:notice] = t('mail.sent')
+    end
+  end
+
+  def send_hosts_mail(action)
+    message = params[:message]
+    if action.events.empty?
+      flash[:notice] = t('mail.no_hosts')
+    else
+
+      #todo: move to queue
+      action.events.each do |event|
+        UserMailer.custom_message(message, event.host.email)
       end
 
       flash[:notice] = t('mail.sent')

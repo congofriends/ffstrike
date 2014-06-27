@@ -1,0 +1,30 @@
+  <script>
+  $(function() {
+    $( "#dialog-host" ).dialog({
+      autoOpen: false,
+      modal: true,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });
+
+    $( "#opener-host" ).click(function() {
+      $( "#dialog-host" ).dialog( "open" );
+    });
+  });
+  </script>
+</head>
+
+<div id="dialog-host" title="Email the Hosts">
+  <%= form_tag(mail_hosts_path(movement_id: @group), method: "post") do %>
+    <%= text_area_tag "message", nil, placeholder: 'Enter a message to send to all hosts', class: 'form-control' %>
+    <%= submit_tag "SEND EMAIL", class: 'btn ctrl-btn', id: 'Send_Email' %>
+  <% end %>
+</div>
+
+<button id="opener-host"  class= 'btn ctrl-btn' >EMAIL THE HOSTS</button>

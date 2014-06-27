@@ -49,3 +49,4 @@
 = link_to_modal "INVITE COORDINATORS", new_user_invitation_path({mvmt_id: @group.id}), { class: 'btn ctrl-btn' }
 = link_to "EXPORT ATTENDEE LIST", export_csv_path(@group), class: 'btn ctrl-btn'
 = render "movements/email_modal"
+= render "movements/email_hosts_modal"

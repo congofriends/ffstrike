@@ -49,6 +49,7 @@ en:
   mail:
     sent: "Sending Emails!"
     no_attendees: "You have no attendees to email."
+    no_hosts: "You have no hosts to email."
   task:
     created: "New task is created"
     updated: "Task has been updated"
