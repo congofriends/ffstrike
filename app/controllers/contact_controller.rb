@@ -1,11 +1,12 @@
 class ContactController < ApplicationController
-  before_filter :load_message
+  # before_filter :load_message
 
   def new_event_msg
     @event = Event.find_by_param(params[:id])
   end
 
   def create_event_msg
+    load_message
     @event =  Event.find @message.host_id
 
     if @message.valid?
@@ -19,6 +20,7 @@ class ContactController < ApplicationController
   end
 
   def create_movement_msg
+    load_message
     @movement = Movement.find @message.host_id
 
     if @message.valid?
