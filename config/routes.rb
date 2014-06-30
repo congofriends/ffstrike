@@ -13,9 +13,11 @@ Ffstrike::Application.routes.draw do
     get 'new_attendee_user' => 'users#new_attendee_user'
     post 'create_attendee_user' => 'users#create_attendee_user'
     get 'check_email' => 'users#check_email'
+    put 'attendance' => 'users#attendance_notes', as: 'attendance'
   end
 
-  
+
+
   #home
   get 'about' => 'static_pages#about',  as: 'about'
 

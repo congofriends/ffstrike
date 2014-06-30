@@ -59,6 +59,10 @@ class User < ActiveRecord::Base
     attendances.find_by(event: event).point_person if attendances.find_by(event: event)
   end
 
+  def attendance_for(event)
+    attendances.find_by(event: event)
+  end
+
   def tasks_for(event)
      attendances.find_by(event: event).assignments.map(&:task)
   end

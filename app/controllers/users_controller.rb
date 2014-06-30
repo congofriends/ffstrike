@@ -4,6 +4,14 @@ class UsersController < Devise::RegistrationsController
     @user = User.find(params[:id])
   end
 
+  def attendance_notes
+    attendee = User.find params[:attendee_id]
+    event = Event.find params[:event_id]
+    notes = params[:attendance][:notes]
+    attendee.attendance_for(event).update(notes: notes) if notes
+    render nothing: true
+  end
+
   def new_attendee_user
     @event = Event.find params[:event]
     @attendance = Attendance.new

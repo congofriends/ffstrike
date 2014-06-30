@@ -75,8 +75,8 @@ function goToPreviousStep(button) {
 function populate_end_time() {
   start_date = new Date($('#event_start_time').val());
   end_date = new Date(start_date.setHours(start_date.getHours() + 1));
-  end_date.toString('ddd, d MMMM, yyyy h:mm tt');
-  $('#event_end_time').val(end_date);
+  formatted_end_date = end_date.toString('ddd, d MMMM, yyyy h:mm tt');
+  $('#event_end_time').val(formatted_end_date);
 }
 
 $(document).ready(function() {

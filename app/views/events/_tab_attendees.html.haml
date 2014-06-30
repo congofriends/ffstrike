@@ -5,11 +5,12 @@
         %th Name
         %th Email
         %th Phone number
-        %th Point person?
+        %th Point person? (Click to Assign)
+        %th Notes (Click to Edit)
       - event.attendees.each do |attendee|
         %tr
           %td= attendee.name
           %td= attendee.email
           %td= attendee.phone
           %td= link_to( attendee.volunteer_for(event) ? "Y" : "N", assign_volunteer_path(attendee_id: attendee.id, event_id: event.id), method: :put, remote: true, class: "check-box btn", id: "assign_volunteer#{event.id}")
-          / %td= link_to( attendee.volunteer_for(event) ? image_tag(image_url('check_box.png'), class: 'check-box') : image_tag(image_url("uncheck_box.png"), class: 'check-box'), assign_volunteer_path(attendee_id: attendee.id, event_id: event.id), method: :put, remote: true, id: "assign_volunteer#{event.id}")
+          %td= best_in_place attendee.attendance_for(event), :notes, :path=> attendance_path({event_id: event.id, attendee_id: attendee.id}), :type => :input, :html_attrs => {:class=>"input"}
