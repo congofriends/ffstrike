@@ -1,3 +1,7 @@
+= content_for :head do
+  %meta{property: "og:title", content: @movement.name}
+  %meta{property: "og:url", content: request.original_url}
+  %meta{property: "og:image", content: @movement.image}
 = content_for :title, @movement.name
 .container
   .row
