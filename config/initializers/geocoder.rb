@@ -2,13 +2,13 @@
 Geocoder.configure(
 
   # geocoding service (see below for supported options):
-  # :lookup => :yandex,
+  :lookup => :bing,
 
   # IP address geocoding service (see below for supported options):
   # :ip_lookup => :maxmind,
 
   # to use an API key:
-  # :api_key => "...",
+  :api_key => "AgjtAypPbHNWEurRa4spBrHH_A9Eda8fTCBh514kyh5epmmsfCHdnDgEqrtf0xmH",
 
   # geocoding service request timeout, in seconds (default 3):
   # :timeout => 5,
