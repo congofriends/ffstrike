@@ -40,8 +40,10 @@ class MailController < ApplicationController
     else
 
       #todo: move to queue
+      event_hosts = []
       action.events.each do |event|
-        UserMailer.custom_message(message, event.host.email)
+        UserMailer.custom_message(message, event.host.email) unless event_hosts.include? event.host.email
+        event_hosts << event.host.email
       end
 
       flash[:notice] = t('mail.sent')
