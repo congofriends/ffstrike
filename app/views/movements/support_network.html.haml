@@ -1,7 +1,7 @@
 = content_for :title, "Support Network"
 .container
   .row
-    =image_tag @movement.image, :class => "movement_avatar"
+    =link_to (image_tag @movement.image, :class => 'movement_avatar'), root_path
   .row.event-list
     .col-sm-6
       %h2 Our Support Network has #{@support_network.size} groups and is growing!

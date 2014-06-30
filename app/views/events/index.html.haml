@@ -1,6 +1,6 @@
 .container
   .row
-    = image_tag image_url('congo_banner.jpg'), class: "movement_avatar"
+    =link_to (image_tag @movement.image, :class => 'movement_avatar'), root_path
 
   .row
     .col-sm-8
