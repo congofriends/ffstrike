@@ -21,6 +21,4 @@
 
   %hr
   .event-list.events
-
-
-
+    = render partial: 'events/event', collection: @movement.events, as: :event

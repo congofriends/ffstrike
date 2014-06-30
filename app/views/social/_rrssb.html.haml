@@ -1,3 +1,32 @@
+:javascript
+  function getElementsByClassName(classname,tag) {
+   if(!tag) tag = "*";
+   var anchs =  document.getElementsByTagName(tag);
+   var total_anchs = anchs.length;
+   var regexp = new RegExp('\\b' + classname + '\\b');
+   var class_items = new Array()
+   
+   for(var i=0;i<total_anchs;i++) { //Go thru all the links seaching for the class name
+    var this_item = anchs[i];
+    if(regexp.test(this_item.className)) {
+     class_items.push(this_item);
+    }
+   }
+   return class_items;
+  }
+  function openPopup() {
+   var url = this.href;
+   window.open(url, "popup_id", "scrollbars,resizable,width=700,height=300");
+   return false;
+  }
+  function init() {
+   var popups = getElementsByClassName("popup");
+   for(var i=0;i<popups.length;i++) {
+    popups[i].onclick=openPopup;
+   }
+  }
+  window.onload=init;
+
 / Buttons start here. Copy this ul to your document.
 %ul.rrssb-buttons.clearfix
   %li.email
@@ -12,7 +41,7 @@
     /
       Replace with your URL. For best results, make sure you page has the proper FB Open Graph tags in header:
       https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/
-    %a.popup{href: "https://www.facebook.com/sharer/sharer.php?u=http://kurtnoble.com/labs/rrssb/index.html"}
+    %a.popup{href: "https://www.facebook.com/sharer/sharer.php?u=#{request.original_url}"}
       %span.icon
         %svg#Layer_1{"enable-background" => "new 0 0 28 28", height: "28px", version: "1.1", viewbox: "0 0 28 28", width: "28px", x: "0px", "xml:space" => "preserve", xmlns: "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", y: "0px"}
           %path{d: "M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434\r\n                                        c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726\r\n                                        c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"}
