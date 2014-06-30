@@ -10,7 +10,7 @@
         %h3.text-center= @movement.name
         .tagline.text-center= @movement.tagline
         %br
-        - if @movement.about_creator
+        - unless !@movement.about_creator || @movement.about_creator.empty?
           %h4 About the Creators
           = @movement.about_creator
       .row
