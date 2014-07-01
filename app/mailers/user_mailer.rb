@@ -12,7 +12,7 @@ class UserMailer < ActionMailer::Base
     @event = Event.find event_id
     @task = Task.find task_id
     @attendee = User.find attendee_id
-    mail(to: attendee.email, subject: "Thanks for Volunteering.").deliver
+    mail(to: @attendee.email, subject: "Thanks for Volunteering.").deliver
   end
 
   def custom_message(message, attendee_email)
@@ -30,11 +30,11 @@ class UserMailer < ActionMailer::Base
   end
 
 # not being used?
-  def notify_host_of_event_size(event_id)
-    @event = Event.find event_id
-    @event_size = @event.number_of_attendees.to_s
-    @host = @event.host
+  # def notify_host_of_event_size(event_id)
+  #   @event = Event.find event_id
+  #   @event_size = @event.number_of_attendees.to_s
+  #   @host = @event.host
 
-    mail(to: @host.email, from: "MovementApp@Events.com")
-  end
+  #   mail(to: @host.email, from: "MovementApp@Events.com")
+  # end
 end
