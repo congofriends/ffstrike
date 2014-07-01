@@ -103,6 +103,10 @@ end
 #Rediculously Responsive Social Sharing Buttons
 gem 'rails-assets-RRSSB'
 
+# Memcaching
+gem 'dalli'
+gem 'memcachier'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

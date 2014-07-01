@@ -95,6 +95,7 @@ GEM
       cucumber (>= 1.2.0)
       nokogiri (>= 1.5.0)
       rails (>= 3.0.0)
+    dalli (2.7.2)
     database_cleaner (1.2.0)
     debug_inspector (0.0.2)
     debugger (1.6.6)
@@ -179,6 +180,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    memcachier (0.0.2)
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.5.3)
@@ -352,6 +354,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.0.0)
   cucumber-rails
+  dalli
   database_cleaner
   devise
   devise_invitable
@@ -370,6 +373,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   jquery-ui-rails
+  memcachier
   omniauth
   omniauth-facebook
   paperclip!
