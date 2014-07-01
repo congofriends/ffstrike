@@ -21,7 +21,7 @@ class EventsController < ApplicationController
       else
         @events = Event.where(approved: true)
         load_map_vars
-        flash[:notice] = "Sorry your search returned no results." if params[:zip].present?
+        flash[:notice] = t('event.not_found') if params[:zip].present?
         format.html { render action: "index"}
         format.js{ render "errors"}
       end

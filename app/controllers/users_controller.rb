@@ -57,9 +57,9 @@ class UsersController < Devise::RegistrationsController
   def message
     @message ||=
       if current_user
-        "Thanks for attending!"
+        t('attendee.thanks_for_signed_in_user')
       else
-        "Thanks for attending! If you need to login again, we've sent you an email with a temporary password"
+        t('attendee.thanks_for_nonsigned_in_user')
       end
   end
 

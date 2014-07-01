@@ -34,6 +34,7 @@ en:
     failure: "Your account was created but there was a problem with your event."
     share: "Share this event!"
     already_signed_in: "You are already signed in."
+    not_found: "Sorry your search returned no results." 
   movement:
     created: "Congratulations, you just created a movement!"
     updated: "Movement has been updated"
@@ -46,10 +47,14 @@ en:
     created: "Thanks for signing up!"
     updated: "Attendee has been updated"
     email_is_required: "Email is required"
+    thanks_for_signed_in_user: "Thanks for attending!"
+    thanks_for_nonsigned_in_user: "Thanks for attending! If you need to login again, we've sent you an email with a temporary password"
   mail:
     sent: "Sending Emails!"
     no_attendees: "You have no attendees to email."
     no_hosts: "You have no hosts to email."
+  contact: 
+    message_sent: "Message was successfully sent."  
   task:
     created: "New task is created"
     updated: "Task has been updated"

@@ -12,7 +12,7 @@ class ContactController < ApplicationController
 
     if @message.valid?
       ContactMailer.new_message(@message).deliver
-      redirect_to(root_path, :notice => "Message was successfully sent.")
+      redirect_to(root_path, :notice => t('contact.message_sent') )
     end
   end
 
@@ -27,7 +27,7 @@ class ContactController < ApplicationController
 
     if @message.valid?
       ContactMailer.new_mvmt_message(@message).deliver
-      redirect_to(root_path, :notice => "Message was successfully sent.")
+      redirect_to(root_path, :notice => t('contact.message_sent'))
     end
   end
 
