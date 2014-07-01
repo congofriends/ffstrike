@@ -1,16 +1,17 @@
 class UserMailer < ActionMailer::Base
+  # self.queue = MailerQueue.new
   default from: "coordinator@events.com"
 
-  def delete_event_message(event, attendee_email)
-    @event = event
+  def delete_event_message(event_id, attendee_email)
+    @event = Event.find event_id
 
     mail(to: attendee_email, subject: "Your event has been canceled.").deliver
   end
 
-  def task_signup_message(event, task, attendee)
-    @event = event
-    @task = task
-    @attendee = attendee
+  def task_signup_message(event_id, task_id, attendee_id)
+    @event = Event.find event_id
+    @task = Task.find task_id
+    @attendee = User.find attendee_id
     mail(to: attendee.email, subject: "Thanks for Volunteering.").deliver
   end
 
@@ -20,19 +21,19 @@ class UserMailer < ActionMailer::Base
     mail(to: attendee_email, subject: "Message from your Movement Organizer").deliver
   end
 
-  def welcome(user, password, event)
+  def welcome(user_id, password, event_id)
     @password = password
-    @recipient = user
-    @event = event
+    @recipient = User.find user_id
+    @event = Event.find event_id
 
     mail(to: @recipient.email, subject: "Thanks for participating in the event").deliver
   end
 
-
-  def notify_host_of_event_size(event)
-    @event = event.name
-    @event_size = event.number_of_attendees.to_s
-    @host = event.host
+# not being used?
+  def notify_host_of_event_size(event_id)
+    @event = Event.find event_id
+    @event_size = @event.number_of_attendees.to_s
+    @host = @event.host
 
     mail(to: @host.email, from: "MovementApp@Events.com")
   end

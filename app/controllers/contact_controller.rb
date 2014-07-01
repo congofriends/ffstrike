@@ -2,6 +2,7 @@ class ContactController < ApplicationController
   # before_filter :load_message
 
   def new_event_msg
+    @message = Message.new
     @event = Event.find_by_param(params[:id])
   end
 
@@ -16,6 +17,7 @@ class ContactController < ApplicationController
   end
 
   def new_movement_msg
+    @message = Message.new
     @movement = Movement.find_by_param(params[:id])
   end
 

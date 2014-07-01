@@ -122,7 +122,7 @@ class EventsController < ApplicationController
 
     #todo: move to queue!
     @event.attendees.each do |attendee|
-      UserMailer.delete_event_message(@event, attendee.email)
+      UserMailer.delete_event_message(@event.id, attendee.email)
     end
 
     @event.destroy

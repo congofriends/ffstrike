@@ -30,7 +30,7 @@ class UsersController < Devise::RegistrationsController
       flash[:success] = message
 
       #todo: move to queue
-      UserMailer.welcome(user, generated_password, @event).deliver if generated_password
+      UserMailer.welcome(user.id, generated_password, @event.id).deliver if generated_password
 
       redirect_to event_path(@event)
     else

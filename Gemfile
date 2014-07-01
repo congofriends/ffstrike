@@ -107,6 +107,8 @@ gem 'rails-assets-RRSSB'
 gem 'dalli'
 gem 'memcachier'
 
+gem 'sidekiq'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -1,5 +1,5 @@
 $("#approve<%= @event.id %>").bind('ajax:success', function(){
-  $(this).text("<%= @event.approved? ? 'Disapprove' : 'Approve' %>");  
+  $(this).text("<%= @event.approved? ? 'Unapprove' : 'Approve' %>");
   $("#approval_status<%= @event.id %>").text("<%= @event.approved? %>");
   $("#event<%= @event.id %>").toggleClass("approval-background", <%= !@event.approved? %>);
 });
