@@ -38,3 +38,4 @@ class UserMailer < ActionMailer::Base
   #   mail(to: @host.email, from: "MovementApp@Events.com")
   # end
 end
+

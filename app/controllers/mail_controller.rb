@@ -26,7 +26,7 @@ class MailController < ApplicationController
 
       #todo: move to queue
       action.attendees.each do |attendee|
-        UserMailer.custom_message(message, attendee.email)
+        CustomMailWorker.perform_async(message, attendee.email)
       end
 
       flash[:notice] = t('mail.sent')
@@ -42,7 +42,7 @@ class MailController < ApplicationController
       #todo: move to queue
       event_hosts = []
       action.events.each do |event|
-        UserMailer.custom_message(message, event.host.email) unless event_hosts.include? event.host.email
+        CustomMailWorker.perform_async(message, event.host.email) unless event_hosts.include? event.host.email
         event_hosts << event.host.email
       end
 

@@ -1,6 +1,7 @@
 Ffstrike::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => { :bucket => ENV['AWS_BUCKET'],
@@ -78,6 +79,7 @@ Ffstrike::Application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = "http://assets.example.com"
 
+  # SIDEKIQ CONFIG
   # config.queue = ActiveSupport::Queue.new
   # config.action_mailer.queue = Sidekiq::Client::Queue.new
 

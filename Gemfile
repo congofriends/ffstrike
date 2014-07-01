@@ -108,6 +108,8 @@ gem 'dalli'
 gem 'memcachier'
 
 gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

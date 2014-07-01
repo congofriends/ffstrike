@@ -40,6 +40,11 @@ Ffstrike::Application.configure do
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
+
+  # SIDEKIQ CONFIG
+  # config.queue = ActiveSupport::Queue.new
+  # config.action_mailer.queue = Sidekiq::Client::Queue.new
+
   # Raise an error on page load if there are pending migrations
   config.active_record.migration_error = :page_load
 

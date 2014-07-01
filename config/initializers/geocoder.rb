@@ -8,7 +8,7 @@ Geocoder.configure(
   # :ip_lookup => :maxmind,
 
   # to use an API key:
-  :api_key => "AgjtAypPbHNWEurRa4spBrHH_A9Eda8fTCBh514kyh5epmmsfCHdnDgEqrtf0xmH",
+  :api_key => ENV['BING_API_KEY']
 
   # geocoding service request timeout, in seconds (default 3):
   # :timeout => 5,

@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Ffstrike::Application.routes.draw do
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "users", :invitations => 'users/invitations'  }
@@ -69,4 +71,6 @@ Ffstrike::Application.routes.draw do
 
   get 'contact/:id/mvmt' => 'contact#new_movement_msg', :as => 'new_mvmt_contact'
   post 'contact/mvmt' => 'contact#create_movement_msg', :as => 'mvmt_contact'
+
+  mount Sidekiq::Web, at: '/sidekiq'
 end
