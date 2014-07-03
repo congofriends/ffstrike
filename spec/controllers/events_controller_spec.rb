@@ -190,7 +190,6 @@ describe EventsController do
   #   end
   # end
 
-
   describe "PUT #update" do
 
     context "when current user is coordinator" do
