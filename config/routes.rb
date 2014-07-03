@@ -27,7 +27,6 @@ Ffstrike::Application.routes.draw do
   resources :movements do
     get 'publish' => 'movements#publish', on: :member, as: 'publish'
     get 'profile' => 'movements#my_profile', on: :collection, as: 'user'
-    get 'dashboard' => 'movements#dashboard', on: :member, as: 'dashboard'
     get 'search' => 'movements#search', on: :member, as: 'search'
     get 'event_type' => 'movements#event_type', on: :member, as: 'event_type'
     get 'support_network' => 'movements#support_network', on: :member, as: 'support_network'
@@ -43,7 +42,6 @@ Ffstrike::Application.routes.draw do
 
   #events
   resources :events do
-    get 'dashboard' => 'events#dashboard', on: :member,  as: 'dashboard'
     get 'download' => 'events#download', on: :member,  as: 'download'
     resources :tasks do
       get 'assign' => 'assignments#assign', on: :member, as: 'assign'

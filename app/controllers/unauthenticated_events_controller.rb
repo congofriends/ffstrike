@@ -1,8 +1,8 @@
 class UnauthenticatedEventsController < ApplicationController
   before_filter :load_movement
-  before_filter :redirect_unauthorized_user, only: [:new]
 
   def new
+    redirect_unauthorized_user
     @event = Event.new
   end
 

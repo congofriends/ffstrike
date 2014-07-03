@@ -24,7 +24,7 @@ class MovementsController < ApplicationController
   end
 
   def my_groups
-    redirect_to root_path and return unless current_user
+    redirect_to root_path and return unless current_user && !current_user.movements.empty?
     @groups = current_user.movements_and_groups
     @group = Movement.find(params[:name][:id]) if params[:name]
 
@@ -35,14 +35,6 @@ class MovementsController < ApplicationController
 
     @movement = @groups.first
     @events = @movement.events
-  end
-
-  def dashboard
-    check_user_owns_movement
-    session[:movement] = @movement.id
-    @event = Event.new
-    @events = @movement.events
-    @event_types = EventType.all.map {|e| [e.id, e.name]}
   end
 
   def new

@@ -34,7 +34,7 @@ en:
     failure: "Your account was created but there was a problem with your event."
     share: "Share this event!"
     already_signed_in: "You are already signed in."
-    not_found: "Sorry your search returned no results." 
+    not_found: "Sorry your search returned no results."
   movement:
     created: "Congratulations, you just created a movement!"
     updated: "Movement has been updated"
@@ -53,8 +53,8 @@ en:
     sent: "Sending Emails!"
     no_attendees: "You have no attendees to email."
     no_hosts: "You have no hosts to email."
-  contact: 
-    message_sent: "Message was successfully sent."  
+  contact:
+    message_sent: "Message was successfully sent."
   task:
     created: "New task is created"
     updated: "Task has been updated"
@@ -62,6 +62,7 @@ en:
   assignment:
     already_taken: "You've already taken this task!"
     signed_up: "Thanks for signing up!"
+    signed_up_email: "Thanks for signing up, You will receive a confirmation email shortly."
     for_attendees_only: "Tasks are for attendees only"
   event_type:
     rally:

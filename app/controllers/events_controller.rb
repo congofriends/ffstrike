@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
-  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit, :dashboard]
-  before_filter :load_movement, :only => [:new, :create, :edit, :update, :dashboard, :index]
-  before_filter :redirect_unauthorized_user, :only => [:dashboard, :edit]
-  before_filter :load_event_types, :only => [:edit, :dashboard]
+  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit]
+  before_filter :load_movement, :only => [:new, :create, :edit, :update, :index]
+  before_filter :redirect_unauthorized_user, :only => [:edit]
+  before_filter :load_event_types, :only => [:edit]
 
   include ZipHelper
 
@@ -87,7 +87,7 @@ class EventsController < ApplicationController
     else
       flash[:notice] = @event.errors.full_messages.flatten.join(' ')
       if @movement.users.include?(current_user)
-       redirect_to dashboard_movement_path(@movement, anchor: "events") and return
+       redirect_to my_groups_path and return
       end
       redirect_to movement_path(@movement) and return
     end
@@ -127,7 +127,7 @@ class EventsController < ApplicationController
 
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to dashboard_movement_path(@event.movement, anchor: "events"), notice: t('event.deleted') }
+      format.html { redirect_to my_groups_path, notice: t('event.deleted') }
       format.js
     end
   end
@@ -137,8 +137,6 @@ class EventsController < ApplicationController
   def search_by_keyword; end
 
   def edit; end
-
-  def dashboard; end
 
   private
 

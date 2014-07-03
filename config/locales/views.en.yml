@@ -1,0 +1,9 @@
+en:
+  dictionary:
+    email: &email Email
+    name: &name Name
+    password: &password Password
+    confirmation: &confirmation Confirmation
+  views:
+    events:
+

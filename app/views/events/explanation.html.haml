@@ -4,7 +4,8 @@
       %h2 Congrats - You've successfully created a #{@event.type}
     .col4
       Know what you're doing?
-      = link_to("Go right to your event dashboard.", dashboard_event_path(@event, anchor: "event"))
+      = link_to("Go right to your event dashboard.", my_events_path(:name => {:id => @event.id}))
+      / fix this
   %br
 
   .task-list

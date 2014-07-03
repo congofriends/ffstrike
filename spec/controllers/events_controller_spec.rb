@@ -129,7 +129,7 @@ describe EventsController do
       it "re-renders the new method" do
         @controller.stub(:current_user).and_return(coordinator)
         post :create, movement_id: movement, event: FactoryGirl.attributes_for(:event_without_address).merge(coordinator_id: coordinator.id)
-        expect(response).to redirect_to dashboard_movement_path(movement, anchor: "events")
+        expect(response).to redirect_to my_groups_path
       end
 
       it "notifies user that event had errors" do
@@ -198,7 +198,7 @@ describe EventsController do
 
       before do
         @controller.stub(:current_user).and_return(coordinator)
-        @controller.request.stub referer: dashboard_movement_path(movement)
+        @controller.request.stub referer: my_events_path(:name => {:id => event.id})
         put :update, movement_id: movement, id: event, event: {notes: new_note_text}
       end
 
@@ -210,8 +210,8 @@ describe EventsController do
         expect(event.reload.notes).to eql(new_note_text)
       end
 
-      it "redirects to movement page anchored in event" do
-        expect(response).to redirect_to dashboard_movement_path(event.movement)
+      it "redirects to my events page anchored in event" do
+        expect(response).to redirect_to my_events_path(:name => {:id => event.id})
       end
 
       it "notifies user that event was updated" do
