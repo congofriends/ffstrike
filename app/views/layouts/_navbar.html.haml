@@ -1,0 +1,32 @@
+.container
+  %nav.navbar.navbar-default.navbar-static-top{role: "navigation"}
+    .container-fluid
+      .navbar-header
+        %button.navbar-toggle{"data-target" => "#collapse-1", "data-toggle" => "collapse", type: "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+      #collapse-1.navbar-collapse.collapse.navbar-responsive-collapse
+        %ul.nav.navbar-nav
+          %li
+            = render 'layouts/breadcrumb'
+        %ul.nav.navbar-nav.navbar-right
+          - if current_user
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                = user_name_or_email.titleize
+                %b.caret
+              %ul.dropdown-menu
+                %li= link_to "My Profile", user_movements_path
+                - unless current_user.movements.empty?
+                  %li= link_to "Manage My Groups", my_groups_path
+                - unless current_user.events_owned.empty?
+                  %li= link_to "Manage My Events", my_events_path
+                %li.divider
+                %li= link_to "Create Group", new_movement_path
+                %li= link_to "Create Event", new_movement_event_path(Movement.first) if Movement.first
+                %li.divider
+                %li= link_to 'Sign Out', destroy_user_session_path, :method => :delete
+          - if current_user.nil?
+            %li= link_to "Sign in", new_session_path(:user), id: "sign-in"

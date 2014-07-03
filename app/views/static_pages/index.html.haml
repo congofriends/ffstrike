@@ -1,0 +1,21 @@
+%section#slide-1
+  .bcg
+    .content
+      %h1 People around the world are organizing.
+%section#slide-2
+  .bcg
+    .content
+      %h1 They've created events near you to change the world.  Find one.
+      %br/
+      %br/
+      = form_tag "/events", method: "get", class: 'form-inline', id: 'zip-form' do
+        .form-group
+          = search_field_tag 'zip', value = nil, options = {placeholder: "ZIP", class: 'form-control', maxlength: 5, id: 'zip'}
+        .form-group
+          = button_tag name="Search", class: 'btn btn-default', id: 'search_zip'
+%section#slide-3
+  .bcg
+    .content
+      %h1
+        If you're passionate, you can change the world too.
+        \#{link_to "Create your own movement.", new_movement_path, id: 'create-movement-link'}

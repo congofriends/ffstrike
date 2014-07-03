@@ -1,8 +1,0 @@
-  <div class="breadcrumb-nav">
-    <ol class="breadcrumb">
-    <% movement = Movement.where(name: "Friends of the Congo").first %>
-    <% unless movement.nil? %>
-      <li><%= link_to "Home", movement_path(movement) %></li>
-    <% end %>
-    </ol>
-  </div>

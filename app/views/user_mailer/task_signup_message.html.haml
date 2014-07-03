@@ -1,0 +1,12 @@
+Hello, #{@attendee.name.capitalize}
+
+Welcome to Shift Engage.
+
+Thank you for volunteering for #{@event.name}
+%br/
+%br/
+You have signed up for #{@task.description}
+
+You can find out more about #{@event.name} by clicking
+= succeed "." do
+  %a{href: event_url(@event)} here

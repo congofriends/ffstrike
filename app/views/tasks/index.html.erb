@@ -1,6 +1,0 @@
-<% @movement.events.each do |event| %>
-  <div class="well">
-    <h2> Event: <%= event.name %> (<%= event.type %>) </h2>
-    <%= render "tasks/form", event: event %> 
-  </div>
-<% end %>

@@ -1,0 +1,10 @@
+!!!
+%html{lang: "en"}
+  %body
+    = render "layouts/head"
+    = render "layouts/navbar"
+    #flash_messages
+      = render "layouts/flash"
+      %end
+        = yield
+        = render "layouts/footer"

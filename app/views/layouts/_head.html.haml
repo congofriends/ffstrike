@@ -1,0 +1,13 @@
+%head
+  %meta{charset: "utf-8"}/
+  %meta{content: "IE=Edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+  %meta{content: "public", "http-equiv" => "Cache-control"}/
+  %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+  %title= content_for?(:title) ? yield(:title) : "Friends of the Congo"
+  = include_gon(:init => true)
+  = csrf_meta_tags
+  = stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true
+  = javascript_include_tag "application", "data-turbolinks-track" => true
+  = favicon_link_tag '/favicon.ico'
+  = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg&sensor=false"
+  = yield :head

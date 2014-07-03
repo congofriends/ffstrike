@@ -1,0 +1,52 @@
+#movement.tab-content.tab-pane
+  .row
+    .col-md-8
+      .well
+        %legend Details
+        .form-horizontal
+          = form_for @movement do |form|
+            %fieldset
+              .form-group
+                = form.label :name, class: 'col-md-3 control-label'
+                .col-md-9
+                  = form.text_field :name, class: 'form-control'
+              .form-group
+                = form.label :tagline, class: 'col-md-3 control-label'
+                .col-md-9
+                  = form.text_area :tagline, class: 'form-control'
+              .form-group
+                = form.label :call_to_action, class: 'col-md-3 control-label'
+                .col-md-9
+                  = form.text_area :call_to_action, class: 'form-control'
+              .form-group
+                = form.label :extended_description, class: 'col-md-3 control-label'
+                .col-md-9
+                  = form.text_area :extended_description, class: 'form-control'
+              .form-group
+                = form.label :location, class: 'col-md-3 control-label'
+                .col-md-9
+                  = form.text_area :location, class: 'form-control', placeholder: "e.g. Global, International, National.."
+              .form-group
+                = form.label :about_creator, class: 'col-md-3 control-label'
+                .col-md-9
+                  = form.text_area :about_creator, class: 'form-control'
+              .form-group
+                = form.label :image, class: 'col-md-3 control-label'
+                .col-md-9
+                  = image_tag @movement.image.url, { class: 'front-page img-responsive' }
+                  = form.file_field :image
+              .form-group
+                = form.label :video, class: 'col-md-3 control-label'
+                .col-md-9
+                  = youtube_embed_url_for_(@movement.video)
+                  = form.text_field :video, class: 'form-control', placeholder: 'Paste a youtube embed link here!'
+              .col-md-9.col-md-offset-3
+                = form.submit "Update Movement", class: 'btn btn-primary'
+    .col-md-4
+      %legend Coordinator Controls
+      = link_to "PUBLISH", publish_movement_path(@movement), class: 'btn ctrl-btn' unless @movement.published?
+      = link_to "PROFILE PAGE", movement_path(@movement), class: "btn ctrl-btn"
+      = link_to "CREATE EVENT", event_type_movement_path(@movement), class: "btn ctrl-btn"
+      = link_to_modal "INVITE COORDINATORS", new_user_invitation_path, { class: 'btn ctrl-btn' }
+      = link_to "EXPORT ATTENDEE LIST", export_csv_path(@movement), class: 'btn ctrl-btn'
+      = render "movements/email"

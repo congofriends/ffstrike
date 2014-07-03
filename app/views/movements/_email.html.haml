@@ -1,0 +1,13 @@
+#accordion.panel-group
+  %a.btn.ctrl-btn.email-btn{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapseOne"}
+    EMAIL YOUR ATTENDEES
+  #collapseOne.panel-collapse.collapse
+    .panel-body
+      .row
+        = form_tag(mail_attendees_path(movement_id: @movement), method: "post") do
+          .form-group
+            .col-md-9
+              = text_area_tag "message", nil, placeholder: 'Enter a message to send to all attendees', class: 'form-control'
+          .form-group
+            .col-md-3
+              = submit_tag "SEND EMAIL", class: 'btn', id: 'Send_Email'

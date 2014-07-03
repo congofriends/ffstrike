@@ -1,0 +1,5 @@
+- @movement.events.each do |event|
+  .well
+    %h2
+      Event: #{event.name} (#{event.type})
+    = render "tasks/form", event: event

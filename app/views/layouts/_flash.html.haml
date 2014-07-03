@@ -1,0 +1,4 @@
+.container
+  - flash.each do |key, value|
+    .row
+      %div{class: "flash alert alert-success alert-#{key}"}= value
