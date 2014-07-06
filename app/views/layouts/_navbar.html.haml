@@ -30,3 +30,13 @@
                 %li= link_to 'Sign Out', destroy_user_session_path, :method => :delete
           - if current_user.nil?
             %li= link_to "Sign in", new_session_path(:user), id: "sign-in"
+          %li.dropdown
+            -current_locale = params[:locale].upcase || 'EN'
+              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                = current_locale
+                %b.caret
+              %ul.dropdown-menu
+                %li= link_to('EN', :locale => 'en')
+                %li= link_to('FR', :locale => 'fr')
+                %li= link_to('ES', :locale => 'es')
+

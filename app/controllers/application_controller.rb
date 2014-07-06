@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
   after_filter :store_location
   after_filter :discard_flash_if_xhr
+  before_filter :set_locale
 
   def store_location
     # store last url - this is needed for post-login redirect to whatever the user last visited.
@@ -22,13 +23,19 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    session[:previous_url] || root_path
+   return root_path 
+  #find where we set up session[:previous_url] because on sign on page it points to sign in
+    # session[:previous_url] || root_path
   end
 
   def after_sign_out_path_for(resource)
     return root_path
     # if session[:previous_url] == user_movements_path || session[:previous_url].nil?
     # session[:previous_url]
+  end
+
+  def default_url_options(options={})
+    {locale: I18n.locale}
   end
 
   protected
@@ -41,6 +48,10 @@ class ApplicationController < ActionController::Base
 
   def discard_flash_if_xhr
     flash.discard if request.xhr?
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
   end
 
 end
