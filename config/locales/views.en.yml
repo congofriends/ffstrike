@@ -6,4 +6,80 @@ en:
     confirmation: &confirmation Confirmation
   views:
     events:
+      host_btn: "HOST AN EVENT"
+      unattend_btn: "UNATTEND EVENT"
+      volunteer_status: "VOLUTEER STATUS"
+      show_btn: "SHOW"
+      host_link: "Click here to host your own."
+      search_placeholder: "Search Events by City, State or Zip Code"
+      no_events_msg: "There are no events registered near you."
+      attend_btn: "ATTEND"
+      contact_host_btn: "CONTACT HOST"
+      flyer_msg: "Use this flyer to promote this event!"
+      flyer_dl: "(click on the flyer to download)"
+      when: "When:"
+      where: "Where:"
+      location: "Location Details:"
+      description: "Description:"
+      organized_by: "Organized By:"
+      email_msg: "Email Event Attendees"
+      message: "message"
+      message_placeholder: 'Enter a message to send to event attendees'
+      email_btn: "Send Email"
+      tasks_signed_up: "Tasks Signed Up For:"
+      name: "Name"
+      email: "Email"
+      phone: "Phone Number"
+      point: "Point person (Click to Assign)"
+      notes: "Notes (Click to Edit)"
+      unapprove: "Unapprove"
+      approve: "Approve"
+      dashboard:
+        header: "Manage My Events"
+        instructions: "Select an Event and click SHOW"
+        tab_edit: "Event Details"
+        tab_tasks: "Tasks"
+        tab_attendees: "Attendees"
+      explanation:
+        confirm_msg: "Congrats - You've successfully created a %{event_type}"
+        competency_question: "Know what you're doing?"
+        event_dash_prompt: "Go right to your event dashboard."
+        host_task_msg: "Here are some things you might want to do to make your event a success:"
+      new:
+        legend1:  "Event Basic Information (1/2)"
+        legend2: "Event details (2/2)"
+        address: "Event Address"
+        location_placeholder: "meet at the corner of Belmont & Sheridan"
+        next: "Next"
+        previous: "Previous"
+        create_btn: "CREATE EVENT"
+        msg_to_attendees: "Write a brief message to event attendees:"
+        event_type: 'Event Type:'
+        event_chapter_msg: "If this event is associated with a chapter, please choose it here:"
+        forum_msg: "Include an attendee discussion forum on this event:"
+      edit:
+        edit_header: "EDIT EVENT"
+        start_date: "Start date & time:"
+        end_date: "End date & time:"
+        name: "Name:"
+        address1: "Address 1:"
+        address2: "Address 2:"
+        city: "City:"
+        state: "State:"
+        zip: "Zip:"
+        notes: "Notes:"
+        type: "Type:"
+        forum: "Forum (Disqus):"
+        flyer: "Flyer:"
+        avatar: "Avatar:"
+        update: "Update"
+        cancel: "Cancel Event"
+        cancel_confirm_msg: "Are you sure you want to delete this event?"
+      show:
+        task_msg: "Here are some things you can do to help out:"
+    tasks:
+
+
+
+
 

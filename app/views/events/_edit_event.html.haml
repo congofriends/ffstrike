@@ -3,56 +3,56 @@
   %div{class: " edit_form event-#{event.id}"}
     = form_for event, html: { id: 'edit-event-form' } do |f|
       .form-group
-        = f.label "Start date & time:"
+        = f.label t("views.events.edit.start_date")
         = f.text_field :start_time, class: 'form-control datetimepicker', value: event.start_time_formatted
       .form-group
-        = f.label "End date & time:"
+        = f.label t("views.events.edit.end_date")
         = f.text_field :end_time, class: 'form-control datetimepicker', value: event.end_time_formatted
       .form-group
-        = f.label "Name:"
+        = f.label t("views.events.edit.name")
         = f.text_field :name, class: 'form-control'
       .form-group
-        = f.label "Address 1:"
+        = f.label t("views.events.edit.address1")
         = f.text_field :address, class: 'form-control'
       .form-group
-        = f.label "Address 2:"
+        = f.label t("views.events.edit.address2")
         = f.text_field :address2, class: 'form-control'
       .form-group
-        = f.label "Location Details:"
+        = f.label t("views.events.location")
         = f.text_field :location_details, class: 'form-control'
       .form-group
-        = f.label "City:"
+        = f.label t("views.events.edit.city")
         = f.text_field :city, class: 'form-control'
       .form-group
-        = f.label "State:"
+        = f.label t("views.events.edit.state")
         = f.text_field :state, class: 'form-control'
       .form-group
-        = f.label "Zip:"
+        = f.label t("views.events.edit.zip")
         = f.text_field :zip, class: 'form-control'
       .form-group
-        = f.label "Notes:"
+        = f.label t("views.events.edit.notes")
         = f.text_field :notes, class: 'form-control'
       .form-group
-        = f.label "Description:"
+        = f.label t("views.events.description")
         = f.text_field :description, class: 'form-control'
       .form-group
-        = f.label "Type:"
+        = f.label t("views.events.edit.type")
         = f.select :event_type, EventType.all.map(&:name), class: 'form-control', selected: event.type
       .form-group
-        = f.label "Forum (Disqus):"
+        = f.label t("views.events.edit.forum")
         = f.check_box :forum_option, class: 'float_right'
       .form-group
-        = f.label "Flyer:"
+        = f.label t("views.events.edit.flyer")
         = image_tag event.flyer, class: 'front-page img-responsive'
         = f.file_field :flyer
       .form-group
-        = f.label "Avatar:"
+        = f.label t("views.events.edit.avatar")
         = image_tag event.image, class: 'front-page img-responsive'
         %br/
         = f.file_field :image
-        = f.submit "Update", class: 'btn btn-primary float_right'
+        = f.submit t("views.events.edit.update"), class: 'btn btn-primary float_right'
         %br/
         %br
         %br
-        = link_to "Cancel Event", event, method: :delete, data: { confirm: "Are you sure you want to delete this event?"}, remote: true, class:'btn btn-primary delete-btn '
-      
+        = link_to t("views.events.edit.cancel"), event, method: :delete, data: { confirm: t("views.events.edit.cancel_confirm_msg")}, remote: true, class:'btn btn-primary delete-btn '
+

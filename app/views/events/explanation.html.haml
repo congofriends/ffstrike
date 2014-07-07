@@ -1,15 +1,14 @@
 .container
   .row
     .col8
-      %h2 Congrats - You've successfully created a #{@event.type}
+      %h2
+        = t('views.events.explanation.confirm_msg', event_type: @event.type)
     .col4
-      Know what you're doing?
-      = link_to("Go right to your event dashboard.", my_events_path(:name => {:id => @event.id}))
-      / fix this
+      = t('views.events.explanation.competency_question')
+      = link_to(t('views.events.explanation.event_dash_prompt'), my_events_path(:name => {:id => @event.id}))
   %br
-
   .task-list
-    Here are some things you might want to do to make your event a success:
+    = t('views.events.explanation.host_task_msg')
     - TaskPopulator.host_tasks(@event).each do |task|
       %ul
         %li= task

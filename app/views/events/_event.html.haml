@@ -8,39 +8,39 @@
     .col-sm-4
       = link_to image_tag(event.image, class: "event_avatar"), event_path(event)
     .col-sm-4.event-data
-      %strong When:
+      %strong=  t('views.events.when')
       =event.formatted_time
       %br
       %br
-      %strong Where:
+      %strong= t('views.events.where')
       =event.location
       = link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"
 
       - if !event.location_details.nil? && current_user
         %br
         %br
-        %strong Location Details:
+        %strong= t('views.events.location')
         = event.location_details
       %br
       %br
       - if event.movement
-        %strong Organized by:
+        %strong= t('views.events.organized_by')
         =link_to event.movement.name, movement_path(event.movement)
       %br
       %br
       - unless event.description.nil?
-        %strong Description:
+        %strong= t('views.events.description')
         = event.description
     .col-xs-4.text-center.event-actions
       -unless event.attended_by? current_user
-        = link_to_modal "ATTEND", new_attendee_user_path({:event => event.id}), {class: "btn btn-attend"}
+        = link_to_modal t('views.events.attend_btn'), new_attendee_user_path({:event => event.id}), {class: "btn btn-attend"}
         %br
         %br
       -unless event.host? current_user
-        =link_to_modal 'CONTACT HOST', new_contact_path(event), {class: "btn"}
+        =link_to_modal t('views.events.contact_host_btn'), new_contact_path(event), {class: "btn"}
     .col-xs-4#flyer_download
-      %strong Use this flyer to promote this event!
-      %div (click on the flyer to download)
+      %strong= t('views.events.flyer_msg')
+      %div= t('views.events.flyer_dl')
       %a{download: event.name + "_flyer", href: event.flyer, title: event.name + "_flyer"}
         %img{alt: event.name + "_flyer", src: asset_path(event.flyer.url), class: "event_flyer"}
 %br
