@@ -35,10 +35,6 @@
                   = label :movement, :video, "Youtube Link", { class: 'col-md-4 control-label' }
                   .col-md-8
                     = text_field :movement, :video, { class: 'form-control' }
-                .form-group
-                  = label :movement, :draft, "Save as draft", class: 'col-md-4 control-label'
-                  .col-md-8
-                    = check_box :movement, :draft
                 = hidden_field :parent_id, value:  params[:parent_id]
                 %button{type: "button", class: "btn btn-success next"} Next
               %fieldset.event_additional_details

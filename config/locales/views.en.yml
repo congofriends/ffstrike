@@ -26,7 +26,7 @@ en:
       message: "message"
       message_placeholder: 'Enter a message to send to event attendees'
       email_btn: "Send Email"
-      tasks_signed_up: "Tasks Signed Up For:"
+      tasks_signed_up: "Help Us Get the Word Out:"
       name: "Name"
       email: "Email"
       phone: "Phone Number"
@@ -96,8 +96,7 @@ en:
         email: "Email:"
         phone: "Phone:"
         password: "Password:"
-        password_confirmation: "Password Confirmation: "
-
+        password_confirmation: "Password Confirmation:"
     tasks:
       delete_confirm: "You sure about deleting task '%{task_description}'?"
       sign_up: "SIGN UP"

@@ -2,9 +2,9 @@
   = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg&sensor=false"
 = content_for :title, @event.name
 
-.container  
+.container
   - if current_user && (current_user.volunteer_for @event)
-    %h2 Here are some things you can do to help out:
+    %h2= t('views.events.show.task_msg')
     = render template: "tasks/show", locals: {event: @event}
   %br
   =render partial: "event", locals: {event: @event}
