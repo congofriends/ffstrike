@@ -77,7 +77,28 @@ en:
         cancel_confirm_msg: "Are you sure you want to delete this event?"
       show:
         task_msg: "Here are some things you can do to help out:"
+      validations:
+        name: "Name is required"
+        start_time: "Start date & time is required"
+        city: "City is required"
+        state: "State is required"
+        address: "Address is required"
+        description: "Description is required"
+        zip_required: 'Zip is required'
+        zip_numeric: "Zip should contain only numbers"
+        zip_length: "Zip should be 5 digits long"
     tasks:
+      delete_confirm: "You sure about deleting task '%{task_description}'?"
+      sign_up: "SIGN UP"
+      signed_up: "SIGNED UP"
+      volunteers: "Volunteers (%{volunteer_count})"
+      table:
+        tasks: "Task (click to Edit)"
+        volunteers: "Volunteers"
+        delete: "Delete"
+        new: "ADD NEW TASK:"
+        new_description: "Add a new task description here..."
+        create_btn: "CREATE NEW TASK"
 
 
 

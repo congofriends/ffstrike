@@ -13,18 +13,17 @@ function initializeEditEventValidations() {
 
     },
     messages: {
-      'event[name]': "Name is required",
-      'event[start_time]': "Start date & time is required",
-      'event[city]': "City is required",
-      'event[state]': "State is required",
-      'event[address]': "Address is required",
-      'event[description]': "Description is required",
+      'event[name]': "<%= t('views.events.validations.name') %>",
+      'event[start_time]': "<%= t('views.events.validations.start_time') %>",
+      'event[city]': "<%= t('views.events.validations.city') %>",
+      'event[state]': "<%= t('views.events.validations.state') %>",
+      'event[address]': "<%= t('views.events.validations.address') %>",
+      'event[description]': "<%= t('views.events.validations.description') %>",
       'event[zip]': {
-      required: 'Zip is required',
-      number: "Zip should contain only numbers",
-      rangelength: "Zip should be 5 digits long"}
+      required: "<%= t('views.events.validations.zip_required') %>",
+      number: "<%= t('views.events.validations.zip_numeric') %>",
+      rangelength: "<%= t('views.events.validations.zip_length') %>"}
     },
-
     errorElement: "div",
     errorClass: "text-danger",
     errorId: "event_error",

@@ -2,16 +2,16 @@
   .well
     %table.table.table-bordered.table-striped.sortable#task-table
       %tr
-        %th Task (click to Edit)
-        %th Volunteers
-        %th Delete
+        %th= t('views.tasks.table.tasks')
+        %th= t('views.tasks.table.volunteers')
+        %th= t('views.tasks.table.delete')
       - event.tasks.uniq.each do |task|
         = render partial: "tasks/task_row", locals: {task: task, event: event}
 
 - if ((event.movement.users.include? current_user) || (event.host? current_user))
   %hr
-  %h3 ADD NEW TASK:
+  %h3= t('views.tasks.table.new')
   = form_for ([event, @task=Task.new]), remote: true, html: {class: "form-group", id: "new_task#{event.id}"} do |f|
     .row
-      .col-xs-8= f.text_area :description, placeholder: "Add a new task description here...", class: "form-control", rows: "3"
-      .col-xs-4= f.submit "CREATE NEW TASK", :class=>"btn"
+      .col-xs-8= f.text_area :description, placeholder: t('views.tasks.table.new_description'), class: "form-control", rows: "3"
+      .col-xs-4= f.submit t('views.tasks.table.create_btn'), :class=>"btn"

@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :load_event
-  before_action :load_task, :only => [:destroy, :edit, :show, :update]
+  before_action :load_task, :only => [:destroy, :show, :update]
 
   def create
     @task = @event.tasks.build(task_params)
@@ -19,8 +19,6 @@ class TasksController < ApplicationController
       format.js
     end
   end
-
-  def edit; end
 
   def update
     @task.update_attributes(task_params)
