@@ -3,8 +3,10 @@
 .container
   .row
     .col-md-4
-      %h1 Thank You For Supporting Friends of The Congo.
-      %h4 Once you enter the relevant details, you'll be able to create events for supporters to attend. Your events will be searchable via the home page.
+      %h1 
+        =t('.thanks_msg')
+      %h4 
+        =t('.explanation_msg')
 
     .col-md-7
       .well
@@ -12,7 +14,7 @@
           = form_for @movement do |form|
             %fieldset
               .form-group
-                = form.label :name, "Name *", { class: 'col-md-4 control-label' }
+                = form.label :name, t('.name') + ' * ', { class: 'col-md-4 control-label' }
                 .col-md-8
                   = form.text_field :name, { class: 'form-control' }
 
@@ -34,7 +36,7 @@
               .form-group
                 = form.label :location, { class: 'col-md-4 control-label' }
                 .col-md-8
-                  = form.text_area :location, { class: 'form-control', placeholder: "e.g. Global, International, National.." }
+                  = form.text_area :location, { class: 'form-control', placeholder: t('.location_placeholder') }
 
               .form-group
                 = form.label :about_creator, { class: 'col-md-4 control-label' }
@@ -47,12 +49,12 @@
                   = form.file_field :image
 
               .form-group
-                = form.label :video, "Youtube Link", { class: 'col-md-4 control-label' }
+                = form.label :video, t('.youtube_link'), { class: 'col-md-4 control-label' }
                 .col-md-8
                   = form.text_field :video, { class: 'form-control' }
 
               .form-group
-                = form.label :draft, "Save as draft", class: 'col-md-4 control-label'
+                = form.label :draft, t('.save_as_draft'), class: 'col-md-4 control-label'
                 .col-md-8
                   = form.check_box :draft
 
@@ -60,6 +62,6 @@
 
               .form-group
                 .col-md-8.col-md-offset-4
-                  = form.submit 'Create Movement', class: "btn btn-primary", id: "create_movement"
+                  = form.submit t('.create_btn'), class: "btn btn-primary", id: "create_movement"
 
 

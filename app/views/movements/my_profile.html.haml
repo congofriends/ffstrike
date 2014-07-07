@@ -3,9 +3,10 @@
     %li
       %a{href: '#edit_account', data: {toggle: 'tab'}} Personal Details
     %li
-      %a{href: '#attending_events', id:'event_tab' ,data: {toggle: 'tab'}} Events Attending
+      %a{href: '#attending_events', id:'event_tab' ,data: {toggle: 'tab'}}
+        =t('.events_attending')
   .tab-content
     .tab-pane.fade.in#edit_account
       = render "tab_edit_account", user: current_user
     .tab-pane.fade.in#attending_events
-      = render "tab_my_events", events: @events_attending, description: "Events Attending"
+      = render "tab_my_events", events: @events_attending, description: t('.events_attending')

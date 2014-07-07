@@ -16,21 +16,22 @@
         .tagline.text-center= @movement.tagline
         %br
         - unless !@movement.about_creator || @movement.about_creator.empty?
-          %h4 About the Creators
+          %h4
+            =t('.about_creators')
           = @movement.about_creator
       .row
         .col-xs-12
           .text-center
             - if current_user
-              = link_to "HOST AN EVENT", new_movement_event_path(@movement), class: "btn"
+              = link_to t('.host_event'), new_movement_event_path(@movement), class: "btn"
             - else
-              = link_to "HOST AN EVENT", new_movement_unauthenticated_event_path(@movement), class: "btn"
+              = link_to t('.contact_group_coordinator'), new_movement_unauthenticated_event_path(@movement), class: "btn"
       .row
         .spacer10
       .row
         .col-xs-12
           .text-center
-            =link_to_modal 'CONTACT THE GROUP COORDINATOR', new_mvmt_contact_path(@movement), class: "btn"
+            =link_to_modal t('.contact_group_coordinator'), new_mvmt_contact_path(@movement), class: "btn"
       .row
         .spacer10
   =render "social/rrssb"

@@ -1,15 +1,16 @@
-= content_for :title, "Support Network"
+= content_for :title, t('.support_network')
 .container
   .row
     =link_to (image_tag @movement.image, :class => 'movement_avatar'), root_path
   .row.event-list
     .col-sm-6
-      %h2 Our Support Network has #{@support_network.size} groups and is growing!
+      %h2 
+        =t('.network_message', number=@support_network.size)
     .col-sm-2.col-sm-offset-2
       - if !current_user.nil?
-        =link_to 'CREATE A GROUP', new_movement_path(@movement, {parent_id: @movement.id}), class: 'btn'
+        =link_to t('.create_group'), new_movement_path(@movement, {parent_id: @movement.id}), class: 'btn'
       - else
-        =link_to 'CREATE A GROUP', new_unauthenticated_submovement_path(@movement, {parent_id: @movement.id}), class: 'btn'
+        =link_to t('.create_group'), new_unauthenticated_submovement_path(@movement, {parent_id: @movement.id}), class: 'btn'
 
   - @support_network.each do |chapter|
     = render 'group_panel', chapter: chapter

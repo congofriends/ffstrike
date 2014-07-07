@@ -9,7 +9,7 @@
     .row
       - if current_user && movement.users.include?(current_user)
         .col-xs-6
-          .text-center= link_to "DASHBOARD", dashboard_movement_path(movement, anchor: "movement"), class: "btn"
+          .text-center= link_to t('views.movements.movement.dashboard'), dashboard_movement_path(movement, anchor: "movement"), class: "btn"
       .col-xs-6
-        .text-center= link_to "EVENTS", movement_events_path(movement), class: 'btn'
+        .text-center= link_to t('views.movements.movement.events'), movement_events_path(movement), class: 'btn'
 

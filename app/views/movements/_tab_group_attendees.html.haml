@@ -1,12 +1,18 @@
 .tab-pane#support
   .well
-    %h3 COORDINATORS
+    %h3 
+      -binding.pry
+      =t('.coordinators')
     %table.table.table-bordered.table-striped.sortable#group-attendees-table
       %tr
-        %th Name
-        %th Group
-        %th Email
-        %th Phone number
+        %th 
+          =t('.name_cl')
+        %th 
+          =t('.group_cl')
+        %th 
+          =t('.email_cl')
+        %th 
+          =t('.phone_number')
       - @groups.each do |group|
         - group.ownerships.each do |ownership|
           %tr
@@ -15,13 +21,18 @@
             %td= ownership.user.email
             %td= ownership.user.phone
 
-    %h3 HOSTS
+    %h3 
+      =t('.hosts')
     %table.table.table-bordered.table-striped.sortable#group-attendees-table
       %tr
-        %th Name
-        %th Event
-        %th Email
-        %th Phone number
+        %th 
+          =t('.name_cl')
+        %th
+          =t('.event')
+        %th 
+          =t('.email_cl')
+        %th 
+          =t('.phone_number')
       - @group.events.each do |event|
         %tr
           %td= event.host.name
@@ -29,14 +40,20 @@
           %td= event.host.email
           %td= event.host.phone
 
-    %h3 ATTENDEES
+    %h3 
+      =t('.attendees')
     %table.table.table-bordered.table-striped.sortable#group-attendees-table
       %tr
-        %th Name
-        %th Event
-        %th Email
-        %th Phone number
-        %th Point person?
+        %th 
+          =t('.name_cl')
+        %th
+          =t('.event')
+        %th 
+          =t('.email_cl')
+        %th 
+          =t('.phone_number')
+        %th 
+          =t('.point_person')
       - @group.events.each do |event|
         - event.attendees.each do |attendee|
           %tr
@@ -46,7 +63,7 @@
             %td= attendee.phone
             %td= attendee.volunteer_for(event) ? "yes" : "no"
 
-= link_to_modal "INVITE COORDINATORS", new_user_invitation_path({mvmt_id: @group.id}), { class: 'btn ctrl-btn' }
-= link_to "EXPORT ATTENDEE LIST", export_csv_path(@group), class: 'btn ctrl-btn'
+= link_to_modal t('.invite_coordinators'), new_user_invitation_path({mvmt_id: @group.id}), { class: 'btn ctrl-btn' }
+= link_to t('.export_attendees'), export_csv_path(@group), class: 'btn ctrl-btn'
 = render "movements/email_modal"
 = render "movements/email_hosts_modal"
