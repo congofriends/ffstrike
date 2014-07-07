@@ -65,13 +65,6 @@ class EventsController < ApplicationController
       format.html do
         render 'show'
       end
-
-      format.pdf do
-        case params[:generate]
-          when 'event' then generate_pdf('events/show', 'event_details.pdf')
-          when 'tasks' then generate_pdf('tasks/index', 'event_tasks.pdf')
-        end
-      end
     end
   end
 
@@ -180,11 +173,6 @@ class EventsController < ApplicationController
 
   def load_event_types
     @event_types = EventType.all.map {|e| [e.id, e.name]}
-  end
-
-  def generate_pdf(view_name, final_doc_name)
-    pdf = PDFKit.new(render_to_string(view_name), :page_size=>'Letter').to_pdf
-    send_data(pdf, filename: final_doc_name, type: 'application/pdf', disposition: 'inline')
   end
 
   def redirect_unauthorized_user

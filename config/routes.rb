@@ -18,8 +18,6 @@ Ffstrike::Application.routes.draw do
     put 'attendance' => 'users#attendance_notes', as: 'attendance'
   end
 
-
-
   #home
   get 'about' => 'static_pages#about',  as: 'about'
 
