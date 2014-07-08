@@ -36,7 +36,7 @@
                   .col-md-8
                     = text_field :movement, :video, { class: 'form-control' }
                 = hidden_field :parent_id, value:  params[:parent_id]
-                %button{type: "button", class: "btn btn-success next"} Next
+                %button{type: "button", class: "btn btn-success next-group"} Next
               %fieldset.event_additional_details
                 %legend Sign Up to Create Group (2/2)
                 .form-group
@@ -52,6 +52,6 @@
                   = label :user, :password_confirmation, 'Password confirmation *'
                   = password_field :user, :password_confirmation, class: 'form-control'
                 .form-group
-                  %button{type: "button", class: "btn btn-success previous"} Previous
+                  %button{type: "button", class: "btn btn-success previous-group"} Previous
                   = submit_tag "CREATE YOUR GROUP", class: 'btn btn-primary'
 

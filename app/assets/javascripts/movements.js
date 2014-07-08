@@ -44,12 +44,11 @@ function groupFormValid(nextButton, fieldset){
 function goToGroupNextStep(button) {
   current_fieldset = $(button).closest('fieldset');
 
-  if(!groupFormValid(button, current_fieldset))
-    return false;
+  if(!groupFormValid(button, current_fieldset)) return false;
 
   next_fieldset = current_fieldset.next().show();
   current_fieldset.hide();
-  };
+};
 
 function goToGroupPreviousStep(button) {
   current_fieldset = $(button).closest('fieldset');
@@ -59,12 +58,11 @@ function goToGroupPreviousStep(button) {
 }
 
 $(document).ready(function() {
-
-  $(".next").click(function() {
+  $(".next-group").click(function() {
     goToGroupNextStep(this);
   });
 
-  $(".previous").click(function() {
+  $(".previous-group").click(function() {
     goToGroupPreviousStep(this);
   });
 
