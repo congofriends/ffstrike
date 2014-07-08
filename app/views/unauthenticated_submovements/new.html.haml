@@ -28,6 +28,10 @@
                   .col-md-8
                     = text_area :movement, :about_creator, { class: 'form-control' }
                 .form-group
+                  = label :movement, :website, { class: 'col-md-4 control-label' }
+                  .col-md-8
+                    = text_area :movement, :website, { class: 'form-control' }
+                .form-group
                   = label :movement, :image, { class: 'col-md-4 control-label' }
                   .col-md-8
                     = file_field :movement, :image

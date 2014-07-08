@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140627013853) do
+ActiveRecord::Schema.define(version: 20140708223036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,7 +98,6 @@ ActiveRecord::Schema.define(version: 20140627013853) do
     t.string   "video"
     t.text     "call_to_action"
     t.text     "extended_description"
-    t.boolean  "published",            default: false
     t.text     "about_creator"
     t.integer  "parent_id"
     t.string   "location"
@@ -106,6 +105,8 @@ ActiveRecord::Schema.define(version: 20140627013853) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "website"
+    t.boolean  "published",            default: true
   end
 
   create_table "ownerships", force: true do |t|

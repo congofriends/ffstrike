@@ -19,6 +19,11 @@
           %h4
             =t('.about_creators')
           = @movement.about_creator
+        - unless !@movement.website || @movement.website.empty?
+          %h4 Website
+          =link_to @movement.website, "http://#{@movement.website}"
+        %br
+        %br
       .row
         .col-xs-12
           .text-center

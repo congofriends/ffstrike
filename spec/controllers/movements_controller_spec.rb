@@ -79,20 +79,11 @@ describe MovementsController do
     end
 
     context "with published movement" do
-      let(:published_movement) {FactoryGirl.attributes_for(:undrafted_movement)}
+      let(:published_movement) {FactoryGirl.attributes_for(:unpublished_movement)}
 
       it "is true" do
         post :create, movement: published_movement
         expect(assigns(:movement).published).to eq(true)
-      end
-    end
-
-    context "with unpublished movement" do
-      let(:unpublished_movement) {FactoryGirl.attributes_for(:drafted_movement)}
-
-      it "is false" do
-        post :create, movement: unpublished_movement
-        expect(assigns(:movement).published).to eq(false)
       end
     end
 

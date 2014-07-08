@@ -48,9 +48,6 @@ class MovementsController < ApplicationController
       unless current_user.nil?
         @movement.users << current_user
       end
-      unless movement_params[:draft] == "1"
-        @movement.publish
-      end
       redirect_to movement_path(@movement), notice: t('movement.created')
     else
       render :new, notice: t('movement.not_created')
@@ -113,7 +110,7 @@ class MovementsController < ApplicationController
 
   def movement_params
     params[:movement][:video]= extract_video_id(params[:movement][:video]) if !params[:movement][:video].nil?
-    params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :avatar, :video, :about_creator, :parent_id, :location)
+    params.require(:movement).permit(:name, :category, :tagline, :call_to_action, :extended_description, :image, :avatar, :video, :about_creator, :website, :parent_id, :location)
   end
 
   def load_movements
