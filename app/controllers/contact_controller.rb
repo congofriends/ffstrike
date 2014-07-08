@@ -14,6 +14,18 @@ class ContactController < ApplicationController
     end
   end
 
+  def new_attendees_msg
+    @event = Event.find_by_param(params[:id])
+  end
+
+  def create_attendees_msg
+    @event =  Event.find @message.host_id
+    if @message.valid?
+      ContactMailer.new_attendee_message(@message).deliver
+      redirect_to(root_path, :notice => t('contact.message_sent') )
+    end
+  end
+
   def new_movement_msg
     @movement = Movement.find_by_param(params[:id])
   end

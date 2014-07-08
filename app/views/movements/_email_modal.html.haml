@@ -17,9 +17,12 @@
       $( "#dialog" ).dialog( "open" );
     });
   });
-  
+
 #dialog{title: "Email your Attendees"}
   = form_tag(mail_attendees_path(movement_id: @group), method: "post") do
+    = label_tag "Subject"
+    = text_area_tag "subject", nil, class: 'form-control'
+    = label_tag "Message"
     = text_area_tag "message", nil, placeholder: 'Enter a message to send to all attendees', class: 'form-control'
     = submit_tag "SEND EMAIL", class: 'btn ctrl-btn', id: 'Send_Email'
 %button#opener.btn.ctrl-btn EMAIL ATTENDEES

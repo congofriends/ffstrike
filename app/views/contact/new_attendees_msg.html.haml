@@ -1,0 +1,11 @@
+%h4 Contact the attendees of
+%h5= @event.name
+= form_for @message, :method => :post, :url => attendee_msg_path, html: { id: 'attendee-contact-form' } do |form|
+  .field
+    = form.label "Subject: *", class: "modal-field form-label"
+    = form.text_field :subject, value: "Message to attendees of #{@event.name}",  class: "modal-input form-inline form-control"
+  .field
+    = form.label "Your message: *", class: "modal-field"
+    = form.text_area :body, class: "modal-input contact-body form-control", rows: "6"
+  = form.hidden_field :host_id, value: @event.id
+  = form.submit "Submit", class: "contact-send-btn btn"

@@ -21,32 +21,22 @@ class MailController < ApplicationController
 
   def send_attendees_mail(action)
     message = params[:message]
+    subject = params[:subject]
     if action.attendees.empty?
       flash[:notice] = t('mail.no_attendees')
     else
-
-      #todo: move to queue
-      action.attendees.each do |attendee|
-        CustomMailWorker.perform_async(message, attendee.email)
-      end
-
+      UserMailer.custom_attendees_message(message, subject, action)
       flash[:notice] = t('mail.sent')
     end
   end
 
   def send_hosts_mail(action)
     message = params[:message]
+    subject = params[:subject]
     if action.events.empty?
       flash[:notice] = t('mail.no_hosts')
     else
-
-      #todo: move to queue
-      event_hosts = []
-      action.events.each do |event|
-        CustomMailWorker.perform_async(message, event.host.email) unless event_hosts.include? event.host.email
-        event_hosts << event.host.email
-      end
-
+      UserMailer.custom_hosts_message(message, subject, action)
       flash[:notice] = t('mail.sent')
     end
   end

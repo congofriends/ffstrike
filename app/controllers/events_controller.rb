@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit]
+  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit, :export_attendees]
   before_filter :load_movement, :only => [:new, :create, :edit, :update, :index]
   before_filter :redirect_unauthorized_user, :only => [:edit]
   before_filter :load_event_types, :only => [:edit]
@@ -130,6 +130,10 @@ class EventsController < ApplicationController
   def search_by_keyword; end
 
   def edit; end
+
+  def export_attendees
+    send_data @event.to_csv, filename: "Attendee List"
+  end
 
   private
 

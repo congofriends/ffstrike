@@ -15,10 +15,18 @@ class UserMailer < ActionMailer::Base
     mail(to: @attendee.email, subject: "Thanks for Volunteering.").deliver
   end
 
-  def custom_message(message, attendee_email)
+  def custom_attendees_message(message, subject, action)
     @message = message
+    @attendee_emails = []
+    action.attendees.each { |attendee| @attendee_emails << attendee.email }
+    mail(to: action.users.first.email, from: action.users.first.email , bcc: @attendee_emails, subject: subject).deliver
+  end
 
-    mail(to: attendee_email, subject: "Message from your Movement Organizer").deliver
+  def custom_hosts_message(message, subject, action)
+    @message = message
+    @event_hosts = []
+    action.events.each { |event| @event_hosts << event.host.email unless @event_hosts.include? event.host.email }
+    mail(to: action.users.first.email, from: action.users.first.email, bcc: @event_hosts, subject: subject).deliver
   end
 
   def welcome(user_id, password, event_id)

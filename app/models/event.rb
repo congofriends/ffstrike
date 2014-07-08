@@ -135,6 +135,16 @@ class Event < ActiveRecord::Base
   #   attachments.first.flyer if attachments.first
   # end
 
+  def to_csv
+    CSV.generate do |csv|
+      column_names = ["Name", "Email", "Phone", "Event", "Zip", "City"]
+      csv << column_names
+      self.attendances.each do |attendance|
+        csv << [attendance.user.name, attendance.user.email, attendance.user.phone, attendance.event.name, attendance.event.city, attendance.event.zip] if (attendance.event && attendance.user)
+      end
+    end
+  end
+
   private
     def assign_coordinates
       if self.latitude.nil? || self.longitude.nil?

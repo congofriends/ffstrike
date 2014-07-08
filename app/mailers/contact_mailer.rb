@@ -10,6 +10,14 @@ class ContactMailer < ActionMailer::Base
     mail(to: @event.host.email, from: @message.email, subject: @message.subject)
   end
 
+  def new_attendee_message(message)
+    @event = Event.find(message.host_id)
+    @message = message
+    @attendees = []
+    @event.attendances.each{ |a| @attendees << a.user.email if a.user.email }
+    mail(to: @event.host.email, bcc: @attendees, from: @event.host.email, subject: @message.subject)
+  end
+
   def new_mvmt_message(message)
   	@movement = Movement.find(message.host_id)
     @message = message

@@ -20,6 +20,9 @@
 
 #dialog-host{title: "Email the Hosts"}
   = form_tag(mail_hosts_path(movement_id: @group), method: "post") do
+    = label_tag "Subject"
+    = text_area_tag "subject", nil, class: 'form-control'
+    = label_tag "Message"
     = text_area_tag "message", nil, placeholder: 'Enter a message to send to all hosts', class: 'form-control'
     = submit_tag "SEND EMAIL", class: 'btn ctrl-btn', id: 'Send_Email'
 %button#opener-host.btn.ctrl-btn EMAIL HOSTS
