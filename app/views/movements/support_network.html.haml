@@ -5,7 +5,7 @@
   .row.event-list
     .col-sm-6
       %h2 
-        =t('.network_message', number=@support_network.size)
+        =t('.network_message', number: @support_network.size)
     .col-sm-2.col-sm-offset-2
       - if !current_user.nil?
         =link_to t('.create_group'), new_movement_path(@movement, {parent_id: @movement.id}), class: 'btn'
