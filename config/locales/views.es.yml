@@ -96,7 +96,7 @@ es:
   layouts:
     breadcrumb:
       home: 'Inicio'
-    footer:  
+    footer:
       about: 'About'
     navbar:
       my_profile: 'My profile'
@@ -146,9 +146,14 @@ es:
       group_details: 'Group Details'
       group_events: 'Group Events'
       manage_supporters: 'Manage Supporters'
+    tab_group_events:
+      event_name: "Event Name (click to Edit)"
+      where: "When"
+      when: "Where"
+      approved: "Approved"
     my_profile:
       events_attending: 'Events Attending'
-    new: 
+    new:
       thanks_msg: 'Thank You For Supporting Friends of The Congo.'
       explanation_msg: "Once you enter the relevant details, you'll be able to create events for supporters to attend. Your events will be searchable via the home page."
       name: 'Name'
@@ -172,4 +177,4 @@ es:
       create_group: 'CREATE A GROUP'
 
 
-        
+

@@ -1,168 +1,191 @@
 fr:
+  dictionary:
+    email: &email Email
+    name: &name Nom
+    phone: &phone Numéro de téléphone
+    point: &point Point personne
+    password: &password Mot
+    confirmation: &confirmation Confirmation
+    export_attendees: &export_attendees EXPORTATION PARTICIPANTS
+    host_event: &host_event L'HÔTE D'UN ÉVÉNEMENT
   events:
-    host_btn: "HOST AN EVENT"
-    unattend_btn: "UNATTEND EVENT"
-    volunteer_status: "VOLUTEER STATUS"
+    host_btn: *host_event
+    unattend_btn: UNATTEND événement
+    volunteer_status: "VOLUTEER STATUT"
+    export_attendees: *export_attendees
+    contact_attendees: "CONTACT PARTICIPANTS"
     show_btn: "SHOW"
-    host_link: "Click here to host your own."
-    search_placeholder: "Search Events by City, State or Zip Code"
-    no_events_msg: "There are no events registered near you."
-    attend_btn: "ATTEND"
-    contact_host_btn: "CONTACT HOST"
-    flyer_msg: "Use this flyer to promote this event!"
-    flyer_dl: "(click on the flyer to download)"
-    when: "When:"
-    where: "Where:"
-    location: "Location Details:"
+    host_link: "Cliquez ici pour héberger votre propre événement."
+    search_placeholder: "Rechercher des événements par ville, état ou Code Postal"
+    no_events_msg: "Il n'y a pas d'événement enregistré près de chez vous."
+    attend_btn: "ASSISTER À"
+    contact_host_btn: "CONTACTER L'HÔTE"
+    flyer_msg: "Utilisez ce dépliant de promotion de cet événement!"
+    flyer_dl: "(Cliquez sur le dépliant à télécharger)"
+    when: "quand:"
+    where: "Où:"
+    location: "Les détails d'emplacement:"
     description: "Description:"
-    organized_by: "Organized By:"
-    email_msg: "Email Event Attendees"
+    organized_by: "Organisé par"
+    email_msg: "E-mail participants à un événement"
     message: "message"
-    message_placeholder: 'Enter a message to send to event attendees'
-    email_btn: "Send Email"
-    tasks_signed_up: "Tasks Signed Up For:"
-    name: "Name"
-    email: "Email"
-    phone: "Phone Number"
-    point: "Point person (Click to Assign)"
-    notes: "Notes (Click to Edit)"
-    unapprove: "Unapprove"
-    approve: "Approve"
+    message_placeholder: 'Entrez un message à envoyer aux participants à un événement'
+    email_btn: "Envoyer un e-mail"
+    tasks_signed_up: "Tâches signé pour:"
+    name: *name
+    email: *email
+    phone: *phone
+    point: *point
+    notes: "Notes (Cliquez pour modifier)"
+    unapprove: "désapprouver"
+    approve: "Approuver"
     dashboard:
-      header: "Manage My Events"
-      instructions: "Select an Event and click SHOW"
-      tab_edit: "Event Details"
-      tab_tasks: "Tasks"
-      tab_attendees: "Attendees"
+      header: "Gérer mes Événements"
+      instructions: "Sélectionnez un événement, puis cliquez sur Afficher"
+      tab_edit: "Détails de l'événement"
+      tab_tasks: "Tâches"
+      tab_attendees: "Participants"
     explanation:
-      confirm_msg: "Congrats - You've successfully created a %{event_type}"
-      competency_question: "Know what you're doing?"
-      event_dash_prompt: "Go right to your event dashboard."
-      host_task_msg: "Here are some things you might want to do to make your event a success:"
+      confirm_msg: "Félicitations, vous avez créé avec succès une % {event_type}"
+      competency_question: "savent ce que vous faites?"
+      event_dash_prompt: "Aller droit à votre événement de planche de bord."
+      host_task_msg: "Voici certaines choses que vous pouvez faire pour faire de votre événement un succès:"
     new:
-      legend1:  "Event Basic Information (1/2)"
-      legend2: "Event details (2/2)"
-      address: "Event Address"
-      location_placeholder: "meet at the corner of Belmont & Sheridan"
-      next: "Next"
-      previous: "Previous"
-      create_btn: "CREATE EVENT"
-      msg_to_attendees: "Write a brief message to event attendees:"
-      event_type: 'Event Type:'
-      event_chapter_msg: "If this event is associated with a chapter, please choose it here:"
-      forum_msg: "Include an attendee discussion forum on this event:"
+      legend1:  "Événement Informations de base (1/2)"
+      legend2: "les détails de l'événement (2/2)"
+      address: "Adresse de l'événement"
+      location_placeholder: "réunira au coin de Belmont & Sheridan"
+      next: "Suivant"
+      previous: "Précédent"
+      create_btn: "Créer un événement"
+      msg_to_attendees: "écrire un bref message de participants à un événement:"
+      event_type: "Type d'événement :"
+      event_chapter_msg: "si cet événement est associé à un chapitre, veuillez choisir ici :"
+      forum_msg: "Inclure un participant forum de discussion sur l'événement:"
     edit:
-      edit_header: "EDIT EVENT"
-      start_date: "Start date & time:"
-      end_date: "End date & time:"
-      name: "Name:"
-      address1: "Address 1:"
-      address2: "Address 2:"
-      city: "City:"
-      state: "State:"
+      edit_header: "Modifier l'événement"
+      start_date: "Start Date & Heure:"
+      end_date: "Fin Date & Heure:"
+      name: "Nom:"
+      address1: "Adresse 1:"
+      address2: "Adresse 2:"
+      city: "Ville:"
+      state: "Etat:"
       zip: "Zip:"
       notes: "Notes:"
       type: "Type:"
       forum: "Forum (Disqus):"
       flyer: "Flyer:"
       avatar: "Avatar:"
-      update: "Update"
-      cancel: "Cancel Event"
-      cancel_confirm_msg: "Are you sure you want to delete this event?"
+      update: "Mise à jour"
+      cancel: "Annuler événement"
+      cancel_confirm_msg: "Êtes-vous sûr de vouloir supprimer cet événement ?"
     show:
-      task_msg: "Here are some things you can do to help out:"
+      task_msg: "Voici quelques choses que vous pouvez faire pour aider:"
     validations:
-      name: "Name is required"
-      start_time: "Start date & time is required"
-      city: "City is required"
-      state: "State is required"
-      address: "Address is required"
-      description: "Description is required"
-      zip_required: 'Zip is required'
-      zip_numeric: "Zip should contain only numbers"
-      zip_length: "Zip should be 5 digits long"
+      name: "Nom est requis"
+      start_time: "Date et heure de début est requise"
+      city: "Ville est obligatoire"
+      state: "État est requis"
+      address: "Adresse est obligatoire"
+      description: "Description est requise"
+      zip_required: 'Zip est requis'
+      zip_numeric: "Zip doit contenir uniquement des chiffres"
+      zip_length: "Zip doit être de 5 chiffres"
   tasks:
-    delete_confirm: "You sure about deleting task '%{task_description}'?"
-    sign_up: "SIGN UP"
-    signed_up: "SIGNED UP"
-    volunteers: "Volunteers (%{volunteer_count})"
+    delete_confirm: "Vous assurez-vous de supprimer tâche ' % {task_description} '?"
+    sign_up: "INSCRIVEZ-VOUS"
+    signed_up: "Signé"
+    volunteers: "Les bénévoles ( % {volunteer_count})"
     table:
-      tasks: "Task (click to Edit)"
-      volunteers: "Volunteers"
-      delete: "Delete"
-      new: "ADD NEW TASK:"
-      new_description: "Add a new task description here..."
-      create_btn: "CREATE NEW TASK"
+      tasks: "Tâche (cliquez pour modifier)"
+      volunteers: "Les bénévoles"
+      delete: "Supprimer"
+      new: "Ajouter nouvelle tâche:"
+      new_description: "Ajouter une nouvelle tâche description ici ..."
+      create_btn: "Créer une nouvelle tâche"
   layouts:
     breadcrumb:
-      home: 'Inicio'
-    footer:  
-      about: 'About'
+      home: 'Home'
+    footer:
+      about: 'Environ'
     navbar:
-      my_profile: 'My profile'
-      manage_my_groups: 'Manage My Groups'
-      manage_my_events: 'Manage My Events'
-      create_group: 'Create Group'
-      create_event: 'Create Event'
-      sign_in: 'Sign in'
+      my_profile: 'Mon profil'
+      manage_my_groups: 'Gérer Mes groupes'
+      manage_my_events: 'Gérer Mes événements'
+      create_group: 'Créer groupe'
+      create_event: 'Créer événement'
+      sign_in: 'Signer dans'
       sign_out: 'Sign Out'
   contact:
-    contact_host_for: 'Contact the host for:'
-    name: 'Your name:'
-    email: 'Your email:'
-    subject: 'Subject:'
-    message: 'Your message:'
-    question: 'Question about %{about}'
-    contact_coordinator_for: 'Contact the coordinator for:'
-    submit: 'Submit'
+    new_event_msg:
+      contact_host_for: "Contactez l'hôte de:"
+      name: "votre nom:"
+      email: 'votre e-mail:'
+      subject: 'Sujet:'
+      message: 'Votre message:'
+      question: "Question à propos de % {about}"
+      submit: 'Soumettre'
+    new_movement_msg:
+      contact_coordinator_for: 'Contacter le coordonnateur de:'
+      submit: 'Soumettre'
   movements:
     movement:
-      dashboard: 'DASHBOARD'
-      events: 'EVENTS'
-      edit_account: 'Edit account details'
-      event_details: 'Event Details'
-      select_event: 'Select an Event to Edit'
+      dashboard: 'TABLEAU DE BORD'
+      events: 'événements'
+      edit_account: 'Modifier les détails du compte'
+      event_details: "Détails de l'événement"
+      select_event: "Sélectionner l'événement à modifier"
     tab_group_attendees:
-      coordinators: 'COORDINATORS'
-      hosts: 'HOSTS'
-      attendees: 'ATTENDEES'
-      invite_coordinators: 'INVITE COORDINATORS'
-      export_attendees: 'EXPORT ATTENDEE LIST'
-      name_cl: 'Name'
-      group_cl: 'Group'
-      event_cl: 'Event'
-      email_cl: 'Email'
-      phone_number: 'Phone number'
-      point_person: 'Point person?'
-      yes: 'yes'
-      no: 'no'
+      coordinators: 'COORDINATEURS'
+      hosts: 'Hôtes'
+      attendees: 'participants'
+      invite_coordinators: "inviter coordonnateurs"
+      export_attendees: *export_attendees
+      name_cl: *name
+      group_cl: 'Groupe'
+      event_cl: 'Événement'
+      email_cl: *email
+      phone_number: *phone
+      point_person: *point
+      yes: 'Oui'
+      no: 'non'
     tab_tasks:
-      modify_tasks: 'Modify Tasks for Events Here'
+      modify_tasks: 'Modifier les tâches pour les événements ici'
     my_groups:
-      my_groups: 'My Groups'
-      manage_my_groups: 'Manage My Groups'
-      show: 'SHOW'
-      select_group: 'Select a Group and click SHOW'
-      group_details: 'Group Details'
-      group_events: 'Group Events'
-      manage_supporters: 'Manage Supporters'
+      my_groups: 'Mes groupes'
+      manage_my_groups: 'Gérer Mes groupes'
+      show: 'Afficher'
+      select_group: 'Sélectionnez un groupe, puis cliquez sur Afficher'
+      group_details: 'Détails du groupe'
+      group_events: 'Événements de groupe'
+      manage_supporters: 'Gérer les partisans'
+    tab_group_events:
+      event_name: "Nom de l'événement (cliquez pour modifier)"
+      where: "quand"
+      when: "Où"
+      approved: "Approuvé"
     my_profile:
-      events_attending: 'Events Attending'
-    new: 
-      thanks_msg: 'Thank You For Supporting Friends of The Congo.'
-      explanation_msg: "Once you enter the relevant details, you'll be able to create events for supporters to attend. Your events will be searchable via the home page."
-      name: 'Name'
-      location_placeholder: 'e.g. Global, International, National..'
-      youtube_link: 'Youtube Link'
-      save_as_draft: 'Save as draft'
-      create_btn: 'Create Movement'
+      events_attending: 'Assister aux événements'
+    new:
+      thanks_msg: 'Merci pour la prise en charge des Amis du Congo.'
+      explanation_msg: "Une fois que vous entrez les détails pertinents, vous serez en mesure de créer des événements pour les partisans d'y assister. Vos événements seront interrogeables via la page d'accueil."
+      name: 'Nom:'
+      location_placeholder: 'Par exemple mondial, International, National..'
+      youtube_link: 'Lien Youtube'
+      create_btn: 'Créer du mouvement'
+      tagline: "Slogan: "
+      call_to_action: "Appel à l'action:"
+      extended_description: "Description étendue :"
+      location: "Emplacement:"
+      about_creator: "De Créateur:"
     show:
-      quote: 'Our mission and vision is to raise the consciousness of the world community on the challenge of the Congo and support Congolese institutions in bringing about a peaceful and lasting change.'
+      quote: "Notre mission et notre vision est de soulever la conscience de la communauté mondiale sur le défi du Congo et de l'appui institutions congolaises à parvenir à un règlement pacifique et durable."
     show_chapter:
-      about_creators: 'About the Creators'
-      host_event: 'HOST AN EVENT'
-      contact_group_coordinator: 'CONTACT THE GROUP COORDINATOR'
+      about_creators: 'Concernant les créateurs'
+      host_event: *host_event
+      contact_group_coordinator: 'COMMUNIQUEZ AVEC LE COORDONNATEUR DE GROUPE'
     support_network:
-      support_network: 'Support Network'
-      network_message: 'Our Support Network has %{number} groups and is growing!'
-      create_group: 'CREATE A GROUP'
+      support_network: 'Support Réseau'
+      network_message: 'Notre réseau de soutien a % {number} groupes et est de plus en plus !'
+      create_group: 'CRÉER UN GROUPE'

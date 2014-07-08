@@ -18,7 +18,7 @@
                 = user_name_or_email.titleize
                 %b.caret
               %ul.dropdown-menu
-                %li= link_to t('views.layouts.navbar.my_profile'), user_movements_path
+                %li= link_to t('.my_profile'), user_movements_path
                 - unless current_user.movements.empty?
                   %li= link_to t('.manage_my_groups'), my_groups_path
                 - unless current_user.events_owned.empty?

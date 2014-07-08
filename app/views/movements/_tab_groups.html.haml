@@ -7,27 +7,27 @@
           = form_for @group, html: { id: 'edit-group-form' } do |form|
             %fieldset
               .form-group
-                = form.label :name, class: 'col-md-3 control-label'
+                = form.label :name, t('movements.new.name') + ' * ',class: 'col-md-3 control-label'
                 .col-md-9
                   = form.text_field :name, class: 'form-control'
               .form-group
-                = form.label :tagline, class: 'col-md-3 control-label'
+                = form.label :tagline,  t('movements.new.tagline'), class: 'col-md-3 control-label'
                 .col-md-9
                   = form.text_area :tagline, class: 'form-control'
               .form-group
-                = form.label :call_to_action, class: 'col-md-3 control-label'
+                = form.label :call_to_action,  t('movements.new.call_to_action'), class: 'col-md-3 control-label'
                 .col-md-9
                   = form.text_area :call_to_action, class: 'form-control'
               .form-group
-                = form.label :extended_description, class: 'col-md-3 control-label'
+                = form.label :extended_description,  t('movements.new.extended_description'), class: 'col-md-3 control-label'
                 .col-md-9
                   = form.text_area :extended_description, class: 'form-control'
               .form-group
-                = form.label :location, class: 'col-md-3 control-label'
+                = form.label :location,  t('movements.new.location'), class: 'col-md-3 control-label'
                 .col-md-9
                   = form.text_area :location, class: 'form-control', placeholder: "e.g. Global, International, National.."
               .form-group
-                = form.label :about_creator, class: 'col-md-3 control-label'
+                = form.label :about_creator, t('movements.new.about_creator'), class: 'col-md-3 control-label'
                 .col-md-9
                   = form.text_area :about_creator, class: 'form-control'
               .form-group

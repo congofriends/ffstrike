@@ -2,12 +2,11 @@ require 'sidekiq/web'
 
 Ffstrike::Application.routes.draw do
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
-
   #home
   root 'movements#index'
 
   scope "(:locale)", locale: /en|fr|es/ do
-  # devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "users", :invitations => 'users/invitations'  }
+  #devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "users", :invitations => 'users/invitations'  }
     devise_for :users, skip: :omniauth_callbacks , :controllers => { :registrations => "users", :invitations => 'users/invitations'  }
     match "/users/auth/:provider",
       constraints: { provider: /facebook/ },
@@ -20,9 +19,7 @@ Ffstrike::Application.routes.draw do
       to: "omniauth_callbacks",
       as: :user_omniauth_callback,
       via: [:get, :post]
-  end
 
-  scope "(:locale)", locale: /en|fr|es/ do
     get 'about' => 'static_pages#about',  as: 'about'
 
     #users
@@ -85,6 +82,6 @@ Ffstrike::Application.routes.draw do
 
     get 'contact/:id/mvmt' => 'contact#new_movement_msg', :as => 'new_mvmt_contact'
     post 'contact/mvmt' => 'contact#create_movement_msg', :as => 'mvmt_contact'
-end
+  end
   mount Sidekiq::Web, at: '/sidekiq'
 end

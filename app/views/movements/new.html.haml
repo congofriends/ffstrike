@@ -3,9 +3,9 @@
 .container
   .row
     .col-md-4
-      %h1 
+      %h1
         =t('.thanks_msg')
-      %h4 
+      %h4
         =t('.explanation_msg')
 
     .col-md-7
@@ -19,27 +19,27 @@
                   = form.text_field :name, { class: 'form-control' }
 
               .form-group
-                = form.label :tagline, { class: 'col-md-4 control-label' }
+                = form.label :tagline, t('.tagline'), { class: 'col-md-4 control-label' }
                 .col-md-8
                   = form.text_area :tagline, { class: 'form-control' }
 
               .form-group
-                = form.label :call_to_action, { class: 'col-md-4 control-label' }
+                = form.label :call_to_action, t('.call_to_action'), { class: 'col-md-4 control-label' }
                 .col-md-8
                   = form.text_area :call_to_action, { class: 'form-control' }
 
               .form-group
-                = form.label :extended_description, { class: 'col-md-4 control-label' }
+                = form.label :extended_description, t('.extended_description'),{ class: 'col-md-4 control-label' }
                 .col-md-8
                   = form.text_area :extended_description, { class: 'form-control' }
 
               .form-group
-                = form.label :location, { class: 'col-md-4 control-label' }
+                = form.label :location, t('.location'),{ class: 'col-md-4 control-label' }
                 .col-md-8
                   = form.text_area :location, { class: 'form-control', placeholder: t('.location_placeholder') }
 
               .form-group
-                = form.label :about_creator, { class: 'col-md-4 control-label' }
+                = form.label :about_creator, t('.about_creator'),{ class: 'col-md-4 control-label' }
                 .col-md-8
                   = form.text_area :about_creator, { class: 'form-control' }
 
@@ -52,11 +52,6 @@
                 = form.label :video, t('.youtube_link'), { class: 'col-md-4 control-label' }
                 .col-md-8
                   = form.text_field :video, { class: 'form-control' }
-
-              .form-group
-                = form.label :draft, t('.save_as_draft'), class: 'col-md-4 control-label'
-                .col-md-8
-                  = form.check_box :draft
 
               = form.hidden_field :parent_id, value:  params[:parent_id]
 

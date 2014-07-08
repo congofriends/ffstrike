@@ -4,16 +4,16 @@
 			.panel-body
 				%table.table.table-bordered.table-striped.sortable#group-events-table
 					%tr
-						%th Event Name (click to Edit)
-						%th When
-						%th Where
-						%th Approved
+						%th= t('.event_name')
+						%th= t('.when')
+						%th= t('.where')
+						%th= t('.approved')
 					- @group.events.each do |event|
 						%tr
 							%td
 								= event.name
 								= link_to('(View Event/', event_path(event))
-								= link_to('Edit Event)', my_events_path(:name => {:id => event.id})) 
+								= link_to('Edit Event)', my_events_path(:name => {:id => event.id}))
 							%td= event.start_time_formatted
 							%td= event.location
 							%td= link_to event.approved? ? 'Unapprove' : 'Approve', approve_path(event), method: :put, remote: true, id: "approve#{event.id}", class: "btn"

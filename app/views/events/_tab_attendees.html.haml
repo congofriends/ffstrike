@@ -14,5 +14,5 @@
           %td= attendee.phone
           %td= link_to( attendee.volunteer_for(event) ? t('events.yes') : t('events.no'), assign_volunteer_path(attendee_id: attendee.id, event_id: event.id), method: :put, remote: true, class: "check-box btn", id: "assign_volunteer#{event.id}")
           %td= best_in_place attendee.attendance_for(event), :notes, :path=> attendance_path({event_id: event.id, attendee_id: attendee.id}), :type => :input, :html_attrs => {:class=>"input"}
-= link_to "EXPORT ATTENDEE LIST", export_event_attendees_path(event), class: 'btn ctrl-btn'
-= link_to_modal "CONTACT ATTENDEES", new_attendee_msg_path(event), class: "btn ctrl-btn"
+= link_to t('events.export_attendees'), export_event_attendees_path(event), class: 'btn ctrl-btn'
+= link_to_modal t('events.contact_attendees'), new_attendee_msg_path(event), class: "btn ctrl-btn"

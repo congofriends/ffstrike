@@ -1,8 +1,19 @@
 en:
+  dictionary:
+    email: &email Email
+    name: &name Name
+    phone: &phone Phone Number
+    point: &point Point Person
+    password: &password Password
+    confirmation: &confirmation Confirmation
+    export_attendees: &export_attendees EXPORT ATTENDEES
+    host_event: &host_event HOST AN EVENT
   events:
-    host_btn: "HOST AN EVENT"
+    host_btn: *host_event
     unattend_btn: "UNATTEND EVENT"
     volunteer_status: "VOLUTEER STATUS"
+    export_attendees: *export_attendees
+    contact_attendees: "CONTACT ATTENDEES"
     show_btn: "SHOW"
     host_link: "Click here to host your own."
     search_placeholder: "Search Events by City, State or Zip Code"
@@ -21,10 +32,10 @@ en:
     message_placeholder: 'Enter a message to send to event attendees'
     email_btn: "Send Email"
     tasks_signed_up: "Tasks Signed Up For:"
-    name: "Name"
-    email: "Email"
-    phone: "Phone Number"
-    point: "Point person (Click to Assign)"
+    name: *name
+    email: *email
+    phone: *phone
+    point: *point
     notes: "Notes (Click to Edit)"
     unapprove: "Unapprove"
     approve: "Approve"
@@ -96,7 +107,7 @@ en:
   layouts:
     breadcrumb:
       home: 'Home'
-    footer:  
+    footer:
       about: 'About'
     navbar:
       my_profile: 'My profile'
@@ -115,7 +126,7 @@ en:
       message: 'Your message:'
       question: 'Question about %{about}'
       submit: 'Submit'
-    new_movement_msg:  
+    new_movement_msg:
       contact_coordinator_for: 'Contact the coordinator for:'
       submit: 'Submit'
   movements:
@@ -129,14 +140,14 @@ en:
       coordinators: 'COORDINATORS'
       hosts: 'HOSTS'
       attendees: 'ATTENDEES'
-      invite_coordinators: 'INVITE COORDINATORS'
-      export_attendees: 'EXPORT ATTENDEE LIST'
-      name_cl: 'Name'
+      invite_coordinators: "INVITE COORDINATORS"
+      export_attendees: *export_attendees
+      name_cl: *name
       group_cl: 'Group'
       event_cl: 'Event'
-      email_cl: 'Email'
-      phone_number: 'Phone number'
-      point_person: 'Point person?'
+      email_cl: *email
+      phone_number: *phone
+      point_person: *point
       yes: 'yes'
       no: 'no'
     tab_tasks:
@@ -149,26 +160,32 @@ en:
       group_details: 'Group Details'
       group_events: 'Group Events'
       manage_supporters: 'Manage Supporters'
+    tab_group_events:
+      event_name: "Event Name (click to Edit)"
+      where: "When"
+      when: "Where"
+      approved: "Approved"
     my_profile:
       events_attending: 'Events Attending'
-    new: 
+    new:
       thanks_msg: 'Thank You For Supporting Friends of The Congo.'
       explanation_msg: "Once you enter the relevant details, you'll be able to create events for supporters to attend. Your events will be searchable via the home page."
       name: 'Name'
       location_placeholder: 'e.g. Global, International, National..'
       youtube_link: 'Youtube Link'
-      save_as_draft: 'Save as draft'
       create_btn: 'Create Movement'
+      tagline: "Tagline: "
+      call_to_action: "Call To Action:"
+      extended_description: "Extended Description:"
+      location: "Location:"
+      about_creator: "About Creator:"
     show:
       quote: 'Our mission and vision is to raise the consciousness of the world community on the challenge of the Congo and support Congolese institutions in bringing about a peaceful and lasting change.'
     show_chapter:
       about_creators: 'About the Creators'
-      host_event: 'HOST AN EVENT'
+      host_event: *host_event
       contact_group_coordinator: 'CONTACT THE GROUP COORDINATOR'
     support_network:
       support_network: 'Support Network'
       network_message: 'Our Support Network has %{number} groups and is growing!'
       create_group: 'CREATE A GROUP'
-
-
-        
