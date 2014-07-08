@@ -154,8 +154,12 @@ es:
       name: 'Name'
       location_placeholder: 'e.g. Global, International, National..'
       youtube_link: 'Youtube Link'
-      save_as_draft: 'Save as draft'
       create_btn: 'Create Movement'
+      tagline: 'Tag line'
+      call_to_action: 'Call to action'
+      extended_description: 'Extended description'
+      location: 'Location'
+      about_creator: 'About creator'
     show:
       quote: 'Our mission and vision is to raise the consciousness of the world community on the challenge of the Congo and support Congolese institutions in bringing about a peaceful and lasting change.'
     show_chapter:
