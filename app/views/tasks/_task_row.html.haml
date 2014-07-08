@@ -2,16 +2,16 @@
   %td= best_in_place task, :description, :path=>[event, task], type: :input, html_attrs: {class: "input"}
   %td
     %button.btn{type: "button", data: {toggle: "collapse", target: "#task#{task.id}"}}
-      = t('views.tasks.volunteers', volunteer_count: task.volunteers.count)
+      = t('tasks.volunteers', volunteer_count: task.volunteers.count)
       %span.glyphicon.glyphicon-hand-down
-  %td= link_to raw('<i class="glyphicon glyphicon-remove"></i>') , event_task_path(event, task.id), method: :delete, data: { confirm: t('views.tasks.delete_confirm', task_description: task.description )}, remote: true
+  %td= link_to raw('<i class="glyphicon glyphicon-remove"></i>') , event_task_path(event, task.id), method: :delete, data: { confirm: t('tasks.delete_confirm', task_description: task.description )}, remote: true
 %tr.collapse{id: "task#{task.id}"}
   %td{colspan: "4"}
     %table.table.table-bordered.table-striped.sortable#task-attendee-table
       %tr
-        %th= t('views.events.name')
-        %th= t('views.events.email')
-        %th= t('views.events.phone')
+        %th= t('events.name')
+        %th= t('events.email')
+        %th= t('events.phone')
       - task.volunteers.each do |volunteer|
         %tr
           %td= volunteer.name

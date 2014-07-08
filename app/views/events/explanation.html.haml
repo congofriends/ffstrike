@@ -2,13 +2,13 @@
   .row
     .col8
       %h2
-        = t('views.events.explanation.confirm_msg', event_type: @event.type)
+        = t('events.explanation.confirm_msg', event_type: @event.type)
     .col4
-      = t('views.events.explanation.competency_question')
-      = link_to(t('views.events.explanation.event_dash_prompt'), my_events_path(:name => {:id => @event.id}))
+      = t('events.explanation.competency_question')
+      = link_to(t('events.explanation.event_dash_prompt'), my_events_path(:name => {:id => @event.id}))
   %br
   .task-list
-    = t('views.events.explanation.host_task_msg')
+    = t('events.explanation.host_task_msg')
     - TaskPopulator.host_tasks(@event).each do |task|
       %ul
         %li= task

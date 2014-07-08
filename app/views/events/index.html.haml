@@ -5,18 +5,18 @@
     .col-sm-8
     .col-sm-2
       -if current_user
-        = link_to t('views.events.host_btn') , new_movement_event_path(@movement), class: 'btn search'
+        = link_to t('events.host_btn') , new_movement_event_path(@movement), class: 'btn search'
       -else
-        = link_to t('views.events.host_btn') , new_movement_unauthenticated_event_path(@movement), class: 'btn'
+        = link_to t('events.host_btn') , new_movement_unauthenticated_event_path(@movement), class: 'btn'
   .row.event-list
     .form-inline.col-sm-12
       = form_tag movement_events_path, :method => :get, remote: true do
-        = text_field_tag 'zip', value = nil, id: 'query', placeholder: t('views.events.search_placeholder')
+        = text_field_tag 'zip', value = nil, id: 'query', placeholder: t('events.search_placeholder')
         %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
   .row
     %h4#no-results
-      = t('views.events.no_events_msg')
-      = current_user ? (link_to t('views.events.host_link'), new_movement_event_path(@movement)) : (link_to t('views.events.host_link'), new_movement_unauthenticated_event_path(@movement))
+      = t('events.no_events_msg')
+      = current_user ? (link_to t('events.host_link'), new_movement_event_path(@movement)) : (link_to t('events.host_link'), new_movement_unauthenticated_event_path(@movement))
     #map-canvas
   %hr
   .event-list.events

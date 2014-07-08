@@ -1,21 +1,21 @@
 =content_for :title, "My Events"
 .container
-  %h2= t('views.events.dashboard.header')
+  %h2= t('events.dashboard.header')
   = form_tag my_events_path, :method => :get, remote: true do
     - if @event
       = select("name", "id", @events.collect {|e| [ e.name, e.id ]}, selected: @event.id)
     - else
       = select("name", "id", @events.collect {|e| [ e.name, e.id ]})
-    = submit_tag t('views.events.show_btn'), class: "btn-small"
-    %h3= t('views.events.dashboard.instructions')
+    = submit_tag t('events.show_btn'), class: "btn-small"
+    %h3= t('events.dashboard.instructions')
 
     %ul#eventTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}
       %li
-        %a{href: '#event', data: {toggle: 'tab'}}= t('views.events.dashboard.tab_edit')
+        %a{href: '#event', data: {toggle: 'tab'}}= t('events.dashboard.tab_edit')
       %li
-        %a{href: '#tasks', data: {toggle: 'tab'}}= t('views.events.dashboard.tab_tasks')
+        %a{href: '#tasks', data: {toggle: 'tab'}}= t('events.dashboard.tab_tasks')
       %li
-        %a{href: '#attendees', data: {toggle: 'tab'}}= t('views.events.dashboard.tab_attendees')
+        %a{href: '#attendees', data: {toggle: 'tab'}}= t('events.dashboard.tab_attendees')
 
   .tab-content
     .tab-pane.fade.in#event

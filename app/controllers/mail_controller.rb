@@ -3,6 +3,7 @@ class MailController < ApplicationController
   def mail_attendees
     @scope = find_scope params
     send_attendees_mail @scope
+    message = params[:message]
     redirect_to :back
   rescue ActionController::RedirectBackError
     redirect_to root_path

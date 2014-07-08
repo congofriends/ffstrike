@@ -1,4 +1,4 @@
-en:
+es:
   events:
     host_btn: "HOST AN EVENT"
     unattend_btn: "UNATTEND EVENT"
@@ -95,7 +95,7 @@ en:
       create_btn: "CREATE NEW TASK"
   layouts:
     breadcrumb:
-      home: 'Home'
+      home: 'Inicio'
     footer:  
       about: 'About'
     navbar:
@@ -107,17 +107,14 @@ en:
       sign_in: 'Sign in'
       sign_out: 'Sign Out'
   contact:
-    new_event_msg:
-      contact_host_for: 'Contact the host for:'
-      name: 'Your name:'
-      email: 'Your email:'
-      subject: 'Subject:'
-      message: 'Your message:'
-      question: 'Question about %{about}'
-      submit: 'Submit'
-    new_movement_msg:  
-      contact_coordinator_for: 'Contact the coordinator for:'
-      submit: 'Submit'
+    contact_host_for: 'Contact the host for:'
+    name: 'Your name:'
+    email: 'Your email:'
+    subject: 'Subject:'
+    message: 'Your message:'
+    question: 'Question about %{about}'
+    contact_coordinator_for: 'Contact the coordinator for:'
+    submit: 'Submit'
   movements:
     movement:
       dashboard: 'DASHBOARD'

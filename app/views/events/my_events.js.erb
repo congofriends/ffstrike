@@ -13,16 +13,16 @@ function initializeEditEventValidations() {
 
     },
     messages: {
-      'event[name]': "<%= t('views.events.validations.name') %>",
-      'event[start_time]': "<%= t('views.events.validations.start_time') %>",
-      'event[city]': "<%= t('views.events.validations.city') %>",
-      'event[state]': "<%= t('views.events.validations.state') %>",
-      'event[address]': "<%= t('views.events.validations.address') %>",
-      'event[description]': "<%= t('views.events.validations.description') %>",
+      'event[name]': "<%= t('events.validations.name') %>",
+      'event[start_time]': "<%= t('events.validations.start_time') %>",
+      'event[city]': "<%= t('events.validations.city') %>",
+      'event[state]': "<%= t('events.validations.state') %>",
+      'event[address]': "<%= t('events.validations.address') %>",
+      'event[description]': "<%= t('events.validations.description') %>",
       'event[zip]': {
-      required: "<%= t('views.events.validations.zip_required') %>",
-      number: "<%= t('views.events.validations.zip_numeric') %>",
-      rangelength: "<%= t('views.events.validations.zip_length') %>"}
+      required: "<%= t('events.validations.zip_required') %>",
+      number: "<%= t('events.validations.zip_numeric') %>",
+      rangelength: "<%= t('events.validations.zip_length') %>"}
     },
     errorElement: "div",
     errorClass: "text-danger",
