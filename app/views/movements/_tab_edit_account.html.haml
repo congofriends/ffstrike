@@ -1,7 +1,7 @@
 .tab-pane#unapproved_events
   .well
-    %legend 
-      =t('views.movements.movement.edit_account')
+    %legend
+      =t('movements.movement.edit_account')
     .attend-form
     = render :template => 'devise/registrations/edit', :locals => { :resource => current_user, :resource_name => 'user' }
 

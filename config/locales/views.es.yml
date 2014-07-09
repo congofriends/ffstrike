@@ -86,7 +86,11 @@ es:
     sign_up: "SIGN UP"
     signed_up: "SIGNED UP"
     volunteers: "Volunteers (%{volunteer_count})"
-    table:
+    host_tasks_table:
+      host_tasks: "Host Tasks"
+      description: "Description"
+    tasks_table:
+      legend: "Attendee Tasks"
       tasks: "Task (click to Edit)"
       volunteers: "Volunteers"
       delete: "Delete"
@@ -127,6 +131,8 @@ es:
       hosts: 'HOSTS'
       attendees: 'ATTENDEES'
       invite_coordinators: 'INVITE COORDINATORS'
+      email_attendees: "EMAIL ATTENDEES"
+      email_hosts: "EMAIL HOSTS"
       export_attendees: 'EXPORT ATTENDEE LIST'
       name_cl: 'Name'
       group_cl: 'Group'
@@ -136,6 +142,18 @@ es:
       point_person: 'Point person?'
       yes: 'yes'
       no: 'no'
+    email_modal:
+      email_attendees: "EMAIL ATTENDEES"
+      title: "Email the Attendees"
+      subject: "Subject"
+      message: "Message"
+      placeholder: "Enter a message to send to all attendees"
+    email_hosts_modal:
+      email_hosts: "EMAIL HOSTS"
+      title: "Email the Hosts"
+      subject: "Subject"
+      message: "Message"
+      placeholder: "Enter a message to send to all hosts"
     tab_tasks:
       modify_tasks: 'Modify Tasks for Events Here'
     my_groups:
@@ -151,11 +169,11 @@ es:
       where: "When"
       when: "Where"
       approved: "Approved"
-    my_profile:
-      events_attending: 'Events Attending'
-    new:
-      thanks_msg: 'Thank You For Supporting Friends of The Congo.'
-      explanation_msg: "Once you enter the relevant details, you'll be able to create events for supporters to attend. Your events will be searchable via the home page."
+      approve: "Approve"
+      unapprove: "Unapprove"
+      view_event: "View Event"
+      edit_event: "Edit Event"
+    tab_groups:
       name: 'Name'
       location_placeholder: 'e.g. Global, International, National..'
       youtube_link: 'Youtube Link'
@@ -165,6 +183,13 @@ es:
       extended_description: 'Extended description'
       location: 'Location'
       about_creator: 'About creator'
+      update_movement: "Update Movement"
+    my_profile:
+      events_attending: 'Events Attending'
+      personal_details: 'Personal Details'
+    new:
+      thanks_msg: 'Thank You For Supporting Friends of The Congo.'
+      explanation_msg: "Once you enter the relevant details, you'll be able to create events for supporters to attend. Your events will be searchable via the home page."
     show:
       quote: 'Our mission and vision is to raise the consciousness of the world community on the challenge of the Congo and support Congolese institutions in bringing about a peaceful and lasting change.'
     show_chapter:

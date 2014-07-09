@@ -39,6 +39,17 @@ fr:
       signed_up_but_unconfirmed: 'Un message avec un lien de confirmation vous a été envoyé par mail. Veuillez suivre ce lien pour activer votre compte.'
       update_needs_confirmation: 'Vous avez modifié votre compte avec succès, mais nous devons vérifier votre nouvelle adresse de courriel. Veuillez consulter vos courriels et cliquer sur le lien de confirmation pour confirmer votre nouvelle adresse.'
       updated: 'Votre compte a été modifié avec succès.'
+      edit:
+        name: "Nom"
+        email: "Email"
+        phone: "Numéro de téléphone"
+        confirmation_msg: "Actuellement en attente de confirmation pour : %{unconfirmed_email}"
+        current_pass: "Mot de passe actuel"
+        pass_msg: "(Nous avons besoin de votre mot de passe courant pour confirmer vos modifications)"
+        blank_msg: "(Laissez vide si vous ne voulez pas modifier)"
+        pass: "Nouveau mot"
+        pass_confirm: "Nouveau mot de passe de confirmation"
+        update: "Mise à jour"
     sessions:
       signed_in: 'Connecté(e) avec succès.'
       signed_out: 'Déconnecté(e) avec succès.'

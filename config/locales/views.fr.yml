@@ -14,7 +14,7 @@ fr:
     volunteer_status: "VOLUTEER STATUT"
     export_attendees: *export_attendees
     contact_attendees: "CONTACT PARTICIPANTS"
-    show_btn: "SHOW"
+    show_btn: "AFFICHER"
     host_link: "Cliquez ici pour héberger votre propre événement."
     search_placeholder: "Rechercher des événements par ville, état ou Code Postal"
     no_events_msg: "Il n'y a pas d'événement enregistré près de chez vous."
@@ -46,7 +46,7 @@ fr:
       tab_tasks: "Tâches"
       tab_attendees: "Participants"
     explanation:
-      confirm_msg: "Félicitations, vous avez créé avec succès une % {event_type}"
+      confirm_msg: "Félicitations, vous avez créé avec succès une %{event_type}"
       competency_question: "savent ce que vous faites?"
       event_dash_prompt: "Aller droit à votre événement de planche de bord."
       host_task_msg: "Voici certaines choses que vous pouvez faire pour faire de votre événement un succès:"
@@ -79,7 +79,7 @@ fr:
       avatar: "Avatar:"
       update: "Mise à jour"
       cancel: "Annuler événement"
-      cancel_confirm_msg: "Êtes-vous sûr de vouloir supprimer cet événement ?"
+      cancel_confirm_msg: "Êtes-vous sûr de vouloir supprimer cet événement?"
     show:
       task_msg: "Voici quelques choses que vous pouvez faire pour aider:"
     validations:
@@ -93,11 +93,15 @@ fr:
       zip_numeric: "Zip doit contenir uniquement des chiffres"
       zip_length: "Zip doit être de 5 chiffres"
   tasks:
-    delete_confirm: "Vous assurez-vous de supprimer tâche ' % {task_description} '?"
+    delete_confirm: "Vous assurez-vous de supprimer tâche '%{task_description}'?"
     sign_up: "INSCRIVEZ-VOUS"
     signed_up: "Signé"
-    volunteers: "Les bénévoles ( % {volunteer_count})"
-    table:
+    volunteers: "Les bénévoles (%{volunteer_count})"
+    host_tasks_table:
+      host_tasks: "Tâches de l'hôte"
+      description: "Description"
+    tasks_table:
+      legend: "Tâches des participants"
       tasks: "Tâche (cliquez pour modifier)"
       volunteers: "Les bénévoles"
       delete: "Supprimer"
@@ -106,7 +110,7 @@ fr:
       create_btn: "Créer une nouvelle tâche"
   layouts:
     breadcrumb:
-      home: 'Home'
+      home: 'Maison'
     footer:
       about: 'Environ'
     navbar:
@@ -124,7 +128,7 @@ fr:
       email: 'votre e-mail:'
       subject: 'Sujet:'
       message: 'Votre message:'
-      question: "Question à propos de % {about}"
+      question: "Question à propos de %{about}"
       submit: 'Soumettre'
     new_movement_msg:
       contact_coordinator_for: 'Contacter le coordonnateur de:'
@@ -140,7 +144,9 @@ fr:
       coordinators: 'COORDINATEURS'
       hosts: 'Hôtes'
       attendees: 'participants'
-      invite_coordinators: "inviter coordonnateurs"
+      invite_coordinators: "INVITER COORDONNATEURS"
+      email_attendees: "E-MAIL AUX PARTICIPANTS"
+      email_hosts: "Hôtes E-MAIL"
       export_attendees: *export_attendees
       name_cl: *name
       group_cl: 'Groupe'
@@ -150,12 +156,24 @@ fr:
       point_person: *point
       yes: 'Oui'
       no: 'non'
+    email_modal:
+      email_attendees: "E-mail aux participants"
+      title: "E-mail aux participants"
+      subject: "Objet"
+      message: "Message"
+      placeholder: "Entrez le message à envoyer à tous les participants."
+    email_hosts_modal:
+      email_hosts: "Hôtes E-MAIL"
+      title: "E-mail les hôtes"
+      subject: "Subject"
+      message: "Objet"
+      placeholder: "Saisissez le message à envoyer à tous les hôtes."
     tab_tasks:
       modify_tasks: 'Modifier les tâches pour les événements ici'
     my_groups:
       my_groups: 'Mes groupes'
       manage_my_groups: 'Gérer Mes groupes'
-      show: 'Afficher'
+      show: 'AFFICHER'
       select_group: 'Sélectionnez un groupe, puis cliquez sur Afficher'
       group_details: 'Détails du groupe'
       group_events: 'Événements de groupe'
@@ -165,20 +183,27 @@ fr:
       where: "quand"
       when: "Où"
       approved: "Approuvé"
-    my_profile:
-      events_attending: 'Assister aux événements'
-    new:
-      thanks_msg: 'Merci pour la prise en charge des Amis du Congo.'
-      explanation_msg: "Une fois que vous entrez les détails pertinents, vous serez en mesure de créer des événements pour les partisans d'y assister. Vos événements seront interrogeables via la page d'accueil."
+      approve: "Approuver"
+      unapprove: "Désapprouver"
+      view_event: "Afficher l'événement"
+      edit_event: "Modifier l'événement"
+    tab_groups:
       name: 'Nom:'
       location_placeholder: 'Par exemple mondial, International, National..'
       youtube_link: 'Lien Youtube'
       create_btn: 'Créer du mouvement'
       tagline: "Slogan: "
       call_to_action: "Appel à l'action:"
-      extended_description: "Description étendue :"
+      extended_description: "Description étendue:"
       location: "Emplacement:"
       about_creator: "De Créateur:"
+      update_movement: "Mouvement mise à jour"
+    my_profile:
+      events_attending: 'Assister aux événements'
+      personal_details: 'Détails personnels'
+    new:
+      thanks_msg: 'Merci pour la prise en charge des Amis du Congo.'
+      explanation_msg: "Une fois que vous entrez les détails pertinents, vous serez en mesure de créer des événements pour les partisans d'y assister. Vos événements seront interrogeables via la page d'accueil."
     show:
       quote: "Notre mission et notre vision est de soulever la conscience de la communauté mondiale sur le défi du Congo et de l'appui institutions congolaises à parvenir à un règlement pacifique et durable."
     show_chapter:
@@ -187,5 +212,5 @@ fr:
       contact_group_coordinator: 'COMMUNIQUEZ AVEC LE COORDONNATEUR DE GROUPE'
     support_network:
       support_network: 'Support Réseau'
-      network_message: 'Notre réseau de soutien a % {number} groupes et est de plus en plus !'
+      network_message: 'Notre réseau de soutien a %{number} groupes et est de plus en plus!'
       create_group: 'CRÉER UN GROUPE'

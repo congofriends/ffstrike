@@ -4,7 +4,7 @@
 
 .container
   - if current_user && (current_user.volunteer_for @event)
-    %h2= t('views.events.show.task_msg')
+    %h2= t('events.show.task_msg')
     = render template: "tasks/show", locals: {event: @event}
   %br
   =render partial: "event", locals: {event: @event}

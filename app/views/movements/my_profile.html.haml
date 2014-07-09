@@ -1,7 +1,8 @@
 .container
   %ul#movementTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}
     %li
-      %a{href: '#edit_account', data: {toggle: 'tab'}} Personal Details
+      %a{href: '#edit_account', data: {toggle: 'tab'}}
+        = t('.personal_details')
     %li
       %a{href: '#attending_events', id:'event_tab' ,data: {toggle: 'tab'}}
         =t('.events_attending')

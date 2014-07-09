@@ -1,9 +1,9 @@
 .tab-pane#tasks
   .well
     %table.table.table-bordered.table-striped.sortable#host-task-table
-      %legend Host Tasks
+      %legend= t('.host_tasks')
       %tr
-        %th Description
+        %th= t('.description')
       - TaskPopulator.host_tasks(event).each do |task|
         %tr
           %td= task

@@ -1,18 +1,18 @@
 .tab-pane#tasks
   .well
     %table.table.table-bordered.table-striped.sortable#task-table
-      %legend Attendee Tasks
+      %legend= t('.legend')
       %tr
-        %th= t('tasks.table.tasks')
-        %th= t('tasks.table.volunteers')
-        %th= t('tasks.table.delete')
+        %th= t('.tasks')
+        %th= t('.volunteers')
+        %th= t('.delete')
       - event.tasks.uniq.each do |task|
         = render partial: "tasks/task_row", locals: {task: task, event: event}
 
 - if ((event.movement.users.include? current_user) || (event.host? current_user))
   %hr
-  %h3= t('tasks.table.new')
+  %h3= t('.new')
   = form_for ([event, @task=Task.new]), remote: true, html: {class: "form-group", id: "new_task#{event.id}"} do |f|
     .row
-      .col-xs-8= f.text_area :description, placeholder: t('tasks.table.new_description'), class: "form-control", rows: "3"
-      .col-xs-4= f.submit t('tasks.table.create_btn'), :class=>"btn"
+      .col-xs-8= f.text_area :description, placeholder: t('.new_description'), class: "form-control", rows: "3"
+      .col-xs-4= f.submit t('.create_btn'), :class=>"btn"

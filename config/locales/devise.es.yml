@@ -38,6 +38,17 @@ es:
       signed_up_but_unconfirmed: 'Se ha enviado un mensaje con un enlace de confirmación a tu correo electrónico. Abre el enlace para activar tu cuenta.'
       update_needs_confirmation: 'Has actualizado tu cuenta correctamente, pero es necesario confirmar tu nuevo correo electrónico. Por favor, comprueba tu correo y sigue el enlace de confirmación para finalizar la comprobación del nuevo correo eletrónico.'
       updated: 'Tu cuenta fue actualizada.'
+      edit:
+        name: "Name"
+        email: "Email"
+        phone: "Phone Number"
+        confirmation_msg: "Currently waiting confirmation for: %{unconfirmed_email}"
+        current_pass: "Current_password"
+        pass_msg: "(we need your current password to confirm your changes)"
+        blank_msg: "(leave blank if you don't want to change it)"
+        pass: "New Password"
+        pass_confirm: "New Password Confirmation"
+        update: "Update"
     sessions:
       signed_in: 'Sesión iniciada.'
       signed_out: 'Sesión finalizada.'

@@ -18,11 +18,11 @@
     });
   });
 
-#dialog-host{title: "Email the Hosts"}
+#dialog-host{title: "#{t('.title')}"}
   = form_tag(mail_hosts_path(movement_id: @group), method: "post") do
-    = label_tag "Subject"
+    = label_tag t('.subject')
     = text_area_tag "subject", nil, class: 'form-control'
-    = label_tag "Message"
-    = text_area_tag "message", nil, placeholder: 'Enter a message to send to all hosts', class: 'form-control'
-    = submit_tag "SEND EMAIL", class: 'btn ctrl-btn', id: 'Send_Email'
-%button#opener-host.btn.ctrl-btn EMAIL HOSTS
+    = label_tag t('.message')
+    = text_area_tag "message", nil, placeholder: t('.placeholder'), class: 'form-control'
+    = submit_tag t('.email_hosts'), class: 'btn ctrl-btn', id: 'Send_Email'
+%button#opener-host.btn.ctrl-btn=t('.email_hosts')

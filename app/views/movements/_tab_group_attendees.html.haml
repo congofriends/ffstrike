@@ -1,16 +1,16 @@
 .tab-pane#support
   .well
-    %h3 
+    %h3
       =t('.coordinators')
     %table.table.table-bordered.table-striped.sortable#group-attendees-table
       %tr
-        %th 
+        %th
           =t('.name_cl')
-        %th 
+        %th
           =t('.group_cl')
-        %th 
+        %th
           =t('.email_cl')
-        %th 
+        %th
           =t('.phone_number')
       - @groups.each do |group|
         - group.ownerships.each do |ownership|
@@ -20,17 +20,17 @@
             %td= ownership.user.email
             %td= ownership.user.phone
 
-    %h3 
+    %h3
       =t('.hosts')
     %table.table.table-bordered.table-striped.sortable#group-attendees-table
       %tr
-        %th 
+        %th
           =t('.name_cl')
         %th
-          =t('.event')
-        %th 
+          =t('.event_cl')
+        %th
           =t('.email_cl')
-        %th 
+        %th
           =t('.phone_number')
       - @group.events.each do |event|
         %tr
@@ -39,19 +39,19 @@
           %td= event.host.email
           %td= event.host.phone
 
-    %h3 
+    %h3
       =t('.attendees')
     %table.table.table-bordered.table-striped.sortable#group-attendees-table
       %tr
-        %th 
+        %th
           =t('.name_cl')
         %th
           =t('.event')
-        %th 
+        %th
           =t('.email_cl')
-        %th 
+        %th
           =t('.phone_number')
-        %th 
+        %th
           =t('.point_person')
       - @group.events.each do |event|
         - event.attendees.each do |attendee|

@@ -1,41 +1,40 @@
 = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, id: 'edit-user-details' }) do |f|
   = devise_error_messages!
   %div
-    = f.label :name, "Name *"
+    = f.label :name, t('.name') + " *"
     %br/
     = f.text_field :name, class: 'form-control'
   %br/
   %div
-    = f.label :email, "Email *"
+    = f.label :email, t('.email') + " *"
     %br/
     = f.text_field :email, class: 'form-control'
   %br/
   %div
-    = f.label :phone
+    = f.label :phone, t('.phone')
     %br/
     = f.text_field :phone, class: 'form-control'
   %br/
   %br/
   %br/
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
+    %div= t('.confirmation_msg', unconfirmed_email: resource.unconfirmed_email)
   %div
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
+    = f.label :current_password, t('.current_pass') + " *"
+    %i= t('.pass_msg')
     %br/
     = f.password_field :current_password, class: 'form-control'
   %br/
   %div
-    = f.label :password, 'New Password'
-    %i (leave blank if you don't want to change it)
+    = f.label :password, t('.pass')
+    %i= t('.blank_msg')
     %br/
     = f.password_field :password, class: 'form-control', :autocomplete => "off"
   %div
-    = f.label :password_confirmation, 'New Password Confirmation'
+    = f.label :password_confirmation, t('.pass_confirm')
     %br/
     = f.password_field :password_confirmation, class: 'form-control'
   %br/
   %div
-    = f.submit "Update", class: 'btn'
+    = f.submit t('.update'), class: 'btn'
   %br/
