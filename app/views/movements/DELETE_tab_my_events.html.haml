@@ -1,0 +1,6 @@
+.tab-pane#events
+  .well
+    %legend= description
+    .panel.panel-default
+      .panel-body
+        = render partial: 'events/panel', collection: events, as: :event

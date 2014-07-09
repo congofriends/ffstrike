@@ -1,0 +1,10 @@
+.container
+  .well
+    %h4 What Type of Event?
+    - @event_types.each do |event_type|
+      - if current_user
+        %div= link_to event_type, new_movement_event_path(@movement, {type: event_type}), :id => "#{event_type.downcase.gsub(' ', '_')}", :class => "btn btn-info btn-block btn-lg",
+          :rel=> "tooltip", :title => EVENT_DESCRIPTIONS["event_type"]["#{event_type.downcase.gsub(' ', '_')}"]["short_description"]
+      - else
+        = link_to event_type, new_movement_unauthenticated_event_path(@movement, {type: event_type }), :class => "btn btn-info btn-block btn-lg",
+          :rel=> "tooltip", :title => EVENT_DESCRIPTIONS["event_type"]["#{event_type.downcase.gsub(' ', '_')}"]["short_description"]
