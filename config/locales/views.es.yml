@@ -10,115 +10,115 @@ es:
     attend_btn: "ASISTIR A"
     contact_host_btn: "CONTACTAR CON HOST"
     flyer_msg: "Use this flyer to promote this event!"
-    flyer_dl: "(click on the flyer to download)"
-    when: "When:"
-    where: "Where:"
-    location: "Location Details:"
-    description: "Description:"
-    organized_by: "Organized By:"
-    email_msg: "Email Event Attendees"
-    message: "message"
-    message_placeholder: 'Enter a message to send to event attendees'
-    email_btn: "Send Email"
-    tasks_signed_up: "Tasks Signed Up For:"
-    name: "Name"
-    email: "Email"
-    phone: "Phone Number"
-    point: "Point person (Click to Assign)"
-    notes: "Notes (Click to Edit)"
-    unapprove: "Unapprove"
-    approve: "Approve"
+    flyer_dl: "(Haga clic en el flyer para descargar)"
+    when: "Cuando:"
+    where: "Donde:"
+    location: "Los detalles de la ubicación:"
+    description: "Descripción:"
+    organized_by: "Organizado por:"
+    email_msg: "Asistentes a Eventos Correo Electrónico"
+    message: "mensaje"
+    message_placeholder: 'Escriba un mensaje para enviar a asistentes a eventos'
+    email_btn: "Enviar correo electrónico"
+    tasks_signed_up: "Firmado Por Tareas:"
+    name: "Nombre"
+    email: "Correo electrónico"
+    phone: "Teléfono Número"
+    point: "Punto persona (Haga clic para asignar)"
+    notes: "Notas(Haga clic para editar)"
+    unapprove: "Desaprobar"
+    approve: "Aprobar"
     dashboard:
-      header: "Manage My Events"
-      instructions: "Select an Event and click SHOW"
-      tab_edit: "Event Details"
-      tab_tasks: "Tasks"
-      tab_attendees: "Attendees"
+      header: "Administrar Mis eventos"
+      instructions: "Seleccione un evento y haga clic en Mostrar"
+      tab_edit: "Detalles del evento"
+      tab_tasks: "Tareas"
+      tab_attendees: "Los Asistentes"
     explanation:
-      confirm_msg: "Congrats - You've successfully created a %{event_type}"
-      competency_question: "Know what you're doing?"
-      event_dash_prompt: "Go right to your event dashboard."
-      host_task_msg: "Here are some things you might want to do to make your event a success:"
+      confirm_msg: "Enhorabuena, ha creado con éxito un %{event_type}"
+      competency_question: "Sabes lo que estás haciendo?"
+      event_dash_prompt: "Ir a la derecha del tablero de su evento."
+      host_task_msg: "Aquí están algunas cosas que usted puede desear para hacer algo para que su evento sea un éxito:"
     new:
-      legend1:  "Event Basic Information (1/2)"
-      legend2: "Event details (2/2)"
-      address: "Event Address"
-      location_placeholder: "meet at the corner of Belmont & Sheridan"
-      next: "Next"
-      previous: "Previous"
-      create_btn: "CREATE EVENT"
-      msg_to_attendees: "Write a brief message to event attendees:"
-      event_type: 'Event Type:'
-      event_chapter_msg: "If this event is associated with a chapter, please choose it here:"
-      forum_msg: "Include an attendee discussion forum on this event:"
+      legend1:  "Evento Información Básica (1/2)"
+      legend2: "Detalles del evento (2/2)"
+      address: "Dirección del evento"
+      location_placeholder: "reunirá a la vuelta de la esquina de Belmont y Sheridan"
+      next: "Siguiente"
+      previous: "Anterior"
+      create_btn: "CREAR EVENTO"
+      msg_to_attendees: "Escribir un breve mensaje a asistentes a eventos:"
+      event_type: 'Tipo de evento:'
+      event_chapter_msg: "Si este evento está asociado con un capítulo, seleccione aquí:"
+      forum_msg: "Incluir una de las asistentes foro de debate sobre este evento:"
     edit:
-      edit_header: "EDIT EVENT"
-      start_date: "Start date & time:"
-      end_date: "End date & time:"
-      name: "Name:"
-      address1: "Address 1:"
-      address2: "Address 2:"
-      city: "City:"
-      state: "State:"
+      edit_header: "Editar"
+      start_date: "Fecha y hora de inicio:"
+      end_date: "Fecha y hora de finalización:"
+      name: "Nombre:"
+      address1: "Dirección 1:"
+      address2: "Dirección 2:"
+      city: "Ciudad:"
+      state: "Estado:"
       zip: "Zip:"
-      notes: "Notes:"
-      type: "Type:"
-      forum: "Forum (Disqus):"
+      notes: "Notas:"
+      type: "Tipo:"
+      forum: "Foro (Disqus):"
       flyer: "Flyer:"
       avatar: "Avatar:"
-      update: "Update"
-      cancel: "Cancel Event"
-      cancel_confirm_msg: "Are you sure you want to delete this event?"
+      update: "Actualizar"
+      cancel: "Cancelar"
+      cancel_confirm_msg: "¿está seguro de que desea eliminar este evento?"
     show:
-      task_msg: "Here are some things you can do to help out:"
+      task_msg: "Aquí están algunas cosas que usted puede hacer para ayudar a:"
     validations:
-      name: "Name is required"
+      name: "es necesario el nombre"
       start_time: "Start date & time is required"
-      city: "City is required"
-      state: "State is required"
-      address: "Address is required"
-      description: "Description is required"
-      zip_required: 'Zip is required'
-      zip_numeric: "Zip should contain only numbers"
-      zip_length: "Zip should be 5 digits long"
+      city: "fecha y hora de inicio es necesario"
+      state: "La ciudad es necesario"
+      address: "es necesaria la dirección"
+      description: "se requiere una descripción"
+      zip_required: 'Zip es necesario'
+      zip_numeric: "Zip debe contener sólo números"
+      zip_length: "Zip debe ser de 5 dígitos"
   tasks:
-    delete_confirm: "You sure about deleting task '%{task_description}'?"
+    delete_confirm: "¿Estás seguro de eliminar tarea '%{task_description}'?"
     sign_up: "SIGN UP"
-    signed_up: "SIGNED UP"
-    volunteers: "Volunteers (%{volunteer_count})"
+    signed_up: "Firmado"
+    volunteers: "Los Voluntarios (%{volunteer_count})"
     host_tasks_table:
       host_tasks: "Host Tasks"
-      description: "Description"
+      description: "Descripción"
     tasks_table:
-      legend: "Attendee Tasks"
-      tasks: "Task (click to Edit)"
-      volunteers: "Volunteers"
-      delete: "Delete"
-      new: "ADD NEW TASK:"
-      new_description: "Add a new task description here..."
-      create_btn: "CREATE NEW TASK"
+      legend: "Asistente de las funciones"
+      tasks: "Tarea (haga clic en Editar)"
+      volunteers: "Voluntarios"
+      delete: "Eliminar"
+      new: "AGREGAR NUEVA TAREA:"
+      new_description: "Añadir una nueva descripción de la tarea aquí..."
+      create_btn: "CREAR UNA NUEVA TAREA"
   layouts:
     breadcrumb:
       home: 'Inicio'
     footer:
-      about: 'About'
+      about: 'Acerca de'
     navbar:
-      my_profile: 'My profile'
-      manage_my_groups: 'Manage My Groups'
-      manage_my_events: 'Manage My Events'
-      create_group: 'Create Group'
-      create_event: 'Create Event'
-      sign_in: 'Sign in'
-      sign_out: 'Sign Out'
+      my_profile: 'Mi perfil'
+      manage_my_groups: 'Administrar Mis grupos'
+      manage_my_events: 'Gestionar Mi Eventos'
+      create_group: 'Crear grupo'
+      create_event: 'Crear Evento'
+      sign_in: 'Inicio de Sesión'
+      sign_out: 'Salir'
   contact:
-    contact_host_for: 'Contact the host for:'
-    name: 'Your name:'
-    email: 'Your email:'
-    subject: 'Subject:'
-    message: 'Your message:'
-    question: 'Question about %{about}'
-    contact_coordinator_for: 'Contact the coordinator for:'
-    submit: 'Submit'
+    contact_host_for: 'Póngase en contacto con el host:'
+    name: 'Su nombre:'
+    email: 'El correo electrónico:'
+    subject: 'Asunto:'
+    message: 'Su mensaje:'
+    question: 'Pregunta sobre %{about}'
+    contact_coordinator_for: 'Contacto con el coordinador para: '
+    submit: 'Enviar'
   movements:
     movement:
       dashboard: 'DASHBOARD'
