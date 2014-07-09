@@ -121,41 +121,41 @@ es:
     submit: 'Enviar'
   movements:
     movement:
-      dashboard: 'DASHBOARD'
-      events: 'EVENTS'
-      edit_account: 'Edit account details'
-      event_details: 'Event Details'
-      select_event: 'Select an Event to Edit'
+      dashboard: 'TABLERO'
+      events: 'Eventos'
+      edit_account: 'Editar detalles de cuenta'
+      event_details: 'Detalles de la cita de'
+      select_event: 'Seleccionar el evento que desee editar'
     tab_group_attendees:
-      coordinators: 'COORDINATORS'
-      hosts: 'HOSTS'
-      attendees: 'ATTENDEES'
-      invite_coordinators: 'INVITE COORDINATORS'
-      email_attendees: "EMAIL ATTENDEES"
-      email_hosts: "EMAIL HOSTS"
-      export_attendees: 'EXPORT ATTENDEE LIST'
-      name_cl: 'Name'
-      group_cl: 'Group'
-      event_cl: 'Event'
-      email_cl: 'Email'
-      phone_number: 'Phone number'
-      point_person: 'Point person?'
-      yes: 'yes'
+      coordinators: 'COORDINADORES'
+      hosts: 'ANFITRIONES'
+      attendees: 'LOS ASISTENTES'
+      invite_coordinators: 'INVITAR A LOS COORDINADORES DE LAS'
+      email_attendees: "CORREO ELECTRÓNICO LOS ASISTENTES"
+      email_hosts: "Correo electrónico Hosts"
+      export_attendees: 'EXPORTACIÓN LISTA DE ASISTENTES'
+      name_cl: 'Nombre'
+      group_cl: 'Grupo'
+      event_cl: 'Evento'
+      email_cl: 'Correo Electrónico'
+      phone_number: 'Número de teléfono'
+      point_person: 'Persona?'
+      yes: 'sí'
       no: 'no'
     email_modal:
-      email_attendees: "EMAIL ATTENDEES"
-      title: "Email the Attendees"
-      subject: "Subject"
-      message: "Message"
-      placeholder: "Enter a message to send to all attendees"
+      email_attendees: "CORREO ELECTRÓNICO PARTICIPANTES"
+      title: "Correo electrónico a los asistentes"
+      subject: "Sujeto"
+      message: "Mensaje"
+      placeholder: "Escriba un mensaje para enviar a todos los asistentes"
     email_hosts_modal:
-      email_hosts: "EMAIL HOSTS"
-      title: "Email the Hosts"
-      subject: "Subject"
-      message: "Message"
-      placeholder: "Enter a message to send to all hosts"
+      email_hosts: "CORREO ELECTRÓNICO HOSTS"
+      title: "Correo electrónico los Hosts"
+      subject: "Sujeto"
+      message: "Mensaje"
+      placeholder: "Escribir un mensaje para enviar a todos los hosts"
     tab_tasks:
-      modify_tasks: 'Modify Tasks for Events Here'
+      modify_tasks: 'Modificar las tareas para los eventos aquí'
     my_groups:
       my_groups: 'My Groups'
       manage_my_groups: 'Manage My Groups'
