@@ -1,5 +1,5 @@
 #tasks.tab-pane
   .well
-    %a{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapse#{@event.id}"}
+    %a{"data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapse#{event.id}"}
     = render partial: "tasks/host_tasks_table", locals: {event: event}
     = render partial: "tasks/tasks_table", locals: {event: event}
