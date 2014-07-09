@@ -5,9 +5,9 @@
         = form_tag movement_unauthenticated_events_path, id: 'new-event-form', method: :post do
           %fieldset
             %fieldset.event_details
-              %legend= t("events.unauthenticated.legend1")
+              %legend= t("events.new.legend1")
               .form-group
-                = label :event, :name, t("events.edit.name") + " *"
+                = label :event, :name, t("events.name") + " *"
                 = text_field :event, :name, class: 'form-control'
               .form-group
                 = label :event, :description, t("events.description") + " *"
@@ -19,7 +19,7 @@
                 .form-group
                   = label :event, :end_time,  t("events.edit.end_date")
                   = text_field :event, :end_time, class: 'form-control datetimepicker'
-              %legend=  t("events.unauthenticated.address")
+              %legend=  t("events.new.address")
               .row
                 .form-group.col-xs-6
                   = label :event, :address, t("events.edit.address1") + " *"
@@ -42,7 +42,7 @@
                 = text_field :event,:location_details, placeholder: t("events.new.location_placeholder"), class: 'form-control'
               %button{type: "button", class: "btn btn-success next"}= t("events.new.next")
             %fieldset.event_additional_details
-              %legend= t("events.unauthenticated.legend2")
+              %legend= t("events.new.legend2")
               .form-group
                 = label :event,:image
                 = file_field :event, :image, class: 'form-control'
@@ -66,21 +66,21 @@
                 %button{type: "button", class: "btn btn-primary previous"}= t("events.new.previous")
                 %button{type: "button", class: "btn btn-success next"}= t("events.new.next")
             %fieldset.event_additional_details
-              %legend= t("events.unauthenticated.legend3")
+              %legend= t("events.new.legend3")
               .form-group
-                = label :user, :name,  t("events.unauthenticated.name") + " *"
+                = label :user, :name,  t("events.new.name") + " *"
                 = text_field :user, :name, class: 'form-control'
               .form-group
-                = label :user, :email, t("events.unauthenticated.email") + " *"
+                = label :user, :email, t("events.new.email") + " *"
                 = email_field :user, :email, class: 'form-control'
               .form-group
-                = label :user, :phone, t("events.unauthenticated.phone")
+                = label :user, :phone, t("events.new.phone")
                 = phone_field :user, :phone, class: 'form-control'
               .form-group
-                = label :user, :password, t("events.unauthenticated.password") + " *"
+                = label :user, :password, t("events.new.password") + " *"
                 = password_field :user, :password, class: 'form-control'
               .form-group
-                = label :user, :password_confirmation, t("events.unauthenticated.password_confirmation") + " *"
+                = label :user, :password_confirmation, t("events.new.password_confirmation") + " *"
                 = password_field :user, :password_confirmation, class: 'form-control'
               .form-group
                 %button{type: "button", class: "btn btn-primary previous"}= t("events.new.previous")

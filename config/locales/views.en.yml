@@ -54,6 +54,7 @@ en:
     new:
       legend1:  "Event Basic Information (1/2)"
       legend2: "Event details (2/2)"
+      legend3: "Personal details"
       address: "Event Address"
       location_placeholder: "meet at the corner of Belmont & Sheridan"
       next: "Next"
@@ -63,6 +64,11 @@ en:
       event_type: 'Event Type:'
       event_chapter_msg: "If this event is associated with a chapter, please choose it here:"
       forum_msg: "Include an attendee discussion forum on this event:"
+      name: "Your name"
+      email: "Your email"
+      phone: "Your phone"
+      password: "Password"
+      password_confirmation: "Password confirmation"
     edit:
       edit_header: "EDIT EVENT"
       start_date: "Start date & time:"
@@ -203,6 +209,15 @@ en:
     new:
       thanks_msg: 'Thank You For Supporting Friends of The Congo.'
       explanation_msg: "Once you enter the relevant details, you'll be able to create events for supporters to attend. Your events will be searchable via the home page."
+      name: 'Name'
+      location_placeholder: 'e.g. Global, International, National..'
+      location: "Location:"
+      youtube_link: 'Youtube Link'
+      tagline: "Tagline: "
+      extended_description: "Extended Description:"
+      call_to_action: "Call To Action:"
+      about_creator: "About Creator:"
+      create_btn: 'Create Movement'
     show:
       quote: 'Our mission and vision is to raise the consciousness of the world community on the challenge of the Congo and support Congolese institutions in bringing about a peaceful and lasting change.'
     show_chapter:
