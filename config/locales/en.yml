@@ -49,6 +49,7 @@ en:
     email_is_required: "Email is required"
     thanks_for_signed_in_user: "Thanks for attending!"
     thanks_for_nonsigned_in_user: "Thanks for attending! If you need to login again, we've sent you an email with a temporary password"
+    already_signed_up: "You have already signed up for this event!"
   mail:
     sent: "Sending Emails!"
     no_attendees: "You have no attendees to email."

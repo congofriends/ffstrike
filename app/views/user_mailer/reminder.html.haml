@@ -1,0 +1,30 @@
+Hello, #{@recipient.name}
+
+
+This is just a friendly reminder of the upcoming event, #{@event.movement.name}, that you signed up for.  If you haven't already spread the word and share on social media.
+
+%br/
+%br/
+Your event details are below:
+%br/
+Name: #{@event.name}
+%br/
+Address: #{@event.address}
+%br/
+City: #{@event.city}
+%br/
+Zip: #{@event.zip}
+%br/
+Date: #{@event.start_date}
+%br/
+Start Time: #{@event.start_time_formatted}
+%br/
+End Time: #{@event.end_time_formatted}
+%br/
+You can find out more about #{@event.name} by clicking
+= succeed "." do
+  %a{href: event_path(@event, {:locale => I18n.locale}) } here
+
+We look forward to seeing you.
+
+Friends of The Congo

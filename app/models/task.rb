@@ -11,11 +11,11 @@ class Task < ActiveRecord::Base
 
   def is_assigned_to? user
     return false if user.nil?
-    assignments.map {|a| a.attendance.user_id == user.id }.any?
+    assignments.map {|a| a.attendance.user_id == user.id if a.attendance}.any?
   end
 
   def assignment_for user
-    assignments.map {|a| return a if a.attendance.user_id == user.id }
+    assignments.map {|a| return a if a.attendance && a.attendance.user_id == user.id }
   end
 
   def is_not_assigned_to? user
@@ -32,5 +32,4 @@ class Task < ActiveRecord::Base
      return [] unless (assignments.map &:attendance).first
      assignments.map(&:attendance).map(&:user)
   end
-
 end

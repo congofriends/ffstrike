@@ -26,12 +26,14 @@ class UsersController < Devise::RegistrationsController
 
     if user.save
       sign_in(:user, user)
-      Attendance.where(user: user, event: @event).first_or_create(user: user, event: @event, point_person: params[:attendance][:point_person])
-      flash[:success] = message
-
-      #todo: move to queue
-      UserMailer.welcome(user.id, generated_password, @event.id).deliver if generated_password
-
+      if Attendance.where(user: user, event: @event).empty?
+        Attendance.create(user: user, event: @event, point_person: params[:attendance][:point_person])
+        flash[:success] = message
+        ReminderMailWorker.perform_at((@event.start_time-(60 * 60 * 24)), user.id, @event.id)
+        WelcomeMailWorker.perform_async(user.id, generated_password, @event.id) if generated_password
+      else
+        flash[:notice] = t('attendee.already_signed_up')
+      end
       redirect_to event_path(@event)
     else
       flash[:notice] = user.errors.full_messages.flatten.join(' ')
