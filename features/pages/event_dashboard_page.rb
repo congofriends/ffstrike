@@ -4,7 +4,7 @@ include BestInPlace::TestHelpers
 
 	def edit_event
     fill_in("event[address]", with: "123 this street")
-		click_link_or_button('Update')
+		click_link_or_button('UPDATE')
 	end
 
 	def event_should_not_exist
