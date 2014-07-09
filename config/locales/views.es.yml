@@ -157,49 +157,49 @@ es:
     tab_tasks:
       modify_tasks: 'Modificar las tareas para los eventos aquí'
     my_groups:
-      my_groups: 'My Groups'
-      manage_my_groups: 'Manage My Groups'
+      my_groups: 'Mis grupos'
+      manage_my_groups: 'Administrar Mis grupos'
       show: 'SHOW'
-      select_group: 'Select a Group and click SHOW'
-      group_details: 'Group Details'
-      group_events: 'Group Events'
-      manage_supporters: 'Manage Supporters'
+      select_group: 'Seleccione un grupo y haga clic en SHOW'
+      group_details: 'Grupo Detalles'
+      group_events: 'Grupo Eventos'
+      manage_supporters: 'Gestionar los partidarios'
     tab_group_events:
-      event_name: "Event Name (click to Edit)"
-      where: "When"
-      when: "Where"
-      approved: "Approved"
-      approve: "Approve"
-      unapprove: "Unapprove"
-      view_event: "View Event"
-      edit_event: "Edit Event"
+      event_name: "Nombre del evento (haga clic en Editar)"
+      where: "Cuando"
+      when: "Dónde"
+      approved: "Aprobado"
+      approve: "Aprobar"
+      unapprove: "Desaprobar"
+      view_event: "Evento"
+      edit_event: "Editar"
     tab_groups:
-      name: 'Name'
-      location_placeholder: 'e.g. Global, International, National..'
-      youtube_link: 'Youtube Link'
-      create_btn: 'Create Movement'
-      tagline: 'Tag line'
-      call_to_action: 'Call to action'
-      extended_description: 'Extended description'
-      location: 'Location'
-      about_creator: 'About creator'
-      update_movement: "Update Movement"
+      name: 'Nombre'
+      location_placeholder: 'p. ej. Mundial, Internacional, Nacional..'
+      youtube_link: 'Youtube'
+      create_btn: 'Crear Movimiento'
+      tagline: 'Etiqueta'
+      call_to_action: 'Llamamiento a la acción'
+      extended_description: 'Descripción Ampliada'
+      location: 'Ubicación'
+      about_creator: 'Acerca del creador'
+      update_movement: "Movimiento"
     my_profile:
-      events_attending: 'Events Attending'
-      personal_details: 'Personal Details'
+      events_attending: 'Eventos'
+      personal_details: 'Datos personales'
     new:
-      thanks_msg: 'Thank You For Supporting Friends of The Congo.'
-      explanation_msg: "Once you enter the relevant details, you'll be able to create events for supporters to attend. Your events will be searchable via the home page."
+      thanks_msg: 'Gracias por apoyar Amigos del Congo.'
+      explanation_msg: "Una vez que introduzca los detalles pertinentes, usted será capaz de crear eventos para los aficionados a asistir. Las citas se pueden buscar a través de la página de inicio."
     show:
-      quote: 'Our mission and vision is to raise the consciousness of the world community on the challenge of the Congo and support Congolese institutions in bringing about a peaceful and lasting change.'
+      quote: 'Nuestra misión y visión es la de aumentar la toma de conciencia de la comunidad mundial sobre el problema del Congo y el apoyo las instituciones congoleñas en el logro de una solución pacífica y duradera.'
     show_chapter:
-      about_creators: 'About the Creators'
-      host_event: 'HOST AN EVENT'
-      contact_group_coordinator: 'CONTACT THE GROUP COORDINATOR'
+      about_creators: 'Sobre los creadores de'
+      host_event: 'HOST UN EVENTO'
+      contact_group_coordinator: 'PÓNGASE EN CONTACTO CON EL COORDINADOR DEL GRUPO DE'
     support_network:
-      support_network: 'Support Network'
-      network_message: 'Our Support Network has %{number} groups and is growing!'
-      create_group: 'CREATE A GROUP'
+      support_network: 'Red de Apoyo'
+      network_message: 'Nuestra red de apoyo tiene %{number} grupos y está creciendo!'
+      create_group: 'CREAR UN GRUPO'
 
 
 
