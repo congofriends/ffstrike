@@ -198,6 +198,15 @@ es:
     new:
       thanks_msg: 'Gracias por apoyar Amigos del Congo.'
       explanation_msg: "Una vez que introduzca los detalles pertinentes, usted será capaz de crear eventos para los aficionados a asistir. Las citas se pueden buscar a través de la página de inicio."
+      name: 'Nombre'
+      location_placeholder: 'p. ej. Mundial, Internacional, Nacional..'
+      location: "Ubicación"
+      youtube_link: 'Youtube'
+      tagline: "Etiqueta"
+      extended_description: "Descripción Ampliada"
+      call_to_action: "Llamamiento a la acción"
+      about_creator: "Acerca del creador"
+      create_btn: 'Crear Movimiento'
     show:
       quote: 'Nuestra misión y visión es la de aumentar la toma de conciencia de la comunidad mundial sobre el problema del Congo y el apoyo las instituciones congoleñas en el logro de una solución pacífica y duradera.'
     show_chapter:

@@ -209,6 +209,15 @@ fr:
     new:
       thanks_msg: 'Merci pour la prise en charge des Amis du Congo.'
       explanation_msg: "Une fois que vous entrez les détails pertinents, vous serez en mesure de créer des événements pour les partisans d'y assister. Vos événements seront interrogeables via la page d'accueil."
+      name: 'Nom:'
+      location_placeholder: 'Par exemple mondial, International, National..'
+      location: "Emplacement:"
+      youtube_link: 'Lien Youtube'
+      about_creator: "De Créateur:"
+      tagline: "Slogan:"
+      call_to_action: "Appel à l'action:"
+      extended_description: "Extended Description:"
+      create_btn: 'Créer du mouvement'
     show:
       quote: "Notre mission et notre vision est de soulever la conscience de la communauté mondiale sur le défi du Congo et de l'appui institutions congolaises à parvenir à un règlement pacifique et durable."
     show_chapter:
