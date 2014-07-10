@@ -1,4 +1,14 @@
 es:
+  dictionary:
+    email: &email Email
+    name: &name Name
+    phone: &phone Phone Number
+    point: &point Point Person
+    password: &password Password
+    confirmation: &confirmation Confirmation
+    export_attendees: &export_attendees EXPORT ATTENDEES
+    host_event: &host_event HOST AN EVENT
+    update: &update UPDATE
   events:
     host_btn: "ANFITRIÓN DE UN EVENTO"
     unattend_btn: "EVENTO UNATTEND"
