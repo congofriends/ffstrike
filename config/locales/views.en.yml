@@ -62,7 +62,7 @@ en:
       create_btn: "CREATE EVENT"
       msg_to_attendees: "Write a brief message to event attendees:"
       event_type: 'Event Type:'
-      event_chapter_msg: "If this event is associated with a chapter, please choose it here:"
+      event_chapter_msg: "If this event is associated with a team, please choose it here:"
       forum_msg: "Include an attendee discussion forum on this event:"
       name: "Your name"
       email: "Your email"
@@ -124,7 +124,7 @@ en:
       my_profile: 'My profile'
       manage_my_groups: 'Manage My Groups'
       manage_my_events: 'Manage My Events'
-      create_group: 'Create Group'
+      create_group: 'Create Team'
       create_event: 'Create Event'
       sign_in: 'Sign in'
       sign_out: 'Sign Out'
@@ -154,7 +154,7 @@ en:
       invite_coordinators: "INVITE COORDINATORS"
       export_attendees: *export_attendees
       name_cl: *name
-      group_cl: 'Group'
+      group_cl: 'Team'
       event_cl: 'Event'
       email_cl: *email
       phone_number: *phone
@@ -179,9 +179,9 @@ en:
       my_groups: 'My Groups'
       manage_my_groups: 'Manage My Groups'
       show: 'SHOW'
-      select_group: 'Select a Group and click SHOW'
-      group_details: 'Group Details'
-      group_events: 'Group Events'
+      select_group: 'Select a Team and click SHOW'
+      group_details: 'Team Details'
+      group_events: 'Team Events'
       manage_supporters: 'Manage Supporters'
     tab_group_events:
       event_name: "Event Name (click to Edit)"
@@ -223,11 +223,11 @@ en:
     show_chapter:
       about_creators: 'About the Creators'
       host_event: *host_event
-      contact_group_coordinator: 'CONTACT THE GROUP COORDINATOR'
+      contact_group_coordinator: 'CONTACT THE TEAM COORDINATOR'
     support_network:
       support_network: 'Support Network'
-      network_message: 'Our Support Network has %{number} groups and is growing!'
-      create_group: 'CREATE A GROUP'
+      network_message: 'Our Support Network has %{number} teams and is growing!'
+      create_group: 'CREATE A TEAM'
   assignments:
     assign:
       just_signed_up: 'Just signed up!'
