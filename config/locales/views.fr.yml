@@ -214,3 +214,7 @@ fr:
       support_network: 'Support Réseau'
       network_message: 'Notre réseau de soutien a %{number} groupes et est de plus en plus!'
       create_group: 'CRÉER UN GROUPE'
+  assignments:
+    assign:
+      just_signed_up: 'Tout juste signé!'
+

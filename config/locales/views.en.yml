@@ -228,3 +228,6 @@ en:
       support_network: 'Support Network'
       network_message: 'Our Support Network has %{number} groups and is growing!'
       create_group: 'CREATE A GROUP'
+  assignments:
+    assign:
+      just_signed_up: 'Just signed up!'

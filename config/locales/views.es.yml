@@ -200,6 +200,10 @@ es:
       support_network: 'Red de Apoyo'
       network_message: 'Nuestra red de apoyo tiene %{number} grupos y está creciendo!'
       create_group: 'CREAR UN GRUPO'
+  assignments:
+    assign:
+      just_signed_up: 'Just signed up!'
+
 
 
 

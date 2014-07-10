@@ -150,6 +150,7 @@ class EventsController < ApplicationController
     gon.addresses = []
     gon.event_ids = []
     gon.event_pks = []
+    gon.locale = I18n.locale.to_s
     gon.events.each do |e|
       gon.event_pks << e.id
       gon.event_ids << e.to_param

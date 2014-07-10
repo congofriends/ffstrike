@@ -1,6 +1,8 @@
 var buttonText = $("#<%= dom_id(@task) %> a").last();
-buttonText.text('Just signed up!');
+buttonText.text("<%= t('.just_signed_up')%>");
 buttonText.removeClass("btn-primary").addClass("btn-success");
 // $('#tasklist<%=@event.id%>').html("<%=j render "tasks/task", task: @task, event: @event %>");
 
 alert("<%= j @confirmation_message %>");
+
+
