@@ -4,13 +4,12 @@
     =link_to (image_tag @movement.image, :class => 'movement_avatar'), root_path
   .row.event-list
     .col-sm-6
-      %h2 
+      %h2
         =t('.network_message', number: @support_network.size)
     .col-sm-2.col-sm-offset-2
       - if !current_user.nil?
-        =link_to 'CREATE A TEAM', new_movement_path({parent_id: @movement.id}), class: 'btn'
+        =link_to t('.create_team'), new_movement_path({parent_id: @movement.id}), class: 'btn'
       - else
-        =link_to 'CREATE A TEAM', new_unauthenticated_submovement_path({parent_id: @movement.id}), class: 'btn'
-
+        =link_to t('.create_team'), new_unauthenticated_submovement_path({parent_id: @movement.id}), class: 'btn'
   - @support_network.each do |chapter|
     = render 'group_panel', chapter: chapter

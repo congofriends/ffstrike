@@ -49,7 +49,7 @@ es:
       create_btn: "CREAR EVENTO"
       msg_to_attendees: "Escribir un breve mensaje a asistentes a eventos:"
       event_type: 'Tipo de evento:'
-      event_chapter_msg: "Si este evento está asociado con un capítulo, seleccione aquí:"
+      event_chapter_msg: "Si cet événement est associé à une équipe, veuillez choisir ici:"
       forum_msg: "Incluir una de las asistentes foro de debate sobre este evento:"
     edit:
       edit_header: "Editar"
@@ -111,14 +111,22 @@ es:
       sign_in: 'Inicio de Sesión'
       sign_out: 'Salir'
   contact:
-    contact_host_for: 'Póngase en contacto con el host:'
-    name: 'Su nombre:'
-    email: 'El correo electrónico:'
-    subject: 'Asunto:'
-    message: 'Su mensaje:'
-    question: 'Pregunta sobre %{about}'
-    contact_coordinator_for: 'Contacto con el coordinador para: '
-    submit: 'Enviar'
+    new_event_msg:
+      contact_host_for: 'Póngase en contacto con el host:'
+      name: 'Su nombre:'
+      email: 'El correo electrónico:'
+      subject: 'Asunto:'
+      message: 'Su mensaje:'
+      question: 'Pregunta sobre %{about}'
+      submit: 'Enviar'
+    new_movement_msg:
+      contact_coordinator_for: 'Contacter le coordonnateur de:'
+      name: 'Su nombre:'
+      email: 'El correo electrónico:'
+      subject: 'Asunto:'
+      message: 'Su mensaje:'
+      question: 'Pregunta sobre %{about}'
+      submit: 'Enviar'
   movements:
     movement:
       dashboard: 'TABLERO'
@@ -165,7 +173,7 @@ es:
       group_events: 'Grupo Eventos'
       manage_supporters: 'Gestionar los partidarios'
     tab_group_events:
-      event_name: "Nombre del evento (haga clic en Editar)"
+      event_name: "Nombre del evento"
       where: "Cuando"
       when: "Dónde"
       approved: "Aprobado"
@@ -199,7 +207,7 @@ es:
     support_network:
       support_network: 'Red de Apoyo'
       network_message: 'Nuestra red de apoyo tiene %{number} grupos y está creciendo!'
-      create_group: 'CREAR UN GRUPO'
+      create_team: 'CREAR UN EQUIPO'
   assignments:
     assign:
       just_signed_up: 'Just signed up!'

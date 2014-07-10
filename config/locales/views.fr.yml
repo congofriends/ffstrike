@@ -60,7 +60,7 @@ fr:
       create_btn: "Créer un événement"
       msg_to_attendees: "écrire un bref message de participants à un événement:"
       event_type: "Type d'événement :"
-      event_chapter_msg: "si cet événement est associé à un chapitre, veuillez choisir ici :"
+      event_chapter_msg: "Si cet événement est associé à une équipe, veuillez choisir ici:"
       forum_msg: "Inclure un participant forum de discussion sur l'événement:"
     edit:
       edit_header: "Modifier l'événement"
@@ -132,6 +132,11 @@ fr:
       submit: 'Soumettre'
     new_movement_msg:
       contact_coordinator_for: 'Contacter le coordonnateur de:'
+      name: "votre nom:"
+      email: 'votre e-mail:'
+      subject: 'Sujet:'
+      message: 'Votre message:'
+      question: "Question à propos de %{about}"
       submit: 'Soumettre'
   movements:
     movement:
@@ -146,7 +151,7 @@ fr:
       attendees: 'participants'
       invite_coordinators: "INVITER COORDONNATEURS"
       email_attendees: "E-MAIL AUX PARTICIPANTS"
-      email_hosts: "Hôtes E-MAIL"
+      email_hosts: "HÔTES E-MAIL"
       export_attendees: *export_attendees
       name_cl: *name
       group_cl: 'Groupe'
@@ -157,13 +162,13 @@ fr:
       yes: 'Oui'
       no: 'non'
     email_modal:
-      email_attendees: "E-mail aux participants"
+      email_attendees: "E-MAIL AUX PARTICIPANTS"
       title: "E-mail aux participants"
       subject: "Objet"
       message: "Message"
       placeholder: "Entrez le message à envoyer à tous les participants."
     email_hosts_modal:
-      email_hosts: "Hôtes E-MAIL"
+      email_hosts: "HÔTES E-MAIL"
       title: "E-mail les hôtes"
       subject: "Subject"
       message: "Objet"
@@ -179,7 +184,7 @@ fr:
       group_events: 'Événements de groupe'
       manage_supporters: 'Gérer les partisans'
     tab_group_events:
-      event_name: "Nom de l'événement (cliquez pour modifier)"
+      event_name: "Nom de l'événement"
       where: "quand"
       when: "Où"
       approved: "Approuvé"
@@ -213,7 +218,7 @@ fr:
     support_network:
       support_network: 'Support Réseau'
       network_message: 'Notre réseau de soutien a %{number} groupes et est de plus en plus!'
-      create_group: 'CRÉER UN GROUPE'
+      create_team: 'CRÉER UN ÉQUIPE'
   assignments:
     assign:
       just_signed_up: 'Tout juste signé!'

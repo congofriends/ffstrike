@@ -139,6 +139,11 @@ en:
       submit: 'Submit'
     new_movement_msg:
       contact_coordinator_for: 'Contact the coordinator for:'
+      name: 'Your name:'
+      email: 'Your email:'
+      subject: 'Subject:'
+      message: 'Your message:'
+      question: 'Question about %{about}'
       submit: 'Submit'
   movements:
     movement:
@@ -184,7 +189,7 @@ en:
       group_events: 'Team Events'
       manage_supporters: 'Manage Supporters'
     tab_group_events:
-      event_name: "Event Name (click to Edit)"
+      event_name: "Event Name"
       where: "When"
       when: "Where"
       approved: "Approved"
@@ -227,7 +232,7 @@ en:
     support_network:
       support_network: 'Support Network'
       network_message: 'Our Support Network has %{number} teams and is growing!'
-      create_group: 'CREATE A TEAM'
+      create_team: 'CREATE A TEAM'
   assignments:
     assign:
       just_signed_up: 'Just signed up!'
