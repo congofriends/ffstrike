@@ -24,6 +24,8 @@ End Time: #{@event.end_time_formatted}
 You can find out more about #{@event.name} by clicking
 = succeed "." do
   %a{href: event_path(@event, {:locale => I18n.locale}) } here
+%br/
+You'r password is:
 = @password
 Best of Luck!
 Friends of The Congo

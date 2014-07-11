@@ -164,8 +164,8 @@ en:
       email_cl: *email
       phone_number: *phone
       point_person: *point
-      yes: 'yes'
-      no: 'no'
+      yes: 'Y'
+      no: 'N'
     email_modal:
       email_attendees: "EMAIL ATTENDEES"
       title: "Email the Attendees"
