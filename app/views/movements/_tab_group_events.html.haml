@@ -8,7 +8,7 @@
 						%th= t('.when')
 						%th= t('.where')
 						%th= t('.approved')
-					- @group.events.each do |event|
+					- events.each do |event|
 						%tr
 							%td
 								= event.name

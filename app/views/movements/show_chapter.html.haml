@@ -10,6 +10,9 @@
   .row
     .col-sm-6
       =image_tag @movement.avatar, class: "movement_avatar"
+      - unless !@movement.website || @movement.website.empty?
+        %h4.text-center Website
+        .text-center=link_to @movement.website, "http://#{@movement.website}"
     .col-sm-6
       .row
         %h3.text-center= @movement.name
@@ -19,9 +22,8 @@
           %h4
             =t('.about_creators')
           = @movement.about_creator
-        - unless !@movement.website || @movement.website.empty?
-          %h4 Website
-          =link_to @movement.website, "http://#{@movement.website}"
+        - if @movement.video?
+          .text-center=youtube_embed_url_for_(@movement.video)
         %br
         %br
       .row

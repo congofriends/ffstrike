@@ -32,7 +32,7 @@
           =t('.email_cl')
         %th
           =t('.phone_number')
-      - @group.events.each do |event|
+      - events.each do |event|
         %tr
           %td= event.host.name
           %td= link_to event.name, event_path(event)
@@ -53,7 +53,7 @@
           =t('.phone_number')
         %th
           =t('.point_person')
-      - @group.events.each do |event|
+      - events.each do |event|
         - event.attendees.each do |attendee|
           %tr
             %td= attendee.name
