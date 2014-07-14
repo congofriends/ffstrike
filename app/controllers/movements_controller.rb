@@ -46,6 +46,7 @@ class MovementsController < ApplicationController
     @movement = Movement.new(movement_params)
     if @movement.save
       unless current_user.nil?
+        UserMailer.team_creation_message(current_user.id, @movement.id)
         @movement.users << current_user
       end
       redirect_to movement_path(@movement), notice: t('movement.created')

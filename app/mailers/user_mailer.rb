@@ -42,6 +42,20 @@ class UserMailer < ActionMailer::Base
     mail(to: @recipient.email, subject: "#{@event.name} is coming up!").deliver unless Attendance.where(user_id: @recipient, event_id: @event).empty?
   end
 
+  def team_creation_message(user_id, team_id)
+    @recipient = User.find user_id
+    @team = Movement.find team_id
+    mail(to: @recipient.email, subject: "Team #{@team.name} Created Successfully").deliver
+  end
+
+  def event_creation_message(user_id, event_id)
+    @recipient = User.find user_id
+    @event = Event.find event_id
+    mail(to: @recipient.email, subject: "Event #{@event.name} Created Successfully").deliver
+  end
+
+
+
 # not being used?
   # def notify_host_of_event_size(event_id)
   #   @event = Event.find event_id

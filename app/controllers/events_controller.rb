@@ -72,6 +72,7 @@ class EventsController < ApplicationController
     @movement = Movement.find_by_name(params["event"]["movement"]) if params["event"]["movement"] && params["event"]["movement"] != ""
     @event = @movement.events.build(event_params)
     if @event.save
+      UserMailer.event_creation_message(current_user.id, @event.id)
       @event.assign_host_and_approve(current_user)
       if @movement.users.include?(current_user)
         redirect_to explanation_path(@event), notice: t('event.created') and return

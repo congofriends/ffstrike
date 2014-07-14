@@ -16,7 +16,7 @@ Ffstrike::Application.configure do
   config.cache_classes = true
 
   # Links need to work in actionmailer
-  config.action_mailer.default_url_options = { :host => "http://shift-engage-qa.herokuapp.com", :locale => I18n.locale }
+  config.action_mailer.default_url_options = { :host => "http://shift-engage-staging.herokuapp.com", :locale => I18n.locale }
 
 
   # Do not eager load code on boot. This avoids loading your whole application
