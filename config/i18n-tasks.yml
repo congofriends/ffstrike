@@ -6,8 +6,6 @@ locales:
 ignore:
   - host_tasks.*
   - attendees_tasks.*
-  - event_type.*
-  - devise.*
 ignore_eq_base:
   en,fr:
     - events.description 
@@ -31,7 +29,6 @@ ignore_eq_base:
 data:
   adapter: I18n::Tasks::Data::FileSystem
   read:
-  # - config/locales/%{locale}.yml
   - config/locales/%{locale}.yml
   - 'config/locales/*.%{locale}.yml'
   write:
