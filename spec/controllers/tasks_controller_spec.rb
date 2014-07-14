@@ -19,7 +19,7 @@ describe TasksController do
 
       it "notifies the user that task was created" do
         post :create, event_id: event, task: FactoryGirl.attributes_for(:task)
-        flash[:notice].should == "New task is created"
+        flash[:notice].should == I18n.t('task.created')
       end
     end
 

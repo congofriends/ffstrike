@@ -17,7 +17,7 @@ describe UnauthenticatedEventsController do
         response.should render_template "new"
       end
       it 'shows a message for invalid credentials' do
-        flash[:notice].should eq("Invalid user credentials")
+        flash[:notice].should eq(I18n.t('user.invalid_credentials'))
       end
     end
     context 'invalid event details' do
@@ -38,7 +38,7 @@ describe UnauthenticatedEventsController do
 
       it 'notifies the user what happened' do
         post :create, user: user, event: invalid_event, movement_id: movement
-        flash[:notice].should eq("Your account was created but there was a problem with your event.")
+        flash[:notice].should eq(I18n.t('event.failure'))
       end
     end
     context 'valid user & event' do

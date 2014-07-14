@@ -9,7 +9,7 @@ Given(/^multiple events exist$/) do
 end
 
 When(/^I search for an event by zipcode$/) do
-	visit movement_events_path(@movement)
+	visit movement_events_path(@movement, {locale: I18n.locale})
 	fill_in 'query', with: '60649'
   find('input.query-btn').click
 end

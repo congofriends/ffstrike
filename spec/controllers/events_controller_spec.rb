@@ -84,7 +84,7 @@ describe EventsController do
         end
 
         it "notifies the user that event was created" do
-          flash[:notice].should == "Event created!"
+          flash[:notice].should == I18n.t('event.created')
         end
 
         it "redirects to the explanation page" do
@@ -114,7 +114,7 @@ describe EventsController do
         end
 
         it "notifies the creator that coordinator will approve event" do
-          flash[:notice].should == "Your event will be viewable to the public as soon as the movement coordinator approves it!"
+          flash[:notice].should == I18n.t('event.created_by_attendee')
         end
       end
     end
@@ -214,7 +214,7 @@ describe EventsController do
       end
 
       it "notifies user that event was updated" do
-        flash[:notice].should == "Event updated."
+        flash[:notice].should == I18n.t('event.updated')
       end
     end
   end

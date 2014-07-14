@@ -57,7 +57,7 @@ describe MovementsController do
       end
 
       it "notifies user that movement has been created" do
-        flash[:notice].should == "Congratulations, you just created a movement!"
+        flash[:notice].should == I18n.t('movement.created')
       end
     end
 
@@ -124,7 +124,7 @@ describe MovementsController do
         end
 
         it 'notifies me that the movement does not exist' do
-          flash[:notice].should eq("That movement isn't public yet!")
+          flash[:notice].should eq(I18n.t('movement.not_public'))
         end
       end
     end
