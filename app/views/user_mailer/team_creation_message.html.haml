@@ -4,7 +4,7 @@ Thank you for creating #{@team.name} to be a part of Congo Week. Every year in t
 
 By creating a team, you are helping to amplify the message. You can access your team dashboard
 = succeed "." do
-  %a{href: movement_path(@team, {:locale => I18n.locale})} here
+  %a{href: my_groups_path({:locale => I18n.locale, :name => {:id => @team.id}})} here
 
 (If you have forgotten your password, you can reset it)
 

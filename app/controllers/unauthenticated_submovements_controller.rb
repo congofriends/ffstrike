@@ -8,6 +8,7 @@ class UnauthenticatedSubmovementsController < ApplicationController
     @submovement.update(parent_id: Movement.first.id)
     @submovement.users.push(@user)
     sign_in(:user, @user)
+    UserMailer.team_creation_message(@user.id, @submovement.id) if current_user
     redirect_to movement_path(@submovement), notice: t('movement.created')
   end
 

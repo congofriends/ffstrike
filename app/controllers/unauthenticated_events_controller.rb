@@ -15,6 +15,7 @@ class UnauthenticatedEventsController < ApplicationController
       @event.assign_host_and_approve @user
       TaskPopulator.assign_tasks @event
       if @event.save
+        UserMailer.event_creation_message(@user.id, @event.id) if current_user
         redirect_to event_path(@event)
       else
         redirect_to new_movement_event_path(@movement), notice: t('event.failure')
