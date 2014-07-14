@@ -1,31 +1,18 @@
-Hello, #{@recipient.name}
-
-Welcome to Shift Engage.
-
-Thank you for signing up for an event with #{@event.movement.name}
+Hello #{@recipient.name},
 %br/
+Thank you for signing up to attend #{@event.name} on #{@event.start_time_formatted} at  #{@event.address}. Your commitment makes a difference to achieving peace and justice for millions of Congolese people.
 %br/
-Your event details are below:
+Take one quick minute to make an even bigger impact? Help spread the word about Congo Week on Twitter and Facebook (links) using the hashtag #CongoWeek or #CongoWeek2014
 %br/
-Name: #{@event.name}
+Please save this email so you have your event details available.
 %br/
-Address: #{@event.address}
+Thank you for your support,
+Congo Week Organizer
 %br/
-City: #{@event.city}
-%br/
-Zip: #{@event.zip}
-%br/
-Date: #{@event.start_date}
-%br/
-Start Time: #{@event.start_time_formatted}
-%br/
-End Time: #{@event.end_time_formatted}
-%br/
+P.S. If you want to access your profile, use this email address and the password (we sent you one when you signed up, but if you forgot you can reset it) at (link). There, you can manage your events and sign up to volunteer.
 You can find out more about #{@event.name} by clicking
 = succeed "." do
   %a{href: event_path(@event, {:locale => I18n.locale}) } here
 %br/
-You'r password is:
+Your password is:
 = @password
-Best of Luck!
-Friends of The Congo
