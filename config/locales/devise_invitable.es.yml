@@ -5,6 +5,8 @@ es:
       invitation_token_invalid: "El token de invitación no es valido!"
       updated: "Tu contraseña se ha captura con éxito, ya te encuentras dentro del sistema."
       no_invitations_remaining: "No quedan más invitaciones"
+      invitation_removed: "La invitación fue eliminado"
+      signed_in_and_coordinator: "Ahora usted está firmado en y un coordinador para %{movement_name}."
       new:
         header: "Enviar Invitación"
         submit_button: "Envia una invitación"

@@ -1,215 +1,229 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
+---
 fr:
   attendee_mailer:
     signup_message:
-      subject: "You've signed up to attend an event!"
+      subject: "Informations d'authentification utilisateur non valides"
   user:
-    invalid_credentials: "Invalid user credentials"
+    invalid_credentials: "Informations d\'authentification utilisateur non valides"
   event:
-    created: "Event created!"
-    updated: "Event updated."
-    deleted: "Event deleted."
-    created_by_attendee: "Your event will be viewable to the public as soon as the movement coordinator approves it!"
-    not_yours: "You don't own that event!"
-    failure: "Your account was created but there was a problem with your event."
-    share: "Share this event!"
-    already_signed_in: "You are already signed in."
-    not_found: "Sorry your search returned no results."
+    created: "Événement créé!"
+    updated: "Événement mis à jour."
+    deleted: "Événement supprimé."
+    created_by_attendee: "votre événement sera visible au public dès que le mouvement coordonnateur approuve elle!"
+    not_yours: "Il ne vous appartient pas cet événement!"
+    failure: "Votre compte a été créé mais il y a un problème avec votre événement."
+    share: "Partager cet événement!"
+    already_signed_in: "Vous êtes déjà signé."
+    not_found: "Désolé, votre recherche n'a renvoyé aucun résultat."
   movement:
-    created: "Congratulations, you just created a movement!"
-    updated: "Movement has been updated"
-    not_created: "There was a problem when saving your movement. Please try again."
-    published: "Movement has been published"
-    not_yours: "You don't own that movement!"
-    not_public: "That movement isn't public yet!"
-    share: "Share your passion"
+    created: "Félicitations, vous venez de créer un mouvement!"
+    updated: "mouvement a été mis à jour"
+    not_created: "Il y a eu un problème lors de l'enregistrement de votre mouvement. Veuillez réessayer."
+    published: "mouvement a été publié"
+    not_yours: "Vous n'avez pas propre ce mouvement!"
+    not_public: "Que mouvement n'est pas public encore!"
+    share: "Partager votre passion"
   attendee:
-    created: "Thanks for signing up!"
-    updated: "Attendee has been updated"
-    email_is_required: "Email is required"
-    thanks_for_signed_in_user: "Thanks for attending!"
-    thanks_for_nonsigned_in_user: "Thanks for attending! If you need to login again, we've sent you an email with a temporary password"
+    created: "Grâce à la signature de!"
+    updated: "participant a été mis à jour"
+    email_is_required: "e-mail est requise"
+    thanks_for_signed_in_user: "Merci pour votre participation!"
+    thanks_for_nonsigned_in_user: "Merci pour votre participation ! Si vous avez besoin de vous connecter à nouveau, nous vous avons envoyé un e-mail avec un mot de passe temporaire"
+    already_signed_up: "Vous avez déjà signé pour cet événement!"
   mail:
-    sent: "Sending Emails!"
-    no_attendees: "You have no attendees to email."
-    no_hosts: "You have no hosts to email."
+    sent: "L'envoi d'e-mails!"
+    no_attendees: "Vous n'avez pas les participants à des e-mails."
+    no_hosts: "Vous n'avez pas d'hôtes de messagerie."
   contact:
-    message_sent: "Message was successfully sent."
+    message_sent: "Le message a été envoyé avec succès."
   task:
-    created: "New task is created"
-    updated: "Task has been updated"
-    deleted: "Task deleted"
+    created: "Nouvelle tâche est créée"
+    updated: "La tâche a été mis à jour"
+    deleted: "Tâche supprimée"
   assignment:
-    already_taken: "You've already taken this task!"
-    signed_up: "Thanks for signing up!"
-    signed_up_email: "Thanks for signing up, You will receive a confirmation email shortly."
-    for_attendees_only: "Tasks are for attendees only"
+    already_taken: "Vous avez déjà pris cette tâche!"
+    signed_up: "Grâce à la signature de!"
+    signed_up_email: "Merci de votre inscription, vous recevrez un email de confirmation sous peu."
+    for_attendees_only: "Tâches sont pour les participants uniquement"
   event_type:
     rally:
-      short_description: "Host a large public rally or march to garner public and media attention to your cause"
-      full_description: "Rallies are large events (ideally 20 or more people) intended to garner public and media attention to sway
-              public opinion on an important issue. Rallies can look very different from one another, but generally they have at least
-              1-3 speakers, signs, and chants. They can last anywhere from 10 minutes to all day, but most rallies are 30 minutes to an
-              hour long. With some time and effort, a good rally can come together in just a few days when necessary, but, if you can,
-              we suggest giving yourself and your team at least a week to a month to organize a successful rally."
+      short_description: "Host un grand rassemblement public ou le mois de mars pour attirer l'attention du public et des médias à votre cause"
+      full_description: "Des rassemblements sont de grands événements (idéalement 20 personnes ou plus) destiné à attirer l'attention du public et des médias de faire pencher l'opinion publique
+      sur une question importante. Des rassemblements peuvent paraître très différents l'un de l'autre, mais en général, ils ont au moins
+      1 à 3 haut-parleurs, signes, et chants. Ils peuvent durer de 10 minutes à tous les jours, mais la plupart des rassemblements sont à 30 minutes à une heure.
+      Avec un peu de temps et d'efforts, un bon rallye peut se réunir dans quelques jours lorsque nécessaire, mais, si vous le pouvez,
+      nous vous suggérons de vous-même et votre équipe au moins une semaine à un mois pour organiser un rassemblement réussi."
     public_speak_out:
-      short_description: "Organize a public speak-out to gather concerned citizens together and make your voice heard"
-      full_description: "The purpose of a public speak-out is to bring together individuals with a similar concern and to garner
-              positive public attention for your cause. You may also chose to invite the media to cover your event. A public speak-out may be
-              smaller than a rally - you can have a successful speak-out and petition event with just 3-10 people. Although not all speak-out
-              events include a petitioning component, adding a petition can be a good way to engage the public, identify potential activists,
-              and show decision-makers that your issue is popular. A public speak-out could be anywhere from 15 minutes to a whole afternoon of
-              petitioning. Unlike a rally, speak-out’s are very easy to organize. With a few friends, you could have a speak-out in a few days,
-              but, if you’re planning something more elaborate, you might want to give yourself a week to a month to plan."
+      short_description: "Organiser une parole publique à recueillir citoyens concernés ensemble et de faire entendre votre voix"
+      full_description: "le but d'un public parler-out est de réunir des personnes avec une préoccupation similaire, et de recueillir
+      positive du public attention pour votre cause. Vous pouvez aussi choisir d'inviter les médias à couvrir votre événement. Un public parler-out peut être inférieure à
+      un rassemblement - vous pouvez avoir une bonne parole-out et pétition événement avec juste 3-10 personnes. Bien que ce ne soit pas tous parler de
+      ces événements comprennent une pétition au composant, l'ajout d'une pétition peut être un bon moyen de faire participer le public, d'identifier les militants,
+      et de montrer aux décideurs que votre question est populaire. Une parole publique pourrait être de 15 minutes à tout un après-midi de
+      présenter une pétition. Contrairement à un rallye, parler, sont très faciles à organiser. Avec quelques amis, vous pourriez avoir un parler dans quelques jours,
+      mais, si vous prévoyez quelque chose de plus élaboré, vous souhaitez peut-être vous donner une semaine à un mois de plan."
     movie_screening:
-      short_description: "Show a relevant movie to educate the community about your issue"
-      full_description: "To take action, first we need to be educated. A movie screening can be a great first step for many people to
-              learn about important issues. Hosting a movie screen can be easy and quick to organize. Your movie screening might be for
-              3, 5, or 100 people. You might also decide to add more to your screening like a speaker or a petition drive."
+      short_description: "Afficher une animation pertinente pour éduquer la communauté sur votre question"
+      full_description: "De prendre des mesures, nous avons d'abord besoin d'être éduqués. Un film de dépistage peut être une excellente première étape pour de nombreuses personnes à
+      apprendre sur des questions importantes. Hébergement d'un écran de cinéma peut être rapide et facile à organiser. Votre film de dépistage pourrait être de
+      3, 5 ou 100 personnes. Vous pouvez également décider d'ajouter plus de votre dépistage comme un orateur ou une pétition drive."
     public_forum:
-      short_description: "Assemble experts and host a public forum to educate the community on your issue"
-      full_description: "Before we take action, we must be educated. Public forums are intended to inform the general population about
-              important issues. Generally, public forums involve a slate of speakers who are experts in the issue you’re discussing who make their
-              own statements and take questions from the audience. Generally, public forums are polite events where people come to learn information,
-              however, if your topic is controversial you should be prepared for opposition. (clip of health care forums?) A successful public form
-              should have a large turnout - depending on the size of your community you should aim for between 20 and 200 (or more!) people at
-              your event. These can be great events to grow your movement. Because this event requires a lot of logistics and recruitment,
-              we suggest allowing yourself at least 1-3 months to plan and prepare."
+      short_description: "Réunir des experts et héberger un forum public d'éduquer la communauté sur votre question"
+      full_description: "Avant de nous prononcer, nous devons être instruits. Forums publics sont destinés à informer la population en général sur des questions importantes.
+      En général, les tribunes publiques impliquent une ardoise d'orateurs qui sont des experts dans la question que vous êtes discuter qui font leurs propres déclarations,
+      aux questions de l'auditoire. En général, les tribunes publiques sont polis les événements où les gens viennent apprendre informations,
+      toutefois, si votre sujet est controversé vous devrait être préparé pour l'opposition. (Clip de forums sur les soins de santé?) un succès public forme
+      devrait avoir une large participation - en fonction de la taille de votre communauté, vous devez viser entre 20 et 200 (ou plus !) les personnes de votre
+      événement. Ces derniers peuvent être grands événements pour développer votre mouvement. Car cet événement nécessite beaucoup de logistique et de recrutement,
+      nous suggérons vous permettant au moins 1-3 mois pour planifier et préparer."
     meet_with_decision_maker:
-      short_description: "Get key stakeholders together and present your case to an elected official or other decision-maker"
-      full_description: "One thing is for sure - people in power definitely won’t do the right thing unless they’re asked
-              (Often they don’t do it then either - that’s why things like rallies, speak-outs, and petition drives exist. But it’s worth
-              it to ask!). The intention of a meeting with a decision-maker - be it a city councilperson, state or federal representative,
-              or high school or college administrator - is to make sure they know of your demands. At this meeting, you’ll want 3-5 active
-              movement leaders prepared to speak. Because it often takes time to secure a meeting with decision-makers and prepare your
-              presentation, we recommend giving yourself at least 2 to 6 weeks to organize a meeting, although, in a pinch, you could do it quicker."
+      short_description: "Get intervenants clés ensemble et présenter votre cas à un fonctionnaire élu ou autre décideur"
+      full_description: "Une chose est sûre - les gens au pouvoir n'y retournerai certainement pas faire la bonne chose à moins qu'elles ne soient posées
+      (souvent ils ne le font pas alors soit - c'est pourquoi les choses comme des rassemblements, parler-out, et la pétition lecteurs existent. Mais il vaut la peine de
+      demander !).  L'intention d'une réunion avec un décideur - qu'il s'agisse d'une ville councilperson, état ou représentant fédéral,
+      ou d'une école secondaire ou administrateur du collège - est de s'assurer qu'ils savent de vos demandes. Lors de cette réunion, vous voudrez 3-5 mouvement actif
+      dirigeants prêts à prendre la parole. Parce qu'il faut souvent du temps pour fixer une réunion avec les décideurs et de préparer votre présentation
+      , nous recommandons de donner vous-même au moins 2 à 6 semaines pour organiser une réunion, bien que, dans un pincement, vous pourriez le faire plus rapidement."
     planning_meeting:
-      short_description: "Get your friends and allies together to plan your next move"
-      full_description: "Planning meetings are crucial to organizing more intricate actions and to building community that will last. A planning
-              meeting could be an impromptu lunch with you and a few other leaders or it could be a larger full-group meeting you plan and
-              schedule weeks in advance. Meetings could to primarily to share information, to make decisions, or to delegate tasks. Just make
-              sure you have a goal and strong agenda to keep things moving (and maybe snacks too...)"
+      short_description: "Obtenez vos amis et alliés ensemble pour planifier votre prochain déménagement"
+      full_description: "réunions de planification sont cruciales pour organiser plus complexes et actions de renforcement communautaire qui sera la dernière. Une réunion de planification
+      pourrait être une réunion improvisée déjeuner avec vous et quelques autres dirigeants ou il pourrait être un plus grand groupe au grand complet réunion vous planifier et de prévoir
+      plusieurs semaines à l'avance. Des réunions pourraient essentiellement à partager des informations, de prendre des décisions, ou de déléguer des tâches. Assurez-vous juste que
+      vous avez un but et programme solide pour faire avancer les choses (et peut-être des collations trop ... )."
     own_event:
-      short_description: "Have an idea for a creative event? Use this tool to create tasks and assign them"
-      full_description: "Have an idea for a creative event? Use this tool to create tasks and assign them."
+      short_description: "Ont une idée pour un événement créatif? Utilisez cet outil pour créer des tâches et de les affecter" 
+      full_description: "Ont une idée pour un événement créatif? Utilisez cet outil pour créer des tâches et de les affecter."
   host_tasks:
     rally:
-      - 'Find a location. Ideally your location has something to do with your movement AND will be a good place for media outlets to come cover your event. '
-      - 'Pick a date and time. This may already be chosen for you as part of a larger “Day of Action” - if not, try to pick a date and time when both concerned individuals and the media will be able to attend. '
-      - 'Create an agenda for your event. This doesn’t need to be perfect - just think about what you want your event to look like and how you want it to flow. It could be “Opening Speaker, Chants, Speaker, March, Closing Speaker.” '
-      - 'Find a speaker (maybe it’s you!) and start preparing your speaker for the event.'
-      - 'Begin publicizing your event by printing and distributing posters, using social media, inviting friends and family, and contacting like-minded organizations'
-      - 'Contact the media about your event'
+    - 'Find a location. Ideally your location has something to do with your movement
+      AND will be a good place for media outlets to come cover your event. '
+    - 'Pick a date and time. This may already be chosen for you as part of a larger
+      “Day of Action” - if not, try to pick a date and time when both concerned individuals
+      and the media will be able to attend. '
+    - 'Create an agenda for your event. This doesn’t need to be perfect - just think
+      about what you want your event to look like and how you want it to flow. It
+      could be “Opening Speaker, Chants, Speaker, March, Closing Speaker.” '
+    - Find a speaker (maybe it’s you!) and start preparing your speaker for the event.
+    - Begin publicizing your event by printing and distributing posters, using social
+      media, inviting friends and family, and contacting like-minded organizations
+    - Contact the media about your event
     public_forum:
-      - 'Find a location. Make sure it has the seating (or potential for seating) and potential technology you need (like microphones).'
-      - 'Pick a date and time. Try to pick a date and time when lots of people will be available - probably a weekday evening or weekend afternoon. (You should also take into consideration speakers schedules here - if 1 or 2 speakers are truly crucial to your event, get their availability before scheduling.)'
-      - 'Secure 3-5 speakers. Make sure you have several perspectives represented - for example, if you are hosting a forum about mountain top removal, you may want an environmental organizer, a union-worker, a doctor, and a supportive elected official. These speakers should be high-level enough to draw interest from your community. If you expect a high turn out and/or any controversy, you may also want to find someone to moderate the panel and direct audience questions.'
-      - 'Create an agenda for your event and share the agenda with your event participants.'
-      - 'Begin publicizing your event and recruiting attendees (you can do any or all of the following)'
-      - 'Print posters and put them in public places'
-      - 'Post your event on social media'
-      - 'Call your friends and family and invite them to attend'
-      - 'Call and email like-minded organizations and ask them to attend'
-      - 'Optional: Snacks!'
+    - Find a location. Make sure it has the seating (or potential for seating) and
+      potential technology you need (like microphones).
+    - Pick a date and time. Try to pick a date and time when lots of people will be
+      available - probably a weekday evening or weekend afternoon. (You should also
+      take into consideration speakers schedules here - if 1 or 2 speakers are truly
+      crucial to your event, get their availability before scheduling.)
+    - Secure 3-5 speakers. Make sure you have several perspectives represented - for
+      example, if you are hosting a forum about mountain top removal, you may want
+      an environmental organizer, a union-worker, a doctor, and a supportive elected
+      official. These speakers should be high-level enough to draw interest from your
+      community. If you expect a high turn out and/or any controversy, you may also
+      want to find someone to moderate the panel and direct audience questions.
+    - Create an agenda for your event and share the agenda with your event participants.
+    - Begin publicizing your event and recruiting attendees (you can do any or all
+      of the following)
+    - Print posters and put them in public places
+    - Post your event on social media
+    - Call your friends and family and invite them to attend
+    - Call and email like-minded organizations and ask them to attend
+    - 'Optional: Snacks!'
     movie_screening:
-      - 'Find a location. Make sure it has the seating (or potential for seating) and technology you need.'
-      - 'Secure the movie.'
-      - 'Pick a date and time. This may already be chosen for you as part of a larger “Day of Action” - if not, try to pick a date and time when lots of people will be available - probably a weekday evening or weekend afternoon.'
-      - 'If you’re doing more than just the movie, create an agenda for your event. This doesn’t need to be perfect - just think about what you want your event to look like and how you want it to flow. It could be “Opening Speaker [probably you], Movie Showing, Call to Action (like petitions or announcements about upcoming events), Closing.”'
-      - 'Begin publicizing your event and recruiting attendees (you can do any or all of the following):'
-      - 'Print posters and put them in public places'
-      - 'Post your event on social media'
-      - 'Call your friends and family and invite them to attend'
-      - 'Call and email like-minded organizations and ask them to attend'
-      - 'Optional! Snacks'
+    - Find a location. Make sure it has the seating (or potential for seating) and
+      technology you need.
+    - Secure the movie.
+    - Pick a date and time. This may already be chosen for you as part of a larger
+      “Day of Action” - if not, try to pick a date and time when lots of people will
+      be available - probably a weekday evening or weekend afternoon.
+    - If you’re doing more than just the movie, create an agenda for your event. This
+      doesn’t need to be perfect - just think about what you want your event to look
+      like and how you want it to flow. It could be “Opening Speaker [probably you],
+      Movie Showing, Call to Action (like petitions or announcements about upcoming
+      events), Closing.”
+    - 'Begin publicizing your event and recruiting attendees (you can do any or all
+      of the following):'
+    - Print posters and put them in public places
+    - Post your event on social media
+    - Call your friends and family and invite them to attend
+    - Call and email like-minded organizations and ask them to attend
+    - Optional! Snacks
     public_speak_out:
-      - 'Find a location. For this type of event, you want to pick a place with lots of food-traffic. '
-      - 'Pick a date and time. This may already be chosen for you as part of a larger “Day of Action” - if not, try to pick a date and time when lots of people will be out - lunch time is often a good bet. '
-      - 'Create an agenda for your event. This doesn’t need to be perfect - just think about what you want your event to look like and how you want it to flow. It could be “Opening Speaker [probably you], Sharing Stories by Attendees, Pass out Petitions, Petition for 20 minutes-2 hours, Closing Speaker.” '
-      - 'Prepare your speaker for the event'
-      - 'Begin publicizing your event by printing and distributing posters, using social media, inviting friends and family, and contacting like-minded organizations'
-      - 'Contact the media about your event'
+    - 'Find a location. For this type of event, you want to pick a place with lots
+      of food-traffic. '
+    - 'Pick a date and time. This may already be chosen for you as part of a larger
+      “Day of Action” - if not, try to pick a date and time when lots of people will
+      be out - lunch time is often a good bet. '
+    - 'Create an agenda for your event. This doesn’t need to be perfect - just think
+      about what you want your event to look like and how you want it to flow. It
+      could be “Opening Speaker [probably you], Sharing Stories by Attendees, Pass
+      out Petitions, Petition for 20 minutes-2 hours, Closing Speaker.” '
+    - Prepare your speaker for the event
+    - Begin publicizing your event by printing and distributing posters, using social
+      media, inviting friends and family, and contacting like-minded organizations
+    - Contact the media about your event
     meet_with_decision_maker:
-      - 'Call the decision-makers office and ask to schedule an appointment If 1 or 2 others are truly crucial to your meeting, get their availability before scheduling.) Generally - it should be easy to get a meeting with someone, even if it’s an aide. If you’re getting the brush off- keep calling!'
-      - 'Secure 2-4 people to join you. Make sure you have several perspectives represented - you may want to think about how you represent the decision-makers interests or constituencies in terms of the age, gender, and racial diversity.'
-      - 'Create an agenda for your event and share the agenda with your event participants.'
-      - 'Practice, practice, practice. Meet with your group and communication via email or phone before the meeting to make sure you are all on the same page. Make sure everyone has their talking points written out. It’s important to have a united front and a clear ask at your meeting.'
-      - 'After the meeting - follow up with the decision-maker. Thank them for their time and remind them of your request.'
+    - Call the decision-makers office and ask to schedule an appointment If 1 or 2
+      others are truly crucial to your meeting, get their availability before scheduling.)
+      Generally - it should be easy to get a meeting with someone, even if it’s an
+      aide. If you’re getting the brush off- keep calling!
+    - Secure 2-4 people to join you. Make sure you have several perspectives represented
+      - you may want to think about how you represent the decision-makers interests
+      or constituencies in terms of the age, gender, and racial diversity.
+    - Create an agenda for your event and share the agenda with your event participants.
+    - Practice, practice, practice. Meet with your group and communication via email
+      or phone before the meeting to make sure you are all on the same page. Make
+      sure everyone has their talking points written out. It’s important to have a
+      united front and a clear ask at your meeting.
+    - After the meeting - follow up with the decision-maker. Thank them for their
+      time and remind them of your request.
     planning_meeting:
-      - 'Schedule your meeting - make sure you check with key players before the finalize the time.'
-      - 'Communicate with other leaders (if there are any) to decide on the agenda.'
-      - 'Share the agenda with meeting participants before the meeting.'
-      - 'Arrive in the space early to make sure you have everything you need.'
-      - 'Optional: Bring snacks or assign someone to snacks.'
-      - 'Optional: Assign a notetaker to take notes and distribute them after the meeting.'
-      - 'Optional: Assign a timekeeper to keep things moving.'
+    - Schedule your meeting - make sure you check with key players before the finalize
+      the time.
+    - Communicate with other leaders (if there are any) to decide on the agenda.
+    - Share the agenda with meeting participants before the meeting.
+    - Arrive in the space early to make sure you have everything you need.
+    - 'Optional: Bring snacks or assign someone to snacks.'
+    - 'Optional: Assign a notetaker to take notes and distribute them after the meeting.'
+    - 'Optional: Assign a timekeeper to keep things moving.'
     own_event:
-      - 'Go to coordinator dashboard and create tasks you think will help to run successful event'
+    - Go to coordinator dashboard and create tasks you think will help to run successful
+      event
   attendees_tasks:
     rally:
-      # Media
-      - 'Look up media outlets in your area'
-      - 'Email reporters and media outlets 3-7 days before the event'
-      - 'Call reporters and media to make sure they know about the event'
-      - 'Arrive early to greet media representatives'
-      - 'Send media release and photos to media representatives'
-      # Signs
-      - 'Make signs that showcase your message and arrive early to distribute them'
-      # Recruitment
-      - 'Print and post recruitment fliers in public places'
-      - 'Recruit 5-10 of your friends to come'
-      - 'Contact like-minded organizations and invite them to the rally'
-      - 'Publicize your event via social media'
+    - Look up media outlets in your area
+    - Email reporters and media outlets 3-7 days before the event
+    - Call reporters and media to make sure they know about the event
+    - Arrive early to greet media representatives
+    - Send media release and photos to media representatives
+    - Make signs that showcase your message and arrive early to distribute them
+    - Print and post recruitment fliers in public places
+    - Recruit 5-10 of your friends to come
+    - Contact like-minded organizations and invite them to the rally
+    - Publicize your event via social media
     public_forum:
-      #Recruitment
-      - 'Call 5-10 friends and invite them to come'
-      - 'Publicize your event via social media (and ask others to do the same!) '
-      - 'Print and post recruitment fliers in public spaces'
-      - 'Bring snacks and plates/cups'
-      - 'Bring a friend (or several!)'
-      - 'Publicize the event via social media'
+    - Call 5-10 friends and invite them to come
+    - 'Publicize your event via social media (and ask others to do the same!) '
+    - Print and post recruitment fliers in public spaces
+    - Bring snacks and plates/cups
+    - Bring a friend (or several!)
+    - Publicize the event via social media
     movie_screening:
-      #Recruitment
-      - 'Call 5-10 friends and invite them to come'
-      - 'Publicize your event via social media (and ask others to do the same!) '
-      - 'Print and post recruitment fliers in public spaces'
-      - 'Bring snacks and plates/cups'
-      - 'Bring a friend (or several!)'
-      - 'Publicize the event via social media'
+    - Call 5-10 friends and invite them to come
+    - 'Publicize your event via social media (and ask others to do the same!) '
+    - Print and post recruitment fliers in public spaces
+    - Bring snacks and plates/cups
+    - Bring a friend (or several!)
+    - Publicize the event via social media
     public_speak_out:
-      # Media
-      - 'Look up media outlets in your area'
-      - 'Email reporters and media outlets 3-7 days before the event'
-      - 'Call reporters and media to make sure they know about the event'
-      - 'Arrive early to greet media representatives'
-      - 'Send media release and photos to media representatives'
-      # Materials
-      - 'Make signs that showcase your message and arrive early to distribute them'
-      - 'Make petition sheets for attendees'
-      - 'Bring lots of extra pens and clipboards or other hard surfaces to write on'
-      # Recruitment
-      - 'Print and post recruitment fliers in public places'
-      - 'Recruit 5-10 of your friends to come'
-      - 'Contact like-minded organizations and invite them'
-      - 'Publicize your event via social media'
-
+    - Look up media outlets in your area
+    - Email reporters and media outlets 3-7 days before the event
+    - Call reporters and media to make sure they know about the event
+    - Arrive early to greet media representatives
+    - Send media release and photos to media representatives
+    - Make signs that showcase your message and arrive early to distribute them
+    - Make petition sheets for attendees
+    - Bring lots of extra pens and clipboards or other hard surfaces to write on
+    - Print and post recruitment fliers in public places
+    - Recruit 5-10 of your friends to come
+    - Contact like-minded organizations and invite them
+    - Publicize your event via social media

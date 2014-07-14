@@ -88,6 +88,7 @@ group :test, :development do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'poltergeist'
+  gem 'i18n-tasks', '~> 0.5.4'
 end
 
 group :production, :staging do

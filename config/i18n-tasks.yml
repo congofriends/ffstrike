@@ -1,0 +1,62 @@
+base_locale: en
+locales:
+- en
+- es
+- fr
+ignore:
+  - host_tasks.*
+  - attendees_tasks.*
+  - event_type.*
+  - devise.*
+ignore_eq_base:
+  en,fr:
+    - events.description 
+    - events.edit.avatar
+    - events.edit.forum  
+    - events.edit.notes 
+    - events.edit.type 
+    - events.edit.zip
+    - devise.registrations.edit.email
+    - events.message  
+    - layouts.navbar.sign_out  
+    - movements.email_hosts_modal.message 
+    - movements.email_modal.message  
+    - tasks.host_tasks_table.description
+  en, es:
+    - events.edit.avatar 
+    - events.edit.zip
+    - movements.tab_group_attendees.false
+    - events.tab_attendees.false
+    - tasks.sign_up
+data:
+  adapter: I18n::Tasks::Data::FileSystem
+  read:
+  # - config/locales/%{locale}.yml
+  - config/locales/%{locale}.yml
+  - 'config/locales/*.%{locale}.yml'
+  write:
+  - config/locales/%{locale}.yml
+  yaml: 
+    write:
+      # do not wrap lines at 80 characters (override default)
+      line_width: -1
+relative_roots:
+- app/views
+search:
+  scanner: I18n::Tasks::Scanners::PatternWithScopeScanner
+  relative_roots:
+  - app/views
+  paths:
+  - app/
+  exclude:
+  - '*.jpg'
+  - '*.png'
+  - '*.gif'
+  - '*.svg'
+  - '*.ico'
+  - '*.eot'
+  - '*.ttf'
+  - '*.woff'
+  - '*.pdf'
+  ignore_lines:
+  - ^\s*[#/](?!\si18n-tasks-use)

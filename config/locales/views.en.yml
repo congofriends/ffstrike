@@ -13,8 +13,6 @@ en:
     host_btn: *host_event
     unattend_btn: "UNATTEND EVENT"
     volunteer_status: "VOLUTEER STATUS"
-    export_attendees: *export_attendees
-    contact_attendees: "CONTACT ATTENDEES"
     show_btn: "SHOW"
     host_link: "Click here to host your own."
     search_placeholder: "Search Events by City, State or Zip Code"
@@ -46,6 +44,11 @@ en:
       tab_edit: "Event Details"
       tab_tasks: "Tasks"
       tab_attendees: "Attendees"
+    tab_attendees:
+      yes: 'popo'
+      no: 'No' 
+      export_attendees: *export_attendees
+      contact_attendees: "CONTACT ATTENDEES"
     explanation:
       confirm_msg: "Congrats - You've successfully created a %{event_type}"
       competency_question: "Know what you're doing?"
@@ -139,11 +142,11 @@ en:
       submit: 'Submit'
     new_movement_msg:
       contact_coordinator_for: 'Contact the coordinator for:'
-      name: 'Your name:'
-      email: 'Your email:'
-      subject: 'Subject:'
+      email: 'Your email'
+      name: 'Your name'
       message: 'Your message:'
-      question: 'Question about %{about}'
+      subject: 'Subject:'
+      question: "Question à propos de %{about}"
       submit: 'Submit'
   movements:
     movement:

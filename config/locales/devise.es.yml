@@ -39,14 +39,14 @@ es:
       update_needs_confirmation: 'Has actualizado tu cuenta correctamente, pero es necesario confirmar tu nuevo correo electrónico. Por favor, comprueba tu correo y sigue el enlace de confirmación para finalizar la comprobación del nuevo correo eletrónico.'
       updated: 'Tu cuenta fue actualizada.'
       edit:
-        name: "Nombre"
-        email: "Email"
-        phone: "Numéro de téléphone"
+        name: "Nombre:"
+        email: "El correo electrónico:"
+        phone: "Número de teléfono"
         confirmation_msg: "Actualmente están a la espera de confirmación: %{unconfirmed_email}"
         current_pass: "Contraseña Actual"
-        pass_msg: "(Necesitamos la contraseña actual para confirmar los cambios)"
-        blank_msg: "(Dejar en blanco si no desea cambiar)"
-        pass: "Nueva Contraseña"
+        pass_msg: "(necesitamos la contraseña actual para confirmar los cambios)"
+        blank_msg: "(dejar en blanco si no desea cambiar)"
+        pass: "Nueva contraseña"
         pass_confirm: "Confirmación de la contraseña nueva"
         update: "Actualizar"
     sessions:
@@ -56,6 +56,11 @@ es:
       send_instructions: 'Vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.'
       send_paranoid_instructions: 'Si tu cuenta existe, vas a recibir instrucciones para desbloquear tu cuenta en unos pocos minutos.'
       unlocked: 'Tu cuenta fue desbloqueada. Ya puedes iniciar sesión.'
+    users:
+      user:
+        signed_up: "¡Bienvenido! Te has suscrito correctamente."
+        updated: "Usted acaba de actualizar su información de cuenta."
+        destroyed: "Usted ha desactivado su cuenta."
   errors:
     messages:
       already_confirmed: i'ya fue confirmada, por favor intenta iniciar sesión'

@@ -1,14 +1,14 @@
 es:
   dictionary:
-    email: &email Email
-    name: &name Name
-    phone: &phone Phone Number
-    point: &point Point Person
-    password: &password Password
-    confirmation: &confirmation Confirmation
-    export_attendees: &export_attendees EXPORT ATTENDEES
-    host_event: &host_event HOST AN EVENT
-    update: &update UPDATE
+    email: &email Correo electrónico
+    name: &name Nombre
+    phone: &phone Teléfono Número
+    point: &point Punto persona(Haga clic para asignar) 
+    password: &password Nueva contraseña
+    confirmation: &confirmation Confirmación de la contraseña nueva
+    export_attendees: &export_attendees EXPORTACIÓN LISTA DE ASISTENTES
+    host_event: &host_event HOST UN EVENTO
+    update: &update Actualizar
   events:
     host_btn: "ANFITRIÓN DE UN EVENTO"
     unattend_btn: "EVENTO UNATTEND"
@@ -19,7 +19,7 @@ es:
     no_events_msg: "No hay eventos registrados cerca de usted."
     attend_btn: "ASISTIR A"
     contact_host_btn: "CONTACTAR CON HOST"
-    flyer_msg: "Use this flyer to promote this event!"
+    flyer_msg: "Utilice este folleto para promover este evento!"
     flyer_dl: "(Haga clic en el flyer para descargar)"
     when: "Cuando:"
     where: "Donde:"
@@ -31,13 +31,18 @@ es:
     message_placeholder: 'Escriba un mensaje para enviar a asistentes a eventos'
     email_btn: "Enviar correo electrónico"
     tasks_signed_up: "Firmado Por Tareas:"
-    name: "Nombre"
-    email: "Correo electrónico"
-    phone: "Teléfono Número"
-    point: "Punto persona (Haga clic para asignar)"
+    name: *name
+    email: *email
+    phone: *phone
+    point: *point
     notes: "Notas(Haga clic para editar)"
     unapprove: "Desaprobar"
     approve: "Aprobar"
+    tab_attendees:
+      yes: 'Sí'
+      no: 'No' 
+      export_attendees: *export_attendees
+      contact_attendees: "Contacto con los asistentes"
     dashboard:
       header: "Administrar Mis eventos"
       instructions: "Seleccione un evento y haga clic en Mostrar"
@@ -52,6 +57,7 @@ es:
     new:
       legend1:  "Evento Información Básica (1/2)"
       legend2: "Detalles del evento (2/2)"
+      legend3: "Datos personales"
       address: "Dirección del evento"
       location_placeholder: "reunirá a la vuelta de la esquina de Belmont y Sheridan"
       next: "Siguiente"
@@ -61,11 +67,16 @@ es:
       event_type: 'Tipo de evento:'
       event_chapter_msg: "Si cet événement est associé à une équipe, veuillez choisir ici:"
       forum_msg: "Incluir una de las asistentes foro de debate sobre este evento:"
+      name: "Su nombre"
+      email: "Su correo electrónico"
+      phone: "El teléfono"
+      password: *password
+      password_confirmation: *confirmation
     edit:
       edit_header: "Editar"
       start_date: "Fecha y hora de inicio:"
       end_date: "Fecha y hora de finalización:"
-      name: "Nombre:"
+      name: *name
       address1: "Dirección 1:"
       address2: "Dirección 2:"
       city: "Ciudad:"
@@ -74,20 +85,20 @@ es:
       notes: "Notas:"
       type: "Tipo:"
       forum: "Foro (Disqus):"
-      flyer: "Flyer:"
+      flyer: "Folleto:"
       avatar: "Avatar:"
-      update: "Actualizar"
+      update: *update
       cancel: "Cancelar"
       cancel_confirm_msg: "¿está seguro de que desea eliminar este evento?"
     show:
       task_msg: "Aquí están algunas cosas que usted puede hacer para ayudar a:"
     validations:
-      name: "es necesario el nombre"
-      start_time: "Start date & time is required"
-      city: "fecha y hora de inicio es necesario"
+      name: "Es necesario el nombre"
+      start_time: "Fecha y hora de inicio es necesario"
+      city: "Fecha y hora de inicio es necesario"
       state: "La ciudad es necesario"
-      address: "es necesaria la dirección"
-      description: "se requiere una descripción"
+      address: "Es necesaria la dirección"
+      description: "Se requiere una descripción"
       zip_required: 'Zip es necesario'
       zip_numeric: "Zip debe contener sólo números"
       zip_length: "Zip debe ser de 5 dígitos"
@@ -97,7 +108,7 @@ es:
     signed_up: "Firmado"
     volunteers: "Los Voluntarios (%{volunteer_count})"
     host_tasks_table:
-      host_tasks: "Host Tasks"
+      host_tasks: "Tareas host"
       description: "Descripción"
     tasks_table:
       legend: "Asistente de las funciones"
@@ -123,19 +134,19 @@ es:
   contact:
     new_event_msg:
       contact_host_for: 'Póngase en contacto con el host:'
-      name: 'Su nombre:'
-      email: 'El correo electrónico:'
+      name: *name
+      email: *email
       subject: 'Asunto:'
       message: 'Su mensaje:'
       question: 'Pregunta sobre %{about}'
       submit: 'Enviar'
     new_movement_msg:
-      contact_coordinator_for: 'Contacter le coordonnateur de:'
-      name: 'Su nombre:'
-      email: 'El correo electrónico:'
-      subject: 'Asunto:'
+      contact_coordinator_for: 'Contacto con el coordinador para: '
+      email: *email
+      name: *name
       message: 'Su mensaje:'
-      question: 'Pregunta sobre %{about}'
+      subject: 'Asunto:'
+      question: "Question à propos de %{about}"
       submit: 'Enviar'
   movements:
     movement:
@@ -151,12 +162,12 @@ es:
       invite_coordinators: 'INVITAR A LOS COORDINADORES DE LAS'
       email_attendees: "CORREO ELECTRÓNICO LOS ASISTENTES"
       email_hosts: "Correo electrónico Hosts"
-      export_attendees: 'EXPORTACIÓN LISTA DE ASISTENTES'
-      name_cl: 'Nombre'
+      export_attendees: *export_attendees
+      name_cl: *name
       group_cl: 'Grupo'
       event_cl: 'Evento'
-      email_cl: 'Correo Electrónico'
-      phone_number: 'Número de teléfono'
+      email_cl: *email
+      phone_number: *phone
       point_person: 'Persona?'
       yes: 'sí'
       no: 'no'
@@ -177,7 +188,7 @@ es:
     my_groups:
       my_groups: 'Mis grupos'
       manage_my_groups: 'Administrar Mis grupos'
-      show: 'SHOW'
+      show: 'Mostrar'
       select_group: 'Seleccione un grupo y haga clic en SHOW'
       group_details: 'Grupo Detalles'
       group_events: 'Grupo Eventos'
@@ -192,7 +203,7 @@ es:
       view_event: "Evento"
       edit_event: "Editar"
     tab_groups:
-      name: 'Nombre'
+      name: *name
       location_placeholder: 'p. ej. Mundial, Internacional, Nacional..'
       youtube_link: 'Youtube'
       create_btn: 'Crear Movimiento'
@@ -206,6 +217,15 @@ es:
       events_attending: 'Eventos'
       personal_details: 'Datos personales'
     new:
+      name: *name
+      location_placeholder: 'p. ej. Mundial, Internacional, Nacional..' 
+      location: "Los detalles de la ubicación:" 
+      youtube_link: 'Youtube'
+      tagline: 'Etiqueta'
+      extended_description: 'Descripción Ampliada'
+      call_to_action: 'Llamamiento a la acción'
+      about_creator: 'Acerca del creador'
+      create_btn: 'Crear movimiento'
       thanks_msg: 'Gracias por apoyar Amigos del Congo.'
       explanation_msg: "Una vez que introduzca los detalles pertinentes, usted será capaz de crear eventos para los aficionados a asistir. Las citas se pueden buscar a través de la página de inicio."
       name: 'Nombre'
@@ -221,7 +241,7 @@ es:
       quote: 'Nuestra misión y visión es la de aumentar la toma de conciencia de la comunidad mundial sobre el problema del Congo y el apoyo las instituciones congoleñas en el logro de una solución pacífica y duradera.'
     show_chapter:
       about_creators: 'Sobre los creadores de'
-      host_event: 'HOST UN EVENTO'
+      host_event: *host_event
       contact_group_coordinator: 'PÓNGASE EN CONTACTO CON EL COORDINADOR DEL GRUPO DE'
     support_network:
       support_network: 'Red de Apoyo'

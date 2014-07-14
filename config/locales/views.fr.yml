@@ -1,19 +1,18 @@
 fr:
   dictionary:
-    email: &email Email
+    email: &email E-mail
     name: &name Nom
     phone: &phone Numéro de téléphone
     point: &point Point personne
     password: &password Mot
-    confirmation: &confirmation Confirmation
+    confirmation: &confirmation De Confirmation  
     export_attendees: &export_attendees EXPORTATION PARTICIPANTS
     host_event: &host_event L'HÔTE D'UN ÉVÉNEMENT
+    update: &update MISE à JOUR
   events:
     host_btn: *host_event
     unattend_btn: UNATTEND événement
     volunteer_status: "VOLUTEER STATUT"
-    export_attendees: *export_attendees
-    contact_attendees: "CONTACT PARTICIPANTS"
     show_btn: "AFFICHER"
     host_link: "Cliquez ici pour héberger votre propre événement."
     search_placeholder: "Rechercher des événements par ville, état ou Code Postal"
@@ -39,6 +38,11 @@ fr:
     notes: "Notes (Cliquez pour modifier)"
     unapprove: "désapprouver"
     approve: "Approuver"
+    tab_attendees:
+      yes: 'Oui'
+      no: 'non'
+      export_attendees: *export_attendees
+      contact_attendees: "CONTACT PARTICIPANTS"
     dashboard:
       header: "Gérer mes Événements"
       instructions: "Sélectionnez un événement, puis cliquez sur Afficher"
@@ -53,6 +57,7 @@ fr:
     new:
       legend1:  "Événement Informations de base (1/2)"
       legend2: "les détails de l'événement (2/2)"
+      legend3: "Détails personnels"
       address: "Adresse de l'événement"
       location_placeholder: "réunira au coin de Belmont & Sheridan"
       next: "Suivant"
@@ -62,6 +67,11 @@ fr:
       event_type: "Type d'événement :"
       event_chapter_msg: "Si cet événement est associé à une équipe, veuillez choisir ici:"
       forum_msg: "Inclure un participant forum de discussion sur l'événement:"
+      name: "Votre nom"
+      email: "Votre e-mail"
+      phone: "Votre téléphone"
+      password: *password
+      password_confirmation: *confirmation
     edit:
       edit_header: "Modifier l'événement"
       start_date: "Start Date & Heure:"
@@ -75,7 +85,7 @@ fr:
       notes: "Notes:"
       type: "Type:"
       forum: "Forum (Disqus):"
-      flyer: "Flyer:"
+      flyer: "Aviateur"
       avatar: "Avatar:"
       update: "Mise à jour"
       cancel: "Annuler événement"
@@ -173,6 +183,12 @@ fr:
       subject: "Subject"
       message: "Objet"
       placeholder: "Saisissez le message à envoyer à tous les hôtes."
+    email_hosts_modal:
+      email_hosts: "Hôtes E-MAIL"
+      title: "E-mail les hôtes"
+      subject: "Objet"
+      message: "Message"
+      placeholder: "Saisissez le message à envoyer à tous les hôtes."
     tab_tasks:
       modify_tasks: 'Modifier les tâches pour les événements ici'
     my_groups:
@@ -207,6 +223,15 @@ fr:
       events_attending: 'Assister aux événements'
       personal_details: 'Détails personnels'
     new:
+      name: *name
+      location: "Les détails d'emplacement:"
+      location_placeholder: 'Par exemple mondial, International, National..'
+      youtube_link: 'Lien Youtube'
+      create_btn: 'Créer du mouvement'
+      tagline: "Slogan: "
+      call_to_action: "Appel à l'action:"
+      extended_description: "Description étendue:"
+      about_creator: "De Créateur:"
       thanks_msg: 'Merci pour la prise en charge des Amis du Congo.'
       explanation_msg: "Une fois que vous entrez les détails pertinents, vous serez en mesure de créer des événements pour les partisans d'y assister. Vos événements seront interrogeables via la page d'accueil."
       name: 'Nom:'
