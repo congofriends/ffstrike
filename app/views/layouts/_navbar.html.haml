@@ -15,7 +15,7 @@
           - if current_user
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-                = user_name_or_email.titleize
+                = current_user.full_name
                 %b.caret
               %ul.dropdown-menu
                 %li#my_profile= link_to t('.my_profile'), user_movements_path

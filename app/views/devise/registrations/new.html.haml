@@ -6,9 +6,13 @@
       = devise_error_messages!
       %fieldset
         .form-group
-          = f.label :name, class: 'col-md-4 control-label'
+          = f.label :name, "First Name", class: 'col-md-4 control-label'
           .col-md-8
             = f.text_field :name, :autofocus => true, class: 'form-control'
+        .form-group
+          = f.label :surname, "Last Name", class: 'col-md-4 control-label'
+          .col-md-8
+            = f.text_field :surname, :autofocus => true, class: 'form-control'
         .form-group
           = f.label :email, class: 'col-md-4 control-label'
           .col-md-8

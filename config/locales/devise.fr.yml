@@ -40,7 +40,8 @@ fr:
       update_needs_confirmation: 'Vous avez modifié votre compte avec succès, mais nous devons vérifier votre nouvelle adresse de courriel. Veuillez consulter vos courriels et cliquer sur le lien de confirmation pour confirmer votre nouvelle adresse.'
       updated: 'Votre compte a été modifié avec succès.'
       edit:
-        name: "Nom"
+        name: "Prénom"
+        surname: "Nom de famille"
         email: "Email"
         phone: "Numéro de téléphone"
         confirmation_msg: "Actuellement en attente de confirmation pour : %{unconfirmed_email}"

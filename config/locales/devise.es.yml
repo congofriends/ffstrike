@@ -39,7 +39,8 @@ es:
       update_needs_confirmation: 'Has actualizado tu cuenta correctamente, pero es necesario confirmar tu nuevo correo electrónico. Por favor, comprueba tu correo y sigue el enlace de confirmación para finalizar la comprobación del nuevo correo eletrónico.'
       updated: 'Tu cuenta fue actualizada.'
       edit:
-        name: "Nombre:"
+        name: "Nombre de pila:"
+        surname: "Nombre de familia"
         email: "El correo electrónico:"
         phone: "Número de teléfono"
         confirmation_msg: "Actualmente están a la espera de confirmación: %{unconfirmed_email}"

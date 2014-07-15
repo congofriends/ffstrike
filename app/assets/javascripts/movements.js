@@ -5,6 +5,7 @@ function initializeGroupValidations() {
         required: true,
         remote: "/check_name"},
       'user[name]': {required: true},
+      'user[surname]': {required: true},
       'user[email]': {
             required: true,
             email: true,
@@ -16,7 +17,8 @@ function initializeGroupValidations() {
       'movement[name]': {
         required: "Name is required",
         remote: "Name is already in use"},
-      'user[name]': "Name is required",
+      'user[name]': "First Name is required",
+      'user[surname]': "Last Name is required",
       'user[email]': {
             required: "Email is required",
             email: "Please enter a valid email address",

@@ -26,7 +26,7 @@ class MovementsController < ApplicationController
   def my_groups
     redirect_to new_user_session_path and return unless current_user && !current_user.movements.empty?
     @groups = current_user.movements_and_groups
-    @group = params[:name] ? Movement.find(params[:name][:id]) : Movement.first
+    @group = params[:name] ? Movement.find(params[:name][:id]) : @groups.first
 
     respond_to do |format|
       format.html {render action: 'my_groups'}

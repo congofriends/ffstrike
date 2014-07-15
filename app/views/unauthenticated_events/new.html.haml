@@ -67,9 +67,13 @@
                 %button{type: "button", class: "btn btn-success next"}= t("events.new.next")
             %fieldset.event_additional_details
               %legend= t("events.new.legend3")
-              .form-group
-                = label :user, :name,  t("events.new.name") + " *"
-                = text_field :user, :name, class: 'form-control'
+              .row
+                .form-group.col-xs-6
+                  = label :user, :name,  t("events.new.name") + " *"
+                  = text_field :user, :name, class: 'form-control'
+                .form-group.col-xs-6
+                  = label :user, :surname,  t("events.new.surname") + " *"
+                  = text_field :user, :surname, class: 'form-control'
               .form-group
                 = label :user, :email, t("events.new.email") + " *"
                 = email_field :user, :email, class: 'form-control'

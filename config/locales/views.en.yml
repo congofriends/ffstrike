@@ -12,7 +12,7 @@ en:
   events:
     host_btn: *host_event
     unattend_btn: "UNATTEND EVENT"
-    volunteer_status: "VOLUTEER STATUS"
+    volunteer_status: "VOLUNTEER STATUS"
     show_btn: "SHOW"
     host_link: "Click here to host your own."
     search_placeholder: "Search Events by City, State or Zip Code"
@@ -67,7 +67,8 @@ en:
       event_type: 'Event Type:'
       event_chapter_msg: "If this event is associated with a team, please choose it here:"
       forum_msg: "Include an attendee discussion forum on this event:"
-      name: "Your name"
+      name: "Your first name"
+      surname: "Your last name"
       email: "Your email"
       phone: "Your phone"
       password: "Password"
@@ -76,7 +77,7 @@ en:
       edit_header: "EDIT EVENT"
       start_date: "Start date & time:"
       end_date: "End date & time:"
-      name: "Name:"
+      name: "Event Name:"
       address1: "Address 1:"
       address2: "Address 2:"
       city: "City:"

@@ -35,6 +35,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def full_name
+    "#{name} #{surname}".titleize
+  end
+
   def add_movement(movement)
     self.movements << movement
   end

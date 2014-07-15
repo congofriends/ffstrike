@@ -15,7 +15,7 @@
       - @groups.each do |group|
         - group.ownerships.each do |ownership|
           %tr
-            %td= ownership.user.name
+            %td= ownership.user.full_name
             %td= link_to group.name, movement_path(group)
             %td= ownership.user.email
             %td= ownership.user.phone
@@ -34,7 +34,7 @@
           =t('.phone_number')
       - events.each do |event|
         %tr
-          %td= event.host.name
+          %td= event.host.full_name
           %td= link_to event.name, event_path(event)
           %td= event.host.email
           %td= event.host.phone
@@ -56,7 +56,7 @@
       - events.each do |event|
         - event.attendees.each do |attendee|
           %tr
-            %td= attendee.name
+            %td= attendee.full_name
             %td= link_to event.name, event_path(event)
             %td= attendee.email
             %td= attendee.phone

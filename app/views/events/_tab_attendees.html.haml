@@ -9,7 +9,7 @@
         %th= t('events.notes')
       - event.attendees.each do |attendee|
         %tr
-          %td= attendee.name
+          %td= attendee.full_name
           %td= attendee.email
           %td= attendee.phone
           %td= link_to( attendee.volunteer_for(event) ? t('.yes') : t('.no'), assign_volunteer_path(attendee_id: attendee.id, event_id: event.id), method: :put, remote: true, class: "check-box btn", id: "assign_volunteer#{event.id}")

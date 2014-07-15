@@ -41,7 +41,8 @@ en:
       update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
       updated: "You updated your account successfully."
       edit:
-        name: "Name"
+        name: "First Name"
+        surname: "Last Name"
         email: "Email"
         phone: "Phone Number"
         confirmation_msg: "Currently waiting confirmation for: %{unconfirmed_email}"

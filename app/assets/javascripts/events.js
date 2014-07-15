@@ -12,6 +12,7 @@ function initializeValidations() {
         number: true,
         rangelength: [5, 5] },
       'user[name]': {required: true},
+      'user[surname]': {required: true},
       'user[email]': {
             required: true,
             email: true,
@@ -30,7 +31,8 @@ function initializeValidations() {
         required: 'Zip is required',
         number: "Zip should contain only numbers",
         rangelength: "Zip should be 5 digits long"},
-      'user[name]': "Name is required",
+      'user[name]': "First Name is required",
+      'user[surname]': "Last Name is required",
       'user[email]': {
             required: "Email is required",
             email: "Please enter a valid email address",

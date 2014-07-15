@@ -1,7 +1,7 @@
 = form_for @user, method: "post", url: create_attendee_user_path, html: { id: 'attendee-form' } do |f|
   .panel-heading
     .panel-title
-      %h3 Hello #{@user.name},
+      %h3 Hello #{@user.full_name},
       %h4 Thank you for signing up to attend #{@event.name}.
       %h5 If this is not you, click #{link_to 'here', destroy_user_session_path, method: :delete}
   .panel-body
