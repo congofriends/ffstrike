@@ -14,15 +14,15 @@ end
 
 Then(/^default language is English/) do
   expect(I18n.locale).to eql(:en)
-  home_page.content_is_in_english
+  expect(home_page.translate_home_page(:en)).to be true
 end
 
 Then(/^home page content shows in Spanish/) do
   expect(I18n.locale).to eql(:es)
-  home_page.content_is_in_spanish
+  expect(home_page.translate_home_page(:es)).to be true
 end
 
 Then(/^home page content shows in French/) do
   expect(I18n.locale).to eql(:fr)
-  home_page.content_is_in_french
+  expect(home_page.translate_home_page(:fr)).to be true
 end
