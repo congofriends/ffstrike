@@ -6,7 +6,6 @@ class MovementsController < ApplicationController
   include ZipHelper
 
   def index
-    binding.pry
     redirect_to movement_path(Movement.first)
   end
 
