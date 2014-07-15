@@ -88,6 +88,7 @@ class EventsController < ApplicationController
   end
 
   def my_events
+    redirect_to new_user_session_path and return unless current_user
     @events = current_user.events_owned
     @event = Event.find params[:name][:id] if params[:name] && (Event.where(id: params[:name][:id]).count > 0)
     respond_to do |format|

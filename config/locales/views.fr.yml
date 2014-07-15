@@ -5,7 +5,7 @@ fr:
     phone: &phone Numéro de téléphone
     point: &point Point personne
     password: &password Mot
-    confirmation: &confirmation De Confirmation  
+    confirmation: &confirmation De Confirmation
     export_attendees: &export_attendees EXPORTATION PARTICIPANTS
     host_event: &host_event L'HÔTE D'UN ÉVÉNEMENT
     update: &update MISE à JOUR
@@ -248,7 +248,7 @@ fr:
     show_chapter:
       about_creators: 'Concernant les créateurs'
       host_event: *host_event
-      contact_group_coordinator: 'COMMUNIQUEZ AVEC LE COORDONNATEUR DE GROUPE'
+      contact_group_coordinator: 'CONTACT COORDONNATEUR'
     support_network:
       support_network: 'Support Réseau'
       network_message: 'Notre réseau de soutien a %{number} groupes et est de plus en plus!'

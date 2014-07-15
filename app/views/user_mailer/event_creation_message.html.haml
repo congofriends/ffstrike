@@ -8,7 +8,7 @@ Every year in the third week of October, people throughout the globe gather to c
 
 Your event dashboard is a powerful organizing tool. There you can edit your event details, see your most important tasks (and edit them as you see fit), see who has signed up for your event, and email or call potential volunteers. Sign into your event dashboard
 = succeed "." do
-  %a{href: my_events_path({:locale => I18n.locale, :name => {:id => @event.id}})} here
+  %a{href: my_events_url({:locale => I18n.locale, :name => {:id => @event.id}})} here
 
 If you’ve forgotten your password, you can reset it.
 

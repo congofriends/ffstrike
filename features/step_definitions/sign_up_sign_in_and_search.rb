@@ -16,7 +16,7 @@ When(/^I search for a movement with no zipcode$/) do
 end
 
 When(/^I select the sign up link$/) do
-    visit new_user_session_path
+    visit new_user_session_path({locale: "en"})
     home_page.sign_in()
   	home_page.sign_up()
 end

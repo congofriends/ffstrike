@@ -12,7 +12,7 @@ Congo Week Organizer
 P.S. If you want to access your profile, use this email address and the password (we sent you one when you signed up, but if you forgot you can reset it) at (link). There, you can manage your events and sign up to volunteer.
 You can find out more about #{@event.name} by clicking
 = succeed "." do
-  %a{href: event_path(@event, {:locale => I18n.locale}) } here
+  %a{href: event_url(@event, {:locale => I18n.locale}) } here
 %br/
 Your password is:
 = @password

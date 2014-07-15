@@ -46,7 +46,7 @@ en:
       tab_attendees: "Attendees"
     tab_attendees:
       yes: 'popo'
-      no: 'No' 
+      no: 'No'
       export_attendees: *export_attendees
       contact_attendees: "CONTACT ATTENDEES"
     explanation:
@@ -231,7 +231,7 @@ en:
     show_chapter:
       about_creators: 'About the Creators'
       host_event: *host_event
-      contact_group_coordinator: 'CONTACT THE TEAM COORDINATOR'
+      contact_group_coordinator: 'CONTACT COORDINATOR'
     support_network:
       support_network: 'Support Network'
       network_message: 'Our Support Network has %{number} teams and is growing!'

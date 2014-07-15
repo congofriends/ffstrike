@@ -14,7 +14,7 @@ include BestInPlace::TestHelpers
 
 	def navigate_to_event_dash
 		click_link "#{User.last.name}"
-	  click_link "Manage My Events"
+	  click_link_or_button "Manage My Events"
 	  select "Crazy Event", from: "name_id"
 	  click_link_or_button "SHOW"
 	end

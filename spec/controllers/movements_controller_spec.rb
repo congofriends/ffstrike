@@ -187,7 +187,7 @@ describe MovementsController do
         ownership = FactoryGirl.create(:ownership, movement: movement, user: user)
         controller.stub(:current_user).and_return(wrong_user)
         get :my_groups
-        expect(response).to redirect_to root_path
+        expect(response).to redirect_to new_user_session_path
       end
     end
   end

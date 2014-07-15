@@ -3,7 +3,7 @@ es:
     email: &email Correo electrónico
     name: &name Nombre
     phone: &phone Teléfono Número
-    point: &point Punto persona(Haga clic para asignar) 
+    point: &point Punto persona(Haga clic para asignar)
     password: &password Nueva contraseña
     confirmation: &confirmation Confirmación de la contraseña nueva
     export_attendees: &export_attendees EXPORTACIÓN LISTA DE ASISTENTES
@@ -40,7 +40,7 @@ es:
     approve: "Aprobar"
     tab_attendees:
       yes: 'Sí'
-      no: 'No' 
+      no: 'No'
       export_attendees: *export_attendees
       contact_attendees: "Contacto con los asistentes"
     dashboard:
@@ -218,8 +218,8 @@ es:
       personal_details: 'Datos personales'
     new:
       name: *name
-      location_placeholder: 'p. ej. Mundial, Internacional, Nacional..' 
-      location: "Los detalles de la ubicación:" 
+      location_placeholder: 'p. ej. Mundial, Internacional, Nacional..'
+      location: "Los detalles de la ubicación:"
       youtube_link: 'Youtube'
       tagline: 'Etiqueta'
       extended_description: 'Descripción Ampliada'
@@ -242,7 +242,7 @@ es:
     show_chapter:
       about_creators: 'Sobre los creadores de'
       host_event: *host_event
-      contact_group_coordinator: 'PÓNGASE EN CONTACTO CON EL COORDINADOR DEL GRUPO DE'
+      contact_group_coordinator: 'CONTACTO COORDINADOR'
     support_network:
       support_network: 'Red de Apoyo'
       network_message: 'Nuestra red de apoyo tiene %{number} grupos y está creciendo!'

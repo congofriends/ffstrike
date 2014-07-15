@@ -10,7 +10,7 @@ Given(/^a user account exists/) do
 end
 
 Given(/^I am logged in as a Movement Coordinator/) do
-  visit new_user_session_path
+  visit new_user_session_path({locale: "en"})
   home_page.coordinator_login()
 end
 

@@ -18,11 +18,11 @@
                 = user_name_or_email.titleize
                 %b.caret
               %ul.dropdown-menu
-                %li= link_to t('.my_profile'), user_movements_path
+                %li#my_profile= link_to t('.my_profile'), user_movements_path
                 - unless current_user.movements.empty?
-                  %li= link_to t('.manage_my_groups'), my_groups_path
+                  %li#manage_groups= link_to t('.manage_my_groups'), my_groups_path
                 - unless current_user.events_owned.empty?
-                  %li= link_to t('.manage_my_events'), my_events_path
+                  %li#manage_events= link_to t('.manage_my_events'), my_events_path
                 %li.divider
                 %li= link_to t('.create_group'), new_movement_path
                 %li= link_to t('.create_event'), new_movement_event_path(Movement.first) if Movement.first

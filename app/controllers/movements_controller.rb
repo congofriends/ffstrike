@@ -6,6 +6,7 @@ class MovementsController < ApplicationController
   include ZipHelper
 
   def index
+    binding.pry
     redirect_to movement_path(Movement.first)
   end
 
@@ -18,13 +19,13 @@ class MovementsController < ApplicationController
   end
 
   def my_profile
-    redirect_to root_path and return unless current_user
+    redirect_to new_user_session_path and return unless current_user
     @events_attending = current_user.events_attending
     @events_hosting = current_user.approved_events
   end
 
   def my_groups
-    redirect_to root_path and return unless current_user && !current_user.movements.empty?
+    redirect_to new_user_session_path and return unless current_user && !current_user.movements.empty?
     @groups = current_user.movements_and_groups
     @group = params[:name] ? Movement.find(params[:name][:id]) : Movement.first
 
