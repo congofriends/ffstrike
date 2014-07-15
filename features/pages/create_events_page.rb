@@ -30,7 +30,7 @@ include Capybara::DSL
 	end
 
 	def create_existing_event(user)
-		movement = FactoryGirl.create(:published_movement, name: "go Dogs")
+		movement = FactoryGirl.create(:published_movement, name: "Friends of the Congo")
   	ownership = FactoryGirl.create(:ownership, movement: movement, user: user)
   	event = FactoryGirl.create(:approved_event, host: user, zip: '60649', movement: movement, name: "Crazy Event")
 		chapter = FactoryGirl.create(:published_movement, parent_id: movement.id)

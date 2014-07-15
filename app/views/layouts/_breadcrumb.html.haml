@@ -2,4 +2,4 @@
   %ol.breadcrumb
     - movement = Movement.where(name: "Friends of the Congo").first
     - unless movement.nil?
-      %li= link_to t('.home'), movement_path(movement)
+      = link_to t('.home'), movement_path(movement), id: 'home'

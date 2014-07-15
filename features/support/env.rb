@@ -1,5 +1,6 @@
 require 'cucumber/rails'
 require 'capybara/poltergeist'
+
 Dir[Rails.root.join("features/support/*.rb")].each { |f| require f }
 # Capybara.javascript_driver = :webkit
 

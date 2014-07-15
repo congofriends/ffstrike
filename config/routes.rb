@@ -6,7 +6,7 @@ Ffstrike::Application.routes.draw do
   root 'movements#index'
 
   scope "(:locale)", locale: /en|fr|es/ do
-  #devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "users", :invitations => 'users/invitations'  }
+  # devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "users", :invitations => 'users/invitations'  }
     devise_for :users, skip: :omniauth_callbacks , :controllers => { :registrations => "users", :invitations => 'users/invitations'  }
     match "/users/auth/:provider",
       constraints: { provider: /facebook/ },

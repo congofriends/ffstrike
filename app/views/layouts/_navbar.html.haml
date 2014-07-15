@@ -35,7 +35,7 @@
               -current_locale = params[:locale] || 'EN'
               = current_locale
               %b.caret
-              %ul.dropdown-menu
+              %ul.dropdown-menu#languages
                 %li= link_to('EN', :locale => 'en')
                 %li= link_to('FR', :locale => 'fr')
                 %li= link_to('ES', :locale => 'es')
