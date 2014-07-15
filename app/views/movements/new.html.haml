@@ -54,6 +54,11 @@
                   = form.file_field :image
 
               .form-group
+                = form.label :flickr, { class: 'col-md-4 control-label' }
+                .col-md-8
+                  = form.text_field :flickr, { class: 'form-control' }
+
+              .form-group
                 = form.label :video, t('.youtube_link'), { class: 'col-md-4 control-label' }
                 .col-md-8
                   = form.text_field :video, { class: 'form-control' }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140708223036) do
+ActiveRecord::Schema.define(version: 20140715185650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 20140708223036) do
     t.datetime "avatar_updated_at"
     t.string   "website"
     t.boolean  "published",            default: true
+    t.string   "flickr"
   end
 
   create_table "ownerships", force: true do |t|
@@ -156,6 +157,7 @@ ActiveRecord::Schema.define(version: 20140708223036) do
     t.string   "invited_by_type"
     t.string   "phone"
     t.integer  "mvmt_id"
+    t.string   "surname"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

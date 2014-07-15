@@ -19,6 +19,6 @@ class UnauthenticatedSubmovementsController < ApplicationController
   end
 
   def movement_params
-    params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :video, :about_creator, :website, :parent_id)
+    params.require(:movement).permit(:name, :draft, :category, :tagline, :call_to_action, :extended_description, :image, :video, :about_creator, :website, :flickr, :parent_id)
   end
 end
