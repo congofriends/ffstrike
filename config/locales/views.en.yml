@@ -197,9 +197,12 @@ en:
       event_name: "Event Name"
       where: "When"
       when: "Where"
-      approved: "Approved"
+      approved: "Approval(Public)"
       approve: "Approve"
       unapprove: "Unapprove"
+      sponsored: "Sponsorship"
+      sponsor: "Sponsor"
+      unsponsor: "Unsponsor"
       view_event: "View Event"
       edit_event: "Edit Event"
     tab_groups:

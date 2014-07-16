@@ -198,9 +198,12 @@ es:
       event_name: "Nombre del evento"
       where: "Cuando"
       when: "Dónde"
-      approved: "Aprobado"
+      approved: "Aprobar(Public)"
       approve: "Aprobar"
       unapprove: "Desaprobar"
+      sponsored: "Patrocinio"
+      sponsor: "Patrocina"
+      unsponsor: "No Patrocina"
       view_event: "Evento"
       edit_event: "Editar"
     tab_groups:

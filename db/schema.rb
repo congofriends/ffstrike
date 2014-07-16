@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716200219) do
+ActiveRecord::Schema.define(version: 20140716210542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 20140716200219) do
     t.integer  "flyer_file_size"
     t.datetime "flyer_updated_at"
     t.string   "country"
+    t.boolean  "sponsored",          default: false
   end
 
   add_index "events", ["host_id"], name: "index_events_on_host_id", using: :btree

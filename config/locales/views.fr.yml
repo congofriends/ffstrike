@@ -204,9 +204,12 @@ fr:
       event_name: "Nom de l'événement"
       where: "quand"
       when: "Où"
-      approved: "Approuvé"
+      approved: "Approbation(Public)"
       approve: "Approuver"
       unapprove: "Désapprouver"
+      sponsored: "Le Parrainage"
+      sponsor: "Sponsor"
+      unsponsor: "Unsponsor"
       view_event: "Afficher l'événement"
       edit_event: "Modifier l'événement"
     tab_groups:

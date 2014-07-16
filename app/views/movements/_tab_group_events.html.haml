@@ -8,6 +8,7 @@
 						%th= t('.when')
 						%th= t('.where')
 						%th= t('.approved')
+						%th= t('.sponsored')
 					- events.each do |event|
 						%tr
 							%td
@@ -17,3 +18,4 @@
 							%td= event.start_time_formatted
 							%td= event.location
 							%td= link_to event.approved? ? t('.unapprove') : t('.approve'), approve_path(event), method: :put, remote: true, id: "approve#{event.id}", class: "btn"
+							%td= link_to event.sponsored? ? t('.unsponor') : t('.sponsor'), sponsor_path(event), method: :put, remote: true, id: "sponsor#{event.id}", class: "btn"

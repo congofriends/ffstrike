@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit, :export_attendees]
+  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit, :export_attendees, :sponsor]
   before_filter :load_movement, :only => [:new, :create, :edit, :update, :index]
   before_filter :redirect_unauthorized_user, :only => [:edit]
   before_filter :load_event_types, :only => [:edit]
@@ -30,6 +30,15 @@ class EventsController < ApplicationController
 
   def approve
     @event.update(approved: !@event.approved)
+    respond_to do |format|
+      format.html { render nothing: true }
+      format.js
+    end
+  end
+
+  def sponsor
+    binding.pry
+    @event.update(sponsored: !@event.sponsored)
     respond_to do |format|
       format.html { render nothing: true }
       format.js

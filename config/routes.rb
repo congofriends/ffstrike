@@ -60,6 +60,7 @@ Ffstrike::Application.routes.draw do
     get 'my_events' => 'events#my_events', as: 'my_events'
     get 'events/:id/explanation' => 'events#explanation', as: 'explanation'
     put 'events/:id/approve' => 'events#approve', as: 'approve'
+    put 'events/:id/sponsor' => 'events#sponsor', as: 'sponsor'
     put 'assign_volunteer' => 'events#assign_volunteer', as: 'assign_volunteer'
     put 'unattend' => 'events#unattend', as: 'unattend'
 
