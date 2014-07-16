@@ -14,3 +14,8 @@ end
 Sidekiq.configure_client do |config|
   config.redis = { url: ENV["REDISTOGO_URL"] }
 end
+
+
+Sidekiq::Web.use(Rack::Auth::Basic) do |user, password|
+  [user, password] == ["FOTCadmin", ENV["SIDEKIQ_PASS"]]
+end
