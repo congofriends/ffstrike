@@ -2,7 +2,7 @@ class CreateEventsPage
 include Capybara::DSL
 	def create_new_event
 		fill_in 'event_name', with: 'Cats and Dogs'
-    	fill_in 'event_description', with: "Cats and Dogs are my faaaaavorite aminals"
+		fill_in 'event_description', with: "Cats and Dogs are my faaaaavorite aminals"
 		fill_in 'event_address', with: '2373'
 		fill_in 'event_city', with: 'Chicago'
 		fill_in 'event_zip', with: '60649'
@@ -12,9 +12,21 @@ include Capybara::DSL
 		find('input#create_event').click
 	end
 
+	def create_new_event_without_time
+		fill_in 'event_name', with: 'Event Without Time'
+		fill_in 'event_description', with: "I don't know when this event is happening yet"
+		fill_in "event_start_time", with: DateTime.new(2015, 05, 17, 15, 30)
+		find(:css, "#event_time_tbd").set(true) 
+		fill_in 'event_address', with: '2373'
+		fill_in 'event_city', with: 'Chicago'
+		fill_in 'event_zip', with: '60649'
+		fill_in 'event_state', with: 'IL'
+		find('input#create_event').click
+	end
+
 	def create_new_event_as_an_attendee
 		fill_in 'event_name', with: 'Cats and Dogs'
-    	fill_in 'event_description', with: 'Arent cats and dogs your faaaaavorite mammals?'
+		fill_in 'event_description', with: 'Arent cats and dogs your faaaaavorite mammals?'
 		fill_in 'event_address', with: '2373'
 		fill_in 'event_city', with: 'Chicago'
 		fill_in 'event_zip', with: '60649'
@@ -31,8 +43,8 @@ include Capybara::DSL
 
 	def create_existing_event(user)
 		movement = FactoryGirl.create(:published_movement, name: "Friends of the Congo")
-  	ownership = FactoryGirl.create(:ownership, movement: movement, user: user)
-  	event = FactoryGirl.create(:approved_event, host: user, zip: '60649', movement: movement, name: "Crazy Event")
+		ownership = FactoryGirl.create(:ownership, movement: movement, user: user)
+		event = FactoryGirl.create(:approved_event, host: user, zip: '60649', movement: movement, name: "Crazy Event")
 		chapter = FactoryGirl.create(:published_movement, parent_id: movement.id)
 		return self
 	end
@@ -41,8 +53,8 @@ include Capybara::DSL
 		@movement = Movement.last
 		ownership = FactoryGirl.create(:ownership, movement: @movement, user: user)
 		@event = FactoryGirl.create(:approved_event, host: user, zip: '60649', movement: @movement, name: "Crazy Event")
-  	attendee = FactoryGirl.create(:user)
-  	attendance = FactoryGirl.create(:attendance, user: attendee, event: @event)
+		attendee = FactoryGirl.create(:user)
+		attendance = FactoryGirl.create(:attendance, user: attendee, event: @event)
 	end
 
 	def navigate_to()
@@ -51,30 +63,28 @@ include Capybara::DSL
 		return self
 	end
 
-  def select_create_event
-  	navigate_to_events
-    click_link_or_button('HOST AN EVENT')
-    return self
-  end
+	def select_create_event
+		navigate_to_events
+		click_link_or_button('HOST AN EVENT')
+		return self
+	end
 
-  def navigate_to_events()
-  	name = Movement.last.name
-  	visit "/movements/" + name.gsub(/ /, '-') + "/events/"
-  	return self
-  end
+	def navigate_to_events()
+		name = Movement.last.name
+		visit "/movements/" + name.gsub(/ /, '-') + "/events/"
+		return self
+	end
 
-  # def select_rally
-  #   click_link_or_button('Rally')
-  #   return self
-  # end
+	# def select_rally
+	#   click_link_or_button('Rally')
+	#   return self
+	# end
 
-  def email_attendees_for_an_event ()
-    name = Event.last.name
-    visit "/events/"+ name.gsub(/ /, '-')
-    click_link ('Email Event Attendees')
-    fill_in 'message', with: 'Chicago, New York and Tennessee events went great, keep up the good work!!!'
-    click_link_or_button ('Send Email')
-  end
-
-
+	def email_attendees_for_an_event ()
+		name = Event.last.name
+		visit "/events/"+ name.gsub(/ /, '-')
+		click_link ('Email Event Attendees')
+		fill_in 'message', with: 'Chicago, New York and Tennessee events went great, keep up the good work!!!'
+		click_link_or_button ('Send Email')
+	end
 end

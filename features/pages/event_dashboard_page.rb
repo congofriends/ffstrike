@@ -3,7 +3,7 @@ include Capybara::DSL
 include BestInPlace::TestHelpers
 
 	def edit_event
-    fill_in("event[address]", with: "123 this street")
+		fill_in("event[address]", with: "123 this street")
 		click_link_or_button('UPDATE')
 	end
 
@@ -14,9 +14,9 @@ include BestInPlace::TestHelpers
 
 	def navigate_to_event_dash
 		click_link "#{User.last.name}"
-	  click_link_or_button "Manage My Events"
-	  select "Crazy Event", from: "name_id"
-	  click_link_or_button "SHOW"
+		click_link_or_button "Manage My Events"
+		select Event.last.name, from: "name_id"
+		click_link_or_button "SHOW"
 	end
 
 	def navigate_to_movement_dash
