@@ -19,9 +19,9 @@
                 .form-group
                   = label :event, :end_time,  t("events.edit.end_date")
                   = text_field :event, :end_time, class: 'form-control datetimepicker'
-                .form-group
-                  = label :event, :time_tbd, "Time To Be Determined"
-                  = check_box :event, :time_tbd, {}, true, false
+              .form-group
+                = label :event, :time_tbd, "Time To Be Determined"
+                = check_box :event, :time_tbd, {}, true, false
               %legend=  t("events.new.address")
               .address
                 .row

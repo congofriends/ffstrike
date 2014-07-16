@@ -39,3 +39,21 @@ Then(/^I can see that the time fields contain TBD/) do
 	find_field('event_start_time').value.should eq 'TBD'
 	find_field('event_end_time').value.should eq 'TBD'
 end
+
+When(/^I make an unauthenticated event with location TBD field checked/) do
+	create_events_page.navigate_to.select_create_event.create_new_event_as_an_attendee_without_location()
+end
+
+Then(/^the location fields in the edit event page are empty/) do
+	click_link_or_button('Go right to your event dashboard.')
+	find_field('event_address').value.should eq ''
+	find_field('event_address2').value.should eq ''
+	find_field('event_city').value.should eq ''
+	find_field('event_state').value.should eq ''
+	find_field('event_zip').value.should eq ''
+end
+
+Then(/^the when field on the event page is TBD/) do
+	click_link_or_button(Event.last.name)
+	page.should have_text('TBD')
+end

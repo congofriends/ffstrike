@@ -42,9 +42,9 @@ describe UnauthenticatedEventsController do
       end
     end
     context 'valid user & event' do
-      it "redirects to event show page" do
+      it "redirects to event explanation page" do
         post :create, user: user, event: event, movement_id: movement
-        expect(response).to redirect_to event_path(Event.last)
+        expect(response).to redirect_to explanation_path(Event.last)
       end
     end
   end
