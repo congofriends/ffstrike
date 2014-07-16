@@ -5,17 +5,16 @@ class Event < ActiveRecord::Base
   belongs_to :event_type
   has_many :attendances, dependent: :destroy
   has_many :attendees, through: :attendances, source: :user
-  # has_many :attachments, dependent: :destroy
   has_many :tasks, dependent: :destroy
 
-  after_validation :assign_coordinates
-  after_create :populate_tasks
+  after_create :populate_tasks, :assign_coordinates
 
-  validates :host, :address, :city, :state, :zip, :name, :description, presence: true
+  # validates :host, :address, :city, :state, :zip, :name, :description, presence: true
+  validates :host, :name, :description, presence: true
 
   validate :start_date_cannot_be_in_the_past
   validate :end_time_cannot_be_before_start_time
-  validates :start_time, presence: true
+  # validates :start_time, presence: true
   validates :movement, presence: true
   validates :event_type, presence: true
 
@@ -31,7 +30,6 @@ class Event < ActiveRecord::Base
                     :default_url => 'fotc.jpg'
 
   validates_attachment_content_type :flyer, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
-  # validates_attachment :flyer, :content_type => { :not => "application/zip" }
 
   validates_attachment_size :flyer, :less_than => 5.megabytes
 
@@ -58,6 +56,14 @@ class Event < ActiveRecord::Base
     event_type.name
   end
 
+  def time_tbd
+    
+  end
+
+  def location_tbd
+
+  end
+
   def number_of_attendees
     attendees.count
   end
@@ -71,7 +77,8 @@ class Event < ActiveRecord::Base
   end
 
   def location
-    [address, address2, city, state, zip].reject{|i| i.nil? || i.empty?}.join(", ")
+    event_location = [address, address2, city, state, zip].reject{|i| i.nil? || i.empty?}.join(", ")
+    event_location.empty? ? "TBD" : event_location
   end
 
   def assign_host_and_approve user
@@ -88,8 +95,6 @@ class Event < ActiveRecord::Base
 
   def self.find_by_param input
     id = input.split('-').pop.to_i
-    # Event.all.each {| event| return event if event.to_param == input}
-    # find_by_name input.gsub(/-/, ' ')
     find id
   end
 
@@ -109,7 +114,7 @@ class Event < ActiveRecord::Base
 
   def formatted_time
     if end_time.nil?
-     start_time.strftime("%A, %b %d, %Y,%l:%M %p")
+      start_time_formatted
     elsif (start_date == end_date)
       build_datetime( "%A, %b %d, %Y,%l:%M %p to", "%l:%M %p")
     else
@@ -118,22 +123,16 @@ class Event < ActiveRecord::Base
   end
 
   def build_datetime(start_date, end_date)
-    start_time.strftime(start_date) + end_time.strftime(end_date)
+    start_time ? (start_time.strftime(start_date) + end_time.strftime(end_date)) : "TBD"
   end
 
   def start_time_formatted
-    start_time.strftime("%b %d, %Y,%l:%M %p")
-
+    start_time ? start_time.strftime("%b %d, %Y,%l:%M %p") : "TBD"
   end
 
   def end_time_formatted
-    end_time.strftime("%b %d, %Y,%l:%M %p") if end_time
-
+    end_time ? end_time.strftime("%b %d, %Y,%l:%M %p") : "TBD"
   end
-
-  # def flyer
-  #   attachments.first.flyer if attachments.first
-  # end
 
   def to_csv
     CSV.generate do |csv|
@@ -152,7 +151,7 @@ class Event < ActiveRecord::Base
           self.update_attribute(:latitude, 41.9215421 )
           self.update_attribute(:longitude, -87.70248169999999)
         else
-          coordinates = Geocoder.coordinates(location)
+          coordinates = Geocoder.coordinates(location) unless location == "TBD"
           self.update_attribute(:latitude,coordinates.first) unless coordinates.nil?
           self.update_attribute(:longitude,coordinates.last) unless coordinates.nil?
         end

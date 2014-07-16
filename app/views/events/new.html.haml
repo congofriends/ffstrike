@@ -19,24 +19,31 @@
                 .form-group
                   = form.label t('events.edit.end_date')
                   = form.text_field :end_time, class: 'form-control datetimepicker'
+              .form-group
+                = form.label :time_tbd, "Time To Be Determined"
+                = form.check_box :time_tbd, {}, true, false
               %legend= t('events.new.address')
-              .row
-                .form-group.col-xs-6
-                  = form.label :address, t('events.edit.address1') + " *"
-                  = form.text_field :address, class: 'form-control'
-                .form-group.col-xs-6
-                  = form.label :address2, t('events.edit.address2')
-                  = form.text_field :address2, class: 'form-control'
-              .row
-                .form-group.col-xs-5
-                  = form.label :city, t('events.edit.city') + " *"
-                  = form.text_field :city, class: 'form-control'
-                .form-group.col-xs-2
-                  = form.label :state, t('events.edit.state') + " *"
-                  = form.text_field :state, class: 'form-control'
-                .form-group.col-xs-5
-                  = form.label :zip, t('events.edit.zip') + " *"
-                  = form.text_field :zip, class: 'form-control'
+              .address
+                .row
+                  .form-group.col-xs-6
+                    = form.label :address, t('events.edit.address1') + " *"
+                    = form.text_field :address, class: 'form-control'
+                  .form-group.col-xs-6
+                    = form.label :address2, t('events.edit.address2')
+                    = form.text_field :address2, class: 'form-control'
+                .row
+                  .form-group.col-xs-5
+                    = form.label :city, t('events.edit.city') + " *"
+                    = form.text_field :city, class: 'form-control'
+                  .form-group.col-xs-2
+                    = form.label :state, t('events.edit.state') + " *"
+                    = form.text_field :state, class: 'form-control'
+                  .form-group.col-xs-5
+                    = form.label :zip, t('events.edit.zip') + " *"
+                    = form.text_field :zip, class: 'form-control'
+              .form-group
+                = form.label :location_tbd, "Address To Be Determined"
+                = form.check_box :location_tbd, {}, true, false
               .form-group
                 = form.label :location_details, t('events.location')
                 = form.text_field :location_details, placeholder: t('events.new.location_placeholder'), class: 'form-control'

@@ -72,6 +72,7 @@ class EventsController < ApplicationController
     @movement = Movement.find_by_name(params["event"]["movement"]) if params["event"]["movement"] && params["event"]["movement"] != ""
     @event = @movement.events.build(event_params)
     if @event.save
+      clear_fields_on_tbd
       UserMailer.event_creation_message(current_user.id, @event.id) if current_user
       @event.assign_host_and_approve(current_user)
       if @movement.users.include?(current_user)
@@ -186,5 +187,12 @@ class EventsController < ApplicationController
     unless @event.host?(current_user)
       redirect_to root_path, notice: t('event.not_yours')
     end
+  end
+
+  def clear_fields_on_tbd
+    clear_address_fields = {address: "", address2: "", city: "", state: "", zip: ""}
+    clear_time_fields = {start_time: "", end_time: ""}
+    @event.update(clear_address_fields) if params[:event][:location_tbd]
+    @event.update(clear_time_fields) if params[:event][:time_tbd]
   end
 end

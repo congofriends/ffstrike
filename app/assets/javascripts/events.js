@@ -96,6 +96,24 @@ $(document).ready(function() {
     goToPreviousStep(this);
   });
 
+  $("#event_time_tbd").bind('change', function(){
+    if(this.checked){
+      $(".event-date-time").hide();
+    }
+    else{
+      $(".event-date-time").show();
+    }
+  })
+
+  $("#event_location_tbd").bind('change', function(){
+    if(this.checked){
+      $(".address").hide();
+    }
+    else{
+      $(".address").show();
+    }
+  })
+
   $(function() {
       $('#search_input').fastLiveFilter('#search_events');
   });

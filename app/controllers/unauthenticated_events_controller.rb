@@ -15,6 +15,7 @@ class UnauthenticatedEventsController < ApplicationController
       @event.assign_host_and_approve @user
       TaskPopulator.assign_tasks @event
       if @event.save
+        clear_fields_on_tbd
         UserMailer.event_creation_message(@user.id, @event.id) if current_user
         redirect_to event_path(@event)
       else
@@ -43,5 +44,12 @@ class UnauthenticatedEventsController < ApplicationController
 
   def redirect_unauthorized_user
     redirect_to root_path, notice: t('event.already_signed_in') if current_user
+  end
+
+  def clear_fields_on_tbd
+    clear_address_fields = {address: "", address2: "", city: "", state: "", zip: ""}
+    clear_time_fields = {start_time: "", end_time: ""}
+    @event.update(clear_address_fields) if params[:event][:location_tbd]
+    @event.update(clear_time_fields) if params[:event][:time_tbd]
   end
 end
