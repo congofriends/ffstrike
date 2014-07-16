@@ -35,7 +35,7 @@ class UnauthenticatedEventsController < ApplicationController
 
   def event_params
     params[:event][:event_type_id] = EventType.find_by(name: params[:event][:event_type]).id if params[:event][:event_type]
-    params.require(:event).permit(:event_type_id, :name, :description, :address, :address2, :location_details, :city, :zip, :state, :start_time, :end_time, :host_id, :notes)
+    params.require(:event).permit(:event_type_id, :name, :description, :address, :address2, :location_details, :city, :zip, :state, :country, :start_time, :end_time, :host_id, :notes)
   end
 
   def user_params
@@ -47,7 +47,7 @@ class UnauthenticatedEventsController < ApplicationController
   end
 
   def clear_fields_on_tbd
-    clear_address_fields = {address: "", address2: "", city: "", state: "", zip: ""}
+    clear_address_fields = {address: "", address2: "", city: "", state: "", zip: "", country: ""}
     clear_time_fields = {start_time: "", end_time: ""}
     @event.update(clear_address_fields) if params[:event][:location_tbd]
     @event.update(clear_time_fields) if params[:event][:time_tbd]

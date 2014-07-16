@@ -79,9 +79,10 @@ es:
       name: *name
       address1: "Dirección 1:"
       address2: "Dirección 2:"
-      city: "Ciudad:"
-      state: "Estado:"
-      zip: "Zip:"
+      city: "Ciudad / Pueblo:"
+      state: "Estado / Provincia / Región:"
+      zip: "Zip / Código Postal:"
+      country: "País"
       notes: "Notas:"
       type: "Tipo:"
       forum: "Foro (Disqus):"

@@ -32,15 +32,19 @@
                     = form.label :address2, t('events.edit.address2')
                     = form.text_field :address2, class: 'form-control'
                 .row
-                  .form-group.col-xs-5
+                  .form-group.col-xs-6
                     = form.label :city, t('events.edit.city') + " *"
                     = form.text_field :city, class: 'form-control'
-                  .form-group.col-xs-2
-                    = form.label :state, t('events.edit.state') + " *"
+                  .form-group.col-xs-6
+                    = form.label :state, t('events.edit.state')
                     = form.text_field :state, class: 'form-control'
-                  .form-group.col-xs-5
-                    = form.label :zip, t('events.edit.zip') + " *"
+                .row
+                  .form-group.col-xs-6
+                    = form.label :zip, t('events.edit.zip')
                     = form.text_field :zip, class: 'form-control'
+                  .form-group.col-xs-6
+                    = form.label :country, t('events.edit.country') + " *"
+                    = form.text_field :country, class: 'form-control'
               .form-group
                 = form.label :location_tbd, "Address To Be Determined"
                 = form.check_box :location_tbd, {}, true, false

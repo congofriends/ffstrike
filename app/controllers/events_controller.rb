@@ -142,7 +142,7 @@ class EventsController < ApplicationController
 
   def event_params
     params[:event][:event_type_id] = EventType.find_by(name: params[:event][:event_type]).id if params[:event][:event_type]
-    params.require(:event).permit(:event_type_id, :address2, :name, :address, :location_details, :description, :city, :zip, :state, :start_time, :image, :flyer, :end_time, :host_id, :notes, :forum_option, :approved)
+    params.require(:event).permit(:event_type_id, :address2, :name, :address, :location_details, :description, :city, :zip, :state, :country, :start_time, :image, :flyer, :end_time, :host_id, :notes, :forum_option, :approved)
   end
 
   def load_map_vars
@@ -190,7 +190,7 @@ class EventsController < ApplicationController
   end
 
   def clear_fields_on_tbd
-    clear_address_fields = {address: "", address2: "", city: "", state: "", zip: ""}
+    clear_address_fields = {address: "", address2: "", city: "", state: "", zip: "", country: ""}
     clear_time_fields = {start_time: "", end_time: ""}
     @event.update(clear_address_fields) if params[:event][:location_tbd]
     @event.update(clear_time_fields) if params[:event][:time_tbd]

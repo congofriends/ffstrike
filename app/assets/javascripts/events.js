@@ -5,12 +5,8 @@ function initializeValidations() {
       'event[start_time]': { required: true },
       'event[address]': { required: true },
       'event[city]': { required: true },
+      'event[country]': { required: true },
       'event[description]': { required: true },
-      'event[state]': { required: true },
-      'event[zip]': {
-        required: true,
-        number: true,
-        rangelength: [5, 5] },
       'user[name]': {required: true},
       'user[surname]': {required: true},
       'user[email]': {
@@ -25,12 +21,8 @@ function initializeValidations() {
       'event[start_time]': "Start date & time is required",
       'event[address]': 'Address is required',
       'event[city]': 'City is required',
+      'event[country]': 'Country is required',
       'event[description]': 'Description is required',
-      'event[state]': 'State is required',
-      'event[zip]': {
-        required: 'Zip is required',
-        number: "Zip should contain only numbers",
-        rangelength: "Zip should be 5 digits long"},
       'user[name]': "First Name is required",
       'user[surname]': "Last Name is required",
       'user[email]': {

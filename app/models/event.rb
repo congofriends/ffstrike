@@ -56,13 +56,9 @@ class Event < ActiveRecord::Base
     event_type.name
   end
 
-  def time_tbd
-    
-  end
+  def time_tbd; end
 
-  def location_tbd
-
-  end
+  def location_tbd; end
 
   def number_of_attendees
     attendees.count
@@ -77,7 +73,7 @@ class Event < ActiveRecord::Base
   end
 
   def location
-    event_location = [address, address2, city, state, zip].reject{|i| i.nil? || i.empty?}.join(", ")
+    event_location = [address, address2, city, state, zip, country].reject{|i| i.nil? || i.empty?}.join(", ")
     event_location.empty? ? "TBD" : event_location
   end
 
