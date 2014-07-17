@@ -73,7 +73,7 @@ class MovementsController < ApplicationController
   end
 
   def export_csv
-    send_data @movement.to_csv, filename: "Attendee List"
+    send_data @movement.to_csv, filename: "#{@movement.name} attendee-list.csv"
   end
 
   def publish

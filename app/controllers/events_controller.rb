@@ -19,7 +19,7 @@ class EventsController < ApplicationController
         format.html {redirect_to movement_events_path}
         format.js
       else
-        @events = Event.where(approved: true)
+        @events = Event.public_events
         load_map_vars
         flash[:notice] = t('event.not_found') if params[:zip].present?
         format.html { render action: "index"}
@@ -141,7 +141,7 @@ class EventsController < ApplicationController
   def edit; end
 
   def export_attendees
-    send_data @event.to_csv, filename: "Attendee List"
+    send_data @event.to_csv, filename: "#{event.name} attendee-list.csv"
   end
 
   private

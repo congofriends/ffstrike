@@ -52,6 +52,10 @@ class Event < ActiveRecord::Base
     end
   end
 
+  def self.public_events
+    Event.where("start_time > ? AND approved = ?", Date.today, true)
+  end
+
   def type
     event_type.name
   end
@@ -65,7 +69,6 @@ class Event < ActiveRecord::Base
   end
 
   def status
-    # "#{host_tasks.count == 0 ? 0 : (((host_tasks.where(completed: true).count.to_f )/host_tasks.count) * 100).to_i}%"
     "#{host_tasks.where(completed: true).count} / #{host_tasks.count}"
   end
 
@@ -141,10 +144,10 @@ class Event < ActiveRecord::Base
 
   def to_csv
     CSV.generate do |csv|
-      column_names = ["Name", "Email", "Phone", "Event", "Zip", "City"]
+      column_names = ["Name", "Surname", "Email", "Phone", "Volunteer", "Event", "City", "Zip"]
       csv << column_names
       self.attendances.each do |attendance|
-        csv << [attendance.user.name, attendance.user.email, attendance.user.phone, attendance.event.name, attendance.event.city, attendance.event.zip] if (attendance.event && attendance.user)
+        csv << [attendance.user.name, attendance.user.surname, attendance.user.email, attendance.user.phone, attendance.user.volunteer_for(self), attendance.event.name, attendance.event.city, attendance.event.zip] if (attendance.event && attendance.user)
       end
     end
   end

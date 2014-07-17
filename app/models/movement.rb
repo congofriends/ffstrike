@@ -86,10 +86,10 @@ class Movement < ActiveRecord::Base
 
   def to_csv
     CSV.generate do |csv|
-      column_names = ["Name", "Email", "Phone", "Event", "Zip", "City"]
+      column_names = ["Name", "Surname", "Email", "Phone", "Volunteer", "Event", "City", "Zip"]
       csv << column_names
       self.attendances.each do |attendance|
-        csv << [attendance.user.name, attendance.user.email, attendance.user.phone, attendance.event.name, attendance.event.city, attendance.event.zip] if (attendance.event && attendance.user)
+        csv << [attendance.user.name, attendance.user.surname, attendance.user.email, attendance.user.phone, attendance.user.volunteer_for(attendance.event), attendance.event.name, attendance.event.city, attendance.event.zip] if (attendance.event && attendance.user)
       end
     end
   end

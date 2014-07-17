@@ -20,4 +20,4 @@
     #map-canvas
   %hr
   .event-list.events
-    = render partial: 'events/event', collection: @movement.events.where(approved: true), as: :event
+    = render partial: 'events/event', collection: @events, as: :event

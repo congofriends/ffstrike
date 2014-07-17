@@ -53,7 +53,7 @@ describe MovementsController do
       end
 
       it "redirects to the movement page" do
-        expect(response).to redirect_to movement_path(Movement.last)
+        expect(response).to redirect_to movement_explanation_path(Movement.last)
       end
 
       it "notifies user that movement has been created" do
@@ -173,7 +173,7 @@ describe MovementsController do
   describe "GET #export_csv" do
     context "when format is csv" do
       it "should return a csv attachment" do
-        @controller.should_receive(:send_data).with(movement.to_csv, filename: "Attendee List").
+        @controller.should_receive(:send_data).with(movement.to_csv, filename: "#{movement.name} attendee-list.csv").
           and_return { @controller.render nothing: true } # to prevent a 'missing template' error
         get :export_csv, id: movement, format: :csv
       end

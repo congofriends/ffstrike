@@ -177,6 +177,7 @@ en:
       share_msg: "Share your event on social media!"
     email_modal:
       email_attendees: "EMAIL ATTENDEES"
+      send_email: "SEND EMAIL"
       title: "Email the Attendees"
       subject: "Subject"
       message: "Message"
