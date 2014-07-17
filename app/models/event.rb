@@ -156,6 +156,7 @@ class Event < ActiveRecord::Base
 
     def populate_tasks
       TaskPopulator.assign_tasks self
+      TaskPopulator.assign_host_tasks self
     end
 
     def end_time_cannot_be_before_start_time

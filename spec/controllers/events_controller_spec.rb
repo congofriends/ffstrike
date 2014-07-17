@@ -43,18 +43,35 @@ describe EventsController do
   describe "PUT #approve" do
     it "approves an unapproved event" do
       event = FactoryGirl.create(:event)
-      put :approve, id: event
+      put :approve, id: event, event: {approved: true}
       event.reload
       expect(event.approved).to be_true
     end
 
     it "disapproves an approved event" do
       event = FactoryGirl.create(:approved_event)
-      put :approve, id: event
+      put :approve, id: event, event: {approved: false}
       event.reload
       expect(event.approved).to be_false
     end
   end
+
+    describe "PUT #sponsor" do
+    it "sponsors an unsponsored event" do
+      event = FactoryGirl.create(:event)
+      put :sponsor, id: event, event: {sponsored: true}
+      event.reload
+      expect(event.sponsored).to be_true
+    end
+
+    it "unsponsors an sponsored event" do
+      event = FactoryGirl.create(:approved_event)
+      put :sponsor, id: event, event: {sponsored: false}
+      event.reload
+      expect(event.sponsored).to be_false
+    end
+  end
+
 # these tests use geocoder.
   describe "POST #create" do
     let(:visitor){FactoryGirl.create(:user)}

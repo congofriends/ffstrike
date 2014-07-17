@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716210542) do
+ActiveRecord::Schema.define(version: 20140717161238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -128,6 +128,8 @@ ActiveRecord::Schema.define(version: 20140716210542) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "event_id"
+    t.boolean  "host_tasks",  default: false
+    t.boolean  "completed",   default: false
   end
 
   add_index "tasks", ["event_id"], name: "index_tasks_on_event_id", using: :btree
