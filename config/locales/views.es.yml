@@ -50,8 +50,8 @@ es:
     explanation:
       confirm_msg: "Enhorabuena, ha creado con éxito un %{event_type}"
       competency_question: "Sabes lo que estás haciendo?"
-      event_dash_prompt: "Ir a la derecha del tablero de su evento."
-      host_task_msg: "Aquí están algunas cosas que usted puede desear para hacer algo para que su evento sea un éxito:"
+      event_dash_prompt: "Haga clic aquí para ir directamente a su panel de control de eventos"
+      host_task_msg: "Comparte tu evento en las redes sociales!"
     new:
       legend1:  "Evento Información Básica (1/2)"
       legend2: "Detalles del evento (2/2)"

@@ -35,7 +35,7 @@ When(/^I create events with time TBD field checked/) do
 end
 
 Then(/^I can see that the time fields contain TBD/) do
-	click_link_or_button('Go right to your event dashboard.')
+	click_link_or_button('Click here to go right to your event dashboard')
 	find_field('event_start_time').value.should eq 'TBD'
 	find_field('event_end_time').value.should eq 'TBD'
 end
@@ -45,7 +45,7 @@ When(/^I make an unauthenticated event with location TBD field checked/) do
 end
 
 Then(/^the location fields in the edit event page are empty/) do
-	click_link_or_button('Go right to your event dashboard.')
+	click_link_or_button('Click here to go right to your event dashboard')
 	find_field('event_address').value.should eq ''
 	find_field('event_address2').value.should eq ''
 	find_field('event_city').value.should eq ''

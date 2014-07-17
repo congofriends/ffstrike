@@ -3,12 +3,10 @@
     .col8
       %h2
         = t('events.explanation.confirm_msg', event_type: @event.type)
-    .col4
-      = t('events.explanation.competency_question')
+    %h2.col4
       = link_to(t('events.explanation.event_dash_prompt'), my_events_path(:name => {:id => @event.id}))
   %br
-  .task-list
+  %h3
     = t('events.explanation.host_task_msg')
-    - @event.host_tasks.each do |task|
-      %ul
-        %li= task.description
+  %br
+    =render "social/rrssb"

@@ -50,8 +50,8 @@ en:
     explanation:
       confirm_msg: "Congrats - You've successfully created a %{event_type}"
       competency_question: "Know what you're doing?"
-      event_dash_prompt: "Go right to your event dashboard."
-      host_task_msg: "Here are some things you might want to do to make your event a success:"
+      event_dash_prompt: "Click here to go right to your event dashboard"
+      host_task_msg: "Share your event on social media!"
     new:
       legend1:  "Event Basic Information (1/2)"
       legend2: "Event details (2/2)"

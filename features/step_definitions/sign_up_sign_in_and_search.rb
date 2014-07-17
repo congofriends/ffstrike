@@ -46,6 +46,6 @@ Then(/^I see that I have created a new account and new event$/) do
   attendee = User.last.name
   new_event = Event.last.name
   page.should have_content(attendee)
-  click_link_or_button('Go right to your event dashboard.')
+  click_link_or_button('Click here to go right to your event dashboard')
   page.should have_content(new_event)
 end

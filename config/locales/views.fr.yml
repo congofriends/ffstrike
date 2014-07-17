@@ -50,8 +50,8 @@ fr:
     explanation:
       confirm_msg: "Félicitations, vous avez créé avec succès une %{event_type}"
       competency_question: "savent ce que vous faites?"
-      event_dash_prompt: "Aller droit à votre événement de planche de bord."
-      host_task_msg: "Voici certaines choses que vous pouvez faire pour faire de votre événement un succès:"
+      event_dash_prompt: "Cliquez ici pour aller directement à votre tableau de bord de l'événement"
+      host_task_msg: "Partagez votre événement sur ​​les médias sociaux!"
     new:
       legend1:  "Événement Informations de base (1/2)"
       legend2: "les détails de l'événement (2/2)"
