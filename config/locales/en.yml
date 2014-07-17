@@ -29,19 +29,19 @@ en:
     created: "Event created!"
     updated: "Event updated."
     deleted: "Event deleted."
-    created_by_attendee: "Your event will be viewable to the public as soon as the movement coordinator approves it!"
+    created_by_attendee: "Your event will be viewable to the public as soon as the team coordinator approves it!"
     not_yours: "You don't own that event!"
     failure: "Your account was created but there was a problem with your event."
     share: "Share this event!"
     already_signed_in: "You are already signed in."
     not_found: "Sorry your search returned no results."
   movement:
-    created: "Congratulations, you just created a movement!"
-    updated: "Movement has been updated"
-    not_created: "There was a problem when saving your movement. Please try again."
-    published: "Movement has been published"
-    not_yours: "You don't own that movement!"
-    not_public: "That movement isn't public yet!"
+    created: "Congratulations, you just created a team!"
+    updated: "Team has been updated"
+    not_created: "There was a problem when saving your team. Please try again."
+    published: "Team has been published"
+    not_yours: "You don't own that team!"
+    not_public: "That team isn't public yet!"
     share: "Share your passion"
   attendee:
     created: "Thanks for signing up!"
@@ -82,8 +82,8 @@ en:
       short_description: "Digital moment of silence"
       full_description: "The Cell OUT is a digital moment of silence to commemorate the millions of Congolese lives lost, raise awareness about the ongoing conflict in the Congo and the vicious scramble for Congo's spectacular natural resources."
     interfaith_prayer_vigil:
-      short_description: 
-      full_description: 
+      short_description:
+      full_description:
     own_event:
       short_description: "Have an idea for a creative event? Use this tool to create tasks and assign them"
       full_description: "Have an idea for a creative event? Use this tool to create tasks and assign them."

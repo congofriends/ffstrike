@@ -9,19 +9,19 @@ fr:
     created: "Événement créé!"
     updated: "Événement mis à jour."
     deleted: "Événement supprimé."
-    created_by_attendee: "votre événement sera visible au public dès que le mouvement coordonnateur approuve elle!"
+    created_by_attendee: "votre événement sera visible au public dès que le équipe coordonnateur approuve elle!"
     not_yours: "Il ne vous appartient pas cet événement!"
     failure: "Votre compte a été créé mais il y a un problème avec votre événement."
     share: "Partager cet événement!"
     already_signed_in: "Vous êtes déjà signé."
     not_found: "Désolé, votre recherche n'a renvoyé aucun résultat."
   movement:
-    created: "Félicitations, vous venez de créer un mouvement!"
-    updated: "mouvement a été mis à jour"
-    not_created: "Il y a eu un problème lors de l'enregistrement de votre mouvement. Veuillez réessayer."
-    published: "mouvement a été publié"
-    not_yours: "Vous n'avez pas propre ce mouvement!"
-    not_public: "Que mouvement n'est pas public encore!"
+    created: "Félicitations, vous venez de créer un équipe!"
+    updated: "Équipe a été mis à jour"
+    not_created: "Il y a eu un problème lors de l'enregistrement de votre équipe. Veuillez réessayer."
+    published: "Équipe a été publié"
+    not_yours: "Vous n'avez pas propre ce équipe!"
+    not_public: "Que équipe n'est pas public encore!"
     share: "Partager votre passion"
   attendee:
     created: "Grâce à la signature de!"
@@ -91,7 +91,7 @@ fr:
       plusieurs semaines à l'avance. Des réunions pourraient essentiellement à partager des informations, de prendre des décisions, ou de déléguer des tâches. Assurez-vous juste que
       vous avez un but et programme solide pour faire avancer les choses (et peut-être des collations trop ... )."
     own_event:
-      short_description: "Ont une idée pour un événement créatif? Utilisez cet outil pour créer des tâches et de les affecter" 
+      short_description: "Ont une idée pour un événement créatif? Utilisez cet outil pour créer des tâches et de les affecter"
       full_description: "Ont une idée pour un événement créatif? Utilisez cet outil pour créer des tâches et de les affecter."
   host_tasks:
     rally:

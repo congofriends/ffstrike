@@ -126,7 +126,7 @@ en:
       about: 'About'
     navbar:
       my_profile: 'My profile'
-      manage_my_groups: 'Manage My Groups'
+      manage_my_groups: 'Manage My Teams'
       manage_my_events: 'Manage My Events'
       create_group: 'Create Team'
       create_event: 'Create Event'
@@ -185,8 +185,8 @@ en:
     tab_tasks:
       modify_tasks: 'Modify Tasks for Events Here'
     my_groups:
-      my_groups: 'My Groups'
-      manage_my_groups: 'Manage My Groups'
+      my_groups: 'My Teams'
+      manage_my_groups: 'Manage My Teams'
       show: 'SHOW'
       select_group: 'Select a Team and click SHOW'
       group_details: 'Team Details'
@@ -205,13 +205,13 @@ en:
       name: 'Name'
       location_placeholder: 'e.g. Global, International, National..'
       youtube_link: 'Youtube Link'
-      create_btn: 'Create Movement'
+      create_btn: 'Create Team'
       tagline: "Tagline: "
       call_to_action: "Call To Action:"
       extended_description: "Extended Description:"
       location: "Location:"
       about_creator: "About Creator:"
-      update_movement: "Update Movement"
+      update_movement: "Update Team"
     my_profile:
       events_attending: 'Events Attending'
       personal_details: 'Personal Details'
@@ -226,7 +226,7 @@ en:
       extended_description: "Extended Description:"
       call_to_action: "Call To Action:"
       about_creator: "About Creator:"
-      create_btn: 'Create Movement'
+      create_btn: 'Create Team'
     show:
       quote: 'Our mission and vision is to raise the consciousness of the world community on the challenge of the Congo and support Congolese institutions in bringing about a peaceful and lasting change.'
     show_chapter:

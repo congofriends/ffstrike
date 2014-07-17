@@ -125,9 +125,9 @@ fr:
       about: 'Environ'
     navbar:
       my_profile: 'Mon profil'
-      manage_my_groups: 'Gérer Mes groupes'
+      manage_my_groups: 'Gérer mes équipes'
       manage_my_events: 'Gérer Mes événements'
-      create_group: 'Créer groupe'
+      create_group: 'Créer équipe'
       create_event: 'Créer événement'
       sign_in: 'Signer dans'
       sign_out: 'Sign Out'
@@ -192,12 +192,12 @@ fr:
     tab_tasks:
       modify_tasks: 'Modifier les tâches pour les événements ici'
     my_groups:
-      my_groups: 'Mes groupes'
-      manage_my_groups: 'Gérer Mes groupes'
+      my_groups: 'Mes équipes'
+      manage_my_groups: Gérer mes équipes'
       show: 'AFFICHER'
-      select_group: 'Sélectionnez un groupe, puis cliquez sur Afficher'
-      group_details: 'Détails du groupe'
-      group_events: 'Événements de groupe'
+      select_group: 'Sélectionnez un équipe, puis cliquez sur Afficher'
+      group_details: 'Détails du équipe'
+      group_events: 'Événements de équipe'
       manage_supporters: 'Gérer les partisans'
     tab_group_events:
       event_name: "Nom de l'événement"
@@ -212,13 +212,13 @@ fr:
       name: 'Nom:'
       location_placeholder: 'Par exemple mondial, International, National..'
       youtube_link: 'Lien Youtube'
-      create_btn: 'Créer du mouvement'
+      create_btn: 'Créer du équipe'
       tagline: "Slogan: "
       call_to_action: "Appel à l'action:"
       extended_description: "Description étendue:"
       location: "Emplacement:"
       about_creator: "De Créateur:"
-      update_movement: "Mouvement mise à jour"
+      update_movement: "équipe mise à jour"
     my_profile:
       events_attending: 'Assister aux événements'
       personal_details: 'Détails personnels'
@@ -227,7 +227,7 @@ fr:
       location: "Les détails d'emplacement:"
       location_placeholder: 'Par exemple mondial, International, National..'
       youtube_link: 'Lien Youtube'
-      create_btn: 'Créer du mouvement'
+      create_btn: 'Créer du équipe'
       tagline: "Slogan: "
       call_to_action: "Appel à l'action:"
       extended_description: "Description étendue:"
@@ -242,7 +242,7 @@ fr:
       tagline: "Slogan:"
       call_to_action: "Appel à l'action:"
       extended_description: "Extended Description:"
-      create_btn: 'Créer du mouvement'
+      create_btn: 'Créer du équipe'
     show:
       quote: "Notre mission et notre vision est de soulever la conscience de la communauté mondiale sur le défi du Congo et de l'appui institutions congolaises à parvenir à un règlement pacifique et durable."
     show_chapter:
@@ -251,7 +251,7 @@ fr:
       contact_group_coordinator: 'CONTACT COORDONNATEUR'
     support_network:
       support_network: 'Support Réseau'
-      network_message: 'Notre réseau de soutien a %{number} groupes et est de plus en plus!'
+      network_message: 'Notre réseau de soutien a %{number} équipes et est de plus en plus!'
       create_team: 'CRÉER UN ÉQUIPE'
   assignments:
     assign:

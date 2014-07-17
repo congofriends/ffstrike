@@ -9,19 +9,19 @@ es:
     created: "Evento creado!"
     updated: "Evento actualizado!"
     deleted: "Evento eliminado."
-    created_by_attendee: "El evento será visible para el público tan pronto como la coordinadora del movimiento que lo aprueba!"
+    created_by_attendee: "El evento será visible para el público tan pronto como la coordinadora del equipo que lo aprueba!"
     not_yours: "No tienes que evento."
     failure: "Se creó la cuenta, pero se ha producido un problema con el evento."
     share: "Compartir este evento!"
     already_signed_in: "ya está firmado."
     not_found: "Lo sentimos, su búsqueda no ha devuelto ningún resultado."
   movement:
-    created: "Enhorabuena, que acaba de crear un movimiento!"
-    updated: "El Movimiento se ha actualizado"
-    not_created: "Se ha producido un problema al guardar su movimiento. Por favor, inténtelo de nuevo."
-    published: "El Movimiento ha sido publicado"
-    not_yours: "No es necesario que el movimiento propio!"
-    not_public: "Que el movimiento no es público!"
+    created: "Enhorabuena, que acaba de crear un equipo!"
+    updated: "El equipo se ha actualizado"
+    not_created: "Se ha producido un problema al guardar su equipo. Por favor, inténtelo de nuevo."
+    published: "El equipo ha sido publicado"
+    not_yours: "No es necesario que el equipo propio!"
+    not_public: "Que el equipo no es público!"
     share: "Comparte tu pasión"
   attendee:
     created: "Gracias por suscribirte!"
@@ -47,14 +47,14 @@ es:
     for_attendees_only: "Tareas para los asistentes"
   event_type:
     rally:
-      short_description: "Una gran manifestación pública o marzo a obtener atención del público y de los medios de tu causa" 
+      short_description: "Una gran manifestación pública o marzo a obtener atención del público y de los medios de tu causa"
       full_description: "Los rallys son grandes eventos (lo ideal es 20 o más personas) destinados a obtener atención del público y de los medios para influir en la opinión pública
       sobre una cuestión de gran importancia. Manifestaciones puede ser muy diferente de uno a otro, pero en general tienen por lo menos
       1-3 los oradores, de los signos, y de los cantos. Pueden durar desde 10 minutos a todo el día, pero la mayoría de rallyes están a 30 minutos a una hora.
       Con un poco de tiempo y esfuerzo, un buen rallye puede reunirse en sólo unos pocos días, cuando sea necesario, pero, si se puede, le sugerimos
-      que usted y su equipo por lo menos un mes y una semana para organizar con éxito una carrera." 
+      que usted y su equipo por lo menos un mes y una semana para organizar con éxito una carrera."
     public_speak_out:
-      short_description: "Organizar un público hablar de ciudadanos interesados para reunir y hacer que su voz sea escuchada" 
+      short_description: "Organizar un público hablar de ciudadanos interesados para reunir y hacer que su voz sea escuchada"
       full_description: "La finalidad de un público hablar de es el de reunir a los individuos con una preocupación similar y con el fin de conseguir
       atención positiva por parte del público para su causa. También puede optar por invitar a los medios a cubrir el evento. Una palabra puede ser
       más pequeño que el de un rallye, puede tener éxito hablar de eventos y de petición de 3-10 personas. Aunque no todos hablan de
@@ -63,7 +63,7 @@ es:
       . A diferencia de lo que ocurre en un rally, hablar de son muy fácil de organizar. Con unos pocos amigos, usted podría tener una palabra en unos pocos días, pero
       , si estás planeando algo más elaborado, es posible que desee dar una semana a un mes de plan."
     movie_screening:
-      short_description: "Mostrar una película para educar a la comunidad acerca de su problema" 
+      short_description: "Mostrar una película para educar a la comunidad acerca de su problema"
       full_description: "para tomar medidas, en primer lugar, hay que ser educado. Una proyección de cine puede ser un gran primer paso para muchas personas a
       aprender acerca de temas importantes. Aloja una pantalla de cine puede ser fácil y rápida de organizar. El cine puede ser de 3
       , 5 o 100 personas. También puede añadir más valor a su proyección como un altavoz o una petición"
