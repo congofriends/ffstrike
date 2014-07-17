@@ -198,8 +198,8 @@ es:
       where: "Cuando"
       when: "Dónde"
       status: "Estado"
-      approved: "Aprobar(Public)"
-      sponsored: "Patrocinio"
+      approved: "Aprobado(Public)"
+      sponsored: "Patrocinado"
       view_event: "Evento"
       edit_event: "Editar"
     tab_groups:

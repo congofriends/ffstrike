@@ -197,8 +197,8 @@ en:
       where: "When"
       when: "Where"
       status: "Status"
-      approved: "Approval(Public)"
-      sponsored: "Sponsorship"
+      approved: "Approved(Public)"
+      sponsored: "Sponsored"
       view_event: "View Event"
       edit_event: "Edit Event"
     tab_groups:

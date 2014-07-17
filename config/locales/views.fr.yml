@@ -204,8 +204,8 @@ fr:
       where: "quand"
       when: "Où"
       status: "Statut"
-      approved: "Approbation(Public)"
-      sponsored: "Le Parrainage"
+      approved: "Approuvé(Public)"
+      sponsored: "Parrainés"
       view_event: "Afficher l'événement"
       edit_event: "Modifier l'événement"
     tab_groups:
