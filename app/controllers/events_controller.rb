@@ -196,7 +196,7 @@ class EventsController < ApplicationController
   end
 
   def clear_fields_on_tbd
-    clear_address_fields = {address: "", address2: "", city: "", state: "", zip: "", country: ""}
+    clear_address_fields = {address: "", address2: "", state: "", zip: ""}
     clear_time_fields = {start_time: "", end_time: ""}
     @event.update(clear_address_fields) if params[:event][:location_tbd]
     @event.update(clear_time_fields) if params[:event][:time_tbd]
