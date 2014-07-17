@@ -49,7 +49,6 @@ fr:
       tab_attendees: "Participants"
     explanation:
       confirm_msg: "Félicitations, vous avez créé avec succès une %{event_type}"
-      competency_question: "savent ce que vous faites?"
       event_dash_prompt: "Cliquez ici pour aller directement à votre tableau de bord de l'événement"
       host_task_msg: "Partagez votre événement sur ​​les médias sociaux!"
     new:
@@ -173,6 +172,10 @@ fr:
       point_person: *point
       yes: 'Oui'
       no: 'non'
+    explanation:
+      confirm_msg: "Félicitations - vous avez créé avec succès une équipe pour soutenir FOTC"
+      team_dash_prompt: "Cliquez ici pour aller directement à votre tableau de bord de l'équipe"
+      share_msg: "Partagez votre événement sur ​​les médias sociaux!"
     email_modal:
       email_attendees: "E-MAIL AUX PARTICIPANTS"
       title: "E-mail aux participants"
@@ -195,7 +198,7 @@ fr:
       modify_tasks: 'Modifier les tâches pour les événements ici'
     my_groups:
       my_groups: 'Mes équipes'
-      manage_my_groups: Gérer mes équipes'
+      manage_my_groups: 'Gérer mes équipes'
       show: 'AFFICHER'
       select_group: 'Sélectionnez un équipe, puis cliquez sur Afficher'
       group_details: 'Détails du équipe'

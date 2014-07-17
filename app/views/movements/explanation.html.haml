@@ -1,0 +1,14 @@
+.container
+  .row
+    .col8
+      %h2
+        = t('movements.explanation.confirm_msg')
+    %h2.col4
+      = link_to(t('movements.explanation.team_dash_prompt'), my_groups_path(:name => {:id => @movement.id}))
+  %br
+  %h3
+    = t('movements.explanation.share_msg')
+  %br
+    =render "social/rrssb"
+
+

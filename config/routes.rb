@@ -56,6 +56,7 @@ Ffstrike::Application.routes.draw do
         get 'assign' => 'assignments#assign', on: :member, as: 'assign'
       end
     end
+    get 'movements/:id/explanation' => 'movements#explanation', as: 'movement_explanation'
 
     get 'my_events' => 'events#my_events', as: 'my_events'
     get 'events/:id/explanation' => 'events#explanation', as: 'explanation'

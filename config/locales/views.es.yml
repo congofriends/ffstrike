@@ -49,7 +49,6 @@ es:
       tab_attendees: "Los Asistentes"
     explanation:
       confirm_msg: "Enhorabuena, ha creado con éxito un %{event_type}"
-      competency_question: "Sabes lo que estás haciendo?"
       event_dash_prompt: "Haga clic aquí para ir directamente a su panel de control de eventos"
       host_task_msg: "Comparte tu evento en las redes sociales!"
     new:
@@ -173,6 +172,10 @@ es:
       point_person: 'Persona?'
       yes: 'sí'
       no: 'no'
+    explanation:
+      confirm_msg: "Felicidades - que ha creado con éxito un equipo para apoyar FOTC"
+      team_dash_prompt: "Haga clic aquí para ir directamente a su panel de control del equipo"
+      share_msg: "Comparte tu evento en las redes sociales!"
     email_modal:
       email_attendees: "CORREO ELECTRÓNICO PARTICIPANTES"
       title: "Correo electrónico a los asistentes"
