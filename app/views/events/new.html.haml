@@ -5,7 +5,7 @@
         = form_for ([@movement, @event]), html: { id: 'new-event-form' } do |form|
           %fieldset
             %fieldset.event_details
-              %legend= t('events.new.legend1')
+              %legend= t('.legend1')
               .form-group
                 = form.label :event_name, t('events.edit.name') + " *"
                 = form.text_field :name, class: 'form-control'
@@ -20,9 +20,9 @@
                   = form.label t('events.edit.end_date')
                   = form.text_field :end_time, class: 'form-control datetimepicker'
               .form-group
-                = form.label :time_tbd, "Time To Be Determined"
+                = form.label :time_tbd, t('.datetime_tbd')
                 = form.check_box :time_tbd, {}, true, false
-              %legend= t('events.new.address')
+              %legend= t('.address')
               .address
                 .row
                   .form-group.col-xs-6
@@ -46,36 +46,36 @@
                     = form.label :country, t('events.edit.country') + " *"
                     = form.text_field :country, class: 'form-control'
               .form-group
-                = form.label :location_tbd, "Address To Be Determined"
+                = form.label :location_tbd, t('.address_tbd')
                 = form.check_box :location_tbd, {}, true, false
               .form-group
                 = form.label :location_details, t('events.location')
-                = form.text_field :location_details, placeholder: t('events.new.location_placeholder'), class: 'form-control'
+                = form.text_field :location_details, placeholder: t('.location_placeholder'), class: 'form-control'
               %button{type: "button", class: "btn btn-success next"}
-                = t('events.new.next')
+                = t('.next')
             %fieldset.event_additional_details
-              %legend= t('events.new.legend2')
+              %legend= t('.legend2')
               .form-group
                 = form.label :image
                 = form.file_field :image
               .form-group
-                = form.label t('events.new.msg_to_attendees')
+                = form.label t('.msg_to_attendees')
                 = form.text_field :notes, class: 'form-control'
               .form-group
-                = form.label :event_type_id, t('events.new.event_type') + " *"
+                = form.label :event_type_id, t('.event_type') + " *"
                 = form.select :event_type, EventType.all.map(&:name), {class: 'form-control'}
               .form-group
                 - unless @movement.sub_movements.empty?
-                  = form.label :movement, t('events.new.event_chapter_msg')
+                  = form.label :movement, t('.event_chapter_msg')
                   = form.select :movement, @movement.sub_movements.map(&:name), {include_blank: ""}, {class: 'form-control'}
                 - if @movement.parent
-                  = form.label :movement, t('events.new.event_chapter_msg')
+                  = form.label :movement, t('.event_chapter_msg')
                   = form.select :movement, @movement.parent.sub_movements.map(&:name), {selected: @movement.name, include_blank: ""}, {class: 'form-control'}
               .form-group
-                = form.label  t('events.new.forum_msg')
+                = form.label  t('.forum_msg')
                 = form.check_box :forum_option, class: 'form-control'
               - if current_user
                 = form.hidden_field :host_id, value: current_user.id
               .form-group
-                %button{type: "button", class: "btn btn-primary previous"}=  t('events.new.previous')
-                = form.submit  t('events.new.create_btn'), class: 'btn btn-success', id: 'create_event'
+                %button{type: "button", class: "btn btn-primary previous"}=  t('.previous')
+                = form.submit  t('.create_btn'), class: 'btn btn-success', id: 'create_event'

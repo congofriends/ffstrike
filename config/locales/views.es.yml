@@ -53,6 +53,8 @@ es:
       event_dash_prompt: "Haga clic aquí para ir directamente a su panel de control de eventos"
       host_task_msg: "Comparte tu evento en las redes sociales!"
     new:
+      datetime_tbd: "Fecha y Tiempo por Determinar"
+      address_tbd: "Dirección por Determinar"
       legend1:  "Evento Información Básica (1/2)"
       legend2: "Detalles del evento (2/2)"
       legend3: "Datos personales"

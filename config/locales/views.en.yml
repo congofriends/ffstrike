@@ -53,6 +53,8 @@ en:
       event_dash_prompt: "Click here to go right to your event dashboard"
       host_task_msg: "Share your event on social media!"
     new:
+      datetime_tbd: "Date & Time To Be Determined"
+      address_tbd: "Address To Be Determined"
       legend1:  "Event Basic Information (1/2)"
       legend2: "Event details (2/2)"
       legend3: "Personal details"
