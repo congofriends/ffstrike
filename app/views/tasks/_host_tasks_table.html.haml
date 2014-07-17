@@ -1,9 +1,13 @@
 .tab-pane#tasks
-  .well
-    %table.table.table-bordered.table-striped.sortable#host-task-table
-      %legend= t('.host_tasks')
-      %tr
-        %th= t('.description')
-      - TaskPopulator.host_tasks(event).each do |task|
-        %tr
-          %td= task
+	.well
+		%table.table.table-bordered.table-striped.sortable#host-task-table
+			%legend= t('.host_tasks')
+			%tr
+				%th= t('.description')
+				%th= t('.completed')
+			- event.host_tasks.each do |task|
+				%tr
+					%td= task.description
+					%td
+						= form_tag completed_path(task), id: "task#{task.id}", method: :put, remote: true do
+							= check_box :task, :completed, checked: task.completed?, id: "task-check#{task.id}", class: 'form-control', onclick: "$('#task#{task.id}').submit()"

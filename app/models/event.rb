@@ -64,8 +64,17 @@ class Event < ActiveRecord::Base
     attendees.count
   end
 
+  def status
+    # "#{host_tasks.count == 0 ? 0 : (((host_tasks.where(completed: true).count.to_f )/host_tasks.count) * 100).to_i}%"
+    "#{host_tasks.where(completed: true).count} / #{host_tasks.count}"
+  end
+
   def attended_by? user
     attendees.include? user
+  end
+
+  def host_tasks
+    tasks.where(host_task: true)
   end
 
   def task_assignments

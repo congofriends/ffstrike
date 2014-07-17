@@ -109,6 +109,7 @@ fr:
     host_tasks_table:
       host_tasks: "Tâches de l'hôte"
       description: "Description"
+      completed: "Terminé"
     tasks_table:
       legend: "Tâches des participants"
       tasks: "Tâche (cliquez pour modifier)"
@@ -202,6 +203,7 @@ fr:
       event_name: "Nom de l'événement"
       where: "quand"
       when: "Où"
+      status: "Statut"
       approved: "Approbation(Public)"
       sponsored: "Le Parrainage"
       view_event: "Afficher l'événement"

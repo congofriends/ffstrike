@@ -109,6 +109,7 @@ es:
     host_tasks_table:
       host_tasks: "Tareas host"
       description: "Descripción"
+      completed: "Derminado"
     tasks_table:
       legend: "Asistente de las funciones"
       tasks: "Tarea (haga clic en Editar)"
@@ -196,6 +197,7 @@ es:
       event_name: "Nombre del evento"
       where: "Cuando"
       when: "Dónde"
+      status: "Estado"
       approved: "Aprobar(Public)"
       sponsored: "Patrocinio"
       view_event: "Evento"

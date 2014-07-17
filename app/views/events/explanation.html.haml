@@ -9,6 +9,6 @@
   %br
   .task-list
     = t('events.explanation.host_task_msg')
-    - TaskPopulator.host_tasks(@event).each do |task|
+    - @event.host_tasks.each do |task|
       %ul
-        %li= task
+        %li= task.description

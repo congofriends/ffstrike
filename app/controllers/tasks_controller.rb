@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-  before_action :load_event
-  before_action :load_task, :only => [:destroy, :show, :update]
+  before_action :load_event, except: [:completed]
+  before_action :load_task, :only => [:destroy, :show, :update, :completed]
 
   def create
     @task = @event.tasks.build(task_params)
@@ -9,6 +9,13 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to my_events_path(:name => { :id => @event.id }, anchor: "tasks") }
       format.js
+    end
+  end
+
+  def completed
+    @task.update(completed: params[:task][:completed])
+    respond_to do |format|
+      format.html { render nothing: true }
     end
   end
 

@@ -64,6 +64,8 @@ Ffstrike::Application.routes.draw do
     put 'assign_volunteer' => 'events#assign_volunteer', as: 'assign_volunteer'
     put 'unattend' => 'events#unattend', as: 'unattend'
 
+    put 'tasks/:id/completed' => 'tasks#completed', as: 'completed'
+
     #mail
     post 'mail_attendees(/:movement_id)(/:event_id)' => 'mail#mail_attendees', as: 'mail_attendees'
     post 'mail_hosts(/:movement_id)(/:event_id)' => 'mail#mail_hosts', as: 'mail_hosts'

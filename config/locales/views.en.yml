@@ -110,6 +110,7 @@ en:
     host_tasks_table:
       host_tasks: "Host Tasks"
       description: "Description"
+      completed: "Completed"
     tasks_table:
       legend: "Attendee Tasks"
       tasks: "Task (click to Edit)"
@@ -195,6 +196,7 @@ en:
       event_name: "Event Name"
       where: "When"
       when: "Where"
+      status: "Status"
       approved: "Approval(Public)"
       sponsored: "Sponsorship"
       view_event: "View Event"

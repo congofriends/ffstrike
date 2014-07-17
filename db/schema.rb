@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 20140717161238) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "event_id"
-    t.boolean  "host_tasks",  default: false
+    t.boolean  "host_task",   default: false
     t.boolean  "completed",   default: false
   end
 

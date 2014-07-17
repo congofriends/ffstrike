@@ -16,4 +16,16 @@ class TaskPopulator
     return
   end
 
+  def self.assign_host_tasks(event)
+    event_type = event.type.downcase.gsub(/ /, '_')
+    HOST_TASKS[event_type].each{ |task| event.tasks << Task.create(description: task, host_task: true)} if HOST_TASKS.has_key? event_type
+  end
+
+  def self.assign_all_host_tasks
+    Event.all.each do |event|
+      event_type = event.type.downcase.gsub(/ /, '_')
+      HOST_TASKS[event_type].each{ |task| event.tasks << Task.create(description: task, host_task: true)} if HOST_TASKS.has_key? event_type
+    end
+  end
+
 end
