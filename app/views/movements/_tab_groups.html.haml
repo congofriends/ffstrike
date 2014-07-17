@@ -35,6 +35,10 @@
                 .col-md-9
                   = form.text_area :website, class: 'form-control'
               .form-group
+                = form.label :flickr, class: 'col-md-3 control-label'
+                .col-md-9
+                  = form.text_field :flickr, class: 'form-control'
+              .form-group
                 = form.label :avatar, class: 'col-md-3 control-label'
                 .col-md-9
                   = image_tag group.avatar, { class: 'front-page img-responsive' }
