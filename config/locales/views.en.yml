@@ -36,8 +36,6 @@ en:
     phone: *phone
     point: *point
     notes: "Notes (Click to Edit)"
-    unapprove: "Unapprove"
-    approve: "Approve"
     dashboard:
       header: "Manage My Events"
       instructions: "Select an Event and click SHOW"
@@ -198,11 +196,7 @@ en:
       where: "When"
       when: "Where"
       approved: "Approval(Public)"
-      approve: "Approve"
-      unapprove: "Unapprove"
       sponsored: "Sponsorship"
-      sponsor: "Sponsor"
-      unsponsor: "Unsponsor"
       view_event: "View Event"
       edit_event: "Edit Event"
     tab_groups:

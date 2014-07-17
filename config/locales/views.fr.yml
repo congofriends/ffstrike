@@ -36,8 +36,6 @@ fr:
     phone: *phone
     point: *point
     notes: "Notes (Cliquez pour modifier)"
-    unapprove: "désapprouver"
-    approve: "Approuver"
     tab_attendees:
       yes: 'Oui'
       no: 'non'
@@ -205,11 +203,7 @@ fr:
       where: "quand"
       when: "Où"
       approved: "Approbation(Public)"
-      approve: "Approuver"
-      unapprove: "Désapprouver"
       sponsored: "Le Parrainage"
-      sponsor: "Sponsor"
-      unsponsor: "Unsponsor"
       view_event: "Afficher l'événement"
       edit_event: "Modifier l'événement"
     tab_groups:

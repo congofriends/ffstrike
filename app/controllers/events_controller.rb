@@ -29,19 +29,16 @@ class EventsController < ApplicationController
   end
 
   def approve
-    @event.update(approved: !@event.approved)
+    @event.update(approved: params[:event][:approved])
     respond_to do |format|
       format.html { render nothing: true }
-      format.js
     end
   end
 
   def sponsor
-    binding.pry
-    @event.update(sponsored: !@event.sponsored)
+    @event.update(sponsored: params[:event][:sponsored])
     respond_to do |format|
       format.html { render nothing: true }
-      format.js
     end
   end
 

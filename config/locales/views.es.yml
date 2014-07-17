@@ -36,8 +36,6 @@ es:
     phone: *phone
     point: *point
     notes: "Notas(Haga clic para editar)"
-    unapprove: "Desaprobar"
-    approve: "Aprobar"
     tab_attendees:
       yes: 'Sí'
       no: 'No'
@@ -199,11 +197,7 @@ es:
       where: "Cuando"
       when: "Dónde"
       approved: "Aprobar(Public)"
-      approve: "Aprobar"
-      unapprove: "Desaprobar"
       sponsored: "Patrocinio"
-      sponsor: "Patrocina"
-      unsponsor: "No Patrocina"
       view_event: "Evento"
       edit_event: "Editar"
     tab_groups:

@@ -1,6 +1,0 @@
-$("#sponsor<%= @event.id %>").bind('ajax:success', function(){
-  $(this).text("<%= @event.sponsored? ? t('movements.tab_group_events.unsponsor') : t('movements.tab_group_events.sponsor') %>");
-  // $("#sponsor_status<%= @event.id %>").text("<%= @event.sponsored? %>");
-  // $("#event<%= @event.id %>").toggleClass("sponsored-background", <%= !@event.sponsored? %>);
-});
-
