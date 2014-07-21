@@ -14,12 +14,13 @@ class EventsController < ApplicationController
     @events = Event.near_zip(params[:zip], 200)
     respond_to do |format|
       unless @events.empty?
+        @events = @events.order('events.start_time ASC')
         @coordinates = Geocoder.coordinates(params[:zip])
         load_map_vars
         format.html {redirect_to movement_events_path}
         format.js
       else
-        @events = Event.public_events
+        @events = Event.public_events.asc_date
         load_map_vars
         flash[:notice] = t('event.not_found') if params[:zip].present?
         format.html { render action: "index"}
