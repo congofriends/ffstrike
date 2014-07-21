@@ -1,8 +1,0 @@
-$(function() {
-    $( ".timepicker" ).timepicker();
-});
-
-
-
-
-

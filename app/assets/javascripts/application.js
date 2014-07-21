@@ -20,12 +20,9 @@
 //= require jquery.validate
 //= require bootstrap
 //= require sorttable
-//= require bootstrap-datepicker
-//= require bootstrap-timepicker
 //= require underscore
 //= require jquery-ui-1.10.4.custom.min
 //= require jquery-ui-timepicker-addon
 //= require jquery.modal
 //= require jquery.fastLiveFilter
 //= require RRSSB
-//= require date
