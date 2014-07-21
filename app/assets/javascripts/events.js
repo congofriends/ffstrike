@@ -99,10 +99,14 @@ $(document).ready(function() {
 
   $("#event_location_tbd").bind('change', function(){
     if(this.checked){
-      $(".address").hide();
+      $("#event_address").val("TBD")
+      $("#event_address2").val("TBD")
+      $("#event_zip").val("TBD")
     }
     else{
-      $(".address").show();
+      $("#event_address").val("");
+      $("#event_address2").val("");
+      $("#event_zip").val("");
     }
   })
 
@@ -114,5 +118,10 @@ $(document).ready(function() {
   timeout: 200,
   callback: function(total) { $('#num_results').html(total); }
   });
+
+$('#event_location_tbd').bind(function() {
+    $('#yourInput').val( $(this).text() ).keyup();
+    return false;
+});
 
 });
