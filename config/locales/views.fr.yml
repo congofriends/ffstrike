@@ -123,7 +123,8 @@ fr:
     breadcrumb:
       home: 'Maison'
     footer:
-      about: 'Environ'
+      about: 'À PROPOS'
+      template: 'MODÈLE'
     navbar:
       my_profile: 'Mon profil'
       manage_my_groups: 'Gérer mes équipes'

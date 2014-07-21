@@ -21,6 +21,7 @@ Ffstrike::Application.routes.draw do
       via: [:get, :post]
 
     get 'about' => 'static_pages#about',  as: 'about'
+    get 'template' => 'static_pages#template',  as: 'template'
 
     #users
     devise_scope :user do

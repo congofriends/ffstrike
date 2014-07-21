@@ -123,7 +123,8 @@ es:
     breadcrumb:
       home: 'Inicio'
     footer:
-      about: 'Acerca de'
+      about: 'ACERCA'
+      template: 'PLANTILLA'
     navbar:
       my_profile: 'Mi perfil'
       manage_my_groups: 'Administrar Mis Equipos'

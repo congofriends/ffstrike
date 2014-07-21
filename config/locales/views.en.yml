@@ -122,9 +122,10 @@ en:
       create_btn: "CREATE NEW TASK"
   layouts:
     breadcrumb:
-      home: 'Home'
+      home: 'HOME'
     footer:
-      about: 'About'
+      about: 'ABOUT'
+      template: 'TEMPLATE'
     navbar:
       my_profile: 'My profile'
       manage_my_groups: 'Manage My Teams'
