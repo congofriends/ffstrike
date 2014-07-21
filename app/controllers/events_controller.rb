@@ -46,10 +46,9 @@ class EventsController < ApplicationController
     @event = Event.find params[:event_id]
     @attendee = User.find params[:attendee_id]
     @attendance = @attendee.attendances.find_by(event_id: @event.id)
-    @attendance.update(point_person: !@attendance.point_person)
+    @attendance.update(point_person: params[:event][:assigned])
     respond_to do |format|
       format.html { render nothing: true }
-      format.js
     end
   end
 

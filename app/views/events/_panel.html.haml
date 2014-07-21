@@ -34,8 +34,9 @@
       =link_to(t('events.unattend_btn'),  unattend_path(attendee_id: current_user.id, event_id: event.id), method: :put, remote: true, class: "btn", id: "remove_attendance#{event.id}")
       %br
       %br
-      %h3= t('events.volunteer_status')
-      =link_to( current_user.volunteer_for(event) ? "Y": "N", assign_volunteer_path(attendee_id: current_user.id, event_id: event.id), method: :put, remote: true, class: "check-box btn", id: "assign_volunteer#{event.id}")
+      %h4= t('events.volunteer_status')
+      = form_tag assign_volunteer_path(attendee_id: current_user.id, event_id: event.id), id: "assign_volunteer#{event.id}", method: :put, remote: true do
+        = check_box :event, :assigned, checked: current_user.volunteer_for(event), class: 'form-control', onclick: "$('#assign_volunteer#{event.id}').submit()"
 
     - unless current_user.volunteer_for(event)
       :javascript

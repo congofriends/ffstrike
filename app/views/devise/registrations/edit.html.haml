@@ -21,6 +21,10 @@
     %br/
     = f.text_field :phone, class: 'form-control'
   %br/
+  %div
+    = f.check_box :textable
+    = f.label :textable, t('.textable')
+  %br/
   %br/
   %br/
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?

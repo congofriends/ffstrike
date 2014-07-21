@@ -1,18 +1,18 @@
 = form_for @user, method: "post", url: create_attendee_user_path, html: { id: 'attendee-form' } do |f|
   .panel-heading
     .panel-title
-      %h3 Please give us more information to sign up!
-      %h5 If you already have an account, #{link_to "sign in", new_session_path(:user), id: "sign-in"}
-
+      %h3= t('.more_info')
+      %h5
+        =t('.already_user')
+        =link_to t('.sign_in'), new_session_path(:user), id: "sign-in"
   .panel-body
-
     .row
       .form-group.label-field.col-xs-6
-        = f.label :name, 'First Name*'
+        = f.label :name, t('.name')
         = f.text_field :name, class: "form-control"
 
       .form-group.label-field.col-xs-6
-        = f.label :surname, 'Last Name*'
+        = f.label :surname, t('.surname')
         = f.text_field :surname, class: "form-control"
 
     .form-group.label-field
@@ -20,19 +20,23 @@
       = f.text_field :phone, class: "form-control"
 
     .form-group.label-field
-      = f.label 'Email*'
+      = f.check_box :textable
+      = f.label :textable, t('.textable')
+
+    .form-group.label-field
+      = f.label t('.email')
       = f.email_field :email, class: "form-control"
 
       = f.hidden_field :event_id, value: @event.id
 
     .form-group.label-field
       = fields_for :attendance, @attendance do |a|
-        = a.label "I'd like to volunteer for this event!"
+        = a.label t('.volunteer')
         = a.check_box :point_person
 
       = f.hidden_field :event_id, value: @event.id
 
     .form-group
-      = f.submit "Sign me up!", class: "btn btn-info col-md-12"
+      = f.submit t('.sign_up'), class: "btn btn-info col-md-12"
 
-  %p.text-info.small Expect to hear from the host with event updates
+  %p.text-info.small= t('.follow_up_msg')

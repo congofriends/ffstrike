@@ -44,6 +44,7 @@ fr:
         surname: "Nom de famille"
         email: "Email"
         phone: "Numéro de téléphone"
+        textable: "Je souhaite recevoir les mises à jour de texte"
         confirmation_msg: "Actuellement en attente de confirmation pour : %{unconfirmed_email}"
         current_pass: "Mot de passe actuel"
         pass_msg: "(Nous avons besoin de votre mot de passe courant pour confirmer vos modifications)"

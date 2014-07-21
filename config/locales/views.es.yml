@@ -259,7 +259,25 @@ es:
   assignments:
     assign:
       just_signed_up: 'Just signed up!'
-
-
-
-
+  users:
+    attend_as_user:
+      greeting: "Hola %{user_name},"
+      thanks_msg: "Gracias por tú inscripción para asistir a %{event_name}."
+      not_user_msg: "Si no es usted, haga clic en"
+      here: "Aquí"
+      phone: "Número de teléfono (opcional):"
+      textable: "Me gustaría recibir actualizaciones de texto"
+      point: "Me gustaría ser voluntario para este evento!"
+      sign_up: "Me Inscríbete!"
+      email_shared: "* Su dirección de correo electrónico será compartida con el anfitrión del evento."
+    user_and_attendee_form:
+      more_info: "Por favor, darnos más información para inscribirse!"
+      already_user: "Si ya tiene una cuenta,"
+      sign_in: "Iniciar sesión"
+      name: "Nombre *"
+      surname: "Apellido *"
+      email: "Email *"
+      textable: "Me gustaría recibir actualizaciones de texto"
+      volunteer: "Me gustaría ser voluntario para este evento!"
+      sign_up: "Me Inscríbete!"
+      follow_up_msg: "Espere a escuchar desde el host con actualizaciones de eventos"

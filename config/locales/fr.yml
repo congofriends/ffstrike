@@ -43,7 +43,6 @@ fr:
   assignment:
     already_taken: "Vous avez déjà pris cette tâche!"
     signed_up: "Grâce à la signature de!"
-    signed_up_email: "Merci de votre inscription, vous recevrez un email de confirmation sous peu."
     for_attendees_only: "Tâches sont pour les participants uniquement"
   event_type:
     rally:

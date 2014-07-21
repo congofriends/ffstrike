@@ -4,7 +4,7 @@ class AssignmentsController < ApplicationController
     load_task_and_event
 
     if current_user && (@task.is_not_assigned_to? current_user)
-      @confirmation_message = t('assignment.signed_up_email')
+      @confirmation_message = t('assignment.signed_up')
       @task.assign! current_user
       # QUEUE
       # UserMailer.task_signup_message(@event.id, @task.id, current_user.id)

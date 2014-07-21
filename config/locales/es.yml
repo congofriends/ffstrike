@@ -43,7 +43,6 @@ es:
   assignment:
     already_taken: "ya has tomado esta tarea."
     signed_up: "Gracias por suscribirse!"
-    signed_up_email: "Gracias por inscribirse, recibirá un correo electrónico de confirmación en breve."
     for_attendees_only: "Tareas para los asistentes"
   event_type:
     rally:

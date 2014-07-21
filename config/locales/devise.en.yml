@@ -45,6 +45,7 @@ en:
         surname: "Last Name"
         email: "Email"
         phone: "Phone Number"
+        textable: "I would like to receive text updates"
         confirmation_msg: "Currently waiting confirmation for: %{unconfirmed_email}"
         current_pass: "Current Password"
         pass_msg: "(we need your current password to confirm your changes)"
@@ -72,5 +73,5 @@ en:
       not_found: "is not associated with any account."
       not_locked: "was not locked"
       not_saved:
-        one: '1 error prohibited this %{resource} from being saved:'
-        other: '%{count} errors prohibited this %{resource} from being saved:'
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"

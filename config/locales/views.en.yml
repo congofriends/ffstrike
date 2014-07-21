@@ -250,3 +250,25 @@ en:
   assignments:
     assign:
       just_signed_up: 'Just signed up!'
+  users:
+    attend_as_user:
+      greeting: "Hello %{user_name},"
+      thanks_msg: "Thank you for signing up to attend %{event_name}."
+      not_user_msg: "If this is not you, click"
+      here: "here"
+      phone: "Phone Number (optional):"
+      textable: "I would like to receive text updates"
+      point: "I'd like to volunteer for this event!"
+      sign_up: "Sign me up!"
+      email_shared: "* Your email address will be shared with the event host."
+    user_and_attendee_form:
+      more_info: "Please give us more info to sign up!"
+      already_user: "If you already have an account,"
+      sign_in: "Sign In"
+      name: "First Name *"
+      surname: "Last Name *"
+      email: "Email *"
+      textable: "I would like to receive text updates"
+      volunteer: "I'd like to volunteer for this event!"
+      sign_up: "Sign me up!"
+      follow_up_msg: "Expect to hear from the host with event updates"

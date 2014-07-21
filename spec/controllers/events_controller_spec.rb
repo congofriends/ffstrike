@@ -190,7 +190,7 @@ describe EventsController do
 
       it "sets point_person for attendance to be true" do
         attendance = FactoryGirl.create(:attendance, event: event1, user: visitor, point_person: false)
-        put "assign_volunteer", event_id: event1.id, attendee_id: visitor.id
+        put "assign_volunteer", event_id: event1.id, attendee_id: visitor.id, event: {assigned: true}
         expect(attendance.reload.point_person).to be_true
       end
     end
