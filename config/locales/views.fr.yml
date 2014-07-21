@@ -288,3 +288,16 @@ fr:
       volunteer: "J'aimerais faire du bénévolat pour cet événement!"
       sign_up: "Inscrivez-moi!"
       follow_up_msg: "Attendez-vous à entendre de l'hôte des mises à jour de l'événement"
+  static_pages:
+    about:
+      header1: "Contexte"
+      header2: "But"
+      header3: "Impliquez-vous"
+      background: "Briser le Silence Semaine Congo est une semaine d'activités qui commémore les millions de vies perdues dans le conflit du Congo, tout en célébrant l'énorme potentiel humain et naturel qui existe dans le pays à travers le monde Communautés rejoindre en partenariat avec congolais chaque année sur l'. troisième semaine d'Octobre à projeter des films, maintenez teach-ins et des forums, organiser des rassemblements, des collecteurs de fonds d'accueil, proposent des concerts et d'entreprendre d'autres activités pour élever le profil du Congo à travers le globe. étudiants et organisateurs communautaires initiées Semaine Congo en 2008. Les chefs religieux, des universitaires, des intellectuels, des artistes et des gens ordinaires à travers le monde se sont impliqués également de reconnaître la vie du peuple congolais et leur quête de la dignité humaine."
+      purpose: "Depuis 2008, la Semaine du Congo a galvanisé la participation de personnes dans plus de 65 pays et 400 universités et les communautés universitaires Le but de la Semaine Congo est d'élever la conscience mondiale sur la situation au Congo et défenseur de la paix, la justice et la dignité humaine dans partenariat avec le peuple congolais. Congo Semaine 2014 est le septième anniversaire de la Semaine Congo et aura lieu à partir de"
+      cw-date: "Dimanche 19 Octobre au samedi 25 Octobre 2014"
+      get-involved1: "Inscrivez-vous pour organiser ou assister à un événement pour le Congo Semaine VII,"
+      get-involved2: "Encouragez votre réseau pour être un cadre de la Semaine Congo et passer le mot sur Facebook et Twitter."
+      date: "19 Octobre - 25, 2014"
+      link: "(Lien)"
+      view_template: "Modèle Vue Par Thèmes quotidiens et d'action Pendant la Semaine Congo."

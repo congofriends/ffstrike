@@ -1,23 +1,21 @@
 .container
-	%h3 Background
-	%p Breaking the Silence Congo Week is a week of activities that commemorates the millions of lives lost in the Congo conflict while celebrating the enormous human and natural potential that exists in the country. Communities throughout the globe join in partnership with Congolese each year on the third week of October to screen films, hold teach-ins and forums, organize rallies, host fundraisers, put on concerts and undertake many other activities to elevate the profile of the Congo throughout the globe. Students and community organizers initiated Congo Week in 2008. Religious leaders, scholars, intellectuals, artists, and ordinary people throughout the globe also got involved to acknowledge the lives of the Congolese people and their pursuit for human dignity.
+	%h3=t('.header1')
+	%p= t('.background')
 	%br
-	%h3 Purpose
+	%h3=t('.header2')
 	%p
-		Since 2008, Congo Week has galvanized the participation of people in over 65 countries and 400 university campuses and communities. The purpose of Congo Week is to raise global consciousness about the situation in the Congo and advocate for peace, justice and human dignity in partnership with the Congolese people. Congo Week 2014 is the seventh anniversary of Congo Week and will take place from
-		%strong Sunday, October 19 to Saturday, October 25, 2014.
+		= t('.purpose')
+		%strong= t('.cw-date')
 	%br
-	%h3 Get Involved
+	%h3=t('.header3')
 	%p
-		Sign-up to organize or attend an event for Congo Week VII,
-		%strong October 19 - 25, 2014
-		%strong= link_to '(link)', movement_events_path(Movement.first)
-		Encourage your network to be a part of Congo Week and spread the word via Facebook and Twitter.
-
+		= t('.get-involved1')
+		%strong=t('.date')
+		%strong= link_to t('.link'), movement_events_path(Movement.first)
+		= t('.get-involved2')
 	%br
-
 	%strong
-		View Template For Daily Themes and Action During Congo Week.
-		= link_to '(link)', template_path
+		= t('.view_template')
+		= link_to  t('.link'), template_path
 
 
