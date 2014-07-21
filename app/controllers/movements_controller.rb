@@ -108,6 +108,13 @@ class MovementsController < ApplicationController
 
   def explanation; end
 
+  def sponsor
+    @movement.update(sponsored: params[:group][:sponsored])
+     respond_to do |format|
+       format.html { render nothing: true }
+     end
+   end
+
   private
 
 

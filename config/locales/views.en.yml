@@ -198,6 +198,7 @@ en:
       group_details: 'Team Details'
       group_events: 'Team Events'
       manage_supporters: 'Manage Supporters'
+      teams: 'Teams'
     tab_group_events:
       event_name: "Event Name"
       where: "When"
@@ -218,6 +219,9 @@ en:
       location: "Location:"
       about_creator: "About Creator:"
       update_movement: "Update Team"
+    tab_group_teams:
+      team_name: 'Team Name'
+      sponsored: 'Sponsored'
     my_profile:
       events_attending: 'Events Attending'
       personal_details: 'Personal Details'

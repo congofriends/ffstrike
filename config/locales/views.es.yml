@@ -198,6 +198,7 @@ es:
       group_details: 'Equipo Detalles'
       group_events: 'Equipo Eventos'
       manage_supporters: 'Gestionar los partidarios'
+      teams: 'Equipos'
     tab_group_events:
       event_name: "Nombre del evento"
       where: "Cuando"
@@ -218,6 +219,9 @@ es:
       location: 'Ubicación'
       about_creator: 'Acerca del creador'
       update_movement: "Equipo de actualización"
+    tab_group_teams:
+      team_name: *name
+      sponsored: "Patrocinado"
     my_profile:
       events_attending: 'Eventos'
       personal_details: 'Datos personales'

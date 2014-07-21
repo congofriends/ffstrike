@@ -1,0 +1,12 @@
+.tab-pane#teams
+  .well
+    %table.table.table-bordered.table-striped.sortable
+      %tr
+        %th= t('.team_name')
+        %th= t('.sponsored')
+      - groups.each do |group|
+        %tr
+          %td= link_to group.name, movement_path(group)
+          %td
+            = form_tag sponsored_path(group), id: "group-sponsor-check#{group.id}", method: :put, remote: true do
+              = check_box :group, :sponsored, checked: group.sponsored, class: 'form-control', onclick: "$('#group-sponsor-check#{group.id}').submit()"

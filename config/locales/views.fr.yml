@@ -204,6 +204,7 @@ fr:
       group_details: 'Détails du équipe'
       group_events: 'Événements de équipe'
       manage_supporters: 'Gérer les partisans'
+      teams: 'Équipes'
     tab_group_events:
       event_name: "Nom de l'événement"
       where: "quand"
@@ -224,6 +225,9 @@ fr:
       location: "Emplacement:"
       about_creator: "De Créateur:"
       update_movement: "équipe mise à jour"
+    tab_group_teams:
+      team_name: *name
+      sponsored: "Parrainés"
     my_profile:
       events_attending: 'Assister aux événements'
       personal_details: 'Détails personnels'
