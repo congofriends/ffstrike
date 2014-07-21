@@ -30,7 +30,7 @@ class UsersController < Devise::RegistrationsController
         Attendance.create(user: user, event: @event, point_person: params[:attendance][:point_person])
         flash[:success] = message
         ReminderMailWorker.perform_at((@event.start_time-(60 * 60 * 12)), user.id, @event.id)
-        WelcomeMailWorker.perform_async(user.id, generated_password, @event.id) if generated_password
+        WelcomeMailWorker.perform_async(user.id, @generated_password, @event.id) if @generated_password
       else
         flash[:notice] = t('attendee.already_signed_up')
       end

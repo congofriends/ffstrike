@@ -1,19 +1,24 @@
 Hello #{@recipient.name},
-
+%br/
+%br/
 Thank you for hosting an event as a part of Congo Week. Your event, #{@event.name}, is scheduled for #{@event.start_time_formatted} at #{@event.address}.
-
+%br/
+%br/
 Please save this email for your records.
-
+%br/
+%br/
 Every year in the third week of October, people throughout the globe gather to commemorate the millions of lives lost in the conflict in the Congo while celebrating the enormous human and natural potential that exists in the country.
-
+%br/
+%br/
 Your event dashboard is a powerful organizing tool. There you can edit your event details, see your most important tasks (and edit them as you see fit), see who has signed up for your event, and email or call potential volunteers. Sign into your event dashboard
 = succeed "." do
   %a{href: my_events_url({:locale => I18n.locale, :name => {:id => @event.id}})} here
-
-If you’ve forgotten your password, you can reset it.
-
+%br/
+%br/
 Thank you for joining the global movement for peace and justice in the heart of Africa.
-
+%br/
+%br/
 Sincerely,
-
+%br/
+%br/
 Samya, Kambale and the rest of the Congo Week Organizers

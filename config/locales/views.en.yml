@@ -126,6 +126,7 @@ en:
     footer:
       about: 'ABOUT'
       template: 'TEMPLATE'
+      media: 'MEDIA'
     navbar:
       my_profile: 'My profile'
       manage_my_groups: 'Manage My Teams'

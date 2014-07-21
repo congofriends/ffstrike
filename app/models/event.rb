@@ -86,8 +86,7 @@ class Event < ActiveRecord::Base
   end
 
   def location
-    event_location = [address, address2, city, state, zip, country].reject{|i| i.nil? || i.empty? || i == "TBD"}.join(", ")
-    event_location.empty? ? "TBD" : event_location
+    [address, address2, city, state, zip, country].reject{|i| i.nil? || i.empty? || i == "TBD"}.join(", ")
   end
 
   def assign_host_and_approve user

@@ -48,6 +48,7 @@ include Capybara::DSL
 		fill_in 'event_city', with: 'Chicago'
 		fill_in 'event_zip', with: '60649'
 		fill_in 'event_state', with: 'IL'
+		fill_in 'event_country', with: 'USA'
 		find(:css, "#event_location_tbd").set(true)
 		fill_in "event_start_time", with: DateTime.new(2015, 05, 16, 15, 30)
 		fill_in "event_end_time", with: DateTime.new(2015, 05, 17, 15, 30)
@@ -55,7 +56,7 @@ include Capybara::DSL
 		fill_in 'user_email', with: 'mack@gmail.com'
 		fill_in 'user_password', with: 'movement1234'
 		fill_in 'user_password_confirmation', with: 'movement1234'
-		click_link_or_button('CREATE EVENT')
+		find('input#create_event').click
 		return self
 	end
 

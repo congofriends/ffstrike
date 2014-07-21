@@ -125,6 +125,7 @@ fr:
     footer:
       about: 'À PROPOS'
       template: 'MODÈLE'
+      media: 'MÈDIAS'
     navbar:
       my_profile: 'Mon profil'
       manage_my_groups: 'Gérer mes équipes'

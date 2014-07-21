@@ -1,18 +1,25 @@
 Hello #{@recipient.name},
 %br/
+%br
 Thank you for signing up to attend #{@event.name} on #{@event.start_time_formatted} at  #{@event.address}. Your commitment makes a difference to achieving peace and justice for millions of Congolese people.
 %br/
-Take one quick minute to make an even bigger impact? Help spread the word about Congo Week on Twitter and Facebook (links) using the hashtag #CongoWeek or #CongoWeek2014
+%br
+
+Take one quick minute to make an even bigger impact? Help spread the word about Congo Week on Twitter and Facebook using the hashtag #CongoWeek or #CongoWeek2014
 %br/
+%br
 Please save this email so you have your event details available.
 %br/
+%br
 Thank you for your support,
 Congo Week Organizer
 %br/
+%br
 P.S. If you want to access your profile, use this email address and the password (we sent you one when you signed up, but if you forgot you can reset it) at (link). There, you can manage your events and sign up to volunteer.
 You can find out more about #{@event.name} by clicking
 = succeed "." do
-  %a{href: event_url(@event, {:locale => I18n.locale}) } here
+	%a{href: event_url(@event, {:locale => I18n.locale}) } here
 %br/
-Your password is:
-= @password
+- if @password
+  Your password is:
+  %strong= @password

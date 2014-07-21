@@ -1,12 +1,15 @@
 Hello, #{@attendee.name.capitalize}
-
+%br/
+%br/
 Welcome to Shift Engage.
-
+%br/
+%br/
 Thank you for volunteering for #{@event.name}
 %br/
 %br/
 You have signed up for #{@task.description}
-
+%br/
+%br/
 You can find out more about #{@event.name} by clicking
 = succeed "." do
   %a{href: event_url(@event, {:locale => I18n.locale})} here

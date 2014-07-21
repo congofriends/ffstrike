@@ -125,6 +125,7 @@ es:
     footer:
       about: 'ACERCA'
       template: 'PLANTILLA'
+      media: 'MEDIOS'
     navbar:
       my_profile: 'Mi perfil'
       manage_my_groups: 'Administrar Mis Equipos'
