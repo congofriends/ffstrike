@@ -29,6 +29,8 @@ class UsersController < Devise::RegistrationsController
       if Attendance.where(user: user, event: @event).empty?
         Attendance.create(user: user, event: @event, point_person: params[:attendance][:point_person])
         flash[:success] = message
+        @generated_password ? UserMailer.welcome_message(user.id, @generated_password, @event.id) : UserMailer.welcome_message(user.id, "", @event.id)
+
         if ENV["RAILS_ENV"] == "production"
           ReminderMailWorker.perform_at((@event.start_time-(60 * 60 * 12)), user.id, @event.id) if @event.start_time
           @generated_password ? WelcomeMailWorker.perform_async(user.id, @generated_password, @event.id) : WelcomeMailWorker.perform_async(user.id, "", @event.id)
