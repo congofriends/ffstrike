@@ -250,6 +250,8 @@ es:
       create_btn: 'Crear Equipo'
     show:
       quote: 'Nuestra misión y visión es la de aumentar la toma de conciencia de la comunidad mundial sobre el problema del Congo y el apoyo las instituciones congoleñas en el logro de una solución pacífica y duradera.'
+      events: "EVENTOS"
+      network: "RED"
     show_chapter:
       about_creators: 'Sobre los creadores de'
       host_event: *host_event

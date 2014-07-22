@@ -241,6 +241,8 @@ en:
       create_btn: 'Create Team'
     show:
       quote: 'Our mission and vision is to raise the consciousness of the world community on the challenge of the Congo and support Congolese institutions in bringing about a peaceful and lasting change.'
+      events: "EVENTS"
+      network: "NETWORK"
     show_chapter:
       about_creators: 'About the Creators'
       host_event: *host_event

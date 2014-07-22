@@ -4,10 +4,12 @@
     = image_tag @movement.image,:class => "movement_avatar"
   .row
     .col-sm-6.events-button
-      = link_to image_tag('events_button.jpg'), movement_events_path(@movement), class:'events-btn'
+      = link_to movement_events_path(@movement),  class: 'events-button' do
+        .events-btn-img= t('.events')
     .col-sm-6.network-button
-      = link_to image_tag('network_button.jpg'), support_network_movement_path(@movement), class:'network-btn'
+      = link_to support_network_movement_path(@movement), class: 'network-button' do
+        .network-btn-img= t('.network')
   .row
     %blockquote
-      %em 
+      %em
         #quote=t('.quote')

@@ -256,6 +256,8 @@ fr:
       create_btn: 'Créer du équipe'
     show:
       quote: "Notre mission et notre vision est de soulever la conscience de la communauté mondiale sur le défi du Congo et de l'appui institutions congolaises à parvenir à un règlement pacifique et durable."
+      events: "ÉVÉNEMENTS"
+      network: "RÉSEAU"
     show_chapter:
       about_creators: 'Concernant les créateurs'
       host_event: *host_event
