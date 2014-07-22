@@ -20,6 +20,6 @@ You can find out more about #{@event.name} by clicking
 = succeed "." do
 	%a{href: event_url(@event, {:locale => I18n.locale}) } here
 %br/
-- if @password
+- unless @password.empty?
   Your password is:
   %strong= @password
