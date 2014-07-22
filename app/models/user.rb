@@ -95,6 +95,11 @@ class User < ActiveRecord::Base
     movements.map(&:events).flatten.uniq
   end
 
+  def super_admin?
+    Movement.find_by_name("Friends of the Congo").ownerships.map(&:user_id).include?(self.id)
+  end
+
+
   def movements_and_groups
     movement_array = []
     movement_array << movements

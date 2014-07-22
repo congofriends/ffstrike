@@ -4,10 +4,10 @@
     = form_for event, html: { id: 'edit-event-form' } do |f|
       .form-group
         = f.label t("events.edit.start_date")
-        = f.text_field :start_time, class: 'form-control datetimepicker', value: event.start_time_formatted
+        = f.text_field :start_time, class: "form-control datetimepicker datetimepicker-#{I18n.locale}", value: event.start_time_formatted
       .form-group
         = f.label t("events.edit.end_date")
-        = f.text_field :end_time, class: 'form-control datetimepicker', value: event.end_time_formatted
+        = f.text_field :end_time, class: "form-control datetimepicker datetimepicker-#{I18n.locale}", value: event.end_time_formatted
       .form-group
         = f.label t("events.edit.name")
         = f.text_field :name, class: 'form-control'

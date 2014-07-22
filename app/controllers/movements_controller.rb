@@ -38,6 +38,7 @@ class MovementsController < ApplicationController
   end
 
   def new
+    redirect_to new_user_session_path and return unless current_user
     @movement = Movement.new
   end
 
@@ -108,19 +109,12 @@ class MovementsController < ApplicationController
 
   def explanation; end
 
-  def sponsor
-    @movement.update(sponsored: params[:group][:sponsored])
-     respond_to do |format|
-       format.html { render nothing: true }
-     end
-   end
-
   private
 
 
   def movement_params
     params[:movement][:video]= extract_video_id(params[:movement][:video]) if !params[:movement][:video].nil?
-    params.require(:movement).permit(:name, :category, :tagline, :call_to_action, :extended_description, :image, :avatar, :video, :about_creator, :website, :flickr, :parent_id, :location)
+    params.require(:movement).permit(:name, :category, :tagline, :call_to_action, :extended_description, :image, :avatar, :video, :about_creator, :website, :flickr, :parent_id, :location, :sponsored)
   end
 
   def load_movements

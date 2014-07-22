@@ -51,16 +51,13 @@
           =t('.email_cl')
         %th
           =t('.phone_number')
-        %th
-          =t('.point_person')
       - events.each do |event|
         - event.attendees.each do |attendee|
           %tr
             %td= attendee.full_name
-            %td= link_to event.name, event_path(event)
-            %td= attendee.email
-            %td= attendee.phone
-            %td= attendee.volunteer_for(event) ? "yes" : "no"
+            %td= link_to(event.name, event_path(event))
+            %td= attendee.email if attendee.volunteer_for(event) || current_user.super_admin?
+            %td= attendee.phone if attendee.volunteer_for(event) || current_user.super_admin?
 
 = link_to_modal t('.invite_coordinators'), new_user_invitation_path({mvmt_id: @group.id}), { class: 'btn ctrl-btn' }
 = link_to t('.export_attendees'), export_csv_path(@group), class: 'btn ctrl-btn'

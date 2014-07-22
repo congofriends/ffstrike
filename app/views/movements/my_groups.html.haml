@@ -17,9 +17,6 @@
       %li
         %a{href: '#support', data: {toggle: 'tab'}}
           =t('.manage_supporters')
-      %li
-        %a{href: '#teams', data: {toggle: 'tab'}}
-          =t('.teams')
 
   .tab-content
     .tab-pane.fade.in#group
@@ -28,5 +25,4 @@
       =render 'movements/tab_group_events', events: @group.events
     .tab-pane.fade.in#support
       =render 'movements/tab_group_attendees', events: @group.events
-    .tab-pane.fade.in#teams
-      =render 'movements/tab_group_teams', groups: @groups
+

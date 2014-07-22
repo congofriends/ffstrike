@@ -15,10 +15,10 @@
               .event-date-time
                 .form-group
                   = label :event, :start_time, t("events.edit.start_date") + " *"
-                  = text_field :event, :start_time, class: 'form-control datetimepicker'
+                  = text_field :event, :start_time, class: "form-control datetimepicker datetimepicker-#{I18n.locale}"
                 .form-group
                   = label :event, :end_time,  t("events.edit.end_date")
-                  = text_field :event, :end_time, class: 'form-control datetimepicker'
+                  = text_field :event, :end_time, class: "form-control datetimepicker datetimepicker-#{I18n.locale}"
               .form-group
                 = label :event, :time_tbd, "Time To Be Determined"
                 = check_box :event, :time_tbd, {}, true, false

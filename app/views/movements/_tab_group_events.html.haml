@@ -8,8 +8,9 @@
 						%th= t('.when')
 						%th= t('.where')
 						%th= t('.status')
-						%th= t('.approved')
-						%th= t('.sponsored')
+						- if current_user.super_admin?
+							%th= t('.approved')
+							%th= t('.sponsored')
 					- events.each do |event|
 						%tr
 							%td
@@ -19,10 +20,11 @@
 							%td= event.start_time_formatted
 							%td= event.location
 							%td= event.status
-							%td
-								= form_tag approve_path(event), id: "approve#{event.id}", method: :put, remote: true do
-									= check_box :event, :approved, checked: event.approved, id: "approve-check#{event.id}", class: 'form-control', onclick: "$('#approve#{event.id}').submit()"
-							%td
-								= form_tag sponsor_path(event), id: "sponsor#{event.id}", method: :put, remote: true do
-									= check_box :event, :sponsored, checked: event.sponsored, id: "sponsor-check#{event.id}", class: 'form-control', onclick: "$('#sponsor#{event.id}').submit()"
+							- if current_user.super_admin?
+								%td
+									= form_tag approve_path(event), id: "approve#{event.id}", method: :put, remote: true do
+										= check_box :event, :approved, checked: event.approved, id: "approve-check#{event.id}", class: 'form-control', onclick: "$('#approve#{event.id}').submit()"
+								%td
+									= form_tag sponsor_path(event), id: "sponsor#{event.id}", method: :put, remote: true do
+										= check_box :event, :sponsored, checked: event.sponsored, id: "sponsor-check#{event.id}", class: 'form-control', onclick: "$('#sponsor#{event.id}').submit()"
 

@@ -10,9 +10,9 @@
       - event.attendees.each do |attendee|
         %tr
           %td= attendee.full_name
-          %td= attendee.email
-          %td= attendee.phone
-          %td= link_to( attendee.volunteer_for(event) ? t('.yes') : t('.no'), assign_volunteer_path(attendee_id: attendee.id, event_id: event.id), method: :put, remote: true, class: "check-box btn", id: "assign_volunteer#{event.id}")
+          %td= attendee.email if attendee.volunteer_for(event) || current_user.super_admin?
+          %td= attendee.phone if attendee.volunteer_for(event) || current_user.super_admin?
+          %td= attendee.volunteer_for(event) ? t('.yes') : t('.no')
           %td= best_in_place attendee.attendance_for(event), :notes, :path=> attendance_path({event_id: event.id, attendee_id: attendee.id}), :type => :input, :html_attrs => {:class=>"input"}
 = link_to t('.export_attendees'), export_event_attendees_path(event), class: 'btn ctrl-btn'
 = link_to_modal t('.contact_attendees'), new_attendee_msg_path(event), class: "btn ctrl-btn"

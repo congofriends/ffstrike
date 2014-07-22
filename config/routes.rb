@@ -47,7 +47,6 @@ Ffstrike::Application.routes.draw do
 
     get 'check_name' => 'movements#check_name'
     get 'my_groups' => 'movements#my_groups', as: 'my_groups'
-    put 'movements/:id/sponsor' => 'movements#sponsor', as: 'sponsored'
 
     resources :unauthenticated_submovements, only: [:new, :create]
 

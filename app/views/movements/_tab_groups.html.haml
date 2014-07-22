@@ -38,6 +38,11 @@
                 = form.label :flickr, class: 'col-md-3 control-label'
                 .col-md-9
                   = form.text_field :flickr, class: 'form-control'
+              - if current_user.super_admin?
+                .form-group
+                  = form.label :sponsored, class: 'col-md-3 control-label'
+                  .col-md-9
+                    = form.check_box :sponsored, class: 'form-control'
               .form-group
                 = form.label :avatar, class: 'col-md-3 control-label'
                 .col-md-9
