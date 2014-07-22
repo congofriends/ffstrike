@@ -68,6 +68,8 @@ include Capybara::DSL
 		ownership = FactoryGirl.create(:ownership, movement: movement, user: user)
 		event = FactoryGirl.create(:approved_event, host: user, zip: '60649', movement: movement, name: "Crazy Event")
 		chapter = FactoryGirl.create(:published_movement, parent_id: movement.id)
+		attendee = FactoryGirl.create(:user)
+		attendance = FactoryGirl.create(:attendance, user: attendee, event: event)
 		return self
 	end
 

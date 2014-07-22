@@ -2,8 +2,7 @@ Feature: Coordinator Emails all Attendees for a Movement
 
 Background:
 	Given a user account exists
- 	And I have an existing movement
- 	And I have an existing event for the movement with attendees
+	And I have an existing event
  	And I am logged in as a Movement Coordinator
 
 @ignore @javascript

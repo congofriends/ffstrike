@@ -28,7 +28,7 @@ include Capybara::DSL
 
 	def create_existing_movement(user)
 		@movement = FactoryGirl.create(:published_movement, name: "go Dogs")
-  		ownership = FactoryGirl.create(:ownership, movement: @movement, user: user)
-  		visit "movements/"+ movement.name.gsub(/ /, '-')
+		ownership = FactoryGirl.create(:ownership, movement: @movement, user: user)
+		visit "movements/"+ movement.name.gsub(/ /, '-')
 	end
 end

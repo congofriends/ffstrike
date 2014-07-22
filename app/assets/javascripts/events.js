@@ -66,19 +66,8 @@ function goToPreviousStep(button) {
   previous_fieldset.show();
 }
 
-function populate_end_time() {
-  start_date = new Date($('#event_start_time').val());
-  end_date = new Date(start_date.setHours(start_date.getHours() + 1));
-  formatted_end_date = end_date.toString('ddd, d MMMM, yyyy h:mm tt');
-  $('#event_end_time').val(formatted_end_date);
-}
-
 $(document).ready(function() {
   initializeValidations();
-
-  $('#event_start_time').change(function() {
-    populate_end_time();
-  });
 
   $(".next").click(function() {
     goToNextStep(this);

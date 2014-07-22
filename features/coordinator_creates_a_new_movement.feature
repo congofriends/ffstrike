@@ -1,8 +1,9 @@
 Feature: Creating a movement as a user
 
 Background:
- Given a user account exists
- Given I am logged in as a Movement Coordinator
+	Given a user account exists
+	And I have an existing event
+ 	And I am logged in as a Movement Coordinator
 
 Scenario: User creates a complete movement
  When I create a movement

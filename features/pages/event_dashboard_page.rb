@@ -13,7 +13,7 @@ include BestInPlace::TestHelpers
 	end
 
 	def navigate_to_event_dash
-		click_link "#{User.last.name}"
+		click_link "#{User.find_by_email('leah@brodsky.com').name}"
 		click_link_or_button "Manage My Events"
 		select Event.last.name, from: "name_id"
 		click_link_or_button "SHOW"
