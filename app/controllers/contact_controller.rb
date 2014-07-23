@@ -18,6 +18,14 @@ class ContactController < ApplicationController
     @event = Event.find_by_param(params[:id])
   end
 
+  def new_coordinator_attendee_msg
+    @group = Movement.find_by_param(params[:id])
+  end
+
+  def new_coordinator_hosts_msg
+    @group = Movement.find_by_param(params[:id])
+  end
+
   def create_attendees_msg
     @event =  Event.find @message.host_id
     if @message.valid?

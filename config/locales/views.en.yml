@@ -164,6 +164,8 @@ en:
       hosts: 'HOSTS'
       attendees: 'ATTENDEES'
       invite_coordinators: "INVITE COORDINATORS"
+      email_attendees: "EMAIL ATTENDEES"
+      email_hosts: "EMAIL HOSTS"
       export_attendees: *export_attendees
       name_cl: *name
       group_cl: 'Team'
@@ -241,6 +243,7 @@ en:
       create_btn: 'Create Team'
     show:
       quote: 'Our mission and vision is to raise the consciousness of the world community on the challenge of the Congo and support Congolese institutions in bringing about a peaceful and lasting change.'
+      congo-week: "CONGO WEEK"
       events: "EVENTS"
       network: "NETWORK"
     show_chapter:

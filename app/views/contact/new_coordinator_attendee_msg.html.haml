@@ -1,0 +1,7 @@
+%h3= t('movements.email_modal.title')
+= form_tag(mail_attendees_path(movement_id: @group), method: "post") do
+  = label_tag t('movements.email_modal.subject')
+  = text_area_tag "subject", nil, class: 'form-control'
+  = label_tag t('movements.email_modal.message')
+  = text_area_tag "message", nil, placeholder: t('movements.email_modal.placeholder'), class: 'form-control', rows: "10"
+  = submit_tag t('movements.email_modal.send_email'), class: 'btn ctrl-btn', id: 'Send_Email'

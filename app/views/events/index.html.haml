@@ -1,6 +1,6 @@
 .container
   .row
-    =link_to (image_tag @movement.image, :class => 'movement_avatar'), root_path
+    =link_to (image_tag asset_path("fotc_banner_#{I18n.locale}.png"),:class => "movement_avatar"), root_path
   .row
     .col-sm-8
     .col-sm-2

@@ -83,8 +83,9 @@ Ffstrike::Application.routes.draw do
       post 'contact' => 'contact#create_event_msg', :as => 'contact'
 
     get 'attendees_msg/:id' => 'contact#new_attendees_msg', :as => 'new_attendee_msg'
+    get 'coordinator_attendee_msg/:id' => 'contact#new_coordinator_attendee_msg', :as => 'new_coordinator_attendee_msg'
+    get 'coordinator_hosts_msg/:id' => 'contact#new_coordinator_hosts_msg', :as => 'new_coordinator_hosts_msg'
     post 'attendees_msg' => 'contact#create_attendees_msg', :as => 'attendee_msg'
-
     get 'contact/:id/mvmt' => 'contact#new_movement_msg', :as => 'new_mvmt_contact'
     post 'contact/mvmt' => 'contact#create_movement_msg', :as => 'mvmt_contact'
   end

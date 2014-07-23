@@ -1,7 +1,7 @@
 = content_for :title, @movement.name
 .container
   .row
-    = image_tag @movement.image,:class => "movement_avatar"
+    = image_tag asset_path("fotc_banner_#{I18n.locale}.png"),:class => "movement_avatar"
   .row
     .col-sm-6.events-button
       = link_to movement_events_path(@movement),  class: 'events-button' do

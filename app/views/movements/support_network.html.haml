@@ -1,12 +1,12 @@
 = content_for :title, t('.support_network')
 .container
   .row
-    =link_to (image_tag @movement.image, :class => 'movement_avatar'), root_path
+    =link_to (image_tag asset_path("fotc_banner_#{I18n.locale}.png"),:class => "movement_avatar"), root_path
   .row.event-list
     .col-sm-6
-      %h2
+      %h3
         =t('.network_message', number: @support_network.size)
-    .col-sm-2.col-sm-offset-2
+    .col-sm-2.col-sm-offset-3
       - if !current_user.nil?
         =link_to t('.create_team'), new_movement_path({parent_id: @movement.id}), class: 'btn'
       - else

@@ -141,7 +141,7 @@ class EventsController < ApplicationController
   def edit; end
 
   def export_attendees
-    send_data @event.to_csv, filename: "#{event.name} attendee-list.csv"
+    send_data @event.to_csv, filename: "#{@event.name} attendee-list.csv"
   end
 
   private
