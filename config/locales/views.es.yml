@@ -263,7 +263,7 @@ es:
       create_team: 'CREAR UN EQUIPO'
   assignments:
     assign:
-      just_signed_up: 'Just signed up!'
+      just_signed_up: 'Apenas firmado!'
   users:
     attend_as_user:
       greeting: "Hola %{user_name},"

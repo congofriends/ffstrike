@@ -89,6 +89,7 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'poltergeist'
   gem 'i18n-tasks', '~> 0.5.4'
+  gem 'localeapp'
 end
 
 group :production, :staging do

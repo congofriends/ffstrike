@@ -1,6 +1,13 @@
 namespace :db do
   desc "Fill database with FOTC data"
 
+  task congo_week: :environment do
+    fotc_data = YAML.load_file(Rails.root.join("config", "fotc_data.yml"))
+    coordinator = User.where(email: fotc_data["fotc_coordinator"]["email"]).first_or_create!(fotc_data["fotc_coordinator"])
+    movement = Movement.where(name: fotc_data["fotc"]["name"]).first_or_create!(fotc_data["fotc"])
+    movement.users << coordinator unless movement.users.include? coordinator
+   end
+
   task make_fotc: :environment do
     fotc_data = YAML.load_file(Rails.root.join("config", "fotc_data.yml"))
     fotc_events = YAML.load_file(Rails.root.join("config", "fotc_events.yml"))
@@ -22,7 +29,6 @@ namespace :db do
       chapter.users << host unless chapter.users.include? host
       return chapter
     end
-
 
 
     coordinator = User.where(email: fotc_data["fotc_coordinator"]["email"]).first_or_create!(fotc_data["fotc_coordinator"])
@@ -86,8 +92,7 @@ namespace :db do
 
     create_event(chapter_events[0], chapter1, coordinator, 5)
     create_event(chapter_events[1], chapter2, coordinator, 5)
-
-
  end
+
 end
 
