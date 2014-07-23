@@ -6,9 +6,14 @@
   %h3.text-center= link_to event.name, event_path(event)
   .row
     .col-sm-4
-      = link_to image_tag(event.image, class: "event_avatar"), event_path(event)
       -if event.sponsored
-        .text-center= image_tag(asset_path('award_ribbon_red.png'), class: 'sponsor-badge')
+        = link_to event_path(event) do
+          %span.photo
+            %a.sponsor-link{href: event_path(event)}
+              %img.sponsor-img{alt: "", src: asset_path(event.image)}/
+              %ins.ins
+      -else
+        = link_to image_tag(event.image, class: "event_avatar"), event_path(event)
     .col-sm-4.event-data
       %strong=  t('events.when')
       =event.formatted_time

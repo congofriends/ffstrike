@@ -418,3 +418,31 @@ ul { list-style-type: none; }
 .network-button, .events-button{
   text-decoration: none !important;
 }
+
+.photo {
+    display: block;
+    text-align: center;
+    line-height: 158px;
+    margin-bottom: 10px;
+}
+a.sponsor-link {
+    display: inline-block;
+    position: relative;
+    line-height: 0;
+}
+img.sponsor-img  {
+    border: none;
+    vertical-align: middle;
+    width: 100%;
+}
+ins.ins {
+    background: url(<%= asset_path "star.png" %>) no-repeat 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px;
+    background-position:center;
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+}

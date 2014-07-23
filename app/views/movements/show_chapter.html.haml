@@ -9,9 +9,13 @@
     =link_to (image_tag @movement.image, :class => 'movement_avatar'), root_path
   .row
     .col-sm-6
-      =image_tag @movement.avatar, class: "movement_avatar"
       -if @movement.sponsored
-        .text-center= image_tag(asset_path('award_ribbon_red.png'), class: 'sponsor-badge')
+        %span.photo
+          %a.sponsor-link{href: ""}
+            %img.sponsor-img{alt: "", src: asset_path( @movement.avatar)}/
+            %ins.ins
+      -else
+        =image_tag @movement.avatar, class: "movement_avatar"
       - unless !@movement.website || @movement.website.empty?
         %h4.text-center Website
         .text-center=link_to @movement.website, "http://#{@movement.website}"
