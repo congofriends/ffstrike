@@ -10,7 +10,7 @@ class Movement < ActiveRecord::Base
 
   has_attached_file :image,
                     :styles => { :medium => '280x150', :thum => '50x50' },
-                    :default_url => 'congo_banner.jpg'
+                    :default_url => 'congoWeek.jpg'
 
 
   validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
