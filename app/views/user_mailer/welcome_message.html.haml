@@ -5,7 +5,13 @@ Thank you for signing up to attend #{@event.name} on #{@event.start_time_formatt
 %br/
 %br
 
-Take one quick minute to make an even bigger impact? Help spread the word about Congo Week on Twitter and Facebook using the hashtag #CongoWeek or #CongoWeek2014
+Take one quick minute to make an even bigger impact? Help spread the word about Congo Week on
+=succeed "." do
+	%a{href: "http://twitter.com/home?status=Support%20Friends%20of%20the%20Congo%20during%20Congo%20Week!%20@congofriends%20@kambale%20#{event_url(@event, {:locale => I18n.locale})}" } Twitter
+and
+=succeed "." do
+	%a{href: "https://www.facebook.com/sharer/sharer.php?u=#{event_url(@event, {:locale => I18n.locale})}"} Facebook
+using the hashtag #CongoWeek or #CongoWeek2014
 %br/
 %br
 Please save this email so you have your event details available.
@@ -15,11 +21,12 @@ Thank you for your support,
 Congo Week Organizer
 %br/
 %br
-P.S. If you want to access your profile, use this email address and the password (we sent you one when you signed up, but if you forgot you can reset it) at (link). There, you can manage your events and sign up to volunteer.
 You can find out more about #{@event.name} by clicking
 = succeed "." do
 	%a{href: event_url(@event, {:locale => I18n.locale}) } here
 %br/
 - unless @password.empty?
+	If you want to access your profile, use this email address and password.  There, you can manage your events and sign up to volunteer.
+
 	Your password is:
 	%strong= @password
