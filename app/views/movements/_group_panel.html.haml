@@ -6,7 +6,6 @@
 					%img.group-image.movement_avatar{alt: "", src: asset_path(chapter.avatar)}/
 					%ins.ins
 					.text-center.group-name= chapter.name
-
 	-else
 		= link_to movement_path(chapter) do
 			.group-image= image_tag chapter.avatar, :class => "movement_avatar group-image"

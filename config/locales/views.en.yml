@@ -43,7 +43,7 @@ en:
       tab_tasks: "Tasks"
       tab_attendees: "Attendees"
     tab_attendees:
-      yes: 'popo'
+      yes: 'Yes'
       no: 'No'
       export_attendees: *export_attendees
       contact_attendees: "CONTACT ATTENDEES"
