@@ -78,7 +78,7 @@ Ffstrike::Application.configure do
   # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.action_controller.asset_host = "d9lgh1obsq5j5.cloudfront.net"
+  config.action_controller.asset_host = "d1fev4ysucizmd.cloudfront.net"
 
   # SIDEKIQ CONFIG
   # config.queue = ActiveSupport::Queue.new
