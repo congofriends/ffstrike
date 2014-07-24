@@ -185,7 +185,7 @@ development:
   <<: *default_settings
   # Turn on communication to New Relic service in development mode
   monitor_mode: true
-  app_name: My Application (Development)
+  app_name: shift-engage (Development)
 
   # Rails Only - when running in Developer Mode, the New Relic Agent will
   # present performance information on the last 100 transactions you have
@@ -207,6 +207,8 @@ test:
 production:
   <<: *default_settings
   monitor_mode: true
+  app_name: shift-engage (Production)
+  license_key: '71c8ca5059e6f961d69ac7b8b9ab83095decc9f7'
 
 # Many applications have a staging environment which behaves
 # identically to production. Support for that environment is provided
@@ -214,4 +216,5 @@ production:
 staging:
   <<: *default_settings
   monitor_mode: true
-  app_name: My Application (Staging)
+  app_name: shift-engage (Staging)
+  license_key: '1d65ea08951d40a0a61ec31d56c8d377edd47cdc'
