@@ -12,7 +12,7 @@ es:
   events:
     host_btn: "ANFITRIÓN DE UN EVENTO"
     unattend_btn: "EVENTO UNATTEND"
-    volunteer_status: "DÍA TÍPICO ESTADO"
+    volunteer_status: "Estoy interesado en ser voluntario"
     show_btn: "MOSTRAR"
     host_link: "Haga clic aquí para crear tu propia."
     search_placeholder: "Búsqueda por ciudad, estado o código postal"

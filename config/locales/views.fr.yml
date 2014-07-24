@@ -12,7 +12,7 @@ fr:
   events:
     host_btn: *host_event
     unattend_btn: UNATTEND événement
-    volunteer_status: "VOLUTEER STATUT"
+    volunteer_status: "Je suis intéressé à faire du bénévolat"
     show_btn: "AFFICHER"
     host_link: "Cliquez ici pour héberger votre propre événement."
     search_placeholder: "Rechercher des événements par ville, état ou Code Postal"

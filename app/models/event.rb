@@ -54,7 +54,7 @@ class Event < ActiveRecord::Base
   end
 
   def self.public_events
-    Event.where("start_time > ? AND approved = ?", Date.today, true)
+    Event.where("start_time > ? AND approved = ?", Date.today, true).sort_by &:start_time 
   end
 
   def type

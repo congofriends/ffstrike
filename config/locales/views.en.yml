@@ -12,7 +12,7 @@ en:
   events:
     host_btn: *host_event
     unattend_btn: "UNATTEND EVENT"
-    volunteer_status: "VOLUNTEER STATUS"
+    volunteer_status: "I'm interested in volunteering"
     show_btn: "SHOW"
     host_link: "Click here to host your own."
     search_placeholder: "Search Events by City, State or Zip Code"
