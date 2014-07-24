@@ -4,21 +4,22 @@ Ffstrike::Application.routes.draw do
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   #home
   root 'movements#index'
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "users", :invitations => 'users/invitations'  }
 
   scope "(:locale)", locale: /en|fr|es/ do
   # devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "users", :invitations => 'users/invitations'  }
-    devise_for :users, skip: :omniauth_callbacks , :controllers => { :registrations => "users", :invitations => 'users/invitations'  }
-    match "/users/auth/:provider",
-      constraints: { provider: /facebook/ },
-      to: "omniauth_callbacks#passthru",
-      as: :user_omniauth_authorize,
-      via: [:get, :post]
+    # devise_for :users, skip: :omniauth_callbacks , :controllers => { :registrations => "users", :invitations => 'users/invitations'  }
+    # match "/users/auth/:provider",
+    #   constraints: { provider: /facebook/ },
+    #   to: "omniauth_callbacks#passthru",
+    #   as: :user_omniauth_authorize,
+    #   via: [:get, :post]
 
-    match "/users/auth/:action/callback",
-      constraints: { action: /facebook/ },
-      to: "omniauth_callbacks",
-      as: :user_omniauth_callback,
-      via: [:get, :post]
+    # match "/users/auth/:action/callback",
+    #   constraints: { action: /facebook/ },
+    #   to: "omniauth_callbacks",
+    #   as: :user_omniauth_callback,
+    #   via: [:get, :post]
 
     get 'about' => 'static_pages#about',  as: 'about'
     get 'template' => 'static_pages#template',  as: 'template'
