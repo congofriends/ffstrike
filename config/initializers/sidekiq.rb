@@ -21,3 +21,4 @@ if ENV["RAILS_ENV"] == "production"
 	  [user, password] == ["FOTCadmin", ENV["SIDEKIQ_PASS"]]
 	end
 end
+
