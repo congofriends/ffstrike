@@ -7,7 +7,7 @@
         =t('.not_user_msg')
         = link_to t('.here'), destroy_user_session_path, method: :delete
   .panel-body
-    -if @user.phone.empty?
+    -if @user.phone && @user.phone.empty?
       .form-group.label-field
         = f.label t('.phone')
         = f.text_field :phone, class: "form-control"
