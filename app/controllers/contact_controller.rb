@@ -1,9 +1,9 @@
 class ContactController < ApplicationController
   before_filter :load_message
+  before_filter :load_event, :only => [:new_event_msg, :new_attendees_msg]
+  before_filter :load_group, :only => [:new_coordinator_attendee_msg, :new_coordinator_hosts_msg]
 
-  def new_event_msg
-    @event = Event.find_by_param(params[:id])
-  end
+  def new_event_msg; end
 
   def create_event_msg
     @event =  Event.find @message.host_id
@@ -14,17 +14,11 @@ class ContactController < ApplicationController
     end
   end
 
-  def new_attendees_msg
-    @event = Event.find_by_param(params[:id])
-  end
+  def new_attendees_msg; end
 
-  def new_coordinator_attendee_msg
-    @group = Movement.find_by_param(params[:id])
-  end
+  def new_coordinator_attendee_msg; end
 
-  def new_coordinator_hosts_msg
-    @group = Movement.find_by_param(params[:id])
-  end
+  def new_coordinator_hosts_msg; end
 
   def create_attendees_msg
     @event =  Event.find @message.host_id
@@ -48,6 +42,14 @@ class ContactController < ApplicationController
   end
 
   private
+
+  def load_event
+    @event = Event.find_by_param params[:id]
+  end
+
+  def load_group
+    @group = Movement.find_by_param params[:id]
+  end
 
   def load_message
     @message ||=
