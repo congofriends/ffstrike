@@ -5,8 +5,8 @@
 				%table.table.table-bordered.table-striped.sortable#group-events-table
 					%tr
 						%th= t('.event_name')
-						%th= t('.when')
 						%th= t('.where')
+						%th= t('.when')
 						%th= t('.status')
 						- if current_user.super_admin?
 							%th= t('.approved')

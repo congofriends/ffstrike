@@ -45,7 +45,7 @@ en:
         surname: "Last Name"
         email: "Email"
         phone: "Phone Number"
-        textable: "I would like to receive text updates"
+        textable: "I would like to receive text updates from Friends of the Congo"
         confirmation_msg: "Currently waiting confirmation for: %{unconfirmed_email}"
         current_pass: "Current Password"
         pass_msg: "(we need your current password to confirm your changes)"

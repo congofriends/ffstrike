@@ -43,7 +43,7 @@ es:
         surname: "Nombre de familia"
         email: "El correo electrónico:"
         phone: "Número de teléfono"
-        textable: "Me gustaría recibir actualizaciones de texto"
+        textable: "Me gustaría recibir actualizaciones de texto de Amigos del Congo"
         confirmation_msg: "Actualmente están a la espera de confirmación: %{unconfirmed_email}"
         current_pass: "Contraseña Actual"
         pass_msg: "(necesitamos la contraseña actual para confirmar los cambios)"
