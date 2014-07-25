@@ -2,7 +2,7 @@ class UserMailer < ActionMailer::Base
   # self.queue = MailerQueue.new
   default from: "coordinator@congoevents.org"
 
-  def delete_event_message(event_id, attendee_email)
+  def delete_event_message(event_id)
     @event = Event.find event_id
     @attendee_emails = []
     @event.attendees.each { |attendee| @attendee_emails << attendee.email }
@@ -54,8 +54,6 @@ class UserMailer < ActionMailer::Base
     @event = Event.find event_id
     mail(to: @recipient.email, subject: "Event #{@event.name} Created Successfully").deliver
   end
-
-
 
 # not being used?
   # def notify_host_of_event_size(event_id)

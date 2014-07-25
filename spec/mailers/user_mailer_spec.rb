@@ -97,10 +97,10 @@ describe UserMailer do
 
   describe "#delete_event_message" do
 
-    let(:mail) { UserMailer.delete_event_message(event, user_attendee.email) }
+    let(:mail) { UserMailer.delete_event_message(event.id) }
 
     it "sends to attendees" do
-      mail.to.should eq [user_attendee.email]
+      mail.to.should eq [event.host.email]
     end
     it "has correct body" do
       mail.body.encoded.should include "We're sorry, your event,"

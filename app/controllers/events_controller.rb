@@ -80,7 +80,7 @@ class EventsController < ApplicationController
     @event = @movement.events.build(event_params)
     if @event.save
       clear_fields_on_tbd
-      NewEventMailWorker.perform_async(current_user.id, @event.id) if current_user
+      NewEventMailWorker.perform_async(current_user.id, @event.id) if ENV["RAILS_ENV"] == "production"
       @event.assign_host_and_approve(current_user)
       if @movement.users.include?(current_user)
         redirect_to explanation_path(@event), notice: t('event.created') and return
@@ -121,7 +121,7 @@ class EventsController < ApplicationController
 
   def destroy
     authenticate_user!
-      UserMailer.delete_event_message(@event.id, attendee.email)
+      UserMailer.delete_event_message(@event.id)
 
     @event.destroy
     respond_to do |format|
