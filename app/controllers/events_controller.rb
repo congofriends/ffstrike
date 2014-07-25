@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       unless @events.empty?
         @events = (@events.public_events << @events.where(start_time: nil)).flatten
-        @coordinates = Geocoder.coordinates(params[:zip]) 
+        @coordinates = Geocoder.coordinates(params[:zip])
         load_map_vars
         format.html {redirect_to movement_events_path}
         format.js
@@ -98,6 +98,7 @@ class EventsController < ApplicationController
     redirect_to new_user_session_path and return unless current_user
     @events = current_user.events_owned
     @event = Event.find params[:name][:id] if params[:name] && (Event.where(id: params[:name][:id]).count > 0)
+    redirect_to root_path and return unless @event && @events.include?(@event)
     respond_to do |format|
       format.html {render action: 'my_events'}
       format.js

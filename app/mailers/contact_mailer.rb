@@ -1,8 +1,8 @@
 class ContactMailer < ActionMailer::Base
   # self.queue = MailerQueue.new
   # may not work because passing in message object
-  default :from => "attendee@events.com"
-  default :to => "host@events.com"
+  default :from => "attendee@congoevents.org"
+  default :to => "host@congoevents.org"
 
   def new_message(message)
   	@event = Event.find(message.host_id)

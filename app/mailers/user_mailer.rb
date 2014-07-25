@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
   # self.queue = MailerQueue.new
-  default from: "coordinator@events.com"
+  default from: "coordinator@congoevents.org"
 
   def delete_event_message(event_id, attendee_email)
     @event = Event.find event_id
