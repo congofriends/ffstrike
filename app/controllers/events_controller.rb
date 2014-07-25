@@ -96,7 +96,7 @@ class EventsController < ApplicationController
   end
 
   def my_events
-    redirect_to new_user_session_path and return unless current_user
+    redirect_to root_path and return unless current_user
     @events = current_user.events_owned
     @event = (params[:name] && (Event.where(id: params[:name][:id]).count > 0)) ? (Event.find params[:name][:id]) : @events.first
     redirect_to root_path and return unless @events.include?(@event)
