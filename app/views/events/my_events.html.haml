@@ -19,8 +19,8 @@
 
   .tab-content
     .tab-pane.fade.in#event
-      = render "tab_event", event: @event || @events.first
+      = render "tab_event", event: @event
     .tab-pane.fade.in#tasks
-      = render "tab_tasks", event: @event || @events.first
+      = render "tab_tasks", event: @event
     .tab-pane.fade.in#attendees
-      = render "tab_attendees", event: @event || @events.first
+      = render "tab_attendees", event: @event

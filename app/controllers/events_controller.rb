@@ -7,6 +7,7 @@ class EventsController < ApplicationController
   include ZipHelper
 
   def new
+    redirect_to new_user_session_path and return unless current_user
     @event = Event.new
   end
 
@@ -79,7 +80,7 @@ class EventsController < ApplicationController
     @event = @movement.events.build(event_params)
     if @event.save
       clear_fields_on_tbd
-      UserMailer.event_creation_message(current_user.id, @event.id) if current_user
+      NewEventMailWorker.perform_async(current_user.id, @event.id) if current_user
       @event.assign_host_and_approve(current_user)
       if @movement.users.include?(current_user)
         redirect_to explanation_path(@event), notice: t('event.created') and return
@@ -97,8 +98,8 @@ class EventsController < ApplicationController
   def my_events
     redirect_to new_user_session_path and return unless current_user
     @events = current_user.events_owned
-    @event = Event.find params[:name][:id] if params[:name] && (Event.where(id: params[:name][:id]).count > 0)
-    redirect_to root_path and return unless @event && @events.include?(@event)
+    @event = (params[:name] && (Event.where(id: params[:name][:id]).count > 0)) ? (Event.find params[:name][:id]) : @events.first
+    redirect_to root_path and return unless @events.include?(@event)
     respond_to do |format|
       format.html {render action: 'my_events'}
       format.js
@@ -106,8 +107,6 @@ class EventsController < ApplicationController
   end
 
   def search
-    #FIXME: refactor this method here and in the movements_controller, currently it
-    #is just clear duplication
     @zip ||= extract_zip(params[:zip]) if valid_zip(params[:zip])
     @events = Event.near_zip(@zip, 200)
   end
@@ -122,11 +121,7 @@ class EventsController < ApplicationController
 
   def destroy
     authenticate_user!
-
-    #todo: move to queue!
-    @event.attendees.each do |attendee|
       UserMailer.delete_event_message(@event.id, attendee.email)
-    end
 
     @event.destroy
     respond_to do |format|

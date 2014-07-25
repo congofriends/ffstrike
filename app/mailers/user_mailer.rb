@@ -4,8 +4,9 @@ class UserMailer < ActionMailer::Base
 
   def delete_event_message(event_id, attendee_email)
     @event = Event.find event_id
-
-    mail(to: attendee_email, subject: "Your event has been canceled.").deliver
+    @attendee_emails = []
+    @event.attendees.each { |attendee| @attendee_emails << attendee.email }
+    mail(to: @event.host.email, bcc: @attendee_emails, subject: "Your event has been canceled.").deliver
   end
 
   def task_signup_message(event_id, task_id, attendee_id)
