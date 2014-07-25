@@ -4,6 +4,7 @@ class Devise::RegistrationsController < DeviseController
 
   # GET /resource/sign_up
   def new
+    # redirect_to root_path if current_user
     build_resource({})
     respond_with self.resource
   end
