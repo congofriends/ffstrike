@@ -124,8 +124,8 @@ es:
       home: 'Inicio'
     footer:
       about: 'ACERCA'
-      template: 'PLANTILLA'
-      media: 'MEDIOS'
+      template: 'TEMAS'
+      media: 'HERRAMIENTAS'
     navbar:
       my_profile: 'Mi perfil'
       manage_my_groups: 'Administrar Mis Equipos'
