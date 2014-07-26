@@ -43,6 +43,5 @@ include Rspec::Matchers
     expect(find('#home').text).to eql(I18n.t('layouts.breadcrumb.home', locale: locale))
     expect(find('#sign-in').text).to eql(I18n.t('layouts.navbar.sign_in', locale: locale))
     expect(find('#about').text).to eql(I18n.t('layouts.footer.about', locale: locale))
-    expect(find('#quote').text).to eql(I18n.t('movements.show.quote', locale: locale))
   end
 end
