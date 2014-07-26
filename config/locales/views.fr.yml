@@ -121,11 +121,12 @@ fr:
       create_btn: "Créer une nouvelle tâche"
   layouts:
     breadcrumb:
-      home: 'Maison'
+      home: 'MAISON'
     footer:
       about: 'À PROPOS'
       template: 'THÈMES'
       media: 'OUTILS'
+      donate: 'FAITES UN DON'
     navbar:
       my_profile: 'Mon profil'
       manage_my_groups: 'Gérer mes équipes'

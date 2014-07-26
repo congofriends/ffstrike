@@ -121,11 +121,12 @@ es:
       create_btn: "CREAR UNA NUEVA TAREA"
   layouts:
     breadcrumb:
-      home: 'Inicio'
+      home: 'INICIO'
     footer:
       about: 'ACERCA'
       template: 'TEMAS'
       media: 'HERRAMIENTAS'
+      donate: 'COLABORE'
     navbar:
       my_profile: 'Mi perfil'
       manage_my_groups: 'Administrar Mis Equipos'
