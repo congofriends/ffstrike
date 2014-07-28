@@ -83,7 +83,7 @@ en:
     interfaith_prayer_vigil:
       short_description:
       full_description:
-    own_event:
+    other:
       short_description: "Have an idea for a creative event? Use this tool to create tasks and assign them"
       full_description: "Have an idea for a creative event? Use this tool to create tasks and assign them."
   host_tasks:

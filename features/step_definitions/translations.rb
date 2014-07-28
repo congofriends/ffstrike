@@ -5,11 +5,11 @@ When(/^user visits the home page/) do
 end
 
 When(/^user switches to spanish language/) do
-  click_link_or_button('ES')
+  click_link_or_button('Espagnol')
 end
 
 When(/^user switches to french language/) do
-  click_link_or_button('FR')
+  click_link_or_button('Français')
 end
 
 Then(/^default language is English/) do

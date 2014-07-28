@@ -133,7 +133,7 @@ es:
       manage_my_events: 'Gestionar Mi Eventos'
       create_group: 'Crear equipo'
       create_event: 'Crear Evento'
-      sign_in: 'Inicio de Sesión'
+      sign_in: 'Registrarse/Inicio de Sesión'
       sign_out: 'Salir'
   contact:
     new_event_msg:

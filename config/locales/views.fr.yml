@@ -133,7 +133,7 @@ fr:
       manage_my_events: 'Gérer Mes événements'
       create_group: 'Créer équipe'
       create_event: 'Créer événement'
-      sign_in: 'Signer dans'
+      sign_in: 'Enregistrer/Signer dans'
       sign_out: 'Sign Out'
   contact:
     new_event_msg:

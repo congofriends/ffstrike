@@ -20,7 +20,7 @@ class Event < ActiveRecord::Base
 
   has_attached_file :image,
                     :styles => { :medium => '280x150', :thum => '50x50' },
-                    :default_url => 'fotc.jpg'
+                    :default_url => 'congo.jpg'
 
   validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
   validates_attachment_size :image, :less_than => 5.megabytes
@@ -54,7 +54,7 @@ class Event < ActiveRecord::Base
   end
 
   def self.public_events
-    Event.where("start_time > ? AND approved = ?", Date.today, true).sort_by &:start_time 
+    Event.where("start_time > ? AND approved = ?", Date.today, true).sort_by &:start_time
   end
 
   def type
@@ -149,7 +149,7 @@ class Event < ActiveRecord::Base
       self.attendances.each do |attendance|
       	if attendance.point_person
         	csv << [attendance.user.name, attendance.user.surname, attendance.user.email, attendance.user.phone, attendance.user.volunteer_for(self), attendance.event.name, attendance.event.city, attendance.event.zip] if (attendance.event && attendance.user)
-      	else 
+      	else
       		csv << [attendance.user.name, attendance.user.surname, "N/A", "N/A", attendance.user.volunteer_for(self), attendance.event.name, attendance.event.city, attendance.event.zip] if (attendance.event && attendance.user)
       	end
       end

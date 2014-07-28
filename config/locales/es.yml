@@ -89,7 +89,7 @@ es:
       puede ser un improvisado almuerzo con usted y algunos otros dirigentes o que puede ser un grupo más grande de reunión a la que usted planificar y programar
       semanas de antelación. En primer lugar las reuniones para compartir información, tomar decisiones, o a delegar tareas. Sólo asegúrese de que
       usted tiene un objetivo y una fuerte agenda para mantener las cosas en movimiento (y quizás también tentempiés... )."
-    own_event:
+    other:
       short_description: "Tiene una idea para un acto creador? Utilice esta herramienta para crear tareas y asignarlas"
       full_description: "Tiene una idea para el acto creador? Utilice esta herramienta para crear y asignar tareas."
   host_tasks:

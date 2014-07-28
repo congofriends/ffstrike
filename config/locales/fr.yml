@@ -89,7 +89,7 @@ fr:
       pourrait être une réunion improvisée déjeuner avec vous et quelques autres dirigeants ou il pourrait être un plus grand groupe au grand complet réunion vous planifier et de prévoir
       plusieurs semaines à l'avance. Des réunions pourraient essentiellement à partager des informations, de prendre des décisions, ou de déléguer des tâches. Assurez-vous juste que
       vous avez un but et programme solide pour faire avancer les choses (et peut-être des collations trop ... )."
-    own_event:
+    other:
       short_description: "Ont une idée pour un événement créatif? Utilisez cet outil pour créer des tâches et de les affecter"
       full_description: "Ont une idée pour un événement créatif? Utilisez cet outil pour créer des tâches et de les affecter."
   host_tasks:
