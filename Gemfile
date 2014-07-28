@@ -119,6 +119,8 @@ gem 'slim'
 # Use unicorn as the app server
 gem 'unicorn'
 
+gem 'carmen-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 

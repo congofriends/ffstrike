@@ -43,7 +43,7 @@
                   = text_field :event,:zip, class: 'form-control'
                 .form-group.col-xs-6
                   = label :event, :country, t('events.edit.country') + " *"
-                  = text_field :event, :country, class: 'form-control'
+                  = country_select :event, :country, prompt: 'Please select a country', class: 'form-control'
               .form-group
                 = label :event, :location_tbd, "Address To Be Determined"
                 = check_box :event, :location_tbd, {}, true, false
