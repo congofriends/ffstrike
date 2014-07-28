@@ -6,7 +6,9 @@ class MovementsController < ApplicationController
   include ZipHelper
 
   def index
-    redirect_to movement_path(Movement.first)
+    # redirect_to movement_path(Movement.first)
+    @movement = Movement.first
+    render 'movements/show'
   end
 
   def search

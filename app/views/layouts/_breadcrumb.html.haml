@@ -1,5 +1,5 @@
 .breadcrumb-nav
   %ol.breadcrumb
-    - movement = Movement.where(name: "Friends of the Congo").first
+    - movement = Movement.first
     - unless movement.nil?
-      = link_to t('.home'), movement_path(movement), id: 'home'
+      = link_to t('.home'), root_path, id: 'home'
