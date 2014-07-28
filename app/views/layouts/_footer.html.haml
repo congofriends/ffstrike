@@ -2,9 +2,12 @@
 	.container
 		.footer
 			.row.float_right
-				= link_to t('.template') + " | ", template_path, class: 'header-footer'
-				= link_to t('.media') + " | ", "http://congoweek.org/downloads.html", class: 'header-footer', :target => '_blank'
-				= link_to t('.donate') + " | ", "http://www.friendsofthecongo.org/donate.html", class: 'header-footer', :target => '_blank'
+				= link_to t('.template'), template_path, class: 'header-footer'
+				= "|"
+				= link_to t('.media'), "http://congoweek.org/downloads.html", class: 'header-footer', :target => '_blank'
+				= "|"
+				= link_to t('.donate'), "http://www.friendsofthecongo.org/donate.html", class: 'header-footer', :target => '_blank'
+				= "|"
 				= link_to t('.about'), about_path, class: 'header-footer', id: 'about'
 				= link_to image_tag("fb_logo.png"), "https://www.facebook.com/congofriends", id: 'share-logo', :target => '_blank'
 				= link_to image_tag("twitter_logo.png"), "https://twitter.com/congofriends", id: 'share-logo', :target => '_blank'
