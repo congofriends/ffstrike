@@ -3,7 +3,7 @@
 = content_for :title, @event.name
 
 .container
-  - if current_user && (current_user.volunteer_for @event)
+  - if current_user && (current_user.events_attending.include? @event)
     %h2= t('events.show.task_msg')
     = render template: "tasks/show", locals: {event: @event}
   %br

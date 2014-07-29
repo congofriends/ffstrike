@@ -37,10 +37,6 @@
       = form_tag assign_volunteer_path(attendee_id: current_user.id, event_id: event.id), id: "assign_volunteer#{event.id}", method: :put, remote: true do
         = label_tag(t('events.volunteer_status'))
         = check_box :event, :assigned, checked: current_user.volunteer_for(event), onclick: "$('#assign_volunteer#{event.id}').submit()"
-    - unless current_user.volunteer_for(event)
-      :javascript
-        $("#tasks_for_event_\#{event.id}").addClass("hide");
-
     .row{id: "tasks_for_event_#{event.id}"}
       .col-sm-10
         %h2=  t('events.tasks_signed_up')
