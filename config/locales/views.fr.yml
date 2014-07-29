@@ -134,8 +134,9 @@ fr:
       manage_my_events: 'Gérer Mes événements'
       create_group: 'Créer équipe'
       create_event: 'Créer événement'
-      sign_in: 'Enregistrer/Signer dans'
-      sign_out: 'Sign Out'
+      sign_in: 'Log in'
+      sign_up: 'Sign up'
+      sign_out: 'Sign out'
   contact:
     new_event_msg:
       contact_host_for: "Contactez l'hôte de:"

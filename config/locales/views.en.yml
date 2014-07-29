@@ -135,7 +135,8 @@ en:
       manage_my_events: 'Manage My Events'
       create_group: 'Create Team'
       create_event: 'Create Event'
-      sign_in: 'Register/Sign in'
+      sign_in: 'Log in'
+      sign_up: 'Sign up'
       sign_out: 'Sign Out'
   contact:
     new_event_msg:
