@@ -4,8 +4,6 @@
     = image_tag asset_path("fotc_banner_#{I18n.locale}.jpg"),:class => "movement_avatar"
   .row
     .col-sm-6.events-button
-      = link_to movement_events_path(@movement),  class: 'events-button' do
-        .events-btn-img
+      = link_to (image_tag asset_path("events-btn_#{I18n.locale}.jpg"), :class => 'events-button'), movement_events_path(@movement)
     .col-sm-6.network-button
-      = link_to support_network_movement_path(@movement), class: 'network-button' do
-        .network-btn-img
+      = link_to (image_tag asset_path("networks-btn_#{I18n.locale}.jpg"), :class => 'network-button'),support_network_movement_path(@movement)
