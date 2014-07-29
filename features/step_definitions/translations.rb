@@ -5,7 +5,7 @@ When(/^user visits the home page/) do
 end
 
 When(/^user switches to spanish language/) do
-  click_link_or_button('Espagnol')
+  click_link_or_button('Español')
 end
 
 When(/^user switches to french language/) do

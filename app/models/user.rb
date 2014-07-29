@@ -96,7 +96,7 @@ class User < ActiveRecord::Base
   end
 
   def super_admin?
-    Movement.find_by_name("Friends of the Congo").ownerships.map(&:user_id).include?(self.id)
+    Movement.find_by_name("Congo Week").ownerships.map(&:user_id).include?(self.id)
   end
 
 

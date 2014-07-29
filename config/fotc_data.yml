@@ -5,7 +5,7 @@ fotc_coordinator:
   password_confirmation: "password"
 
 fotc:
-  name: "Friends of the Congo"
+  name: "Congo Week"
   tagline: "Crisis in the Congo: Uncovering the Truth"
   call_to_action: "Raising consciousness about the challenge of the Congo and supporting Congolese institutions as they strive to bring about peaceful and lasting change"
   published: true
