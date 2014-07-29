@@ -75,6 +75,7 @@ Ffstrike::Application.routes.draw do
 
     #export CSV
     get 'export_csv/:id' => 'movements#export_csv', as: 'export_csv'
+    get 'export_hosts_csv/:id' => 'movements#export_hosts_csv', as: 'export_hosts_csv'
     get 'export_attendees/:id' => 'events#export_attendees', as: 'export_event_attendees'
 
       # match 'contact' => 'contact#new', :as => 'new_contact', :via => :get

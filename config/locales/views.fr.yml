@@ -35,6 +35,7 @@ fr:
     email: *email
     phone: *phone
     point: *point
+    volunteer: Bénévole
     notes: "Notes (Cliquez pour modifier)"
     tab_attendees:
       yes: 'Oui'
@@ -166,6 +167,7 @@ fr:
       invite_coordinators: "INVITER COORDONNATEURS"
       email_attendees: "E-MAIL AUX PARTICIPANTS"
       email_hosts: "HÔTES E-MAIL"
+      export_hosts: "Hôtes à L'exportation"
       export_attendees: *export_attendees
       name_cl: *name
       group_cl: 'Groupe'

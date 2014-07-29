@@ -97,4 +97,14 @@ class Movement < ActiveRecord::Base
       end
     end
   end
+
+  def hosts_to_csv
+    CSV.generate do |csv|
+      column_names = ["Name", "Email", "Phone", "Event", "City", "Zip"]
+      csv << column_names
+      self.events.each do |event|
+        csv << [event.host.full_name, event.host.email, event.host.phone, event.name, event.city, event.zip]
+      end
+    end
+  end
 end

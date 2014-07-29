@@ -80,6 +80,10 @@ class MovementsController < ApplicationController
     send_data @movement.to_csv, filename: "#{@movement.name} attendee-list.csv"
   end
 
+  def export_hosts_csv
+    send_data @movement.hosts_to_csv, filename: "#{@movement.name} host-list.csv"
+  end
+
   def publish
     @movement.publish
     respond_to do |format|

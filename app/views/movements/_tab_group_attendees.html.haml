@@ -20,6 +20,10 @@
             %td= ownership.user.email
             %td= ownership.user.phone
 
+    = link_to_modal t('.invite_coordinators'), new_user_invitation_path({mvmt_id: @group.id}), class: 'btn ctrl-btn'
+    %br
+    %br
+
     %h3
       =t('.hosts')
     %table.table.table-bordered.table-striped.sortable#group-attendees-table
@@ -38,6 +42,11 @@
           %td= link_to event.name, event_path(event)
           %td= event.host.email
           %td= event.host.phone
+
+    = link_to t('.export_hosts'), export_hosts_csv_path(@group), class: 'btn ctrl-btn'
+    = link_to_modal t('.email_hosts'), new_coordinator_hosts_msg_path(@group), class: 'btn ctrl-btn'
+    %br
+    %br
 
     %h3
       =t('.attendees')
@@ -59,7 +68,5 @@
             %td= attendee.email if attendee.volunteer_for(event) || current_user.super_admin?
             %td= attendee.phone if attendee.volunteer_for(event) || current_user.super_admin?
 
-= link_to_modal t('.invite_coordinators'), new_user_invitation_path({mvmt_id: @group.id}), class: 'btn ctrl-btn'
-= link_to t('.export_attendees'), export_csv_path(@group), class: 'btn ctrl-btn'
-= link_to_modal t('.email_hosts'), new_coordinator_hosts_msg_path(@group), class: 'btn ctrl-btn'
-= link_to_modal t('.email_attendees'), new_coordinator_attendee_msg_path(@group),  class: 'btn ctrl-btn' 
+    = link_to t('.export_attendees'), export_csv_path(@group), class: 'btn ctrl-btn'
+    = link_to_modal t('.email_attendees'), new_coordinator_attendee_msg_path(@group),  class: 'btn ctrl-btn'
