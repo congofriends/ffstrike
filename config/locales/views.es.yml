@@ -169,6 +169,7 @@ es:
       email_hosts: "Correo electrónico Hosts"
       export_hosts: "Anfitriones de Exportación"
       export_attendees: *export_attendees
+      export_all: "EXPORTAR TODO APOYO"
       name_cl: *name
       group_cl: 'Grupo'
       event_cl: 'Evento'

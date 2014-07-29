@@ -107,4 +107,15 @@ class Movement < ActiveRecord::Base
       end
     end
   end
+
+  def all_to_csv
+    CSV.generate do |csv|
+      column_names = ["Name", "Surname", "Email", "Phone", "Coordinator", "Host", "Attendee", "Date Signed Up"]
+      csv << column_names
+      User.all.each do |user|
+        csv << [user.name, user.surname, user.email, user.phone, user.coordinator?, user.host?, user.attendee?, user.created_at.to_date]
+      end
+    end
+  end
+
 end

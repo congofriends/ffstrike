@@ -51,6 +51,14 @@ class User < ActiveRecord::Base
     nonapproved_events.any? || approved_events.any?
   end
 
+  def coordinator?
+    Ownership.all.map(&:user_id).include?(id)
+  end
+
+  def attendee?
+    Attendance.all.map(&:user_id).include?(id)
+  end
+
   def parent_movements
     self.movements.where(parent_id: nil)
   end

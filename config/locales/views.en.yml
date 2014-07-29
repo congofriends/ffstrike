@@ -169,6 +169,7 @@ en:
       email_attendees: "EMAIL ATTENDEES"
       email_hosts: "EMAIL HOSTS"
       export_hosts: "EXPORT HOSTS"
+      export_all: "EXPORT ALL SUPPORTERS"
       export_attendees: *export_attendees
       name_cl: *name
       group_cl: 'Team'
