@@ -184,9 +184,8 @@ fr:
     - 'Optional: Bring snacks or assign someone to snacks.'
     - 'Optional: Assign a notetaker to take notes and distribute them after the meeting.'
     - 'Optional: Assign a timekeeper to keep things moving.'
-    own_event:
-    - Go to coordinator dashboard and create tasks you think will help to run successful
-      event
+    other:
+    - Go to coordinator dashboard and create tasks you think will help to run a successful event
   attendees_tasks:
     rally:
     - Look up media outlets in your area

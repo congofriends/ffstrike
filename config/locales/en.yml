@@ -145,8 +145,8 @@ en:
       - 'Spread the word among organizations in your community or on your campus'
       - 'Send an alert to local press'
       - 'Organize your materials for the day of. You will want postcard petitions, DVDs to be distributed, sign in sheet or computer for people to sign in at your event, fact sheets, pens, and snacks (optional). (http://congoweek.org/downloads.html)'
-    own_event:
-      - 'Go to coordinator dashboard and create tasks you think will help to run successful event'
+    other:
+      - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
   attendees_tasks:
     rally:
       - 'Make a sign to support peace and justice in the Congo (for example: Demand Peace for Congo, Congo We Believe, Justice for Congo Now'
