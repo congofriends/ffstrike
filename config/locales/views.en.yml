@@ -284,6 +284,18 @@ en:
       volunteer: "I'd like to volunteer for this event!"
       sign_up: "Sign me up!"
       follow_up_msg: "Expect to hear from the host with event updates"
+  validations:
+    name: "Name is required"
+    email: "Email is required"
+    subject: "Subject is required"
+    body: "Body is required"
+    password: "Password is required"
+    current_pass: "Confirmation Password must equal Password"
+    valid_email: "Please enter a valid email address"
+    first_name: "First Name is required"
+    surname: "Surname is required"
+    existing_email: "Email is already in use"
+    existing_name: "Name is already in use"
   static_pages:
     about:
       header1: "Background"

@@ -10,12 +10,12 @@
             email: true }
         },
         messages: {
-          'user[name]': "Name is required",
-          'user[password]': "Password is required",
-          'user[password_confirmation]': "Confirmation Password must equal Password",
+          'user[name]': "#{t('validations.name') }",
+          'user[password]': "#{t('validations.password') }",
+          'user[password_confirmation]': "#{t('validations.current_pass') }" ,
           'user[email]': {
-            required: "Email is required",
-            email: "Please enter a valid email address"}
+            required: "#{t('validations.email') }",
+            email: "#{t('validations.valid_email') }"}
         },
         errorElement: "div",
         errorClass: "text-danger",

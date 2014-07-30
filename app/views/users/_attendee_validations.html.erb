@@ -4,18 +4,18 @@
         rules: {
           'user[name]': { required: true },
           'user[surname]': { required: true },
-          'user[email]': { 
+          'user[email]': {
             required: true,
             email: true,
             remote: "/check_email" }
         },
         messages: {
-          'user[name]': "First Name is required",
-          'user[surname]': "Last Name is required",
+          'user[name]': "<%= t('validations.first_name') %>",
+          'user[surname]': "<%= t('validations.surname') %>",
           'user[email]': {
-            required: "Email is required",
-            email: "Please enter a valid email address",
-            remote: "Email is already in use"}
+            required: "<%= t('validations.email') %>",
+            email: "<%= t('validations.valid_email') %>",
+            remote: "<%= t('validations.existing_email') %>"}
         },
         errorElement: "div",
         errorClass: "text-danger",

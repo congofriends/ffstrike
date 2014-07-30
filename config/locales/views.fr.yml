@@ -297,6 +297,18 @@ fr:
       volunteer: "J'aimerais faire du bénévolat pour cet événement!"
       sign_up: "Inscrivez-moi!"
       follow_up_msg: "Attendez-vous à entendre de l'hôte des mises à jour de l'événement"
+  validations:
+    name: "Le nom est obligatoire"
+    email: "Email est nécessaire"
+    subject: "Sous réserve est nécessaire"
+    body: "Le corps est nécessaire"
+    password: "Mot de passe est nécessaire"
+    current_pass: "Confirmation mot de passe doit être égal Mot de passe"
+    valid_email: "S'il vous plaît entrer une adresse email valide"
+    first_name: "Prénom est nécessaire"
+    surname: "Nom est nécessaire"
+    existing_email: "Le courrier électronique est déjà en cours d'utilisation"
+    existing_name: "Nom est déjà en cours d'utilisation"
   static_pages:
     about:
       header1: "Contexte"

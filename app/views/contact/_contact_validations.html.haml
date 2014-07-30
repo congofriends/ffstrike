@@ -8,10 +8,10 @@
           'message[body]': { required: true }
         },
         messages: {
-          'message[name]': "Name is required",
-          'message[email]': "Email is required",
-          'message[subject]': "Subject is required",
-          'message[body]': "Body is required"
+          'message[name]':  "#{t('validations.name') }",
+          'message[email]':  "#{t('validations.email')}",
+          'message[subject]':  "#{t('validations.subject')}",
+          'message[body]':  "#{t('validations.body')}"
         },
         errorElement: "div",
         errorClass: "text-danger",
