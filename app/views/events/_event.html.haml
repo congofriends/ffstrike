@@ -3,18 +3,16 @@
   %meta{property: "og:url", content: request.original_url}
   %meta{property: "og:image", content: event.image}
 .row
-  .col-sm-10
-    %h3= link_to event.name, event_path(event)
-.row
   .col-sm-4
     -if event.sponsored
       = link_to event_path(event) do
-        %span.photo
-          %a.sponsor-link{href: event_path(event)}
-            %img.sponsor-img{alt: "", src: asset_path(event.image)}/
-            %ins.ins
+        %a.sponsor-link{href: event_path(event)}
+          %img.sponsor-img{alt: "", src: asset_path(event.image)}/
+          %ins.ins
     -else
       = link_to image_tag(event.image, class: "event_avatar"), event_path(event)
+  .col-sm-8
+    %h3= link_to event.name, event_path(event)
   .col-sm-4.event-data
     %strong=  t('events.when')
     =event.formatted_time
