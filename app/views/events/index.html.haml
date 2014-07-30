@@ -2,16 +2,16 @@
   .row
     =link_to (image_tag asset_path("fotc_banner_#{I18n.locale}.jpg"),:class => "movement_avatar"), root_path
   .row.event-list
-    .form-inline.col-sm-10
+    .form-inline.col-md-6
       = t('events.search_placeholder')
       = form_tag movement_events_path, :method => :get, remote: true do
         = text_field_tag 'zip', value = nil, id: 'query'
         %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
-    .col-sm-2
+    .col-md-6
       -if current_user
         = link_to t('events.host_btn') , new_movement_event_path(@movement), class: 'btn search'
       -else
-        = link_to t('events.host_btn') , new_movement_unauthenticated_event_path(@movement), class: 'btn'
+        = link_to t('events.host_btn') , new_movement_unauthenticated_event_path(@movement), class: 'btn search'
   .row
     %h4#no-results
       = t('events.no_events_msg')
