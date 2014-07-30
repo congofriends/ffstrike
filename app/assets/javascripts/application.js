@@ -15,7 +15,6 @@
 //= require jquery.turbolinks
 //= require best_in_place
 //= require_tree .
-//= require i18n
 //= require jquery.validate
 //= require bootstrap
 //= require sorttable

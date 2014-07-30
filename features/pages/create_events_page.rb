@@ -82,7 +82,7 @@ include Capybara::DSL
 	end
 
 	def navigate_to()
-		name = Movement.last.name
+		name = Movement.first.name
 		visit "/movements/" + name.gsub(/ /, '-')
 		return self
 	end
@@ -94,15 +94,10 @@ include Capybara::DSL
 	end
 
 	def navigate_to_events()
-		name = Movement.last.name
+		name = Movement.first.name
 		visit "/movements/" + name.gsub(/ /, '-') + "/events/"
 		return self
 	end
-
-	# def select_rally
-	#   click_link_or_button('Rally')
-	#   return self
-	# end
 
 	def email_attendees_for_an_event ()
 		name = Event.last.name
