@@ -3,51 +3,58 @@
   %meta{property: "og:url", content: request.original_url}
   %meta{property: "og:image", content: event.image}
 .row
-  %h3.text-center= link_to event.name, event_path(event)
-  .row
-    .col-sm-4
-      -if event.sponsored
-        = link_to event_path(event) do
-          %span.photo
-            %a.sponsor-link{href: event_path(event)}
-              %img.sponsor-img{alt: "", src: asset_path(event.image)}/
-              %ins.ins
-      -else
-        = link_to image_tag(event.image, class: "event_avatar"), event_path(event)
-    .col-sm-4.event-data
-      %strong=  t('events.when')
-      =event.formatted_time
-      %br
-      %br
-      %strong= t('events.where')
-      =event.location
-      = link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"
+  .col-sm-10
+    %h3= link_to event.name, event_path(event)
+.row
+  .col-sm-4
+    -if event.sponsored
+      = link_to event_path(event) do
+        %span.photo
+          %a.sponsor-link{href: event_path(event)}
+            %img.sponsor-img{alt: "", src: asset_path(event.image)}/
+            %ins.ins
+    -else
+      = link_to image_tag(event.image, class: "event_avatar"), event_path(event)
+  .col-sm-4.event-data
+    %strong=  t('events.when')
+    =event.formatted_time
+    .row
+      .spacer10
+      .spacer10
+    %strong= t('events.where')
+    =event.location
+    = link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"
 
-      - if !event.location_details.nil? && current_user
-        %br
-        %br
-        %strong= t('events.location')
-        = event.location_details
-      %br
-      %br
-      - if event.movement
-        %strong= t('events.organized_by')
-        =link_to event.movement.name, movement_path(event.movement)
-      %br
-      %br
-      - unless event.description.nil?
-        %strong= t('events.description')
-        = event.description
-    .col-xs-4.text-center.event-actions
-      -unless event.attended_by? current_user
-        = link_to_modal t('events.attend_btn'), new_attendee_user_path({:event => event.id}), {class: "btn btn-attend"}
-        %br
-        %br
-      -unless event.host? current_user
-        =link_to_modal t('events.contact_host_btn'), new_contact_path(event), {class: "btn"}
-    .col-xs-4#flyer_download
-      %strong= t('events.flyer_msg')
-      %div= t('events.flyer_dl')
-      %a{download: event.name + "_flyer", href: event.flyer, title: event.name + "_flyer"}
-        %img{alt: event.name + "_flyer", src: asset_path(event.flyer.url), class: "event_flyer"}
-%br
+    - if !event.location_details.nil? && current_user
+      .row
+        .spacer10
+        .spacer10
+      %strong= t('events.location')
+      = event.location_details
+    .row
+      .spacer10
+      .spacer10
+    - if event.movement
+      %strong= t('events.organized_by')
+      =link_to event.movement.name, movement_path(event.movement)
+    .row
+      .spacer10
+      .spacer10
+    - unless event.description.nil?
+      %strong= t('events.description')
+      = event.description
+  .col-md-4.event-actions
+    -unless event.attended_by? current_user
+      = link_to_modal t('events.attend_btn'), new_attendee_user_path({:event => event.id}), {class: "btn btn-attend"}
+      .row
+        .spacer10
+        .spacer10
+    -unless event.host? current_user
+      =link_to_modal t('events.contact_host_btn'), new_contact_path(event), {class: "btn btn-contact" }
+  .col-xs-4#flyer_download
+    %strong= t('events.flyer_msg')
+    %div= t('events.flyer_dl')
+    %a{download: event.name + "_flyer", href: event.flyer, title: event.name + "_flyer"}
+      %img{alt: event.name + "_flyer", src: asset_path(event.flyer.url), class: "event_flyer"}
+%hr
+

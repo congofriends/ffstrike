@@ -3,13 +3,13 @@
   .row
     =link_to (image_tag asset_path("fotc_banner_#{I18n.locale}.jpg"),:class => "movement_avatar"), root_path
   .row.event-list
-    .col-sm-6
+    .col-sm-8
       %h3
         =t('.network_message', number: @support_network.size)
-    .col-sm-2.col-sm-offset-3
+    .col-sm-4
       - if !current_user.nil?
-        =link_to t('.create_team'), new_movement_path({parent_id: @movement.id}), class: 'btn'
+        =link_to t('.create_team'), new_movement_path({parent_id: @movement.id}), class: 'btn btn-host'
       - else
-        =link_to t('.create_team'), new_unauthenticated_submovement_path({parent_id: @movement.id}), class: 'btn'
+        =link_to t('.create_team'), new_unauthenticated_submovement_path({parent_id: @movement.id}), class: 'btn btn-host'
   - @support_network.each do |chapter|
     = render 'group_panel', chapter: chapter
