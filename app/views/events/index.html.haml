@@ -16,7 +16,9 @@
     %h4#no-results
       = t('events.no_events_msg')
       = current_user ? (link_to t('events.host_link'), new_movement_event_path(@movement)) : (link_to t('events.host_link'), new_movement_unauthenticated_event_path(@movement))
-    #map-canvas
+  .row
+    .col-md-12
+      #map-canvas
   %hr
   .event-list.events
     = render partial: 'events/event', collection: @events, as: :event
