@@ -8,7 +8,7 @@
   .row
     =link_to (image_tag asset_path("fotc_banner_#{I18n.locale}.png"),:class => "movement_avatar"), root_path
   .row
-    .col-sm-6
+    .col-xs-6
       -if @movement.sponsored
         %span.photo
           %a.sponsor-link{href: ""}
@@ -48,7 +48,9 @@
         =link_to_modal t('.contact_group_coordinator'), new_mvmt_contact_path(@movement), class: "btn btn-contact"
       .row
         .spacer10
-  =render "social/rrssb"
+  .row
+    .col-md-12
+      =render "social/rrssb"
   .row
   = render partial: 'events/event', collection: @movement.events, as: :event
 
