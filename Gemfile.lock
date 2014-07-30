@@ -160,8 +160,6 @@ GEM
     highline (1.6.21)
     hike (1.2.3)
     i18n (0.6.9)
-    i18n-js (2.1.2)
-      i18n
     i18n-tasks (0.5.4)
       activesupport
       easy_translate (>= 0.5.0)
@@ -421,7 +419,6 @@ DEPENDENCIES
   gon
   haml-rails
   heroku-deflater
-  i18n-js
   i18n-tasks (~> 0.5.4)
   jasmine-rails
   jbuilder (~> 1.2)
