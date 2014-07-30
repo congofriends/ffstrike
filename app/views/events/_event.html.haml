@@ -2,6 +2,7 @@
   %meta{property: "og:title", content: event.name}
   %meta{property: "og:url", content: request.original_url}
   %meta{property: "og:image", content: event.image}
+%hr
 .row
   .col-sm-4
     -if event.sponsored
@@ -54,5 +55,3 @@
     %div= t('events.flyer_dl')
     %a{download: event.name + "_flyer", href: event.flyer, title: event.name + "_flyer"}
       %img{alt: event.name + "_flyer", src: asset_path(event.flyer.url), class: "event_flyer"}
-%hr
-

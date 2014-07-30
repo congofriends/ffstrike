@@ -1,44 +1,49 @@
 .row{id: "event_#{event.id}"}
-  %h3.text-center= link_to event.name, event_path(event)
-  .row
-    .col-sm-4
-      = link_to image_tag(event.image, class: "event_avatar"), event_path(event)
-    .col-sm-4.event-data
-      %strong= t('events.when')
-      =event.formatted_time
-      %br
-      %br
-      %strong= t('events.where')
-      =event.location
-      = link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"
+  .col-xs-4
+    = link_to image_tag(event.image, class: "event_avatar"), event_path(event)
+  .col-sm-4.event-data
+    %h3= link_to event.name, event_path(event)
+    %strong= t('events.when')
+    =event.formatted_time
+    .row
+      .spacer10
+      .spacer10
+    %strong= t('events.where')
+    =event.location
+    = link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"
 
-      - if !event.location_details.nil? && current_user
-        %br
-        %br
-        %strong= t('events.location')
-        = event.location_details
-      %br
-      %br
-      %strong= t('events.organized_by')
-      =link_to event.movement.name, movement_path(event.movement)
-      %br
-      %br
-      - unless event.description.nil?
-        %strong= t('events.description')
-        = event.description
-    .col-xs-4.text-center.event-actions
-      -unless event.host? current_user
-        =link_to_modal t('events.contact_host_btn'), new_contact_path(event), {class: "btn"}
-      %br
-      %br
-      =link_to(t('events.unattend_btn'),  unattend_path(attendee_id: current_user.id, event_id: event.id), method: :put, remote: true, class: "btn", id: "remove_attendance#{event.id}")
-      %br
-      %br
-      = form_tag assign_volunteer_path(attendee_id: current_user.id, event_id: event.id), id: "assign_volunteer#{event.id}", method: :put, remote: true do
-        = label_tag(t('events.volunteer_status'))
-        = check_box :event, :assigned, checked: current_user.volunteer_for(event), onclick: "$('#assign_volunteer#{event.id}').submit()"
-    .row{id: "tasks_for_event_#{event.id}"}
-      .col-sm-10
-        %h2=  t('events.tasks_signed_up')
-        = render template: "tasks/show", locals: {event: event}
-  %hr
+    - if !event.location_details.nil? && current_user
+      .row
+        .spacer10
+        .spacer10
+      %strong= t('events.location')
+      = event.location_details
+    .row
+      .spacer10
+      .spacer10
+    %strong= t('events.organized_by')
+    =link_to event.movement.name, movement_path(event.movement)
+    .row
+      .spacer10
+      .spacer10
+    - unless event.description.nil?
+      %strong= t('events.description')
+      = event.description
+  .col-sm-4.event-actions
+    -unless event.host? current_user
+      =link_to_modal t('events.contact_host_btn'), new_contact_path(event), {class: "btn btn-attend"}
+    .row
+      .spacer10
+      .spacer10
+    =link_to(t('events.unattend_btn'),  unattend_path(attendee_id: current_user.id, event_id: event.id), method: :put, remote: true, class: "btn btn-attend", id: "remove_attendance#{event.id}")
+    .row
+      .spacer10
+      .spacer10
+    = form_tag assign_volunteer_path(attendee_id: current_user.id, event_id: event.id), id: "assign_volunteer#{event.id}", method: :put, remote: true do
+      = label_tag(t('events.volunteer_status'))
+      = check_box :event, :assigned, checked: current_user.volunteer_for(event), onclick: "$('#assign_volunteer#{event.id}').submit()"
+.row{id: "tasks_for_event_#{event.id}"}
+  .col-sm-10
+    %h2=  t('events.tasks_signed_up')
+    = render template: "tasks/show", locals: {event: event}
+%hr
