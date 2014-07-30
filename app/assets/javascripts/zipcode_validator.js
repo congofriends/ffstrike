@@ -12,8 +12,8 @@ $(document).ready(function(){
     },
     messages: {
       'zip': {
-        required: "Zip code is required",
-        zipDigitsDashSpaceOnlyRegex: "Zip code should contain only digits",
+        required: I18n[window.gon.locale]['validations']['zip_required'],
+        zipDigitsDashSpaceOnlyRegex: I18n[window.gon.locale]['validations']['zip_numeric'],
       }
     },
     errorElement: "div",

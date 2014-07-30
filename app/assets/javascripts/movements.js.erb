@@ -15,16 +15,16 @@ function initializeGroupValidations() {
     },
     messages: {
       'movement[name]': {
-        required: "Name is required",
-        remote: "Name is already in use"},
-      'user[name]': "First Name is required",
-      'user[surname]': "Last Name is required",
+        required: I18n[window.gon.locale]['validations']['name'],
+        remote: I18n[window.gon.locale]['validations']['existing_name']},
+      'user[name]': I18n[window.gon.locale]['validations']['first_name'],
+      'user[surname]': I18n[window.gon.locale]['validations']['surname'],
       'user[email]': {
-            required: "Email is required",
-            email: "Please enter a valid email address",
-            remote: "Email has already been taken"},
-      'user[password]': "Password is required",
-      'user[password_confirmation]': "Confirmation Password must equal Password"
+            required: I18n[window.gon.locale]['validations']['email'],
+            email: I18n[window.gon.locale]['validations']['valid_email'],
+            remote: I18n[window.gon.locale]['validations']['existing_email']},
+      'user[password]': I18n[window.gon.locale]['validations']['password'],
+      'user[password_confirmation]': I18n[window.gon.locale]['validations']['country']
     },
     errorElement: "div",
     errorClass: "text-danger",
@@ -38,6 +38,30 @@ function initializeGroupValidations() {
     }
   });
 };
+
+function initializeEditGroupValidations() {
+  $('#edit-group-form').validate({
+    rules: {
+      'movement[name]': {required: true}
+    },
+    messages: {
+      'movement[name]': I18n[window.gon.locale]['validations']['name']
+    },
+
+    errorElement: "div",
+    errorClass: "text-danger",
+    errorId: "event_error",
+    errorPlacement: function (error, element) {
+      error.insertAfter(element);
+      element.closest('div').addClass('has-error');
+    },
+    success: function (label) {
+        label.closest('.form-group').removeClass('has-error').addClass('has-success');
+        label.next('.help-block').hide();
+    }
+  });
+};
+
 
 function groupFormValid(nextButton, fieldset){
     return $('#new-group-form').valid();
@@ -71,6 +95,7 @@ $(document).ready(function() {
 /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
   initializeGroupValidations();
+  initializeEditGroupValidations();
 
  //activate first nav-tab and tab-content if nothing is activated currently
  var elementAlreadyActive = false;

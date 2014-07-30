@@ -93,16 +93,6 @@ fr:
       cancel_confirm_msg: "Êtes-vous sûr de vouloir supprimer cet événement?"
     show:
       task_msg: "Voici quelques choses que vous pouvez faire pour aider:"
-    validations:
-      name: "Nom est requis"
-      start_time: "Date et heure de début est requise"
-      city: "Ville est obligatoire"
-      state: "État est requis"
-      address: "Adresse est obligatoire"
-      description: "Description est requise"
-      zip_required: 'Zip est requis'
-      zip_numeric: "Zip doit contenir uniquement des chiffres"
-      zip_length: "Zip doit être de 5 chiffres"
   tasks:
     delete_confirm: "Vous assurez-vous de supprimer tâche '%{task_description}'?"
     sign_up: "INSCRIVEZ-VOUS"
@@ -303,12 +293,22 @@ fr:
     subject: "Sous réserve est nécessaire"
     body: "Le corps est nécessaire"
     password: "Mot de passe est nécessaire"
+    current_pass_required: "Mot de passe actuel est requise"
     current_pass: "Confirmation mot de passe doit être égal Mot de passe"
     valid_email: "S'il vous plaît entrer une adresse email valide"
     first_name: "Prénom est nécessaire"
     surname: "Nom est nécessaire"
     existing_email: "Le courrier électronique est déjà en cours d'utilisation"
     existing_name: "Nom est déjà en cours d'utilisation"
+    start_time: "Date et heure de début est requise"
+    city: "Ville est obligatoire"
+    country: "Pays est nécessaire"
+    state: "État est requis"
+    address: "Adresse est obligatoire"
+    description: "Description est requise"
+    zip_required: 'Zip est requis'
+    zip_numeric: "Zip doit contenir uniquement des chiffres"
+    zip_length: "Zip doit être de 5 chiffres"
   static_pages:
     about:
       header1: "Contexte"

@@ -93,16 +93,6 @@ es:
       cancel_confirm_msg: "¿está seguro de que desea eliminar este evento?"
     show:
       task_msg: "Aquí están algunas cosas que usted puede hacer para ayudar a:"
-    validations:
-      name: "Es necesario el nombre"
-      start_time: "Fecha y hora de inicio es necesario"
-      city: "Fecha y hora de inicio es necesario"
-      state: "La ciudad es necesario"
-      address: "Es necesaria la dirección"
-      description: "Se requiere una descripción"
-      zip_required: 'Zip es necesario'
-      zip_numeric: "Zip debe contener sólo números"
-      zip_length: "Zip debe ser de 5 dígitos"
   tasks:
     delete_confirm: "¿Estás seguro de eliminar tarea '%{task_description}'?"
     sign_up: "SIGN UP"
@@ -297,12 +287,22 @@ es:
     subject: "se requiere Asunto"
     body: "se requiere Cuerpo"
     password: "Se requiere una contraseña"
+    current_pass_required: "Se requiere contraseña actual"
     current_pass: "Confirmación de contraseña debe ser igual a la contraseña"
     valid_email: "Por favor, introduce una dirección de correo electrónico válida"
     first_name: "Se requiere Nombre"
     surname: "Se requiere Apellido"
     existing_email: "El correo electrónico ya está en uso"
     existing_name: "El nombre ya está en uso"
+    start_time: "Fecha y hora de inicio es necesario"
+    city: "Fecha y hora de inicio es necesario"
+    country: "Se requiere País"
+    state: "La ciudad es necesario"
+    address: "Es necesaria la dirección"
+    description: "Se requiere una descripción"
+    zip_required: 'Zip es necesario'
+    zip_numeric: "Zip debe contener sólo números"
+    zip_length: "Zip debe ser de 5 dígitos"
   static_pages:
     about:
       header1: "Antecedentes"

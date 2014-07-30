@@ -10,13 +10,13 @@ function initializeProfileValidations() {
       'user[password_confirmation]': {equalTo : "#user_password"}
     },
     messages: {
-      'user[name]': "First Name is required",
-      'user[surname]': "Last Name is required",
+      'user[name]': I18n[window.gon.locale]['validations']['first_name'],
+      'user[surname]': I18n[window.gon.locale]['validations']['surname'],
       'user[email]': {
-          required: "Email is required",
-          email: "Please enter a valid email address"},
-      'user[current_password]': 'Current Password is required',
-      'user[password_confirmation]': "Confirmation Password must equal Password"
+          required: I18n[window.gon.locale]['validations']['email'],
+          email: I18n[window.gon.locale]['validations']['valid_email']},
+      'user[current_password]': I18n[window.gon.locale]['validations']['current_pass_required'],
+      'user[password_confirmation]': I18n[window.gon.locale]['validations']['current_pass']
     },
     errorElement: "div",
     errorClass: "text-danger",
