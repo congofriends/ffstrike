@@ -76,6 +76,7 @@ Ffstrike::Application.routes.draw do
     #export CSV
     get 'export_csv/:id' => 'movements#export_csv', as: 'export_csv'
     get 'export_hosts_csv/:id' => 'movements#export_hosts_csv', as: 'export_hosts_csv'
+    get 'export_coordinators_csv/:id' => 'movements#export_coordinators_csv', as: 'export_coordinators_csv'
     get 'export_all_csv/:id' => 'movements#export_all_csv', as: 'export_all_csv'
     get 'export_attendees/:id' => 'events#export_attendees', as: 'export_event_attendees'
 

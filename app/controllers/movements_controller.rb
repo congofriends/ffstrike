@@ -84,6 +84,10 @@ class MovementsController < ApplicationController
     send_data @movement.hosts_to_csv, filename: "#{@movement.name} host-list.csv"
   end
 
+  def export_coordinators_csv
+    send_data @movement.coordinators_to_csv, filename: "#{@movement.name} coordinator-list.csv"
+  end
+
   def export_all_csv
     send_data @movement.all_to_csv, filename: "#{@movement.name} supporter-list.csv" if current_user.super_admin?
   end

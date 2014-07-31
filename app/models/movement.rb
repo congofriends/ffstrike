@@ -108,6 +108,16 @@ class Movement < ActiveRecord::Base
     end
   end
 
+  def coordinators_to_csv
+    CSV.generate do |csv|
+      column_names = ["Name", "Email", "Phone", "Team"]
+      csv << column_names
+      self.ownerships.each do |coordinator|
+        csv << [coordinator.user.full_name, coordinator.user.email, coordinator.user.phone, self.name]
+      end
+    end
+  end
+
   def all_to_csv
     CSV.generate do |csv|
       column_names = ["Name", "Surname", "Email", "Phone", "Coordinator", "Host", "Attendee", "Date Signed Up"]

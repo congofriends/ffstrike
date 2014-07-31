@@ -6,7 +6,7 @@ es:
     point: &point Punto persona(Haga clic para asignar)
     password: &password Nueva contraseña
     confirmation: &confirmation Confirmación de la contraseña nueva
-    export_attendees: &export_attendees EXPORTACIÓN LISTA DE ASISTENTES
+    export_attendees: &export_attendees EXPORTAR UNA LISTA DE ASISTENTES
     host_event: &host_event HOST UN EVENTO
     update: &update Actualizar
   events:
@@ -158,7 +158,8 @@ es:
       invite_coordinators: 'INVITAR A LOS COORDINADORES DE LAS'
       email_attendees: "CORREO ELECTRÓNICO LOS ASISTENTES"
       email_hosts: "Correo electrónico Hosts"
-      export_hosts: "Anfitriones de Exportación"
+      export_hosts: "EXPORTAR ANFITRIONES"
+      export_coordinators: "EXPORTAR COORDINADORES"
       export_attendees: *export_attendees
       export_all: "EXPORTAR TODO APOYO"
       name_cl: *name

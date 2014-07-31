@@ -6,7 +6,7 @@ fr:
     point: &point Point personne
     password: &password Mot
     confirmation: &confirmation De Confirmation
-    export_attendees: &export_attendees EXPORTATION PARTICIPANTS
+    export_attendees: &export_attendees EXPORTER PARTICIPANTS
     host_event: &host_event L'HÔTE D'UN ÉVÉNEMENT
     update: &update MISE à JOUR
   events:
@@ -158,7 +158,8 @@ fr:
       invite_coordinators: "INVITER COORDONNATEURS"
       email_attendees: "E-MAIL AUX PARTICIPANTS"
       email_hosts: "HÔTES E-MAIL"
-      export_hosts: "Hôtes à L'exportation"
+      export_hosts: "EXPORTER HÔTES"
+      export_coordinators: "EXPORTER COORDONNATEURS"
       export_attendees: *export_attendees
       export_all: "SUPPORTERS EXPORTER TOUS"
       name_cl: *name
