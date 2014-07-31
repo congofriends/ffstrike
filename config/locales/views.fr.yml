@@ -261,7 +261,7 @@ fr:
       contact_group_coordinator: 'CONTACT COORDONNATEUR'
     support_network:
       support_network: 'Support Réseau'
-      network_message: 'Notre réseau de soutien a %{number} équipes et est de plus en plus!'
+      network_message: 'Il ya %{number} équipes et en pleine croissance!'
       create_team: 'CRÉER UN ÉQUIPE'
   assignments:
     assign:

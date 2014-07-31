@@ -248,7 +248,7 @@ en:
       contact_group_coordinator: 'CONTACT COORDINATOR'
     support_network:
       support_network: 'Support Network'
-      network_message: 'Our Support Network has %{number} teams and is growing!'
+      network_message: 'There are %{number} teams and growing!'
       create_team: 'CREATE A TEAM'
   assignments:
     assign:
