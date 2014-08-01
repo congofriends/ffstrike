@@ -87,6 +87,10 @@ class User < ActiveRecord::Base
     Event.where(host_id: self.id, approved: true)
   end
 
+  def current_events
+    Event.where.not("start_time < ?", Date.today)
+  end
+
   def events_owned
     (approved_events.concat(nonapproved_events).concat(events)).flatten.compact.uniq
   end

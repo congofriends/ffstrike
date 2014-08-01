@@ -97,9 +97,9 @@ class EventsController < ApplicationController
 
   def my_events
     redirect_to root_path and return unless current_user
-    @events = current_user.events_owned
+    @events = current_user.events_owned & current_user.current_events
     @event = (params[:name] && (Event.where(id: params[:name][:id]).count > 0)) ? (Event.find params[:name][:id]) : @events.first
-    redirect_to root_path and return unless @events.include?(@event)
+    redirect_to root_path and return unless @events.include?(@event) || current_user.super_admin?
     respond_to do |format|
       format.html {render action: 'my_events'}
       format.js
@@ -115,7 +115,6 @@ class EventsController < ApplicationController
     if @event.update_attributes(event_params)
       flash[:notice] = t('event.updated')
     end
-
     redirect_to request.referer
   end
 
