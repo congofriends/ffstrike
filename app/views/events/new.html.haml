@@ -19,9 +19,9 @@
                 .form-group.col-sm-4
                   = form.label t('events.edit.end_date')
                   = form.text_field :end_time, class: "form-control datetimepicker datetimepicker-#{I18n.locale}"
-                .form-group.col-sm-4
-                  = form.label :time_tbd, t('.datetime_tbd')
-                  = form.check_box :time_tbd, {}, true, false
+              .form-group.col-sm-4
+                = form.label :time_tbd, t('.datetime_tbd')
+                = form.check_box :time_tbd, {}, true, false
               %legend= t('.address')
               .row
                 .form-group.col-sm-6
