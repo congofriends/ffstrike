@@ -212,6 +212,12 @@ fr:
       sponsored: "Parrainés"
       view_event: "Afficher l'événement"
       edit_event: "Modifier l'événement"
+    tab_past_events:
+      event_name: "Nom de l'événement"
+      where: "quand"
+      when: "Où"
+      status: "Statut"
+      participants: "Les participants"
     tab_groups:
       name: 'Nom:'
       location_placeholder: 'Par exemple mondial, International, National..'

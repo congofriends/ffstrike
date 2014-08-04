@@ -208,6 +208,12 @@ en:
       sponsored: "Sponsored"
       view_event: "View Event"
       edit_event: "Edit Event"
+    tab_past_events:
+      event_name: "Event Name"
+      where: "When"
+      when: "Where"
+      status: "Status"
+      participants: "Participants"
     tab_groups:
       name: 'Name'
       location_placeholder: 'e.g. Global, International, National..'

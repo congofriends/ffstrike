@@ -17,12 +17,17 @@
       %li
         %a{href: '#support', data: {toggle: 'tab'}}
           =t('.manage_supporters')
+      %li
+        %a{href: '#past_events', data: {toggle: 'tab'}}
+          =t('.past_events')
 
   .tab-content
     .tab-pane.fade.in#group
       =render 'movements/tab_groups', group: @group
     .tab-pane.fade.in#events
-      =render 'movements/tab_group_events', events: @group.events
+      =render 'movements/tab_group_events', events: @group.events & User.first.current_events
     .tab-pane.fade.in#support
-      =render 'movements/tab_group_attendees', events: @group.events
+      =render 'movements/tab_group_attendees', events: @group.events & User.first.current_events
+    .tab-pane.fade.in#past_events
+      =render 'movements/tab_past_events', events: @group.events & User.first.past_events
 

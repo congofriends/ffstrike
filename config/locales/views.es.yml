@@ -206,6 +206,12 @@ es:
       sponsored: "Patrocinado"
       view_event: "Evento"
       edit_event: "Editar"
+    tab_past_events:
+      event_name: "Nombre del evento"
+      where: "Cuando"
+      when: "Dónde"
+      status: "Estado"
+      participants: "Los participantes"
     tab_groups:
       name: *name
       location_placeholder: 'p. ej. Mundial, Internacional, Nacional..'

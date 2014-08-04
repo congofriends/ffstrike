@@ -1,6 +1,7 @@
 $("#group").html("<%= escape_javascript(render 'movements/tab_groups', group: @group)%>");
-$("#events").html("<%= escape_javascript(render 'movements/tab_group_events', events: @group.events)%>");
+$("#events").html("<%= escape_javascript(render 'movements/tab_group_events', events: @group.events & User.first.current_events)%>");
 $("#support").html("<%= escape_javascript(render 'movements/tab_group_attendees', events: @group.events)%>");
+$("#past_events").html("<%= escape_javascript(render 'movements/tab_past_events', events: @group.events & User.first.past_events)%>");
 
 sorttable.makeSortable(document.getElementById('group-events-table'));
 sorttable.makeSortable(document.getElementById('group-attendees-table'));
