@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140721145041) do
+ActiveRecord::Schema.define(version: 20140804152221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20140721145041) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "location_details"
-    t.boolean  "approved"
+    t.boolean  "approved",           default: false
     t.integer  "host_id"
     t.integer  "event_type_id"
     t.string   "state"
