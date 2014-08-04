@@ -174,7 +174,7 @@ en:
     explanation:
       confirm_msg: "Congrats - You've successfully created a team to support Friends of the Congo"
       team_dash_prompt: "Click here to go right to your team dashboard"
-      share_msg: "Share your event on social media!"
+      share_msg: "Share your team on social media!"
     email_modal:
       email_attendees: "EMAIL ATTENDEES"
       send_email: "SEND EMAIL"

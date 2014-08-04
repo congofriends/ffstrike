@@ -173,7 +173,7 @@ fr:
     explanation:
       confirm_msg: "Félicitations - vous avez créé avec succès une équipe pour soutenir FOTC"
       team_dash_prompt: "Cliquez ici pour aller directement à votre tableau de bord de l'équipe"
-      share_msg: "Partagez votre événement sur ​​les médias sociaux!"
+      share_msg: "Partagez votre équipe sur ​​les médias sociaux!"
     email_modal:
       email_attendees: "E-MAIL AUX PARTICIPANTS"
       title: "E-mail aux participants"

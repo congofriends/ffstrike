@@ -29,7 +29,6 @@ en:
     created: "Event created!"
     updated: "Event updated."
     deleted: "Event deleted."
-    created_by_attendee: "Your event will be viewable to the public as soon as the team coordinator approves it!"
     not_yours: "You don't own that event!"
     no_route: "Sorry, we were unable to find the Event you were looking for"
     failure: "Your account was created but there was a problem with your event."

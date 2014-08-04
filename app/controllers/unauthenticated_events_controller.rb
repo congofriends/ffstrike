@@ -16,7 +16,7 @@ class UnauthenticatedEventsController < ApplicationController
       if @event.save
         clear_fields_on_tbd
         UserMailer.event_creation_message(@user.id, @event.id) if current_user
-        redirect_to explanation_path(@event), notice: t('event.created_by_attendee') and return
+        redirect_to explanation_path(@event), notice: t('event.created') and return
       else
         redirect_to new_movement_event_path(@movement), notice: t('event.failure')
       end

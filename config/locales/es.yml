@@ -9,7 +9,6 @@ es:
     created: "Evento creado!"
     updated: "Evento actualizado!"
     deleted: "Evento eliminado."
-    created_by_attendee: "El evento será visible para el público tan pronto como la coordinadora del equipo que lo aprueba!"
     not_yours: "No tienes que evento."
     no_route: "Lo sentimos, pero no hemos podido encontrar el evento que estaba buscando"
     failure: "Se creó la cuenta, pero se ha producido un problema con el evento."

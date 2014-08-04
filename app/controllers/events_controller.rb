@@ -82,10 +82,7 @@ class EventsController < ApplicationController
       clear_fields_on_tbd
       NewEventMailWorker.perform_async(current_user.id, @event.id) if ENV["RAILS_ENV"] == "production"
       @event.assign_host_and_approve(current_user)
-      if @movement.users.include?(current_user)
-        redirect_to explanation_path(@event), notice: t('event.created') and return
-      end
-      redirect_to explanation_path(@event), notice: t('event.created_by_attendee') and return
+      redirect_to explanation_path(@event), notice: t('event.created') and return
     else
       flash[:notice] = @event.errors.full_messages.flatten.join(' ')
       if @movement.users.include?(current_user)
