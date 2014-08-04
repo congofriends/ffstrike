@@ -2,7 +2,7 @@
   .row
     .col-md-10.col-md-offset-1
       .well
-        = form_tag movement_unauthenticated_events_path, id: 'new-event-form', method: :post do
+        = form_tag movement_unauthenticated_events_path, id: 'new-event-form', method: :post, multipart: true do
           %fieldset
             %fieldset.event_details
               %legend= t("events.new.legend1")
