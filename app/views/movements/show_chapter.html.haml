@@ -19,7 +19,7 @@
       %h3= @movement.name
       .tagline= @movement.tagline
       - unless !@movement.website || @movement.website.empty?
-        =link_to @movement.website, "http://#{@movement.website}"
+        =link_to @movement.website, "http://#{@movement.website}", :target => '_blank'
       - unless !@movement.about_creator || @movement.about_creator.empty?
         %h4
           =t('.about_creators')
