@@ -131,7 +131,7 @@ describe EventsController do
         end
 
         it "notifies the creator that coordinator will approve event" do
-          flash[:notice].should == I18n.t('event.created_by_attendee')
+          flash[:notice].should == I18n.t('event.created')
         end
       end
     end
