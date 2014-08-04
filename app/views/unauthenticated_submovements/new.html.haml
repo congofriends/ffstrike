@@ -3,7 +3,7 @@
     .col-md-12
       .well
         .form-horizontal
-          = form_tag unauthenticated_submovements_path, id: 'new-group-form', method: :post do
+          = form_tag unauthenticated_submovements_path, id: 'new-group-form', method: :post, multipart: true do
             %fieldset
               %fieldset
                 %legend Group Details
@@ -32,9 +32,9 @@
                   .col-md-8
                     = text_area :movement, :website, { class: 'form-control' }
                 .form-group
-                  = label :movement, :image, { class: 'col-md-4 control-label' }
+                  = label :movement, :avatar, { class: 'col-md-4 control-label' }
                   .col-md-8
-                    = file_field :movement, :image
+                    = file_field :movement, :avatar
                 .form-group
                   = label :movement, :video, "Youtube Link", { class: 'col-md-4 control-label' }
                   .col-md-8
