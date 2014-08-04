@@ -1,42 +1,47 @@
 .container
   .row
-    .col-md-12
+    .col-md-4
+      %h1
+        =t('.thanks_msg')
+      %h4
+        =t('.explanation_msg')
+    .col-md-7
       .well
         .form-horizontal
           = form_tag unauthenticated_submovements_path, id: 'new-group-form', method: :post, multipart: true do
             %fieldset
               %fieldset
-                %legend Group Details
+                %legend=t('.legend')
                 .form-group
-                  = label :movement, :name, 'Name *', { class: 'col-md-4 control-label' }
+                  = label :movement, :name, t('.name') + ' * ', { class: 'col-md-4 control-label' }
                   .col-md-8
                     = text_field :movement, :name , { class: 'form-control' }
                 .form-group
-                  = label :movement, :tagline, { class: 'col-md-4 control-label' }
+                  = label :movement, :tagline,  t('.tagline'), { class: 'col-md-4 control-label' }
                   .col-md-8
                     = text_area :movement,  :tagline, { class: 'form-control' }
                 .form-group
-                  = label :movement, :call_to_action, { class: 'col-md-4 control-label' }
+                  = label :movement, :call_to_action,  t('.call_to_action'), { class: 'col-md-4 control-label' }
                   .col-md-8
                     = text_area :movement, :call_to_action, { class: 'form-control' }
                 .form-group
-                  = label :movement, :extended_description, { class: 'col-md-4 control-label' }
+                  = label :movement, :extended_description, t('.extended_description'), { class: 'col-md-4 control-label' }
                   .col-md-8
                     = text_area :movement, :extended_description, { class: 'form-control' }
                 .form-group
-                  = label :movement, :about_creator, { class: 'col-md-4 control-label' }
+                  = label :movement, :about_creator, t('.about_creator'), { class: 'col-md-4 control-label' }
                   .col-md-8
                     = text_area :movement, :about_creator, { class: 'form-control' }
                 .form-group
-                  = label :movement, :website, { class: 'col-md-4 control-label' }
+                  = label :movement, :website, t('.website'), { class: 'col-md-4 control-label' }
                   .col-md-8
                     = text_area :movement, :website, { class: 'form-control' }
                 .form-group
-                  = label :movement, :avatar, { class: 'col-md-4 control-label' }
+                  = label :movement, :avatar, t('.avatar'), { class: 'col-md-4 control-label' }
                   .col-md-8
                     = file_field :movement, :avatar
                 .form-group
-                  = label :movement, :video, "Youtube Link", { class: 'col-md-4 control-label' }
+                  = label :movement, :video, t('.youtube_link'), { class: 'col-md-4 control-label' }
                   .col-md-8
                     = text_field :movement, :video, { class: 'form-control' }
                 .form-group
@@ -44,9 +49,9 @@
                   .col-md-8
                     = text_field :movement, :flickr, { class: 'form-control' }
                 = hidden_field :parent_id, value:  params[:parent_id]
-                %button{type: "button", class: "btn btn-success next-group"} Next
+                %button{type: "button", class: "btn btn-success next-group"}=t('.next')
               %fieldset.event_additional_details
-                %legend Sign Up to Create Group (2/2)
+                %legend=t('.legend2')
                 .row
                   .form-group.col-xs-6
                     = label :user, :name, 'First Name *', class: 'control-label'
@@ -67,6 +72,6 @@
                     = label :user, :password_confirmation, 'Password confirmation *'
                     = password_field :user, :password_confirmation, class: 'form-control'
                 .form-group
-                  %button{type: "button", class: "btn btn-success previous-group"} Previous
-                  = submit_tag "CREATE YOUR GROUP", class: 'btn btn-primary'
+                  %button{type: "button", class: "btn btn-success previous-group"}=t('.previous')
+                  = submit_tag t('.create_btn'), class: 'btn btn-primary'
 

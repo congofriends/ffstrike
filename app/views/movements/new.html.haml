@@ -44,12 +44,12 @@
                   = form.text_area :about_creator, { class: 'form-control' }
 
               .form-group
-                = form.label :website, { class: 'col-md-4 control-label' }
+                = form.label :website, t('.website'), { class: 'col-md-4 control-label' }
                 .col-md-8
                   = form.text_area :website, { class: 'form-control' }
 
               .form-group
-                = form.label :avatar, { class: 'col-md-4 control-label' }
+                = form.label :avatar, t('.avatar'), { class: 'col-md-4 control-label' }
                 .col-md-8
                   = form.file_field :avatar
 

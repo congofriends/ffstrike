@@ -250,6 +250,12 @@ es:
       call_to_action: "Llamamiento a la acción"
       about_creator: "Acerca del creador"
       create_btn: 'Crear Equipo'
+      avatar: "Avatar"
+      website: "Website"
+      legend: "Detalles del grupo"
+      legend2: "Registra para Crear grupo (2/2)"
+      next: "Siguiente"
+      previous: "Anterior"
     show:
       quote: 'Nuestra misión y visión es la de aumentar la toma de conciencia de la comunidad mundial sobre el problema del Congo y el apoyo las instituciones congoleñas en el logro de una solución pacífica y duradera.'
       congo-week: "CONGO SEMANA"
@@ -263,6 +269,30 @@ es:
       support_network: 'Red de Apoyo'
       network_message: 'Hay %{number} equipos y creciendo!'
       create_team: 'CREAR UN EQUIPO'
+  unauthenticated_submovements:
+    new:
+      name: *name
+      location_placeholder: 'p. ej. Mundial, Internacional, Nacional..'
+      location: "Los detalles de la ubicación:"
+      youtube_link: 'Youtube'
+      tagline: 'Etiqueta'
+      extended_description: 'Descripción Ampliada'
+      call_to_action: 'Llamamiento a la acción'
+      about_creator: 'Acerca del creador'
+      create_btn: 'Crear Equipo'
+      thanks_msg: 'Gracias por crear una Semana Equipo Congo para apoyar la paz y la justicia en el corazón de África ti.'
+      explanation_msg: "Una vez que complete los detalles pertinentes para crear un equipo, los eventos asociados con su equipo se mostrarán en una sola página."
+      name: 'Nombre'
+      location_placeholder: 'p. ej. Mundial, Internacional, Nacional..'
+      location: "Ubicación"
+      youtube_link: 'Youtube'
+      tagline: "Etiqueta"
+      extended_description: "Descripción Ampliada"
+      call_to_action: "Llamamiento a la acción"
+      about_creator: "Acerca del creador"
+      create_btn: 'Crear Equipo'
+      avatar: "Avatar"
+      website: "Website"
   assignments:
     assign:
       just_signed_up: 'Apenas firmado!'

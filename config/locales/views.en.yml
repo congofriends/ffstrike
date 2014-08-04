@@ -243,6 +243,8 @@ en:
       call_to_action: "Call To Action:"
       about_creator: "About Creator:"
       create_btn: 'Create Team'
+      avatar: "Avatar"
+      website: "Website"
     show:
       quote: 'Our mission and vision is to raise the consciousness of the world community on the challenge of the Congo and support Congolese institutions in bringing about a peaceful and lasting change.'
       congo-week: "CONGO WEEK"
@@ -256,6 +258,27 @@ en:
       support_network: 'Support Network'
       network_message: 'There are %{number} teams and growing!'
       create_team: 'CREATE A TEAM'
+  unauthenticated_submovements:
+    new:
+      thanks_msg: 'Thank you for creating a Congo Week Team to support peace and justice in the heart of Africa. '
+      explanation_msg: "Once you fill out the relevant details to create a team, events associated with your team will show up on one page."
+      name: 'Name'
+      location_placeholder: 'e.g. Global, International, National..'
+      location: "Location:"
+      youtube_link: 'Youtube Link'
+      tagline: "Tagline: "
+      extended_description: "Extended Description:"
+      call_to_action: "Call To Action:"
+      about_creator: "About Creator:"
+      create_btn: 'Create Team'
+      avatar: "Avatar"
+      website: "Website"
+      legend: "Group Details"
+      legend2: "Sign Up to Create Group (2/2)"
+      next: "Next"
+      previous: "Previous"
+
+
   assignments:
     assign:
       just_signed_up: 'Just signed up!'
