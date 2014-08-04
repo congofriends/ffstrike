@@ -113,6 +113,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update_attributes(event_params)
+      @event.update movement: Movement.find_by_name(params[:event][:movement])
       flash[:notice] = t('event.updated')
     end
     redirect_to request.referer
