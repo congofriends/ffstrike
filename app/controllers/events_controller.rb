@@ -67,7 +67,7 @@ class EventsController < ApplicationController
 
   def show
     load_all_movements
-
+    redirect_to root_path, notice: t('event.no_route') and return unless @event
     respond_to do |format|
       format.html do
         render 'show'
@@ -104,11 +104,6 @@ class EventsController < ApplicationController
       format.html {render action: 'my_events'}
       format.js
     end
-  end
-
-  def search
-    @zip ||= extract_zip(params[:zip]) if valid_zip(params[:zip])
-    @events = Event.near_zip(@zip, 200)
   end
 
   def update

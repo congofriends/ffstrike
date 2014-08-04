@@ -156,31 +156,6 @@ describe EventsController do
     end
   end
 
-  describe "GET #search" do
-    #FIXME: the same tests are in the movements_controller, update accordingly
-    #after refactoring
-    it "responds successfully" do
-      get "search", zip: "60647"
-      expect(response).to be_success
-    end
-
-    context "with published movement and existing zip code" do
-      before {FactoryGirl.create(:zipcode, zip: "60647", latitude: 10, longitude: 50)}
-      let(:published_movement) {FactoryGirl.create(:published_movement)}
-      let(:approved_event) {FactoryGirl.create(:approved_event, zip: "60647", movement: published_movement)}
-      let(:nonapproved_event) {FactoryGirl.create(:event, zip: "60647", movement: published_movement)}
-
-      it "assigns only approved events" do
-        get "search", zip: "60647"
-        expect(assigns(:events)).to eq([approved_event])
-      end
-
-      it "doesn't assign nonapproved events" do
-        get "search", zip: "60647"
-        expect(assigns(:events)).not_to include(nonapproved_event)
-      end
-    end
-  end
 
   describe "PUT #assign_volunteer" do
     context "when a host makes an attendee a volunteer" do
@@ -195,17 +170,6 @@ describe EventsController do
       end
     end
   end
-
-  # describe "search_by_keyword" do
-  #   context "when user searches for event by keyword" do
-  #
-
-  #     it "filters the events to display results matching search" do
-  #       get "index", query: "My event 3", movement_id: published_movement
-  #       expect(assigns(:events)).not_to include(event2)
-  #     end
-  #   end
-  # end
 
   describe "PUT #update" do
 

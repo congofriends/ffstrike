@@ -11,6 +11,7 @@ fr:
     deleted: "Événement supprimé."
     created_by_attendee: "votre événement sera visible au public dès que le équipe coordonnateur approuve elle!"
     not_yours: "Il ne vous appartient pas cet événement!"
+    no_route: "Désolé, nous n'avons pas pu trouver l'événement que vous cherchez"
     failure: "Votre compte a été créé mais il y a un problème avec votre événement."
     share: "Partager cet événement!"
     already_signed_in: "Vous êtes déjà signé."

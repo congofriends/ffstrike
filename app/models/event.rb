@@ -103,7 +103,7 @@ class Event < ActiveRecord::Base
 
   def self.find_by_param input
     id = input.split('-').pop.to_i
-    find id
+    find id unless id == 0
   end
 
   def host? user
