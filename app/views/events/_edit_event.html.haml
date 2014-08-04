@@ -50,6 +50,10 @@
           = f.label t("events.edit.forum")
           = f.check_box :forum_option, class: 'float_right'
       .row
+        .form-group
+          = f.label 'Associated Team'
+          = f.select :movement, Movement.all.map(&:name), selected: event.movement.name, class: 'form-control'
+      .row
         .form-group.col-sm-6
           = f.label t("events.edit.flyer")
           = image_tag event.flyer, class: 'front-page img-responsive'
