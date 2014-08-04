@@ -277,8 +277,6 @@ en:
       legend2: "Sign Up to Create Group (2/2)"
       next: "Next"
       previous: "Previous"
-
-
   assignments:
     assign:
       just_signed_up: 'Just signed up!'
