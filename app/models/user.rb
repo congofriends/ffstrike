@@ -88,7 +88,11 @@ class User < ActiveRecord::Base
   end
 
   def current_events
-    Event.where.not("start_time < ?", Date.today)
+    Event.where.not("start_time < ?", Date.today).concat(Event.where(start_time: nil)).flatten.uniq
+  end
+
+  def past_events
+    Event.where("start_time < ?", Date.today)
   end
 
   def events_owned

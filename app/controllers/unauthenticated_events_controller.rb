@@ -38,7 +38,7 @@ class UnauthenticatedEventsController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :phone, :password, :password_confirmation)
+    params.require(:user).permit(:name, :surname, :email, :phone, :password, :password_confirmation)
   end
 
   def redirect_unauthorized_user
