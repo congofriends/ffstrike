@@ -2,7 +2,7 @@ class CreateMovementPage
 include Capybara::DSL
 	def fill_form_and_submit
 		visit "/movements/new"
-		fill_in 'movement_name', with: 'Peta in chicago'
+		fill_in 'movement_name', with: 'Congo Week'
 		fill_in 'movement_tagline', with: 'Move yo cat!'
 		fill_in 'movement_call_to_action', with: 'Call yo cat'
 		fill_in 'movement_extended_description', with: 'extend yo cat'
