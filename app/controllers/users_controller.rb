@@ -37,7 +37,7 @@ class UsersController < Devise::RegistrationsController
       else
         flash[:notice] = t('attendee.already_signed_up')
       end
-      redirect_to event_path(@event)
+      redirect_to event_path(@event), flash: { modal: true }
     else
       flash[:notice] = user.errors.full_messages.flatten.join(' ')
       render 'new_attendee_user'

@@ -1,11 +1,14 @@
 = content_for :title, @event.name
+-if flash[:modal]
+  :javascript
+    $(document).ready(function(){ $("#task_modal").modal(); });
+
+  #task_modal= render partial: "tasks/attendee_tasks", locals: {event: @event}
 
 .container
-  - if current_user && (current_user.events_attending.include? @event)
-    %h2= t('events.show.task_msg')
-    = render template: "tasks/show", locals: {event: @event}
-  %br
   =render partial: "event", locals: {event: @event}
+  .row
+    %hr
   =render "social/rrssb"
   %br
   .row

@@ -1,6 +1,6 @@
 class HomePage
 include Capybara::DSL
-include Rspec::Matchers
+include RSpec::Matchers
 
 	def coordinator_login
 		fill_in 'user_email', with: 'leah@brodsky.com'

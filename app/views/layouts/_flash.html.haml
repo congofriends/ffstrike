@@ -1,4 +1,5 @@
 .container
-  - flash.each do |key, value|
-    .row
-      %div{class: "flash alert alert-success alert-#{key}"}= value
+	- flash.each do |key, value|
+		- unless key == :modal
+			.row
+				%div{class: "flash alert alert-success alert-#{key}"}= value

@@ -110,6 +110,8 @@ es:
       new: "AGREGAR NUEVA TAREA:"
       new_description: "Añadir una nueva descripción de la tarea aquí..."
       create_btn: "CREAR UNA NUEVA TAREA"
+    attendee_tasks:
+      header: "Aquí es cómo usted puede ayudar:"
   layouts:
     breadcrumb:
       home: 'INICIO'

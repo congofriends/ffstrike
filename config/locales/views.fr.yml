@@ -110,6 +110,8 @@ fr:
       new: "Ajouter nouvelle tâche:"
       new_description: "Ajouter une nouvelle tâche description ici ..."
       create_btn: "Créer une nouvelle tâche"
+    attendee_tasks:
+      header: "Voici comment vous pouvez aider:"
   layouts:
     breadcrumb:
       home: 'MAISON'
