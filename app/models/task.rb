@@ -28,6 +28,10 @@ class Task < ActiveRecord::Base
     (event.movement.users.include? user) || event.host == user
   end
 
+  def self.host_tasks
+    Task.where(host_task: true)
+  end
+
   def volunteers
      return [] unless (assignments.map &:attendance).first
      assignments.map(&:attendance).map(&:user)

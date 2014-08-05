@@ -51,27 +51,13 @@ function initializeEditEventValidations() {
         'event[name]': { required: true },
         'event[city]': { required: true },
         'event[country]': { required: true },
-        'event[state]': { required: true },
-        'event[address]': { required: true },
-        'event[description]': { required: true },
-        'event[zip]': {
-        required: true,
-        number: true,
-        rangelength: [5, 5] }
-
+        'event[description]': { required: true }
       },
       messages: {
         'event[name]': I18n[window.gon.locale]['validations']['name'],
-        'event[start_time]': I18n[window.gon.locale]['validations']['start_time'],
         'event[city]': I18n[window.gon.locale]['validations']['city'],
         'event[country]': I18n[window.gon.locale]['validations']['country'],
-        'event[state]': I18n[window.gon.locale]['validations']['state'],
-        'event[address]': I18n[window.gon.locale]['validations']['address'],
-        'event[description]': I18n[window.gon.locale]['validations']['description'],
-        'event[zip]': {
-        required: I18n[window.gon.locale]['validations']['zip'],
-        number: I18n[window.gon.locale]['validations']['zip_numeric'],
-        rangelength: I18n[window.gon.locale]['validations']['zip_length'],}
+        'event[description]': I18n[window.gon.locale]['validations']['description']
       },
       errorElement: "div",
       errorClass: "text-danger",
@@ -122,23 +108,31 @@ $(document).ready(function() {
 
   $("#event_time_tbd").bind('change', function(){
     if(this.checked){
-      $(".event-date-time").hide();
+      $("#event_start_time").prop('disabled', true);
+      $("#event_end_time").prop('disabled', true);
     }
     else{
-      $(".event-date-time").show();
+      $("#event_start_time").prop('disabled', false);
+      $("#event_end_time").prop('disabled', false);
     }
   })
 
   $("#event_location_tbd").bind('change', function(){
     if(this.checked){
-      $("#event_address").val("TBD")
-      $("#event_address2").val("TBD")
-      $("#event_zip").val("TBD")
+      $("#event_address").val("")
+      $("#event_address2").val("")
+      $("#event_zip").val("")
+      $("#event_address").prop('disabled', true);
+      $("#event_address2").prop('disabled', true);
+      $("#event_zip").prop('disabled', true);
     }
     else{
-      $("#event_address").val("");
-      $("#event_address2").val("");
-      $("#event_zip").val("");
+      $("#event_address").val("")
+      $("#event_address2").val("")
+      $("#event_zip").val("")
+      $("#event_address").prop('disabled', false);
+      $("#event_address2").prop('disabled', false);
+      $("#event_zip").prop('disabled', false);
     }
   })
 

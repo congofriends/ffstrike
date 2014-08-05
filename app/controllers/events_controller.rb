@@ -12,6 +12,7 @@ class EventsController < ApplicationController
   end
 
   def index
+    redirect_to root_path and return unless @movement
     @events = Event.near_zip(params[:zip], 200)
     respond_to do |format|
       unless @events.empty?
