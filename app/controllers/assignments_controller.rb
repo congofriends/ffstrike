@@ -6,8 +6,6 @@ class AssignmentsController < ApplicationController
     if current_user && (@task.is_not_assigned_to? current_user)
       @confirmation_message = t('assignment.signed_up')
       @task.assign! current_user
-      # QUEUE
-      # UserMailer.task_signup_message(@event.id, @task.id, current_user.id)
       flash[:notice] = t('assignment.signed_up')
     else
       flash[:notice] = t('assignment.for_attendees_only')
