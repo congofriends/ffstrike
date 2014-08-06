@@ -5,6 +5,7 @@ development:
   timeout: 5000
   username:
   password:
+  host: localhost
 
 test:
   adapter: postgresql
