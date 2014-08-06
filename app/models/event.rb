@@ -38,9 +38,6 @@ class Event < ActiveRecord::Base
   delegate :host_name,          :to => :host
   delegate :host_email,         :to => :host
 
-  # scope :query_results, lambda{|l|  where("name ILIKE :l OR city ILIKE :l OR address ILIKE :l", l: "%#{l}%")}
-  # scope :asc_date, order("events.start_time ASC")
-
   def self.near_zip(zipcode, distance)
     return [] if zipcode.nil?
     zipcode = zipcode.strip

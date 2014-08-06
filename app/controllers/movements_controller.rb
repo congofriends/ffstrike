@@ -6,14 +6,11 @@ class MovementsController < ApplicationController
   include ZipHelper
 
   def index
-    # redirect_to movement_path(Movement.first)
     @movement = Movement.first
     render 'movements/show'
   end
 
   def search
-    #FIXME: refactor this method here and in the events_controller, currently it
-    #is just clear duplication
     @zip ||= extract_zip(params[:zip]) if valid_zip(params[:zip])
     @events = @movement.events.near_zip(@zip, 200)
     render 'events/search'
