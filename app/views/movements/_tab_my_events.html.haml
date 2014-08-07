@@ -1,6 +1,11 @@
 .tab-pane#events
-  .well
-    %legend= description
-    .panel.panel-default
-      .panel-body
-        = render partial: 'events/panel', collection: events, as: :event
+	.well
+		%legend= description
+		.panel.panel-default
+			.panel-body
+				- if events.empty?
+					%h2
+						=t('.empty_events')
+					=link_to t('.events_page'), root_path
+				- else
+					= render partial: 'events/panel', collection: events, as: :event

@@ -214,6 +214,9 @@ fr:
       sponsored: "Parrainés"
       view_event: "Afficher l'événement"
       edit_event: "Modifier l'événement"
+    tab_my_events:
+      empty_events: "Vous êtes en train de ne participez pas à tous les événements. Visitez la page des événements pour trouver les événements dans votre région!"
+      events_page: "La Page des Événements"
     tab_past_events:
       event_name: "Nom de l'événement"
       where: "quand"
