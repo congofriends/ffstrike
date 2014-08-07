@@ -1,8 +1,8 @@
 Feature: Searching for movements by valid zipcode on the homepage and movement page
 
 Background:
-Given a user account exists
-And I have an existing event
+	Given a user account exists
+	And I have an existing event
 
 Scenario: Searching with a valid zipcode
 	When I search for an event from the home page

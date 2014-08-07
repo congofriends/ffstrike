@@ -115,6 +115,8 @@ es:
   layouts:
     breadcrumb:
       home: 'INICIO'
+      events: 'EVENTOS'
+      teams: 'EQUIPOS'
     footer:
       about: 'ACERCA'
       template: 'TEMAS'

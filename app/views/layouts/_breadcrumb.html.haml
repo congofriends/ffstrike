@@ -2,4 +2,6 @@
   %ol.breadcrumb
     - movement = Movement.first
     - unless movement.nil?
-      = link_to t('.home'), root_path, id: 'home'
+      = link_to t('.events'), root_path, id: 'events'
+      = "|"
+      = link_to t('.teams'), support_network_movement_path(movement), id: 'teams'

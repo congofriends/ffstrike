@@ -2,6 +2,8 @@ Feature: Creating an event as a Coordinator
 
 Background:
 	Given a user account exists
+	And Congo Week Exists
+	And I am on the home page
 	And I am logged in as a Movement Coordinator
 	And I have an existing movement
 

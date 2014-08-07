@@ -165,8 +165,10 @@ class EventsController < ApplicationController
   def load_movement
     if params[:movement_id]
       @movement = Movement.find_by_param params[:movement_id]
-    else
+    elsif @event
       @movement = @event.movement
+    else
+      @movement = Movement.first
     end
   end
 

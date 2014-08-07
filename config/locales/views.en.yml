@@ -116,6 +116,8 @@ en:
   layouts:
     breadcrumb:
       home: 'HOME'
+      events: 'EVENTS'
+      teams: 'TEAMS'
     footer:
       about: 'ABOUT'
       template: 'THEMES'

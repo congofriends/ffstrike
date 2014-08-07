@@ -2,6 +2,8 @@ Feature: Signing up as a movement coordinator for the application using their em
 
 Background:
 	Given a chapter exists
+	And Congo Week Exists
+	And I am on the home page
 
 Scenario: Signing up as a coordinator with my email address
 	When I select the sign up link

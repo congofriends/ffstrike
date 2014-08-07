@@ -5,11 +5,16 @@ Given(/^I am on the home page/) do
   visit root_path
 end
 
+Given(/^Congo Week Exists/) do
+  FactoryGirl.create(:movement, name: "Congo Week")
+end
+
 Given(/^a user account exists/) do
   @user = FactoryGirl.create(:user, email: "leah@brodsky.com", password: "hitherefolks")
 end
 
 Given(/^I am logged in as a Movement Coordinator/) do
+  visit root_path
   visit new_user_session_path({locale: "en"})
   home_page.coordinator_login()
 end

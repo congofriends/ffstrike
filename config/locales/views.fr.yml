@@ -115,6 +115,8 @@ fr:
   layouts:
     breadcrumb:
       home: 'MAISON'
+      events: 'ÉVÉNEMENT'
+      teams: 'ÉQUIPES'
     footer:
       about: 'À PROPOS'
       template: 'THÈMES'

@@ -2,8 +2,8 @@ require 'sidekiq/web'
 
 Ffstrike::Application.routes.draw do
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
-  #home
-  root 'movements#index'
+  root 'events#index', movement_id: "Congo-Week"
+
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "users", :invitations => 'users/invitations'  }
 
   scope "(:locale)", locale: /en|fr|es/ do
