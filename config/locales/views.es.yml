@@ -209,8 +209,9 @@ es:
       view_event: "Evento"
       edit_event: "Editar"
     tab_my_events:
-      empty_events: "En este momento no asistir a ningún evento. Visita la página de Eventos para encontrar eventos en su área!"
-      events_page: "La Página de Eventos"
+      empty_events_line1: "En este momento no asistir a ningún evento. Visita "
+      events_page: "la Página de Eventos "
+      empty_events_line2: "para encontrar eventos en su área!"
     tab_past_events:
       event_name: "Nombre del evento"
       where: "Cuando"

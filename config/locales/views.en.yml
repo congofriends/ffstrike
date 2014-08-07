@@ -211,8 +211,9 @@ en:
       view_event: "View Event"
       edit_event: "Edit Event"
     tab_my_events:
-      empty_events: "You are currently not attending any events. Visit the Events Page to find events in your area!"
-      events_page: "Events Page"
+      empty_events_line1: "You are currently not attending any events. Visit the "
+      events_page: "Events Page "
+      empty_events_line2: "to find events in your area!"
     tab_past_events:
       event_name: "Event Name"
       where: "When"
