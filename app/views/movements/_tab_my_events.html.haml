@@ -6,7 +6,7 @@
 				- if events.empty?
 					%h2
 						=t('.empty_events_line1')
-						=link_to t('.events_page'), root_path
+						=link_to t('.events_page'), movement_events_path(Movement.first)
 						=t('.empty_events_line2')
 				- else
 					= render partial: 'events/panel', collection: events, as: :event
