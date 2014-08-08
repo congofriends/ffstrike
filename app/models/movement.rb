@@ -31,11 +31,12 @@ class Movement < ActiveRecord::Base
   attr_accessor :draft
 
   def to_param
-    name.gsub(/ /, '-')
+    name.gsub(/ /, '-') + '-' + id.to_s
   end
 
   def self.find_by_param input
-    find_by_name input.gsub(/-/, ' ')
+    id = input.split('-').pop.to_i
+    find id unless id == 0
   end
 
   def sub_movements

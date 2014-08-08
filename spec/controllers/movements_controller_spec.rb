@@ -110,24 +110,24 @@ describe MovementsController do
       get :show, id: movement
 			expect(response).to render_template :show
 		end
-    context 'as a visitor to movement page' do
-      context 'when I view an unpublished movement' do
-        before :each do
-          movement = FactoryGirl.create(:unpublished_movement)
-          user = FactoryGirl.create(:user)
-          controller.stub(:current_user).and_return(user)
-          get :show, id: movement
-        end
+    # context 'as a visitor to movement page' do
+    #   context 'when I view an unpublished movement' do
+    #     before :each do
+    #       movement = FactoryGirl.create(:unpublished_movement)
+    #       user = FactoryGirl.create(:user)
+    #       controller.stub(:current_user).and_return(user)
+    #       get :show, id: movement
+    #     end
 
-        it 'redirects me to the home page' do
-          expect(response).to redirect_to root_path
-        end
+    #     it 'redirects me to the home page' do
+    #       expect(response).to redirect_to root_path
+    #     end
 
-        it 'notifies me that the movement does not exist' do
-          flash[:notice].should eq(I18n.t('movement.not_public'))
-        end
-      end
-    end
+    #     it 'notifies me that the movement does not exist' do
+    #       flash[:notice].should eq(I18n.t('movement.not_public'))
+    #     end
+    #   end
+    # end
 	end
 
   describe "PUT #update" do

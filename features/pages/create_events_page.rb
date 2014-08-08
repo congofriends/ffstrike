@@ -83,7 +83,8 @@ include Capybara::DSL
 
 	def navigate_to()
 		name = Movement.first.name
-		visit "/movements/" + name.gsub(/ /, '-')
+		id = Movement.first.id
+		visit "/movements/" + name.gsub(/ /, '-') + '-' + id.to_s
 		return self
 	end
 
@@ -95,7 +96,8 @@ include Capybara::DSL
 
 	def navigate_to_events()
 		name = Movement.first.name
-		visit "/movements/" + name.gsub(/ /, '-') + "/events/"
+		id = Movement.first.id
+		visit "/movements/" + name.gsub(/ /, '-')  + '-' + id.to_s + "/events/"
 		return self
 	end
 
