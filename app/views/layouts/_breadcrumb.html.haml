@@ -3,5 +3,5 @@
     - movement = Movement.first
     - unless movement.nil?
       = link_to t('.home'), root_path, id: "home", class: "header-footer"
-      = link_to t('.events'), movement_events_path(movement), id: 'events', class: "header-footer"
+      = link_to t('.events'), movement_events_path(movement), id: 'events-index', class: "header-footer"
       = link_to t('.teams'), support_network_movement_path(movement), id: 'teams', class: "header-footer"
