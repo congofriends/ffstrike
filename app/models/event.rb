@@ -97,7 +97,8 @@ class Event < ActiveRecord::Base
   end
 
   def to_param
-    name.gsub(/ /, '-') + '-' + id.to_s
+    # name.gsub(/ /, '-') + '-' + id.to_s
+    name.parameterize + '-' + id.to_s
   end
 
   def self.find_by_param input

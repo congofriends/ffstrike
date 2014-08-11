@@ -32,7 +32,8 @@ class Movement < ActiveRecord::Base
   attr_accessor :draft
 
   def to_param
-    name.gsub(/ /, '-') + '-' + id.to_s
+    # name.gsub(/ /, '-') + '-' + id.to_s
+    name.parameterize + '-' + id.to_s
   end
 
   def self.find_by_param input

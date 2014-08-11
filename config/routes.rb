@@ -38,7 +38,7 @@ Ffstrike::Application.routes.draw do
     get 'events' => 'events#search'
 
     #movements
-    resources :movements do
+    resources :movements,  id: /[^\/]+/ do
       get 'publish' => 'movements#publish', on: :member, as: 'publish'
       get 'profile' => 'movements#my_profile', on: :collection, as: 'user'
       get 'search' => 'movements#search', on: :member, as: 'search'
@@ -54,16 +54,16 @@ Ffstrike::Application.routes.draw do
     resources :unauthenticated_submovements, only: [:new, :create]
 
     #events
-    resources :events do
+    resources :events, id: /[^\/]+/  do
       get 'download' => 'events#download', on: :member,  as: 'download'
       resources :tasks do
         get 'assign' => 'assignments#assign', on: :member, as: 'assign'
       end
     end
-    get 'movements/:id/explanation' => 'movements#explanation', as: 'movement_explanation'
+    get 'movements/:id/explanation' => 'movements#explanation', as: 'movement_explanation', id: /[^\/]+/
 
     get 'my_events' => 'events#my_events', as: 'my_events'
-    get 'events/:id/explanation' => 'events#explanation', as: 'explanation'
+    get 'events/:id/explanation' => 'events#explanation', as: 'explanation', id: /[^\/]+/
     put 'events/:id/approve' => 'events#approve', as: 'approve'
     put 'events/:id/sponsor' => 'events#sponsor', as: 'sponsor'
     put 'assign_volunteer' => 'events#assign_volunteer', as: 'assign_volunteer'
