@@ -65,10 +65,10 @@
                 = form.select :event_type, EventType.all.map(&:name), {class: 'form-control'}
               .form-group
                 - unless @movement.sub_movements.empty?
-                  = form.label :movement, t('.event_chapter_msg')
+                  = form.label :movement, t('.event_team_msg')
                   = form.select :movement, @movement.sub_movements.map(&:name), {include_blank: ""}, {class: 'form-control'}
                 - if @movement.parent
-                  = form.label :movement, t('.event_chapter_msg')
+                  = form.label :movement, t('.event_team_msg')
                   = form.select :movement, @movement.parent.sub_movements.map(&:name), {selected: @movement.name, include_blank: ""}, {class: 'form-control'}
               .form-group
                 = form.label  t('.forum_msg')

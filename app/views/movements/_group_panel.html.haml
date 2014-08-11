@@ -1,17 +1,17 @@
 .group-panel
-	-if chapter.sponsored
+	-if team.sponsored
 		%div
-			= link_to movement_path(chapter) do
-				%a.sponsor-link{href: movement_path(chapter)}
-					%img.group-image.movement_avatar{alt: "", src: asset_path(chapter.avatar)}/
+			= link_to movement_path(team) do
+				%a.sponsor-link{href: movement_path(team)}
+					%img.group-image.movement_avatar{alt: "", src: asset_path(team.avatar)}/
 					%ins.ins
 		%div
-			= link_to movement_path(chapter) do
-				.text-center.group-name= chapter.name
+			= link_to movement_path(team) do
+				.text-center.group-name= team.name
 	-else
 		%div
-			= link_to movement_path(chapter) do
-				.group-image= image_tag chapter.avatar, :class => "movement_avatar group-image"
+			= link_to movement_path(team) do
+				.group-image= image_tag team.avatar, :class => "movement_avatar group-image"
 		%div
-			= link_to movement_path(chapter) do
-				.text-center.group-name= chapter.name
+			= link_to movement_path(team) do
+				.text-center.group-name= team.name

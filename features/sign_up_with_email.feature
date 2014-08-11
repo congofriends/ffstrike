@@ -1,7 +1,7 @@
 Feature: Signing up as a movement coordinator for the application using their email
 
 Background:
-	Given a chapter exists
+	Given a team exists
 	And Congo Week Exists
 	And I am on the home page
 

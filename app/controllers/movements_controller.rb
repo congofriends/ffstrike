@@ -68,7 +68,7 @@ class MovementsController < ApplicationController
     if @movement.parent.nil?
       render "show"
     else
-      render "show_chapter"
+      render "show_team"
     end
 
   end

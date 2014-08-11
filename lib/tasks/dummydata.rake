@@ -11,8 +11,8 @@ namespace :db do
   task make_fotc: :environment do
     fotc_data = YAML.load_file(Rails.root.join("config", "fotc_data.yml"))
     fotc_events = YAML.load_file(Rails.root.join("config", "fotc_events.yml"))
-    fotc_chapters = YAML.load_file(Rails.root.join("config", "fotc_chapters.yml"))
-    chapter_events = YAML.load_file(Rails.root.join("config", "chapter_events.yml"))
+    fotc_teams = YAML.load_file(Rails.root.join("config", "fotc_teams.yml"))
+    team_events = YAML.load_file(Rails.root.join("config", "team_events.yml"))
 
     def create_event(params, movement, coordinator, number_of_attendees)
       event = movement.events.where(name: params["name"]).first_or_create!(
@@ -23,11 +23,11 @@ namespace :db do
           host_id: coordinator.id}))
     end
 
-    def create_chapter(params, parent_movement, host)
-      chapter = Movement.where(name: params["name"]).first_or_create!(
+    def create_team(params, parent_movement, host)
+      team = Movement.where(name: params["name"]).first_or_create!(
         params.merge(parent_id: parent_movement.id))
-      chapter.users << host unless chapter.users.include? host
-      return chapter
+      team.users << host unless team.users.include? host
+      return team
     end
 
 
@@ -82,16 +82,16 @@ namespace :db do
                                    password_confirmation: "password")
 
 
-    chapter1 = create_chapter(fotc_chapters.first, movement, coordinator)
-    chapter2 = create_chapter(fotc_chapters.second, movement, submovement_owner)
+    team1 = create_team(fotc_teams.first, movement, coordinator)
+    team2 = create_team(fotc_teams.second, movement, submovement_owner)
 
 
-    fotc_chapters.each do |chapter|
-      create_chapter(chapter, movement, submovement_owner)
+    fotc_teams.each do |team|
+      create_team(team, movement, submovement_owner)
     end
 
-    create_event(chapter_events[0], chapter1, coordinator, 5)
-    create_event(chapter_events[1], chapter2, coordinator, 5)
+    create_event(team_events[0], team1, coordinator, 5)
+    create_event(team_events[1], team2, coordinator, 5)
  end
 
 end

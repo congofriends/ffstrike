@@ -11,5 +11,5 @@
         =link_to t('.create_team'), new_movement_path({parent_id: @movement.id}), class: 'btn btn-host'
       - else
         =link_to t('.create_team'), new_unauthenticated_submovement_path({parent_id: @movement.id}), class: 'btn btn-host'
-  - @support_network.each do |chapter|
-    = render 'group_panel', chapter: chapter
+  - @support_network.each do |team|
+    = render 'group_panel', team: team

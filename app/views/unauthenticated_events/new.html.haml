@@ -64,10 +64,10 @@
                 = select :event, :event_type, EventType.all.map(&:name), class: 'form-control'
               .form-group
                 - unless @movement.sub_movements.empty?
-                  = label :event,:movement, t("events.new.event_chapter_msg")
+                  = label :event,:movement, t("events.new.event_team_msg")
                   = select :event, :movement, @movement.sub_movements.map(&:name), {include_blank: ""}, {class: 'form-control'}
                 - if @movement.parent
-                  = label :event,:movement, t("events.new.event_chapter_msg")
+                  = label :event,:movement, t("events.new.event_team_msg")
                   = select :event, :movement, @movement.parent.sub_movements.map(&:name), {selected: @movement.name, include_blank: ""}, {class: 'form-control'}
               .form-group
                 = label :event,:forum_option, t("events.new.forum_msg")

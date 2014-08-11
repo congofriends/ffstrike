@@ -65,7 +65,7 @@ fr:
       create_btn: "Créer un événement"
       msg_to_attendees: "écrire un bref message de participants à un événement:"
       event_type: "Type d'événement :"
-      event_chapter_msg: "Si cet événement est associé à une équipe, veuillez choisir ici:"
+      event_team_msg: "Si cet événement est associé à une équipe, veuillez choisir ici:"
       forum_msg: "Inclure un participant forum de discussion sur l'événement:"
       name: "Votre nom"
       email: "Votre e-mail"
@@ -275,7 +275,7 @@ fr:
       congo-week: "CONGO SEMAINE"
       events: "ÉVÉNEMENTS"
       network: "RÉSEAU"
-    show_chapter:
+    show_team:
       about_creators: 'Concernant les créateurs'
       host_event: *host_event
       contact_group_coordinator: 'CONTACT COORDONNATEUR'

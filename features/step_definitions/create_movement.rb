@@ -19,9 +19,9 @@ Given(/^I am logged in as a Movement Coordinator/) do
   home_page.coordinator_login()
 end
 
-Given(/^a chapter exists$/) do
+Given(/^a team exists$/) do
   @parent = FactoryGirl.create(:published_movement)
-  @chapter = FactoryGirl.create(:published_movement, parent_id: @parent.id)
+  @team = FactoryGirl.create(:published_movement, parent_id: @parent.id)
 end
 
 Given(/^I have an existing movement/) do

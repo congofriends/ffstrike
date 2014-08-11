@@ -65,7 +65,7 @@ en:
       create_btn: "CREATE EVENT"
       msg_to_attendees: "Write a brief message to event attendees:"
       event_type: 'Event Type:'
-      event_chapter_msg: "If this event is associated with a team, please choose it here:"
+      event_team_msg: "If this event is associated with a team, please choose it here:"
       forum_msg: "Include an attendee discussion forum on this event:"
       name: "Your first name"
       surname: "Your last name"
@@ -258,7 +258,7 @@ en:
       congo-week: "CONGO WEEK"
       events: "EVENTS"
       network: "NETWORK"
-    show_chapter:
+    show_team:
       about_creators: 'About the Creators'
       host_event: *host_event
       contact_group_coordinator: 'CONTACT COORDINATOR'

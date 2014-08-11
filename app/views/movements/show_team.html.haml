@@ -5,35 +5,32 @@
 
 = content_for :title, @movement.name
 .container
-  .row
-    =link_to (image_tag asset_path("fotc_banner.jpg"),:class => "movement_avatar"), root_path
-  .row
-    .col-sm-6
-      -if @movement.sponsored
-        %a.sponsor-link{href: ""}
-          %img.sponsor-img{alt: "", src: asset_path( @movement.avatar)}/
-          %ins.ins
-      -else
-        =image_tag @movement.avatar, class: "movement_avatar"
-    .col-sm-6
-      %h3= @movement.name
-      .tagline= @movement.tagline
-      - unless !@movement.website || @movement.website.empty?
-        =link_to @movement.website, "http://#{@movement.website}", :target => '_blank'
-      - unless !@movement.about_creator || @movement.about_creator.empty?
-        %h4
-          =t('.about_creators')
-        = @movement.about_creator
+  .col-sm-6
+    -if @movement.sponsored
+      %a.sponsor-link{href: ""}
+        %img.sponsor-img{alt: "", src: asset_path( @movement.avatar)}/
+        %ins.ins
+    -else
+      =image_tag @movement.avatar, class: "movement_avatar"
+  .col-sm-6
+    %h3= @movement.name
+    .tagline= @movement.tagline
+    - unless !@movement.website || @movement.website.empty?
+      =link_to @movement.website, "http://#{@movement.website}", :target => '_blank'
+    - unless !@movement.about_creator || @movement.about_creator.empty?
+      %h4
+        =t('.about_creators')
+      = @movement.about_creator
+    .spacer10
+    .row
+      - if current_user
+        = link_to t('.host_event'), new_movement_event_path(@movement), class: "btn btn-host"
+      - else
+        = link_to t('.host_event'), new_movement_unauthenticated_event_path(@movement), class: "btn btn-host"
+    .row
       .spacer10
-      .row
-        - if current_user
-          = link_to t('.host_event'), new_movement_event_path(@movement), class: "btn btn-host"
-        - else
-          = link_to t('.host_event'), new_movement_unauthenticated_event_path(@movement), class: "btn btn-host"
-      .row
-        .spacer10
-      .row
-        =link_to_modal t('.contact_group_coordinator'), new_mvmt_contact_path(@movement), class: "btn btn-contact"
+    .row
+      =link_to_modal t('.contact_group_coordinator'), new_mvmt_contact_path(@movement), class: "btn btn-contact"
   -if @movement.flickr? && @movement.video?
     .row
     %hr
