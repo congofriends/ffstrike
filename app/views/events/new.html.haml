@@ -43,7 +43,7 @@
                   = form.text_field :zip, class: 'form-control'
                 .form-group.col-sm-6
                   = form.label :country, t('events.edit.country') + " *"
-                  = form.country_select :country, prompt: 'Please select a country', class: 'form-control'
+                  = form.country_select :country, priority: %w(CD US CA), prompt: 'Please select a country', class: 'form-control'
               .form-group
                 = form.label :location_tbd, t('.address_tbd')
                 = form.check_box :location_tbd, {}, true, false

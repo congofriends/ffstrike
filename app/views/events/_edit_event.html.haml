@@ -35,7 +35,7 @@
           = f.label t('events.edit.country')
           .row
             .spacer10
-          = f.country_select :country, prompt: 'Please select a country', class: 'form-control'
+          = f.country_select :country, priority: %w(CD US CA), prompt: 'Please select a country', class: 'form-control'
       .form-group
         = f.label t("events.description")
         = f.text_field :description, class: 'form-control'
