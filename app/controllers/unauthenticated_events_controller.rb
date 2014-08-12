@@ -28,8 +28,10 @@ class UnauthenticatedEventsController < ApplicationController
 
 
   private
+
   def load_movement
     @movement = Movement.find_by_param params[:movement_id]
+    redirect_to root_path unless @movement
   end
 
   def event_params
