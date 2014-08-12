@@ -47,8 +47,8 @@
           = f.label :event_type_id, t("events.edit.type")
           = f.select :event_type, EventType.all.map(&:name), class: 'form-control', selected: event.type
         .form-group.col-sm-6
+          = f.check_box :forum_option
           = f.label t("events.edit.forum")
-          = f.check_box :forum_option, class: 'float_right'
       .row
         .form-group
           = f.label 'Associated Team'

@@ -30,10 +30,6 @@
       = f.hidden_field :event_id, value: @event.id
 
     .form-group.label-field
-      = fields_for :attendance, @attendance do |a|
-        = a.label t('.volunteer')
-        = a.check_box :point_person
-
       = f.hidden_field :event_id, value: @event.id
 
     .form-group

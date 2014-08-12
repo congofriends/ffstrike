@@ -9,9 +9,15 @@ class Task < ActiveRecord::Base
     assignments.create(attendance_id: attendance.id)
   end
 
+  def unassign! user
+    attendance = user.attendances.find_by(event_id: self.event_id)
+    assignments.find_by(attendance_id: attendance.id).destroy
+  end
+
   def is_assigned_to? user
     return false if user.nil?
     assignments.map {|a| a.attendance.user_id == user.id if a.attendance}.any?
+
   end
 
   def assignment_for user

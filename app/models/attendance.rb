@@ -7,7 +7,7 @@ class Attendance < ActiveRecord::Base
   validates :event, presence: true
 
   def assign! task
-    assignments.create(task_id: task.id)
+    assignments.where(task_id: task.id).first_or_create!(task_id: task.id)
   end
 
   def unassign! task

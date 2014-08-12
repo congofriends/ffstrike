@@ -27,7 +27,7 @@ class UsersController < Devise::RegistrationsController
     if user.save
       sign_in(:user, user)
       if Attendance.where(user: user, event: @event).empty?
-        Attendance.create(user: user, event: @event, point_person: params[:attendance][:point_person])
+        Attendance.create(user: user, event: @event)
         flash[:success] = message
         # @generated_password ? UserMailer.welcome_message(user.id, @generated_password, @event.id) : UserMailer.welcome_message(user.id, "", @event.id)
         if ENV["RAILS_ENV"] == "production"

@@ -16,10 +16,6 @@
         = f.label :textable, t('.textable')
 
     .form-group
-      = fields_for :attendance, @attendance do |a|
-        = a.check_box :point_person
-        = a.label t('.point')
-
       = f.hidden_field :event_id, value: @event.id
       = f.hidden_field :name, value: @user.name
       = f.hidden_field :email, value: @user.email

@@ -3,17 +3,16 @@ class AssignmentsController < ApplicationController
   def assign
     load_task_and_event
 
-    if current_user && (@task.is_not_assigned_to? current_user)
-      @confirmation_message = t('assignment.signed_up')
+    if params["task"]["assign"] == '1'
+
       @task.assign! current_user
       flash[:notice] = t('assignment.signed_up')
     else
-      flash[:notice] = t('assignment.for_attendees_only')
+      @task.unassign! current_user
     end
 
     respond_to do |format|
-      format.html { redirect_to event_path(@event) }
-      format.js
+      format.html { render nothing: true }
     end
   end
 

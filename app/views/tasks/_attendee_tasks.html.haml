@@ -2,13 +2,12 @@
 	%h3= t('.header')
 	- event.tasks.where(host_task: false).each do |task|
 		= div_for task do
-			- if task.is_not_assigned_to? current_user
-				= link_to t('tasks.sign_up'), assign_event_task_path(event, task), :class=>"btn btn-default btn-xs", remote: true
-				= task.description
-			- elsif task.is_assigned_to? current_user
-				= link_to t('tasks.signed_up'), assign_event_task_path(event, task), :class=>"btn btn-success btn-xs", :disabled => true
-				= task.description
-			- else
-				= task.description
+			= form_tag assign_event_task_path(event, task), id: "assign-event-#{event.id}-#{task.id}", method: :put, remote: true do
+				= hidden_field_tag 'task_id', task.id
+				= check_box :task, :assign, checked: task.is_assigned_to?(current_user), id: "#{task.id}", onclick: "$('#assign-event-#{event.id}-#{task.id}').submit()"
+				= label_tag :task, task.description
 		.row
 			.spacer10
+	= form_tag assign_volunteer_path(attendee_id: current_user.id, event_id: event.id), id: "assign_volunteer#{event.id}", method: :put, remote: true do
+		= check_box :event, :assigned, checked: current_user.volunteer_for(event), onclick: "$('#assign_volunteer#{event.id}').submit()"
+		= label_tag(t('events.volunteer_status'))
