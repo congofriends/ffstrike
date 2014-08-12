@@ -74,9 +74,13 @@ class MovementsController < ApplicationController
   end
 
   def join_team
-    @movement.users << current_user
-    flash[:notice] = t('movement.join_team_success', movement_name: @movement.name)
-    redirect_to :back
+    if current_user
+      @movement.members << current_user
+      flash[:notice] = t('movement.join_team_success', movement_name: @movement.name)
+      redirect_to :back
+    else
+      redirect_to "/users/sign_in"
+    end
   end
 
   def export_csv

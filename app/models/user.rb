@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 # verify this works
   # has_many :assignments, foreign_key: "attendee_id"
   has_many :memberships, dependent: :destroy
-  has_many :movements, through: :memberships
+  has_many :teams, through: :memberships, source: :movement
   has_many :ownerships, dependent: :destroy
   has_many :movements, through: :ownerships
   alias_attribute :host_name, :name
@@ -59,6 +59,10 @@ class User < ActiveRecord::Base
 
   def attendee?
     Attendance.all.map(&:user_id).include?(id)
+  end
+
+  def member_for?(movement_id)
+    teams.include?(Movement.find(movement_id))
   end
 
   def parent_movements
