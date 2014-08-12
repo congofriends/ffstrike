@@ -23,6 +23,7 @@ fr:
     not_yours: "Vous n'avez pas propre ce équipe!"
     not_public: "Que équipe n'est pas public encore!"
     share: "Partager votre passion"
+    join_team_success: "Merci! Vous avez rejoint l'équipe %{movement_name}."
   attendee:
     created: "Grâce à la signature de!"
     updated: "participant a été mis à jour"

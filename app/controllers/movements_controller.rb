@@ -73,6 +73,12 @@ class MovementsController < ApplicationController
 
   end
 
+  def join_team
+    @movement.users << current_user
+    flash[:notice] = t('movement.join_team_success', movement_name: @movement.name)
+    redirect_to :back
+  end
+
   def export_csv
     send_data @movement.to_csv, filename: "#{@movement.name} attendee-list.csv"
   end

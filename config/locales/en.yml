@@ -43,6 +43,7 @@ en:
     not_yours: "You don't own that team!"
     not_public: "That team isn't public yet!"
     share: "Share your passion"
+    join_team_success: "Thank you! You have joined %{movement_name}."
   attendee:
     created: "Thanks for signing up!"
     updated: "Attendee has been updated"

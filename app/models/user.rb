@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many :attendances
 # verify this works
   # has_many :assignments, foreign_key: "attendee_id"
+  has_many :memberships, dependent: :destroy
+  has_many :movements, through: :memberships
   has_many :ownerships, dependent: :destroy
   has_many :movements, through: :ownerships
   alias_attribute :host_name, :name

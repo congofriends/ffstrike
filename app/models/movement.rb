@@ -4,7 +4,9 @@ class Movement < ActiveRecord::Base
   #has_many :attendees, through: :events #, source: :user
   has_many :attendances, through: :events #, source: :user
   has_many :ownerships, dependent: :destroy
+  has_many :members, through: :memberships, source: :user
   has_many :users, through: :ownerships
+  has_many :memberships, dependent: :destroy
   validates :name, uniqueness: true
   validates :name, presence: true
 

@@ -30,6 +30,11 @@
     .row
       .spacer10
     .row
+      - if current_user
+        = link_to t('.join_team'), join_team_movement_path(@movement), class: "btn btn-host"
+    .row
+      .spacer10
+    .row
       =link_to_modal t('.contact_group_coordinator'), new_mvmt_contact_path(@movement), class: "btn btn-contact"
   -if @movement.flickr? && @movement.video?
     .row

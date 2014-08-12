@@ -273,6 +273,7 @@ es:
       about_creators: 'Sobre los creadores de'
       host_event: *host_event
       contact_group_coordinator: 'CONTACTO COORDINADOR'
+      join_team: 'UNIRSE AL EQUIPO'
     support_network:
       support_network: 'Red de Apoyo'
       network_message: 'Hay %{number} equipos y creciendo!'

@@ -279,6 +279,7 @@ fr:
       about_creators: 'Concernant les créateurs'
       host_event: *host_event
       contact_group_coordinator: 'CONTACT COORDONNATEUR'
+      join_team: "REJOINDRE L'ÉQUIPE"
     support_network:
       support_network: 'Support Réseau'
       network_message: 'Il ya %{number} équipes et en pleine croissance!'
