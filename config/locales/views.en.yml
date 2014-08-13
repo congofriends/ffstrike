@@ -119,6 +119,8 @@ en:
       events: 'EVENTS'
       teams: 'TEAMS'
     footer:
+      contact: 'Contact Us'
+      questions: 'Questions? Comments?'
       about: 'ABOUT'
       template: 'THEMES'
       media: 'TOOLKIT'

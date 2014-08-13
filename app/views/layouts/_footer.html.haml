@@ -11,3 +11,7 @@
 					= link_to t('.media'), "http://congoweek.org/downloads.html", class: 'header-footer', :target => '_blank'
 					= link_to t('.donate'), "http://www.friendsofthecongo.org/donate.html", class: 'header-footer', :target => '_blank'
 					= link_to t('.about'), about_path, class: 'header-footer', id: 'about'
+		%div.footer2
+			= t('.questions')
+			= mail_to "info@congoevents.org", t('.contact')
+

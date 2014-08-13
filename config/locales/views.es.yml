@@ -118,6 +118,8 @@ es:
       events: 'EVENTOS'
       teams: 'EQUIPOS'
     footer:
+      contact: 'Contáctenos'
+      questions: '¿Preguntas? ¿Comentarios?'
       about: 'ACERCA'
       template: 'TEMAS'
       media: 'HERRAMIENTAS'

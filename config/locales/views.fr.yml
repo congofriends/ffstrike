@@ -118,6 +118,8 @@ fr:
       events: 'ÉVÉNEMENT'
       teams: 'ÉQUIPES'
     footer:
+      contact: 'Contactez-nous'
+      questions: 'Questions? Commentaires?'
       about: 'À PROPOS'
       template: 'THÈMES'
       media: 'OUTILS'
