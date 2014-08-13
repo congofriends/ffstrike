@@ -28,7 +28,7 @@ class Event < ActiveRecord::Base
 
   has_attached_file :flyer,
                     :styles => { :medium => '280x150', :thum => '50x50' },
-                    :default_url => 'fotc.jpg',
+                    :default_url => 'poster2013.jpg',
                     path: "attachments/event_flyer/:id/:style/:filename"
 
   validates_attachment_content_type :flyer, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
