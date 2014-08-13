@@ -5,22 +5,15 @@
 
 = content_for :title, @movement.name
 .container
-  .col-sm-6
+  .col-sm-4
+    %h1.text-center
+      = @movement.name
     -if @movement.sponsored
       %a.sponsor-link{href: ""}
         %img.sponsor-img{alt: "", src: asset_path( @movement.avatar)}/
         %ins.ins
     -else
       =image_tag @movement.avatar, class: "movement_avatar"
-  .col-sm-6
-    %h3= @movement.name
-    .tagline= @movement.tagline
-    - unless !@movement.website || @movement.website.empty?
-      =link_to @movement.website, "http://#{@movement.website}", :target => '_blank'
-    - unless !@movement.about_creator || @movement.about_creator.empty?
-      %h4
-        =t('.about_creators')
-      = @movement.about_creator
     .spacer10
     .row
       - if current_user
@@ -36,31 +29,28 @@
       .spacer10
     .row
       =link_to_modal t('.contact_group_coordinator'), new_mvmt_contact_path(@movement), class: "btn btn-contact"
-  -if @movement.flickr? && @movement.video?
-    .row
-    %hr
-      .col-sm-6
-        %a.embedly-card{href: "#{@movement.flickr}"}
+    -unless !@movement.tagline || @movement.tagline.empty?
+      %hr
+      .tagline= @movement.tagline
+    - unless !@movement.website || @movement.website.empty?
+      %hr
+      =link_to @movement.website, "http://#{@movement.website}", :target => '_blank'
+    - unless !@movement.about_creator || @movement.about_creator.empty?
+      %hr
+      %h4
+        =t('.about_creators')
+      = @movement.about_creator
+    -unless !@movement.flickr || @movement.flickr.empty?
+      %hr
+      %a.embedly-card{href: "#{@movement.flickr}"}
         :javascript
           !function(a){var b="embedly-platform",c="script";if(!a.getElementById(b)){var d=a.createElement(c);d.id=b,d.src=("https:"===document.location.protocol?"https":"http")+"://cdn.embedly.com/widgets/platform.js";var e=document.getElementsByTagName(c)[0];e.parentNode.insertBefore(d,e)}}(document);
-      .col-sm-6.youtube
-        =youtube_embed_url_for_(@movement.video)
-  -elsif @movement.flickr?
-    .row
-    %hr
-      .col-sm-12
-        %a.embedly-card{href: "#{@movement.flickr}"}
-        :javascript
-          !function(a){var b="embedly-platform",c="script";if(!a.getElementById(b)){var d=a.createElement(c);d.id=b,d.src=("https:"===document.location.protocol?"https":"http")+"://cdn.embedly.com/widgets/platform.js";var e=document.getElementsByTagName(c)[0];e.parentNode.insertBefore(d,e)}}(document);
-  - elsif @movement.video?
-    .row
-    %hr
-      .col-sm-12
-        =youtube_embed_url_for_(@movement.video)
+    -unless !@movement.video || @movement.video.empty?
+      %hr
+      =youtube_embed_url_for_(@movement.video)
 
-  .col-sm-12
-    %hr
-    =render "social/rrssb"
-  .col-sm-12
-    = render partial: 'events/event', collection: @movement.events, as: :event
-
+  .col-sm-8
+    .row
+      =render "social/rrssb"
+    .row
+      = render partial: 'events/event', collection: @movement.events, as: :event
