@@ -1,5 +1,5 @@
 class MovementsController < ApplicationController
-  before_filter :load_movement, except: [:new, :create, :index, :my_profile, :new_submovement, :my_groups, :check_name]
+  before_filter :load_movement, except: [:new, :create, :index, :my_profile, :new_submovement, :my_groups, :check_name, :cancel_ownership, :cancel_membership]
   before_filter :load_movements, only: [:index, :search]
 
   include YoutubeParserHelper
@@ -20,6 +20,12 @@ class MovementsController < ApplicationController
     redirect_to root_path and return unless current_user
     @events_attending = current_user.events_attending
     @events_hosting = current_user.approved_events
+    @teams_coordinating = current_user.movements
+    @my_teams = current_user.teams
+    respond_to do |format|
+      format.html {render action: 'my_profile'}
+      format.js
+    end
   end
 
   def my_groups
@@ -80,6 +86,28 @@ class MovementsController < ApplicationController
       redirect_to :back
     else
       redirect_to "/users/sign_in"
+    end
+  end
+
+  def cancel_ownership
+    @team = Movement.find params[:team_id]
+    @coordinator = User.find params[:coordinator_id]
+    ownership = @coordinator.ownerships.find_by(movement_id: @team.id)
+    ownership.destroy if ownership
+    respond_to do |format|
+      format.html { render nothing: true }
+      format.js
+    end
+  end
+
+   def cancel_membership
+    @team = Movement.find params[:team_id]
+    @member = User.find params[:member_id]
+    membership = @member.memberships.find_by(movement_id: @team.id)
+    membership.destroy if membership
+    respond_to do |format|
+      format.html { render nothing: true }
+      format.js
     end
   end
 

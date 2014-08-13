@@ -38,7 +38,7 @@ en:
     volunteer: Volunteer
     notes: "Notes (Click to Edit)"
     dashboard:
-      header: "Manage My Events"
+      header: "Manage Events"
       instructions: "Select an Event and click SHOW"
       tab_edit: "Event Details"
       tab_tasks: "Tasks"
@@ -127,8 +127,8 @@ en:
       donate: 'DONATE'
     navbar:
       my_profile: 'My profile'
-      manage_my_groups: 'Manage My Teams'
-      manage_my_events: 'Manage My Events'
+      manage_my_groups: 'Manage Teams'
+      manage_my_events: 'Manage Events'
       create_group: 'Create Team'
       create_event: 'Create Event'
       sign_in: 'Log In'
@@ -198,7 +198,7 @@ en:
       modify_tasks: 'Modify Tasks for Events Here'
     my_groups:
       my_groups: 'My Teams'
-      manage_my_groups: 'Manage My Teams'
+      manage_my_groups: 'Manage Teams'
       show: 'SHOW'
       select_group: 'Select a Team and click SHOW'
       group_details: 'Team Details'
@@ -239,8 +239,25 @@ en:
       team_name: 'Team Name'
       sponsored: 'Sponsored'
     my_profile:
-      events_attending: 'Events Attending'
+      events_attending: 'My Events'
       personal_details: 'Personal Details'
+      teams_coordinating: 'My Teams'
+    tab_my_teams:
+      empty_teams_line1: "You are currently not coordination any teams. Visit the "
+      empty_teams_line2:  "Teams Page "
+      teams_page: "to join or create a team in your area!"
+      col1: 'Team Name'
+      col2: 'Date Joined'
+      col3: 'Remove Coordinator Access'
+      col4: 'Leave Team'
+      unjoin_team: 'Unjoin Team'
+      view_team: 'View Team'
+      edit_team: 'Edit Team'
+      teams_coordinating: 'Teams I am a coordinator for'
+      teams_member: 'Teams I am a member of'
+      invite_coordinator: 'Invite Coordinator'
+      remove_team: 'Remove Admin Privileges'
+      confirm_msg: 'Are you sure?'
     new:
       thanks_msg: 'Thank you for creating a Congo Week Team to support peace and justice in the heart of Africa. '
       explanation_msg: "Once you fill out the relevant details to create a team, events associated with your team will show up on one page."

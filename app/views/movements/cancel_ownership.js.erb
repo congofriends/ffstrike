@@ -1,0 +1,3 @@
+$("#remove_ownership<%= @team.id %>").bind('ajax:success', function(){
+	$("#team_<%=@team.id %>").hide();
+});

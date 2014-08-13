@@ -1,0 +1,3 @@
+$("#remove_membership<%= @team.id %>").bind('ajax:success', function(){
+	$("#membership_<%=@team.id %>").hide();
+});

@@ -1,0 +1,3 @@
+$("#edit_account").html("<%= escape_javascript(render 'movements/tab_edit_account', user: current_user)%>");
+$("#my_events").html("<%= escape_javascript(render 'movements/tab_my_events', events: @events_attending, description: t('.events_attending')%>");
+$("#my_teams").html("<%= escape_javascript(render 'movements/tab_my_teams', teams: @teams_coordinating, , my_teams: @my_teams, description: t('.teams_coordinating')%>");

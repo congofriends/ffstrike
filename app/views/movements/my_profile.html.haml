@@ -1,13 +1,18 @@
 .container
-  %ul#movementTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}
+  %ul#profileTabs.nav.nav-tabs{style: "margin-bottom: 15px;"}
     %li
       %a{href: '#edit_account', data: {toggle: 'tab'}}
         = t('.personal_details')
     %li
-      %a{href: '#attending_events', id:'event_tab' ,data: {toggle: 'tab'}}
+      %a{href: '#my_events', id:'event_tab' ,data: {toggle: 'tab'}}
         =t('.events_attending')
+    %li
+      %a{href: '#my_teams', id:'teams_tab' ,data: {toggle: 'tab'}}
+        =t('.teams_coordinating')
   .tab-content
     .tab-pane.fade.in#edit_account
       = render "tab_edit_account", user: current_user
-    .tab-pane.fade.in#attending_events
+    .tab-pane.fade.in#my_events
       = render "tab_my_events", events: @events_attending, description: t('.events_attending')
+    .tab-pane.fade.in#my_teams
+      = render "tab_my_teams", teams: @teams_coordinating, my_teams: @my_teams, description: t('.teams_coordinating')

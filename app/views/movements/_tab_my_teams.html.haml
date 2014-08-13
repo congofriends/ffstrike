@@ -1,0 +1,42 @@
+.tab-pane#my_teams
+	.well
+		%legend= description
+		.panel.panel-default
+			.panel-body
+				- if teams.empty? && my_teams.empty?
+					%h2
+					=t('.empty_teams_line1')
+					=link_to t('.teams_page'), movement_events_path(Movement.first)
+					=t('.empty_teams_line2')
+				- else
+					%h3=t('.teams_coordinating')
+					%table.table.table-bordered.table-striped.sortable#task-table
+						%tr
+							%th= t('.col1')
+							%th= t('.col2')
+							%th= t('.col3')
+						- teams.each do |team|
+							%tr{:id => "team_#{team.id}"}
+								%td
+									= team.name
+									(
+									= link_to t('.view_team'), movement_path(team)
+									|
+									= link_to t('.edit_team'), my_groups_path(:name => {:id => team.id})
+									|
+									= link_to_modal t('.invite_coordinator'), new_user_invitation_path({mvmt_id: team.id})
+									)
+								%td= current_user.ownerships.find_by(movement_id: team.id).created_at.to_date
+								%td= link_to t('.remove_team'),  cancel_ownership_path(coordinator_id: current_user.id, team_id: team.id), method: :put, remote: true, class: "btn btn-attend", id: "remove_ownership#{team.id}", confirm: t('.confirm_msg')
+					%hr
+					%h3=t('.teams_member')
+					%table.table.table-bordered.table-striped.sortable#task-table
+						%tr
+							%th= t('.col1')
+							%th= t('.col2')
+							%th= t('.col4')
+						- my_teams.each do |team|
+							%tr{:id => "membership_#{team.id}"}
+								%td= link_to team.name, movement_path(team)
+								%td= current_user.memberships.find_by(movement_id: team.id).created_at.to_date
+								%td= link_to t('.unjoin_team'),  cancel_membership_path(member_id: current_user.id, team_id: team.id), method: :put, remote: true, class: "btn btn-attend", id: "remove_membership#{team.id}", confirm: t('.confirm_msg')

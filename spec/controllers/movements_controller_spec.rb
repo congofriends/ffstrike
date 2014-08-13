@@ -170,6 +170,26 @@ describe MovementsController do
     end
   end
 
+  describe "PUT #cancel_ownership" do
+    it "removes user as coordinator for movement" do
+      movement = FactoryGirl.create(:movement)
+      user = FactoryGirl.create(:user)
+      ownership = FactoryGirl.create(:ownership, user: user, movement: movement)
+
+      expect{put :cancel_ownership, team_id: movement.id, coordinator_id: user.id}.to change(Ownership, :count).by(-1)
+    end
+  end
+
+  describe "PUT #cancel_membership" do
+    it "removes user as a member of movement" do
+      movement = FactoryGirl.create(:movement)
+      user = FactoryGirl.create(:user)
+      membership = FactoryGirl.create(:membership, user: user, movement: movement)
+
+      expect{put :cancel_membership, team_id: movement.id, member_id: user.id}.to change(Membership, :count).by(-1)
+    end
+  end
+
   describe "GET #export_csv" do
     context "when format is csv" do
       it "should return a csv attachment" do

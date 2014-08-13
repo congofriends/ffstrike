@@ -243,8 +243,25 @@ fr:
       team_name: *name
       sponsored: "Parrainés"
     my_profile:
-      events_attending: 'Assister aux événements'
+      events_attending: 'Mes événements'
       personal_details: 'Détails personnels'
+      teams_coordinating: 'Mes équipes'
+    tab_my_teams:
+      empty_teams_line1: "Vous n'etes pas la coordination des équipes Visitez la"
+      empty_teams_line2:  "Les équipes page"
+      teams_page: "créer ou rejoindre une équipe dans votre région!"
+      col1: "Nom de l'équipe"
+      col2: 'Date de début'
+      col3: "Suppression de l'accès de coordinateur"
+      col4: 'Congé Team'
+      unjoin_team: 'Détacher Team'
+      teams_coordinating: 'Équipes Je suis un coordinateur pour'
+      teams_member: 'Équipes Je suis un membre du'
+      view_team: "Voir l'équipe"
+      edit_team: "Modifier l'équipe"
+      invite_coordinator: 'Inviter coordinateur'
+      remove_team: "Retirer des privilèges d'administrateur"
+      confirm_msg: 'Êtes-vous sûr?'
     new:
       name: *name
       location: "Les détails d'emplacement:"

@@ -1,4 +1,4 @@
-es:
+wes:
   dictionary:
     email: &email Correo electrónico
     name: &name Nombre
@@ -237,8 +237,25 @@ es:
       team_name: *name
       sponsored: "Patrocinado"
     my_profile:
-      events_attending: 'Eventos'
+      events_attending: 'Mis Eventos'
       personal_details: 'Datos personales'
+      teams_coordinating: 'Mis Equipos'
+    tab_my_teams:
+      empty_teams_line1: "No has coordinación cualesquiera equipos Visite "
+      empty_teams_line2:  "Los equipos de página"
+      teams_page: "unirse o crear un equipo en su área!"
+      col1: 'Nombre del equipo'
+      col2: 'Fecha de Inicio'
+      col3: 'Eliminar Coordinador de Acceso'
+      col4: 'Dejar de equipo'
+      unjoin_team: 'Equipo Abandonar'
+      teams_coordinating: 'Equipos soy un coordinador para'
+      teams_member: 'Equipos Soy miembro de'
+      view_team: 'Ver equipo'
+      edit_team: 'Editar equipo'
+      invite_coordinator: 'Invitar Coordinador'
+      remove_team: 'Eliminar privilegios de administrador'
+      confirm_msg: '¿Estás seguro?'
     new:
       name: *name
       location_placeholder: 'p. ej. Mundial, Internacional, Nacional..'

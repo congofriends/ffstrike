@@ -69,6 +69,9 @@ Ffstrike::Application.routes.draw do
     put 'events/:id/sponsor' => 'events#sponsor', as: 'sponsor'
     put 'assign_volunteer' => 'events#assign_volunteer', as: 'assign_volunteer'
     put 'unattend' => 'events#unattend', as: 'unattend'
+    put 'cancel_ownership' => 'movements#cancel_ownership', as: 'cancel_ownership'
+    put 'cancel_membership' => 'movements#cancel_membership', as: 'cancel_membership'
+
 
     put 'tasks/:id/completed' => 'tasks#completed', as: 'completed'
 
