@@ -1,8 +1,14 @@
 = content_for :title, @movement.name
 .container
-  .row
+  .banner
     = image_tag asset_path("fotc_banner.jpg"),:class => "movement_avatar"
+    %iframe{:class => "final_countdown", :src => "#{@countdown_urls[I18n.locale]}"}
+  %h1 Support the Congo Global Movement
+  .info
+    Every year Congo Week galvanizes the participation of people in over 65 countries and 400 university campuses and communities. Be part of the movement by mobilizing support on behalf of the people of the Congo. You can contribute by doing any or all of the following: Create a team, join a team, create an event, or sign-up for an event.
   .row
+
+  .home_btns
     .col-sm-6.events-button
       = link_to (image_tag asset_path("events-btn_#{I18n.locale}.jpg"), :class => 'events-button'), movement_events_path(@movement)
     .col-sm-6.network-button

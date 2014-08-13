@@ -7,6 +7,7 @@ class MovementsController < ApplicationController
 
   def index
     @movement = Movement.first
+    load_countdown_urls
     render 'movements/show'
   end
 
@@ -194,6 +195,14 @@ class MovementsController < ApplicationController
       gon.times << e.formatted_time
       gon.event_images << ActionController::Base.helpers.asset_path(e.image.url)
     end
+  end
+
+  def load_countdown_urls
+    @countdown_urls = {
+                        en: "http://free.timeanddate.com/countdown/i4a6f1qx/n64/cf12/cm0/cu4/ct1/cs0/ca0/co0/cr0/ss0/cacfff/cpcfff/pct/tcfff/fs200/szw576/szh243/iso2014-10-19T00:00:00",
+                        es: "http://free.timeanddate.com/countdown/i4a6f1qx/n64/cf12/cm0/cu4/ct1/cs0/ca0/co0/cr0/ss0/cacfff/cpcfff/pct/tcfff/fs200/szw576/szh243/iso2014-10-19T00:00:00",
+                        fr: "http://free.timeanddate.com/countdown/i4a6f1qx/n64/cf12/cm0/cu4/ct1/cs0/ca0/co0/cr0/ss0/cacfff/cpcfff/pct/tcfff/fs200/szw576/szh243/iso2014-10-19T00:00:00"
+                      }
   end
 
   def get_approved_events
