@@ -19,9 +19,9 @@
                 .form-group.col-sm-4
                   = label :event, :end_time,  t("events.edit.end_date")
                   = text_field :event, :end_time, class: "form-control datetimepicker datetimepicker-#{I18n.locale}"
-              .form-group.col-sm-4
-                = label :event, :time_tbd, "Time To Be Determined"
+              .form-group.col-sm-8
                 = check_box :event, :time_tbd, {}, true, false
+                = label :event, :time_tbd, t('events.new.datetime_tbd')
               %legend=  t("events.new.address")
               .row
                 .form-group.col-sm-6
@@ -45,8 +45,8 @@
                   = label :event, :country, t('events.edit.country') + " *"
                   = country_select :event, :country, priority: %w(CD US CA), prompt: 'Please select a country', class: 'form-control'
               .form-group.col-sm-12
-                = label :event, :location_tbd, "Address To Be Determined"
                 = check_box :event, :location_tbd, {}, true, false
+                = label :event, :location_tbd, t('events.new.address_tbd')
               .form-group.col-sm-12
                 = label :event,:location_details, t("events.location")
                 = text_field :event,:location_details, placeholder: t("events.new.location_placeholder"), class: 'form-control'

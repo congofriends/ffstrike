@@ -19,9 +19,9 @@
                 .form-group.col-sm-4
                   = form.label t('events.edit.end_date')
                   = form.text_field :end_time, class: "form-control datetimepicker datetimepicker-#{I18n.locale}"
-              .form-group.col-sm-4
-                = form.label :time_tbd, t('.datetime_tbd')
+              .form-group.col-sm-8
                 = form.check_box :time_tbd, {}, true, false
+                = form.label :time_tbd, t('.datetime_tbd')
               %legend= t('.address')
               .row
                 .form-group.col-sm-6
@@ -44,12 +44,13 @@
                 .form-group.col-sm-6
                   = form.label :country, t('events.edit.country') + " *"
                   = form.country_select :country, priority: %w(CD US CA), prompt: 'Please select a country', class: 'form-control'
-              .form-group
-                = form.label :location_tbd, t('.address_tbd')
-                = form.check_box :location_tbd, {}, true, false
-              .form-group
-                = form.label :location_details, t('events.location')
-                = form.text_field :location_details, placeholder: t('.location_placeholder'), class: 'form-control'
+              .row
+                .form-group.col-sm-12
+                  = form.check_box :location_tbd, {}, true, false
+                  = form.label :location_tbd, t('.address_tbd')
+                .form-group.col-sm-12
+                  = form.label :location_details, t('events.location')
+                  = form.text_field :location_details, placeholder: t('.location_placeholder'), class: 'form-control'
               %button{type: "button", class: "btn btn-success next"}
                 = t('.next')
             %fieldset.event_additional_details
