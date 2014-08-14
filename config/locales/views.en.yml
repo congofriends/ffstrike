@@ -283,6 +283,8 @@ en:
       host_event: *host_event
       contact_group_coordinator: 'CONTACT COORDINATOR'
       join_team: 'JOIN TEAM'
+      upcoming_events: 'Upcoming Events'
+      no_upcoming_events: 'There are no Upcoming Events'
     support_network:
       support_network: 'Support Network'
       network_message: 'There are %{number} teams and growing!'

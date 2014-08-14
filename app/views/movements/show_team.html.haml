@@ -55,8 +55,11 @@
     .row
       -unless !@movement.events || @movement.events.empty?
         .row
-          %h2 Upcoming Events
+          %h2
+            =t('.upcoming_events')
           = render partial: 'events/event_small', collection: @movement.events, as: :event
       -else
         .row
-          %h2 There are no Upcoming Events
+          %h2
+            =t('.no_upcoming_events')
+

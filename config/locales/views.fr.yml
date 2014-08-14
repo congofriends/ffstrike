@@ -300,6 +300,8 @@ fr:
       host_event: *host_event
       contact_group_coordinator: 'CONTACT COORDONNATEUR'
       join_team: "REJOINDRE L'ÉQUIPE"
+      upcoming_events: 'Événements à Venir'
+      no_upcoming_events: 'Aucun Événements'
     support_network:
       support_network: 'Support Réseau'
       network_message: 'Il ya %{number} équipes et en pleine croissance!'

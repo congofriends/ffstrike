@@ -294,6 +294,8 @@ es:
       host_event: *host_event
       contact_group_coordinator: 'CONTACTO COORDINADOR'
       join_team: 'UNIRSE AL EQUIPO'
+      upcoming_events: 'Próximos Eventos'
+      no_upcoming_events: 'No hay Eventos'
     support_network:
       support_network: 'Red de Apoyo'
       network_message: 'Hay %{number} equipos y creciendo!'

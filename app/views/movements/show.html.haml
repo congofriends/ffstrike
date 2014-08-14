@@ -3,7 +3,7 @@
   .banner
     = image_tag asset_path("fotc_banner.jpg"),:class => "movement_avatar"
     %iframe{:class => "final_countdown", :src => "#{@countdown_urls[I18n.locale]}"}
-  %h1
+  %h1.home-quote
     = t('.h1')
   .info
     = t('.quote')
