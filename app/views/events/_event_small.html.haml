@@ -4,6 +4,8 @@
   %meta{property: "og:image", content: event.image}
 %hr
 .row
+  %h3.text-center
+    = link_to event.name, event_path(event)
   .col-sm-4
     -if event.sponsored
       = link_to event_path(event) do
@@ -13,9 +15,15 @@
     -else
       = link_to image_tag(event.image, class: "event_avatar"), event_path(event)
     .spacer10
-  .col-sm-8
-    %h3= link_to event.name, event_path(event)
-  .col-sm-5.event-data
+    .row
+      -unless event.attended_by? current_user
+        = link_to_modal t('events.attend_btn'), new_attendee_user_path({:event => event.id}), {class: "btn btn-attend"}
+        .row
+          .spacer10
+          .spacer10
+      -unless event.host? current_user
+        =link_to_modal t('events.contact_host_btn'), new_contact_path(event), {class: "btn btn-contact" }
+  .col-sm-8.event-data
     %strong=  t('events.when')
     =event.formatted_time
     .row
@@ -43,11 +51,3 @@
     - unless event.description.nil?
       %strong= t('events.description')
       = event.description
-  .col-sm-3.event-actions
-    -unless event.attended_by? current_user
-      = link_to_modal t('events.attend_btn'), new_attendee_user_path({:event => event.id}), {class: "btn btn-attend"}
-      .row
-        .spacer10
-        .spacer10
-    -unless event.host? current_user
-      =link_to_modal t('events.contact_host_btn'), new_contact_path(event), {class: "btn btn-contact" }

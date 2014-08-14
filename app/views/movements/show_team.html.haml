@@ -53,4 +53,10 @@
     .row
       =render "social/rrssb"
     .row
-      = render partial: 'events/event', collection: @movement.events, as: :event
+      -unless !@movement.events || @movement.events.empty?
+        .row
+          %h2 Upcoming Events
+          = render partial: 'events/event_small', collection: @movement.events, as: :event
+      -else
+        .row
+          %h2 There are no Upcoming Events

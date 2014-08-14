@@ -10,11 +10,18 @@
   .row
     %hr
   =render "social/rrssb"
+  %hr
   %br
   .row
-    - unless @event.location == "TBD" || @event.latitude.nil? || @event.longitude.nil?
-      .col-sm-12
-        %iframe{frameborder: "0", height: "250", src: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg\r\n    &q=#{@event.location}", style: "border:0", width: "100%"}
+    .col-sm-4#flyer_download
+      %strong= t('events.flyer_msg')
+      %div= t('events.flyer_dl')
+      %a{download: @event.name + "_flyer", href: @event.flyer, title: @event.name + "_flyer"}
+        %img{alt: @event.name + "_flyer", src: asset_path(@event.flyer.url), class: "event-flyer"}
+    .col-sm-8
+      - unless @event.location == "TBD" || @event.latitude.nil? || @event.longitude.nil?
+        .col-sm-12.event-map
+          %iframe{frameborder: "0", height: "310", src: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg\r\n    &q=#{@event.location}", style: "border:0", width: "100%"}
 
 - if @event.forum_option
   .container
