@@ -111,4 +111,20 @@ describe UserMailer do
       mail.subject.should eq "Your event has been canceled."
     end
   end
+
+  describe "#survey_event_message" do
+
+    let(:mail) { UserMailer.survey_message(user_attendee.id, event.id) }
+
+    it "sends to attendees" do
+      mail.to.should eq [user_attendee.email]
+    end
+    it "has correct body" do
+      mail.body.encoded.should include "Thanks for attending:"
+      mail.body.encoded.should include event.name
+    end
+    it "has correct subject" do
+      mail.subject.should eq "Thanks for attending: #{event.name}"
+    end
+  end
 end

@@ -55,6 +55,13 @@ class UserMailer < ActionMailer::Base
     mail(to: @recipient.email, subject: "Event #{@event.name} Created Successfully").deliver
   end
 
+  def survey_message(user_id, event_id)
+    @recipient = User.find user_id
+    @event = Event.find event_id
+    mail(to: @recipient.email, subject: "Thanks for attending: #{@event.name}").deliver unless Attendance.where(user_id: @recipient, event_id: @event).empty?
+  end
+
+
 # not being used?
   # def notify_host_of_event_size(event_id)
   #   @event = Event.find event_id
