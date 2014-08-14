@@ -297,6 +297,7 @@ es:
       upcoming_events: 'Próximos Eventos'
       no_upcoming_events: 'No hay Eventos'
     support_network:
+      team_description: 'Un equipo es un conjunto de individuos u organizaciones que se ha unido el movimiento Congo para organizar eventos en sus comunidades locales para crear conciencia y educar a otros acerca de la situación en el Congo. Ayúdanos a construir equipos de todo el mundo para trabajar en asociación con los congoleños para lograr la paz, la justicia y la dignidad humana en el corazón de África. Únete al movimiento por la unión o la creación de un equipo.'
       support_network: 'Red de Apoyo'
       network_message: 'Hay %{number} equipos y creciendo!'
       create_team: 'CREAR UN EQUIPO'

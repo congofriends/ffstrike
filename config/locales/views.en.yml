@@ -286,6 +286,7 @@ en:
       upcoming_events: 'Upcoming Events'
       no_upcoming_events: 'There are no Upcoming Events'
     support_network:
+      team_description: 'A team is a collection of individuals or organization that has joined the Congo movement to organize events in their local communities to raise awareness and educate others about the situation in the Congo. Help us build teams throughout the globe to work in partnership with Congolese to bring about peace, justice and human dignity in the heart of Africa. Join the movement by joining or creating a team.'
       support_network: 'Support Network'
       network_message: 'There are %{number} teams and growing!'
       create_team: 'CREATE A TEAM'
