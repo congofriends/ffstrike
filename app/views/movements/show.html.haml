@@ -1,7 +1,7 @@
 = content_for :title, @movement.name
 .container
   .banner
-    = image_tag asset_path("fotc_banner.jpg"),:class => "movement_avatar"
+    = image_tag asset_path("fotc_banner.jpg"),:class => "movement_avatar banner-image"
     %iframe{:class => "final_countdown", :src => "#{@countdown_urls[I18n.locale]}"}
   %h1.home-quote
     = t('.h1')

@@ -35,6 +35,10 @@
     - unless !@movement.website || @movement.website.empty?
       %hr
       =link_to @movement.website, "http://#{@movement.website}", :target => '_blank'
+    %hr
+    %h4
+      -@movement.members.count
+      =pluralize(@movement.members.count, 'Member')
     - unless !@movement.about_creator || @movement.about_creator.empty?
       %hr
       %h4
