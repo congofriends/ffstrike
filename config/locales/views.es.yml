@@ -17,8 +17,8 @@ es:
     host_link: "Haga clic aquí para crear tu propia."
     search_placeholder: "Búsqueda por ciudad, estado o código postal"
     no_events_msg: "No hay eventos registrados cerca de usted."
-    attend_btn: "ASISTIR A"
-    contact_host_btn: "CONTACTAR CON HOST"
+    attend_btn: "ASISTI A"
+    contact_host_btn: "CONTACTA CON HOST"
     flyer_msg: "Utilice este folleto para promover este evento!"
     flyer_dl: "(Haga clic en el flyer para descargar)"
     when: "Cuando:"
@@ -284,8 +284,8 @@ es:
       next: "Siguiente"
       previous: "Anterior"
     show:
-      h1: 'Apoyar el Movimiento Mundial en Congo'
-      quote: 'Nuestra misión y visión es elevar la conciencia de la comunidad mundial en el reto del Congo y apoyar a las instituciones congoleñas en el logro de un cambio pacífico y duradero. Únete al movimiento por la paz y la justicia en el Congo! Aquí usted puede aprender acerca de la crisis en el Congo y tomar acción mediante la creación o asistir a un evento, o crear o unirse a un equipo en su área.'
+      h1: 'Apoya el Movimiento Mundial en Congo'
+      quote: 'Nuestra misión y visión es elevar la conciencia de la comunidad mundial en el reto del Congo y apoya las instituciones congoleñas en el logro de un cambio pacífico y duradero. Únete al movimiento por la paz y la justicia en el Congo! Aquí usted puede aprender acerca de la crisis en el Congo y tomar acción mediante la creación o asistir a un evento, o crear o unirse a un equipo en su área.'
       congo-week: "CONGO SEMANA"
       events: "EVENTOS"
       network: "RED"

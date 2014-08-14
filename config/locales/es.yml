@@ -2,7 +2,7 @@
 es:
   attendee_mailer:
     signup_message:
-      subject: "Se ha suscrito a asistir a un evento."
+      subject: "Se ha suscrito asistir a un evento."
   user:
     invalid_credentials: "Credenciales de usuario no válido"
   event:
