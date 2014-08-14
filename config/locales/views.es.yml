@@ -284,7 +284,8 @@ es:
       next: "Siguiente"
       previous: "Anterior"
     show:
-      quote: 'Nuestra misión y visión es la de aumentar la toma de conciencia de la comunidad mundial sobre el problema del Congo y el apoyo las instituciones congoleñas en el logro de una solución pacífica y duradera.'
+      h1: 'Apoyar el Movimiento Mundial en Congo'
+      quote: 'Nuestra misión y visión es elevar la conciencia de la comunidad mundial en el reto del Congo y apoyar a las instituciones congoleñas en el logro de un cambio pacífico y duradero. Únete al movimiento por la paz y la justicia en el Congo! Aquí usted puede aprender acerca de la crisis en el Congo y tomar acción mediante la creación o asistir a un evento, o crear o unirse a un equipo en su área.'
       congo-week: "CONGO SEMANA"
       events: "EVENTOS"
       network: "RED"
