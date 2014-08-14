@@ -1,4 +1,4 @@
-wes:
+es:
   dictionary:
     email: &email Correo electrónico
     name: &name Nombre
