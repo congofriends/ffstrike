@@ -151,6 +151,11 @@ en:
       subject: 'Subject:'
       question: "Question à propos de %{about}"
       submit: 'Submit'
+    new_attendees_msg:
+      contact_attendees: 'Contact the attendees of'
+      subject: 'Subject:'
+      message: 'Your message:'
+      submit: 'Submit'
   movements:
     movement:
       dashboard: 'DASHBOARD'

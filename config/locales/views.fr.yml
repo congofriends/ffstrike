@@ -150,6 +150,11 @@ fr:
       message: 'Votre message:'
       question: "Question à propos de %{about}"
       submit: 'Soumettre'
+    new_attendees_msg:
+      contact_attendees: 'Contactez les participants de'
+      subject: 'Sujet:'
+      message: 'Votre message:'
+      submit: 'Soumettre'
   movements:
     movement:
       dashboard: 'TABLEAU DE BORD'

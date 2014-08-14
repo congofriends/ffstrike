@@ -150,6 +150,11 @@ es:
       subject: 'Asunto:'
       question: "Question à propos de %{about}"
       submit: 'Enviar'
+    new_attendees_msg:
+      contact_attendees: 'Póngase en contacto con los asistentes de'
+      subject: 'Asunto:'
+      message: 'Su mensaje:'
+      submit: 'Enviar'
   movements:
     movement:
       dashboard: 'TABLERO'

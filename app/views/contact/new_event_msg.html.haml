@@ -4,16 +4,16 @@
 %h5= @event.name
 = form_for @message, :method => :post, :url => contact_path, html: { id: 'contact-form' } do |form|
   .field
-    = form.label t('.name') +' *', class: "modal-field form-label"
+    = form.label t('.name'), class: "modal-field form-label"
     = form.text_field :name, class: "modal-input form-inline form-control"
   .field
-    = form.label t('.email') + ' *', class: "modal-field form-label"
+    = form.label t('.email'), class: "modal-field form-label"
     = form.text_field :email, class: "modal-input form-inline form-control"
   .field
-    = form.label t('.subject') + ' * ', class: "modal-field form-label"
+    = form.label t('.subject'), class: "modal-field form-label"
     = form.text_field :subject, value: t('.question', about: @event.name),  class: "modal-input form-inline form-control"
   .field
-    = form.label t('.message') + ' * ', class: "modal-field"
+    = form.label t('.message'), class: "modal-field"
     = form.text_area :body, class: "modal-input contact-body form-control", rows: "6"
   = form.hidden_field :host_id, value: @event.id
   = form.submit t('.submit'), class: "contact-send-btn btn"
