@@ -16,4 +16,4 @@
     = form.label t('.message'), class: "modal-field"
     = form.text_area :body, class: "modal-input contact-body form-control", rows: "6"
   = form.hidden_field :host_id, value: @event.id
-  = form.submit t('.submit'), class: "contact-send-btn btn"
+  = form.submit t('.submit'), class: "contact-send-btn btn btn-host"

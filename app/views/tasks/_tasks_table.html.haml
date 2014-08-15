@@ -15,4 +15,4 @@
   = form_for ([event, @task=Task.new]), remote: true, html: {class: "form-group", id: "new_task#{event.id}"} do |f|
     .row
       .col-xs-8= f.text_area :description, placeholder: t('.new_description'), class: "form-control", rows: "3"
-      .col-xs-4= f.submit t('.create_btn'), :class=>"btn"
+      .col-xs-4= f.submit t('.create_btn'), :class=>"btn btn-host"

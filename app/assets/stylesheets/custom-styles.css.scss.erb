@@ -368,12 +368,14 @@ div > .mvmt-attendee { color: blue; }
 .modal {
   padding: 15px;
   width: 450px;
-  height: 550px;
+  height: auto;
+  max-height: 500px;
   line-height: 1.25;
   text-align: left;
   text-indent: 0;
   background: $background-color;
   border: 2px solid #fff;
+  overflow: auto;
 }
 
 .modal a.close-modal {

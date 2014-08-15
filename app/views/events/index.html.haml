@@ -10,9 +10,9 @@
         %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
     .col-md-6
       -if current_user
-        = link_to t('events.host_btn') , new_movement_event_path(@movement), class: 'btn search'
+        = link_to t('events.host_btn') , new_movement_event_path(@movement), class: 'btn search btn-host'
       -else
-        = link_to t('events.host_btn') , new_movement_unauthenticated_event_path(@movement), class: 'btn search'
+        = link_to t('events.host_btn') , new_movement_unauthenticated_event_path(@movement), class: 'btn search btn-host'
   .row
     %h4#no-results
       = t('events.no_events_msg')

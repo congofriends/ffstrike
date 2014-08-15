@@ -22,9 +22,9 @@
 
     .row
       .col-sm-6
-        = link_to t('.export_coordinators'), export_coordinators_csv_path(@group), class: 'btn ctrl-btn'
+        = link_to t('.export_coordinators'), export_coordinators_csv_path(@group), class: 'btn ctrl-btn btn-host'
       .col-sm-6
-        = link_to_modal t('.invite_coordinators'), new_user_invitation_path({mvmt_id: @group.id}), class: 'btn ctrl-btn'
+        = link_to_modal t('.invite_coordinators'), new_user_invitation_path({mvmt_id: @group.id}), class: 'btn ctrl-btn btn-host'
     %br
     %br
 
@@ -49,9 +49,9 @@
 
     .row
       .col-sm-6
-        = link_to t('.export_hosts'), export_hosts_csv_path(@group), class: 'btn ctrl-btn'
+        = link_to t('.export_hosts'), export_hosts_csv_path(@group), class: 'btn ctrl-btn btn-host'
       .col-sm-6
-        = link_to_modal t('.email_hosts'), new_coordinator_hosts_msg_path(@group), class: 'btn ctrl-btn'
+        = link_to_modal t('.email_hosts'), new_coordinator_hosts_msg_path(@group), class: 'btn ctrl-btn btn-host'
     %br
     %br
 
@@ -77,8 +77,8 @@
 
     .row
       .col-sm-6
-        = link_to t('.export_attendees'), export_csv_path(@group), class: 'btn ctrl-btn'
+        = link_to t('.export_attendees'), export_csv_path(@group), class: 'btn ctrl-btn btn-host'
       .col-sm-6
-        = link_to_modal t('.email_attendees'), new_coordinator_attendee_msg_path(@group),  class: 'btn ctrl-btn'
+        = link_to_modal t('.email_attendees'), new_coordinator_attendee_msg_path(@group),  class: 'btn ctrl-btn btn-host'
       .col-sm-12
-        = link_to t('.export_all'), export_all_csv_path(@group), class: 'btn ctrl-btn' if current_user.super_admin?
+        = link_to t('.export_all'), export_all_csv_path(@group), class: 'btn ctrl-btn btn-host' if current_user.super_admin?

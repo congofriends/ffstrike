@@ -112,7 +112,8 @@ en:
       new_description: "Add a new task description here..."
       create_btn: "CREATE NEW TASK"
     attendee_tasks:
-      header: "Here's how you can help out:"
+      header1: "Thank you for signing up!"
+      header2: "Here's how you can get involved:"
   layouts:
     breadcrumb:
       home: 'HOME'
