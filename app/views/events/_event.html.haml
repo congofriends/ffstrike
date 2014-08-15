@@ -34,7 +34,7 @@
     .row
       .spacer10
       .spacer10
-    - if event.movement
+    - if event.movement && event.movement != Movement.first
       %strong= t('events.organized_by')
       =link_to event.movement.name, movement_path(event.movement)
     .row
