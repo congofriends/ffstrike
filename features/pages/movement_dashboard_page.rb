@@ -17,6 +17,7 @@ include Capybara::DSL
 
 	def email_attendees_in_movement
 		click_link_or_button ('EMAIL ATTENDEES')
+    fill_in 'subject', with: 'Great job!'
 		fill_in 'message', with: 'Chicago, New York and Tennessee events went great, keep up the good work!!!'
 		click_link_or_button ('SEND EMAIL')
 	end
