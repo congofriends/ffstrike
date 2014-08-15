@@ -61,7 +61,7 @@
         .row
           %h2
             =t('.upcoming_events')
-          = render partial: 'events/event_small', collection: @movement.events, as: :event
+          = render partial: 'events/event_small', collection: @movement.events.public_events, as: :event
       -else
         .row
           %h2

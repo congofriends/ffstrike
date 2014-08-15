@@ -69,9 +69,6 @@ class MovementsController < ApplicationController
     get_approved_events
     load_map_vars
 
-    @sub_events = []
-    @movement.sub_movements.each { |sub_movement| @sub_events.concat sub_movement.events }
-
     if @movement.parent.nil?
       render "show"
     else
