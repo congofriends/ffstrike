@@ -27,6 +27,16 @@ class ContactMailer < ActionMailer::Base
     mail(to: @coordinator_emails, from: @sender.email, subject: @message.subject)
   end
 
+  def new_members_message(message)
+    @group = Movement.find(message.host_id)
+    @sender = User.find(message.sender_id)
+    @message = message
+    @members_emails = []
+    @group.memberships.each { |membership| @members_emails << membership.user.email if membership.user.email}
+    mail(to: @members_emails, from: @sender.email, subject: @message.subject)
+  end
+
+
   def new_mvmt_message(message)
   	@movement = Movement.find(message.host_id)
     @message = message

@@ -162,6 +162,11 @@ en:
       subject: 'Subject:'
       message: 'Your message:'
       submit: 'Submit'
+    new_members_msg:
+      contact_members: 'Contact the team members'
+      subject: 'Subject:'
+      message: 'Your message:'
+      submit: 'Submit'
   movements:
     movement:
       dashboard: 'DASHBOARD'
@@ -188,6 +193,9 @@ en:
       point_person: *point
       yes: 'Y'
       no: 'N'
+      team-members: "TEAM MEMBERS"
+      email_members: "EMAIL MEMBERS"
+      export_members: "EXPORT MEMBERS"
     explanation:
       confirm_msg: "Congrats - You've successfully created a team to support Friends of the Congo"
       team_dash_prompt: "Click here to go right to your team dashboard"
@@ -216,6 +224,7 @@ en:
       group_events: 'Team Events'
       manage_supporters: 'Manage Supporters'
       teams: 'Teams'
+      past_events: 'Past Events'
     tab_group_events:
       event_name: "Event Name"
       where: "When"

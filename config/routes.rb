@@ -84,6 +84,7 @@ Ffstrike::Application.routes.draw do
     #export CSV
     get 'export_csv/:id' => 'movements#export_csv', as: 'export_csv'
     get 'export_hosts_csv/:id' => 'movements#export_hosts_csv', as: 'export_hosts_csv'
+    get 'export_members_csv/:id' => 'movements#export_members_csv', as: 'export_members_csv'
     get 'export_coordinators_csv/:id' => 'movements#export_coordinators_csv', as: 'export_coordinators_csv'
     get 'export_all_csv/:id' => 'movements#export_all_csv', as: 'export_all_csv'
     get 'export_attendees/:id' => 'events#export_attendees', as: 'export_event_attendees'
@@ -99,6 +100,8 @@ Ffstrike::Application.routes.draw do
     get 'coordinator_hosts_msg/:id' => 'contact#new_coordinator_hosts_msg', :as => 'new_coordinator_hosts_msg'
     get 'new_coordinator_msg/:id' => 'contact#new_coordinator_msg', :as => 'new_coordinator_msg'
     post 'create_coordinator_msg' => 'contact#create_coordinator_msg', :as => 'create_coordinator_msg'
+    get 'new_members_msg/:id' => 'contact#new_members_msg', :as => 'new_members_msg'
+    post 'create_members_msg' => 'contact#create_members_msg', :as => 'create_members_msg'
     post 'attendees_msg' => 'contact#create_attendees_msg', :as => 'attendee_msg'
     get 'contact/:id/mvmt' => 'contact#new_movement_msg', :as => 'new_mvmt_contact'
     post 'contact/mvmt' => 'contact#create_movement_msg', :as => 'mvmt_contact'

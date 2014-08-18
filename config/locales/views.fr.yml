@@ -160,6 +160,11 @@ fr:
       subject: 'Sujet:'
       message: 'Votre message:'
       submit: 'Soumettre'
+    new_members_msg:
+      contact_members: "Communiquer avec les membres de l'équipe"
+      subject: 'Sujet:'
+      message: 'Votre message:'
+      submit: 'Soumettre'
   movements:
     movement:
       dashboard: 'TABLEAU DE BORD'
@@ -186,6 +191,9 @@ fr:
       point_person: *point
       yes: 'Oui'
       no: 'non'
+      team-members: "MEMBRES DE L'ÉQUIPE"
+      email_members: "MEMBRES DE COURRIEL"
+      export_members: "LES MEMBRES DE L'EXPORTATION"
     explanation:
       confirm_msg: "Félicitations - vous avez créé avec succès une équipe pour soutenir FOTC"
       team_dash_prompt: "Cliquez ici pour aller directement à votre tableau de bord de l'équipe"
@@ -219,6 +227,7 @@ fr:
       group_events: 'Événements de équipe'
       manage_supporters: 'Gérer les partisans'
       teams: 'Équipes'
+      past_events: 'Événements Passés'
     tab_group_events:
       event_name: "Nom de l'événement"
       where: "quand"

@@ -24,7 +24,7 @@ describe ContactMailer do
   end
 
 
-  describe "coordinator_emails" do
+  describe "emails_to_coordinators" do
     let!(:coordinator){FactoryGirl.create(:user)}
     let!(:movement){FactoryGirl.create(:movement)}
     let!(:ownership){FactoryGirl.create(:ownership, user: coordinator, movement: movement)}
@@ -48,5 +48,30 @@ describe ContactMailer do
       @mail.body.should include(@message.body)
     end
 
+  end
+
+  describe "emails_to_members" do
+    let!(:coordinator){FactoryGirl.create(:user)}
+    let!(:movement){FactoryGirl.create(:movement)}
+    let!(:ownership){FactoryGirl.create(:ownership, user: coordinator, movement: movement)}
+
+    before :each do
+      @params_message = {subject: "Subject", body: "Body", host_id: movement.id, sender_id: coordinator.id}
+      @message = Message.new(@params_message)
+      @mail = ContactMailer.new_members_message(@message)
+    end
+
+    it "renders the header" do
+      @members_emails = []
+      movement.memberships.each { |membership| @members_emails << membership.user.email if membership.user.email}
+      @sender = User.find(@message.sender_id)
+      @mail.subject.should eq(@message.subject)
+      @mail.to.should eq(@members_emails)
+      @mail.from.should eq([@sender.email])
+    end
+
+    it "renders the body" do
+      @mail.body.should include(@message.body)
+    end
   end
 end

@@ -1,0 +1,11 @@
+%h4= t('.contact_members')
+= form_for @message, :method => :post, :url => create_members_msg_path, html: { id: 'members-contact-form' } do |form|
+  .field
+    = form.label t('.subject'), class: "modal-field form-label"
+    = form.text_field :subject, value: "Message to Team Members of #{@group.name}",  class: "modal-input form-inline form-control"
+  .field
+    = form.label t('.message'), class: "modal-field"
+    = form.text_area :body, class: "modal-input contact-body form-control", rows: "6"
+  = form.hidden_field :host_id, value: @group.id
+  = form.hidden_field :sender_id, value: current_user.id
+  = form.submit t('.submit'), class: "contact-send-btn btn btn-host"

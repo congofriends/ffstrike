@@ -200,6 +200,16 @@ describe MovementsController do
     end
   end
 
+  describe "GET #export_members_csv" do
+    context "when format is csv" do
+      it "should return a csv attachment" do
+        @controller.should_receive(:send_data).with(movement.members_to_csv, filename: "#{movement.name} members-list.csv").
+            and_return { @controller.render nothing: true } # to prevent a 'missing template' error
+        get :export_members_csv, id: movement, format: :csv
+      end
+    end
+  end
+
   describe "GET #my_groups" do
     context "when user does not own movement" do
       it "should redirect to sign in page" do

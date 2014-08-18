@@ -27,7 +27,31 @@
         = link_to_modal t('.email_coordinators'), new_coordinator_msg_path(@group), class: 'btn ctrl-btn btn-host'
     %br
     %br
+    -unless @congo_week
+      %h3
+        =t('.team-members')
+      %table.table.table-bordered.table-striped.sortable#group-attendees-table
+        %tr
+          %th
+            =t('.name_cl')
+          %th
+            =t('.group_cl')
+          %th
+            =t('.email_cl')
+          %th
+            =t('.phone_number')
 
+        - @group.memberships.each do |membership|
+          %tr
+            %td= membership.user.full_name
+            %td= link_to @group.name, movement_path(@group)
+            %td= membership.user.email
+            %td= membership.user.phone
+      .row
+        .col-sm-6
+          = link_to t('.export_members'), export_members_csv_path(@group), class: 'btn ctrl-btn btn-host'
+        .col-sm-6
+          = link_to_modal t('.email_members'), new_members_msg_path(@group), class: 'btn ctrl-btn btn-host'
     %h3
       =t('.hosts')
     %table.table.table-bordered.table-striped.sortable#group-attendees-table

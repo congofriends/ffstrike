@@ -33,6 +33,7 @@ class MovementsController < ApplicationController
     redirect_to root_path and return unless current_user
     @groups = current_user.movements_and_groups
     @group = params[:name] ? Movement.find(params[:name][:id]) : @groups.first
+    @congo_week = @group && @group.name == "Congo Week"
     redirect_to root_path and return unless @groups.include?(@group)
 
     respond_to do |format|
@@ -118,6 +119,10 @@ class MovementsController < ApplicationController
 
   def export_all_csv
     send_data @movement.all_to_csv, filename: "#{@movement.name} supporter-list.csv" if current_user.super_admin?
+  end
+
+  def export_members_csv
+    send_data @movement.members_to_csv, filename: "#{@movement.name} members-list.csv"
   end
 
   def publish

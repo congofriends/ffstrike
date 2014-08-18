@@ -39,6 +39,13 @@ describe Movement do
     end
   end
 
+  describe '.members_to_csv' do
+    it 'should return some text' do
+      expect(movement.members_to_csv).not_to be_nil
+    end
+  end
+
+
   describe '.publish' do
     it 'should update published attribute to true' do
       movement.publish

@@ -160,6 +160,11 @@ es:
       subject: 'Asunto:'
       message: 'Su mensaje:'
       submit: 'Enviar'
+    new_members_msg:
+      contact_members: 'Contacta los miembros de los equipos'
+      subject: 'Asunto:'
+      message: 'Su mensaje:'
+      submit: 'Enviar'
   movements:
     movement:
       dashboard: 'TABLERO'
@@ -186,6 +191,9 @@ es:
       point_person: 'Persona?'
       yes: 'sí'
       no: 'no'
+      team-members: "LOS MIEMBROS DEL EQUIPO"
+      email_members: "EMAIL MIEMBROS"
+      export_members: "EXPORTACIÓN MIEMBROS"
     explanation:
       confirm_msg: "Felicidades - que ha creado con éxito un equipo para apoyar FOTC"
       team_dash_prompt: "Haga clic aquí para ir directamente a su panel de control del equipo"
@@ -213,6 +221,7 @@ es:
       group_events: 'Equipo Eventos'
       manage_supporters: 'Gestionar los partidarios'
       teams: 'Equipos'
+      past_events: 'Eventos Pasados'
     tab_group_events:
       event_name: "Nombre del evento"
       where: "Cuando"

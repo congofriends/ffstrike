@@ -5,7 +5,6 @@ Background:
 	And Congo Week Exists
 	And I am on the home page
 	And I am logged in as a Movement Coordinator
-	And I have an existing movement
 
 Scenario: Creating an Event as a Coordinator
 	When I select the Create Event button

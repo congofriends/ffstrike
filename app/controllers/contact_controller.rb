@@ -1,7 +1,7 @@
 class ContactController < ApplicationController
   before_filter :load_message
   before_filter :load_event, :only => [:new_event_msg, :new_attendees_msg]
-  before_filter :load_group, :only => [:new_coordinator_attendee_msg, :new_coordinator_hosts_msg, :new_coordinator_msg]
+  before_filter :load_group, :only => [:new_coordinator_attendee_msg, :new_coordinator_hosts_msg, :new_coordinator_msg, :new_members_msg]
 
   def new_event_msg; end
 
@@ -26,6 +26,16 @@ class ContactController < ApplicationController
     @group = Movement.find @message.host_id
     if @message.valid?
       ContactMailer.new_coordinators_message(@message).deliver
+      redirect_to(root_path, :notice => t('contact.message_sent') )
+    end
+  end
+
+  def new_members_msg; end
+
+  def create_members_msg
+    @group = Movement.find @message.host_id
+    if @message.valid?
+      ContactMailer.new_members_message(@message).deliver
       redirect_to(root_path, :notice => t('contact.message_sent') )
     end
   end
