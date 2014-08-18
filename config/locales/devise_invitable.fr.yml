@@ -9,7 +9,7 @@ fr:
       signed_in_and_coordinator: "Vous êtes maintenant signé, et un coordonnateur pour %{movement_name}."
       new:
         header: "Envoyer une invitation"
-        submit_button: "Envoyer une invitation"
+        submit_button: "Envoyer une email"
       edit:
         header: "Définir votre mot de passe"
         submit_button: "Définir mon mot de passe"

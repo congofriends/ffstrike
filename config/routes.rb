@@ -23,7 +23,7 @@ Ffstrike::Application.routes.draw do
     #   as: :user_omniauth_callback,
     #   via: [:get, :post]
 
-    get 'about' => 'static_pages#about',  as: 'about'
+    get 'mission' => 'static_pages#mission',  as: 'mission'
     get 'template' => 'static_pages#template',  as: 'template'
 
     #users

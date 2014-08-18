@@ -120,7 +120,7 @@ fr:
     footer:
       contact: 'Contactez-nous'
       questions: 'Questions? Commentaires? Erreurs?'
-      about: 'À PROPOS'
+      mission: 'MISSION'
       template: 'THÈMES'
       media: 'OUTILS'
       donate: 'FAITES UN DON'
@@ -166,7 +166,7 @@ fr:
       coordinators: 'COORDINATEURS'
       hosts: 'Hôtes'
       attendees: 'participants'
-      invite_coordinators: "INVITER COORDONNATEURS"
+      email_coordinators: "EMAIL COORDONNATEURS"
       email_attendees: "E-MAIL AUX PARTICIPANTS"
       email_hosts: "HÔTES E-MAIL"
       export_hosts: "EXPORTER HÔTES"

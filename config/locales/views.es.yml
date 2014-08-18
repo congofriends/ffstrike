@@ -120,7 +120,7 @@ es:
     footer:
       contact: 'Contáctenos'
       questions: '¿Preguntas? ¿Comentarios? ¿Errores? '
-      about: 'ACERCA'
+      mission: 'MISIÓN'
       template: 'TEMAS'
       media: 'HERRAMIENTAS'
       donate: 'COLABORE'
@@ -166,7 +166,7 @@ es:
       coordinators: 'COORDINADORES'
       hosts: 'ANFITRIONES'
       attendees: 'LOS ASISTENTES'
-      invite_coordinators: 'INVITAR A LOS COORDINADORES DE LAS'
+      email_coordinators: 'EMAIL COORDINADORES'
       email_attendees: "CORREO ELECTRÓNICO LOS ASISTENTES"
       email_hosts: "Correo electrónico Hosts"
       export_hosts: "EXPORTAR ANFITRIONES"

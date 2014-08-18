@@ -9,7 +9,7 @@ en:
       signed_in_and_coordinator: "You are now signed in and a coordinator for %{movement_name}."
       new:
         header: "Send invitation"
-        submit_button: "Send an invitation"
+        submit_button: "Send an email"
       edit:
         header: "Set your password"
         submit_button: "Set my password"

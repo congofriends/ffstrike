@@ -10,9 +10,9 @@ describe StaticPagesController do
 
   end
 
-  describe "GET #about" do
+  describe "GET #mission" do
     it "returns success" do
-      get 'about'
+      get 'mission'
       expect(response).to be_success
     end
   end

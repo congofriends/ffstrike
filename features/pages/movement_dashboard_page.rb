@@ -22,13 +22,13 @@ include Capybara::DSL
 		click_link_or_button ('SEND EMAIL')
 	end
 
-	def invite_coordinators_by_email
-		click_link_or_button('INVITE COORDINATORS')
+	def email_coordinators_by_email
+		click_link_or_button('EMAIL COORDINATORS')
 	end
 
 	def can_create_an_email_to_invite_more_corrdinators
 		fill_in 'user_email', with: 'johnjacob@gmail.com'
-		click_link_or_button('Send an invitation')
+		click_link_or_button('Send an email')
 	end
 
 	def unapprove_event(event)

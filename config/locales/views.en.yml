@@ -122,7 +122,7 @@ en:
     footer:
       contact: 'Contact Us'
       questions: 'Questions? Comments? Bugs?'
-      about: 'ABOUT'
+      mission: 'MISSION'
       template: 'THEMES'
       media: 'TOOLKIT'
       donate: 'DONATE'
@@ -168,7 +168,7 @@ en:
       coordinators: 'COORDINATORS'
       hosts: 'HOSTS'
       attendees: 'ATTENDEES'
-      invite_coordinators: "INVITE COORDINATORS"
+      email_coordinators: "EMAIL COORDINATORS"
       email_attendees: "EMAIL ATTENDEES"
       email_hosts: "EMAIL HOSTS"
       export_hosts: "EXPORT HOSTS"

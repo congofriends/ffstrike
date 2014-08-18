@@ -12,6 +12,6 @@ end
 
 When(/^I invite more coordinators via email$/) do
   movement_dashboard_page.visit_movement_dashboard(@user)
-  movement_dashboard_page.invite_coordinators_by_email()
+  movement_dashboard_page.email_coordinators_by_email()
   movement_dashboard_page.can_create_an_email_to_invite_more_corrdinators()
 end
