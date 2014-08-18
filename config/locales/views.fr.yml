@@ -155,6 +155,11 @@ fr:
       subject: 'Sujet:'
       message: 'Votre message:'
       submit: 'Soumettre'
+    new_coordinator_msg:
+      contact_coordinators: 'Contacter les coordinateurs'
+      subject: 'Sujet:'
+      message: 'Votre message:'
+      submit: 'Soumettre'
   movements:
     movement:
       dashboard: 'TABLEAU DE BORD'

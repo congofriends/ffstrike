@@ -18,6 +18,15 @@ class ContactMailer < ActionMailer::Base
     mail(to: @event.host.email, bcc: @attendees, from: @event.host.email, subject: @message.subject)
   end
 
+  def new_coordinators_message(message)
+    @group = Movement.find(message.host_id)
+    @sender = User.find(message.sender_id)
+    @message = message
+    @coordinator_emails = []
+    @group.ownerships.each { |ownership| @coordinator_emails << ownership.user.email if ownership.user.email}
+    mail(to: @coordinator_emails, from: @sender.email, subject: @message.subject)
+  end
+
   def new_mvmt_message(message)
   	@movement = Movement.find(message.host_id)
     @message = message

@@ -155,6 +155,11 @@ es:
       subject: 'Asunto:'
       message: 'Su mensaje:'
       submit: 'Enviar'
+    new_coordinator_msg:
+      contact_coordinators: 'Contacta los Coordinadores'
+      subject: 'Asunto:'
+      message: 'Su mensaje:'
+      submit: 'Enviar'
   movements:
     movement:
       dashboard: 'TABLERO'

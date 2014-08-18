@@ -29,5 +29,12 @@ describe ContactController do
     end
   end
 
+  describe "POST #mail_coordinators" do
+    it "tells usermailer to email all coordinators" do
+      @params_message = {subject: "Subject", body: "Body", host_id: movement.id, sender_id: coordinator.id }
+      post :create_coordinator_msg, message: @params_message
+      assert !ActionMailer::Base.deliveries.empty?
+    end
+  end
 
 end
