@@ -1,9 +1,11 @@
 require "spec_helper"
 
 describe ContactMailer do
+  let!(:movement){FactoryGirl.create(:movement)}
+  let!(:coordinator){FactoryGirl.create(:user)}
+  let!(:ownership){FactoryGirl.create(:ownership, user: coordinator, movement: movement)}
 
   describe "attendee_emails" do
-    let!(:movement){FactoryGirl.create(:movement)}
     let!(:event){FactoryGirl.create(:event, movement_id: movement.id)}
 
     before :each do
@@ -23,11 +25,7 @@ describe ContactMailer do
     end
   end
 
-
   describe "emails_to_coordinators" do
-    let!(:coordinator){FactoryGirl.create(:user)}
-    let!(:movement){FactoryGirl.create(:movement)}
-    let!(:ownership){FactoryGirl.create(:ownership, user: coordinator, movement: movement)}
 
     before :each do
       @params_message = {subject: "Subject", body: "Body", host_id: movement.id, sender_id: coordinator.id}
@@ -51,10 +49,6 @@ describe ContactMailer do
   end
 
   describe "emails_to_members" do
-    let!(:coordinator){FactoryGirl.create(:user)}
-    let!(:movement){FactoryGirl.create(:movement)}
-    let!(:ownership){FactoryGirl.create(:ownership, user: coordinator, movement: movement)}
-
     before :each do
       @params_message = {subject: "Subject", body: "Body", host_id: movement.id, sender_id: coordinator.id}
       @message = Message.new(@params_message)
