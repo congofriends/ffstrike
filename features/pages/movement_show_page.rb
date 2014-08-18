@@ -17,6 +17,7 @@ include Capybara::DSL
 
   def join_team
     click_link_or_button ('JOIN TEAM')
+    click_link_or_button ('Join the Team!')
   end
 
 end

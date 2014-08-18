@@ -78,13 +78,8 @@ class MovementsController < ApplicationController
   end
 
   def join_team
-    if current_user
-      @movement.members << current_user
-      flash[:notice] = t('movement.join_team_success', movement_name: @movement.name)
-      redirect_to :back
-    else
-      redirect_to "/users/sign_in"
-    end
+    @team_id = params[:id].split("-").last
+    redirect_to new_member_user_path({:team => @team_id})
   end
 
   def cancel_ownership

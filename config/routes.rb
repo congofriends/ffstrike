@@ -29,7 +29,9 @@ Ffstrike::Application.routes.draw do
     #users
     devise_scope :user do
       get 'new_attendee_user' => 'users#new_attendee_user'
+      get 'new_member_user' => 'users#new_member_user'
       post 'create_attendee_user' => 'users#create_attendee_user'
+      post 'create_member_user' => 'users#create_member_user'
       get 'check_email' => 'users#check_email'
       put 'attendance' => 'users#attendance_notes', as: 'attendance'
     end

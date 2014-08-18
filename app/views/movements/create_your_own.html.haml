@@ -1,0 +1,12 @@
+%h1 Create Your Own:
+.spacer10
+.col-md-12
+  -if current_user
+    = link_to "Event" , new_movement_event_path(@movement), class: 'btn search'
+  -else
+    = link_to "Event" , new_movement_unauthenticated_event_path(@movement), class: 'btn search'
+.col-md-12
+  -if current_user
+    = link_to "Team" , new_movement_path({parent_id: @movement.id}), class: 'btn search'
+  -else
+    = link_to "Team" , new_unauthenticated_submovement_path({parent_id: @movement.id}), class: 'btn search'

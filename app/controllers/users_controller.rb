@@ -18,6 +18,37 @@ class UsersController < Devise::RegistrationsController
     @user = current_user ? current_user : User.new
   end
 
+  def new_member_user
+    @team = Movement.find params[:team]
+    @membership = Membership.new
+    @user = current_user ? current_user : User.new
+  end
+
+
+  def create_member_user
+    user.update(phone: params[:user][:phone]) if params[:user][:phone]
+
+    @team_id = params[:user][:team_id]
+    @team ||= Movement.find(@team_id)
+
+    if user.save
+      sign_in(:user, user)
+      if Membership.where(user: user, movement_id: @team).empty?
+        @team.members << current_user
+
+        flash[:notice] = t('movement.join_team_success', movement_name: @team.name)
+        # @generated_password ? UserMailer.welcome_message(user.id, @generated_password, @event.id) : UserMailer.welcome_message(user.id, "", @event.id)
+
+      else
+        flash[:notice] = t('attendee.already_signed_up')
+      end
+      redirect_to movement_path(@team), flash: { modal: true }
+    else
+      flash[:notice] = user.errors.full_messages.flatten.join(' ')
+      render 'new_member_user'
+    end
+  end
+
   def create_attendee_user
     user.update(phone: params[:user][:phone]) if params[:user][:phone]
 

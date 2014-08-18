@@ -354,7 +354,7 @@ fr:
     user_and_attendee_form:
       more_info: "S'il vous plaît nous donner plus d'information à vous inscrire!"
       already_user: "Si vous avez déjà un compte,"
-      sign_in: "Sign In"
+      sign_in: "Se Connecter"
       name: "Prénom *"
       surname: "Nom *"
       email: "Email *"
@@ -362,6 +362,24 @@ fr:
       volunteer: "J'aimerais faire du bénévolat pour cet événement!"
       sign_up: "Inscrivez-moi!"
       follow_up_msg: "Attendez-vous à entendre de l'hôte des mises à jour de l'événement"
+    join_as_user:
+      greeting: "Bonjour %{user_name},"
+      thanks_msg: "Merci de signer pour assister %{team_name}."
+      not_user_msg: "Si ce n'est pas vous, cliquez sur"
+      here: "Ici"
+      phone: "Numéro de téléphone (facultatif):"
+      textable: "Je souhaite recevoir les mises à jour de texte des %{team_name}"
+      join: "Joignez-vous à l'équipe!"
+    user_and_member_form:
+      more_info: "S'il vous plaît nous donner plus d'information à vous joindre!"
+      already_user: "Si vous avez déjà un compte,"
+      sign_in: "Se Connecter"
+      name: "Prénom *"
+      surname: "Nom *"
+      email: "Email *"
+      textable: "Je souhaite recevoir les mises à jour de texte des %{team_name}"
+      sign_up: "Joignez-vous à l'équipe!"
+      follow_up_msg: "Attendez-vous à entendre de l'hôte des mises à jour de l'équipe"
   validations:
     name: "Le nom est obligatoire"
     email: "Email est nécessaire"
