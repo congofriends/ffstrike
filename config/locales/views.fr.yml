@@ -417,7 +417,7 @@ fr:
     zip_numeric: "Zip doit contenir uniquement des chiffres"
     zip_length: "Zip doit être de 5 chiffres"
   static_pages:
-    about:
+    mission:
       header1: "Contexte"
       header2: "But"
       header3: "Impliquez-vous"

@@ -396,7 +396,7 @@ en:
     zip_numeric: "Zip should contain only numbers"
     zip_length: "Zip should be 5 digits long"
   static_pages:
-    about:
+    mission:
       header1: "Background"
       header2: "Purpose"
       header3: "Get Involved"
