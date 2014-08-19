@@ -20,8 +20,8 @@ class Movement < ActiveRecord::Base
 
   has_attached_file :avatar,
                     :styles => { :medium => '280x150', :thum => '50x50' },
-                    :default_url => 'break_the_silence.jpg',
-                    path: "attachments/team/:id/:style/:filename"
+                    :default_url => 'break_the_silence.jpg'
+                    # path: "attachments/team/:id/:style/:filename"
 
   validates_attachment_content_type :avatar, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
   validates_attachment_size :avatar, :less_than => 5.megabytes
