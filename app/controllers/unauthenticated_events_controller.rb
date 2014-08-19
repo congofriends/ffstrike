@@ -12,7 +12,7 @@ class UnauthenticatedEventsController < ApplicationController
     if @user.save
       sign_in(:user, @user)
       @event = @movement.events.build(event_params)
-      @event.assign_host_and_approve @user
+      @event.assign_host @user
       if @event.save
         clear_fields_on_tbd
         UserMailer.event_creation_message(@user.id, @event.id) if current_user

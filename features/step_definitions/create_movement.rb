@@ -6,7 +6,11 @@ Given(/^I am on the home page/) do
 end
 
 Given(/^Congo Week Exists/) do
-  FactoryGirl.create(:movement, name: "Congo Week")
+  @congoweek = FactoryGirl.create(:movement, name: "Congo Week")
+end
+
+Given(/^I am the Coordinator of Congo Week/) do
+  FactoryGirl.create(:ownership, user: @user, movement: @congoweek)
 end
 
 Given(/^a user account exists/) do
@@ -61,4 +65,5 @@ Then(/^a visitor can view my movement/) do
   Capybara.reset_sessions!
   page.has_title? Movement.last.name
 end
+
 

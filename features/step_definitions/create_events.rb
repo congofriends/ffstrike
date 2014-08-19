@@ -1,4 +1,6 @@
 create_events_page = CreateEventsPage.new
+events_index_page = EventsIndexPage.new
+movement_dashboard_page = MovementDashboardPage.new
 
 
 Given(/^I have an existing event$/) do
@@ -49,4 +51,19 @@ Then(/^the location fields in the edit event page are empty/) do
 	find_field('event_address').value.should eq ''
 	find_field('event_address2').value.should eq ''
 	find_field('event_zip').value.should eq ''
+end
+
+Then(/^I can see the event on the Events Index/) do
+  events_index_page.navigate_to
+  page.should have_content(Event.last.name)
+end
+
+When(/^I set event approval to false/) do
+  movement_dashboard_page.visit_team_events @user
+  movement_dashboard_page.set_event_approval_to_false Event.last
+end
+
+Then(/^I can not see the event on the event index page/) do
+  events_index_page.navigate_to
+  page.should_not have_content(Event.last.name)
 end

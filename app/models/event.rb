@@ -88,8 +88,8 @@ class Event < ActiveRecord::Base
     [address, address2, city, state, zip, country].reject{|i| i.nil? || i.empty? || i == "TBD"}.join(", ")
   end
 
-  def assign_host_and_approve user
-    self.update(approved: (self.movement.users.reload.include?(user)), host: user)
+  def assign_host user
+    self.update(host: user)
   end
 
   def threshold_size?
