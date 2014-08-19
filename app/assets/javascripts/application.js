@@ -24,3 +24,4 @@
 //= require jquery.modal
 //= require jquery.fastLiveFilter
 //= require RRSSB
+//= require jquery.countdown

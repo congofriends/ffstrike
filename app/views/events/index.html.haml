@@ -1,8 +1,7 @@
+=image_tag "woman_and_child.jpg", class: "bg"
 .container
   .row
-    =link_to (image_tag asset_path("fotc_banner.jpg"),:class => "movement_avatar banner-image"), root_path
-
-  .row.event-list
+    .spacer10
     .form-inline.col-md-6
       = t('events.search_placeholder')
       = form_tag movement_events_path, :method => :get, remote: true do
@@ -14,11 +13,14 @@
       -else
         = link_to t('events.host_btn') , new_movement_unauthenticated_event_path(@movement), class: 'btn search btn-host'
   .row
+    .spacer10
     %h4#no-results
       = t('events.no_events_msg')
       = current_user ? (link_to t('events.host_link'), new_movement_event_path(@movement)) : (link_to t('events.host_link'), new_movement_unauthenticated_event_path(@movement))
   .row
     .col-md-12
       #map-canvas
-  .event-list.events
+  .spacer10
+  %h2 Upcoming Events
+  .events
     = render partial: 'events/event', collection: @events, as: :event

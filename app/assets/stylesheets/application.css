@@ -17,4 +17,5 @@
  *= require jquery.modal
  *= require_tree .
  *= require RRSSB/scss/rrssb
+ *= require jquery.countdown
  */
