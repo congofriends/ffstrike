@@ -16,7 +16,7 @@
     .col-sm-4#flyer_download
       %strong= t('events.flyer_msg')
       %div= t('events.flyer_dl')
-      %a{download: @event.name + "_flyer", href: @event.flyer, title: @event.name + "_flyer"}
+      %a{download: @event.name + "_flyer", href: asset_path(@event.flyer.url), title: @event.name + "_flyer"}
         %img{alt: @event.name + "_flyer", src: asset_path(@event.flyer.url), class: "event-flyer"}
     .col-sm-8
       - unless @event.location == "TBD" || @event.latitude.nil? || @event.longitude.nil?
