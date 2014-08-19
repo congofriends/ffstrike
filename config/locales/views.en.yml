@@ -150,7 +150,7 @@ en:
       name: 'Your name'
       message: 'Your message:'
       subject: 'Subject:'
-      question: "Question à propos de %{about}"
+      question: "Question about %{about}"
       submit: 'Submit'
     new_attendees_msg:
       contact_attendees: 'Contact the attendees of'
@@ -298,6 +298,14 @@ en:
       congo-week: "CONGO WEEK"
       events: "EVENTS"
       network: "NETWORK"
+      congo_week_2014: "#CongoWeek2014"
+      congo_description: "Congo Week is a global campaign that takes place October 19th - 24th to break the silence about issues in the heart of Africa."
+      join_congo: "JOIN THE MOVEMENT"
+      congo_start: "Congo Week starts in:"
+      host_event: "Host an Event"
+      attend_event: "Attend an Event"
+      learn_more: "Learn More About Congo Week"
+
     show_team:
       about_creators: 'About the Creators'
       host_event: *host_event

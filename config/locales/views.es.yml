@@ -308,6 +308,13 @@ es:
       congo-week: "CONGO SEMANA"
       events: "EVENTOS"
       network: "RED"
+      congo_week_2014: "#CongoWeek2014"
+      congo_description: "Semana de Congo es un campaña global que ocurría Octubre 19th - 24th salir del silencio sobre problemas en el corazón de África."
+      join_congo: "INGRESA EN EL MOVIMIENTO"
+      congo_start: "Semana de Congo empezaré en:"
+      host_event: "Presenta Evento"
+      attend_event: "Asista Evento"
+      learn_more: "Ayuda Mas Sobre Semana de Congo"
     show_team:
       about_creators: 'Sobre los creadores de'
       host_event: *host_event

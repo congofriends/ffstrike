@@ -1,19 +1,27 @@
 =image_tag "nopeacenolife.jpg", class: "bg"
 %div.page-wrap.wrapper
-  %h2.text-center #CongoWeek2014
-  %h4 Congo Week is a global campaign that takes place every October to break the silence about issues in the heart of Africa.
+  %h2.text-center
+    = link_to t('.congo_week_2014')
+  %h4
+    = link_to t('.congo_description')
   %br
-  %h3.text-center JOIN THE MOVEMENT!
+  %h3.text-center
+    = link_to t('.join_congo')
   .row
     .col-sm-6
-      = link_to "Host an Event", movement_events_path(Movement.first), class: 'btn search btn-host'
+      = link_to t('.host_event'), movement_events_path(Movement.first), class: 'btn search btn-host'
     .col-sm-6
-      = link_to "Attend an Event", movement_events_path(Movement.first), class: 'btn search btn-host'
+      = link_to t('.attend_event'), movement_events_path(Movement.first), class: 'btn search btn-host'
   %br
   .row
     .col-sm-12
+<<<<<<< HEAD
       = link_to "Learn More About Congo Week", mission_path, class: 'btn btn-host'
+=======
+      = link_to t('.learn_more'), "http://congoweek.org", :target => '_blank', class: 'btn btn-host'
+>>>>>>> [TMo] implemented french and spanish on the home page
   %br
-    %h4 Congo Week starts in:
+    %h4
+    = link_to t('.congo_start')
     .count-down
   %br
