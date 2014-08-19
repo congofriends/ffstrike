@@ -21,7 +21,6 @@ class Event < ActiveRecord::Base
   has_attached_file :image,
                     :styles => { :medium => '280x150', :thum => '50x50' },
                     :default_url => 'break_the_silence.jpg',
-                    :url => ':s3_path_url',
                     path: "attachments/event/:id/:style/:filename"
 
   validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
@@ -30,7 +29,6 @@ class Event < ActiveRecord::Base
   has_attached_file :flyer,
                     :styles => { :medium => '280x150', :thum => '50x50' },
                     :default_url => 'poster2013.jpg',
-                    :url => ':s3_path_url',
                     path: "attachments/event_flyer/:id/:style/:filename"
 
   validates_attachment_content_type :flyer, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']

@@ -53,7 +53,6 @@ include Capybara::DSL
   end
 
   def set_event_approval_to_false event
-    binding.pry
     find("input#approve-check#{event.id}").click
   end
 
