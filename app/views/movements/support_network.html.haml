@@ -1,10 +1,8 @@
+=image_tag "girls_singing.jpg", class: "bg"
 = content_for :title, t('.support_network')
 .container
+  .spacer10
   .row
-    =link_to (image_tag asset_path("fotc_banner.jpg"),:class => "movement_avatar banner-image"), root_path
-  .team-info
-    =t('.team_description')
-  .row.event-list
     .col-sm-8
       %h3
         =t('.network_message', number: @support_network.size)

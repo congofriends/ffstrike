@@ -20,7 +20,7 @@ class Event < ActiveRecord::Base
 
   has_attached_file :image,
                     :styles => { :medium => '280x150', :thum => '50x50' },
-                    :default_url => 'congo.jpg',
+                    :default_url => 'break_the_silence.jpg',
                     :url => ':s3_path_url',
                     path: "attachments/event/:id/:style/:filename"
 

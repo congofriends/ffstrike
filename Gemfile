@@ -116,7 +116,11 @@ gem 'slim'
 # Use unicorn as the app server
 gem 'unicorn'
 
+#Provides countries for dropdown selection
 gem 'carmen-rails'
+
+#Countdown Timer
+gem 'jquery-countdown-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development

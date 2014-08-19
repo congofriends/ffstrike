@@ -84,6 +84,8 @@ function goToGroupPreviousStep(button) {
 }
 
 $(document).ready(function() {
+  $(".count-down").countdown({until: new Date(2014, 10 - 1, 18), format: 'dHMS'});
+
   $(".next-group").click(function() {
     goToGroupNextStep(this);
   });

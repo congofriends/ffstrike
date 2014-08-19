@@ -1,14 +1,19 @@
-= content_for :title, @movement.name
-.container
-  .banner
-    = image_tag asset_path("fotc_banner.jpg"),:class => "movement_avatar banner-image"
-    %iframe{:class => "final_countdown", :src => "#{@countdown_urls[I18n.locale]}"}
-  %h1.home-quote
-    = t('.h1')
-  .info
-    = t('.quote')
-  .home_btns
-    .col-sm-6.events-button
-      = link_to (image_tag asset_path("events-btn_#{I18n.locale}.jpg"), :class => 'events-button'), movement_events_path(@movement)
-    .col-sm-6.network-button
-      = link_to (image_tag asset_path("networks-btn_#{I18n.locale}.jpg"), :class => 'network-button'),support_network_movement_path(@movement)
+=image_tag "nopeacenolife.jpg", class: "bg"
+%div.page-wrap.wrapper
+  %h2.text-center #CongoWeek2014
+  %h4 Congo Week is a global campaign that takes place every October to break the silence about issues in the heart of Africa.
+  %br
+  %h3.text-center JOIN THE MOVEMENT!
+  .row
+    .col-sm-6
+      = link_to "Host an Event", movement_events_path(Movement.first), class: 'btn search btn-host'
+    .col-sm-6
+      = link_to "Attend an Event", movement_events_path(Movement.first), class: 'btn search btn-host'
+  %br
+  .row
+    .col-sm-12
+      = link_to "Learn More About Congo Week", "http://congoweek.org", :target => '_blank', class: 'btn btn-host'
+  %br
+    %h4 Congo Week starts in:
+    .count-down
+  %br

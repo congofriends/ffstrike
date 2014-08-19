@@ -2,8 +2,7 @@
   %meta{property: "og:title", content: event.name}
   %meta{property: "og:url", content: request.original_url}
   %meta{property: "og:image", content: event.image}
-%hr
-.row
+.row.event-list
   .col-sm-4
     -if event.sponsored
       = link_to event_path(event) do
