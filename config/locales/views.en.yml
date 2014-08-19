@@ -263,9 +263,9 @@ en:
       personal_details: 'Personal Details'
       teams_coordinating: 'My Teams'
     tab_my_teams:
-      empty_teams_line1: "You are currently not coordination any teams. Visit the "
-      empty_teams_line2:  "Teams Page "
-      teams_page: "to join or create a team in your area!"
+      empty_teams_line1: "You are currently not a coordinator for any teams. Please visit the "
+      teams_page:  "Teams Page "
+      empty_teams_line2: "to join or create a team in your area!"
       col1: 'Team Name'
       col2: 'Date Joined'
       col3: 'Remove Coordinator Access'

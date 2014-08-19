@@ -266,9 +266,9 @@ fr:
       personal_details: 'Détails personnels'
       teams_coordinating: 'Mes équipes'
     tab_my_teams:
-      empty_teams_line1: "Vous n'etes pas la coordination des équipes Visitez la"
-      empty_teams_line2:  "Les équipes page"
-      teams_page: "créer ou rejoindre une équipe dans votre région!"
+      empty_teams_line1: "Vous êtes pas un coordonnateur pour toutes les équipes S'il vous plaît visitez le. "
+      teams_page:  "Les équipes page"
+      empty_teams_line2: "créer ou rejoindre une équipe dans votre région!"
       col1: "Nom de l'équipe"
       col2: 'Date de début'
       col3: "Suppression de l'accès de coordinateur"

@@ -260,9 +260,9 @@ es:
       personal_details: 'Datos personales'
       teams_coordinating: 'Mis Equipos'
     tab_my_teams:
-      empty_teams_line1: "No has coordinación cualesquiera equipos Visite "
-      empty_teams_line2:  "Los equipos de página"
-      teams_page: "unirse o crear un equipo en su área!"
+      empty_teams_line1: "Todavía no es un coordinador para cualquier equipo. Por favor, visite la "
+      teams_page:  "Página de equipos"
+      empty_teams_line2: "unirse o crear un equipo en su área!"
       col1: 'Nombre del equipo'
       col2: 'Fecha de Inicio'
       col3: 'Eliminar Coordinador de Acceso'

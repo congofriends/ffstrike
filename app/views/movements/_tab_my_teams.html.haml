@@ -6,7 +6,7 @@
 				- if teams.empty? && my_teams.empty?
 					%h2
 					=t('.empty_teams_line1')
-					=link_to t('.teams_page'), movement_events_path(Movement.first)
+					=link_to t('.teams_page'), support_network_movement_path(Movement.first)
 					=t('.empty_teams_line2')
 				- else
 					%h3=t('.teams_coordinating')
