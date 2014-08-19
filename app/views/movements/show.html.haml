@@ -1,12 +1,12 @@
-=image_tag "nopeacenolife.jpg", class: "bg"
+=image_tag "girls_singing.jpg", class: "bg"
 %div.page-wrap.wrapper
   %h2.text-center
-    = link_to t('.congo_week_2014')
+    = t('.congo_week_2014')
   %h4
-    = link_to t('.congo_description')
+    = t('.congo_description')
   %br
   %h3.text-center
-    = link_to t('.join_congo')
+    = t('.join_congo')
   .row
     .col-sm-6
       = link_to t('.host_event'), movement_events_path(Movement.first), class: 'btn search btn-host'
@@ -15,9 +15,8 @@
   %br
   .row
     .col-sm-12
-      = link_to t('.learn_more'), mission_path, :target => '_blank', class: 'btn btn-host'
+      = link_to t('.learn_more'), mission_path, class: 'btn btn-host'
   %br
-    %h4
-    = link_to t('.congo_start')
+    %h3= t('.congo_start')
     .count-down
   %br
