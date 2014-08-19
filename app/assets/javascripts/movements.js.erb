@@ -116,20 +116,32 @@ function not_movement_page() {
   return location.pathname.match(/movements/) == null;
 };
 
-function not_group_page() {
+function not_my_groups_page() {
   return location.pathname.match(/my_groups/) == null;
 };
 
-// if(not_movement_page()){
-//   $(".edit-event").show();
-// }
+function not_my_events_page() {
+  return location.pathname.match(/my_events/) == null;
+};
+
+
+function not_my_profile_page() {
+  return location.pathname.match(/profile/) == null;
+};
+
 
 if(!not_movement_page()){
   $("div#flyer_download").hide();
 }
 
- //redirect to certain tab after CRUD operations on associated models
- var navbox = not_group_page() ? $('#eventTabs') : $('#groupTabs');
+var navbox;
+if(!not_my_groups_page()){
+  navbox = $('#groupTabs');
+} else if (!not_my_events_page()){
+  navbox = $('#eventTabs');
+} else {
+  navbox = $('#profileTabs');
+}
  navbox.on('click', 'a', function(e) {
    var $this = $(this);
    e.preventDefault();

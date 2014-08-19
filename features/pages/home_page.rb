@@ -42,6 +42,5 @@ include RSpec::Matchers
   def translate_home_page(locale)
     expect(find('#events-index').text).to eql(I18n.t('layouts.breadcrumb.events', locale: locale))
     expect(find('#sign-in').text).to eql(I18n.t('layouts.navbar.sign_in', locale: locale))
-    expect(find('#mission').text).to eql(I18n.t('layouts.footer.mission', locale: locale))
   end
 end
