@@ -22,6 +22,7 @@ include Capybara::DSL
 
 	def fill_out_attendee_details
 		fill_in 'user_name', with: 'Dan'
+    fill_in 'user_surname', with: 'Park'
 		fill_in 'user_phone', with: '2373331234'
 		fill_in 'user_email', with: 'dan@gmail.com'
   	click_link_or_button('Sign me up!')

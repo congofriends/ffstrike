@@ -16,17 +16,26 @@ When(/^I fill out user details$/) do
 	event_show_page.fill_out_attendee_details
 end
 
-Then(/^I become a new attendee for the event$/) do
-	page.should have_text("Thanks for attending!")
-end
-
 When(/^I login as a user$/) do
-	visit new_user_session_path({locale: "en"})
+  visit new_user_session_path({locale: "en"})
   home_page.coordinator_login()
 end
 
+When(/^I navigate to my events tab$/) do
+  user_profile_page.navigate_to_profile
+  user_profile_page.events_attending
+end
+
+And(/^I sign up for a task$/) do
+  find('input#event_assigned').click
+  click_link_or_button('DONE')
+end
+
+Then(/^I become a new attendee for the event$/) do
+	page.should have_text(Event.last.name)
+  find("#event_assigned").checked?
+end
+
 Then(/^I will see the empty events message in my profile$/) do
-	user_profile_page.navigate_to_profile
-	user_profile_page.events_attending
 	page.should have_text("You are currently not attending any events")
 end
