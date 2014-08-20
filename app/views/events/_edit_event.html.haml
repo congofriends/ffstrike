@@ -1,19 +1,10 @@
 %div{class: "event-#{event.id}-details edit-event"}
-  %h3= link_to "#{event.name}", event_path(event)
+  %h3.col-sm-12= link_to "#{event.name}", event_path(event)
   %div{class: " edit_form event-#{event.id}"}
     = form_for event, html: { id: 'edit-event-form' } do |f|
-      .form-group
+      .form-group.col-sm-12
         = f.label t("events.edit.name")
         = f.text_field :name, class: 'form-control'
-      .form-group
-        = f.label t("events.edit.address1")
-        = f.text_field :address, class: 'form-control'
-      .form-group
-        = f.label t("events.edit.address2")
-        = f.text_field :address2, class: 'form-control'
-      .form-group
-        = f.label t("events.location")
-        = f.text_field :location_details, class: 'form-control'
       .row
         .form-group.col-sm-6
           = f.label t("events.edit.start_date")
@@ -21,6 +12,16 @@
         .form-group.col-sm-6
           = f.label t("events.edit.end_date")
           = f.text_field :end_time, class: "form-control datetimepicker datetimepicker-#{I18n.locale}", value: event.end_time_formatted
+      .row
+        .form-group.col-sm-6
+          = f.label t("events.edit.address1")
+          = f.text_field :address, class: 'form-control'
+        .form-group.col-sm-6
+          = f.label t("events.edit.address2")
+          = f.text_field :address2, class: 'form-control'
+      .form-group.col-sm-12
+        = f.label t("events.location")
+        = f.text_field :location_details, class: 'form-control'
       .row
         .form-group.col-sm-6
           = f.label t("events.edit.city")
@@ -36,10 +37,10 @@
           .row
             .spacer10
           = f.country_select :country, priority: %w(CD US CA), prompt: 'Please select a country', class: 'form-control'
-      .form-group
+      .form-group.col-sm-12
         = f.label t("events.description")
-        = f.text_field :description, class: 'form-control'
-      .form-group
+        = f.text_area :description, class: 'form-control'
+      .form-group.col-sm-12
         = f.label t("events.edit.notes")
         = f.text_field :notes, class: 'form-control'
       .row
@@ -47,12 +48,12 @@
           = f.label :event_type_id, t("events.edit.type")
           = f.select :event_type, EventType.all.map(&:name), class: 'form-control', selected: event.type
         .form-group.col-sm-6
+          = f.label 'Associated Team:'
+          = f.select :movement, Movement.all.map(&:name), selected: event.movement.name, class: 'form-control'
+      .row
+        .form-group.col-sm-6
           = f.check_box :forum_option
           = f.label t("events.edit.forum")
-      .row
-        .form-group
-          = f.label 'Associated Team'
-          = f.select :movement, Movement.all.map(&:name), selected: event.movement.name, class: 'form-control'
       .row
         .form-group.col-sm-6
           = f.label t("events.edit.flyer")
@@ -62,10 +63,10 @@
           = f.label t("events.edit.avatar")
           = image_tag event.image, class: 'front-page img-responsive'
           = f.file_field :image
-          .row
-            .spacer10
-        .form-group.col-sm-3
-          = link_to t("events.edit.cancel"), event, method: :delete, data: { confirm: t("events.edit.cancel_confirm_msg")}, remote: true, class:'btn btn-attend btn-cancel'
-        .form-group.col-sm-6
-        .form-group.col-sm-3
-          = f.submit t("events.edit.update"), class: 'btn btn-attend btn-cancel'
+        .row
+          .form-group.col-sm-3{:style => "float: right;"}
+            = f.submit t("events.edit.update"), class: 'btn btn-attend btn-cancel'
+        %br
+        .row
+          .form-group.col-sm-3{:style => "float: right;"}
+            = link_to t("events.edit.cancel"), event, method: :delete, data: { confirm: t("events.edit.cancel_confirm_msg")}, remote: true, class:'btn btn-attend btn-cancel'

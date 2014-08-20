@@ -5,10 +5,10 @@
   %meta{property: "og:image", content: @movement.image}
 
 = content_for :title, @movement.name
+%div.content-header.container
+  %h2.text-center.header-text= @movement.name
 .container
   .col-sm-4
-    %h1.text-center
-      = @movement.name
     -if @movement.sponsored
       %a.sponsor-link{href: ""}
         %img.sponsor-img{alt: "", src: asset_path( @movement.avatar)}/

@@ -4,11 +4,13 @@
 }
 
 .container {
-    position:relative;
-    left: 0;
-    top: 0;
-    background-color: white;
-    border-radius: 10px;
+  position:relative;
+  left: 0;
+  top: 0;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 0 20px black;
+  padding: 20px;
 }
 
 .content {
@@ -110,13 +112,44 @@ img.bg {
   border-color: transparent;
 }
 
+.page-wrap-header {
+  background-color: orange;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 0 20px black;
+  background-origin: padding-box;
+  background-clip: border-box;
+  background-attachment: scroll;
+  position: relative;
+  left: 30px;
+  display: block;
+  padding: 20px;
+  max-width: 450px;
+}
+
+.header-text {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.content-header {
+  background-color: orange;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 0 20px black;
+  background-origin: padding-box;
+  background-clip: border-box;
+  background-attachment: scroll;
+  display: block;
+  position: relative;
+  padding: 10px;
+}
+
 .page-wrap{
   background-attachment: scroll;
   background-clip: border-box;
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, .8);
   background-origin: padding-box;
   background-size: auto;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
   box-shadow: 0 0 20px black;
   display: block;
   padding: 20px;
@@ -127,4 +160,17 @@ img.bg {
 
 .footer-transparent {
   background-color: transparent;
+  box-shadow: none;
+}
+
+.form-container {
+
+}
+
+.no-header {
+  border-radius: 10px;
+}
+
+.sign-up-in {
+  max-width: 400px;
 }

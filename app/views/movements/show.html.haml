@@ -1,7 +1,8 @@
 =image_tag "nopeacenolife.jpg", class: "bg"
-%div.page-wrap.wrapper
-  %h2.text-center
+%div.page-wrap-header
+  %h2.text-center.header-text
     = t('.congo_week_2014')
+%div.page-wrap
   %h4
     = t('.congo_description')
   %br
@@ -9,7 +10,10 @@
     = t('.join_congo')
   .row
     .col-sm-6
-      = link_to t('.host_event'), movement_events_path(Movement.first), class: 'btn search btn-host'
+      -if current_user
+        = link_to t('.host_event') , new_movement_event_path(@movement), class: 'btn search btn-host'
+      -else
+        = link_to t('.host_event') , new_movement_unauthenticated_event_path(@movement), class: 'btn search btn-host'
     .col-sm-6
       = link_to t('.attend_event'), movement_events_path(Movement.first), class: 'btn search btn-host'
   %br

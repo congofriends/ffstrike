@@ -1,6 +1,6 @@
 =image_tag "girls_singing.jpg", class: "bg"
 =content_for :title, "My Events"
-.container
+.container.no-header
   %h2= t('events.dashboard.header')
   = form_tag my_events_path, :method => :get, remote: true do
     - if @event

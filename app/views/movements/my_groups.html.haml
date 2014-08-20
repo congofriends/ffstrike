@@ -1,6 +1,6 @@
 =image_tag "girls_singing.jpg", class: "bg"
 =content_for :title, t('.my_groups')
-.container
+.container.no-header
   %h2
     =t('.manage_my_groups')
   = form_tag my_groups_path, :method => :get, remote: true do

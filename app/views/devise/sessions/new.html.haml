@@ -1,7 +1,8 @@
 =image_tag "girls_singing.jpg", class: "bg"
-.container
-  .col-md-4.col-md-offset-4
-    %legend Sign in
+.col-md-4.col-md-offset-4
+  %div.content-header.container{:style => "width: 350px;"}
+    %h2.text-center.header-text Sign In
+  .container{:style => "width: 350px;"}
     .form-horizontal
       = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
         %fieldset

@@ -6,12 +6,10 @@
 
   #task_modal= render partial: "tasks/attendee_tasks", locals: {event: @event}
 
-.container
+.container.no-header
   =render partial: "event", locals: {event: @event}
   .row
-    %hr
   =render "social/rrssb"
-  %hr
   %br
   .row
     .col-sm-4#flyer_download

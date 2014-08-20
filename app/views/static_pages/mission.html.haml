@@ -1,3 +1,6 @@
+=image_tag "girls_singing.jpg", class: "bg"
+%div.content-header.container
+	%h2.text-center.header-text Congo Week
 .container
 	%strong=t('movements.show.quote')
 	%br
@@ -22,5 +25,10 @@
 	%strong
 		= t('.view_template')
 		= link_to  t('.link'), template_path
+	.row
+		.col-sm-6
+			= link_to t('.host_event'), movement_events_path(Movement.first), class: 'btn search btn-host'
+		.col-sm-6
+			= link_to t('.attend_event'), movement_events_path(Movement.first), class: 'btn search btn-host'
 
 
