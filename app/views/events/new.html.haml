@@ -72,8 +72,8 @@
                 = form.label :movement, t('.event_team_msg')
                 = form.select :movement, @movement.parent.sub_movements.map(&:name), {selected: @movement.name, include_blank: ""}, {class: 'form-control'}
             .form-group
-              = form.label  t('.forum_msg')
               = form.check_box :forum_option, class: 'form-control'
+              = form.label  t('.forum_msg')
             - if current_user
               = form.hidden_field :host_id, value: current_user.id
             .form-group
