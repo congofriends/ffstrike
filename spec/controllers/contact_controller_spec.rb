@@ -12,6 +12,7 @@ describe ContactController do
   	@params_message = {name: "attendee 1", email: "attendee@email.com", subject: "Subject", body: "Body", host_id: event.id}
   	@message = Message.new(@params_message)
   	@mail = ContactMailer.new_message(@message)
+    request.env["HTTP_REFERER"] = "where_i_came_from"
   end
 
 	describe "POST #mail_movement" do

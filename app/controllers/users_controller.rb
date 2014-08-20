@@ -35,10 +35,7 @@ class UsersController < Devise::RegistrationsController
       sign_in(:user, user)
       if Membership.where(user: user, movement_id: @team).empty?
         @team.members << current_user
-
         flash[:notice] = t('movement.join_team_success', movement_name: @team.name)
-        # @generated_password ? UserMailer.welcome_message(user.id, @generated_password, @event.id) : UserMailer.welcome_message(user.id, "", @event.id)
-
       else
         flash[:notice] = t('attendee.already_signed_up')
       end
@@ -60,7 +57,6 @@ class UsersController < Devise::RegistrationsController
       if Attendance.where(user: user, event: @event).empty?
         Attendance.create(user: user, event: @event)
         flash[:success] = message
-        # @generated_password ? UserMailer.welcome_message(user.id, @generated_password, @event.id) : UserMailer.welcome_message(user.id, "", @event.id)
         if ENV["RAILS_ENV"] == "production"
           ReminderMailWorker.perform_at((@event.start_time-(60 * 60 * 12)), user.id, @event.id) if @event.start_time
           @event.end_time ? SurveyMailWorker.perform_at((@event.end_time + (60 * 60 * 12)), user.id, @event.id) : SurveyMailWorker.perform_at((@event.start_time + (60 * 60 * 3)), user.id, @event.id)
