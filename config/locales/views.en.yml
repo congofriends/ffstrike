@@ -131,7 +131,7 @@ en:
       manage_my_groups: 'Manage Teams'
       manage_my_events: 'Manage Events'
       create_group: 'Create Team'
-      create_event: 'Create Event'
+      host_event: 'Host Event'
       sign_in: 'Log In'
       sign_up: 'Sign Up'
       sign_out: 'Sign Out'
@@ -310,7 +310,7 @@ en:
       about_creators: 'About the Creators'
       host_event: *host_event
       contact_group_coordinator: 'CONTACT COORDINATOR'
-      join_team: 'JOIN TEAM'
+      sign_up: 'SIGN ME UP'
       upcoming_events: 'Upcoming Events'
       no_upcoming_events: 'There are no Upcoming Events'
       members: 'Members'

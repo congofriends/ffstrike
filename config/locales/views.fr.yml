@@ -129,7 +129,7 @@ fr:
       manage_my_groups: 'Gérer mes équipes'
       manage_my_events: 'Gérer Mes événements'
       create_group: 'Créer équipe'
-      create_event: 'Créer événement'
+      host_event: 'Hôte événement'
       sign_in: 'Connexion'
       sign_up: 'Inscrivez-vous'
       sign_out: 'Déconnexion'
@@ -325,7 +325,7 @@ fr:
       about_creators: 'Concernant les créateurs'
       host_event: *host_event
       contact_group_coordinator: 'CONTACT COORDONNATEUR'
-      join_team: "REJOINDRE L'ÉQUIPE"
+      sign_up: "INSCRIVEZ-MOI"
       upcoming_events: 'Événements à Venir'
       no_upcoming_events: 'Aucun Événements'
       members: "Membres"
