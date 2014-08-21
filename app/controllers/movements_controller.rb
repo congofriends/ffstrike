@@ -58,7 +58,8 @@ class MovementsController < ApplicationController
         UserMailer.team_creation_message(current_user.id, @movement.id) if current_user
         @movement.users << current_user
       end
-      redirect_to movement_explanation_path(@movement), notice: t('movement.created') and return
+      redirect_to movement_explanation_path(@movement)
+      flash[:success] = t('movement.created')
     else
       render :new, notice: t('movement.not_created')
     end
