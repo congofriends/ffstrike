@@ -26,7 +26,7 @@ class MailController < ApplicationController
       flash[:notice] = t('mail.no_attendees')
     else
       UserMailer.custom_attendees_message(message, subject, action)
-      flash[:notice] = t('mail.sent')
+      flash[:success] = t('mail.sent')
     end
   end
 
@@ -37,7 +37,7 @@ class MailController < ApplicationController
       flash[:notice] = t('mail.no_hosts')
     else
       UserMailer.custom_hosts_message(message, subject, action)
-      flash[:notice] = t('mail.sent')
+      flash[:success] = t('mail.sent')
     end
   end
 
