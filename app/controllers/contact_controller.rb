@@ -26,7 +26,7 @@ class ContactController < ApplicationController
     @group = Movement.find @message.host_id
     if @message.valid?
       ContactMailer.new_coordinators_message(@message).deliver
-      redirect_to :back, notice: t('contact.message_sent')
+      redirect_to :back, success: t('contact.message_sent')
     end
   end
 
@@ -36,7 +36,7 @@ class ContactController < ApplicationController
     @group = Movement.find @message.host_id
     if @message.valid?
       ContactMailer.new_members_message(@message).deliver
-      redirect_to :back, notice: t('contact.message_sent')
+      redirect_to :back, success: t('contact.message_sent')
     end
   end
 
@@ -44,7 +44,7 @@ class ContactController < ApplicationController
     @event =  Event.find @message.host_id
     if @message.valid?
       ContactMailer.new_attendee_message(@message).deliver
-      redirect_to :back, notice: t('contact.message_sent')
+      redirect_to :back, success: t('contact.message_sent')
     end
   end
 
@@ -57,7 +57,7 @@ class ContactController < ApplicationController
 
     if @message.valid?
       ContactMailer.new_mvmt_message(@message).deliver
-      redirect_to :back, notice: t('contact.message_sent')
+      redirect_to :back, success: t('contact.message_sent')
     end
   end
 

@@ -65,6 +65,13 @@ class MovementsController < ApplicationController
     end
   end
 
+  def destroy group
+    @team = group.where(group.id)
+    @team.destroy
+
+    render :new, success: 'Team has been removed'
+  end
+
   def show
     redirect_to root_path and return unless @movement
     load_event_types
