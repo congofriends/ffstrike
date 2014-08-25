@@ -65,8 +65,9 @@ class MovementsController < ApplicationController
     end
   end
 
-  def destroy group
-    @team = group.where(group.id)
+  def destroy
+    @id = params[:id]
+    @team = @group.where(@id)
     @team.destroy
 
     render :new, success: 'Team has been removed'
