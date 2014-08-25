@@ -91,7 +91,7 @@ class MovementsController < ApplicationController
     @team_id = params[:id].split("-").last
     redirect_to new_member_user_path({:team => @team_id})
   end
-
+  #delete later
   def cancel_ownership
     @team = Movement.find params[:team_id]
     @coordinator = User.find params[:coordinator_id]
