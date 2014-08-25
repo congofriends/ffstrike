@@ -258,6 +258,8 @@ fr:
       location: "Emplacement:"
       about_creator: "De Créateur:"
       update_movement: "équipe mise à jour"
+      delete_team: "Supprimer Équipe"
+      confirm_delete_team: "Etes-vous sûr que vous voulez supprimer"
     tab_group_teams:
       team_name: *name
       sponsored: "Parrainés"

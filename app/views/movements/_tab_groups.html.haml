@@ -56,4 +56,4 @@
               .col-md-9.col-md-offset-3
                 = form.submit t('.update_movement'), class: 'btn btn-primary btn-host'
               .col-md-9.col-md-offset-3
-                = link_to 'destroy', "/movements/#{group.id}", method: 'delete'
+                = link_to t('.delete_team'), movement_path(group.id), class: 'btn btn-primary btn-host', method: 'delete', confirm: t('.confirm_delete_team') + " #{group.name}?"

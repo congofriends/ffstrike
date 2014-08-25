@@ -130,6 +130,17 @@ describe MovementsController do
     # end
 	end
 
+  describe "DELETE #destroy" do
+    before do
+      sign_in user
+      @request.env['HTTP_REFERER'] = movement_path(movement)
+    end
+    it "deletes the team" do
+      delete :destroy, id: movement
+      expect { Movement.all == [] }
+    end
+  end
+
   describe "PUT #update" do
     context "video attribute" do
       video_url = "https://www.youtube.com/watch?v=_ZSbC09qgLI"

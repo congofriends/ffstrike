@@ -16,6 +16,15 @@ include Capybara::DSL
     return self
   end
 
+  def delete_movement user
+    visit_movement_dashboard user
+    click_link_or_button "Delete Team"
+    page.driver.browser.switch_to.alert.accept
+    return self
+  end
+
+
+
 	def visit_manage_supporters user
     visit_movement_dashboard user
     click_link_or_button "Manage Supporters"

@@ -65,14 +65,6 @@ class MovementsController < ApplicationController
     end
   end
 
-  def destroy
-    @id = params[:id]
-    @team = @group.where(@id)
-    @team.destroy
-
-    render :new, success: 'Team has been removed'
-  end
-
   def show
     redirect_to root_path and return unless @movement
     load_event_types
@@ -91,7 +83,7 @@ class MovementsController < ApplicationController
     @team_id = params[:id].split("-").last
     redirect_to new_member_user_path({:team => @team_id})
   end
-  #delete later
+
   def cancel_ownership
     @team = Movement.find params[:team_id]
     @coordinator = User.find params[:coordinator_id]
@@ -101,6 +93,13 @@ class MovementsController < ApplicationController
       format.html { render nothing: true }
       format.js
     end
+  end
+
+  def destroy
+    @team = Movement.find params[:id].split("-").last
+    @team.destroy
+    
+    redirect_to :back, notice: t('movement.deleted')
   end
 
    def cancel_membership

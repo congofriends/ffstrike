@@ -24,6 +24,7 @@ es:
     not_public: "Que el equipo no es público!"
     share: "Comparte tu pasión"
     join_team_success: "Gracias! Usted se ha unido al equipo %{movement_name}."
+    deleted: "Tu equipo has sido borrado exitosamente"
   attendee:
     created: "Gracias por suscribirte!"
     updated: "asistente se ha actualizado"

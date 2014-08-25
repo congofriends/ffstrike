@@ -7,6 +7,10 @@ require 'simplecov'
 require 'paperclip/matchers'
 require 'pry-rescue/minitest'
 require 'pry-rescue/rspec'
+require 'capybara/rspec'
+require 'capybara/rails'
+
+Capybara.javascript_driver = :webkit
 
 # Code coverage runs when you run rspec. This NEEDS to be at the top.
 SimpleCov.start

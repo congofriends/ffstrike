@@ -273,6 +273,8 @@ en:
       location: "Location:"
       about_creator: "About Creator:"
       update_movement: "Update Team"
+      delete_team: "Delete Team"
+      confirm_delete_team: "Are you sure you want to delete "
     tab_group_teams:
       team_name: 'Team Name'
       sponsored: 'Sponsored'

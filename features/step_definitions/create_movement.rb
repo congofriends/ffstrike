@@ -1,4 +1,6 @@
 create_movement_page = CreateMovementPage.new
+movement_dashboard_page = MovementDashboardPage.new
+movement_index_page = MovementIndexPage.new
 home_page = HomePage.new
 
 Given(/^I am on the home page/) do
@@ -38,6 +40,16 @@ end
 
 When(/^I create a movement/) do
   create_movement_page.fill_form_and_submit()
+  @movement_name = Movement.last.name
+end
+
+When(/^I delete a movement/) do
+  movement_dashboard_page.delete_movement(@user)
+end
+
+Then(/^I can not see the movement on the team index page/) do
+  movement_index_page.navigate_to
+  page.should_not have_content(@movement_name)
 end
 
 When(/^I submit all the information that I can/) do

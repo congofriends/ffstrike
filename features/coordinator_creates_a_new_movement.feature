@@ -9,3 +9,9 @@ Scenario: User creates a complete movement
  When I create a movement
  Then I get a confirmation that I created a new movement
  And a visitor can view my movement
+
+  @javascript
+Scenario: User deletes a complete movement
+  When I create a movement
+  And I delete a movement
+  Then I can not see the movement on the team index page

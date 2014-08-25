@@ -252,6 +252,8 @@ es:
       location: 'Ubicación'
       about_creator: 'Acerca del creador'
       update_movement: "Equipo de actualización"
+      delete_team: "Elimina Equipo"
+      confirm_delete_team: "¿Seguro que quieres borrar "
     tab_group_teams:
       team_name: *name
       sponsored: "Patrocinado"
