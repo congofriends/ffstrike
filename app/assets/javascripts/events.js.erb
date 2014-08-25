@@ -135,6 +135,24 @@ $(document).ready(function() {
     }
   })
 
+  $("#event_event_type").bind('change', function(){
+    if(this.selectedIndex === 3){
+        $('#fundraise_div').removeClass('hidden');
+        $('#create_event').prop('disabled', true);
+        $('#fundraise_approval').click(function() {
+            if ($('#fundraise_approval').prop('checked') == true) {
+                $('#create_event').prop("disabled", false);
+            }
+            else {
+                $('#create_event').prop('disabled', true);
+            }
+        });
+    }
+    else {
+        $('#fundraise_div').addClass('hidden');
+    }
+  });
+
   $(function() {
       $('#search_input').fastLiveFilter('#search_events');
   });

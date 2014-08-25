@@ -64,6 +64,44 @@
             .form-group
               = form.label :event_type_id, t('.event_type') + " *"
               = form.select :event_type, EventType.all.map(&:name), {class: 'form-control'}
+            .row
+              #fundraise_div{class: :hidden}
+                #agreement{class: "terms"}
+                  %h3.strong.text-center= t('events.fundraiser.header1')
+                  %br
+
+                  %p= t('events.fundraiser.p1')
+                  %br
+
+                  %p= t('events.fundraiser.p2')
+                  %br
+
+                  %p= t('events.fundraiser.p3')
+                  %br
+
+                  %h3.strong.text-center= t('events.fundraiser.header2')
+                  %br
+
+                  %h4.strong.capitalize= t('events.fundraiser.user_agree')
+                  %br
+                  %ul
+                    %li= t('events.fundraiser.user_list1')
+                    %li= t('events.fundraiser.user_list2')
+                    %li= t('events.fundraiser.user_list3')
+                    %li= t('events.fundraiser.user_list4')
+                    %li= t('events.fundraiser.user_list5')
+                    %br
+                  %h4.strong.capitalize= t('events.fundraiser.fotc_will')
+                  %br
+                  %ul
+                    %li= t('events.fundraiser.fotc_list1')
+                    %li= t('events.fundraiser.fotc_list2')
+                    %li= t('events.fundraiser.fotc_list3')
+                    %li= t('events.fundraiser.fotc_list4')
+                    %br
+                .row
+                = check_box_tag :fundraise_approval, 1
+                = form.label t('events.fundraiser.check')
             .form-group
               - unless @movement.sub_movements.empty?
                 = form.label :movement, t('.event_team_msg')
@@ -72,8 +110,8 @@
                 = form.label :movement, t('.event_team_msg')
                 = form.select :movement, @movement.parent.sub_movements.map(&:name), {selected: @movement.name, include_blank: ""}, {class: 'form-control'}
             .form-group
-              = form.check_box :forum_option, class: 'form-control'
-              = form.label  t('.forum_msg')
+              = form.check_box :forum_option
+              = form.label t('.forum_msg')
             - if current_user
               = form.hidden_field :host_id, value: current_user.id
             .form-group
