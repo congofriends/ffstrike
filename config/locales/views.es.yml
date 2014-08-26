@@ -117,13 +117,13 @@ es:
       home: 'INICIO'
       events: 'EVENTOS'
       teams: 'EQUIPOS'
+      donate: 'COLABORE'
     footer:
       contact: 'Contáctenos'
       questions: '¿Preguntas? ¿Comentarios? ¿Errores? '
       mission: 'MISIÓN'
       template: 'TEMAS'
       media: 'HERRAMIENTAS'
-      donate: 'COLABORE'
     navbar:
       my_profile: 'Mi perfil'
       manage_my_groups: 'Administrar Mis Equipos'

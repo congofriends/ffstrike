@@ -55,5 +55,6 @@
                   = form.text_field :video, class: 'form-control', placeholder: 'Paste a youtube embed link here!'
               .col-md-9.col-md-offset-3
                 = form.submit t('.update_movement'), class: 'btn btn-primary btn-host'
-              .col-md-9.col-md-offset-3
-                = link_to t('.delete_team'), movement_path(group.id), class: 'btn btn-primary btn-host', method: 'delete', confirm: t('.confirm_delete_team') + " #{group.name}?"
+              - if group.name != 'Congo Week'
+                .col-md-9.col-md-offset-3
+                  = link_to t('.delete_team'), movement_path(group.id), class: 'btn btn-primary btn-host', method: 'delete', confirm: t('.confirm_delete_team') + " #{group.name}?"

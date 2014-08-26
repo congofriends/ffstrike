@@ -117,13 +117,13 @@ fr:
       home: 'MAISON'
       events: 'ÉVÉNEMENT'
       teams: 'ÉQUIPES'
+      donate: 'FAITES UN DON'
     footer:
       contact: 'Contactez-nous'
       questions: 'Questions? Commentaires? Erreurs?'
       mission: 'MISSION'
       template: 'THÈMES'
       media: 'OUTILS'
-      donate: 'FAITES UN DON'
     navbar:
       my_profile: 'Mon profil'
       manage_my_groups: 'Gérer mes équipes'

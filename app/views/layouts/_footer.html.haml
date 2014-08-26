@@ -5,9 +5,6 @@
 				= link_to image_tag("fb_logo.png"), "https://www.facebook.com/congofriends", id: 'share-logo', :target => '_blank'
 				= link_to image_tag("twitter_logo.png"), "https://twitter.com/congofriends", id: 'share-logo', :target => '_blank'
 				= link_to image_tag("youtube_logo.png"), "https://www.youtube.com/user/congofriends", id: 'share-logo', :target => '_blank'
-			%div.float_right
-				.row.col-sm-12
-					= link_to t('.donate'), "http://www.friendsofthecongo.org/donate.html", class: 'header-footer', :target => '_blank'
 		%div.footer2.float_right
 			= t('.questions')
 			= mail_to "info@congoevents.org", t('.contact')

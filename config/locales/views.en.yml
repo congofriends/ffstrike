@@ -137,13 +137,13 @@ en:
       home: 'HOME'
       events: 'EVENTS'
       teams: 'TEAMS'
+      donate: 'DONATE'
     footer:
       contact: 'Contact Us'
       questions: 'Questions? Comments? Bugs?'
       mission: 'MISSION'
       template: 'THEMES'
       media: 'TOOLKIT'
-      donate: 'DONATE'
     navbar:
       my_profile: 'My profile'
       manage_my_groups: 'Manage Teams'
