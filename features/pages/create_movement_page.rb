@@ -3,7 +3,6 @@ include Capybara::DSL
 	def fill_form_and_submit
 		visit "/movements/new"
 		fill_in 'movement_name', with: 'Congo Week'
-    fill_in 'movement_phone', with: '3124444444'
 		fill_in 'movement_tagline', with: 'Move yo cat!'
 		fill_in 'movement_video', with: 'https://www.youtube.com/watch?v=Kdgt1ZHkvnM'
 		click_link_or_button 'create_movement'
@@ -11,7 +10,6 @@ include Capybara::DSL
 
 	def fill_form
 		fill_in 'movement_name', with: 'Cats Move'
-    fill_in 'movement_phone', with: '3333333333'
 		fill_in 'movement_tagline', with: 'Move yo cat!'
 		fill_in 'movement_video', with: 'https://www.youtube.com/watch?v=Kdgt1ZHkvnM'
 	end
