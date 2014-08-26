@@ -285,6 +285,7 @@ fr:
       confirm_msg: 'Êtes-vous sûr?'
     new:
       name: *name
+      phone: 'Téléphone #'
       location: "Les détails d'emplacement:"
       location_placeholder: 'Par exemple mondial, International, National..'
       youtube_link: 'Lien Youtube'
@@ -341,6 +342,7 @@ fr:
   unauthenticated_submovements:
     new:
       name: *name
+      phone: 'Téléphone #'
       location: "Les détails d'emplacement:"
       location_placeholder: 'Par exemple mondial, International, National..'
       youtube_link: 'Lien Youtube'

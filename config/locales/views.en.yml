@@ -302,6 +302,7 @@ en:
       thanks_msg: 'Thank you for creating a Congo Week Team to support peace and justice in the heart of Africa. '
       explanation_msg: "Once you fill out the relevant details to create a team, events associated with your team will show up on one page."
       name: 'Name'
+      phone: 'Phone #'
       location_placeholder: 'e.g. Global, International, National..'
       location: "Location:"
       youtube_link: 'Youtube Link'
@@ -345,6 +346,7 @@ en:
       thanks_msg: 'Thank you for creating a Congo Week Team to support peace and justice in the heart of Africa. '
       explanation_msg: "Once you fill out the relevant details to create a team, events associated with your team will show up on one page."
       name: 'Name'
+      phone: 'Phone #'
       location_placeholder: 'e.g. Global, International, National..'
       location: "Location:"
       youtube_link: 'Youtube Link'

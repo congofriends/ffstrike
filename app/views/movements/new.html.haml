@@ -17,7 +17,10 @@
                 = form.label :name, t('.name') + ' * ', { class: 'col-md-4 control-label' }
                 .col-md-8
                   = form.text_field :name, { class: 'form-control' }
-
+              .form-group
+                = form.label :phone, t('.phone') + ' * ', { class: 'col-md-4 control-label' }
+                .col-md-8
+                  = form.text_field :phone, { class: 'form-control' }
               .form-group
                 = form.label :tagline, t('.tagline'), { class: 'col-md-4 control-label' }
                 .col-md-8
@@ -26,24 +29,19 @@
                 = form.label :website, t('.website'), { class: 'col-md-4 control-label' }
                 .col-md-8
                   = form.text_field :website, { class: 'form-control', placeholder: "www.website.com"}
-
               .form-group
                 = form.label :avatar, t('.avatar'), { class: 'col-md-4 control-label' }
                 .col-md-8
                   = form.file_field :avatar
-
               .form-group
                 = form.label :flickr, { class: 'col-md-4 control-label' }
                 .col-md-8
                   = form.text_field :flickr, { class: 'form-control' }
-
               .form-group
                 = form.label :video, t('.youtube_link'), { class: 'col-md-4 control-label' }
                 .col-md-8
                   = form.text_field :video, { class: 'form-control' }
-
               = form.hidden_field :parent_id, value:  params[:parent_id]
-
               .form-group
                 .col-md-8.col-md-offset-4
                   = form.submit t('.create_btn'), class: "btn btn-primary", id: "create_movement"

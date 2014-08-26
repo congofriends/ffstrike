@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20140815162009) do
 
   create_table "movements", force: true do |t|
     t.string   "name"
+    t.string   "phone"
     t.text     "tagline"
     t.datetime "created_at"
     t.datetime "updated_at"
