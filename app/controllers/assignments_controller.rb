@@ -1,5 +1,5 @@
 class AssignmentsController < ApplicationController
-  
+
   def assign
     load_task_and_event
 
