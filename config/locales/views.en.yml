@@ -151,7 +151,7 @@ en:
       create_group: 'Create Team'
       host_event: 'Host Event'
       sign_in: 'Log In'
-      sign_up: 'Sign Up'
+      create_an_account: 'Create An Account'
       sign_out: 'Sign Out'
   contact:
     new_event_msg:

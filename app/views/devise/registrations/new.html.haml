@@ -9,26 +9,30 @@
         = devise_error_messages!
         %fieldset
           .form-group
-            = f.label :name, "First Name", class: 'col-md-4 control-label'
+            = f.label :name, t('devise.registrations.edit.name'), class: 'col-md-4 control-label'
             .col-md-8
               = f.text_field :name, :autofocus => true, class: 'form-control'
           .form-group
-            = f.label :surname, "Last Name", class: 'col-md-4 control-label'
+            = f.label :surname, t('devise.registrations.edit.surname'), class: 'col-md-4 control-label'
             .col-md-8
               = f.text_field :surname, :autofocus => true, class: 'form-control'
           .form-group
-            = f.label :email, class: 'col-md-4 control-label'
+            = f.label :phone, t('devise.registrations.edit.phone'), class: 'col-md-4 control-label'
+            .col-md-8
+              = f.text_field :phone, :autofocus => true, class: 'form-control'
+          .form-group
+            = f.label :email, t('devise.registrations.edit.email'), class: 'col-md-4 control-label'
             .col-md-8
               = f.email_field :email, class: 'form-control'
           .form-group
-            = f.label :password, class: 'col-md-4 control-label'
+            = f.label :password, t('devise.registrations.edit.pass'), class: 'col-md-4 control-label'
             .col-md-8
               = f.password_field :password, class: 'form-control'
           .form-group
-            = f.label :password_confirmation, class: 'col-md-4 control-label'
+            = f.label :password_confirmation, t('devise.registrations.edit.pass_confirm'), class: 'col-md-4 control-label'
             .col-md-8
               = f.password_field :password_confirmation, class: 'form-control'
           .form-group
             .col-md-8.col-md-offset-4
-              = f.submit "Sign up", class: 'btn btn-primary', id: 'sign_up_button'
+              = f.submit t('devise.registrations.edit.sign_up'), class: 'btn btn-primary', id: 'sign_up_button'
       = render "devise/shared/links"

@@ -50,9 +50,10 @@ en:
         current_pass: "Current Password"
         pass_msg: "(we need your current password to confirm your changes)"
         blank_msg: "(leave blank if you don't want to change it)"
-        pass: "New Password"
-        pass_confirm: "New Password Confirmation"
+        pass: "Password"
+        pass_confirm: "Password Confirmation"
         update: "Update"
+        sign_up: "SIGN UP"
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."

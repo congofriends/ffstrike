@@ -49,9 +49,10 @@ fr:
         current_pass: "Mot de passe actuel"
         pass_msg: "(Nous avons besoin de votre mot de passe courant pour confirmer vos modifications)"
         blank_msg: "(Laissez vide si vous ne voulez pas modifier)"
-        pass: "Nouveau mot"
-        pass_confirm: "Nouveau mot de passe de confirmation"
+        pass: "Passe"
+        pass_confirm: "Passe conformation"
         update: "Mise à jour"
+        sign_up: "Signer"
     sessions:
       signed_in: 'Connecté(e) avec succès.'
       signed_out: 'Déconnecté(e) avec succès.'

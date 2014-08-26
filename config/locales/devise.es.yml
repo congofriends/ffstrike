@@ -48,9 +48,10 @@ es:
         current_pass: "Contraseña Actual"
         pass_msg: "(necesitamos la contraseña actual para confirmar los cambios)"
         blank_msg: "(dejar en blanco si no desea cambiar)"
-        pass: "Nueva contraseña"
-        pass_confirm: "Confirmación de la contraseña nueva"
+        pass: "Contraseña"
+        pass_confirm: "Confirmación contraseña"
         update: "Actualizar"
+        sign_up: "CONTRATA"
     sessions:
       signed_in: 'Sesión iniciada.'
       signed_out: 'Sesión finalizada.'

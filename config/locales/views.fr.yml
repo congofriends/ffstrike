@@ -131,7 +131,7 @@ fr:
       create_group: 'Créer équipe'
       host_event: 'Hôte événement'
       sign_in: 'Connexion'
-      sign_up: 'Inscrivez-vous'
+      create_an_account: 'créer Un Compte'
       sign_out: 'Déconnexion'
   contact:
     new_event_msg:

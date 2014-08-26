@@ -95,7 +95,7 @@ es:
       task_msg: "Aquí están algunas cosas que usted puede hacer para ayudar a:"
   tasks:
     delete_confirm: "¿Estás seguro de eliminar tarea '%{task_description}'?"
-    sign_up: "SIGN UP"
+    sign_up: "CONTRATA"
     signed_up: "Firmado"
     volunteers: "Los Voluntarios (%{volunteer_count})"
     host_tasks_table:
@@ -131,7 +131,7 @@ es:
       create_group: 'Crear equipo'
       host_event: 'Acogida Evento'
       sign_in: 'Entrar'
-      sign_up: 'Suscribirse'
+      create_an_account: 'Crea Una Cuenta'
       sign_out: 'Salir'
   contact:
     new_event_msg:
