@@ -332,10 +332,12 @@ fr:
       no_upcoming_events: 'Aucun Événements'
       members: "Membres"
     support_network:
-      team_description: "Une équipe est un groupe d'individus ou une organisation qui a rejoint le mouvement Congo à organiser des événements dans leurs communautés locales pour sensibiliser et éduquer les autres sur la situation au Congo. Aidez-nous à construire des équipes partout dans le monde à travailler en partenariat avec congolais pour ramener la paix, la justice et la dignité humaine au cœur de l'Afrique. Rejoignez le mouvement en rejoignant ou en créant une équipe."
+      team_description: "Une équipe est un groupe d individus ou une organisation qui a rejoint le mouvement Congo à organiser des événements dans leurs communautés locales pour sensibiliser et éduquer les autres sur la situation au Congo. Aidez-nous à construire des équipes partout dans le monde à travailler en partenariat avec congolais pour ramener la paix, la justice et la dignité humaine au cœur de l Afrique. Rejoignez le mouvement en rejoignant ou en créant une équipe."
       support_network: 'Support Réseau'
       network_message: 'Il ya %{number} équipes et en pleine croissance!'
       create_team: 'CRÉER UN ÉQUIPE'
+      team_information: 'Une équipe est un groupe d individus ou une organisation qui a rejoint le mouvement Congo à organiser des événements dans leurs communautés locales pour sensibiliser et éduquer les autres sur la situation au Congo. Aidez-nous à construire des équipes partout dans le monde à travailler en partenariat avec congolais pour ramener la paix, la justice et la dignité humaine au cœur de l Afrique.'
+
   unauthenticated_submovements:
     new:
       name: *name
