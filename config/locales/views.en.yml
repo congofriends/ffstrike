@@ -90,7 +90,7 @@ en:
       fotc_list2: "Confer all proper use of the FOTC name and logo to the group."
       fotc_list3: "Maintain regular communications with the group leader."
       fotc_list4: "Use all funds received from the group to support the work of the FOTC."
-      check: "By checking this box, you agree that you have read, understand and accept the terms and conditions."
+      check: "By checking this box, you agree that you have read, understand and accept the terms and conditions"
     edit:
       edit_header: "EDIT EVENT"
       start_date: "Start date & time:"
