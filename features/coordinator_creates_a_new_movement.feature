@@ -10,7 +10,7 @@ Scenario: User creates a complete movement
  Then I get a confirmation that I created a new movement
  And a visitor can view my movement
 
- @javascript
+ @ignore @javascript
 Scenario: User deletes a complete movement
   When I create a movement
   And I delete a movement
