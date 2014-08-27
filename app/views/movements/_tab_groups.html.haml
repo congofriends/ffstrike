@@ -57,4 +57,4 @@
                 = form.submit t('.update_movement'), class: 'btn btn-primary btn-host'
               - if group.name != 'Congo Week'
                 .col-md-9.col-md-offset-3
-                  = link_to t('.delete_team'), movement_path(group.id), class: 'btn btn-primary btn-delete', method: 'delete', confirm: t('.confirm_delete_team') + " #{group.name}?"
+                  = link_to t('.delete_team'), movement_path(group.id), class: 'btn btn-primary btn-host', method: 'delete', data: {confirm: (t('.confirm_delete_team') + "#{group.name}?")}

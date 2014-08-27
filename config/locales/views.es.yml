@@ -72,6 +72,24 @@ es:
       phone: "El teléfono"
       password: *password
       password_confirmation: *confirmation
+    fundraiser:
+      header1: "Autorización para gestionar un evento en beneficio de Los Amigos del Congo"
+      header2: "Responsabilidades del organizador del evento"
+      p1: "Gracias por ofrecer su apoyo a los Amigos del Congo Rompiendo el Silencio:.. Congo Semana Para proteger del capítulo 501 (c) 3, solicitamos que usted acepta las siguientes condiciones I, el anfitrión del evento , de acuerdo a organizar y patrocinar un evento en apoyo de los Amigos del Congo (FOTC) Semana Congo."
+      p2: "Entiendo que el propósito principal de este evento será para recaudar fondos para Los Amigos del Congo (FOTC) y que todos los fondos recaudados serán sometidas a la FOTC en apoyo de sus programas y proyectos de gastos para el evento hará. no ser pagados por FOTC o de los fondos recibidos del evento. Pago de los gastos deben ser pagados directamente por el grupo patrocinador. entendemos que el organizador del evento debe cumplir con todas las normativas y las políticas y prácticas de la FOTC relativos a la recaudación de fondos. el presente Acuerdo estará en vigor durante la duración del evento. la Junta FOTC se reserva el derecho de cancelar el apoyo del evento por cualquier razón considerada por la Junta a ser suficiente."
+      p3: "En caso de terminación de este acuerdo, el organizador del evento remitirá todos los fondos recaudados en nombre de FOTC al FOTC Además, si el organizador del evento continúa para recaudar dinero para FOTC, FOTC deberá tomar medidas activas para informar al público y todas las personas con las que el organizador del evento tiene contacto, incluyendo a todas las personas que han contribuido con dinero para el organizador del evento que el organizador del evento ya no está afiliada a la FOTC."
+      user_agree: "Estoy de acuerdo:"
+      user_list1: "Presentar una descripción del evento."
+      user_list2: "Para mantener un alto nivel de buen gusto y de la ética en relación a todos los eventos de recaudación de fondos."
+      user_list3: "Para ser responsable de todos los gastos incurridos en relación con todas las actividades de recaudación de fondos y para absolver al FOTC de cualquier responsabilidad."
+      user_list4: "Someter todas las ganancias del evento dentro de los catorce (14) días a la FOTC para su depósito en la cuenta bancaria FOTC."
+      user_list5: "Presente un informe post evento completado dentro de los treinta (30) días siguientes al evento."
+      fotc_will: "FOTC hará lo siguiente:"
+      fotc_list1: "Suministro de cantidades razonables de materiales sobre FOTC de forma gratuita."
+      fotc_list2: "Confer todo correcto uso del nombre y el logotipo FOTC al grupo."
+      fotc_list3: "Mantener comunicaciones regulares con el líder del grupo."
+      fotc_list4: "Usar todos los fondos recibidos del grupo para apoyar la labor de la FOTC."
+      check: "Al marcar esta casilla, usted acepta que ha leído, entendido y acepta los términos y condiciones"
     edit:
       edit_header: "Editar"
       start_date: "Fecha y hora de inicio:"

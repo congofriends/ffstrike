@@ -72,6 +72,24 @@ fr:
       phone: "Votre téléphone"
       password: *password
       password_confirmation: *confirmation
+    fundraiser:
+      header1: "Autorisation d'exploiter un événement au profit des Amis du Congo"
+      header2: "Responsabilités de l'organisateur de l'événement"
+      p1: "Je vous remercie pour offrir votre soutien aux Amis du Congo Briser le silence:.. Semaine Congo Afin de protéger 501 (c) 3 du statut, nous demandons que vous acceptez les conditions suivantes je du Chapitre, l'hôte de l'événement , d'accord pour organiser et parrainer un événement à l'appui des amis du Congo (FOTC) Semaine Congo."
+      p2: "Je comprends que le but principal de cet événement est d'amasser des fonds pour Les Amis du Congo (FOTC) et que tous les fonds recueillis seront soumis à la FOTC à l'appui de ses programmes et projets dépenses pour l'événement sera. pas être payés par FOTC ou de fonds reçus de l'événement. paiement de tous les frais doivent être payés directement par le groupe de parrainage. Nous comprenons que l'organisateur de l'événement doit être conforme à tous les règlements et les politiques et les pratiques de la FOTC relatives à la collecte de fonds. Cet accord est en vigueur pour la durée de l'événement. l'Office FOTC se réserve le droit d'annuler le soutien de l'événement pour une raison quelconque, considéré par le Conseil d'être suffisant."
+      p3: "En cas de résiliation du présent contrat, l'organisateur de l'événement transmet tous les fonds recueillis au nom de FOTC à la FOTC En outre, si l'organisateur de l'événement continue à amasser des fonds pour FOTC, FOTC doit prendre des mesures positives pour informer le public et toutes les personnes avec lesquelles l'organisateur de l'événement est en contact, y compris toutes les personnes qui ont donné de l'argent à l'organisateur de l'événement que l'organisateur de l'événement n'est plus affilié à la FOTC."
+      user_agree: "Je suis d'accord:"
+      user_list1: "Pour soumettre une description de l'événement."
+      user_list2: "Pour maintenir un haut niveau de bon goût et d'éthique par rapport à tous les événements de collecte de fonds."
+      user_list3: "Pour être responsable de tous les frais engagés dans le cadre de toutes les activités de collecte de fonds et d'absoudre la FOTC d'une telle responsabilité."
+      user_list4: "Pour soumettre tous les profits de l'événement dans les quatorze (14) jours à l'FOTC pour dépôt dans le compte FOTC bancaire."
+      user_list5: "Pour soumettre un rapport d'événement de poste achevé dans les trente (30) jours suivant l'événement."
+      fotc_will: "FOTC sera:"
+      fotc_list1: "Fournir des quantités raisonnables de documents sur FOTC gratuitement."
+      fotc_list2: "conférer tous, une utilisation appropriée du nom et du logo FOTC pour le groupe."
+      fotc_list3: "Maintenir des communications régulières avec le chef de groupe."
+      fotc_list4: "Utilisez tous les fonds reçus dans le groupe pour soutenir le travail de la FOTC."
+      check: "En cochant cette case, vous convenez que vous avez lu, compris et accepté les termes et conditions"
     edit:
       edit_header: "Modifier l'événement"
       start_date: "Date de Début & Heure:"
