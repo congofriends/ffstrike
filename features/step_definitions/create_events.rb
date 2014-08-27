@@ -24,7 +24,7 @@ When(/^I select the Create Event button/)do
 end
 
 Then(/^I can see the confirmation page/)do
-	page.should have_text("successfully created a Rally")
+	page.should have_text("successfully created a Movie Screening")
 end
 
 

@@ -67,27 +67,34 @@ en:
     signed_up: "Thanks for signing up!"
     for_attendees_only: "Tasks are for attendees only"
   event_type:
-    rally:
-      short_description: "Host a large public rally or march to garner public and media attention to your cause"
-      full_description: "Rallies are large events (ideally 20 or more people) intended to garner public and media attention"
     movie_screening:
       short_description: "Show a relevant movie to educate the community about your issue"
       full_description: "A movie screening can be a great first step for many people to learn about important issues."
+    rally:
+      short_description: "Host a large public rally or march to garner public and media attention to your cause"
+      full_description: "Rallies are large events (ideally 20 or more people) intended to garner public and media attention"
     teach_in:
       short_description: "Assemble experts and host a public forum to educate the community on your issue"
       full_description: "Teach Ins are intended to inform the general population about important issues. Generally, public forums involve a slate of speakers who are experts in the issue you’re discussing."
-    fundraiser:
+    Fundraiser_for_F.O.T.C:
       short_description: "Raise funds for your cause"
       full_description: "Raise funds for your cause"
     cell_out:
       short_description: "Digital moment of silence"
       full_description: "The Cell OUT is a digital moment of silence to commemorate the millions of Congolese lives lost, raise awareness about the ongoing conflict in the Congo and the vicious scramble for Congo's spectacular natural resources."
-    interfaith_prayer_vigil:
+    Prayer_service:
+      short_description:
+      full_description:
+    forum:
+      short_description:
+      full_description:
+    organize_concert:
       short_description:
       full_description:
     other:
       short_description: "Have an idea for a creative event? Use this tool to create tasks and assign them"
       full_description: "Have an idea for a creative event? Use this tool to create tasks and assign them."
+
   host_tasks:
     rally:
       - 'Create an agenda for the event with speakers, chants, or a march through your community or campus.'
@@ -111,7 +118,7 @@ en:
       - 'Spread the word among organizations in your community or on your campus'
       - 'Send an alert to local press'
       - 'Organize your materials for the day of. You will want postcard petitions, DVDs to be distributed, sign in sheet or computer for people to sign in at your event, fact sheets, pens, and snacks (optional). (http://congoweek.org/downloads.html)'
-    fundraiser:
+    Fundraiser_for_F.O.T.C:
       - 'Before the Event: Read and sign the Friends of the Congo (FOTC) Fundraising Authorization agreement and fax it or scan and email it to FOTC'
       - 'Before the Event: Write an agenda for your event and secure any entertainment (a band, a speaker, a movie - the sky is the limit!)'
       - 'Before the Event: Make a goal for how much money you want to raise - publicize your goal '
@@ -135,7 +142,7 @@ en:
       - 'Send an alert to local press'
       - 'Organize your materials for the day of. You will want postcard petitions, DVDs to be distributed, sign in sheet or computer for people to sign in at your event, fact sheets, pens, and snacks (optional). (http://congoweek.org/downloads.html)'
       - 'Optional: Plan a closing event where everyone turned their phone back on at a designated time. This could be combined with a fundraiser, movie showing, discussion circle, or any other type of event. '
-    interfaith_prayer_vigil:
+    Prayer_service:
       - 'Reach out to faith leaders in your community and ask them to attend and participate.'
       - 'Share the Congo liturgy with faith leaders http://congoweek.org/images/pdf/congo_christian_worship_resource.pdf.'
       - 'Create an agenda for the event with speakers, chants, or a march through your community or campus.'
@@ -163,7 +170,7 @@ en:
       - 'Publicize your event via social media using the hashtag #CongoWeek2014 (and ask others to do the same!) '
       - 'Help with set up and/or clean up'
       - 'I want to do more! Contact me about getting more involved!'
-    fundraiser:
+    Fundraiser_for_F.O.T.C:
       - 'Call 5-10 friends and invite them to come'
       - 'Ask your friends/family who can’t make it to the event to donate online at (http://friendsofthecongo.org/donate.html)'
       - 'Publicize your event via social media using the hashtag #CongoWeek2014 (and ask others to do the same!) '
@@ -173,7 +180,7 @@ en:
       - 'Invite your friends (because this is partially a “virtual” action - you can even invite friends who live in a different city, state, or country)'
       - 'Publicize your event via social media using the hashtag #CongoWeek2014 (and ask others to do the same!) '
       - 'I want to do more! Contact me about getting more involved!'
-    interfaith_prayer_vigil:
+    Prayer_service:
       - 'Call 5-10 friends and invite them to come'
       - 'Publicize your event via social media using the hashtag #CongoWeek2014 (and ask others to do the same!) '
       - 'Help with set up and/or clean up'
