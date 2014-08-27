@@ -1,7 +1,6 @@
 class Movement < ActiveRecord::Base
   validates_with VideoValidator, fields: [:video]
   has_many :events, dependent: :destroy
-  #has_many :attendees, through: :events #, source: :user
   has_many :attendances, through: :events #, source: :user
   has_many :ownerships, dependent: :destroy
   has_many :memberships, dependent: :destroy
@@ -84,8 +83,6 @@ class Movement < ActiveRecord::Base
   end
 
   def locations
-    #FIXME: why nil? instead of empty?
-    # movement_events.map(&:city).uniq.reject(&:empty?).slice(0..8).join(", ")
     movement_events.map(&:city).uniq.reject(&:nil?).slice(0..8).join(", ")
   end
 

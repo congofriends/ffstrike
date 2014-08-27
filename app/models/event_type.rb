@@ -1,7 +1,7 @@
-class EventType < ActiveRecord::Base 
+class EventType < ActiveRecord::Base
   has_many :events
 
   def self.names
-    all.map(&:name) 
+    all.map(&:name)
   end
 end
