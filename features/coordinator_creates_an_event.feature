@@ -17,6 +17,12 @@ Scenario: Creating an Event as a Coordinator without Event Details
 	And I create events with time TBD field checked
 	Then I can see that the time fields contain TBD
 
+Scenario: Creating a Fundraising Event as a Coordinator
+    When I select the Create Event button
+    And I select a fundraising event
+    Then I can see the fundraising agreement
+    And I click next
+    Then I can see the fundraising confirmation page
 
 Scenario: Viewing an Event on Index after Creating an Event
     When I select the Create Event button

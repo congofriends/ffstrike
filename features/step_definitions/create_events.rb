@@ -19,14 +19,29 @@ When(/^I create an event/)do
 	create_events_page.create_new_event()
 end
 
+When(/^I select a fundraising event/)do
+  create_events_page.select_fundraising_event()
+end
+
 When(/^I select the Create Event button/)do
 	create_events_page.select_create_event()
+end
+
+Then(/^I can see the fundraising agreement/)do
+  page.should have_text("Authorization to Operate an Event for the Benefit of The Friends of the Congo")
+end
+
+And(/^I click next/)do
+  create_events_page.click_next()
 end
 
 Then(/^I can see the confirmation page/)do
 	page.should have_text("successfully created a Movie Screening")
 end
 
+Then(/^I can see the fundraising confirmation page/)do
+  page.should have_text("successfully created a Fundraiser")
+end
 
 And(/^I select the type of event$/) do
 	create_events_page.select_event_type()
