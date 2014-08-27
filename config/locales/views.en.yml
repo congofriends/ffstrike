@@ -106,7 +106,7 @@ en:
       type: "Type:"
       forum: "Forum (Disqus):"
       flyer: "Flyer:"
-      avatar: "Image Representation:"
+      avatar: "Image:"
       update: *update
       cancel: "Cancel Event"
       cancel_confirm_msg: "Are you sure you want to delete this event?"
@@ -302,16 +302,16 @@ en:
       thanks_msg: 'Thank you for creating a Congo Week Team to support peace and justice in the heart of Africa. '
       explanation_msg: "Once you fill out the relevant details to create a team, events associated with your team will show up on one page."
       name: 'Name'
-      phone: 'Phone #'
+      phone: 'Phone'
       location_placeholder: 'e.g. Global, International, National..'
       location: "Location:"
       youtube_link: 'Youtube Link'
-      tagline: "Tagline: "
+      tagline: "Tagline "
       extended_description: "Extended Description:"
       call_to_action: "Call To Action:"
       about_creator: "About Creator:"
       create_btn: 'Create Team'
-      avatar: "Image Representation"
+      avatar: "Image"
       website: "Website"
     show:
       h1: "Support the Congo Global Movement"
@@ -346,16 +346,16 @@ en:
       thanks_msg: 'Thank you for creating a Congo Week Team to support peace and justice in the heart of Africa. '
       explanation_msg: "Once you fill out the relevant details to create a team, events associated with your team will show up on one page."
       name: 'Name'
-      phone: 'Phone #'
+      phone: 'Phone'
       location_placeholder: 'e.g. Global, International, National..'
       location: "Location:"
       youtube_link: 'Youtube Link'
-      tagline: "Tagline: "
+      tagline: "Tagline"
       extended_description: "Extended Description:"
       call_to_action: "Call To Action:"
       about_creator: "About Creator:"
       create_btn: 'Create Team'
-      avatar: "Image Representation"
+      avatar: "Image"
       website: "Website"
       legend: "Group Details"
       legend2: "Sign Up to Create Group (2/2)"

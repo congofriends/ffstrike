@@ -87,7 +87,7 @@ fr:
       type: "Type:"
       forum: "Forum (Disqus):"
       flyer: "Aviateur"
-      avatar: "Image Représentation:"
+      avatar: "Image:"
       update: "Mise à jour"
       cancel: "Annuler événement"
       cancel_confirm_msg: "Êtes-vous sûr de vouloir supprimer cet événement?"
@@ -285,7 +285,7 @@ fr:
       confirm_msg: 'Êtes-vous sûr?'
     new:
       name: *name
-      phone: 'Téléphone #'
+      phone: 'Téléphone'
       location: "Les détails d'emplacement:"
       location_placeholder: 'Par exemple mondial, International, National..'
       youtube_link: 'Lien Youtube'
@@ -301,11 +301,11 @@ fr:
       location: "Emplacement:"
       youtube_link: 'Lien Youtube'
       about_creator: "De Créateur:"
-      tagline: "Slogan:"
+      tagline: "Slogan"
       call_to_action: "Appel à l'action:"
       extended_description: "Extended Description:"
       create_btn: 'Créer du équipe'
-      avatar: "Image Représentation"
+      avatar: "Image"
       website: "Website"
       legend: "Détails du groupe"
       legend2: "Inscrivez-vous à Création d'un groupe (2/2)"
@@ -342,7 +342,7 @@ fr:
   unauthenticated_submovements:
     new:
       name: *name
-      phone: 'Téléphone #'
+      phone: 'Téléphone'
       location: "Les détails d'emplacement:"
       location_placeholder: 'Par exemple mondial, International, National..'
       youtube_link: 'Lien Youtube'
@@ -362,7 +362,7 @@ fr:
       call_to_action: "Appel à l'action:"
       extended_description: "Extended Description:"
       create_btn: 'Créer du équipe'
-      avatar: "Image Représentation"
+      avatar: "Image"
       website: "Website"
   assignments:
     assign:

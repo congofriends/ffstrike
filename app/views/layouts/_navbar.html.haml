@@ -29,7 +29,6 @@
                 %li.divider
                 %li= link_to t('.sign_out'), destroy_user_session_path, :method => :delete
           - if current_user.nil?
-            %li= link_to t('.create_an_account'),  new_registration_path(:user)
             %li= link_to t('.sign_in'), new_session_path(:user), id: "sign-in"
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}

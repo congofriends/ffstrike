@@ -87,7 +87,7 @@ es:
       type: "Tipo:"
       forum: "Foro (Disqus):"
       flyer: "Folleto:"
-      avatar: "Imagen Representación:"
+      avatar: "Image:"
       update: *update
       cancel: "Cancelar"
       cancel_confirm_msg: "¿está seguro de que desea eliminar este evento?"
@@ -279,7 +279,7 @@ es:
       confirm_msg: '¿Estás seguro?'
     new:
       name: *name
-      phone: 'Teléfono #'
+      phone: 'Teléfono'
       location_placeholder: 'p. ej. Mundial, Internacional, Nacional..'
       location: "Los detalles de la ubicación:"
       youtube_link: 'Youtube'
@@ -299,7 +299,7 @@ es:
       call_to_action: "Llamamiento a la acción"
       about_creator: "Acerca del creador"
       create_btn: 'Crear Equipo'
-      avatar: "Imagen Representación"
+      avatar: "Imagen"
       website: "Website"
       legend: "Detalles del grupo"
       legend2: "Registra para Crear grupo (2/2)"
@@ -335,7 +335,7 @@ es:
   unauthenticated_submovements:
     new:
       name: *name
-      phone: 'Teléfono #'
+      phone: 'Teléfono'
       location_placeholder: 'p. ej. Mundial, Internacional, Nacional..'
       location: "Los detalles de la ubicación:"
       youtube_link: 'Youtube'
@@ -355,7 +355,7 @@ es:
       call_to_action: "Llamamiento a la acción"
       about_creator: "Acerca del creador"
       create_btn: 'Crear Equipo'
-      avatar: "Imagen Representación"
+      avatar: "Imagen"
       website: "Website"
   assignments:
     assign:
