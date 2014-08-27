@@ -87,7 +87,7 @@ fr:
       type: "Type:"
       forum: "Forum (Disqus):"
       flyer: "Aviateur"
-      avatar: "Avatar:"
+      avatar: "Image Représentation:"
       update: "Mise à jour"
       cancel: "Annuler événement"
       cancel_confirm_msg: "Êtes-vous sûr de vouloir supprimer cet événement?"
@@ -305,7 +305,7 @@ fr:
       call_to_action: "Appel à l'action:"
       extended_description: "Extended Description:"
       create_btn: 'Créer du équipe'
-      avatar: "Avatar"
+      avatar: "Image Représentation"
       website: "Website"
       legend: "Détails du groupe"
       legend2: "Inscrivez-vous à Création d'un groupe (2/2)"
@@ -362,7 +362,7 @@ fr:
       call_to_action: "Appel à l'action:"
       extended_description: "Extended Description:"
       create_btn: 'Créer du équipe'
-      avatar: "Avatar"
+      avatar: "Image Représentation"
       website: "Website"
   assignments:
     assign:

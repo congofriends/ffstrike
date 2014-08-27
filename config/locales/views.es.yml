@@ -87,7 +87,7 @@ es:
       type: "Tipo:"
       forum: "Foro (Disqus):"
       flyer: "Folleto:"
-      avatar: "Avatar:"
+      avatar: "Imagen Representación:"
       update: *update
       cancel: "Cancelar"
       cancel_confirm_msg: "¿está seguro de que desea eliminar este evento?"
@@ -299,7 +299,7 @@ es:
       call_to_action: "Llamamiento a la acción"
       about_creator: "Acerca del creador"
       create_btn: 'Crear Equipo'
-      avatar: "Avatar"
+      avatar: "Imagen Representación"
       website: "Website"
       legend: "Detalles del grupo"
       legend2: "Registra para Crear grupo (2/2)"
@@ -355,7 +355,7 @@ es:
       call_to_action: "Llamamiento a la acción"
       about_creator: "Acerca del creador"
       create_btn: 'Crear Equipo'
-      avatar: "Avatar"
+      avatar: "Imagen Representación"
       website: "Website"
   assignments:
     assign:

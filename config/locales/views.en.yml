@@ -106,7 +106,7 @@ en:
       type: "Type:"
       forum: "Forum (Disqus):"
       flyer: "Flyer:"
-      avatar: "Avatar:"
+      avatar: "Image Representation:"
       update: *update
       cancel: "Cancel Event"
       cancel_confirm_msg: "Are you sure you want to delete this event?"
@@ -311,7 +311,7 @@ en:
       call_to_action: "Call To Action:"
       about_creator: "About Creator:"
       create_btn: 'Create Team'
-      avatar: "Avatar"
+      avatar: "Image Representation"
       website: "Website"
     show:
       h1: "Support the Congo Global Movement"
@@ -355,7 +355,7 @@ en:
       call_to_action: "Call To Action:"
       about_creator: "About Creator:"
       create_btn: 'Create Team'
-      avatar: "Avatar"
+      avatar: "Image Representation"
       website: "Website"
       legend: "Group Details"
       legend2: "Sign Up to Create Group (2/2)"
