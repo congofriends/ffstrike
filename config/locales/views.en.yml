@@ -296,7 +296,8 @@ en:
       teams_coordinating: 'Teams I am a coordinator for'
       teams_member: 'Teams I am a member of'
       invite_coordinator: 'Invite Coordinator'
-      remove_team: 'Remove Admin Privileges'
+      remove_admin: 'Remove Admin Privileges'
+      prevent_removal: 'You are the only admin'
       confirm_msg: 'Are you sure?'
     new:
       thanks_msg: 'Thank you for creating a Congo Week Team to support peace and justice in the heart of Africa. '

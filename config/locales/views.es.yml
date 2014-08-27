@@ -293,7 +293,8 @@ es:
       view_team: 'Ver equipo'
       edit_team: 'Editar equipo'
       invite_coordinator: 'Invitar Coordinador'
-      remove_team: 'Eliminar privilegios de administrador'
+      remove_admin: 'Eliminar privilegios de administrador'
+      prevent_removal: "Tú eres el único admin"
       confirm_msg: '¿Estás seguro?'
     new:
       name: *name

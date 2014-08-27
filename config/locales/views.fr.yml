@@ -299,7 +299,8 @@ fr:
       view_team: "Voir l'équipe"
       edit_team: "Modifier l'équipe"
       invite_coordinator: 'Inviter coordinateur'
-      remove_team: "Retirer des privilèges d'administrateur"
+      remove_admin: "Retirer des privilèges d'administrateur"
+      prevent_removal: "Vous êtes le seul admin"
       confirm_msg: 'Êtes-vous sûr?'
     new:
       name: *name
