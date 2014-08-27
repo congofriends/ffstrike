@@ -38,6 +38,7 @@ es:
     no_hosts: "Usted no tiene hosts de correo electrónico."
   contact:
     message_sent: "Mensaje enviado correctamente."
+    invalid_message: "Su mensaje no pudo ser enviado, por favor verifica los campos"
   task:
     created: "Nueva tarea se crea"
     updated: "Tarea ha sido actualizado"

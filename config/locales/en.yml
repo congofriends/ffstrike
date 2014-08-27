@@ -58,6 +58,7 @@ en:
     no_hosts: "You have no hosts to email."
   contact:
     message_sent: "Message was successfully sent."
+    invalid_message: "Your message could not be sent, please check your fields"
   task:
     created: "New task is created"
     updated: "Task has been updated"

@@ -38,6 +38,7 @@ fr:
     no_hosts: "Vous n'avez pas d'hôtes de messagerie."
   contact:
     message_sent: "Le message a été envoyé avec succès."
+    invalid_message: "Votre message n'a pas pu être envoyé, s'il vous plaît vérifier vos champs"
   task:
     created: "Nouvelle tâche est créée"
     updated: "La tâche a été mis à jour"
