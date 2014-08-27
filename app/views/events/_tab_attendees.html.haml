@@ -15,4 +15,4 @@
           %td= attendee.volunteer_for(event) ? t('.yes') : t('.no')
           %td= best_in_place attendee.attendance_for(event), :notes, :path=> attendance_path({event_id: event.id, attendee_id: attendee.id}), :type => :input, :html_attrs => {:class=>"input"}
 = link_to t('.export_attendees'), export_event_attendees_path(event), class: 'btn ctrl-btn btn-host'
-= link_to_modal t('.contact_attendees'), new_attendee_msg_path(event), class: "btn ctrl-btn btn-host"
+= link_to_modal t('.contact_attendees'), new_attendee_msg_path(event), class: "btn btn-contact ctrl-btn btn-host"
