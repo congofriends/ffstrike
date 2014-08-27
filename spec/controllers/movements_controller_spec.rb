@@ -22,27 +22,6 @@ describe MovementsController do
     end
   end
 
-  describe "GET #search" do
-    let(:zip) { FactoryGirl.create(:zipcode, zip: "60647") }
-    let(:published_movement) { FactoryGirl.create(:published_movement) }
-    let(:event) { published_movement.events.create(FactoryGirl.attributes_for(:event, approved: true, zip: zip.zip, host_id: user.id)) }
-    let(:unapproved_event) { published_movement.events.create(FactoryGirl.attributes_for(:event, approved: false, zip: zip.zip, host_id: user.id )) }
-
-    before { get "search", id: published_movement, zip: event.zip }
-
-    it "redirects to search results" do
-      expect(response).to be_success
-    end
-
-    it "assigns events" do
-      expect(assigns(:events)).to include(event)
-    end
-
-    it "does not assign unapproved events" do
-      expect(assigns(:events)).not_to include(unapproved_event)
-    end
-  end
-
   describe "POST #create" do
     context "with valid attributes" do
       before { post :create, movement: FactoryGirl.attributes_for(:movement) }

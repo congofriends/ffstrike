@@ -11,12 +11,6 @@ class MovementsController < ApplicationController
     render 'movements/show'
   end
 
-  def search
-    @zip ||= extract_zip(params[:zip]) if valid_zip(params[:zip])
-    @events = @movement.events.near_zip(@zip, 200)
-    render 'events/search'
-  end
-
   def my_profile
     redirect_to root_path and return unless current_user
     @events_attending = current_user.events_attending

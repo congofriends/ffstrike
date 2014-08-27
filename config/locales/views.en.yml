@@ -79,7 +79,7 @@ en:
     fundraiser:
       header1: 'Authorization to Operate an Event for the Benefit of The Friends of the Congo'
       header2: 'Responsibilites of the Event Organizer'
-      p1: "Thank you for offering your support to the Friends of the Congo Breaking the Silence: Congo Week. In order to protect the Chapter’s 501 (c) 3 status, we request that you agree to the following conditions. I, ____________, (hereinafter referred to as 'The Event Organizer'), agree to organize and sponsor an event in support of the Friends of the Congo (FOTC) Congo Week."
+      p1: "Thank you for offering your support to the Friends of the Congo Breaking the Silence: Congo Week. In order to protect the Chapter’s 501 (c) 3 status, we request that you agree to the following conditions. I, the event host, agree to organize and sponsor an event in support of the Friends of the Congo (FOTC) Congo Week."
       p2: "I understand that the primary purpose of this event shall be to raise funds for The Friends of the Congo (FOTC) and that all funds raised shall be submitted to the FOTC in support of its programs and projects. Expenses for the event will not be paid for by FOTC or from funds received from the event. Payment of any expenses should be paid for directly by the sponsoring group. We understand that The Event Organizer shall conform to all regulations and policies and practices of the FOTC pertaining to fundraising. This agreement shall be in force for the duration of the event. The FOTC Board reserves the right to cancel support of the event for any reason regarded by the Board to be sufficient."
       p3: "In the event of termination of this agreement, the Event Organizer shall forward all funds raised in the name of FOTC to the FOTC. Further, if Event Organizer continues to raise money for FOTC, FOTC shall take affirmative steps to inform the public and all persons with whom the Event Organizer has contact, including all persons who have contributed money to the Event organizer that the Event Organizer is no longer affiliated with the FOTC."
       user_agree: "I agree:"
@@ -299,7 +299,8 @@ en:
       teams_coordinating: 'Teams I am a coordinator for'
       teams_member: 'Teams I am a member of'
       invite_coordinator: 'Invite Coordinator'
-      remove_team: 'Remove Admin Privileges'
+      remove_admin: 'Remove Admin Privileges'
+      prevent_removal: 'You are the only admin'
       confirm_msg: 'Are you sure?'
     new:
       thanks_msg: 'Thank you for creating a Congo Week Team to support peace and justice in the heart of Africa. '
@@ -329,7 +330,6 @@ en:
       host_event: "Host an Event"
       attend_event: "Attend an Event"
       learn_more: "Learn More About Congo Week"
-
     show_team:
       about_creators: 'About the Creators'
       host_event: *host_event

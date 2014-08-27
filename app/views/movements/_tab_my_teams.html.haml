@@ -27,7 +27,10 @@
 									= link_to_modal t('.invite_coordinator'), new_user_invitation_path({mvmt_id: team.id})
 									)
 								%td= current_user.ownerships.find_by(movement_id: team.id).created_at.to_date
-								%td= link_to t('.remove_team'),  cancel_ownership_path(coordinator_id: current_user.id, team_id: team.id), method: :put, remote: true, class: "btn btn-attend", id: "remove_ownership#{team.id}", data: { confirm: t('.confirm_msg') }
+								-if team.ownerships.size > 1
+									%td= link_to t('.remove_admin'),  cancel_ownership_path(coordinator_id: current_user.id, team_id: team.id), method: :put, remote: true, class: "btn btn-attend", id: "remove_ownership#{team.id}", data: { confirm: t('.confirm_msg') }
+								-else
+									%td= t('.prevent_removal')
 					%hr
 					%h3=t('.teams_member')
 					%table.table.table-bordered.table-striped.sortable#task-table
