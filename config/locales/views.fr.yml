@@ -10,6 +10,7 @@ fr:
     host_event: &host_event L'HÔTE D'UN ÉVÉNEMENT
     update: &update MISE à JOUR
   events:
+    events: "Événements"
     host_btn: *host_event
     unattend_btn: UNATTEND événement
     volunteer_status: "Je suis intéressé à faire du bénévolat"
@@ -36,6 +37,7 @@ fr:
     phone: *phone
     point: *point
     volunteer: Bénévole
+    upcoming_events: "Événements à venir"
     notes: "Notes (Cliquez pour modifier)"
     tab_attendees:
       yes: 'Oui'
@@ -53,6 +55,7 @@ fr:
       event_dash_prompt: "Cliquez ici pour aller directement à votre tableau de bord de l'événement"
       host_task_msg: "Partagez votre événement sur ​​les médias sociaux!"
     new:
+      congo_week_content: "Merci pour organiser un événement sur #CongoWeek2014 sur Octobre 19-24"
       datetime_tbd: "Date et Heure de déterminer"
       address_tbd: "Adresse à déterminer"
       legend1:  "Événement Informations de base (1/2)"

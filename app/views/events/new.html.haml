@@ -1,6 +1,9 @@
 =image_tag "girls_singing.jpg", class: "bg"
 .container.no-header{:style => "width: 800px;"}
   .row
+    %h2#host_event
+      %strong= t('.congo_week_content')
+  .row
     .col-md-12
       = form_for ([@movement, @event]), html: { id: 'new-event-form' } do |form|
         %fieldset

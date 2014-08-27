@@ -5,7 +5,7 @@
 .container
   .spacer10
   .row
-    %p
+    %p#team_info
       =t('.team_information')
   .row
     .col-sm-8
@@ -13,7 +13,7 @@
         =t('.network_message', number: @support_network.size)
     .col-sm-4
       - if !current_user.nil?
-        =link_to t('.create_team'), new_movement_path({parent_id: @movement.id}), class: 'btn btn-host'
+        =link_to t('.create_team'), new_movement_path({parent_id: @movement.id}), class: 'btn btn-host btn-team'
       - else
         =link_to t('.create_team'), new_unauthenticated_submovement_path({parent_id: @movement.id}), class: 'btn btn-host'
   - @support_network.each do |team|

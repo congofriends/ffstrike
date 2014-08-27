@@ -1,6 +1,6 @@
 =image_tag "girls_singing.jpg", class: "bg"
 %div.content-header.container
-  %h2.text-center.header-text Events
+  %h2.text-center.header-text=t('events.events')
 .container
   .row
     .spacer10
@@ -23,6 +23,7 @@
     .col-md-12
       #map-canvas
   .spacer10
-  %h2 Upcoming Events
-  .events
+  .events#upcoming_events
+    %h2
+      %strong=t('events.upcoming_events')
     = render partial: 'events/event', collection: @events, as: :event
