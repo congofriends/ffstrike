@@ -35,7 +35,7 @@
       .tagline= @movement.tagline
     - unless !@movement.website || @movement.website.empty?
       %hr
-      =link_to @movement.website, "http://#{@movement.website}", :target => '_blank'
+      =link_to @movement.website, @movement.website, :target => '_blank'
     %hr
     %h4
       -@movement.members.count
