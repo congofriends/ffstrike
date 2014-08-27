@@ -1,7 +1,7 @@
 class Movement < ActiveRecord::Base
   validates_with VideoValidator, fields: [:video]
   has_many :events, dependent: :destroy
-  has_many :attendances, through: :events #, source: :user
+  has_many :attendances, through: :events
   has_many :ownerships, dependent: :destroy
   has_many :memberships, dependent: :destroy
   has_many :members, through: :memberships, source: :user
@@ -14,14 +14,12 @@ class Movement < ActiveRecord::Base
                     :styles => { :medium => '280x150', :thum => '50x50' },
                     :default_url => 'congoWeek.jpg'
 
-
   validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
   validates_attachment_size :image, :less_than => 5.megabytes
 
   has_attached_file :avatar,
                     :styles => { :medium => '280x150', :thum => '50x50' },
                     :default_url => 'break_the_silence.jpg'
-                    # path: "attachments/team/:id/:style/:filename"
 
   validates_attachment_content_type :avatar, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
   validates_attachment_size :avatar, :less_than => 5.megabytes
