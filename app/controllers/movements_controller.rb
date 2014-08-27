@@ -59,9 +59,9 @@ class MovementsController < ApplicationController
         @movement.users << current_user
       end
       redirect_to movement_explanation_path(@movement)
-      flash[:success] = t('movement.created')
+      flash[:notice] = t('movement.created')
     else
-      render :new, notice: t('movement.not_created')
+      render :new, alert: t('movement.not_created')
     end
   end
 
@@ -216,7 +216,7 @@ class MovementsController < ApplicationController
 
   def check_user_owns_movement
     unless @movement.users.to_a.include? current_user
-      redirect_to root_path, notice: t('movement.not_yours')
+      redirect_to root_path, alert: t('movement.not_yours')
     end
   end
 end

@@ -182,7 +182,7 @@ class EventsController < ApplicationController
 
   def redirect_unauthorized_user
     unless @event.host?(current_user)
-      redirect_to root_path, notice: t('event.not_yours')
+      redirect_to root_path, alert: t('event.not_yours')
     end
   end
 

@@ -57,7 +57,7 @@ describe MovementsController do
       end
 
       it "notifies user that movement has been created" do
-        flash[:success].should == I18n.t('movement.created')
+        flash[:notice].should == I18n.t('movement.created')
       end
     end
 

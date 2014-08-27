@@ -18,10 +18,10 @@ class UnauthenticatedEventsController < ApplicationController
         UserMailer.event_creation_message(@user.id, @event.id) if current_user
         redirect_to explanation_path(@event), notice: t('event.created') and return
       else
-        redirect_to new_movement_event_path(@movement), notice: t('event.failure')
+        redirect_to new_movement_event_path(@movement), alert: t('event.failure')
       end
     else
-      flash[:notice] = t('user.invalid_credentials')
+      flash[:alert] = t('user.invalid_credentials')
       render 'new'
     end
   end
@@ -44,7 +44,7 @@ class UnauthenticatedEventsController < ApplicationController
   end
 
   def redirect_unauthorized_user
-    redirect_to root_path, notice: t('event.already_signed_in') if current_user
+    redirect_to root_path, alert: t('event.already_signed_in') if current_user
   end
 
   def clear_fields_on_tbd

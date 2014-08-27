@@ -37,7 +37,7 @@ class UsersController < Devise::RegistrationsController
         @team.members << current_user
         flash[:notice] = t('movement.join_team_success', movement_name: @team.name)
       else
-        flash[:notice] = t('attendee.already_signed_up')
+        flash[:error] = t('attendee.already_signed_up')
       end
       redirect_to movement_path(@team), flash: { modal: true }
     else
@@ -64,7 +64,7 @@ class UsersController < Devise::RegistrationsController
         end
 
       else
-        flash[:notice] = t('attendee.already_signed_up')
+        flash[:alert] = t('attendee.already_signed_up')
       end
       redirect_to event_path(@event), flash: { modal: true }
     else

@@ -1,7 +1,7 @@
 class UnauthenticatedSubmovementsController < ApplicationController
 
   def new
-    redirect_to root_path, notice: t('event.already_signed_in') if current_user
+    redirect_to root_path, error: t('event.already_signed_in') if current_user
   end
 
   def create
@@ -14,7 +14,7 @@ class UnauthenticatedSubmovementsController < ApplicationController
       UserMailer.team_creation_message(@user.id, @submovement.id) if current_user
       redirect_to movement_path(@submovement), notice: t('movement.created')
     else
-      render :new, notice: t('movement.not_created')
+      render :new, alert: t('movement.not_created')
     end
   end
 
