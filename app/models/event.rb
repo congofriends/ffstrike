@@ -7,8 +7,7 @@ class Event < ActiveRecord::Base
   has_many :attendees, through: :attendances, source: :user
   has_many :tasks, dependent: :destroy
 
-  after_create :populate_tasks, :assign_coordinates, :smart_add_url_protocol
-
+  after_create :populate_tasks, :assign_coordinates
 
   validates :host, :name, :description, presence: true
 
@@ -163,12 +162,6 @@ class Event < ActiveRecord::Base
           coordinates = Geocoder.coordinates(location) unless location == "TBD"
           self.update_attributes(latitude: coordinates.first, longitude: coordinates.last) unless coordinates.nil?
         end
-      end
-    end
-
-    def smart_add_url_protocol
-      unless self.url[/\Ahttp:\/\//] || self.url[/\Ahttps:\/\//]
-        self.url = "http://#{self.url}"
       end
     end
 

@@ -9,6 +9,7 @@ class Movement < ActiveRecord::Base
   has_many :users, through: :ownerships
   validates :name, uniqueness: true
   validates :name, presence: true
+  before_create :smart_add_url_protocol
 
   has_attached_file :image,
                     :styles => { :medium => '280x150', :thum => '50x50' },
@@ -119,6 +120,12 @@ class Movement < ActiveRecord::Base
       self.ownerships.each do |coordinator|
         csv << [coordinator.user.full_name, coordinator.user.email, coordinator.user.phone, self.name]
       end
+    end
+  end
+
+  def smart_add_url_protocol
+    if self.website
+      self.website = "http://#{self.website}" unless self.website[/\Ahttp:\/\//] || self.website[/\Ahttps:\/\//]
     end
   end
 
