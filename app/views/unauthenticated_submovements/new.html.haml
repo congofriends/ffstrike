@@ -48,10 +48,10 @@
                 .row
                   .form-group.col-xs-6
                     = label :user, :name, 'First Name *', class: 'control-label'
-                    = text_field :user, :name, class: 'form-control'
+                    = text_field :user, :name, class: 'form-control', :maxlength => 35
                   .form-group.col-xs-6
                     = label :user, :surname, 'Last Name *', class: 'control-label'
-                    = text_field :user, :surname, class: 'form-control'
+                    = text_field :user, :surname, class: 'form-control', :maxlength => 35
                 .row
                   .form-group.col-xs-12
                     = label :user, :email, 'Email *', class: 'control-label'

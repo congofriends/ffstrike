@@ -7,7 +7,7 @@
     .form-inline.col-md-6
       = t('events.search_placeholder')
       = form_tag movement_events_path, :method => :get, remote: true do
-        = text_field_tag 'zip', value = nil, id: 'query'
+        = text_field_tag 'zip', value = nil, id: 'query', :maxlength => 25
         %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
     .col-md-6
       -if current_user

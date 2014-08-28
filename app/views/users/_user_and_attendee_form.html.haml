@@ -9,11 +9,11 @@
     .row
       .form-group.label-field.col-xs-6
         = f.label :name, t('.name')
-        = f.text_field :name, class: "form-control"
+        = f.text_field :name, class: "form-control", :maxlength => 35
 
       .form-group.label-field.col-xs-6
         = f.label :surname, t('.surname')
-        = f.text_field :surname, class: "form-control"
+        = f.text_field :surname, class: "form-control", :maxlength => 35
 
     .form-group.label-field
       = f.label :phone

@@ -4,7 +4,7 @@
     = form_for event, html: { id: 'edit-event-form' } do |f|
       .form-group.col-sm-12
         = f.label t("events.edit.name")
-        = f.text_field :name, class: 'form-control'
+        = f.text_field :name, class: 'form-control', :maxlength => 100
       .row
         .form-group.col-sm-6
           = f.label t("events.edit.start_date")

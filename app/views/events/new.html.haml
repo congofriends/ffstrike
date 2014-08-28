@@ -11,7 +11,7 @@
             %legend= t('.legend1')
             .form-group.col-sm-12
               = form.label :event_name, t('events.edit.name') + " *"
-              = form.text_field :name, class: 'form-control'
+              = form.text_field :name, class: 'form-control', :maxlength => 100
             .form-group.col-sm-12
               = form.label :event_description, t('events.description') + " *"
               = form.text_field :description, class: 'form-control'
