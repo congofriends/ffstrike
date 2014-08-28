@@ -62,8 +62,8 @@ ready = function () {
         '<div>' + addresses[i] + '</div>' +
         '<h6>When:</h6>' +
         '<div>' + times[i] + '</div></br>' +
-        '<div><a class ="btn contact-link" href="' + location.origin + "/" + locale + '/contact/' + event_ids[i] + '" rel="modal:open">CONTACT HOST</a>' +
-        '<a class="btn floatRight" href="' +location.origin + "/" + locale + '/new_attendee_user?event=' + event_pks[i] +  '" rel="modal:open">ATTEND</a>' +
+        '<div><a class ="btn contact-link btn-contact btn-modal" href="' + location.origin + "/" + locale + '/contact/' + event_ids[i] + '" rel="modal:open">CONTACT HOST</a>' +
+        '<a class="btn floatRight btn-attend btn-modal" href="' +location.origin + "/" + locale + '/new_attendee_user?event=' + event_pks[i] +  '" rel="modal:open">ATTEND</a>' +
         '</div></div>');
             infowindow.open(map, marker);
           }
