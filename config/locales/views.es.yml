@@ -236,8 +236,8 @@ es:
     my_groups:
       my_groups: 'Mis Equipos'
       manage_my_groups: 'Administrar Mis Equipos'
-      show: 'Mostrar'
-      select_group: 'Seleccione un grupo y haga clic en SHOW'
+      show: 'Mostra'
+      select_group: 'Seleccione un grupo y haga clic en Mostra'
       group_details: 'Equipo Detalles'
       group_events: 'Equipo Eventos'
       manage_supporters: 'Gestionar los partidarios'
