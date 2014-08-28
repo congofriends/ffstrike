@@ -77,7 +77,7 @@ en:
     teach_in:
       short_description: "Assemble experts and host a public forum to educate the community on your issue"
       full_description: "Teach Ins are intended to inform the general population about important issues. Generally, public forums involve a slate of speakers who are experts in the issue you’re discussing."
-    fundraiser_for_FOTC:
+    fundraiser_for_fotc:
       short_description: "Raise funds for your cause"
       full_description: "Raise funds for your cause"
     cell_out:
@@ -118,7 +118,7 @@ en:
       - 'Spread the word among organizations in your community or on your campus'
       - 'Send an alert to local press'
       - 'Organize your materials for the day of. You will want postcard petitions, DVDs to be distributed, sign in sheet or computer for people to sign in at your event, fact sheets, pens, and snacks (optional). (http://congoweek.org/downloads.html)'
-    fundraiser_for_FOTC:
+    fundraiser_for_fotc:
       - 'Before the Event: Read and sign the Friends of the Congo (FOTC) Fundraising Authorization agreement and fax it or scan and email it to FOTC'
       - 'Before the Event: Write an agenda for your event and secure any entertainment (a band, a speaker, a movie - the sky is the limit!)'
       - 'Before the Event: Make a goal for how much money you want to raise - publicize your goal '
@@ -174,7 +174,7 @@ en:
       - 'Publicize your event via social media using the hashtag #CongoWeek2014 (and ask others to do the same!) '
       - 'Help with set up and/or clean up'
       - 'I want to do more! Contact me about getting more involved!'
-    fundraiser_for_FOTC:
+    fundraiser_for_fotc:
       - 'Call 5-10 friends and invite them to come'
       - 'Ask your friends/family who can’t make it to the event to donate online at (http://friendsofthecongo.org/donate.html)'
       - 'Publicize your event via social media using the hashtag #CongoWeek2014 (and ask others to do the same!) '
