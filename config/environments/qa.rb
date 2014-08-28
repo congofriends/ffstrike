@@ -1,4 +1,13 @@
 Ffstrike::Application.configure do
+
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => { :bucket => ENV['AWS_BUCKET'],
+                           :access_key_id => ENV['AWS_ACCESS_KEY'],
+                           :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'] },
+      :path => 'attachments/:class/:id/:style/:basename.:extension'
+  }
+  
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :authentication => :plain,

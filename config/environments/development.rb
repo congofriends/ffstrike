@@ -13,8 +13,7 @@ Ffstrike::Application.configure do
     :s3_credentials => { :bucket => ENV['AWS_BUCKET'],
                          :access_key_id => ENV['AWS_ACCESS_KEY'],
                          :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'] },
-
-    :path => 'attachments/:class/:id/:style.:extension'
+    :path => 'attachments/:class/:id/:style/:basename.:extension'
   }
 
   # Settings specified here will take precedence over those in config/application.rb.
