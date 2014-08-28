@@ -89,7 +89,7 @@ en:
     forum:
       short_description:
       full_description:
-    organize_concert:
+    orgvanize_concert:
       short_description:
       full_description:
     other:
@@ -97,13 +97,6 @@ en:
       full_description: "Have an idea for a creative event? Use this tool to create tasks and assign them."
 
   host_tasks:
-    rally:
-      - 'Create an agenda for the event with speakers, chants, or a march through your community or campus.'
-      - "Make posters and put them up (sample posters available in footer)"
-      - "Post your event on social media using the hashtag #CongoWeek2014"
-      - 'Spread the word among organizations in your community or on your campus'
-      - 'Send an alert to local press'
-      - 'Organize your materials for the day of. You will want postcard petitions, DVDs to be distributed, sign in sheet or computer for people to sign in at your event, fact sheets, pens, and snacks (optional). (http://congoweek.org/downloads.html)'
     movie_screening:
       - "Plan a brief agenda for your event - think about who you want to introduce the film and what (if anything) you will do afterwards."
       - "Make posters and put them up (sample posters available in footer)"
@@ -111,6 +104,13 @@ en:
       - 'Spread the word among organizations in your community or on your campus'
       - 'Send an alert to local press'
       - "Organize your materials for the day of. You will want postcard petitions, DVDs to be distributed, sign in sheet or computer for people to sign in at your event, fact sheets, pens, and snacks (optional). (http://congoweek.org/downloads.html)"
+    rally:
+      - 'Create an agenda for the event with speakers, chants, or a march through your community or campus.'
+      - "Make posters and put them up (sample posters available in footer)"
+      - "Post your event on social media using the hashtag #CongoWeek2014"
+      - 'Spread the word among organizations in your community or on your campus'
+      - 'Send an alert to local press'
+      - 'Organize your materials for the day of. You will want postcard petitions, DVDs to be distributed, sign in sheet or computer for people to sign in at your event, fact sheets, pens, and snacks (optional). (http://congoweek.org/downloads.html)'
     teach_in:
       - 'Secure a few speakers. (If you’re not sure how to find speakers, contact Friends of the Congo or get advice on speakers at http://congoweek.org/invite-a-speaker.html)'
       - 'Create an agenda for your event and share the agenda with your event participants.'
@@ -152,18 +152,19 @@ en:
       - 'Spread the word among organizations in your community or on your campus'
       - 'Send an alert to local press'
       - 'Organize your materials for the day of. You will want postcard petitions, DVDs to be distributed, sign in sheet or computer for people to sign in at your event, fact sheets, pens, and snacks (optional). (http://congoweek.org/downloads.html)'
+    forum:
+    organize_concert:
     other:
-      - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
   attendees_tasks:
+    movie_screening:
+      - 'Call 5-10 friends and invite them to come'
+      - 'Publicize your event via social media using the hashtag #CongoWeek2014 (and ask others to do the same!) '
+      - 'Help with set up and/or clean up'
+      - 'I want to do more! Contact me about getting more involved!'
     rally:
       - 'Make a sign to support peace and justice in the Congo (for example: Demand Peace for Congo, Congo We Believe, Justice for Congo Now'
       - 'Publicize your event via social media using the hashtag #CongoWeek2014 (and ask others to do the same!) '
       - 'Call 5-10 friends and invite them to come'
-      - 'Help with set up and/or clean up'
-      - 'I want to do more! Contact me about getting more involved!'
-    movie_screening:
-      - 'Call 5-10 friends and invite them to come'
-      - 'Publicize your event via social media using the hashtag #CongoWeek2014 (and ask others to do the same!) '
       - 'Help with set up and/or clean up'
       - 'I want to do more! Contact me about getting more involved!'
     teach_in:
@@ -186,4 +187,9 @@ en:
       - 'Publicize your event via social media using the hashtag #CongoWeek2014 (and ask others to do the same!) '
       - 'Help with set up and/or clean up'
       - 'I want to do more! Contact me about getting more involved!'
-
+    forum:
+      - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
+    organize_concert:
+      - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
+    other:
+      - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
