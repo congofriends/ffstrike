@@ -151,17 +151,16 @@ class Event < ActiveRecord::Base
     end
   end
 
-  private
-    def assign_coordinates
-      if self.latitude.nil? || self.longitude.nil?
-        if Rails.env.test?
-          self.update_attributes(latitude: 41.9215421, longitude: -87.70248169999999)
-        else
-          coordinates = Geocoder.coordinates(location) unless location == "TBD"
-          self.update_attributes(latitude: coordinates.first, longitude: coordinates.last) unless coordinates.nil?
-        end
-      end
+  def assign_coordinates
+    if Rails.env.test?
+      self.update_attributes(latitude: 41.9215421, longitude: -87.70248169999999)
+    else
+      coordinates = Geocoder.coordinates(location) unless location == "TBD"
+      self.update_attributes(latitude: coordinates.first, longitude: coordinates.last) unless coordinates.nil?
     end
+  end
+
+  private
 
     def populate_tasks
       TaskPopulator.assign_tasks self

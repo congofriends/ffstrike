@@ -105,7 +105,9 @@ class EventsController < ApplicationController
   end
 
   def update
+    set_initial_location
     if @event.update_attributes(event_params)
+      check_for_address_update
       @event.update movement: Movement.find_by_name(params[:event][:movement])
       flash[:notice] = t('event.updated')
     end
@@ -174,6 +176,14 @@ class EventsController < ApplicationController
 
   def load_all_movements
     @movements = Movement.all.published
+  end
+
+  def check_for_address_update
+    @event.assign_coordinates unless @initial_location == @event.location
+  end
+
+  def set_initial_location
+    @initial_location = @event.location
   end
 
   def load_event_types
