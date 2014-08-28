@@ -334,7 +334,7 @@ en:
       about_creators: 'About the Creators'
       host_event: *host_event
       contact_group_coordinator: 'CONTACT COORDINATOR'
-      sign_up: 'SIGN ME UP'
+      join_team: 'JOIN TEAM'
       upcoming_events: 'Upcoming Events'
       no_upcoming_events: 'There are no Upcoming Events'
       members: 'Members'
@@ -370,7 +370,7 @@ en:
   users:
     attend_as_user:
       greeting: "Hello %{user_name},"
-      thanks_msg: "Thank you for signing up to attend %{event_name}."
+      confirm_attend: "Are you sure you want to attend %{event_name}?"
       not_user_msg: "If this is not you, click"
       here: "here"
       phone: "Phone Number (optional):"
@@ -391,7 +391,7 @@ en:
       follow_up_msg: "Expect to hear from the host with event updates"
     join_as_user:
       greeting: "Hello %{user_name},"
-      thanks_msg: "Thank you for joining %{team_name}."
+      confirm_join: "Are you sure you want to join %{team_name}?"
       not_user_msg: "If this is not you, click"
       here: "here"
       phone: "Phone Number (optional):"

@@ -7,7 +7,7 @@ Ffstrike::Application.configure do
                            :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'] },
       :path => 'attachments/:class/:id/:style/:basename.:extension'
   }
-  
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :authentication => :plain,

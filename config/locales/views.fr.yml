@@ -350,7 +350,7 @@ fr:
       about_creators: 'Concernant les créateurs'
       host_event: *host_event
       contact_group_coordinator: 'CONTACT COORDONNATEUR'
-      sign_up: "INSCRIVEZ-MOI"
+      join_team: "REJOIGNEZ L'ÉQUIPE"
       upcoming_events: 'Événements à Venir'
       no_upcoming_events: 'Aucun Événements'
       members: "Membres"
@@ -392,7 +392,7 @@ fr:
   users:
     attend_as_user:
       greeting: "Bonjour %{user_name},"
-      thanks_msg: "Merci de signer pour assister %{event_name}."
+      confirm_attend: "Êtes-vous sûr de vouloir participer à %{event_name}?"
       not_user_msg: "Si ce n'est pas vous, cliquez sur"
       here: "Ici"
       phone: "Numéro de téléphone (facultatif):"
@@ -413,7 +413,7 @@ fr:
       follow_up_msg: "Attendez-vous à entendre de l'hôte des mises à jour de l'événement"
     join_as_user:
       greeting: "Bonjour %{user_name},"
-      thanks_msg: "Merci de signer pour assister %{team_name}."
+      confirm_join: "Etes-vous sûr que vous voulez rejoindre %{team_name}?"
       not_user_msg: "Si ce n'est pas vous, cliquez sur"
       here: "Ici"
       phone: "Numéro de téléphone (facultatif):"

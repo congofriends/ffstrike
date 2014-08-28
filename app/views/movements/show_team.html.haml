@@ -25,7 +25,7 @@
       .spacer10
     .row
       -unless current_user && current_user.member_for?(@movement.id)
-        = link_to_modal t('.sign_up'), join_team_movement_path(@movement), class: "btn btn-host"
+        = link_to_modal t('.join_team'), join_team_movement_path(@movement), class: "btn btn-host"
     .row
       .spacer10
     .row

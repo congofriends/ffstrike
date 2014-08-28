@@ -1,19 +1,10 @@
 = form_for @user, method: "post", url: create_member_user_path, html: { id: 'member-form' } do |f|
   .panel-heading
     .panel-title
-      %h3=t('.greeting', user_name: @user.full_name)
-      %h4=t('.thanks_msg', team_name: @team.name)
-      %h5
+      %h3=t('.confirm_join', team_name: @team.name)
+      %h4
         =t('.not_user_msg')
         = link_to t('.here'), destroy_user_session_path, method: :delete
-  .panel-body
-    -if @user.phone && @user.phone.empty?
-      .form-group.label-field
-        = f.label t('.phone')
-        = f.text_field :phone, class: "form-control"
-      .form-group.label-field
-        = f.check_box :textable
-        = f.label :textable, t('.textable', team_name: @team.name)
 
     .form-group
       = f.hidden_field :team_id, value: @team.id
