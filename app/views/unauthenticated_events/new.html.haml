@@ -1,6 +1,9 @@
 =image_tag "girls_singing.jpg", class: "bg"
 .container.no-header{:style => "width: 800px;"}
   .row
+    %h2#host_event
+      %strong= t("events.new.congo_week_content")
+  .row
     .col-md-10.col-md-offset-1
       = form_tag movement_unauthenticated_events_path, id: 'new-event-form', method: :post, multipart: true do
         %fieldset

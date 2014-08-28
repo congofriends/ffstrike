@@ -55,7 +55,7 @@ en:
       event_dash_prompt: "Click here to go right to your event dashboard"
       host_task_msg: "Share your event on social media!"
     new:
-      congo_week_content: "Thanks for taking on the responsibility of being an event host and helping to make #CongoWeek2014 on October 19-25 a success"
+      congo_week_content: "Thanks for taking on the responsibility of being an event host and helping to make #CongoWeek2014 on October 19-25th a success"
       datetime_tbd: "Date & Time To Be Determined"
       address_tbd: "Address To Be Determined"
       legend1:  "Event Basic Information (1/2)"
@@ -324,7 +324,7 @@ en:
       events: "EVENTS"
       network: "NETWORK"
       congo_week_2014: "#CongoWeek2014"
-      congo_description: "Congo Week is a global campaign that takes place October 19th - 24th to break the silence about issues in the heart of Africa."
+      congo_description: "Congo Week is a global campaign that takes place October 19th - 25th to break the silence about issues in the heart of Africa."
       join_congo: "JOIN THE MOVEMENT"
       congo_start: "Congo Week starts in:"
       host_event: "Host an Event"
