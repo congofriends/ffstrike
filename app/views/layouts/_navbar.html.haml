@@ -21,7 +21,7 @@
                 %li#my_profile= link_to t('.my_profile'), user_movements_path
                 - unless current_user.movements.empty?
                   %li#manage_groups= link_to t('.manage_my_groups'), my_groups_path
-                - unless current_user.events_owned.empty?
+                - unless (current_user.events_owned & current_user.current_events).empty?
                   %li#manage_events= link_to t('.manage_my_events'), my_events_path
                 %li.divider
                 %li= link_to t('.create_group'), new_movement_path
