@@ -95,7 +95,6 @@ en:
     other:
       short_description: "Have an idea for a creative event? Use this tool to create tasks and assign them"
       full_description: "Have an idea for a creative event? Use this tool to create tasks and assign them."
-
   host_tasks:
     movie_screening:
       - "Plan a brief agenda for your event - think about who you want to introduce the film and what (if anything) you will do afterwards."
@@ -143,7 +142,7 @@ en:
       - 'Send an alert to local press'
       - 'Organize your materials for the day of. You will want postcard petitions, DVDs to be distributed, sign in sheet or computer for people to sign in at your event, fact sheets, pens, and snacks (optional). (http://congoweek.org/downloads.html)'
       - 'Optional: Plan a closing event where everyone turned their phone back on at a designated time. This could be combined with a fundraiser, movie showing, discussion circle, or any other type of event. '
-    Prayer_service:
+    prayer_service:
       - 'Reach out to faith leaders in your community and ask them to attend and participate.'
       - 'Share the Congo liturgy with faith leaders http://congoweek.org/images/pdf/congo_christian_worship_resource.pdf.'
       - 'Create an agenda for the event with speakers, chants, or a march through your community or campus.'
@@ -153,8 +152,11 @@ en:
       - 'Send an alert to local press'
       - 'Organize your materials for the day of. You will want postcard petitions, DVDs to be distributed, sign in sheet or computer for people to sign in at your event, fact sheets, pens, and snacks (optional). (http://congoweek.org/downloads.html)'
     forum:
+      - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
     organize_concert:
+      - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
     other:
+      - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
   attendees_tasks:
     movie_screening:
       - 'Call 5-10 friends and invite them to come'
