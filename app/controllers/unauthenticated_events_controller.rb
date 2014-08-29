@@ -15,7 +15,7 @@ class UnauthenticatedEventsController < ApplicationController
       @event.assign_host @user
       if @event.save
         clear_fields_on_tbd
-        UserMailer.event_creation_message(@user.id, @event.id) if current_user
+        NewEventMailWorker.perform_async(current_user.id, @event.id) if ENV["RAILS_ENV"] == "production"
         redirect_to explanation_path(@event), notice: t('event.created') and return
       else
         redirect_to new_movement_event_path(@movement), alert: t('event.failure')
