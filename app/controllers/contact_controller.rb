@@ -9,7 +9,7 @@ class ContactController < ApplicationController
     @event =  Event.find @message.host_id
 
     if @message.valid?
-      # ContactMailer.new_message(@message).deliver
+      ContactMailer.new_message(@message).deliver
       redirect_to :back, notice: t('contact.message_sent') and return
     end
     redirect_to :back, alert: t('contact.invalid_message')
