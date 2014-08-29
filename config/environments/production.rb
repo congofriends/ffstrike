@@ -13,9 +13,9 @@ Ffstrike::Application.configure do
     :authentication => :plain,
     :address => "smtp.mailgun.org",
     :port => 587,
-    :domain => "app24751398.mailgun.org",
-    :user_name => "postmaster@app24751398.mailgun.org",
-    :password => ENV['MAILGUN_PASS']
+    :domain => "app24751353.mailgun.org",
+    :user_name => "postmaster@app24751353.mailgun.org",
+    :password => ENV['MAILGUN_PASS_PROD']
   }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true

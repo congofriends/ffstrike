@@ -15,7 +15,7 @@ Ffstrike::Application.configure do
     :port => 587,
     :domain => "app24751398.mailgun.org",
     :user_name => "postmaster@app24751398.mailgun.org",
-    :password => ENV['MAILGUN_PASS']
+    :password => ENV['MAILGUN_PASS_QA']
   }
   config.action_mailer.default_url_options = { :host => "http://shift-engage-qa.herokuapp.com", :locale => I18n.locale }
   config.action_mailer.perform_deliveries = true

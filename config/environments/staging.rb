@@ -1,5 +1,6 @@
 Ffstrike::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => { :bucket => ENV['AWS_BUCKET'],
@@ -15,7 +16,7 @@ Ffstrike::Application.configure do
     :port => 587,
     :domain => "app24751398.mailgun.org",
     :user_name => "postmaster@app24751398.mailgun.org",
-    :password => ENV['MAILGUN_PASS']
+    :password => ENV['MAILGUN_PASS_QA']
   }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
