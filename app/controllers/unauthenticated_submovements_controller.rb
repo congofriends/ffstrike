@@ -11,7 +11,8 @@ class UnauthenticatedSubmovementsController < ApplicationController
     if @submovement.save
       @submovement.users.push(@user)
       sign_in(:user, @user)
-      UserMailer.team_creation_message(@user.id, @submovement.id) if current_user
+      NewTeamMailWorker.perform_async(@user.id, @submovement.id) if ENV["RAILS_ENV"] == "production" && current_user
+
       redirect_to movement_path(@submovement), notice: t('movement.created')
     else
       render :new, alert: t('movement.not_created')
