@@ -9,7 +9,7 @@ class ContactController < ApplicationController
     @event =  Event.find @message.host_id
 
     if @message.valid?
-      ContactMailer.new_message(@message).deliver
+      # ContactMailer.new_message(@message).deliver
       redirect_to :back, notice: t('contact.message_sent') and return
     end
     redirect_to :back, alert: t('contact.invalid_message')
@@ -26,7 +26,7 @@ class ContactController < ApplicationController
   def create_coordinator_msg
     @group = Movement.find @message.host_id
     if @message.valid?
-      ContactMailer.new_coordinators_message(@message).deliver
+      # ContactMailer.new_coordinators_message(@message).deliver
       redirect_to :back, notice: t('contact.message_sent') and return
     end
     redirect_to :back, alert: t('contact.invalid_message')
@@ -37,7 +37,7 @@ class ContactController < ApplicationController
   def create_members_msg
     @group = Movement.find @message.host_id
     if @message.valid?
-      ContactMailer.new_members_message(@message).deliver
+      # ContactMailer.new_members_message(@message).deliver
       redirect_to :back, notice: t('contact.message_sent') and return
     end
     redirect_to :back, alert: t('contact.invalid_message')
@@ -46,7 +46,7 @@ class ContactController < ApplicationController
   def create_attendees_msg
     @event =  Event.find @message.host_id
     if @message.valid?
-      ContactMailer.new_attendee_message(@message).deliver
+      # ContactMailer.new_attendee_message(@message).deliver
       redirect_to :back, notice: t('contact.message_sent') and return
     end
     redirect_to :back, alert: t('contact.invalid_message')
@@ -59,7 +59,7 @@ class ContactController < ApplicationController
   def create_movement_msg
     @movement = Movement.find @message.host_id
     if @message.valid?
-      ContactMailer.new_mvmt_message(@message).deliver
+      # ContactMailer.new_mvmt_message(@message).deliver
       redirect_to :back, notice: t('contact.message_sent') and return
     end
     redirect_to :back, alert: t('contact.invalid_message')

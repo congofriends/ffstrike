@@ -49,7 +49,7 @@ class MovementsController < ApplicationController
     @movement = Movement.new(movement_params)
     if @movement.save
       unless current_user.nil?
-        UserMailer.team_creation_message(current_user.id, @movement.id) if current_user
+        # UserMailer.team_creation_message(current_user.id, @movement.id) if current_user
         @movement.users << current_user
       end
       redirect_to movement_explanation_path(@movement)
@@ -92,7 +92,7 @@ class MovementsController < ApplicationController
   def destroy
     @team = Movement.find params[:id].split("-").last
     @team.destroy
-    
+
     redirect_to :back, notice: t('movement.deleted')
   end
 

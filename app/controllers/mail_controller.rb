@@ -25,7 +25,7 @@ class MailController < ApplicationController
     if action.attendees.empty?
       flash[:notice] = t('mail.no_attendees')
     else
-      UserMailer.custom_attendees_message(message, subject, action)
+      # UserMailer.custom_attendees_message(message, subject, action)
       flash[:success] = t('mail.sent')
     end
   end
@@ -36,7 +36,7 @@ class MailController < ApplicationController
     if action.events.empty?
       flash[:notice] = t('mail.no_hosts')
     else
-      UserMailer.custom_hosts_message(message, subject, action)
+      # UserMailer.custom_hosts_message(message, subject, action)
       flash[:success] = t('mail.sent')
     end
   end

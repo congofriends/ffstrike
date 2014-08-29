@@ -116,7 +116,7 @@ class EventsController < ApplicationController
 
   def destroy
     authenticate_user!
-      DeleteMailWorker.perform_async(@event.id) if ENV["RAILS_ENV"] == "qa" || ENV["RAILS_ENV"] == "production"
+    DeleteMailWorker.perform_async(@event.id) if ENV["RAILS_ENV"] == "production"
 
     @event.destroy
     respond_to do |format|
