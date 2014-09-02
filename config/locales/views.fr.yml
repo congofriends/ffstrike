@@ -4,8 +4,8 @@ fr:
     name: &name Nom
     phone: &phone Numéro de téléphone
     point: &point Point personne
-    password: &password Mot
-    confirmation: &confirmation De Confirmation
+    password: &password Mot de passe
+    confirmation: &confirmation Confirmation du mot de passe
     export_attendees: &export_attendees EXPORTER PARTICIPANTS
     host_event: &host_event L'HÔTE D'UN ÉVÉNEMENT
     update: &update MISE à JOUR
@@ -24,7 +24,7 @@ fr:
     flyer_dl: "(Cliquez sur le dépliant à télécharger)"
     when: "quand:"
     where: "Où:"
-    location: "Les détails d'emplacement:"
+    location: "Détails d'emplacement:"
     description: "Description:"
     organized_by: "Organisé par"
     email_msg: "E-mail participants à un événement"
@@ -51,14 +51,14 @@ fr:
       tab_tasks: "Tâches"
       tab_attendees: "Participants"
     explanation:
-      confirm_msg: "Félicitations, vous avez créé avec succès une %{event_type}"
-      event_dash_prompt: "Cliquez ici pour aller directement à votre tableau de bord de l'événement"
+      confirm_msg: "Félicitations! Vous avez réussi à créer un %{event_type}"
+      event_dash_prompt: "Cliquez ici pour aller directement au tableau de bord de votre  événement"
       host_task_msg: "Partagez votre événement sur ​​les médias sociaux!"
     new:
-      congo_week_content: "Merci d'avoir pris la responsabilité d'être un hôte de l'événement et d'aider à faire # CongoWeek2014 sur Octobre 19-25th un succès"
-      datetime_tbd: "Date et Heure de déterminer"
-      address_tbd: "Adresse à déterminer"
-      legend1:  "Événement Informations de base (1/2)"
+      congo_week_content: "Merci d'avoir pris une importante responsabilité d'être l'hôte d'un évènement et d'aider à faire de #CongoWeek2014 une réussite."
+      datetime_tbd: "Date et heure à déterminer ultérieurement"
+      address_tbd: "Adresse à déterminer ultérieurement"
+      legend1:  "Informations de base de l'événement (1/2)"
       legend2: "les détails de l'événement (2/2)"
       legend3: "Détails personnels"
       address: "Adresse de l'événement"
@@ -66,13 +66,13 @@ fr:
       next: "Suivant"
       previous: "Précédent"
       create_btn: "Créer un événement"
-      msg_to_attendees: "écrire un bref message de participants à un événement:"
+      msg_to_attendees: "Rédiger un bref message aux participants dans l'événement:"
       event_type: "Type d'événement :"
       event_team_msg: "Si cet événement est associé à une équipe, veuillez choisir ici:"
-      forum_msg: "Inclure un participant forum de discussion sur l'événement:"
+      forum_msg: "Inclure un forum de discussion pour l'événement pour les participants:"
       name: "Votre nom"
       email: "Votre e-mail"
-      phone: "Votre téléphone"
+      phone: "Numéro de téléphone:"
       password: *password
       password_confirmation: *confirmation
     fundraiser:
@@ -95,13 +95,13 @@ fr:
       check: "En cochant cette case, vous convenez que vous avez lu, compris et accepté les termes et conditions"
     edit:
       edit_header: "Modifier l'événement"
-      start_date: "Date de Début & Heure:"
-      end_date: "Date de Fin & Heure:"
+      start_date: "Date et Heure de début:"
+      end_date: "Date et Heure de fin:"
       name: "Nom:"
       address1: "Adresse 1:"
       address2: "Adresse 2:"
       city: "Ville / Village:"
-      state: "Etat / Province / Région:"
+      state: "État / Province / Région:"
       zip: "Zip / Code Postal:"
       country: "Pays"
       notes: "Notes:"
@@ -217,7 +217,7 @@ fr:
       export_members: "LES MEMBRES DE L'EXPORTATION"
     explanation:
       confirm_msg: "Félicitations - vous avez créé avec succès une équipe pour soutenir FOTC"
-      team_dash_prompt: "Cliquez ici pour aller directement à votre tableau de bord de l'équipe"
+      team_dash_prompt: "Cliquez ici pour aller directement au tableau de bord de votre équipe"
       share_msg: "Partagez votre équipe sur ​​les médias sociaux!"
     email_modal:
       email_attendees: "E-MAIL AUX PARTICIPANTS"
@@ -271,7 +271,7 @@ fr:
     tab_groups:
       name: 'Nom:'
       location_placeholder: 'Par exemple mondial, International, National..'
-      youtube_link: 'Lien Youtube'
+      youtube_link: 'Lien de YouTube'
       create_btn: 'Créer du équipe'
       tagline: "Slogan: "
       call_to_action: "Appel à l'action:"
@@ -308,20 +308,20 @@ fr:
     new:
       name: *name
       phone: 'Téléphone'
-      location: "Les détails d'emplacement:"
+      location: "Détails d'emplacement:"
       location_placeholder: 'Par exemple mondial, International, National..'
-      youtube_link: 'Lien Youtube'
+      youtube_link: 'Lien de YouTube'
       create_btn: 'Créer du équipe'
       tagline: "Slogan: "
       call_to_action: "Appel à l'action:"
       extended_description: "Description étendue:"
       about_creator: "De Créateur:"
-      thanks_msg: "Merci pour la création d'une Semaine équipe Congo pour soutenir la paix et la justice dans le cœur de l'Afrique."
-      explanation_msg: "Une fois que vous remplissez les détails pertinents à créer une équipe, les événements associés à votre équipe sera affiché sur une page."
+      thanks_msg: "Merci de créer une équipe pour le <<Congo Week>> pour encourage la paix et la justice dans le cœur de l'Afrique."
+      explanation_msg: "Une fois le formulaire complété, les événements associés à votre équipe seront affichés."
       name: 'Nom:'
       location_placeholder: 'Par exemple mondial, International, National..'
       location: "Emplacement:"
-      youtube_link: 'Lien Youtube'
+      youtube_link: 'Lien de Youtube'
       about_creator: "De Créateur:"
       tagline: "Slogan"
       call_to_action: "Appel à l'action:"
@@ -340,7 +340,7 @@ fr:
       events: "ÉVÉNEMENTS"
       network: "RÉSEAU"
       congo_week_2014: "#CongoWeek2014"
-      congo_description:  "Semaine Congo est une campagne mondiale qui a lieu Octobre 19th - 25th à briser le silence sur les questions au cœur de l'Afrique."
+      congo_description:  "La <<Congo Week>> est une campagne mondiale qui se tiendra du 19 au 25 octobre 2014 pour briser le silence entourant les conflits qui affectent l'Afrique."
       join_congo: "REJOIGNEZ LE MOUVEMENT"
       congo_start: "Semaine Congo commence dans:"
       host_event: "Accueillir événement"
@@ -358,27 +358,27 @@ fr:
       team_description: "Une équipe est un groupe d individus ou une organisation qui a rejoint le mouvement Congo à organiser des événements dans leurs communautés locales pour sensibiliser et éduquer les autres sur la situation au Congo. Aidez-nous à construire des équipes partout dans le monde à travailler en partenariat avec congolais pour ramener la paix, la justice et la dignité humaine au cœur de l Afrique. Rejoignez le mouvement en rejoignant ou en créant une équipe."
       support_network: 'Support Réseau'
       network_message: 'Il ya %{number} équipes et en pleine croissance!'
-      create_team: 'CRÉER UN ÉQUIPE'
-      team_information: 'Une équipe est un groupe d individus ou une organisation qui a rejoint le mouvement Congo à organiser des événements dans leurs communautés locales pour sensibiliser et éduquer les autres sur la situation au Congo. Aidez-nous à construire des équipes partout dans le monde à travailler en partenariat avec congolais pour ramener la paix, la justice et la dignité humaine au cœur de l Afrique.'
+      create_team: 'CRÉER UNE ÉQUIPE'
+      team_information: "Une équipe est une groupe d'individus ou une organisation qui s'est jointe au mouvement du Congo pour organiser des  activités au sein de leur communauté locales afin de sensibiliser, d'informer et d'éduquer le public sur la situation au Congo. Aidez-nous à mettre sur pied des équipes partout dans le monde en partenariat avec congolais pour ramener la paix, la justice et la dignité humaine au cœur de l'Afrique."
 
   unauthenticated_submovements:
     new:
       name: *name
       phone: 'Téléphone'
-      location: "Les détails d'emplacement:"
+      location: "Détails d'emplacement:"
       location_placeholder: 'Par exemple mondial, International, National..'
-      youtube_link: 'Lien Youtube'
+      youtube_link: 'Lien de Youtube'
       create_btn: 'Créer du équipe'
       tagline: "Slogan: "
       call_to_action: "Appel à l'action:"
       extended_description: "Description étendue:"
       about_creator: "De Créateur:"
       thanks_msg: "Merci pour la création d'une Semaine équipe Congo pour soutenir la paix et la justice dans le cœur de l'Afrique."
-      explanation_msg: "Une fois que vous remplissez les détails pertinents à créer une équipe, les événements associés à votre équipe sera affiché sur une page."
+      explanation_msg: "Une fois le formulaire complété, les événements associés à votre équipe seront affichés."
       name: 'Nom:'
       location_placeholder: 'Par exemple mondial, International, National..'
       location: "Emplacement:"
-      youtube_link: 'Lien Youtube'
+      youtube_link: 'Lien de Youtube'
       about_creator: "De Créateur:"
       tagline: "Slogan:"
       call_to_action: "Appel à l'action:"

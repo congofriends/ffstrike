@@ -16,7 +16,7 @@ fr:
     already_signed_in: "Vous êtes déjà signé."
     not_found: "Désolé, votre recherche n'a renvoyé aucun résultat."
   movement:
-    created: "Félicitations, vous venez de créer un équipe!"
+    created: "Félicitations, vous avez crée une équipe!"
     updated: "Équipe a été mis à jour"
     not_created: "Il y a eu un problème lors de l'enregistrement de votre équipe. Veuillez réessayer."
     published: "Équipe a été publié"
