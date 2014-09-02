@@ -44,6 +44,8 @@
               = form.hidden_field :parent_id, value:  params[:parent_id]
               .form-group
                 .col-md-8.col-md-offset-4
-                  = form.submit t('.create_btn'), class: "btn btn-primary", id: "create_movement"
+                  = link_to t('movements.new.cancel_btn'), :back, class: "btn btn-cancel"
+                  = form.submit t('.create_btn'), class: "btn btn-success", id: "create_movement"
+
 
 

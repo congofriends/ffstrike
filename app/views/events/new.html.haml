@@ -54,8 +54,9 @@
               .form-group.col-sm-12
                 = form.label :location_details, t('events.location')
                 = form.text_field :location_details, placeholder: t('.location_placeholder'), class: 'form-control'
-            %button{type: "button", class: "btn btn-success next"}
-              = t('.next')
+              .form-group.col-sm-12
+                = link_to t('movements.new.cancel_btn'), :back, class: "btn btn-cancel"
+                %button{type: "button", class: "btn btn-success next"}= t('.next')
           %fieldset.event_additional_details
             %legend= t('.legend2')
             .form-group

@@ -42,6 +42,7 @@
                   .col-md-8
                     = text_field :movement, :flickr, { class: 'form-control' }
                 = hidden_field :parent_id, value:  params[:parent_id]
+                = link_to t('movements.new.cancel_btn'), :back, class: "btn btn-cancel"
                 %button{type: "button", class: "btn btn-success next-group"}=t('.next')
               %fieldset.event_additional_details
                 %legend=t('.legend2')
@@ -65,6 +66,6 @@
                     = label :user, :password_confirmation, 'Password confirmation *'
                     = password_field :user, :password_confirmation, class: 'form-control'
                 .form-group
-                  %button{type: "button", class: "btn btn-success previous-group"}=t('.previous')
-                  = submit_tag t('.create_btn'), class: 'btn btn-primary'
+                  %button{type: "button", class: "btn btn-primary previous-group"}=t('.previous')
+                  = submit_tag t('.create_btn'), class: 'btn btn-success'
 

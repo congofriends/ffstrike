@@ -314,6 +314,7 @@ en:
       extended_description: "Extended Description:"
       call_to_action: "Call To Action:"
       about_creator: "About Creator:"
+      cancel_btn: 'Cancel'
       create_btn: 'Create Team'
       avatar: "Image"
       website: "Website"

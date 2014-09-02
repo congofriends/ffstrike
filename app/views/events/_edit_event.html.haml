@@ -66,7 +66,5 @@
         .row
           .form-group.col-sm-3{:style => "float: right;"}
             = f.submit t("events.edit.update"), class: 'btn btn-attend btn-update'
-        %br
-        .row
-          .form-group.col-sm-3{:style => "float: right;"}
             = link_to t("events.edit.cancel"), event, method: :delete, data: { confirm: t("events.edit.cancel_confirm_msg")}, remote: true, class:'btn btn-attend btn-cancel'
+
