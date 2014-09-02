@@ -281,6 +281,8 @@ fr:
       update_movement: "équipe mise à jour"
       delete_team: "Supprimer Équipe"
       confirm_delete_team: "Etes-vous sûr que vous voulez supprimer"
+      bg_image1: "Image de fond 1"
+      bg_image2: "Image de fond 2"
     tab_group_teams:
       team_name: *name
       sponsored: "Parrainés"

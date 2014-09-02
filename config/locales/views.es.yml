@@ -275,6 +275,8 @@ es:
       update_movement: "Equipo de actualización"
       delete_team: "Elimina Equipo"
       confirm_delete_team: "¿Seguro que quieres borrar "
+      bg_image1: "Imagen de fondo 1"
+      bg_image2: "Imagen de fondo 2"
     tab_group_teams:
       team_name: *name
       sponsored: "Patrocinado"
