@@ -49,7 +49,7 @@ class MovementsController < ApplicationController
     @movement = Movement.new(movement_params)
     if @movement.save
       unless current_user.nil?
-        UserMailer.team_creation_message(current_user.id, @movement.id) if current_user
+        NewTeamMailWorker.perform_async(current_user.id, @movement.id) if ENV["RAILS_ENV"] == "production"
         @movement.users << current_user
       end
       redirect_to movement_explanation_path(@movement)
