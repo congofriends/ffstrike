@@ -1,0 +1,8 @@
+class NewMembersMailWorker
+  include Sidekiq::Worker
+  sidekiq_options :retry => false, :backtrace => true
+
+  def perform(message)
+    ContactMailer.new_members_message(message)
+  end
+end
