@@ -33,13 +33,15 @@ class UserMailer < ActionMailer::Base
   def welcome_message(user_id, password, event_id)
     @password = password
     @recipient = User.find user_id
-    @event = Event.find event_id
+    @event = Event.where(id: event_id).first
+    return unless @event
     mail(to: @recipient.email, subject: "Thanks for participating in the event").deliver
   end
 
   def reminder_message(user_id, event_id)
     @recipient = User.find user_id
-    @event = Event.find event_id
+    @event = Event.where(id: event_id).first
+    return unless @event
     mail(to: @recipient.email, subject: "#{@event.name} is coming up!").deliver unless Attendance.where(user_id: @recipient, event_id: @event).empty?
   end
 
