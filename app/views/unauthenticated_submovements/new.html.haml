@@ -16,19 +16,19 @@
                 .form-group
                   = label :movement, :name, t('.name') + ' * ', { class: 'col-md-4 control-label' }
                   .col-md-8
-                    = text_field :movement, :name , { class: 'form-control' }
+                    = text_field :movement, :name , { class: 'form-control', placeholder: 'Bob Long'}
                 .form-group
                   = label :movement, :phone, t('.phone'), { class: 'col-md-4 control-label' }
                   .col-md-8
-                    = text_field :movement, :phone, { class: 'form-control' }
+                    = text_field :movement, :phone, { class: 'form-control', placeholder: '123-456-7890' }
                 .form-group
                   = label :movement, :tagline,  t('.tagline'), { class: 'col-md-4 control-label' }
                   .col-md-8
-                    = text_area :movement,  :tagline, { class: 'form-control' }
+                    = text_area :movement,  :tagline, { class: 'form-control', placeholder: '#CongoWeek' }
                 .form-group
                   = label :movement, :website, t('.website'), { class: 'col-md-4 control-label' }
                   .col-md-8
-                    = text_area :movement, :website, { class: 'form-control' }
+                    = text_area :movement, :website, { class: 'form-control', placeholder: 'www.congoweek.com' }
                 .form-group
                   = label :movement, :avatar, t('.avatar'), { class: 'col-md-4 control-label' }
                   .col-md-8
