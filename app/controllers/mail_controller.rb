@@ -25,7 +25,8 @@ class MailController < ApplicationController
     if action.attendees.empty?
       flash[:notice] = t('mail.no_attendees')
     else
-      CustomAttendeesMailWorker.perform_async(message, subject, action) if ENV["RAILS_ENV"] == "production"
+      UserMailer.custom_attendees_message(message, subject, action)
+      # CustomAttendeesMailWorker.perform_async(message, subject, action) if ENV["RAILS_ENV"] == "production"
       flash[:success] = t('mail.sent')
     end
   end
@@ -36,7 +37,8 @@ class MailController < ApplicationController
     if action.events.empty?
       flash[:notice] = t('mail.no_hosts')
     else
-      CustomHostsMailWorker.perform_async(message, subject, action) if ENV["RAILS_ENV"] == "production"
+      UserMailer.custom_hosts_message(message, subject, action)
+      # CustomHostsMailWorker.perform_async(message, subject, action) if ENV["RAILS_ENV"] == "production"
       flash[:success] = t('mail.sent')
     end
   end
