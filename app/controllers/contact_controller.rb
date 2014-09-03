@@ -9,7 +9,7 @@ class ContactController < ApplicationController
     @event =  Event.find @message.host_id
 
     if @message.valid?
-      ContactMailer.new_message(message)
+      ContactMailer.new_message(@message)
       # NewMailWorker.perform_async(@message) if ENV["RAILS_ENV"] == "production"
       redirect_to :back, notice: t('contact.message_sent') and return
     end
@@ -27,7 +27,7 @@ class ContactController < ApplicationController
   def create_coordinator_msg
     @group = Movement.find @message.host_id
     if @message.valid?
-      ContactMailer.new_coordinators_message(message)
+      ContactMailer.new_coordinators_message(@message)
       # NewCoordinatorsMailWorker.perform_async(@message) if ENV["RAILS_ENV"] == "production"
       redirect_to :back, notice: t('contact.message_sent') and return
     end
@@ -39,7 +39,7 @@ class ContactController < ApplicationController
   def create_members_msg
     @group = Movement.find @message.host_id
     if @message.valid?
-      ContactMailer.new_members_message(message)
+      ContactMailer.new_members_message(@message)
       # NewMembersMailWorker.perform_async(@message) if ENV["RAILS_ENV"] == "production"
       redirect_to :back, notice: t('contact.message_sent') and return
     end
@@ -49,7 +49,7 @@ class ContactController < ApplicationController
   def create_attendees_msg
     @event =  Event.find @message.host_id
     if @message.valid?
-      ContactMailer.new_attendee_message(message)
+      ContactMailer.new_attendee_message(@message)
       # NewAttendeeMailWorker.perform_async(@message) if ENV["RAILS_ENV"] == "production"
       redirect_to :back, notice: t('contact.message_sent') and return
     end
@@ -63,7 +63,7 @@ class ContactController < ApplicationController
   def create_movement_msg
     @movement = Movement.find @message.host_id
     if @message.valid?
-      ContactMailer.new_mvmt_message(message)
+      ContactMailer.new_mvmt_message(@message)
       # NewMovementMailWorker.perform_async(@message) if ENV["RAILS_ENV"] == "production"
       redirect_to :back, notice: t('contact.message_sent') and return
     end
