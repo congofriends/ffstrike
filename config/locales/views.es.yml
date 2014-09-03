@@ -67,6 +67,7 @@ es:
       previous: "Anterior"
       sign_in: "Registrase"
       create_btn: "CREAR EVENTO"
+      account_exist: "Si tengas una cuenta existente, Por Favor "
       msg_to_attendees: "Escribir un breve mensaje a asistentes a eventos:"
       event_type: 'Tipo de evento:'
       event_team_msg: "Si cet événement est associé à une équipe, veuillez choisir ici:"

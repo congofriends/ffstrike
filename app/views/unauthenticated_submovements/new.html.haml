@@ -6,6 +6,9 @@
         =t('.thanks_msg')
       %h4
         =t('.explanation_msg')
+      %p
+        =t("events.new.account_exist")
+        =link_to t("events.new.sign_in"), new_session_path(:user), id: "sign-in-link"
     .col-md-7
       .well
         .form-horizontal
@@ -16,7 +19,7 @@
                 .form-group
                   = label :movement, :name, t('.name') + ' * ', { class: 'col-md-4 control-label' }
                   .col-md-8
-                    = text_field :movement, :name , { class: 'form-control', placeholder: 'Bob Long'}
+                    = text_field :movement, :name , { class: 'form-control', placeholder: 'Congo Supporters'}
                 .form-group
                   = label :movement, :phone, t('.phone'), { class: 'col-md-4 control-label' }
                   .col-md-8

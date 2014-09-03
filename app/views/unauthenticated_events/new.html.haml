@@ -4,6 +4,10 @@
     %h2#host_event
       %strong= t("events.new.congo_week_content")
   .row
+    %p#host_event
+      =t("events.new.account_exist")
+      =link_to t("events.new.sign_in"), new_session_path(:user), id: "sign-in-link"
+  .row
     .col-md-10.col-md-offset-1
       .well
         = form_tag movement_unauthenticated_events_path, id: 'new-event-form', method: :post, multipart: true do
@@ -119,8 +123,6 @@
               .form-group
                 %button{type: "button", class: "btn btn-primary previous"}= t("events.new.previous")
                 %button{type: "button", class: "btn btn-success next", id: "create_event"}= t("events.new.next")
-              .form-group
-                %li= link_to t("events.new.sign_in"), new_session_path(:user), id: "sign-in"
             %fieldset.event_additional_details
               %legend= t("events.new.legend3")
               .row
