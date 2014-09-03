@@ -85,7 +85,7 @@ class EventsController < ApplicationController
       @event.assign_host(current_user)
       redirect_to explanation_path(@event), notice: t('event.created') and return
     else
-      flash[:notice] = @event.errors.full_messages.flatten.join(' ')
+      flash[:alert] = @event.errors.full_messages.flatten.join(' ')
       if @movement.users.include?(current_user)
        redirect_to my_groups_path and return
       end
