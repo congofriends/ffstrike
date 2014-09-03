@@ -65,6 +65,7 @@ es:
       location_placeholder: "reunirá a la vuelta de la esquina de Belmont y Sheridan"
       next: "Siguiente"
       previous: "Anterior"
+      sign_in: "Registrase"
       create_btn: "CREAR EVENTO"
       msg_to_attendees: "Escribir un breve mensaje a asistentes a eventos:"
       event_type: 'Tipo de evento:'

@@ -119,6 +119,8 @@
               .form-group
                 %button{type: "button", class: "btn btn-primary previous"}= t("events.new.previous")
                 %button{type: "button", class: "btn btn-success next", id: "create_event"}= t("events.new.next")
+              .form-group
+                %li= link_to t("events.new.sign_in"), new_session_path(:user), id: "sign-in"
             %fieldset.event_additional_details
               %legend= t("events.new.legend3")
               .row

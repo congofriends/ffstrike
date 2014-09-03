@@ -65,6 +65,7 @@ fr:
       location_placeholder: "réunira au coin de Belmont & Sheridan"
       next: "Suivant"
       previous: "Précédent"
+      sign_in: "Se connecter"
       create_btn: "Créer un événement"
       msg_to_attendees: "Rédiger un bref message aux participants dans l'événement:"
       event_type: "Type d'événement :"

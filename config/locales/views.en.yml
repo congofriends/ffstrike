@@ -65,6 +65,7 @@ en:
       location_placeholder: "meet at the corner of Belmont & Sheridan"
       next: "Next"
       previous: "Previous"
+      sign_in: "Sign in"
       create_btn: "CREATE EVENT"
       msg_to_attendees: "Write a brief message to event attendees:"
       event_type: 'Event Type:'
