@@ -25,7 +25,6 @@ class MailController < ApplicationController
     if action.attendees.empty?
       flash[:notice] = t('mail.no_attendees')
     else
-
       CustomAttendeesMailWorker.perform_async(message, subject, action) if ENV["RAILS_ENV"] == "production"
       flash[:success] = t('mail.sent')
     end

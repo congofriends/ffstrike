@@ -9,7 +9,8 @@ class ContactController < ApplicationController
     @event =  Event.find @message.host_id
 
     if @message.valid?
-      NewMailWorker.perform_async(@message) if ENV["RAILS_ENV"] == "production"
+      ContactMailer.new_message(message)
+      # NewMailWorker.perform_async(@message) if ENV["RAILS_ENV"] == "production"
       redirect_to :back, notice: t('contact.message_sent') and return
     end
     redirect_to :back, alert: t('contact.invalid_message')
@@ -26,7 +27,8 @@ class ContactController < ApplicationController
   def create_coordinator_msg
     @group = Movement.find @message.host_id
     if @message.valid?
-      NewCoordinatorsMailWorker.perform_async(@message) if ENV["RAILS_ENV"] == "production"
+      ContactMailer.new_coordinators_message(message)
+      # NewCoordinatorsMailWorker.perform_async(@message) if ENV["RAILS_ENV"] == "production"
       redirect_to :back, notice: t('contact.message_sent') and return
     end
     redirect_to :back, alert: t('contact.invalid_message')
@@ -37,7 +39,8 @@ class ContactController < ApplicationController
   def create_members_msg
     @group = Movement.find @message.host_id
     if @message.valid?
-      NewMembersMailWorker.perform_async(@message) if ENV["RAILS_ENV"] == "production"
+      ContactMailer.new_members_message(message)
+      # NewMembersMailWorker.perform_async(@message) if ENV["RAILS_ENV"] == "production"
       redirect_to :back, notice: t('contact.message_sent') and return
     end
     redirect_to :back, alert: t('contact.invalid_message')
@@ -46,7 +49,8 @@ class ContactController < ApplicationController
   def create_attendees_msg
     @event =  Event.find @message.host_id
     if @message.valid?
-      NewAttendeeMailWorker.perform_async(@message) if ENV["RAILS_ENV"] == "production"
+      ContactMailer.new_attendee_message(message)
+      # NewAttendeeMailWorker.perform_async(@message) if ENV["RAILS_ENV"] == "production"
       redirect_to :back, notice: t('contact.message_sent') and return
     end
     redirect_to :back, alert: t('contact.invalid_message')
@@ -59,7 +63,8 @@ class ContactController < ApplicationController
   def create_movement_msg
     @movement = Movement.find @message.host_id
     if @message.valid?
-      NewMovementMailWorker.perform_async(@message) if ENV["RAILS_ENV"] == "production"
+      ContactMailer.new_mvmt_message(message)
+      # NewMovementMailWorker.perform_async(@message) if ENV["RAILS_ENV"] == "production"
       redirect_to :back, notice: t('contact.message_sent') and return
     end
     redirect_to :back, alert: t('contact.invalid_message')
