@@ -21,6 +21,7 @@ es:
         subject: 'Instrucciones de recuperación de contraseña'
       unlock_instructions:
         subject: 'Instrucciones para desbloquear'
+      reset_password: "Enviame contraseña restavlecimiento"
     omniauth_callbacks:
       failure: 'No has sido autorizado en la cuenta %{kind} porque "%{reason}".'
       success: 'Has sido autorizado satisfactoriamente de la cuenta %{kind}.'
@@ -71,6 +72,4 @@ es:
       expired: 'ha expirado, por favor solicita una nueva'
       not_found: 'no se encontró'
       not_locked: 'no estaba bloqueada'
-      not_saved:
-        one: 'Un error ocurrió al tratar de guardar %{resource}:'
-        other: '%{count} errores ocurrieron al tratar de guardar %{resource}:'
+      not_saved: "Tenga encontrado un error"

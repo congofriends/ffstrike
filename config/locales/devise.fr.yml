@@ -22,6 +22,7 @@ fr:
         subject: 'Instructions pour changer le mot de passe'
       unlock_instructions:
         subject: 'Instructions pour déverrouiller le compte'
+      reset_password: "Envoyez-moi mot de passe réinitialiser"
     omniauth_callbacks:
       failure: 'Nous ne pouvons pas vous authentifier depuis %{kind} pour la raison suivante : ''%{reason}''.'
       success: 'Autorisé avec succès par votre compte %{kind}.'
@@ -72,6 +73,4 @@ fr:
       expired: 'est périmé, veuillez en demander un autre'
       not_found: 'n’a pas été trouvé(e)'
       not_locked: 'n’était pas verrouillé(e)'
-      not_saved:
-        one: 'une erreur a empêché ce (ou cette) %{resource} d’être enregistré(e) :'
-        other: '%{count} erreurs ont empêché ce (ou cette) %{resource} d’être enregistré(e) :'
+      not_saved: "Vous avez rencontré une erreur"
