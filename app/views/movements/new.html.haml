@@ -29,6 +29,9 @@
                 = form.label :avatar, t('.avatar'), { class: 'col-md-4 control-label' }
                 .col-md-8
                   = form.file_field :avatar
+                .col-md-8
+                  %p#avatar-size
+                    =t('.avatar_size')
               .form-group
                 = form.label :flickr, { class: 'col-md-4 control-label' }
                 .col-md-8

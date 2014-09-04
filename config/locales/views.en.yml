@@ -75,6 +75,7 @@ en:
       name: "Your first name"
       surname: "Your last name"
       email: "Your email"
+      avatar_size: "(Recommended Image Dimension: 250 x 175)"
       phone: "Your phone"
       password: "Password"
       password_confirmation: "Password confirmation"
@@ -100,7 +101,7 @@ en:
       edit_header: "EDIT EVENT"
       start_date: "Start date & time:"
       end_date: "End date & time:"
-      name: "Event Name:"
+      name: "Event Title:"
       address1: "Address 1:"
       address2: "Address 2:"
       city: "City / Town:"
@@ -321,6 +322,7 @@ en:
       cancel_btn: 'Cancel'
       create_btn: 'Create Team'
       avatar: "Image"
+      avatar_size: "(Recommended Image Dimension: 250 x 175)"
       website: "Website"
     show:
       h1: "Support the Congo Global Movement"
@@ -348,7 +350,7 @@ en:
       support_network: 'Support Network'
       network_message: 'There are %{number} teams and growing!'
       create_team: 'CREATE A TEAM'
-      team_information: 'A team is a collection of individuals or organization that has joined the Congo movement to organize events in their local communities to raise awareness and educate others about the situation in the Congo. Help us build teams throughout the globe to work in partnership with Congolese to bring about peace, justice and human dignity in the heart of Africa.'
+      team_information: "A team is a collection of individuals or organization that has joined the Congo movement to organize events in their local communities to raise awareness and educate others about the situation in the Congo. Help us build teams throughout the globe to work in partnership with Congolese to bring about peace, justice and human dignity in the heart of Africa. After creating your team make sure to post your event even if the date and location is not finalized - simply check the 'To Be Determined' box for address and date."
   unauthenticated_submovements:
     new:
       thanks_msg: 'Thank you for creating a Congo Week Team to support peace and justice in the heart of Africa. '
@@ -364,6 +366,7 @@ en:
       about_creator: "About Creator:"
       create_btn: 'Create Team'
       avatar: "Image"
+      avatar_size: "(Recommended Image Dimension: 250 x 175)"
       website: "Website"
       legend: "Group Details"
       legend2: "Sign Up to Create Group (2/2)"

@@ -69,6 +69,7 @@ es:
       create_btn: "CREAR EVENTO"
       account_exist: "Si tengas una cuenta existente, Por Favor "
       msg_to_attendees: "Escribir un breve mensaje a asistentes a eventos:"
+      avatar_size: "(Recomendada Imagen Dimensión 250 x 175)"
       event_type: 'Tipo de evento:'
       event_team_msg: "Si cet événement est associé à une équipe, veuillez choisir ici:"
       forum_msg: "Incluir una de las asistentes foro de debate sobre este evento:"
@@ -99,7 +100,7 @@ es:
       edit_header: "Editar"
       start_date: "Fecha y hora de inicio:"
       end_date: "Fecha y hora de finalización:"
-      name: *name
+      name: "Título Evento: "
       address1: "Dirección 1:"
       address2: "Dirección 2:"
       city: "Ciudad / Pueblo:"
@@ -326,6 +327,7 @@ es:
       about_creator: "Acerca del creador"
       create_btn: 'Crear Equipo'
       avatar: "Imagen"
+      avatar_size: "(Recomendada Imagen Dimensión: 250 x 175)"
       website: "Website"
       legend: "Detalles del grupo"
       legend2: "Registra para Crear grupo (2/2)"
@@ -357,7 +359,7 @@ es:
       support_network: 'Red de Apoyo'
       network_message: 'Hay %{number} equipos y creciendo!'
       create_team: 'CREAR UN EQUIPO'
-      team_information: Un equipo es un conjunto de individuos u organizaciones que se ha unido el movimiento Congo para organizar eventos en sus comunidades locales para crear conciencia y educar a otros acerca de la situación en el Congo. Ayúdanos a construir equipos de todo el mundo para trabajar en asociación con los congoleños para lograr la paz, la justicia y la dignidad humana en el corazón de África.
+      team_information: "Un equipo es un conjunto de individuos u organizaciones que se ha unido el movimiento Congo para organizar eventos en sus comunidades locales para crear conciencia y educar a otros acerca de la situación en el Congo. Ayúdanos a construir equipos de todo el mundo para trabajar en asociación con los congoleños para lograr la paz , la justicia y la dignidad humana en el corazón de África . Después de crear su equipo asegúrese de publicar su evento incluso si la fecha y la ubicación no se finaliza - simplemente marque la casilla 'A ser determinado' para la dirección y la fecha."
   unauthenticated_submovements:
     new:
       name: *name
@@ -382,6 +384,7 @@ es:
       about_creator: "Acerca del creador"
       create_btn: 'Crear Equipo'
       avatar: "Imagen"
+      avatar_size: "(Recomendada Imagen Dimensión: 250 x 175)"
       website: "Website"
   assignments:
     assign:

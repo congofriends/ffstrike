@@ -17,19 +17,18 @@
   .col-sm-5.event-data
     %strong=  t('events.when')
     =event.formatted_time
-    .row
-      .spacer10
-      .spacer10
-    %strong= t('events.where')
-    =event.location
-    = link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"
-
     - unless !event.location_details || event.location_details.empty?
       .row
         .spacer10
         .spacer10
       %strong= t('events.location')
       = event.location_details
+    .row
+      .spacer10
+      .spacer10
+    %strong= t('events.where')
+    =event.location
+    = link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"
     .row
       .spacer10
       .spacer10

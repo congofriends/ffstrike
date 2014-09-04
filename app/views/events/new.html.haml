@@ -63,6 +63,8 @@
               .form-group
                 = form.label :image
                 = form.file_field :image
+                %p#avatar-size
+                  =t('.avatar_size')
               .form-group
                 = form.label t('.msg_to_attendees')
                 = form.text_field :notes, class: 'form-control'

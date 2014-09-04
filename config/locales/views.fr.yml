@@ -72,6 +72,7 @@ fr:
       event_type: "Type d'événement :"
       event_team_msg: "Si cet événement est associé à une équipe, veuillez choisir ici:"
       forum_msg: "Inclure un forum de discussion pour l'événement pour les participants:"
+      avatar_size: "(Dimension de l'image Recommandée: 250 x 175)"
       name: "Votre nom"
       email: "Votre e-mail"
       phone: "Numéro de téléphone:"
@@ -99,7 +100,7 @@ fr:
       edit_header: "Modifier l'événement"
       start_date: "Date et Heure de début:"
       end_date: "Date et Heure de fin:"
-      name: "Nom:"
+      name: "Titre Événement: "
       address1: "Adresse 1:"
       address2: "Adresse 2:"
       city: "Ville / Village:"
@@ -332,6 +333,7 @@ fr:
       extended_description: "Extended Description"
       create_btn: 'Créer du équipe'
       avatar: "Image"
+      avatar_size: "(Dimension de l'image Recommandée: 250 x 175)"
       website: "Website"
       legend: "Détails du groupe"
       legend2: "Inscrivez-vous à Création d'un groupe (2/2)"
@@ -363,7 +365,7 @@ fr:
       support_network: 'Support Réseau'
       network_message: 'Il ya %{number} équipes et en pleine croissance!'
       create_team: 'CRÉER UNE ÉQUIPE'
-      team_information: "Une équipe est une groupe d'individus ou une organisation qui s'est jointe au mouvement du Congo pour organiser des  activités au sein de leur communauté locales afin de sensibiliser, d'informer et d'éduquer le public sur la situation au Congo. Aidez-nous à mettre sur pied des équipes partout dans le monde en partenariat avec congolais pour ramener la paix, la justice et la dignité humaine au cœur de l'Afrique."
+      team_information: "Une équipe est une collection d'individus ou une organisation qui a adhéré au mouvement du Congo à organiser des événements dans leurs communautés locales afin de sensibiliser et d'éduquer les autres au sujet de la situation au Congo . Aidez-nous à construire des équipes partout dans le monde à travailler en partenariat avec congolais pour ramener la paix , la justice et la dignité humaine au cœur de l'Afrique . Après avoir créé votre équipe assurez-vous de poster votre événement , même si la date et le lieu n'est pas finalisé - cochez simplement la case «à déterminer » pour l'adresse et la date ."
   unauthenticated_submovements:
     new:
       name: *name
@@ -387,6 +389,7 @@ fr:
       call_to_action: "Appel à l'action:"
       create_btn: 'Créer du équipe'
       avatar: "Image"
+      avatar_size: "(Dimension de l'image Recommandée: 250 x 175)"
       website: "Website"
   assignments:
     assign:

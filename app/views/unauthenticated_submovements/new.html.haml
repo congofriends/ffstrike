@@ -32,6 +32,9 @@
                   = label :movement, :avatar, t('.avatar'), { class: 'col-md-4 control-label' }
                   .col-md-8
                     = file_field :movement, :avatar
+                  .col-md-8
+                    %p#avatar-size
+                      =t('.avatar_size')
                 .form-group
                   = label :movement, :video, t('.youtube_link'), { class: 'col-md-4 control-label' }
                   .col-md-8

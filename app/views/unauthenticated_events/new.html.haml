@@ -65,7 +65,9 @@
               %legend= t("events.new.legend2")
               .form-group
                 = label :event,:image
-                = file_field :event, :image, class: 'form-control'
+                = file_field :event, :image
+                %p#avatar-size
+                  =t("events.new.avatar_size")
               .form-group
                 = label :event, :notes, t("events.new.msg_to_attendees")
                 = text_field :event, :notes, class: 'form-control'
