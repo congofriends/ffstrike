@@ -89,7 +89,7 @@ en:
     forum:
       short_description:
       full_description:
-    organize_concert:
+    concert:
       short_description:
       full_description:
     other:
@@ -153,7 +153,7 @@ en:
       - 'Organize your materials for the day of. You will want postcard petitions, DVDs to be distributed, sign in sheet or computer for people to sign in at your event, fact sheets, pens, and snacks (optional). (http://congoweek.org/downloads.html)'
     forum:
       - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
-    organize_concert:
+    concert:
       - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
     other:
       - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
@@ -191,7 +191,7 @@ en:
       - 'I want to do more! Contact me about getting more involved!'
     forum:
       - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
-    organize_concert:
+    concert:
       - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
     other:
       - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
