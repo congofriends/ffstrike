@@ -152,11 +152,23 @@ en:
       - 'Send an alert to local press'
       - 'Organize your materials for the day of. You will want postcard petitions, DVDs to be distributed, sign in sheet or computer for people to sign in at your event, fact sheets, pens, and snacks (optional). (http://congoweek.org/downloads.html)'
     forum:
-      - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
+      - "Make posters and put them up (sample posters available in footer)"
+      - "Post your event on social media using the hashtag #CongoWeek2014"
+      - 'Spread the word among organizations in your community or on your campus'
+      - 'Send an alert to local press'
+      - "Organize your materials for the day of. You will want postcard petitions, DVDs to be distributed, sign in sheet or computer for people to sign in at your event, fact sheets, pens, and snacks (optional). (http://congoweek.org/downloads.html)"
     concert:
-      - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
+      - "Make posters and put them up (sample posters available in footer)"
+      - "Post your event on social media using the hashtag #CongoWeek2014"
+      - 'Spread the word among organizations in your community or on your campus'
+      - 'Send an alert to local press'
+      - "Organize your materials for the day of. You will want postcard petitions, DVDs to be distributed, sign in sheet or computer for people to sign in at your event, fact sheets, pens, and snacks (optional). (http://congoweek.org/downloads.html)"
     other:
-      - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
+      - "Make posters and put them up (sample posters available in footer)"
+      - "Post your event on social media using the hashtag #CongoWeek2014"
+      - 'Spread the word among organizations in your community or on your campus'
+      - 'Send an alert to local press'
+      - "Organize your materials for the day of. You will want postcard petitions, DVDs to be distributed, sign in sheet or computer for people to sign in at your event, fact sheets, pens, and snacks (optional). (http://congoweek.org/downloads.html)"
   attendees_tasks:
     movie_screening:
       - 'Call 5-10 friends and invite them to come'
@@ -190,8 +202,17 @@ en:
       - 'Help with set up and/or clean up'
       - 'I want to do more! Contact me about getting more involved!'
     forum:
-      - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
+      - 'Call 5-10 friends and invite them to come'
+      - 'Publicize your event via social media using the hashtag #CongoWeek2014 (and ask others to do the same!) '
+      - 'Help with set up and/or clean up'
+      - 'I want to do more! Contact me about getting more involved!'
     concert:
-      - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
+      - 'Call 5-10 friends and invite them to come'
+      - 'Publicize your event via social media using the hashtag #CongoWeek2014 (and ask others to do the same!) '
+      - 'Help with set up and/or clean up'
+      - 'I want to do more! Contact me about getting more involved!'
     other:
-      - 'Go to the coordinator dashboard and create tasks you think will help to run a successful event'
+      - 'Call 5-10 friends and invite them to come'
+      - 'Publicize your event via social media using the hashtag #CongoWeek2014 (and ask others to do the same!) '
+      - 'Help with set up and/or clean up'
+      - 'I want to do more! Contact me about getting more involved!'

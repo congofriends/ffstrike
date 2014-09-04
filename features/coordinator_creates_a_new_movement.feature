@@ -15,3 +15,4 @@ Scenario: User deletes a complete movement
   When I create a movement
   And I delete a movement
   Then I can not see the movement on the team index page
+
