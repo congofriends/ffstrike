@@ -1,6 +1,7 @@
 function initializeGroupValidations() {
   $('#new-group-form').validate({
     rules: {
+      'movement[extended_description]':{required: true},
       'movement[name]': {
         required: true,
         remote: "/check_name"},
@@ -14,6 +15,7 @@ function initializeGroupValidations() {
       'user[password_confirmation]': {equalTo : "#user_password"}
     },
     messages: {
+      'movement[extended_description]':{required: I18n[window.gon.locale]['validations']['description']},
       'movement[name]': {
         required: I18n[window.gon.locale]['validations']['name'],
         remote: I18n[window.gon.locale]['validations']['existing_name']},

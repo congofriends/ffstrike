@@ -18,13 +18,9 @@
                 .col-md-8
                   = form.text_field :name, { class: 'form-control', :maxlength => 100, placeholder: "Friends of the Congo" }
               .form-group
-                = form.label :phone, t('.phone'), { class: 'col-md-4 control-label' }
+                = form.label :extended_description, t('.extended_description') + '*',  { class: 'col-md-4 control-label' }
                 .col-md-8
-                  = form.text_field :phone, { class: 'form-control' , placeholder: "333-123-4567"}
-              .form-group
-                = form.label :tagline, t('.tagline'), { class: 'col-md-4 control-label' }
-                .col-md-8
-                  = form.text_area :tagline, { class: 'form-control' , placeholder: "#CongoWeek" }
+                  = form.text_area :extended_description, { class: 'form-control', rows: "6"}
               .form-group
                 = form.label :website, t('.website'), { class: 'col-md-4 control-label' }
                 .col-md-8

@@ -15,7 +15,7 @@
                 = form.text_field :name, class: 'form-control', :maxlength => 100, placeholder: "Congo Cookout"
               .form-group.col-sm-12
                 = form.label :event_description, t('events.description') + " *"
-                = form.text_field :description, class: 'form-control', placeholder: "Cook out to raise funds for the Congo"
+                = form.text_area :description, class: 'form-control', rows: "6", placeholder: "Cook out to raise funds for the Congo"
               .event-date-time
                 .form-group.col-sm-4
                   = form.label t('events.edit.start_date') + " *"

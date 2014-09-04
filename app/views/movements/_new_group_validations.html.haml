@@ -2,11 +2,13 @@
   function initializeValidations() {
       $('#new_movement').validate({
         rules: {
+          'movement[extended_description]':{required: true},
           'movement[name]': {
             required: true,
             remote: "/check_name"}
         },
         messages: {
+          'movement[extended_description]':{requirwed: "#{t('validations.description') }" },
           'movement[name]': {
             required: "#{t('validations.name') }",
             remote: "#{t('validations.existing_name') }"}

@@ -315,7 +315,7 @@ en:
       location: "Location:"
       youtube_link: 'Youtube Link'
       tagline: "Tagline "
-      extended_description: "Extended Description:"
+      extended_description: "Extended Description"
       call_to_action: "Call To Action:"
       about_creator: "About Creator:"
       cancel_btn: 'Cancel'
@@ -359,7 +359,7 @@ en:
       location: "Location:"
       youtube_link: 'Youtube Link'
       tagline: "Tagline"
-      extended_description: "Extended Description:"
+      extended_description: "Extended Description"
       call_to_action: "Call To Action:"
       about_creator: "About Creator:"
       create_btn: 'Create Team'

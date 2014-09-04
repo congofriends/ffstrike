@@ -318,7 +318,7 @@ fr:
       create_btn: 'Créer du équipe'
       tagline: "Slogan: "
       call_to_action: "Appel à l'action:"
-      extended_description: "Description étendue:"
+      extended_description: "Description étendue"
       about_creator: "De Créateur:"
       thanks_msg: "Merci de créer une équipe pour le <<Congo Week>> pour encourage la paix et la justice dans le cœur de l'Afrique."
       explanation_msg: "Une fois le formulaire complété, les événements associés à votre équipe seront affichés."
@@ -329,7 +329,7 @@ fr:
       about_creator: "De Créateur:"
       tagline: "Slogan"
       call_to_action: "Appel à l'action:"
-      extended_description: "Extended Description:"
+      extended_description: "Extended Description"
       create_btn: 'Créer du équipe'
       avatar: "Image"
       website: "Website"
@@ -364,7 +364,6 @@ fr:
       network_message: 'Il ya %{number} équipes et en pleine croissance!'
       create_team: 'CRÉER UNE ÉQUIPE'
       team_information: "Une équipe est une groupe d'individus ou une organisation qui s'est jointe au mouvement du Congo pour organiser des  activités au sein de leur communauté locales afin de sensibiliser, d'informer et d'éduquer le public sur la situation au Congo. Aidez-nous à mettre sur pied des équipes partout dans le monde en partenariat avec congolais pour ramener la paix, la justice et la dignité humaine au cœur de l'Afrique."
-
   unauthenticated_submovements:
     new:
       name: *name
@@ -375,7 +374,7 @@ fr:
       create_btn: 'Créer du équipe'
       tagline: "Slogan: "
       call_to_action: "Appel à l'action:"
-      extended_description: "Description étendue:"
+      extended_description: "Description étendue"
       about_creator: "De Créateur:"
       thanks_msg: "Merci pour la création d'une Semaine équipe Congo pour soutenir la paix et la justice dans le cœur de l'Afrique."
       explanation_msg: "Une fois le formulaire complété, les événements associés à votre équipe seront affichés."
@@ -386,7 +385,6 @@ fr:
       about_creator: "De Créateur:"
       tagline: "Slogan:"
       call_to_action: "Appel à l'action:"
-      extended_description: "Extended Description:"
       create_btn: 'Créer du équipe'
       avatar: "Image"
       website: "Website"
