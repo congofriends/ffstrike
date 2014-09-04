@@ -16,10 +16,10 @@
               %legend= t("events.new.legend1")
               .form-group.col-sm-12
                 = label :event, :name, t("events.edit.name") + " *"
-                = text_field :event, :name, class: 'form-control', :maxlength => 130
+                = text_field :event, :name, class: 'form-control', :maxlength => 130, placeholder: 'Congo Cookout'
               .form-group.col-sm-12
                 = label :event, :description, t("events.description") + " *"
-                = text_field :event, :description, class: 'form-control'
+                = text_field :event, :description, class: 'form-control', placeholder: 'Cook out to raise funds for the Congo'
               .event-date-time
                 .form-group.col-sm-4
                   = label :event, :start_time, t("events.edit.start_date") + " *"
@@ -34,7 +34,7 @@
               .row
                 .form-group.col-sm-6
                   = label :event, :address, t("events.edit.address1")
-                  = text_field :event, :address, class: 'form-control'
+                  = text_field :event, :address, class: 'form-control', placeholder: '313 North Roosevelt Road'
                 .form-group.col-sm-6
                   = label :event, :address2, t("events.edit.address2")
                   = text_field :event, :address2, class: 'form-control'
