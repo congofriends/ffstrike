@@ -148,6 +148,7 @@ class EventsController < ApplicationController
     gon.event_images = []
     gon.times = []
     gon.addresses = []
+    gon.location_details = []
     gon.event_ids = []
     gon.event_pks = []
     gon.locale = I18n.locale.to_s
@@ -155,6 +156,7 @@ class EventsController < ApplicationController
       gon.event_pks << e.id
       gon.event_ids << e.to_param
       gon.addresses << e.location
+      gon.location_details << e.location_details
       gon.times << e.formatted_time
       gon.event_images << ActionController::Base.helpers.asset_path(e.image.url)
     end

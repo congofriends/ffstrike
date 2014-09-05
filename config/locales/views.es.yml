@@ -24,7 +24,7 @@ es:
     flyer_dl: "(Haga clic en el flyer para descargar)"
     when: "Cuando:"
     where: "Donde:"
-    location: "Los detalles de la ubicación:"
+    location: "Ubicación:"
     description: "Descripción:"
     organized_by: "Organizado por:"
     email_msg: "Asistentes a Eventos Correo Electrónico"

@@ -24,7 +24,7 @@ en:
     flyer_dl: "(click on the flyer to download)"
     when: "When:"
     where: "Where:"
-    location: "Location Details:"
+    location: "Location:"
     description: "Description:"
     organized_by: "Organized By:"
     email_msg: "Email Event Attendees"

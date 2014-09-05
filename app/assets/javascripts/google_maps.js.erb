@@ -6,6 +6,7 @@ ready = function () {
   var times;
   var event_images;
   var addresses;
+  var location_details;
   var event_ids;
   var locale;
   var event_types = [];
@@ -18,6 +19,7 @@ ready = function () {
     times = window.gon.times;
     event_images = window.gon.event_images;
     addresses = window.gon.addresses;
+    location_details = window.gon.location_details
     event_ids = window.gon.event_ids;
     event_pks = window.gon.event_pks;
     locale = window.gon.locale;
@@ -59,6 +61,7 @@ ready = function () {
         '<img src="' + event_images[i] + '" class="marker_image"></h4>' +
         '<div>' + event_types[i] + '</div>' + '<hr>' +
         '<h6>Where:</h6>' +
+        '<div>' + location_details[i] + '</div>' +
         '<div>' + addresses[i] + '</div>' +
         '<h6>When:</h6>' +
         '<div>' + times[i] + '</div></br>' +

@@ -24,7 +24,7 @@ fr:
     flyer_dl: "(Cliquez sur le dépliant à télécharger)"
     when: "quand:"
     where: "Où:"
-    location: "Détails d'emplacement:"
+    location: "Emplacement"
     description: "Description:"
     organized_by: "Organisé par"
     email_msg: "E-mail participants à un événement"
