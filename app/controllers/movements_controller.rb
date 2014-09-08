@@ -61,9 +61,6 @@ class MovementsController < ApplicationController
 
   def show
     redirect_to root_path and return unless @movement
-    load_event_types
-    get_approved_events
-    load_map_vars
 
     if @movement.parent.nil?
       render "show"
@@ -140,10 +137,6 @@ class MovementsController < ApplicationController
     redirect_to request.referer
   end
 
-  def event_type
-    load_event_types
-  end
-
   def support_network
     @support_network =  Movement.where(parent_id: @movement)
   end
@@ -179,33 +172,12 @@ class MovementsController < ApplicationController
     @event_types = EventType.names
   end
 
-  def load_map_vars
-    gon.events = @movement.events.reject { |e| e.latitude.nil? || e.longitude.nil? }
-    gon.event_types = EventType.all
-    gon.event_images = []
-    gon.times = []
-    gon.addresses = []
-    gon.event_ids = []
-    gon.event_pks = []
-    gon.events.each do |e|
-      gon.event_pks << e.id
-      gon.event_ids << e.to_param
-      gon.addresses << e.location
-      gon.times << e.formatted_time
-      gon.event_images << ActionController::Base.helpers.asset_path(e.image.url)
-    end
-  end
-
   def load_countdown_urls
     @countdown_urls = {
                         en: "http://free.timeanddate.com/countdown/i4a6f1qx/n64/cf12/cm0/cu4/ct1/cs0/ca0/co0/cr0/ss0/cacfff/cpcfff/pct/tcfff/fs200/szw576/szh243/iso2014-10-19T00:00:00",
                         es: "http://free.timeanddate.com/countdown/i4a6f1qx/n64/cf12/cm0/cu4/ct1/cs0/ca0/co0/cr0/ss0/cacfff/cpcfff/pct/tcfff/fs200/szw576/szh243/iso2014-10-19T00:00:00",
                         fr: "http://free.timeanddate.com/countdown/i4a6f1qx/n64/cf12/cm0/cu4/ct1/cs0/ca0/co0/cr0/ss0/cacfff/cpcfff/pct/tcfff/fs200/szw576/szh243/iso2014-10-19T00:00:00"
                       }
-  end
-
-  def get_approved_events
-    @approved_events = @movement.events.select {|e| e.approved == true}
   end
 
   def check_user_owns_movement
