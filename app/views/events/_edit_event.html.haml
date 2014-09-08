@@ -63,7 +63,7 @@
           = f.label t("events.edit.avatar")
           = image_tag event.image, class: 'front-page img-responsive'
           = f.file_field :image
-        = t('static_pages.mission.organizer_toolkit')
+        %strong= t('static_pages.mission.organizer_toolkit')
         = link_to t('static_pages.mission.link'), "http://congoweek.org/downloads.html", :target => '_blank', id: 'organizer-link'
         .row
           .form-group.col-sm-3{:style => "float: right;"}
