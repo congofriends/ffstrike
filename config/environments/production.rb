@@ -5,6 +5,7 @@ Ffstrike::Application.configure do
     :s3_credentials => { :bucket => ENV['AWS_BUCKET'],
                          :access_key_id => ENV['AWS_ACCESS_KEY'],
                          :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'] },
+    # :path => 'attachments/:class/:attachment/:id/:style/:filename'
     :path => 'attachments/:class/:id/:style/:basename.:extension'
   }
 
