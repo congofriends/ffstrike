@@ -55,7 +55,7 @@ class Devise::RegistrationsController < DeviseController
     else
       clean_up_passwords resource
       # better validations
-      redirect_to :back, notice: "Please check your fields." and return
+      redirect_to :back, alert: "Please check your fields." and return
 
       respond_with resource3
     end
