@@ -13,7 +13,8 @@ class UsersController < Devise::RegistrationsController
   end
 
   def new_attendee_user
-    @event = Event.find params[:event]
+    @event = Event.where(id: params[:event]).first
+    redirect_to root_path and return unless @event
     @attendance = Attendance.new
     @user = current_user ? current_user : User.new
   end
