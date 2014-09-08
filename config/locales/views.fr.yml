@@ -73,6 +73,7 @@ fr:
       event_team_msg: "Si cet événement est associé à une équipe, veuillez choisir ici:"
       forum_msg: "Inclure un forum de discussion pour l'événement pour les participants:"
       avatar_size: "(Dimension de l'image Recommandée: 250 x 175)"
+      event_type_notice: "Le type d'événement ne peut pas être modifié après le dépôt de ce formulaire"
       name: "Votre nom"
       email: "Votre e-mail"
       phone: "Numéro de téléphone:"

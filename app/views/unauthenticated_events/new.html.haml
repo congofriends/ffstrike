@@ -72,8 +72,10 @@
                 = label :event, :notes, t("events.new.msg_to_attendees")
                 = text_field :event, :notes, class: 'form-control'
               .form-group
-                = label :event, :type_id, t("events.new.event_type") + " *"
+                = label :event, :type_id, "* " + t("events.new.event_type")
                 = select :event, :event_type, EventType.all.map(&:name), class: 'form-control'
+                %p#avatar-size
+                  =t("events.new.event_type_notice")
               .row
                 #fundraise_div{class: :hidden}
                   #agreement{class: "terms"}

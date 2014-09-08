@@ -70,6 +70,7 @@ es:
       account_exist: "Si tengas una cuenta existente, Por Favor "
       msg_to_attendees: "Escribir un breve mensaje a asistentes a eventos:"
       avatar_size: "(Recomendada Imagen Dimensión 250 x 175)"
+      event_type_notice: "El Tipo de evento no se puede cambiar después de la presentación de este formulario"
       event_type: 'Tipo de evento:'
       event_team_msg: "Si cet événement est associé à une équipe, veuillez choisir ici:"
       forum_msg: "Incluir una de las asistentes foro de debate sobre este evento:"
