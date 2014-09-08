@@ -81,7 +81,8 @@ class EventsController < ApplicationController
     @event = @movement.events.build(event_params)
     if @event.save
       clear_fields_on_tbd
-      NewEventMailWorker.perform_async(current_user.id, @event.id) if ENV["RAILS_ENV"] == "production"
+      UserMailer.event_creation_message(current_user.id, @event.id)
+      # NewEventMailWorker.perform_async(current_user.id, @event.id) if ENV["RAILS_ENV"] == "production"
       @event.assign_host(current_user)
       redirect_to explanation_path(@event), notice: t('event.created') and return
     else
