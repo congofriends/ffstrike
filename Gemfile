@@ -92,6 +92,9 @@ group :production, :staging do
   gem 'rails_12factor'
   gem 'heroku-deflater'
   gem 'newrelic_rpm'
+  # Use unicorn as the app server
+  gem 'unicorn'
+  gem 'unicorn-worker-killer'
 end
 
 group :doc do
@@ -113,8 +116,6 @@ gem 'slim'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
-# Use unicorn as the app server
-gem 'unicorn'
 
 #Provides countries for dropdown selection
 gem 'carmen-rails'

@@ -3,7 +3,8 @@ class UserMailer < ActionMailer::Base
   default from: "coordinator@congoevents.org"
 
   def delete_event_message(event_id)
-    @event = Event.find event_id
+    @event = Event.where(id: event_id).first
+    return unless @event
     @attendee_emails = []
     @event.attendees.each { |attendee| @attendee_emails << attendee.email }
     mail(to: @event.host.email, bcc: @attendee_emails, subject: "Your event has been canceled.").deliver
