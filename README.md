@@ -23,3 +23,8 @@ As a developer on this project you need to be aware of a few things we've done f
  2. Manage translations with a power of static analysis by using [I18n-tasks](https://github.com/glebm/i18n-tasks)
       * their github page is pretty explanatory. Please, refer to [usage section](https://github.com/glebm/i18n-tasks#usage)
       * configuration file is `config/i18n-tasks.yml`w
+
+PerfTools RSpec Performance Analyzer (gem: perftools)
+==============
+1. Run rspec
+2. Run pprof.rb --text  /tmp/rspec_profile
