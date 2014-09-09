@@ -13,5 +13,7 @@
   = favicon_link_tag '/favicon.ico'
   = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBbtk27nVgvIulQCz60VwgdY0rLBAXdwgg&sensor=false"
   :javascript
-    window.I18n = #{I18n.backend.send(:translations).to_json.html_safe}
+    window.I18n.en = #{I18n.backend.send(:translations)[:en].to_json.html_safe}
+    window.I18n.es = #{I18n.backend.send(:translations)[:es].to_json.html_safe}
+    window.I18n.fr = #{I18n.backend.send(:translations)[:fr].to_json.html_safe}
   = yield :head
