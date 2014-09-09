@@ -94,9 +94,23 @@ function goToPreviousStep(button) {
   previous_fieldset.show();
 }
 
+function new_events_page() {
+  return location.pathname.match(/new/) != null;
+};
+
+function my_events_page() {
+  return location.pathname.match(/my_events/) != null;
+};
+
 $(document).ready(function() {
-  initializeValidations();
-  initializeEditEventValidations();
+
+  if(new_events_page()){
+    initializeValidations();
+  }
+
+  if(my_events_page()){
+    initializeEditEventValidations();
+  }
 
   $(".next").click(function() {
     goToNextStep(this);

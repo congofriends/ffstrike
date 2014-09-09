@@ -31,6 +31,12 @@ function initializeProfileValidations() {
   });
 };
 
+function my_profile_page() {
+  return location.pathname.match(/profile/) != null;
+};
+
 $(document).ready(function() {
-  initializeProfileValidations();
+  if(my_profile_page()){
+    initializeProfileValidations();
+  }
 });

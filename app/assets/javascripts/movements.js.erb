@@ -85,6 +85,14 @@ function goToGroupPreviousStep(button) {
   previous_fieldset.show();
 }
 
+function new_team_user_page() {
+  return location.pathname.match(/unauthenticated_submovements/) != null;
+};
+
+function my_groups_page() {
+  return location.pathname.match(/my_groups/)  != null;
+};
+
 $(document).ready(function() {
   $(".count-down").countdown({until: new Date(2014, 10 - 1, 18), format: 'dHMS'});
 
@@ -98,8 +106,14 @@ $(document).ready(function() {
 
 /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
-  initializeGroupValidations();
-  initializeEditGroupValidations();
+
+  if(new_team_user_page()){
+    initializeGroupValidations();
+  }
+
+  if(my_groups_page()){
+    initializeEditGroupValidations();
+  }
 
  //activate first nav-tab and tab-content if nothing is activated currently
  var elementAlreadyActive = false;
@@ -159,14 +173,6 @@ if(!not_my_groups_page()){
  if(window.location.hash) {
    refreshHash();
  }
-
-function not_dashboard_page() {
-  return location.pathname.match(/dashboard/) == null;
-};
-
-function new_unauthenticated_event_page() {
-  return location.pathname.match(/unauthenticated_events/) != null;
-};
 
 $("#map").on("click", function() {
   $("#map-canvas").slideToggle();
