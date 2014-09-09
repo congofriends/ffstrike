@@ -16,6 +16,12 @@ GIT
       cocaine (~> 0.5.3)
       mime-types
 
+GIT
+  remote: git://github.com/tmm1/perftools.rb.git
+  revision: 4d24d86db7ee177b0bec83f9ce65b1f05ff613b4
+  specs:
+    perftools.rb (2.0.1)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -436,6 +442,7 @@ DEPENDENCIES
   omniauth-facebook
   paperclip!
   pdfkit
+  perftools.rb!
   pg (= 0.15.1)
   poltergeist
   pry
