@@ -4,7 +4,7 @@
     window.I18n.es = #{I18n.backend.send(:translations)[:es].to_json.html_safe}
     window.I18n.fr = #{I18n.backend.send(:translations)[:fr].to_json.html_safe}
 =image_tag Movement.first.image, class: "bg"
-.container.no-header{:style => "width: 800px;"}
+.container.no-header
   .row
     %h2#host_event
       %strong= t('.congo_week_content')

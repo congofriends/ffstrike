@@ -16,7 +16,7 @@
 #   end
 # end
 
-unless Rails.env.test?
+if ENV['RAILS_ENV'] == 'production'
   I18n::Backend::Simple.send(:include, I18n::Backend::Cache)
   I18n.cache_store = ActiveSupport::Cache.lookup_store(:dalli_store)
 end

@@ -1,8 +1,8 @@
 =image_tag Movement.first.image, class: "bg"
 .col-md-4.col-md-offset-4
-  %div.content-header.container{:style => "width: 350px;"}
+  %div.content-header.container{:style => "width: 100%; max-width: 350px;"}
     %h2.text-center.header-text Sign In
-  .container{:style => "width: 350px;"}
+  .container{:style => "width: 100%; max-width: 350px;"}
     .form-horizontal
       = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
         %fieldset

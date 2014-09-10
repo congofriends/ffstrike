@@ -1,6 +1,6 @@
 /* jQuery Countdown styles 2.0.0. */
 .is-countdown {
-
+	width: 100%;
 }
 .countdown-rtl {
 	direction: rtl;
@@ -48,7 +48,7 @@
   border-bottom-style: solid;
 }
 .countdown-amount {
-    font-size: 200%;
+  font-size: 200%;
 }
 .countdown-period {
   display: inline;
@@ -58,4 +58,9 @@
 .countdown-descr {
 	display: block;
 	width: 100%;
+}
+
+@media only screen and (max-width: 480px) {
+	.countdown-amount { font-size: 130%;}
+	.countdown-period { font-size: 100%;}
 }
