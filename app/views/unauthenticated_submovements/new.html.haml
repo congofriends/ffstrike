@@ -1,8 +1,5 @@
-- content_for :head do
-  :javascript
-    window.I18n.en = #{I18n.backend.send(:translations)[:en].to_json.html_safe}
-    window.I18n.es = #{I18n.backend.send(:translations)[:es].to_json.html_safe}
-    window.I18n.fr = #{I18n.backend.send(:translations)[:fr].to_json.html_safe}
+- unless Rails.env.test?
+  - render partial: 'shared/load_i18n_translations'
 =image_tag Movement.first.image, class: "bg"
 .container.no-header
   .row
