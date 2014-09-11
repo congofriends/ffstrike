@@ -7,7 +7,7 @@
   %td= link_to raw('<i class="glyphicon glyphicon-remove"></i>') , event_task_path(event, task.id), method: :delete, data: { confirm: t('tasks.delete_confirm', task_description: task.description )}, remote: true
 %tr.collapse{id: "task#{task.id}"}
   %td{colspan: "4"}
-    %table.table.table-bordered.table-striped.sortable#task-attendee-table
+    %table.responsive.table.table-bordered.table-striped.sortable#task-attendee-table
       %tr
         %th= t('events.name')
         %th= t('events.email')

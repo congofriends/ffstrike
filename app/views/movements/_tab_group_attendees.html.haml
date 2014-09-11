@@ -2,7 +2,7 @@
   .well
     %h3
       =t('.coordinators')
-    %table.table.table-bordered.table-striped.sortable#group-attendees-table
+    %table.responsive.table.table-bordered.table-striped.sortable#group-attendees-table
       %tr
         %th
           =t('.name_cl')
@@ -30,7 +30,7 @@
     -unless @congo_week
       %h3
         =t('.team-members')
-      %table.table.table-bordered.table-striped.sortable#group-attendees-table
+      %table.responsive.table.table-bordered.table-striped.sortable#group-attendees-table
         %tr
           %th
             =t('.name_cl')
@@ -54,7 +54,7 @@
           = link_to_modal t('.email_members'), new_members_msg_path(@group), class: 'btn ctrl-btn btn-host'
     %h3
       =t('.hosts')
-    %table.table.table-bordered.table-striped.sortable#group-attendees-table
+    %table.responsive.table.table-bordered.table-striped.sortable#group-attendees-table
       %tr
         %th
           =t('.name_cl')
@@ -81,7 +81,7 @@
 
     %h3
       =t('.attendees')
-    %table.table.table-bordered.table-striped.sortable#group-attendees-table
+    %table.responsive.table.table-bordered.table-striped.sortable#group-attendees-table
       %tr
         %th
           =t('.name_cl')
