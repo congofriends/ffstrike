@@ -5,7 +5,6 @@ class EventsController < ApplicationController
   before_filter :load_event_types, :only => [:edit]
 
   include ZipHelper
-  include I18nHelper
 
   def new
     redirect_to new_user_session_path and return unless current_user

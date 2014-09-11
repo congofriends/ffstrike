@@ -17,20 +17,20 @@ function initializeValidations() {
       'user[password_confirmation]': {equalTo : "#user_password"}
     },
     messages: {
-      'event[name]': I18n[window.gon.locale]['validations']['name'],
-      'event[start_time]': I18n[window.gon.locale]['validations']['start_time'],
-      'event[address]': I18n[window.gon.locale]['validations']['address'],
-      'event[city]': I18n[window.gon.locale]['validations']['city'],
-      'event[country]': I18n[window.gon.locale]['validations']['country'],
-      'event[description]': I18n[window.gon.locale]['validations']['description'],
-      'user[name]': I18n[window.gon.locale]['validations']['first_name'],
-      'user[surname]': I18n[window.gon.locale]['validations']['surname'],
+      'event[name]': I18n[window.gon.locale]['name'],
+      'event[start_time]': I18n[window.gon.locale]['start_time'],
+      'event[address]': I18n[window.gon.locale]['address'],
+      'event[city]': I18n[window.gon.locale]['city'],
+      'event[country]': I18n[window.gon.locale]['country'],
+      'event[description]': I18n[window.gon.locale]['description'],
+      'user[name]': I18n[window.gon.locale]['first_name'],
+      'user[surname]': I18n[window.gon.locale]['surname'],
       'user[email]': {
-            required: I18n[window.gon.locale]['validations']['email'],
-            email: I18n[window.gon.locale]['validations']['valid_email'],
-            remote: I18n[window.gon.locale]['validations']['existing_email']},
-      'user[password]': I18n[window.gon.locale]['validations']['password'],
-      'user[password_confirmation]': I18n[window.gon.locale]['validations']['current_pass'],
+            required: I18n[window.gon.locale]['email'],
+            email: I18n[window.gon.locale]['valid_email'],
+            remote: I18n[window.gon.locale]['existing_email']},
+      'user[password]': I18n[window.gon.locale]['password'],
+      'user[password_confirmation]': I18n[window.gon.locale]['current_pass'],
     },
     errorElement: "div",
     errorClass: "text-danger",
@@ -54,10 +54,10 @@ function initializeEditEventValidations() {
         'event[description]': { required: true }
       },
       messages: {
-        'event[name]': I18n[window.gon.locale]['validations']['name'],
-        'event[city]': I18n[window.gon.locale]['validations']['city'],
-        'event[country]': I18n[window.gon.locale]['validations']['country'],
-        'event[description]': I18n[window.gon.locale]['validations']['description']
+        'event[name]': I18n[window.gon.locale]['name'],
+        'event[city]': I18n[window.gon.locale]['city'],
+        'event[country]': I18n[window.gon.locale]['country'],
+        'event[description]': I18n[window.gon.locale]['description']
       },
       errorElement: "div",
       errorClass: "text-danger",

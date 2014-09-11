@@ -15,18 +15,18 @@ function initializeGroupValidations() {
       'user[password_confirmation]': {equalTo : "#user_password"}
     },
     messages: {
-      'movement[extended_description]':{required: I18n[window.gon.locale]['validations']['description']},
+      'movement[extended_description]':{required: I18n[window.gon.locale]['description']},
       'movement[name]': {
-        required: I18n[window.gon.locale]['validations']['name'],
-        remote: I18n[window.gon.locale]['validations']['existing_name']},
-      'user[name]': I18n[window.gon.locale]['validations']['first_name'],
-      'user[surname]': I18n[window.gon.locale]['validations']['surname'],
+        required: I18n[window.gon.locale]['name'],
+        remote: I18n[window.gon.locale]['existing_name']},
+      'user[name]': I18n[window.gon.locale]['first_name'],
+      'user[surname]': I18n[window.gon.locale]['surname'],
       'user[email]': {
-            required: I18n[window.gon.locale]['validations']['email'],
-            email: I18n[window.gon.locale]['validations']['valid_email'],
-            remote: I18n[window.gon.locale]['validations']['existing_email']},
-      'user[password]': I18n[window.gon.locale]['validations']['password'],
-      'user[password_confirmation]': I18n[window.gon.locale]['validations']['country']
+            required: I18n[window.gon.locale]['email'],
+            email: I18n[window.gon.locale]['valid_email'],
+            remote: I18n[window.gon.locale]['existing_email']},
+      'user[password]': I18n[window.gon.locale]['password'],
+      'user[password_confirmation]': I18n[window.gon.locale]['country']
     },
     errorElement: "div",
     errorClass: "text-danger",
@@ -47,7 +47,7 @@ function initializeEditGroupValidations() {
       'movement[name]': {required: true}
     },
     messages: {
-      'movement[name]': I18n[window.gon.locale]['validations']['name']
+      'movement[name]': I18n[window.gon.locale]['name']
     },
 
     errorElement: "div",
