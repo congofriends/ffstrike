@@ -129,4 +129,3 @@ gem 'jquery-countdown-rails'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# gem 'perftools.rb', :git => 'git://github.com/tmm1/perftools.rb.git'

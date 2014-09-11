@@ -17,14 +17,9 @@ As a developer on this project you need to be aware of a few things we've done f
 :w
  1. Raise an exception on missing translations for test and development ENVs.
      Code for that is here: [config/initializers/i18n.rb](https://github.com/ThoughtWorksInc/ffstrike/blob/master/config/initializers/i18n.rb)
->    **NOTE:**    
+>    **NOTE:**
 >     If you see the exception in one of these environments, it means that locale key usused in the view is missing and it is your responsobility to fix it in the locales files. Make sure to verify it for EN/ES/FR languages.
- 
+
  2. Manage translations with a power of static analysis by using [I18n-tasks](https://github.com/glebm/i18n-tasks)
       * their github page is pretty explanatory. Please, refer to [usage section](https://github.com/glebm/i18n-tasks#usage)
       * configuration file is `config/i18n-tasks.yml`w
-
-PerfTools RSpec Performance Analyzer (gem: perftools)
-==============
-1. Run rspec
-2. Run pprof.rb --text  /tmp/rspec_profile
