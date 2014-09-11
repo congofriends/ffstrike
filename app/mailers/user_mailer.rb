@@ -7,7 +7,7 @@ class UserMailer < ActionMailer::Base
     return unless @event
     @attendee_emails = []
     @event.attendees.each { |attendee| @attendee_emails << attendee.email }
-    mail(to: @event.host.email, bcc: @attendee_emails, subject: "Your event has been canceled.").deliver
+    mail(to: @event.host.email, bcc: @attendee_emails, subject: "#{@event.name} has been canceled.").deliver
   end
 
   def delete_movement_message(movement_id)
@@ -15,7 +15,7 @@ class UserMailer < ActionMailer::Base
     return unless @movement
     @members_emails = []
     @movement.members.each { |member| @members_emails << member.email }
-    mail(to: @members_emails, subject: "Your team has been removed.").deliver
+    mail(to: @members_emails, subject: "#{@movement.name} has been removed.").deliver
   end
 
   def task_signup_message(event_id, task_id, attendee_id)
@@ -44,7 +44,7 @@ class UserMailer < ActionMailer::Base
     @recipient = User.find user_id
     @event = Event.where(id: event_id).first
     return unless @event
-    mail(to: @recipient.email, subject: "Thanks for participating in the event").deliver
+    mail(to: @recipient.email, subject: "Thanks for participating in the event: #{@event.name}").deliver
   end
 
   def reminder_message(user_id, event_id)

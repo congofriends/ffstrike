@@ -103,12 +103,12 @@ describe UserMailer do
       mail.to.should eq [event.host.email]
     end
     it "has correct body" do
-      mail.body.encoded.should include "We're sorry, your event,"
+      mail.body.encoded.should include "We're sorry, "
       mail.body.encoded.should include event.name
-      mail.body.encoded.should include "has been canceled!"
+      mail.body.encoded.should include " has been canceled!"
     end
     it "has correct subject" do
-      mail.subject.should eq "Your event has been canceled."
+      mail.subject.should eq "#{event.name} has been canceled."
     end
   end
 
@@ -136,14 +136,12 @@ describe UserMailer do
       mail.to.should include user_attendee.email
     end
     it "has correct body" do
-      mail.body.encoded.should include "We're sorry, your team, "
+      mail.body.encoded.should include "We're sorry, "
       mail.body.encoded.should include movement.name
-      mail.body.encoded.should include ", has been removed! Please contact "
-      mail.body.encoded.should include movement.name
-      mail.body.encoded.should include "'s coordinators if you have any questions."
+      mail.body.encoded.should include " has been removed!"
     end
     it "has correct subject" do
-      mail.subject.should eq "Your team has been removed."
+      mail.subject.should eq "#{movement.name} has been removed."
     end
   end
 end
