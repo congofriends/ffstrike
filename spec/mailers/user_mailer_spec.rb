@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe UserMailer do
 
-  let!(:user_attendee) { FactoryGirl.create(:user) }
+  let!(:user_attendee) { FactoryGirl.create(:user, email: "bob@bob.com") }
   let!(:movement) { FactoryGirl.create(:movement) }
   let!(:ownership) { FactoryGirl.create(:ownership, movement: movement, user: user_attendee) }
   let!(:another_user) { FactoryGirl.create(:user, email: "another_user@example.com") }
@@ -125,6 +125,25 @@ describe UserMailer do
     end
     it "has correct subject" do
       mail.subject.should eq "Thanks for attending: #{event.name}"
+    end
+  end
+
+  describe "#delete_movement_message" do
+
+    let(:mail) { UserMailer.delete_movement_message(movement.id) }
+
+    it "sends to attendees" do
+      mail.to.should include user_attendee.email
+    end
+    it "has correct body" do
+      mail.body.encoded.should include "We're sorry, your team, "
+      mail.body.encoded.should include movement.name
+      mail.body.encoded.should include ", has been removed! Please contact "
+      mail.body.encoded.should include movement.name
+      mail.body.encoded.should include "'s coordinators if you have any questions."
+    end
+    it "has correct subject" do
+      mail.subject.should eq "Your team has been removed."
     end
   end
 end

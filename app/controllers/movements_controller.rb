@@ -87,6 +87,9 @@ class MovementsController < ApplicationController
   end
 
   def destroy
+    authenticate_user!
+    UserMailer.delete_movement_message(@movement.id)
+
     @team = Movement.find params[:id].split("-").last
     @team.destroy
 

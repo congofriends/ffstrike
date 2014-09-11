@@ -10,6 +10,14 @@ class UserMailer < ActionMailer::Base
     mail(to: @event.host.email, bcc: @attendee_emails, subject: "Your event has been canceled.").deliver
   end
 
+  def delete_movement_message(movement_id)
+    @movement = Movement.where(id: movement_id).first
+    return unless @movement
+    @members_emails = []
+    @movement.members.each { |member| @members_emails << member.email }
+    mail(to: @members_emails, subject: "Your team has been removed.").deliver
+  end
+
   def task_signup_message(event_id, task_id, attendee_id)
     @event = Event.find event_id
     @task = Task.find task_id

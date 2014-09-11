@@ -2,8 +2,10 @@ require 'spec_helper'
 
 describe MovementsController do
 
-  let(:user){FactoryGirl.create(:user)}
+  let(:user){FactoryGirl.create(:user, email: "bob@bob.com")}
   let(:movement) { FactoryGirl.create(:published_movement) }
+  let!(:membership) { FactoryGirl.create(:membership, movement: movement, user: user) }
+
 
   before :each do
     controller.stub(:current_user).and_return(user)
