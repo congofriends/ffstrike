@@ -9,7 +9,7 @@ require 'pry-rescue/minitest'
 require 'pry-rescue/rspec'
 require 'capybara/rspec'
 require 'capybara/rails'
-require 'perftools'
+# require 'perftools'
 
 Capybara.javascript_driver = :webkit
 
@@ -60,12 +60,12 @@ RSpec.configure do |config|
   config.include Devise::TestHelpers, :type => :controller
 end
 
-RSpec.configure do |config|
-  config.before :suite do
-    PerfTools::CpuProfiler.start("/tmp/rspec_profile")
-  end
+# RSpec.configure do |config|
+#   config.before :suite do
+#     PerfTools::CpuProfiler.start("/tmp/rspec_profile")
+#   end
 
-  config.after :suite do
-    PerfTools::CpuProfiler.stop
-  end
-end
+#   config.after :suite do
+#     PerfTools::CpuProfiler.stop
+#   end
+# end
