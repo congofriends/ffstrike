@@ -1,5 +1,6 @@
-- content_for :head do
-  :javascript
-    window.I18n.en = #{I18n.backend.send(:translations)[:en][:validations].to_json.html_safe}
-    window.I18n.es = #{I18n.backend.send(:translations)[:es][:validations].to_json.html_safe}
-    window.I18n.fr = #{I18n.backend.send(:translations)[:fr][:validations].to_json.html_safe}
+- if I18n.backend.initialized?
+	- content_for :head do
+		:javascript
+			window.I18n.en = #{I18n.backend.send(:translations)[:en][:validations].to_json.html_safe}
+			window.I18n.es = #{I18n.backend.send(:translations)[:es][:validations].to_json.html_safe}
+			window.I18n.fr = #{I18n.backend.send(:translations)[:fr][:validations].to_json.html_safe}
