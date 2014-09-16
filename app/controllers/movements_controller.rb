@@ -1,4 +1,6 @@
 class MovementsController < ApplicationController
+  skip_before_filter :check_request_exception
+  prepend_before_filter :return_404_on_json_errors
   before_filter :load_movement, except: [:new, :create, :index, :my_profile, :new_submovement, :my_groups, :check_name, :cancel_ownership, :cancel_membership]
   before_filter :load_movements, only: [:index, :search]
 
@@ -188,4 +190,13 @@ class MovementsController < ApplicationController
       redirect_to root_path, alert: t('movement.not_yours')
     end
   end
+
+  def return_404_on_json_errors
+    if e = request_exception && e.is_a?(ActiveSupport::JSON::ParseError)
+      head 404
+    else
+      return
+    end
+  end
+
 end
