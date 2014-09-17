@@ -17,10 +17,10 @@
               %legend= t("events.new.legend1")
               .form-group.col-sm-12
                 = label :event, :name, t("events.edit.name") + " *"
-                = text_field :event, :name, class: 'form-control', :maxlength => 130, placeholder: 'Congo Cookout'
+                = text_field :event, :name, class: 'form-control', maxlength: 130, placeholder: "Congo Movie Screening"
               .form-group.col-sm-12
                 = label :event, :description, t("events.description") + " *"
-                = text_area :event, :description, class: 'form-control', rows: "6", placeholder: 'Cook out to raise funds for the Congo'
+                = text_area :event, :description, class: 'form-control', rows: "6", placeholder: "In honor of this year's Congo Week, our organization is screening a documentary that will explore the roles nations all over the world have played in triggering the greatest humanitarian crisis at the dawn of the 21st century."
               .event-date-time
                 .form-group.col-sm-4
                   = label :event, :start_time, t("events.edit.start_date") + " *"
@@ -38,18 +38,18 @@
                   = text_field :event, :address, class: 'form-control', placeholder: '313 North Roosevelt Road'
                 .form-group.col-sm-6
                   = label :event, :address2, t("events.edit.address2")
-                  = text_field :event, :address2, class: 'form-control'
+                  = text_field :event, :address2, class: 'form-control', placeholder: "APT #212"
               .row
                 .form-group.col-sm-6
                   = label :event,:city, t("events.edit.city") + " *"
-                  = text_field :event,:city, class: 'form-control'
+                  = text_field :event,:city, class: 'form-control', placeholder: "Chicago"
                 .form-group.col-sm-6
                   = label :event,:state, t("events.edit.state")
-                  = text_field :event,:state, class: 'form-control'
+                  = text_field :event,:state, class: 'form-control', placeholder: "Illinois"
               .row
                 .form-group.col-sm-6
                   = label :event,:zip, t("events.edit.zip")
-                  = text_field :event,:zip, class: 'form-control'
+                  = text_field :event,:zip, class: 'form-control', placeholder: "60606"
                 .form-group.col-sm-6
                   = label :event, :country, t('events.edit.country') + " *"
                   = country_select :event, :country, priority: %w(CD US CA), prompt: 'Please select a country', class: 'form-control'
@@ -71,7 +71,7 @@
                   =t("events.new.avatar_size")
               .form-group
                 = label :event, :notes, t("events.new.msg_to_attendees")
-                = text_field :event, :notes, class: 'form-control'
+                = text_area :event, :notes, class: 'form-control', rows: "2", maxlength: 200, placeholder: "Thank you for signing up to attend the movie screening...!"
               .form-group
                 = label :event, :type_id, "* " + t("events.new.event_type")
                 = select :event, :event_type, EventType.all.map(&:name), class: 'form-control'
