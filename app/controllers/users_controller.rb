@@ -28,6 +28,8 @@ class UsersController < Devise::RegistrationsController
 
   def create_member_user
     user.update(phone: params[:user][:phone]) if params[:user][:phone]
+    user.update(password: params[:user][:password])
+
 
     @team_id = params[:user][:team_id]
     @team ||= Movement.find(@team_id)
@@ -49,6 +51,7 @@ class UsersController < Devise::RegistrationsController
 
   def create_attendee_user
     user.update(phone: params[:user][:phone]) if params[:user][:phone]
+    user.update(password: params[:user][:password])
 
     @event_id = params[:user][:event_id]
     @event ||= Event.find(@event_id)

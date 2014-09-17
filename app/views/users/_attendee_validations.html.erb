@@ -7,7 +7,9 @@
           'user[email]': {
             required: true,
             email: true,
-            remote: "/check_email" }
+            remote: "/check_email" },
+          'user[password]': {required: true},
+          'user[password_confirmation]': {equalTo : "#user_password"}
         },
         messages: {
           'user[name]': "<%= t('validations.first_name') %>",
@@ -15,7 +17,9 @@
           'user[email]': {
             required: "<%= t('validations.email') %>",
             email: "<%= t('validations.valid_email') %>",
-            remote: "<%= t('validations.existing_email') %>"}
+            remote: "<%= t('validations.existing_email') %>"},
+          'user[password]': "<%= t('validations.password') %>",
+          'user[password_confirmation]': "<%= t('validations.current_pass') %>"
         },
         errorElement: "div",
         errorClass: "text-danger",
