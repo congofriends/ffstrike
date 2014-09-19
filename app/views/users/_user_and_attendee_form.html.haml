@@ -24,7 +24,7 @@
 		.form-group.label-field
 			= f.label t('.email')
 			= f.email_field :email, class: "form-control"
-			%p.text-info.large.strong= t('.check_email_for_password')
+
 
 			= f.hidden_field :event_id, value: @event.id
 
