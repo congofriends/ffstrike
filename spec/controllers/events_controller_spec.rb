@@ -7,14 +7,6 @@ describe EventsController do
   let!(:ownership){FactoryGirl.create(:ownership, user: coordinator, movement: movement)}
   let(:event) {FactoryGirl.create(:event, movement: movement)}
 
-  describe "GET #explanation" do
-    it "responds successfully" do
-      sign_in coordinator
-      get :explanation, id: event
-      expect(response).to be_success
-    end
-  end
-
   describe "DELETE #delete" do
 
     it "deletes the event" do
@@ -96,16 +88,16 @@ describe EventsController do
       context "as a coordinator" do
         before :each do
           @controller.stub(:current_user).and_return(coordinator)
-          event = FactoryGirl.attributes_for(:event, movement: movement).merge(host_id: coordinator.id)
-          post :create, movement_id: movement, event: event
+          event = FactoryGirl.attributes_for(:event).merge(host_id: coordinator.id)
+          post :create, event: event
         end
 
         it "notifies the user that event was created" do
           flash[:notice].should == I18n.t('event.created')
         end
 
-        it "redirects to the explanation page" do
-          expect(response).to redirect_to explanation_path(Event.last)
+        it "redirects to the events edit page" do
+          expect(response).to redirect_to my_events_path
         end
 
         it "creates an approved event", :broken => true do
@@ -118,12 +110,12 @@ describe EventsController do
 
         it "sets host to event creator", :broken => true do
           event = FactoryGirl.attributes_for(:event, movement: movement).merge(host_id: coordinator.id)
-          post :create, movement_id: movement, event: event
+          post :create, event: event
           expect(Event.last.host).to eq(visitor)
         end
 
-        it "redirects to the explanation page" do
-          expect(response).to redirect_to explanation_path(Event.last)
+        it "redirects to the events edit page" do
+          expect(response).to redirect_to my_events_path
         end
 
         it "creates an unapproved event" do

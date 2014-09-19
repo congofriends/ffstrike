@@ -35,12 +35,8 @@ And(/^I click next/)do
   create_events_page.click_next()
 end
 
-Then(/^I can see the confirmation page/)do
-	page.should have_text("successfully created a Movie Screening")
-end
-
-Then(/^I can see the fundraising confirmation page/)do
-  page.should have_text("successfully created a Fundraiser")
+Then(/^I can see the confirmation flash message/)do
+  page.should have_text("successfully created an event!")
 end
 
 And(/^I select the type of event$/) do
@@ -52,7 +48,6 @@ When(/^I create events with time TBD field checked/) do
 end
 
 Then(/^I can see that the time fields contain TBD/) do
-	click_link_or_button('Click here to go right to your event dashboard')
 	find_field('event_start_time').value.should eq 'TBD'
 	find_field('event_end_time').value.should eq 'TBD'
 end
@@ -62,7 +57,6 @@ When(/^I make an unauthenticated event with location TBD field checked/) do
 end
 
 Then(/^the location fields in the edit event page are empty/) do
-	click_link_or_button('Click here to go right to your event dashboard')
 	find_field('event_address').value.should eq ''
 	find_field('event_address2').value.should eq ''
 	find_field('event_zip').value.should eq ''

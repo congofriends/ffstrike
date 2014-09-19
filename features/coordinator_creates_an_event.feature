@@ -10,7 +10,7 @@ Background:
 Scenario: Creating an Event as a Coordinator
 	When I select the Create Event button
 	And I create an event
-	Then I can see the confirmation page for the event I created
+	Then I can see the confirmation flash message for the event I created
 
 Scenario: Creating an Event as a Coordinator without Event Details
 	When I select the Create Event button
@@ -22,7 +22,7 @@ Scenario: Creating a Fundraising Event as a Coordinator
     And I select a fundraising event
     Then I can see the fundraising agreement
     And I click next
-    Then I can see the fundraising confirmation page
+    Then I can see the confirmation flash message
 
 Scenario: Viewing an Event on Index after Creating an Event
     When I select the Create Event button

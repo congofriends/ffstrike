@@ -26,7 +26,7 @@ en:
   user:
     invalid_credentials: "Invalid user credentials"
   event:
-    created: "Congrats - You've successfully created a %{event_type}"
+    created: "Congrats - You've successfully created an event!"
     updated: "Event updated."
     deleted: "Event deleted."
     not_yours: "You don't own that event!"

@@ -84,7 +84,7 @@ class EventsController < ApplicationController
       UserMailer.event_creation_message(current_user.id, @event.id) if ENV["RAILS_ENV"] == "qa"
       NewEventMailWorker.perform_async(current_user.id, @event.id) if ENV["RAILS_ENV"] == "production"
       @event.assign_host(current_user)
-      redirect_to my_events_path, notice: t('event.created', event_type: @event.type) and return
+      redirect_to my_events_path, notice: t('event.created') and return
     else
       flash[:alert] = @event.errors.full_messages.flatten.join(' ')
       if @movement.users.include?(current_user)
