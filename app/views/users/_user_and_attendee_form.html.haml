@@ -13,12 +13,7 @@
 			.form-group.label-field.col-xs-6
 				= f.label :surname, t('.surname')
 				= f.text_field :surname, class: "form-control", :maxlength => 35
-		.form-group.label-field
-			= f.label :password, t('.password')
-			= f.password_field :password, class: "form-control"
-		.form-group.label-field
-			= f.label :password_confirmation, t('.password_confirmation')
-			= f.password_field :password_confirmation, class: "form-control"
+
 		.form-group.label-field
 			= f.label :phone
 			= f.text_field :phone, class: "form-control"
@@ -29,6 +24,7 @@
 		.form-group.label-field
 			= f.label t('.email')
 			= f.email_field :email, class: "form-control"
+			%p.text-info.large.strong= t('.check_email_for_password')
 
 			= f.hidden_field :event_id, value: @event.id
 

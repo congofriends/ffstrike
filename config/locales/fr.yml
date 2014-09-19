@@ -23,7 +23,8 @@ fr:
     not_yours: "Vous n'avez pas propre ce équipe!"
     not_public: "Que équipe n'est pas public encore!"
     share: "Partager votre passion"
-    join_team_success: "Merci! Vous avez rejoint l'équipe %{movement_name}."
+    authenticated_join_team_success: "Merci! Vous avez rejoint l'équipe %{movement_name}."
+    unauthenticated_join_team_success: "Merci! Vous avez rejoint l'équipe %{movement_name}. Nous vous avons envoyé un e-mail avec un mot de passe temporaire."
     deleted: "Votre équipe a été supprimé"
   attendee:
     created: "Grâce à la signature de!"

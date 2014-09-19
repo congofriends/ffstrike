@@ -403,6 +403,7 @@ es:
       email_shared: "* Su dirección de correo electrónico será compartida con el anfitrión del evento."
     user_and_attendee_form:
       more_info: "Por favor, darnos más información para inscribirse!"
+      check_email_for_password: "Por favor, consulta su correo electrónico para la contraseña"
       already_user: "Si ya tiene una cuenta,"
       sign_in: "Iniciar sesión"
       name: "Nombre *"
@@ -424,6 +425,7 @@ es:
       join: "Formar parte del equipo!"
     user_and_member_form:
       more_info: "Por favor, darnos más información para unirse!"
+      check_email_for_password: "Por favor, consulta su correo electrónico para la contraseña."
       already_user: "Si ya tiene una cuenta,"
       sign_in: "Iniciar sesión"
       name: "Nombre *"

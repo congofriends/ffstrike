@@ -11,12 +11,9 @@ And(/^I visit the team page/) do
   movement_show_page.visit_movement_show_page(Movement.last.name)
 end
 
-And(/^I click the join team button/) do
+Then(/^I will be able to join a team/) do
 	movement_show_page.join_team
-end
-
-Then(/^I should see a confirmation for joining the team/) do
-  page.should have_text("Thank you! You have joined #{Movement.last.name}.")
+  	page.should have_text("Thank you! You have joined #{Movement.last.name}.")
 end
 
 Then(/^I can see the table of team members/) do

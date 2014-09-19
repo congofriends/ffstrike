@@ -408,6 +408,7 @@ fr:
       email_shared: "* Votre adresse e-mail sera partagée avec l'hôte de l'événement."
     user_and_attendee_form:
       more_info: "S'il vous plaît nous donner plus d'information à vous inscrire!"
+      check_email_for_password: "vérifier vos courriels pour le mot de passe."
       already_user: "Si vous avez déjà un compte,"
       sign_in: "Se Connecter"
       name: "Prénom *"
@@ -429,6 +430,7 @@ fr:
       join: "Joignez-vous à l'équipe!"
     user_and_member_form:
       more_info: "S'il vous plaît nous donner plus d'information à vous joindre!"
+      check_email_for_password: "vérifier vos courriels pour le mot de passe."
       already_user: "Si vous avez déjà un compte,"
       sign_in: "Se Connecter"
       name: "Prénom *"

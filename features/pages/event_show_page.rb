@@ -25,11 +25,7 @@ include Capybara::DSL
     	fill_in 'user_surname', with: 'Brodsky'
 		fill_in 'user_phone', with: '2373331234'
 		fill_in 'user_email', with: 'leah@brodsky2.com'
-		fill_in 'user_password', with: 'hitherefolks'
-		fill_in 'user_password_confirmation', with: 'hitherefolks'
   		click_link_or_button('sign_up_button')
 	end
-
-
 
 end

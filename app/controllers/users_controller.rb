@@ -27,18 +27,20 @@ class UsersController < Devise::RegistrationsController
 
 
   def create_member_user
-    user.update(phone: params[:user][:phone]) if params[:user][:phone]
-    user.update(password: params[:user][:password])
 
+
+    user.update(phone: params[:user][:phone]) if params[:user][:phone]
 
     @team_id = params[:user][:team_id]
     @team ||= Movement.find(@team_id)
+
+    user_signed_in = current_user
 
     if user.save
       sign_in(:user, user)
       if Membership.where(user: user, movement_id: @team).empty?
         @team.members << current_user
-        flash[:notice] = t('movement.join_team_success', movement_name: @team.name)
+        flash[:notice] = user_signed_in ? t('movement.authenticated_join_team_success', movement_name: @team.name) : t('movement.unauthenticated_join_team_success', movement_name: @team.name)
       else
         flash[:error] = t('attendee.already_signed_up')
       end
@@ -51,16 +53,16 @@ class UsersController < Devise::RegistrationsController
 
   def create_attendee_user
     user.update(phone: params[:user][:phone]) if params[:user][:phone]
-    user.update(password: params[:user][:password])
 
     @event_id = params[:user][:event_id]
     @event ||= Event.find(@event_id)
 
+
     if user.save
+      flash[:notice] = message
       sign_in(:user, user)
       if Attendance.where(user: user, event: @event).empty?
         Attendance.create(user: user, event: @event)
-        flash[:success] = message
         if ENV["RAILS_ENV"] == "production"
           ReminderMailWorker.perform_at((@event.start_time - (60 * 60 * 12)), user.id, @event.id) if @event.start_time
           SurveyMailWorker.perform_at((@event.start_time + (60 * 60 * 12)), user.id, @event.id)  if @event.start_time

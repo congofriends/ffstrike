@@ -43,7 +43,8 @@ en:
     not_yours: "You don't own that team!"
     not_public: "That team isn't public yet!"
     share: "Share your passion"
-    join_team_success: "Thank you! You have joined %{movement_name}."
+    authenticated_join_team_success: "Thank you! You have joined %{movement_name}."
+    unauthenticated_join_team_success: "Thank you for joining the %{movement_name} team. We've sent you an email with a temporary password."
     deleted: "Your Team has been successfully deleted."
   attendee:
     created: "Thanks for signing up!"

@@ -23,7 +23,8 @@ es:
     not_yours: "No es necesario que el equipo propio!"
     not_public: "Que el equipo no es público!"
     share: "Comparte tu pasión"
-    join_team_success: "Gracias! Usted se ha unido al equipo %{movement_name}."
+    authenticated_join_team_success: "Gracias! Usted se ha unido al equipo %{movement_name}."
+    unauthenticated_join_team_success: "Gracias! Usted se ha unido al equipo %{movement_name}. Te hemos enviado un correo electrónico con una contraseña temporal."
     deleted: "Tu equipo has sido borrado exitosamente"
   attendee:
     created: "Gracias por suscribirte!"
