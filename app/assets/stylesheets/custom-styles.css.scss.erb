@@ -17,12 +17,12 @@ h3 {
   overflow-wrap: break-word;
 
   a, a:active, a:focus, a:visited {
-    color: $text-color;
+    color: #AD3333;
     overflow-wrap: break-word;
   }
 
   a:hover {
-    color: LightGray;
+    color: #E0B2B2;
   }
 }
 
@@ -411,6 +411,15 @@ ul { list-style-type: none; }
   font-size: 20px;
 }
 
+a.header-footer {
+  color: White;
+}
+
+a.header-footer:hover {
+  color: #E0B2B2;
+  font-weight: bold;
+}
+
 .header-footer {
   font-size: 18px;
   padding-right: 1em;
@@ -501,10 +510,19 @@ div.col-sm-6 img.movement_avatar {
 .btn {
   background-color: orange;
   min-width: 90px;
+  -webkit-transition: background-color 0.3s ease-out;
+  -moz-transition: background-color 0.3s ease-out;
+  -o-transition: background-color 0.3s ease-out;
+  -ms-transition: background-color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
 }
 
 .btn-contact {
     background-color: #E0E2AF;
+}
+
+.btn.btn-contact:hover {
+  background-color: #CACB9E;
 }
 
 .btn-cancel {
