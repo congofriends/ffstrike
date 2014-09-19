@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :explanation, :edit, :export_attendees, :sponsor]
+  before_filter :load_event, :only => [:approve, :show, :update, :destroy, :edit, :export_attendees, :sponsor]
   before_filter :load_movement, :only => [:new, :create, :edit, :update, :index]
   before_filter :redirect_unauthorized_user, :only => [:edit]
   before_filter :load_event_types, :only => [:edit]
@@ -84,7 +84,7 @@ class EventsController < ApplicationController
       UserMailer.event_creation_message(current_user.id, @event.id) if ENV["RAILS_ENV"] == "qa"
       NewEventMailWorker.perform_async(current_user.id, @event.id) if ENV["RAILS_ENV"] == "production"
       @event.assign_host(current_user)
-      redirect_to explanation_path(@event), notice: t('event.created') and return
+      redirect_to my_events_path, notice: t('event.created', event_type: @event.type) and return
     else
       flash[:alert] = @event.errors.full_messages.flatten.join(' ')
       if @movement.users.include?(current_user)
@@ -125,8 +125,6 @@ class EventsController < ApplicationController
       format.js
     end
   end
-
-  def explanation; end
 
   def search_by_keyword; end
 

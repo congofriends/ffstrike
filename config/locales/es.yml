@@ -6,7 +6,7 @@ es:
   user:
     invalid_credentials: "Credenciales de usuario no válido"
   event:
-    created: "Evento creado!"
+    created: "Enhorabuena, ha creado con éxito un %{event_type}"
     updated: "Evento actualizado!"
     deleted: "Evento eliminado."
     not_yours: "No tienes que evento."

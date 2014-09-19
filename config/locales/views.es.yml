@@ -50,10 +50,6 @@ es:
       tab_edit: "Detalles del evento"
       tab_tasks: "Tareas"
       tab_attendees: "Los Asistentes"
-    explanation:
-      confirm_msg: "Enhorabuena, ha creado con éxito un %{event_type}"
-      event_dash_prompt: "Haga clic aquí para ir directamente a su panel de control de eventos"
-      host_task_msg: "Comparte tu evento en las redes sociales!"
     new:
       congo_week_content: "Gracias para tomado la responsabilidad de sería un anfitrión del evento y ayudado hacer #CongoWeek20114 en Octubre de 19-25th un éxito"
       datetime_tbd: "Fecha y Tiempo por Determinar"
@@ -116,6 +112,7 @@ es:
       update: *update
       cancel: "Cancelar"
       cancel_confirm_msg: "¿está seguro de que desea eliminar este evento?"
+      see_show_page: "*Haga clic en el nombre del evento por encima para ver su página pública !"
     show:
       task_msg: "Aquí están algunas cosas que usted puede hacer para ayudar a:"
   tasks:

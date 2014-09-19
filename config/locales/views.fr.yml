@@ -50,10 +50,6 @@ fr:
       tab_edit: "Détails de l'événement"
       tab_tasks: "Tâches"
       tab_attendees: "Participants"
-    explanation:
-      confirm_msg: "Félicitations! Vous avez réussi à créer un %{event_type}"
-      event_dash_prompt: "Cliquez ici pour aller directement au tableau de bord de votre  événement"
-      host_task_msg: "Partagez votre événement sur ​​les médias sociaux!"
     new:
       congo_week_content: "Merci d'avoir pris une importante responsabilité d'être l'hôte d'un évènement et d'aider à faire de #CongoWeek2014 une réussite."
       datetime_tbd: "Date et heure à déterminer ultérieurement"
@@ -116,6 +112,7 @@ fr:
       update: "Mise à jour"
       cancel: "Annuler événement"
       cancel_confirm_msg: "Êtes-vous sûr de vouloir supprimer cet événement?"
+      see_show_page: "*Cliquez sur votre nom de l'événement ci-dessus pour voir votre page publique !"
     show:
       task_msg: "Voici quelques choses que vous pouvez faire pour aider:"
   tasks:

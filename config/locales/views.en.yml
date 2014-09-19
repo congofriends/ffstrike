@@ -50,10 +50,6 @@ en:
       no: 'No'
       export_attendees: *export_attendees
       contact_attendees: "CONTACT ATTENDEES"
-    explanation:
-      confirm_msg: "Congrats - You've successfully created a %{event_type}"
-      event_dash_prompt: "Click here to go right to your event dashboard"
-      host_task_msg: "Share your event on social media!"
     new:
       congo_week_content: "Thanks for taking on the responsibility of being an event host and helping to make #CongoWeek2014 on October 19-25th a success"
       datetime_tbd: "Date & Time To Be Determined"
@@ -117,6 +113,7 @@ en:
       update: *update
       cancel: "Cancel Event"
       cancel_confirm_msg: "Are you sure you want to delete this event?"
+      see_show_page: "*Click your event name above to see your public page!"
     show:
       task_msg: "Here are some things you can do to help out:"
   tasks:

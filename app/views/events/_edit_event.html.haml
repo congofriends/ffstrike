@@ -1,5 +1,8 @@
 %div{class: "event-#{event.id}-details edit-event"}
   %h3.col-sm-12= link_to "#{event.name}", event_path(event)
+  %em
+    .form-group.col-sm-12
+      = t("events.edit.see_show_page")
   %div{class: " edit_form event-#{event.id}"}
     = form_for event, html: { id: 'edit-event-form' } do |f|
       .form-group.col-sm-12
