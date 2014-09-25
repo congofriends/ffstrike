@@ -69,6 +69,8 @@ gem 'geocoder'
 
 gem 'gon'
 
+gem 'kaminari'
+
 group :test, :development do
   gem 'rspec'
   gem 'faker'
