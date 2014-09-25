@@ -34,7 +34,9 @@ Ffstrike::Application.routes.draw do
       post 'create_member_user' => 'users#create_member_user'
       get 'check_email' => 'users#check_email'
       put 'attendance' => 'users#attendance_notes', as: 'attendance'
+      match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
     end
+
 
     get 'splash' => 'static_pages#index'
     get 'events' => 'events#search'

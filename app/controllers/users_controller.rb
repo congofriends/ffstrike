@@ -28,7 +28,6 @@ class UsersController < Devise::RegistrationsController
 
   def create_member_user
 
-
     user.update(phone: params[:user][:phone]) if params[:user][:phone]
 
     @team_id = params[:user][:team_id]
@@ -48,6 +47,19 @@ class UsersController < Devise::RegistrationsController
     else
       flash[:notice] = user.errors.full_messages.flatten.join(' ')
       render 'new_member_user'
+    end
+  end
+
+  def finish_signup
+    # authorize! :update, @user 
+    @user = User.find(params[:id]) if params[:id]
+    if request.patch? && params[:id] #&& params[:user][:email]
+      if @user.update(user_params)
+        sign_in(@user, :bypass => true)
+        redirect_to root_path, notice: 'Your profile was successfully updated.'
+      else
+        @show_errors = true
+      end
     end
   end
 
