@@ -53,6 +53,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 # Check test coverage across app
 gem 'simplecov', :require => false, :group => :test

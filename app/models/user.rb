@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:facebook]
+         :omniauthable, :omniauth_providers => [:facebook, :twitter]
 
   validates :name, presence: true
 
@@ -17,11 +17,11 @@ class User < ActiveRecord::Base
   alias_attribute :host_name, :name
   alias_attribute :host_email, :email
 
-  def self.find_for_facebook_oauth(auth)
+  def self.find_for_oauth(auth)
     User.find_by(:provider => auth.provider, :uid => auth.uid)
   end
 
-  def self.create_from_facebook_oauth(auth)
+  def self.create_from_oauth(auth)
     User.create(:name => auth.info.name,
                 :provider => auth.provider,
                 :uid => auth.uid,
@@ -30,9 +30,16 @@ class User < ActiveRecord::Base
   end
 
   def self.new_with_session(params, session)
-    super.tap do |user|
+    super.tap do |user|      
+      
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["info"]
         user.email = data["email"] if user.email.blank?
+        user.name = data["name"] if user.name.blank?
+      end
+      if data = session["devise.twitter_data"] && session["devise.twitter_data"]["info"]
+        
+        user.email = data["email"] if user.email.blank?     
+        user.name = data["name"] if user.name.blank?
       end
     end
   end
