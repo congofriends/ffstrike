@@ -25,3 +25,4 @@
 //= require jquery.fastLiveFilter
 //= require RRSSB
 //= require jquery.countdown
+//= require jquery.infinitescroll
