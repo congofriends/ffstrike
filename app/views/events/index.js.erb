@@ -8,3 +8,5 @@ $(".events").show();
 $("#no-results").hide();
 $("div#flyer_download").hide();
 pan();
+$(".events").append("<div class='page'><%= escape_javascript(render(@events)) %></div>");
+
