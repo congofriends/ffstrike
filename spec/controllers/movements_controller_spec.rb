@@ -147,7 +147,7 @@ describe MovementsController do
       it "should update the name and should not reset the video field value" do
         video = movement.video
         @controller.request.stub referer: movement_path(movement)
-        put :update, id: movement, movement: { name: "new name"  }
+        put :update, id: movement, movement: { name: "new name" }
         expect(movement.reload.video).to eq(video)
         expect(movement.name).to eq("new name")
       end

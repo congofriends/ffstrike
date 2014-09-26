@@ -161,7 +161,7 @@ class MovementsController < ApplicationController
 
 
   def movement_params
-    params[:movement][:video]= extract_video_id(params[:movement][:video]) unless @movement && @movement.video == params[:movement][:video]
+    params[:movement][:video]= extract_video_id(params[:movement][:video]) unless @movement && (@movement.video == params[:movement][:video] || params[:movement][:video].nil?)
     (@movement && @movement.name == "Congo Week") ? params.require(:movement).permit(:category, :tagline, :call_to_action, :extended_description, :image, :avatar, :video, :about_creator, :website, :flickr, :parent_id, :location, :sponsored) : params.require(:movement).permit(:name, :category, :tagline, :call_to_action, :extended_description, :image, :avatar, :video, :about_creator, :website, :flickr, :parent_id, :location, :sponsored)
   end
 
