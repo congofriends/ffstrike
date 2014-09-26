@@ -8,7 +8,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
     else
       session["devise.facebook_data"] = oauth
-      redirect_to new_user_registration_url
+      redirect_to new_user_session_path, :notice => "This email is already associated with an account."
     end
   end
 

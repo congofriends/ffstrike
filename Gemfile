@@ -51,7 +51,7 @@ gem 'best_in_place', github: 'bernat/best_in_place'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'omniauth'
+gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 
