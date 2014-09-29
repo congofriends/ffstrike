@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
     User.create(:name => auth.info.name,
                 :provider => auth.provider,
                 :uid => auth.uid,
-                :email => auth.info.email ? auth.info.email : Faker::Internet.email,
+                :email => auth.info.email ? auth.info.email : "faker#{Devise.friendly_token[0, 20]}@gmail.com",
                 :password => Devise.friendly_token[0, 20])
   end
 
