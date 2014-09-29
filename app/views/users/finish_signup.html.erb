@@ -1,7 +1,6 @@
-
 <%=image_tag Movement.first.image, class: "bg"%>
 <div id="add-email" class="container">
-  <h1>Add Email</h1>
+  <h1>Enter Your Email Below</h1>
   <%= form_for(@user, :as => 'user', :url => finish_signup_path(@user), :html => { role: 'form'}) do |f| %>
     <% if @show_errors && @user.errors.any? %>
       <div id="error_explanation">

@@ -51,9 +51,9 @@ gem 'best_in_place', github: 'bernat/best_in_place'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'faker'
 
 # Check test coverage across app
 gem 'simplecov', :require => false, :group => :test
@@ -73,7 +73,6 @@ gem 'kaminari'
 
 group :test, :development do
   gem 'rspec'
-  gem 'faker'
   gem 'rspec-rails'
   gem 'factory_girl'
   gem 'factory_girl_rails', "~> 4.0"

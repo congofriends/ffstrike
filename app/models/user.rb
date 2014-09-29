@@ -17,28 +17,26 @@ class User < ActiveRecord::Base
   alias_attribute :host_name, :name
   alias_attribute :host_email, :email
 
-  def self.find_for_oauth(auth)
-    user = User.find_by(:provider => auth.provider, :uid => auth.uid) 
-  end
-
-  def self.create_from_oauth(auth)
-    User.create(:name => auth.info.name,
-                :provider => auth.provider,
-                :uid => auth.uid,
-                :email => auth.info.email ? auth.info.email : "faker#{Devise.friendly_token[0, 20]}@gmail.com",
-                :password => Devise.friendly_token[0, 20])
+ def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_create do |user|
+      user.name = auth.info.name
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.email = auth.info.email ? auth.info.email : Faker::Internet.email
+      user.password = Devise.friendly_token[0, 20]
+    end
   end
 
   def self.new_with_session(params, session)
-    super.tap do |user|      
-      
+    super.tap do |user|
+
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["info"]
         user.email = data["email"] if user.email.blank?
         user.name = data["name"] if user.name.blank?
       end
       if data = session["devise.twitter_data"] && session["devise.twitter_data"]["info"]
-        
-        user.email = data["email"] if user.email.blank?     
+
+        user.email = data["email"] if user.email.blank?
         user.name = data["name"] if user.name.blank?
       end
     end

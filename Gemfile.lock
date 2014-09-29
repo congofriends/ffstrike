@@ -445,7 +445,6 @@ DEPENDENCIES
   kaminari
   memcachier
   newrelic_rpm
-  omniauth (~> 1.2.2)
   omniauth-facebook
   omniauth-twitter
   paperclip!
