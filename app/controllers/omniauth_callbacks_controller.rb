@@ -13,7 +13,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def twitter
-    oauth.extra = nil #save space in the cookie
     if user.persisted?
       if @user.sign_in_count == 0
         redirect_to finish_signup_path(user), :event => :authentication #this will throw if user is not activated

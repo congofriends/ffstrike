@@ -27,8 +27,7 @@ Devise.setup do |config|
       {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
 
   require "omniauth-twitter"
-  config.omniauth :twitter, ENV['TWITTER_API_KEY'], ENV['TWITTER_API_KEY_SECRET'],
-      {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+  config.omniauth :twitter, ENV['TWITTER_API_KEY'], ENV['TWITTER_API_KEY_SECRET']
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
