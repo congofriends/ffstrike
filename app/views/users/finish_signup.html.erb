@@ -1,19 +1,19 @@
 <%=image_tag Movement.first.image, class: "bg"%>
-<div id="add-email" class="container">
-  <h1>Enter Your Email Below</h1>
-  <%= form_for(@user, :as => 'user', :url => finish_signup_path(@user), :html => { role: 'form'}) do |f| %>
-    <% if @show_errors && @user.errors.any? %>
-      <div id="error_explanation">
-        <% @user.errors.full_messages.each do |msg| %>
-          <%= msg %><br>
-        <% end %>
-      </div>
+<% if @show_errors && @user.errors.any? %>
+  <div id="error_explanation">
+    <% @user.errors.full_messages.each do |msg| %>
+      <%= flash[:alert] = msg %>
     <% end %>
+  </div>
+<% end %>
+<div id="add-email" class="container">
+  <h1>Please enter your email below to sign in with Twitter</h1>
+  <%= form_for(@user, :as => 'user', :url => finish_signup_path(@user), :html => { role: 'form'}) do |f| %>
     <div class="form-group">
       <%= f.label :email %>
       <div class="controls">
-        <%= f.text_field :email, :autofocus => true, :value => '', class: 'form-control input-lg', placeholder: 'Example: email@me.com' %>
-        <p class="help-block">Please confirm your email address. No spam.</p>
+        <%= f.text_field :email, :autofocus => true, :value => '', class: 'form-control input-lg', placeholder: 'my.email@mailwebsite.com' %>
+        <p class="help-block">This email address will be associated with your Congo Events account.</p>
       </div>
     </div>
     <div>

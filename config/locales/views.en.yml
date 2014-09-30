@@ -410,6 +410,7 @@ en:
       more_info: "Please give us more info to join!"
       check_email_for_password: "Please check your e-mail for a password"
       already_user: "If you already have an account,"
+      twitter_sign_in: "You have successfully signed in with Twitter!"
       sign_in: "Sign In"
       name: "First Name *"
       surname: "Last Name *"

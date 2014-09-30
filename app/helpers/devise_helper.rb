@@ -7,11 +7,11 @@ module DeviseHelper
 
     html = <<-HTML
     <div id="error_explanation">
-      <h2 class="alert alert-alert">#{sentence}</h2>
+      <h2 class="flash alert alert-success alert-alert">#{sentence}</h2>
       <ul>#{messages}</ul>
     </div>
     HTML
 
-    html.html_safe  
+    html.html_safe
   end
 end

@@ -51,12 +51,12 @@ class UsersController < Devise::RegistrationsController
   end
 
   def finish_signup
-    # authorize! :update, @user 
+    # authorize! :update, @user
     @user = User.find(params[:id]) if params[:id]
     if request.patch? && params[:id] #&& params[:user][:email]
       if @user.update(user_params)
         sign_in(@user, :bypass => true)
-        redirect_to root_path, notice: 'Your profile was successfully updated.'
+        redirect_to root_path, notice: 'You have successfully signed in with Twitter!'
       else
         @show_errors = true
       end

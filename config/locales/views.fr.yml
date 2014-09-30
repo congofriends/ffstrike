@@ -429,6 +429,7 @@ fr:
       more_info: "S'il vous plaît nous donner plus d'information à vous joindre!"
       check_email_for_password: "vérifier vos courriels pour le mot de passe."
       already_user: "Si vous avez déjà un compte,"
+      twitter_sign_in: "Vous avez réussi à signer avec Twitter!"
       sign_in: "Se Connecter"
       name: "Prénom *"
       surname: "Nom *"
