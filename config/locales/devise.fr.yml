@@ -34,6 +34,7 @@ fr:
       updated_not_active: 'Votre mot de passe a été modifié avec succès.'
     registrations:
       destroyed: 'Au revoir ! Votre compte a été annulé avec succès. Nous espérons vous revoir bientôt.'
+      email_taken: "Ce courriel est déjà associé à un compte."
       signed_up: 'Bienvenue ! Vous vous êtes enregistré(e) avec succès.'
       signed_up_but_inactive: 'Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte n’a pas encore été activé.'
       signed_up_but_locked: 'Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte est verrouillé.'

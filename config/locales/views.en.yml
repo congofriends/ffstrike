@@ -410,7 +410,6 @@ en:
       more_info: "Please give us more info to join!"
       check_email_for_password: "Please check your e-mail for a password"
       already_user: "If you already have an account,"
-      twitter_sign_in: "You have successfully signed in with Twitter!"
       sign_in: "Sign In"
       name: "First Name *"
       surname: "Last Name *"
@@ -420,6 +419,9 @@ en:
       textable: "I would like to receive text updates from %{team_name}"
       sign_up: "Join the Team!"
       follow_up_msg: "Expect to hear from the host with team updates"
+    finish_signup:
+      finish_signup_header: "Please enter your email below to sign in with Twitter"
+      finish_signup_message: "This email address will be associated with your Congo Events account."
   validations:
     name: "Name is required"
     email: "Email is required"
@@ -428,6 +430,7 @@ en:
     password: "Password is required"
     current_pass_required: "Current Password is required"
     current_pass: "Confirmation Password must equal Password"
+    confirm_email: "Your confirmation email must match the email above"
     valid_email: "Please enter a valid email address"
     first_name: "First Name is required"
     surname: "Surname is required"

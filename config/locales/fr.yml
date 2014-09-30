@@ -4,6 +4,7 @@ fr:
     signup_message:
       subject: "Informations d'authentification utilisateur non valides"
   user:
+    twitter_signup: "Vous avez réussi à signer avec Twitter!"
     invalid_credentials: "Informations d\'authentification utilisateur non valides"
   event:
     created: "Félicitations! Vous avez réussi à créer un %{event_type}"

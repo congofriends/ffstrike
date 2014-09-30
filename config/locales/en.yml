@@ -25,6 +25,7 @@ en:
       subject: "You've signed up to attend an event!"
   user:
     invalid_credentials: "Invalid user credentials"
+    twitter_signup: "You have successfully signed in with Twitter!"
   event:
     created: "Congrats - You've successfully created an event!"
     updated: "Event updated."

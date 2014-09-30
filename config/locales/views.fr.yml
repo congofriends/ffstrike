@@ -429,7 +429,6 @@ fr:
       more_info: "S'il vous plaît nous donner plus d'information à vous joindre!"
       check_email_for_password: "vérifier vos courriels pour le mot de passe."
       already_user: "Si vous avez déjà un compte,"
-      twitter_sign_in: "Vous avez réussi à signer avec Twitter!"
       sign_in: "Se Connecter"
       name: "Prénom *"
       surname: "Nom *"
@@ -439,6 +438,9 @@ fr:
       textable: "Je souhaite recevoir les mises à jour de texte des %{team_name}"
       sign_up: "Joignez-vous à l'équipe!"
       follow_up_msg: "Attendez-vous à entendre de l'hôte des mises à jour de l'équipe"
+    finish_signup:
+      finish_signup_header: "S'il vous plaît entrer votre e-mail ci-dessous pour vous connecter avec Twitter"
+      finish_signup_message: "Cette adresse e-mail sera associé à votre compte événements Congo."
   validations:
     name: "Le nom est obligatoire"
     email: "Email est nécessaire"
@@ -447,6 +449,7 @@ fr:
     password: "Mot de passe est nécessaire"
     current_pass_required: "Mot de passe actuel est requise"
     current_pass: "Confirmation mot de passe doit être égal Mot de passe"
+    confirm_email: "Votre email de confirmation doit correspondre à l'e-mail ci-dessus."
     valid_email: "S'il vous plaît entrer une adresse email valide"
     first_name: "Prénom est nécessaire"
     surname: "Nom est nécessaire"

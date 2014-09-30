@@ -4,6 +4,7 @@ es:
     signup_message:
       subject: "Se ha suscrito asistir a un evento."
   user:
+    twitter_signup: "Vous avez réussi à signer avec Twitter!"
     invalid_credentials: "Credenciales de usuario no válido"
   event:
     created: "Enhorabuena, ha creado con éxito un %{event_type}"

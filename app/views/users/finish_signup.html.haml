@@ -1,0 +1,13 @@
+= image_tag Movement.first.image, class: "bg"
+= render partial: 'shared/load_i18n_translations'
+#add-email.container
+  %h1=t('.finish_signup_header')
+  = form_for(@user, :as => 'user', :url => finish_signup_path(@user), :html => {id: "finish-signup-form"}) do |f|
+    .form-group
+      = f.label :email
+      = f.text_field :email, :autofocus => true, :value => '', class: 'form-control', placeholder: 'my.email@mailwebsite.com'
+    .form-group
+      = f.label :email_confirmation
+      = f.text_field :email_confirmation, :value => '', class: 'form-control', placeholder: 'my.email@mailwebsite.com'
+    %div
+      = f.submit 'Continue', :class => 'btn btn-host'

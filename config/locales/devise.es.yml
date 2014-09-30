@@ -33,6 +33,7 @@ es:
       updated_not_active: 'Tu contraseña fue cambiada.'
     registrations:
       destroyed: 'Fue grato tenerte con nosotros. Tu cuenta fue cancelada.'
+      email_taken: "Este correo electrónico ya está asociada a una cuenta."
       signed_up: Bienvenido. 'Tu cuenta fue creada.'
       signed_up_but_inactive: 'Tu cuenta ha sido creada correctamente. Sin embargo, no hemos podido iniciar la sesión porque tu cuenta aún no está activada.'
       signed_up_but_locked: 'Tu cuenta ha sido creada correctamente. Sin embargo, no hemos podido iniciar la sesión porque que tu cuenta está bloqueada.'

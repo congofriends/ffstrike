@@ -1,5 +1,6 @@
 = image_tag Movement.first.image, class: "bg"
-= render 'registration_validations'
+- render partial: 'shared/load_i18n_translations'
+
 .col-md-4.col-md-offset-4
   %div.content-header.container{:style => "width: 400px;"}
     %h2.text-center.header-text Sign Up
