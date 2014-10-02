@@ -1,0 +1,18 @@
+it:
+  devise:
+    invitations:
+      send_instructions: 'Una e-mail di invito è stata inviata %{email}.'
+      invitation_token_invalid: 'Il token invito fornito non è valido!'
+      updated: "La tua password è stata impostata correttamente. Ora si è effettuato l'accesso."
+      no_invitations_remaining: "Nessun inviti rimanenti"
+      invitation_removed: 'Il tuo invito è stato rimosso.'
+      signed_in_and_coordinator: "Ora si è effettuato l'accesso e un coordinatore %{movement_name}."
+      new:
+        header: "Invia invito"
+        submit_button: "Invia un'e-mail"
+      edit:
+        header: "Imposta password"
+        submit_button: "Imposta password"
+    mailer:
+      invitation_instructions:
+        subject: 'Istruzioni Invito'

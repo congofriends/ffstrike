@@ -1,0 +1,502 @@
+it:
+  dictionary:
+    email: &email E-mail
+    name: &name Nome 
+    phone: &phone Telefono Numero
+    point: &point Point Persona
+    password: &password E Conferma
+    confirmation: &confirmation Confirmation
+    export_attendees: &export_attendees Partecipanti EXPORT
+    host_event: &host_event HOST UN EVENTO
+    update: &update AGGIORNAMENTO
+  events:
+    events: "EVENTI"
+    host_btn: *host_event
+    unattend_btn: "EVENT UNATTEND "
+    volunteer_status: "Sono interessato al volontariato "
+    show_btn: "MOSTRA"
+    host_link: "Clicca qui per ospitare il proprio."
+    search_placeholder: "Cerca Eventi per città , stato o Codice Postale "
+    no_events_msg: "Non ci sono eventi registrati vicino a te."
+    attend_btn: "PARTECIPARE"
+    contact_host_btn: "CONTACT HOST"
+    flyer_msg: Usa questo volantino per promuovere questo evento!"
+    flyer_dl: "(clicca sul volantino per scaricare)"
+    when: "Quando:"
+    where: "Dove:"
+    location: "Posizoine:"
+    description: "Descrizione:"
+    organized_by: "Organizzato da:"
+    email_msg: "Email Evento Partecipanti "
+    message: "il messaggio"
+    message_placeholder: "Inserire un messaggio da inviare ai partecipanti all'evento"
+    email_btn: "Invia email"
+    tasks_signed_up: "Task firmato per:"
+    name: *name
+    email: *email
+    phone: *phone
+    point: *point
+    volunteer: "Volontario"
+    notes: "Note (fare clic per modificare)"
+    upcoming_events: "Prossimi Eventi"
+    dashboard:
+      header: "Gestione eventi"
+      instructions: "Selezionare un evento e fare clic su Mostra"
+      tab_edit: "Dettagli dell'evento"
+      tab_tasks: "Attività"
+      tab_attendees: "Partecipanti"
+      yes: 'Sì'
+      no: 'No'
+      export_attendees: *export_attendees
+      contact_attendees: "I partecipanti CONTATTO"
+    new:
+      congo_week_content : "Grazie per assumere la responsabilità di essere un host evento e contribuendo a rendere # CongoWeek2014 ottobre 19-25 un successo."
+      datetime_tbd : "Data e ora da stabilire"
+      address_tbd : " Indirizzo da determinare"
+      legend1: "Evento Informazioni di base (mezzo)"
+      legend2: "Dettagli evento (2/2)"
+      legend3: "Dati personali "
+      address: "Indirizzo Event"
+      location_placeholder: "incontrare all'angolo di Belmont & Sheridan"
+      next:  "Avanti"
+      previous: "Indietro"
+      sign_in: "Accedi"
+      create_btn:  "CREA EVENTO"
+      account_exist: "Se si dispone di un account esistente, per favore"
+      msg_to_attendees: "Scrivi un breve messaggio ai partecipanti all'evento:"
+      event_type: 'Tipo di evento:'
+      event_team_msg: "Se questo evento è associato con una squadra, si prega di scegliere qui:"
+      forum_msg: "Includere un forum partecipante discussione su questo evento:"
+      name: "Il tuo nome"
+      surname: "Il tuo cognome"
+      email: "La tua e-mail"
+      avatar_size: "(consigliata Dimensione immagine: 250 x 175)"
+      event_type_notice: "Il tipo di evento non può essere modificato dopo l'invio del presente modulo"
+      phone: "Il telefono"
+      password: "Password"
+      password_confirmation: "Conferma password"
+    fundraiser:
+      header1: 'Autorizzazione a gestire un evento a vantaggio di Gli Amici del Congo'
+      header2: "Responsabilitą del l'organizzatore dell'evento"
+      p1: "Grazie per offrire il vostro sostegno agli Amici del Congo Breaking the Silence: Congo Settimana Al fine di proteggere il capitolo 501 (c) 3 Stato , chiediamo che l'utente accetta le seguenti condizioni : Io, ospite dell'evento , accettare di organizzare e sponsorizzare un evento a sostegno degli Amici del Congo (FOTC) Congo Week."
+      p2: "Capisco che lo scopo principale di questo evento è quello di raccogliere fondi per Gli Amici del Congo (FOTC) e che tutti i fondi raccolti devono essere presentate al FOTC a sostegno dei suoi programmi e progetti spese per l'evento sarà. non sia pagato da FOTC o da fondi ricevuti dalla manifestazione. Pagamento di tutte le spese devono essere pagati direttamente dal gruppo di sponsor. Sappiamo che l'organizzatore dell'evento deve essere conforme a tutti i regolamenti e le politiche e le pratiche del FOTC relativi alla raccolta di fondi. Il presente accordo rimane in vigore per tutta la durata della manifestazione. FOTC il Consiglio si riserva il diritto di annullare il sostegno della manifestazione per qualsiasi motivo, considerata dal Consiglio di essere sufficiente." 
+      p3: "In caso di risoluzione del presente contratto, l'organizzatore dell'evento trasmette tutti i fondi raccolti nel nome del FOTC al FOTC Inoltre, se Organizzatore dell'evento continua a raccogliere fondi per FOTC, FOTC membri adottano misure positive per informare il pubblico e tutte le persone con cui l' organizzatore dell'evento ha contatto, tra cui tutte le persone che hanno contribuito soldi l'organizzatore dell'evento che l'organizzatore dell'evento non è affiliato con il FOTC a."
+      user_agree: "Sono d'accordo:"
+      user_list1: "Per inviare una descrizione dell'evento."
+      user_list2: "Per mantenere un elevato standard di buon gusto e di etica in relazione a tutti gli eventi di raccolta fondi."
+      user_list3: "Per essere responsabile di tutte le spese sostenute in collaborazione con tutte le attività di raccolta fondi e di assolvere la FOTC di tale responsabilità."
+      user_list4: "Per inviare tutti i proventi della manifestazione entro quattordici (14) giorni per la FOTC per il deposito sul conto bancario FOTC."
+      user_list5: "Per inviare un report post evento completata entro trenta (30) giorni successivi all'evento."
+      fotc_will: "FOTC sarà:"
+      fotc_list1: "Fornire ragionevole quantità di materiali circa FOTC gratuitamente."
+      fotc_list2: "Confer tutto corretto uso della denominazione FOTC e il logo del gruppo."
+      fotc_list3: "Mantenere regolari comunicazioni con il leader del gruppo."
+      fotc_list4: "Usa tutti i fondi ricevuti dal gruppo per sostenere il lavoro della FOTC."
+      check: "Selezionando questa casella, l'utente accetta di aver letto, compreso e accettato i termini e le condizioni"
+    edit:
+      edit_header: "Modifica evento"
+      start_date: "Data e ora di inizio:"
+      end_date: "Fine Data e ora:"
+      name: "Evento Titolo:"
+      address1: "Indirizzo 1:"
+      address2: "Indirizzo 2:"
+      city: "Città / Paese:"
+      state: "Stato / Provincia / Regione:"
+      zip: "Zip / Postal Code:"
+      country: "Country"
+      notes: "Note:"
+      type: "Tipo:"
+      forum: "Forum (Disqus):"
+      flyer: "Flyer:"
+      avatar: "Immagine :"
+      update: *update
+      cancel: "Cancella Evento"
+      cancel_confirm_msg: "Sei sicuro di voler cancellare questo evento?"
+      see_show_page: "* Fare clic sul nome dell'evento sopra per vedere la tua pagina pubblica!"
+    show:
+      task_msg : "Qui ci sono alcune cose che potete fare per dare una mano:"
+  tasks:
+    delete_confirm : "Sei sicuro di eliminazione compito '%{task_description}'? "
+    sign_up: "SIGN UP"
+    signed_up: "FIRMATO"
+    volunteers: "Volontari (%{ volunteer_count })"
+    host_tasks_table:
+      host_tasks: "Task Host"
+      description: "Descrizione"
+      completed: "Completed"
+    tasks_table:
+      legend: "Attività Partecipante"
+      tasks: "Task (clicca per modificare)"
+      volunteers: "Volontari"
+      delete: "Cancella"
+      new: "ADD NEW TASK:"
+      new_description: "Aggiungi una nuova descrizione compito qui ..."
+      create_btn: "CREA NUOVO TASK"
+    attendee_tasks:
+      header1: "Grazie per esserti iscritto!"
+      header2: "Ecco come puoi partecipare:"
+  layouts:
+    breadcrumb:
+      home: 'CASA'
+      events: 'EVENTI'
+      teams: 'SQUADRE'
+      donate: 'DONA'
+    footer:
+      contact: 'Contattaci'
+      questions: 'Domande? Commenti? Bugs?'
+      mission: 'MISSION'
+      template: 'TEMI'
+      media: 'TOOLKIT'
+    navbar:
+      my_profile: 'Il mio profilo'
+      manage_my_groups: 'Gestione Squadre'
+      manage_my_events: 'Gestione Eventi'
+      create_group: 'Crea Team'
+      host_event: 'Event Host'
+      sign_in: 'Accedi'
+      create_an_account: 'Crea un Account'
+      sign_out: 'Esci'
+  contact:
+    new_event_msg:
+      contact_host_for: "Contattare l' host per :"
+      name: 'Il tuo nome:'
+      email: 'Il tuo indirizzo email:'
+      subject: 'Oggetto:'
+      message: 'Il tuo messaggio:'
+      question: 'Domanda sul %{about}'
+      submit: 'Invia'
+    new_movement_msg:
+      contact_coordinator_for: 'Contattate il coordinatore per:'
+      email: 'Il tuo indirizzo email'
+      name: 'Il tuo nome'
+      message: 'Il tuo messaggio :'
+      subject: 'Oggetto:'
+      question: "Domanda sul %{about}"
+      submit: 'Invia'
+    new_attendees_msg:
+      contact_attendees: 'Contatta i partecipanti di'
+      subject: 'Oggetto:'
+      message: 'Il tuo messaggio :'
+      submit: 'Invia'
+    new_coordinator_msg:
+      contact_coordinators: 'Contatto dei coordinatori'
+      subject: 'Oggetto:'
+      message: 'Il tuo messaggio:'
+      submit: 'Invia'
+    new_members_msg:
+      contact_members: 'Contattare i membri del team '
+      subject: 'Oggetto:'
+      message: 'Il tuo messaggio:'
+      submit: 'Invia'
+  movements:
+    movement:
+      dashboard: 'CRUSCOTTO'
+      events: 'EVENTI'
+      edit_account: 'Modifica dettagli del conto'
+      event_details: 'Dettagli evento'
+      select_event: 'Seleziona un evento Modifica'
+    tab_group_attendees:
+      coordinators: 'COORDINATORI'
+      hosts: 'HOSTS'
+      attendees: 'PARTECIPANTI '
+      email_coordinators: "COORDINATORI EMAIL"
+      email_attendees: "I PARTECIPANTI EMAIL "
+      email_hosts: "HOSTS EMAIL"
+      export_hosts: "HOSTS EXPORT"
+      export_coordinators: "COORDINATORI ESPORTAZIONE"
+      export_all: "EXPORT TUTTI I TIFOSI"
+      export_attendees: *export_attendees
+      name_cl: *name
+      group_cl: 'Squadra'
+      event_cl: 'Event'
+      email_cl: *email
+      phone_number: *phone
+      point_person: *point
+      yes: 'S'
+      no: 'N'
+      team-members: "I MEMBRI DEL TEAM"
+      email_members: "MEMBRI EMAIL"
+      export_members: "MEMBRI ESPORTAZIONE"
+    explanation:
+      confirm_msg: "Congratulazioni - Hai creato con successo una squadra per sostenere Amici del Congo"
+      team_dash_prompt : "Clicca qui per andare direttamente al cruscotto squadra"
+      share_msg : "Condividi la tua squadra sui social media!"
+    email_modal:
+      email_attendees: "I PARTECIPANTI EMAIL "
+      send_email : "MANDA EMAIL"
+      title: "Manda i partecipanti "
+      subject: "Oggetto"
+      message: "Messaggio"
+      placeholder: "Inserire un messaggio da inviare a tutti i partecipanti"
+    email_hosts_modal:
+      email_hosts: "HOSTS EMAIL"
+      title: "Manda i padroni di casa"
+      subject: "Oggetto"
+      message: "Messaggio"
+      placeholder: "Inserire un messaggio da inviare a tutti gli host "
+    tab_tasks:
+      modify_tasks: 'Modifica Compiti per Eventi Qui'
+    my_groups:
+      my_groups: 'Le Mie Squadre'
+      manage_my_groups: 'Gestione Squadre'
+      show: 'MOSTRA'
+      select_group: 'Selezionare una squadra e fare clic su MOSTRA'
+      group_details: 'Dettagli Team'
+      group_events: 'Team Eventi'
+      manage_supporters: 'Gestione Sostenitori'
+      teams: 'Squadre'
+      past_events: 'Eventi passati'
+    tab_group_events:
+      event_name: "Nome evento"
+      where: "Quando"
+      when: "Dove"
+      status: "Stato"
+      approved: "Approvato (Public)"
+      sponsored: "Sponsorizzati "
+      view_event: "View Event"
+      edit_event: "Modifica Evento "
+    tab_my_events:
+      empty_events_line1: "State attualmente non frequentano eventi Visita il."
+      events_page: "Eventi Pagina"
+      empty_events_line2 : "Per trovare gli eventi nella tua zona!"
+    tab_past_events:
+      event_name: "Nome evento"
+      where: "Quando"
+      when: "Dove"
+      status: "Stato"
+      participants: "Partecipanti"
+    tab_groups:
+      name: 'Nome'
+      location_placeholder: 'es Globale, Internazionale , Nazionale .. '
+      youtube_link: 'Youtube Link'
+      create_btn: 'Crea Team'
+      tagline: "Messaggio personale:"
+      call_to_action: "Call To Action:"
+      extended_description : "Descrizione Estesa:"
+      location: "Posizoine:"
+      about_creator: "Circa Creatore:"
+      update_movement: "Update Team"
+      delete_team: "Elimina Team"
+      bg_image1: "Immagine di sfondo 1 "
+      bg_image2: "Immagine di sfondo 2 "
+      confirm_delete_team: "Sei sicuro di voler eliminare?"
+    tab_group_teams:
+      team_name: 'Nome Team'
+      sponsored: 'Sponsorizzato'
+    my_profile:
+      events_attending: 'I Miei Eventi'
+      personal_details: 'Dettagli Personali'
+      teams_coordinating: "Le Mie Squadre"
+    tab_my_teams:
+      empty_teams_line1: "Tu non sei attualmente un coordinatore per tutte le squadre prega di visitare il "
+      teams_page: "Le Squadre Pagina"
+      empty_teams_line2: "Per unirsi o creare un gruppo nella tua zona!"
+      col1: 'Nome Team'
+      col2: 'Data Unita'
+      col3: 'Rimuovere Coordinatore Accesso'
+      col4: 'Lascia Team'
+      unjoin_team: 'Dividi Team'
+      view_team: 'Vista Team'
+      edit_team: 'Edit Team'
+      teams_coordinating: 'Squadre Io sono un coordinatore per'
+      teams_member: 'Squadre Io sono un membro di'
+      invite_coordinator: 'Invita Coordinatore'
+      remove_admin: "Rimuovere privilegi di amministratore "
+      prevent_removal: "Tu sei l'unico amministratore"
+      confirm_msg: 'Sei sicuro?'
+    new:
+      thanks_msg: "Grazie per la creazione di una settimana team Congo per sostenere la pace e la giustizia nel cuore dell'Africa."
+      explanation_msg : "Una volta compilate i dettagli rilevanti per creare un team, gli eventi associati con la tua squadra apparirà su una pagina."
+      name: 'Nome'
+      phone: 'Telefono'
+      location_placeholder: 'es Globale, Internazionale , Nazionale .. '
+      location: "Posizoine:"
+      youtube_link: 'Youtube Link'
+      tagline: "Messaggio personale"
+      extended_description: "Descrizione Estesa"
+      call_to_action: "Call To Action:"
+      about_creator: "Circa Creatore:"
+      cancel_btn: 'Annulla'
+      create_btn: 'Crea Team'
+      avatar: "Immagine"
+      avatar_size: "(Consigliata Dimensione immagine : 250 x 175)"
+      website: "Sito Web"
+    show:
+      h1: "Sostenere il Congo Globale Movimento "
+      quote: 'La nostra missione e la visione è quello di aumentare la consapevolezza della comunità mondiale sulla sfida del Congo e sostenere le istituzioni congolesi nel portare un cambiamento pacifica e duratura . Unisciti al movimento per la pace e la giustizia in Congo ! Qui è possibile conoscere la crisi in Congo e intervenire creando o partecipare a un evento, o la creazione o aderendo ad un gruppo nella tua zona.'
+      congo-week: "CONGO WEEK"
+      events: "EVENTI"
+      network: "NETWORK"
+      congo_week_2014: "#CongoWeek2014"
+      congo_description: "Il Congo Week è una campagna globale che si svolge 19-25 Ottobre a rompere il silenzio sui problemi nel cuore dell'Africa."
+      join_congo: "Aderire al movimento"
+      congo_start: "Congo La settimana inizia in:"
+      host_event: "Ospitare un evento."
+      attend_event: "Partecipare a un evento."
+      learn_more: "Per saperne di più Congo Settimana."
+    show_team:
+      about_creators: 'Circa i Creatori'
+      host_event: *host_event
+      contact_group_coordinator: 'CONTATTO COORDINATORE'
+      join_team: 'Unisciti alla Squadra'
+      upcoming_events: 'Prossimi Eventi'
+      no_upcoming_events: 'Non ci sono Prossimi Eventi'
+      members: 'Membri'
+    support_network :
+      team_description : "Un gruppo è un insieme di individui o organizzazioni che hanno aderito al movimento Congo per organizzare eventi nelle loro comunità locali per sensibilizzare ed educare gli altri sulla situazione in Congo . Aiutaci a costruire squadre in tutto il mondo a lavorare in collaborazione con congolese per portare la pace, la giustizia e la dignità umana nel cuore dell'Africa. Unisciti al movimento unendo o la creazione di una squadra."
+      support_network : 'Support Network'
+      network_message : 'Ci sono %{number} squadre e in crescita!'
+      create_team : 'Creare un team'
+      team_information : "Una squadra è un insieme di individui o organizzazioni che hanno aderito al movimento Congo per organizzare eventi nelle loro comunità locali per sensibilizzare ed educare gli altri sulla situazione in Congo Aiutaci a costruire squadre in tutto il mondo a lavorare in collaborazione con congolese per portare la pace, la giustizia e la dignità umana nel cuore dell'Africa Dopo aver creato il vostro team assicurarsi di pubblicare il tuo evento , anche se la data e il luogo non è finalizzato - è sufficiente selezionare la casella ' da determinare ' per l'indirizzo e la data."
+  unauthenticated_submovements:
+    new:
+      thanks_msg: "Grazie per la creazione di una settimana team Congo per sostenere la pace e la giustizia nel cuore dell'Africa."
+      explanation_msg : "Una volta compilate i dettagli rilevanti per creare un team, gli eventi associati con la tua squadra apparirà su una pagina."
+      name: 'Nome'
+      phone: 'Telefono'
+      location_placeholder: 'es Globale, Internazionale , Nazionale ..'
+      location: "Posizoine:"
+      youtube_link: 'Youtube Link'
+      tagline: "Messaggio Personale"
+      extended_description: "Descrizione Estesa"
+      call_to_action: "Call To Action:"
+      about_creator: "Circa Creatore:"
+      create_btn: 'Crea Team'
+      avatar: "Immagine "
+      avatar_size: "(Consigliata Dimensione immagine : 250 x 175)"
+      website: "Sito Web"
+      legend: "Dettagli del Gruppo"
+      legend2: "Iscriviti per creare il gruppo (2/2)"
+      next: "Avanti"
+      previous: "Indietro"
+  assignments:
+    assign:
+      just_signed_up: 'Basta Sottoscritto!'
+  users:
+    attend_as_user:
+      greeting: "Ciao %{user_name},"
+      confirm_attend: "Sei sicuro di voler frequentare %{event_name}?"
+      not_user_msg: "Sei sicuro di voler frequentare"
+      here: "qui"
+      phone: "Numero di telefono (opzionale):"
+      textable: "Vorrei ricevere gli aggiornamenti di testo da Amici del Congo"
+      point: "Mi piacerebbe fare volontariato per questo evento!"
+      sign_up: "Sign me up!"
+      email_shared: "* Il tuo indirizzo email sarà condiviso con l'host dell'evento."
+    user_and_attendee_form:
+      more_info: "Vi preghiamo di darci più informazioni per iscriversi!"
+      check_email_for_password: "Guarda la tua e -mail per una password"
+      already_user: "Se hai già un account,"
+      sign_in: "Entra"
+      name: "Nome *"
+      surname: "Cognome *"
+      email: "Email *"
+      password: "Password *"
+      password_confirmation: "Conferma Password *"
+      textable: "Vorrei ricevere gli aggiornamenti di testo da Amici del Congo"
+      volunteer: "Mi piacerebbe fare volontariato per questo evento!"
+      sign_up: "Sign me up!"
+      follow_up_msg: "Aspettatevi di sentire dall'host con gli aggiornamenti degli eventi."
+    join_as_user:
+      greeting: "Ciao %{user_name},"
+      confirm_join: "Sei sicuro di voler aderire %{team_name}?"
+      not_user_msg: "Se questo non sei tu , fai clic su"
+      here: "qui"
+      phone: "Numero di telefono ( opzionale) "
+      textable: "Vorrei ricevere gli aggiornamenti di testo da %{team_name}"
+      join: "Unisciti al team!"
+    user_and_member_form:
+      more_info: "Vi preghiamo di darci più informazioni per partecipare!"
+      check_email_for_password: "Guarda la tua e-mail per una password"
+      already_user: "Se hai già un account,"
+      sign_in: "Entra"
+      name: "Nome *"
+      surname: "Cognome*"
+      password: "Password *"
+      password_confirmation: "Conferma Password *"
+      email: "Email *"
+      textable: "Vorrei ricevere gli aggiornamenti di testo da %{team_name}"
+      sign_up: "Unisciti al team!"
+      follow_up_msg: "Aspettatevi di sentire dall'host con gli aggiornamenti di squadra"
+    finish_signup:
+      finish_signup_header: " Inserisci il tuo indirizzo email qui sotto per accedere con Twitter "
+      finish_signup_message: " Questo indirizzo e-mail verrà associato con i tuoi Congo Eventi conto."
+  validations:
+    name: "è richiesto Nome "
+    email: "Email è richiesto"
+    subject: "Oggetto è necessaria"
+    body: "Corpo è necessaria"
+    password: "La password è necessaria"
+    current_pass_required: "è necessaria la password corrente"
+    current_pass: "Conferma password deve essere uguale Password"
+    confirm_email: "La tua e-mail di conferma deve corrispondere l'e-mail di cui sopra"
+    valid_email: "Si prega di inserire un indirizzo email valido"
+    first_name: "è richiesta Nome"
+    surname: "è richiesto Cognome"
+    existing_email : "e-mail è già in uso"
+    existing_name : "nome è già in uso"
+    start_time : "data e ora di inizio è necessaria"
+    city: "è necessario City"
+    country: "è necessario Nazione"
+    state: "è necessaria Stato"
+    address: "Address è necessario"
+    description: "Descrizione è richiesto"
+    zip_required: 'Zip è necessario'
+    zip_numeric: "Zip dovrebbe contenere solo numeri"
+    zip_length: "Zip dovrebbe essere lungo 5 cifre"
+  static_pages:
+    mission:
+      header1: "Background"
+      header2: "Scopo"
+      header3: "Get Involved"
+      background: "Breaking the Silence Congo Week è una settimana di attività che ricorda i milioni di vite perse nel conflitto del Congo mentre celebrava l'enorme potenziale umano e naturale che esiste nel paese comunità in tutto il mondo si uniscono in partnership con congolese ogni anno la terza settimana di ottobre a schermo film, tenere insegnare - ins e forum, organizzare manifestazioni, raccolte di fondi di accoglienza, di concerti e di svolgere molte altre attività per elevare il profilo del Congo in tutto il mondo. Studenti e organizzatori di comunità avviate Congo Week nel 2008 leader religiosi, studiosi, intellettuali, artisti e gente comune di tutto il mondo anche stato coinvolto a riconoscere la vita del popolo congolese e la loro ricerca per la dignità umana."
+      purpose: "Dal 2008 , il Congo Week ha galvanizzato la partecipazione delle persone in oltre 65 paesi e 400 città universitarie e comunità universitarie Lo scopo del Congo Week è quello di aumentare la consapevolezza globale sulla situazione in Congo e avvocato per la pace, la giustizia e la dignità umana in collaborazione con il popolo congolese. Congo Week 2014 è il settimo anniversario del Congo settimana e si svolgerà dal"
+      cw_Ïdate: "Domenica 19 Ottobre a Sabato 25 ottobre 2014"
+      get_involved1: "Sign-up di organizzare o partecipare a un evento per il Congo Week VII,"
+      get_involved2: "Incoraggiare la rete ad essere una parte del Congo Week e diffondere la parola via Facebook e Twitter."
+      date: "19-25 Ottobre , 2014"
+      link: "qui."
+      organizer_toolkit: "Accesso alla Kit Organizzatori strumento per scaricare i media e le risorse da condividere"
+      view_template: "Visualizza Template per i temi quotidiani e azione durante Congo Week "
+    template:
+      header1: "Campione Congo Settimana Programma e temi"
+      line1: "Ecco un esempio di programma Congo Settimana per l'utilizzo come una guida."
+      line2: "Si può cambiare in giro per adattarlo vostra comunità."
+      line3: "Alcuni campus ed eventi ospitano comunità ogni giorno , altri ospitare solo uno o due eventi durante la settimana Ci auguriamo che questo otterrà la vostra creatività."
+      line4: "Nota : Se hai intenzione di ospitare più di un evento durante la Settimana Congo , impostare una pagina di squadra"
+      line5: "in modo da poter indirizzare le persone a tutti i vostri eventi in una sola volta"
+      line6: "Domenica:"
+      line7: "La preghiera / Veglia"
+      line8: "Tema: Preghiera interreligiosa per la pace in Congo"
+      line9: "Azione: Ospitare un evento per chiedere la pace nel Congo in tutte le fedi"
+      line10: "Lunedi:"
+      line11: "Leopold II - Seconda Re dei Belgi, ricordato per la fondazione e lo sfruttamento dello Stato Libero del Congo."
+      line12: "Tema: La storia del Congo"
+      line13: "Azione: Ospitare un film Proiezione di"
+      line14: "Film di FOTC."
+      line15: "Martedì:"
+      line16: "Patrice Lumumba - congolese leader dell'indipendenza e il primo Primo Ministro della Repubblica del Congo democraticamente eletto"
+      line17: "Tema: Le idee e gli insegnamenti di Patrice Lumumba"
+      line18: "Azione: Sostenere i giovani congolesi che si sforzano di soddisfare le idee di Lumumba"
+      line19: "Ospitare un filmato Proiezione di Lumumba di Raoul Peck e / o ospitare un Fundraiser"
+      line20: "Mercoledì:"
+      line21: "Il OUT CELL"
+      line22: "Tema: Collegamento del Congo alla tecnologia moderna"
+      line23: "Azione :Utilizzare i telefoni cellulari come strumento per l'attivismo Partecipa al The Cell OUT, ​​un 'attimo di silenzio digitale' a partire dalle ore 12 Mercoledì 22 ottobre per commemorare i milioni di vite perse congolesi e sensibilizzare circa l' conflitto in corso in Congo e la corsa vizioso per le risorse naturali spettacolari del Congo."
+      line24: "Organizzare uno sforzo coordinato per le persone nella vostra comunità per spegnere i loro telefoni cellulari a mezzogiorno per almeno un'ora - forse un giorno intero - e cambiare il loro messaggio vocale per consentire ai chiamanti di sapere perché stanno mettendo il loro telefono cellulare via."
+      line25: "Visita"
+      line26: "per saperne di più."
+      line27: "Giovedi:"
+      line28: "La violenza sessuale in Congo"
+      line29: "Tema: La tragedia: Lo stupro usato come arma di guerra"
+      line30: "Azione: Ospitare un evento pubblico o raduno sul campus o nella vostra comunità per evidenziare la questione dello stupro in Congo."
+      line31: "Venerdì: "
+      line32: "Una libera e liberata Congo"
+      line33: "Tema: Il mondo Best Kept Secret: Rendendosi conto dell'enorme umana del Congo e del potenziale naturale"
+      line34: "Azione: ospitare un gruppo di discussione o forum, invitare oratori, o scambio skype con i giovani congolesi."
+      line35: "Sabato:"
+      line36: "Break The Silence!"
+      line37: "Tema: Giornata mondiale di supporto del Congo"
+      line38: "Azione: Ospitare un concerto o altro tipo di raccolta fondi per"
+      line39: "'Congo Connect Iniziativa giovani'"
+      link: "qui."

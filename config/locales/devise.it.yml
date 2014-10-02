@@ -1,0 +1,76 @@
+it:
+  devise:
+    confirmations:
+      confirmed: "l tuo account è stato confermato con successo."
+      send_instructions: "Riceverai una mail con le istruzioni per confermare il tuo account in pochi minuti."
+      send_paranoid_instructions: "Se il tuo indirizzo e-mail esiste nel nostro database, si riceverà una e-mail con le istruzioni per confermare il tuo account in pochi minuti."
+    failure:
+      already_authenticated: "Sei già eseguito l'accesso."
+      inactive: "Sei già eseguito l'accesso."
+      invalid: "E-mail o password non validi."
+      locked: "Il tuo account è bloccato."
+      last_attempt: "Hai un altro tentativo prima che il vostro account verrà bloccato."
+      not_found_in_database: "E-mail o password non validi."
+      timeout: "La sessione scaduto Accedi nuovamente per continuare."
+      unauthenticated: "È necessario il login o registrarsi prima di continuare."
+      unconfirmed: "Devi confermare il tuo account prima di continuare."
+    mailer:
+      confirmation_instructions:
+        subject: "Istruzioni di conferma"
+      reset_password_instructions:
+        subject: "Reset istruzioni password"
+      unlock_instructions:
+        subject: "Istruzioni di sblocco"
+      reset_password: "Mandami reimpostare istruzioni di password"
+    omniauth_callbacks:
+      failure: "Non si poteva autenticare da %{kind} perché \"%{reason}\"."
+      success: "Autenticato con successo da %{kind} conto."
+    passwords:
+      no_token: "Non è possibile accedere a questa pagina senza proveniente da un indirizzo email di reimpostazione password Se non vieni da una e-mail di reimpostazione della password, si prega di assicurarsi che si è utilizzato l'URL completo fornito."
+      send_instructions: "Riceverai un messaggio email con le istruzioni su come reimpostare la password in pochi minuti. "
+      send_paranoid_instructions: "Se il tuo indirizzo e-mail esiste nel nostro database, si riceverà un link di recupero password al tuo indirizzo e-mail in pochi minuti."
+      updated: "La tua password è stata cambiata con successo Ora sei collegato."
+      updated_not_active: "La tua password è stata cambiata con successo."
+    registrations:
+      destroyed: "Bye Il tuo account è stato cancellato con successo Speriamo di rivedervi presto."
+      email_taken: "Questa email è già associato a un account."
+      signed_up: "Welcome Ti sei iscritto con successo."
+      signed_up_but_inactive: "Ti sei iscritto con successo, tuttavia, non poteva firmare perché voi nel tuo account non è ancora attivo."
+      signed_up_but_locked: "Ti sei iscritto con successo, tuttavia, non potremmo firmare voi, perché il tuo account è bloccato."
+      signed_up_but_unconfirmed: "Un messaggio con un link di conferma è stata inviata al tuo indirizzo e-mail Si prega di aprire il link per attivare l'account."
+      update_needs_confirmation: "Tu aggiornato il tuo account successo , ma abbiamo bisogno di verificare il tuo nuovo indirizzo email Controlla la tua email e clicca sul link di conferma per finalizzare confermare il tuo nuovo indirizzo email."
+      updated: "Tu aggiornato il tuo account con successo."
+      edit:
+        name: "Nome"
+        surname: "Cognome"
+        email: "Email"
+        phone: "Numero di telefono"
+        textable: "Vorrei ricevere gli aggiornamenti di testo da Amici del Congo"
+        confirmation_msg: "Attualmente la conferma attesa: %{unconfirmed_email}"
+        current_pass: "Password Attuale"
+        pass_msg: "(abbiamo bisogno della vostra password attuale per confermare le modifiche)"
+        blank_msg: "(lasciare in bianco se non si vuole cambiare) "
+        pass: "Password"
+        pass_confirm: "Conferma Password"
+        update: "Aggiornamento"
+        sign_up: "SIGN UP"
+    sessions:
+      signed_in: "Firmato in successo. "
+      signed_out: " Firmato con successo. "
+    unlocks:
+      send_instructions: "Riceverai un messaggio email con le istruzioni su come sbloccare il tuo account in pochi minuti."
+      send_paranoid_instructions: "Se esiste l'account, riceverete un'email con le istruzioni su come sbloccare in pochi minuti."
+      unlocked:  "Il tuo account è stato sbloccato con successo Devi fare login per continuare."
+    users:
+      user:
+        signed_up: "Welcome Ti sei iscritto con successo."
+        updated: "Avete appena aggiornato i dati dell'account."
+        destroyed: "Avete appena disattivato il tuo account."
+  errors:
+    messages:
+      already_confirmed: "è stato già confermato , prova ad accedere a"
+      confirmation_period_expired: "deve essere confermata entro %{period}, si prega di richiederne una nuova"
+      expired: "è scaduto, si prega di richiederne una nuova"
+      not_found: "non è associato ad alcun conto."
+      not_locked: "non è stato bloccato"
+      not_saved: "Avete riscontrato un errore"
