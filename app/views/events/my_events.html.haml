@@ -1,6 +1,6 @@
 - render :partial => 'shared/load_i18n_translations'
 =image_tag Movement.first.image, class: "bg"
-=content_for :title, "My Events"
+=content_for :title, t('events.dashboard.my_events')
 .container.no-header
   %h2= t('events.dashboard.header')
   = form_tag my_events_path, :method => :get, remote: true do

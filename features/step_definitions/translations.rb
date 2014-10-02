@@ -12,6 +12,10 @@ When(/^user switches to french language/) do
   click_link_or_button('Français')
 end
 
+When(/^user switches to italian language/) do
+  click_link_or_button('Italiano')
+end
+
 Then(/^default language is English/) do
   expect(I18n.locale).to eql(:en)
   expect(home_page.translate_home_page(:en)).to be true
@@ -25,4 +29,9 @@ end
 Then(/^home page content shows in French/) do
   expect(I18n.locale).to eql(:fr)
   expect(home_page.translate_home_page(:fr)).to be true
+end
+
+Then(/^home page content shows in Italian/) do
+  expect(I18n.locale).to eql(:it)
+  expect(home_page.translate_home_page(:it)).to be true
 end

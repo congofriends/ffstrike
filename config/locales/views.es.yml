@@ -45,6 +45,7 @@ es:
       export_attendees: *export_attendees
       contact_attendees: "Contacto con los asistentes"
     dashboard:
+      my_events: "Mi Eventos"
       header: "Administrar Mis eventos"
       instructions: "Seleccione un evento y haga clic en Mostrar"
       tab_edit: "Detalles del evento"
@@ -353,6 +354,7 @@ es:
       no_upcoming_events: 'No hay Eventos'
       members: 'Miembros'
     support_network:
+      teams: "Equipos"
       team_description: 'Un equipo es un conjunto de individuos u organizaciones que se ha unido el movimiento Congo para organizar eventos en sus comunidades locales para crear conciencia y educar a otros acerca de la situación en el Congo. Ayúdanos a construir equipos de todo el mundo para trabajar en asociación con los congoleños para lograr la paz, la justicia y la dignidad humana en el corazón de África. Únete al movimiento por la unión o la creación de un equipo.'
       support_network: 'Red de Apoyo'
       network_message: 'Hay %{number} equipos y creciendo!'
@@ -466,9 +468,9 @@ es:
       header3: "Involúcrate"
       background: "Briser le Silence Semaine Congo est une semaine d'activités qui commémore les millions de vies perdues dans le conflit du Congo, tout en célébrant l'énorme potentiel humain et naturel qui existe dans le pays à travers le monde Communautés rejoindre en partenariat avec congolais chaque année sur l'. troisième semaine d'Octobre à projeter des films, maintenez teach-ins et des forums, organiser des rassemblements, des collecteurs de fonds d'accueil, proposent des concerts et d'entreprendre d'autres activités pour élever le profil du Congo à travers le globe. étudiants et organisateurs communautaires initiées Semaine Congo en 2008. Les chefs religieux, des universitaires, des intellectuels, des artistes et des gens ordinaires à travers le monde se sont impliqués également de reconnaître la vie du peuple congolais et leur quête de la dignité humaine."
       purpose: "Desde 2008, la Semana de Congo ha impulsado la participación de las personas en más de 65 países y 400 campus universitarios y comunidades El objetivo del Congo Semana es elevar la conciencia global sobre la situación en el Congo y defensor de la paz, la justicia y la dignidad humana en asociación con el pueblo congoleño. Congo Semana 2014 es el séptimo aniversario del Congo semana y tendrá lugar del"
-      cw-date: "Domingo, 19 de octubre hasta el sábado, 25 de octubre de 2014"
-      get-involved1: "Regístrate para organizar o asistir a un evento para el Congo Semana VII,"
-      get-involved2: "Anime a su red para ser parte de la Semana de Congo y correr la voz a través de Facebook y Twitter."
+      cw_date: "Domingo, 19 de octubre hasta el sábado, 25 de octubre de 2014"
+      get_involved1: "Regístrate para organizar o asistir a un evento para el Congo Semana VII,"
+      get_involved2: "Anime a su red para ser parte de la Semana de Congo y correr la voz a través de Facebook y Twitter."
       date: "19 a 25 octubre, 2014"
       link: "aquí."
       organizer_toolkit: "Acceder al Kit de herramientas Organizers para descargar medios y recursos para compartir "

@@ -40,6 +40,7 @@ it:
     notes: "Note (fare clic per modificare)"
     upcoming_events: "Prossimi Eventi"
     dashboard:
+      my_events: "I Miei Eventi"
       header: "Gestione eventi"
       instructions: "Selezionare un evento e fare clic su Mostra"
       tab_edit: "Dettagli dell'evento"
@@ -102,8 +103,8 @@ it:
       address2: "Indirizzo 2:"
       city: "Città / Paese:"
       state: "Stato / Provincia / Regione:"
-      zip: "Zip / Postal Code:"
-      country: "Country"
+      zip: "Cap / Postale Codice"
+      country: "Paese"
       notes: "Note:"
       type: "Tipo:"
       forum: "Forum (Disqus):"
@@ -343,6 +344,7 @@ it:
       no_upcoming_events: 'Non ci sono Prossimi Eventi'
       members: 'Membri'
     support_network :
+      teams: "Squadre"
       team_description : "Un gruppo è un insieme di individui o organizzazioni che hanno aderito al movimento Congo per organizzare eventi nelle loro comunità locali per sensibilizzare ed educare gli altri sulla situazione in Congo . Aiutaci a costruire squadre in tutto il mondo a lavorare in collaborazione con congolese per portare la pace, la giustizia e la dignità umana nel cuore dell'Africa. Unisciti al movimento unendo o la creazione di una squadra."
       support_network : 'Support Network'
       network_message : 'Ci sono %{number} squadre e in crescita!'
@@ -446,12 +448,12 @@ it:
     zip_length: "Zip dovrebbe essere lungo 5 cifre"
   static_pages:
     mission:
-      header1: "Background"
+      header1: "Sfondo"
       header2: "Scopo"
-      header3: "Get Involved"
+      header3: "Partecipa"
       background: "Breaking the Silence Congo Week è una settimana di attività che ricorda i milioni di vite perse nel conflitto del Congo mentre celebrava l'enorme potenziale umano e naturale che esiste nel paese comunità in tutto il mondo si uniscono in partnership con congolese ogni anno la terza settimana di ottobre a schermo film, tenere insegnare - ins e forum, organizzare manifestazioni, raccolte di fondi di accoglienza, di concerti e di svolgere molte altre attività per elevare il profilo del Congo in tutto il mondo. Studenti e organizzatori di comunità avviate Congo Week nel 2008 leader religiosi, studiosi, intellettuali, artisti e gente comune di tutto il mondo anche stato coinvolto a riconoscere la vita del popolo congolese e la loro ricerca per la dignità umana."
       purpose: "Dal 2008 , il Congo Week ha galvanizzato la partecipazione delle persone in oltre 65 paesi e 400 città universitarie e comunità universitarie Lo scopo del Congo Week è quello di aumentare la consapevolezza globale sulla situazione in Congo e avvocato per la pace, la giustizia e la dignità umana in collaborazione con il popolo congolese. Congo Week 2014 è il settimo anniversario del Congo settimana e si svolgerà dal"
-      cw_Ïdate: "Domenica 19 Ottobre a Sabato 25 ottobre 2014"
+      cw_date: "Domenica 19 Ottobre a Sabato 25 ottobre 2014"
       get_involved1: "Sign-up di organizzare o partecipare a un evento per il Congo Week VII,"
       get_involved2: "Incoraggiare la rete ad essere una parte del Congo Week e diffondere la parola via Facebook e Twitter."
       date: "19-25 Ottobre , 2014"

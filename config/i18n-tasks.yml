@@ -3,6 +3,7 @@ locales:
 - en
 - es
 - fr
+- it
 ignore:
   - host_tasks.*
   - attendees_tasks.*

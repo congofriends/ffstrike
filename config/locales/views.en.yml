@@ -40,6 +40,7 @@ en:
     notes: "Notes (Click to Edit)"
     upcoming_events: "Upcoming Events"
     dashboard:
+      my_events: "My events"
       header: "Manage Events"
       instructions: "Select an Event and click SHOW"
       tab_edit: "Event Details"
@@ -344,6 +345,7 @@ en:
       no_upcoming_events: 'There are no Upcoming Events'
       members: 'Members'
     support_network:
+      teams: "Teams"
       team_description: 'A team is a collection of individuals or organization that has joined the Congo movement to organize events in their local communities to raise awareness and educate others about the situation in the Congo. Help us build teams throughout the globe to work in partnership with Congolese to bring about peace, justice and human dignity in the heart of Africa. Join the movement by joining or creating a team.'
       support_network: 'Support Network'
       network_message: 'There are %{number} teams and growing!'
@@ -452,9 +454,9 @@ en:
       header3: "Get Involved"
       background: "Breaking the Silence Congo Week is a week of activities that commemorates the millions of lives lost in the Congo conflict while celebrating the enormous human and natural potential that exists in the country. Communities throughout the globe join in partnership with Congolese each year on the third week of October to screen films, hold teach-ins and forums, organize rallies, host fundraisers, put on concerts and undertake many other activities to elevate the profile of the Congo throughout the globe. Students and community organizers initiated Congo Week in 2008. Religious leaders, scholars, intellectuals, artists, and ordinary people throughout the globe also got involved to acknowledge the lives of the Congolese people and their pursuit for human dignity."
       purpose: "Since 2008, Congo Week has galvanized the participation of people in over 65 countries and 400 university campuses and communities. The purpose of Congo Week is to raise global consciousness about the situation in the Congo and advocate for peace, justice and human dignity in partnership with the Congolese people. Congo Week 2014 is the seventh anniversary of Congo Week and will take place from"
-      cw-date: "Sunday, October 19 to Saturday, October 25, 2014."
-      get-involved1: "Sign-up to organize or attend an event for Congo Week VII,"
-      get-involved2: "Encourage your network to be a part of Congo Week and spread the word via Facebook and Twitter."
+      cw_date: "Sunday, October 19 to Saturday, October 25, 2014."
+      get_involved1: "Sign-up to organize or attend an event for Congo Week VII,"
+      get_involved2: "Encourage your network to be a part of Congo Week and spread the word via Facebook and Twitter."
       date: "October 19 - 25, 2014"
       link: "here."
       organizer_toolkit: "Access the Organizers Tool Kit to download media and resources to share "
