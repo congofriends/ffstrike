@@ -23,7 +23,7 @@ fr:
     published: "Équipe a été publié"
     not_yours: "Vous n'avez pas propre ce équipe!"
     not_public: "Que équipe n'est pas public encore!"
-    no_route: "Désolé, nous n'avons pas pu trouver l'mouvement que vous cherchez"
+    no_route: "Désolé, nous n'avons pas pu trouver l'équipe que vous cherchez"
     share: "Partager votre passion"
     authenticated_join_team_success: "Merci! Vous avez rejoint l'équipe %{movement_name}."
     unauthenticated_join_team_success: "Merci! Vous avez rejoint l'équipe %{movement_name}. Nous vous avons envoyé un e-mail avec un mot de passe temporaire."
