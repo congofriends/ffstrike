@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   after_filter :store_location
   after_filter :discard_flash_if_xhr
   before_filter :set_locale
+  before_filter :set_locale_hash
 
   def store_location
     # store last url - this is needed for post-login redirect to whatever the user last visited.
@@ -51,8 +52,14 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
+    params[:locale] = 'en' unless params[:locale]
     I18n.locale = params[:locale] || I18n.default_locale
     gon.locale = I18n.locale
+  
+  end
+
+  def set_locale_hash
+    @locale_hash = {"en" => "English", "fr"  => "Français", "es" => "Español", "it" => "Italiano"}
   end
 
 end
