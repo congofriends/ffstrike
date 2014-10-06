@@ -23,6 +23,7 @@ it:
     published: "Team è stato pubblicato"
     not_yours: "Non proprietario che squadra!"
     not_public: "Quella squadra non è ancora pubblico!"
+    no_route: "Mi dispiace, non siamo riusciti a trovare l'squadra che stavi cercando"
     share: "Condividi la tua passione"
     authenticated_join_team_success: "Grazie! Hai aderito %{movement_name}."
     unauthenticated_join_team_success: "Grazie per l'adesione %{movement_name} squadra Vi abbiamo inviato una mail con una password temporanea."

@@ -23,6 +23,7 @@ es:
     published: "El equipo ha sido publicado"
     not_yours: "No es necesario que el equipo propio!"
     not_public: "Que el equipo no es público!"
+    no_route: "Lo sentimos, pero no hemos podido encontrar el movimiento que estaba buscando"
     share: "Comparte tu pasión"
     authenticated_join_team_success: "Gracias! Usted se ha unido al equipo %{movement_name}."
     unauthenticated_join_team_success: "Gracias! Usted se ha unido al equipo %{movement_name}. Te hemos enviado un correo electrónico con una contraseña temporal."

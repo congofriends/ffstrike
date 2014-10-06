@@ -69,7 +69,6 @@ class MovementsController < ApplicationController
     else
       render "show_team"
     end
-
   end
 
   def join_team
@@ -171,6 +170,8 @@ class MovementsController < ApplicationController
 
   def load_movement
     @movement = Movement.find_by_param params[:id]
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path, notice: t('movement.no_route')
   end
 
   def load_event_types

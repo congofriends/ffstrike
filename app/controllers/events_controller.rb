@@ -76,6 +76,8 @@ class EventsController < ApplicationController
         render 'show'
       end
     end
+    rescue ActiveRecord::RecordNotSaved
+      redirect_to root_path, notice: t('event.no_route')
   end
 
   def create
@@ -165,6 +167,8 @@ class EventsController < ApplicationController
 
   def load_event
     @event = Event.find_by_param params[:id]
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path, notice: t('event.no_route')
   end
 
   def load_movement

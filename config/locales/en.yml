@@ -43,6 +43,7 @@ en:
     published: "Team has been published"
     not_yours: "You don't own that team!"
     not_public: "That team isn't public yet!"
+    no_route: "Sorry, we were unable to find the Movement you were looking for"
     share: "Share your passion"
     authenticated_join_team_success: "Thank you! You have joined %{movement_name}."
     unauthenticated_join_team_success: "Thank you for joining the %{movement_name} team. We've sent you an email with a temporary password."
