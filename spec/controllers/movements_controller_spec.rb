@@ -91,24 +91,12 @@ describe MovementsController do
       get :show, id: movement
 			expect(response).to render_template :show
 		end
-    # context 'as a visitor to movement page' do
-    #   context 'when I view an unpublished movement' do
-    #     before :each do
-    #       movement = FactoryGirl.create(:unpublished_movement)
-    #       user = FactoryGirl.create(:user)
-    #       controller.stub(:current_user).and_return(user)
-    #       get :show, id: movement
-    #     end
 
-    #     it 'redirects me to the home page' do
-    #       expect(response).to redirect_to root_path
-    #     end
-
-    #     it 'notifies me that the movement does not exist' do
-    #       flash[:notice].should eq(I18n.t('movement.not_public'))
-    #     end
-    #   end
-    # end
+    it "will initialize the locale hash for all controllers that inherit from the application controller" do
+      get :show, id: movement
+      expected_locale_hash = {"en" => "English", "fr"  => "Français", "es" => "Español", "it" => "Italiano"}
+      expect(assigns[:locale_hash]).to eq(expected_locale_hash)
+    end
 	end
 
   describe "DELETE #destroy" do
