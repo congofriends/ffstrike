@@ -31,7 +31,7 @@
       .spacer10
     %strong= t('events.where')
     =event.location
-    = link_to "(map)",  "http://maps.google.com?q= #{event.location}",target: "_blank"
+    = link_to "(map)",  "http://maps.google.com?q= #{event.location}", target: "_blank"
 
     - unless !event.location_details || event.location_details.empty?
       .row
@@ -50,4 +50,4 @@
       .spacer10
     - unless event.description.nil?
       %strong= t('events.description')
-      = event.description
+      = event.description.html_safe

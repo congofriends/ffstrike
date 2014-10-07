@@ -20,7 +20,7 @@
                 = text_field :event, :name, class: 'form-control', maxlength: 130, placeholder: "Congo Movie Screening"
               .form-group.col-sm-12
                 = label :event, :description, t("events.description") + " *"
-                = text_area :event, :description, class: 'form-control', rows: "6", placeholder: "In honor of this year's Congo Week, our organization is screening a documentary that will explore the roles nations all over the world have played in triggering the greatest humanitarian crisis at the dawn of the 21st century."
+                = text_area :event, :description, class: 'form-control redactor', rows: "100", placeholder: "In honor of this year's Congo Week, our organization is screening a documentary that will explore the roles nations all over the world have played in triggering the greatest humanitarian crisis at the dawn of the 21st century."
               .event-date-time
                 .form-group.col-sm-4
                   = label :event, :start_time, t("events.edit.start_date") + " *"

@@ -16,7 +16,7 @@
                 = form.text_field :name, class: 'form-control', :maxlength => 100, placeholder: "Congo Movie Screening"
               .form-group.col-sm-12
                 = form.label :event_description, t('events.description') + " *"
-                = form.text_area :description, class: 'form-control', rows: "6", placeholder: "In honor of this year's Congo Week, our organization is screening a documentary that will explore the roles nations have played in triggering the greatest humanitarian crisis at the dawn of the 21st century."
+                = form.text_area :description, class: 'form-control redactor', rows: "100", placeholder: "In honor of this year's Congo Week, our organization is screening a documentary that will explore the roles nations have played in triggering the greatest humanitarian crisis at the dawn of the 21st century."
               .event-date-time
                 .form-group.col-sm-4
                   = form.label t('events.edit.start_date') + " *"

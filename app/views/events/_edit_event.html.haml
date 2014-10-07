@@ -42,7 +42,7 @@
           = f.country_select :country, priority: %w(CD US CA), prompt: 'Please select a country', class: 'form-control'
       .form-group.col-sm-12
         = f.label t("events.description")
-        = f.text_area :description, class: 'form-control'
+        = f.text_area :description, class: 'form-control redactor', rows: "10"
       .form-group.col-sm-12
         = f.label t("events.edit.notes")
         = f.text_field :notes, class: 'form-control'

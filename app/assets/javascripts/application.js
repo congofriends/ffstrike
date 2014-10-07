@@ -26,3 +26,4 @@
 //= require RRSSB
 //= require jquery.countdown
 //= require jquery.infinitescroll
+//= require redactor-rails

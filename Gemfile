@@ -70,6 +70,7 @@ gem 'geocoder'
 gem 'gon'
 
 gem 'kaminari'
+gem 'redactor-rails'
 
 group :test, :development do
   gem 'rspec'

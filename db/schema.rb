@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140827144750) do
+ActiveRecord::Schema.define(version: 20141007112816) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,7 +119,6 @@ ActiveRecord::Schema.define(version: 20140827144750) do
     t.boolean  "published",            default: true
     t.string   "flickr"
     t.boolean  "sponsored",            default: false
-    t.string   "phone"
   end
 
   create_table "ownerships", force: true do |t|
@@ -132,6 +131,23 @@ ActiveRecord::Schema.define(version: 20140827144750) do
   add_index "ownerships", ["movement_id"], name: "index_ownerships_on_movement_id", using: :btree
   add_index "ownerships", ["user_id", "movement_id"], name: "index_ownerships_on_user_id_and_movement_id", unique: true, using: :btree
   add_index "ownerships", ["user_id"], name: "index_ownerships_on_user_id", using: :btree
+
+  create_table "redactor_assets", force: true do |t|
+    t.integer  "user_id"
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "redactor_assets", ["assetable_type", "assetable_id"], name: "idx_redactor_assetable", using: :btree
+  add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_redactor_assetable_type", using: :btree
 
   create_table "tasks", force: true do |t|
     t.string   "description"

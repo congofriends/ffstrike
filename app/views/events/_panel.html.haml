@@ -28,7 +28,7 @@
       .spacer10
     - unless event.description.nil?
       %strong= t('events.description')
-      = event.description
+      = event.description.html_safe
   .col-sm-4.event-actions
     -unless event.host? current_user
       =link_to_modal t('events.contact_host_btn'), new_contact_path(event), {class: "btn btn-attend"}
