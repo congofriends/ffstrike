@@ -50,4 +50,4 @@
       .spacer10
     - unless event.description.nil?
       %strong= t('events.description')
-      = event.description
+      = simple_format(event.description)

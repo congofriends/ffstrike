@@ -40,7 +40,7 @@
       .spacer10
     - unless event.description.nil?
       %strong= t('events.description')
-      = event.description
+      = simple_format(event.description)
   .col-sm-3.event-actions
     -unless event.attended_by? current_user
       = link_to_modal t('events.attend_btn'), new_attendee_user_path({:event => event.id}), {class: "btn btn-attend"}
