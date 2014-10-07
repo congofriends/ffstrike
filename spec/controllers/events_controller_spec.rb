@@ -17,6 +17,15 @@ describe EventsController do
 
   end
 
+  describe "GET #explanation" do
+    it "redirects to the show page" do
+      get "explanation", id: event
+      
+      expect(response).to redirect_to event_path
+    end
+
+  end
+
   describe "GET #new" do
     before :each do
       sign_in coordinator

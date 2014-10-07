@@ -11,6 +11,10 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+  def explanation
+    redirect_to event_path
+  end
+
   def index
     redirect_to root_path and return unless @movement
     @events = Event.near_zip(params[:zip], 200)
