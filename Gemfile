@@ -19,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Include font-awesome, used in many icons
 gem 'font-awesome-rails'
@@ -73,6 +73,7 @@ gem 'kaminari'
 gem 'redactor-rails'
 
 group :test, :development do
+  gem 'puppet'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'factory_girl'

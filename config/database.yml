@@ -1,6 +1,7 @@
 development:
   adapter: postgresql
   database: db/rally_development
+  template: template0
   pool: 5
   timeout: 5000
   username:
@@ -10,6 +11,7 @@ development:
 test:
   adapter: postgresql
   database: db/rally_test
+  template: template0
   pool: 5
   timeout: 5000
   username:
