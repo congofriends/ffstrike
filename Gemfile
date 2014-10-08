@@ -66,6 +66,7 @@ gem 'devise_invitable'
 
 # Geocoding
 gem 'geocoder'
+gem 'carrierwave'
 
 gem 'gon'
 
