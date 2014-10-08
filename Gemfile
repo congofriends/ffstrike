@@ -66,12 +66,16 @@ gem 'devise_invitable'
 
 # Geocoding
 gem 'geocoder'
+
+# Editing of text-area
+gem 'redactor-rails'
 gem 'carrierwave'
+# gem 'fog'
+# gem 'unf'
 
 gem 'gon'
 
 gem 'kaminari'
-gem 'redactor-rails'
 
 group :test, :development do
   gem 'puppet'
