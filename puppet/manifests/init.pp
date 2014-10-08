@@ -1,4 +1,3 @@
-$as_vagrant   = 'sudo -u vagrant -H bash -l -c'
 $home         = '/home/vagrant'
 
 # --- Preinstall Stage ---------------------------------------------------------
