@@ -14,8 +14,8 @@ test:
   template: template0
   pool: 5
   timeout: 5000
-  username: postgres
-  password: postgres
+  username:
+  password:
 
 production:
   adapter: postgresql
