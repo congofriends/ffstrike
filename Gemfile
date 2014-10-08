@@ -69,9 +69,8 @@ gem 'geocoder'
 
 # Editing of text-area
 gem 'redactor-rails'
+gem 'mini_magick'
 gem 'carrierwave'
-# gem 'fog'
-# gem 'unf'
 
 gem 'gon'
 
