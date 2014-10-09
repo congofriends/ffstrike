@@ -4,6 +4,7 @@ class UnauthenticatedEventsController < ApplicationController
   def new
     redirect_unauthorized_user
     @event = Event.new
+    @event_type = params[:type] || EventType.first.name
   end
 
   def create

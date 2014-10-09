@@ -17,10 +17,7 @@
       =image_tag @movement.avatar, class: "movement_avatar"
     .spacer10
     .row
-      - if current_user
-        = link_to t('.host_event'), new_movement_event_path(@movement), class: "btn btn-host"
-      - else
-        = link_to t('.host_event'), new_movement_unauthenticated_event_path(@movement), class: "btn btn-host"
+      = link_to t('.host_event') , event_type_movement_path(@movement), class: 'btn search btn-host'
     .row
       .spacer10
     .row

@@ -1,129 +1,92 @@
 - render partial: 'shared/load_i18n_translations'
 =image_tag Movement.first.image, class: "bg"
 .container.no-header
-  .row
-    %h2#host_event
-      %strong= t('.congo_week_content')
-  .row
-    .col-md-12
-      .well
-        = form_for ([@movement, @event]), html: { id: 'new-event-form' } do |form|
-          %fieldset
-            %fieldset.event_details
-              %legend= t('.legend1')
-              .form-group.col-sm-12
-                = form.label :event_name, t('events.edit.name') + " *"
-                = form.text_field :name, class: 'form-control', :maxlength => 100, placeholder: "Congo Movie Screening"
-              .form-group.col-sm-12
-                = form.label :event_description, t('events.description') + " *"
-                = form.text_area :description, class: 'form-control redactor', rows: "100", placeholder: "In honor of this year's Congo Week, our organization is screening a documentary that will explore the roles nations have played in triggering the greatest humanitarian crisis at the dawn of the 21st century."
-              .event-date-time
-                .form-group.col-sm-4
-                  = form.label t('events.edit.start_date') + " *"
-                  = form.text_field :start_time, class: "form-control datetimepicker datetimepicker-#{I18n.locale}"
-                .form-group.col-sm-4
-                  = form.label t('events.edit.end_date')
-                  = form.text_field :end_time, class: "form-control datetimepicker datetimepicker-#{I18n.locale}"
-              .form-group.col-sm-8
-                = form.check_box :time_tbd, {}, true, false
-                = form.label :time_tbd, t('.datetime_tbd')
-              %legend= t('.address')
-              .row
-                .form-group.col-sm-6
-                  = form.label :address, t('events.edit.address1')
-                  = form.text_field :address, class: 'form-control', placeholder: "313 North Roosevelt Road"
-                .form-group.col-sm-6
-                  = form.label :address2, t('events.edit.address2')
-                  = form.text_field :address2, class: 'form-control', placeholder: "APT #212"
-              .row
-                .form-group.col-sm-6
-                  = form.label :city, t('events.edit.city') + " *"
-                  = form.text_field :city, class: 'form-control', placeholder: "Chicago"
-                .form-group.col-sm-6
-                  = form.label :state, t('events.edit.state')
-                  = form.text_field :state, class: 'form-control', placeholder: "Illinois"
-              .row
-                .form-group.col-sm-6
-                  = form.label :zip, t('events.edit.zip')
-                  = form.text_field :zip, class: 'form-control', placeholder: "60606"
-                .form-group.col-sm-6
-                  = form.label :country, t('events.edit.country') + " *"
-                  = form.country_select :country, priority: %w(CD US CA), prompt: 'Please select a country', class: 'form-control'
-              .row
-                .form-group.col-sm-12
-                  = form.check_box :location_tbd, {}, true, false
-                  = form.label :location_tbd, t('.address_tbd')
-                .form-group.col-sm-12
-                  = form.label :location_details, t('events.location')
-                  = form.text_field :location_details, placeholder: t('.location_placeholder'), class: 'form-control'
-                .form-group.col-sm-12
-                  = link_to t('movements.new.cancel_btn'), :back, class: "btn btn-cancel"
-                  %button{type: "button", class: "btn btn-success next"}= t('.next')
-            %fieldset.event_additional_details
-              %legend= t('.legend2')
-              .form-group
-                = form.label :image
-                = form.file_field :image
-                %p#avatar-size
-                  =t('.avatar_size')
-              .form-group
-                = form.label t('.msg_to_attendees')
-                = text_area :event, :notes, class: 'form-control', rows: "2", maxlength: 200, placeholder: "Thank you for signing up to attend the movie screening...!"
-              .form-group
-                = form.label :event_type_id, t('.event_type') + " *"
-                = form.select :event_type, EventType.all.map(&:name), {class: 'form-control'}
-                %p#avatar-size
-                  =t("events.new.event_type_notice")
-              .row
-                #fundraise_div{class: :hidden}
-                  #agreement{class: "terms"}
-                    %h3.strong.text-center= t('events.fundraiser.header1')
-                    %br
+	.row
+		%h2#host_event
+			%strong= t('.congo_week_content')
+	.row
+		.col-md-12
+			.well
+				= form_for ([@movement, @event]), html: { id: 'new-event-form' } do |form|
+					%fieldset
+						%fieldset.event_details
+							%legend= t('.legend1')
+							.form-group.col-sm-12
+								= form.label :event_name, t('events.edit.name') + " *"
+								= form.text_field :name, class: 'form-control', :maxlength => 100, value: "#{@event_type} for Congo Week"
+							.form-group.col-sm-12
+								= form.label :event_description, t('events.description') + " *"
+								= form.text_area :description, class: 'form-control redactor', rows: "50", value: EVENT_DESCRIPTIONS["event_type"]["#{@event_type.downcase.gsub(' ', '_')}"]["full_description"]
+							.event-date-time
+								.form-group.col-sm-4
+									= form.label t('events.edit.start_date') + " *"
+									= form.text_field :start_time, class: "form-control datetimepicker datetimepicker-#{I18n.locale}"
+								.form-group.col-sm-4
+									= form.label t('events.edit.end_date')
+									= form.text_field :end_time, class: "form-control datetimepicker datetimepicker-#{I18n.locale}"
+							.form-group.col-sm-8
+								= form.check_box :time_tbd, {}, true, false
+								= form.label :time_tbd, t('.datetime_tbd')
+							%legend= t('.address')
+							.row
+								.form-group.col-sm-6
+									= form.label :address, t('events.edit.address1')
+									= form.text_field :address, class: 'form-control', placeholder: "313 North Roosevelt Road"
+								.form-group.col-sm-6
+									= form.label :address2, t('events.edit.address2')
+									= form.text_field :address2, class: 'form-control', placeholder: "APT #212"
+							.row
+								.form-group.col-sm-6
+									= form.label :city, t('events.edit.city') + " *"
+									= form.text_field :city, class: 'form-control', placeholder: "Chicago"
+								.form-group.col-sm-6
+									= form.label :state, t('events.edit.state')
+									= form.text_field :state, class: 'form-control', placeholder: "Illinois"
+							.row
+								.form-group.col-sm-6
+									= form.label :zip, t('events.edit.zip')
+									= form.text_field :zip, class: 'form-control', placeholder: "60606"
+								.form-group.col-sm-6
+									= form.label :country, t('events.edit.country') + " *"
+									= form.country_select :country, priority: %w(CD US CA), prompt: 'Please select a country', class: 'form-control'
+							.row
+								.form-group.col-sm-12
+									= form.check_box :location_tbd, {}, true, false
+									= form.label :location_tbd, t('.address_tbd')
+								.form-group.col-sm-12
+									= form.label :location_details, t('events.location')
+									= form.text_field :location_details, placeholder: t('.location_placeholder'), class: 'form-control'
+								.form-group.col-sm-12
+									= link_to t('movements.new.cancel_btn'), :back, class: "btn btn-cancel"
+									%button{type: "button", class: "btn btn-success next"}= t('.next')
+						%fieldset.event_additional_details
+							%legend= t('.legend2')
+							.form-group
+								= form.label :image
+								= form.file_field :image
+								%p#avatar-size
+									=t('.avatar_size')
+							.form-group
+								= form.label t('.msg_to_attendees')
+								= text_area :event, :notes, class: 'form-control', rows: "2", maxlength: 200, placeholder: "Thank you for signing up to attend the #{@event_type}!"
+							.hidden.form-group
+								= form.label :event_type_id, t('.event_type') + " *"
+								= form.select :event_type, EventType.all.map(&:name), class: 'form-control', selected: @event_type
+							.row
+								= render 'fundraiser_agreement_form'
+							.form-group
+								- unless @movement.sub_movements.empty?
+									= form.label :movement, t('.event_team_msg')
+									= form.select :movement, @movement.sub_movements.map(&:name), {include_blank: ""}, {class: 'form-control'}
+								- if @movement.parent
+									= form.label :movement, t('.event_team_msg')
+									= form.select :movement, @movement.parent.sub_movements.map(&:name), {selected: @movement.name, include_blank: ""}, {class: 'form-control'}
+							.form-group
+								= form.check_box :forum_option
+								= form.label t('.forum_msg')
+							- if current_user
+								= form.hidden_field :host_id, value: current_user.id
+							.form-group
+								%button{type: "button", class: "btn btn-primary previous"}=  t('.previous')
+								= form.submit  t('.create_btn'), class: 'btn btn-success', id: 'create_event'
 
-                    %p= t('events.fundraiser.p1')
-                    %br
-
-                    %p= t('events.fundraiser.p2')
-                    %br
-
-                    %p= t('events.fundraiser.p3')
-                    %br
-
-                    %h3.strong.text-center= t('events.fundraiser.header2')
-                    %br
-
-                    %h4.strong.capitalize= t('events.fundraiser.user_agree')
-                    %br
-                    %ul
-                      %li= t('events.fundraiser.user_list1')
-                      %li= t('events.fundraiser.user_list2')
-                      %li= t('events.fundraiser.user_list3')
-                      %li= t('events.fundraiser.user_list4')
-                      %li= t('events.fundraiser.user_list5')
-                      %br
-                    %h4.strong.capitalize= t('events.fundraiser.fotc_will')
-                    %br
-                    %ul
-                      %li= t('events.fundraiser.fotc_list1')
-                      %li= t('events.fundraiser.fotc_list2')
-                      %li= t('events.fundraiser.fotc_list3')
-                      %li= t('events.fundraiser.fotc_list4')
-                      %br
-                  .row
-                  = check_box_tag :fundraise_approval, 1
-                  = form.label t('events.fundraiser.check')
-              .form-group
-                - unless @movement.sub_movements.empty?
-                  = form.label :movement, t('.event_team_msg')
-                  = form.select :movement, @movement.sub_movements.map(&:name), {include_blank: ""}, {class: 'form-control'}
-                - if @movement.parent
-                  = form.label :movement, t('.event_team_msg')
-                  = form.select :movement, @movement.parent.sub_movements.map(&:name), {selected: @movement.name, include_blank: ""}, {class: 'form-control'}
-              .form-group
-                = form.check_box :forum_option
-                = form.label t('.forum_msg')
-              - if current_user
-                = form.hidden_field :host_id, value: current_user.id
-              .form-group
-                %button{type: "button", class: "btn btn-primary previous"}=  t('.previous')
-                = form.submit  t('.create_btn'), class: 'btn btn-success', id: 'create_event'

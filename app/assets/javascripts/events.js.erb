@@ -73,6 +73,25 @@ function initializeEditEventValidations() {
     });
   };
 
+function fundraiserCheck() {
+   if($("#event_event_type").prop("selectedIndex") === 3){
+        $('#fundraise_div').removeClass('hidden');
+        $('#create_event').prop('disabled', true);
+        $('#fundraise_approval').click(function() {
+            if ($('#fundraise_approval').prop('checked') == true) {
+                $('#create_event').prop("disabled", false);
+            }
+            else {
+                $('#create_event').prop('disabled', true);
+            }
+        });
+    }
+    else {
+        $('#fundraise_div').addClass('hidden');
+        $('#create_event').prop("disabled", false);
+    }
+}
+
 function formValid(nextButton, fieldset){
     return $('#new-event-form').valid();
 }
@@ -104,8 +123,11 @@ function my_events_page() {
 
 $(document).ready(function() {
 
+
+
   if(new_events_page()){
     initializeValidations();
+    fundraiserCheck();
   }
 
   if(my_events_page()){
@@ -148,25 +170,6 @@ $(document).ready(function() {
       $("#event_zip").prop('disabled', false);
     }
   })
-
-  $("#event_event_type").bind('change', function(){
-    if(this.selectedIndex === 3){
-        $('#fundraise_div').removeClass('hidden');
-        $('#create_event').prop('disabled', true);
-        $('#fundraise_approval').click(function() {
-            if ($('#fundraise_approval').prop('checked') == true) {
-                $('#create_event').prop("disabled", false);
-            }
-            else {
-                $('#create_event').prop('disabled', true);
-            }
-        });
-    }
-    else {
-        $('#fundraise_div').addClass('hidden');
-        $('#create_event').prop("disabled", false);
-    }
-  });
 
   $(function() {
       $('#search_input').fastLiveFilter('#search_events');

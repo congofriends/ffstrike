@@ -87,14 +87,14 @@ en:
       short_description: "Digital moment of silence"
       full_description: "The Cell OUT is a digital moment of silence to commemorate the millions of Congolese lives lost, raise awareness about the ongoing conflict in the Congo and the vicious scramble for Congo's spectacular natural resources."
     prayer_service:
-      short_description:
-      full_description:
+      short_description: "this is a prayer service to comemmorate fallen Congolese."
+      full_description: "this is a prayer service to comemmorate fallen Congolese."
     forum:
-      short_description:
-      full_description:
+      short_description: "This is an opportunity to have a discussion and talk about issues regarding the Congo"
+      full_description: "This is an opportunity to have a discussion and talk about issues regarding the Congo"
     concert:
-      short_description:
-      full_description:
+      short_description: "This is to support the efforts in the Congo"
+      full_description: "This is to support the efforts in the Congo"
     other:
       short_description: "Have an idea for a creative event? Use this tool to create tasks and assign them"
       full_description: "Have an idea for a creative event? Use this tool to create tasks and assign them."

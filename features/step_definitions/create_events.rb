@@ -12,7 +12,7 @@ Given(/^I have an existing event for the movement with attendees$/) do
 end
 
 When(/^I make an event/)do
-	create_events_page.navigate_to.select_create_event.create_new_event_as_an_attendee()
+	create_events_page.select_create_event.create_new_event_as_an_attendee()
 end
 
 When(/^I create an event/)do
@@ -53,7 +53,7 @@ Then(/^I can see that the time fields contain TBD/) do
 end
 
 When(/^I make an unauthenticated event with location TBD field checked/) do
-	create_events_page.navigate_to.select_create_event.create_new_event_as_an_attendee_without_location()
+	create_events_page.select_create_event.create_new_event_as_an_attendee_without_location()
 end
 
 Then(/^the location fields in the edit event page are empty/) do

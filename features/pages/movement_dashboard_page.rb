@@ -19,11 +19,9 @@ include Capybara::DSL
   def delete_movement user
     visit_movement_dashboard user
     click_link_or_button "Delete Team"
-    page.driver.browser.switch_to.alert.accept
+    page.driver.browser.switch_to.alert.accept unless Capybara.javascript_driver == :poltergeist
     return self
   end
-
-
 
 	def visit_manage_supporters user
     visit_movement_dashboard user

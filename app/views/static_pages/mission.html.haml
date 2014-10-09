@@ -31,10 +31,7 @@
 		%strong= link_to t('.link'), "http://congoweek.org/downloads.html", :target => '_blank'
 	.row
 		.col-sm-6
-			-if current_user
-				= link_to t('.host_event') , new_movement_event_path(Movement.first), class: 'btn search btn-host'
-			-else
-				= link_to t('.host_event') , new_movement_unauthenticated_event_path(Movement.first), class: 'btn search btn-host'
+			= link_to t('.host_event') , event_type_movement_path(Movement.first), class: 'btn search btn-host'
 		.col-sm-6
 			= link_to t('.attend_event'), movement_events_path(Movement.first), class: 'btn search btn-host'
 

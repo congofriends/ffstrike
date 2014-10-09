@@ -154,6 +154,11 @@ class MovementsController < ApplicationController
     end
   end
 
+  def event_type
+    load_event_types
+  end
+
+
   def explanation; end
 
   private

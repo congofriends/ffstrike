@@ -13,10 +13,7 @@
         = text_field_tag 'zip', value = nil, id: 'query', :maxlength => 25
         %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
     .col-md-6
-      -if current_user
-        = link_to t('events.host_btn') , new_movement_event_path(@movement), class: 'btn search btn-host'
-      -else
-        = link_to t('events.host_btn') , new_movement_unauthenticated_event_path(@movement), class: 'btn search btn-host'
+      = link_to t('events.host_btn') , event_type_movement_path(@movement), class: 'btn search btn-host'
   .row
     .spacer10
     %h4#no-results

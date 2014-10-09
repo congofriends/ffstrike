@@ -9,6 +9,7 @@ class EventsController < ApplicationController
   def new
     redirect_to new_user_session_path and return unless current_user
     @event = Event.new
+    @event_type = params[:type] || EventType.first.name
   end
 
   def explanation

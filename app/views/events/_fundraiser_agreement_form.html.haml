@@ -1,0 +1,37 @@
+#fundraise_div{class: "hidden"}
+	#agreement{class: "terms"}
+		%h3.strong.text-center= t('events.fundraiser.header1')
+		%br
+
+		%p= t('events.fundraiser.p1')
+		%br
+
+		%p= t('events.fundraiser.p2')
+		%br
+
+		%p= t('events.fundraiser.p3')
+		%br
+
+		%h3.strong.text-center= t('events.fundraiser.header2')
+		%br
+
+		%h4.strong.capitalize= t('events.fundraiser.user_agree')
+		%br
+		%ul
+			%li= t('events.fundraiser.user_list1')
+			%li= t('events.fundraiser.user_list2')
+			%li= t('events.fundraiser.user_list3')
+			%li= t('events.fundraiser.user_list4')
+			%li= t('events.fundraiser.user_list5')
+			%br
+		%h4.strong.capitalize= t('events.fundraiser.fotc_will')
+		%br
+		%ul
+			%li= t('events.fundraiser.fotc_list1')
+			%li= t('events.fundraiser.fotc_list2')
+			%li= t('events.fundraiser.fotc_list3')
+			%li= t('events.fundraiser.fotc_list4')
+			%br
+		.row
+		= check_box_tag :fundraise_approval, 1
+		= label :fundraise_approval, t('events.fundraiser.check')
