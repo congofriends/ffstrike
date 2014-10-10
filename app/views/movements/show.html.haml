@@ -9,10 +9,16 @@
   %h3.text-center
     = t('.join_congo')
   .row
-    .col-sm-6
+    .col-sm-12
       = link_to t('.host_event'), event_type_movement_path(@movement), class: 'btn search btn-host'
-    .col-sm-6
-      = link_to t('.attend_event'), movement_events_path(Movement.first), class: 'btn search btn-host'
+  .row
+    .search.col-md-12
+      %h3.text-center Find Events Near Me
+      .text-center
+        = form_tag movement_events_path(Movement.first), :method => :get do
+          = text_field_tag 'zip', value = nil, id: 'query', :maxlength => 25, placeholder: "Congo"
+          %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
+  %br
   %br
   .row
     .col-sm-12

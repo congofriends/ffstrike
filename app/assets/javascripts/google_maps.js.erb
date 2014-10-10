@@ -2,6 +2,16 @@ var ready;
 var map;
 
 ready = function () {
+
+  function pan() {
+    var coordinates = window.gon.coordinates
+    if(coordinates != undefined) {
+      var panPoint = new google.maps.LatLng(coordinates[0], coordinates[1]);
+      map.setZoom(6);
+      map.panTo(panPoint);
+    }
+  }
+
   var events;
   var times;
   var event_images;
@@ -13,7 +23,7 @@ ready = function () {
   var location_array = [];
   var event_names = [];
   var event_path = [];
-
+  var coordinates = window.gon.coordinates
   if(window.gon.events != undefined || window.gon.event_types != undefined) {
     events = window.gon.events;
     times = window.gon.times;
@@ -72,6 +82,9 @@ ready = function () {
           }
         }(marker, i));
       }
+
+      pan();
+
     }
     google.maps.event.addDomListener(window, 'load', initialize);
   };
@@ -88,4 +101,3 @@ function addEvent(element, event, fn) {
 addEvent(window, 'load', ready);
 $(document).ready(ready);
 $(document).on('page:load', ready);
-

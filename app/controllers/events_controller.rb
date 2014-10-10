@@ -22,10 +22,10 @@ class EventsController < ApplicationController
     respond_to do |format|
       unless @events.empty?
         @events = (@events.public_events << @events.where(start_time: nil)).flatten
+        @coordinates = Geocoder.coordinates(params[:zip])
         load_map_vars
         @events = Kaminari.paginate_array(@events).page(params[:page]).per(5)
-        @coordinates = Geocoder.coordinates(params[:zip])
-        format.html {redirect_to movement_events_path}
+        format.html {render action: "index"}
         format.js
       else
         @events = (Event.public_events << Event.where(start_time: nil)).flatten
@@ -153,6 +153,7 @@ class EventsController < ApplicationController
   def load_map_vars
     gon.events = @events.reject { |e| e.latitude.nil? || e.longitude.nil? }
     gon.event_types = EventType.all
+    gon.coordinates = @coordinates
     gon.event_images = []
     gon.times = []
     gon.addresses = []
