@@ -46,6 +46,7 @@ en:
       tab_edit: "Event Details"
       tab_tasks: "Tasks"
       tab_attendees: "Attendees"
+      tab_event_type_images: "Set Event Type Images"
     tab_attendees:
       yes: 'Yes'
       no: 'No'
@@ -142,6 +143,7 @@ en:
       home: 'HOME'
       events: 'EVENTS'
       teams: 'TEAMS'
+      about: 'ABOUT'
       donate: 'DONATE'
     footer:
       contact: 'Contact Us'

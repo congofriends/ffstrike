@@ -46,6 +46,7 @@ it:
       tab_edit: "Dettagli dell'evento"
       tab_tasks: "Attività"
       tab_attendees: "Partecipanti"
+      tab_event_type_images: "Modificare le immagini di tipi di evento"
       yes: 'Sì'
       no: 'No'
       export_attendees: *export_attendees
@@ -141,6 +142,7 @@ it:
       home: 'CASA'
       events: 'EVENTI'
       teams: 'SQUADRE'
+      about: 'CIRCA'
       donate: 'DONA'
     footer:
       contact: 'Contattaci'

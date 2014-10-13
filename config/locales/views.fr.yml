@@ -51,6 +51,7 @@ fr:
       tab_edit: "Détails de l'événement"
       tab_tasks: "Tâches"
       tab_attendees: "Participants"
+      tab_event_type_images: "Changez vos images de types d'événements"
     new:
       congo_week_content: "Merci d'avoir pris une importante responsabilité d'être l'hôte d'un évènement et d'aider à faire de #CongoWeek2014 une réussite."
       datetime_tbd: "Date et heure à déterminer ultérieurement"
@@ -140,6 +141,7 @@ fr:
       home: 'MAISON'
       events: 'ÉVÉNEMENT'
       teams: 'ÉQUIPES'
+      about: 'SUR'
       donate: 'FAITES UN DON'
     footer:
       contact: 'Contactez-nous'
