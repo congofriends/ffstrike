@@ -34,10 +34,4 @@ public/system/movements/images
 *.idea
 
 .vagrant
-puppet/modules/apt
-puppet/modules/concat
-puppet/modules/phantomjs
-puppet/modules/postgresql
-puppet/modules/rvm
-puppet/modules/stdlib
 puppet/.tmp

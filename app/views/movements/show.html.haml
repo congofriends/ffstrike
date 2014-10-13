@@ -1,29 +1,86 @@
-=image_tag Movement.first.avatar, class: "bg"
-%div.page-wrap-header
-  %h2.text-center.header-text
-    = t('.congo_week_2014')
-%div.page-wrap
-  %h4
-    = t('.congo_description')
-  %br
-  %h3.text-center
-    = t('.join_congo')
-  .row
-    .col-sm-12
-      = link_to t('.host_event'), event_type_movement_path(@movement), class: 'btn search btn-host'
-  .row
-    .search.col-md-12
-      %h3.text-center Find Events Near Me
-      .text-center
-        = form_tag movement_events_path(Movement.first), :method => :get do
-          = text_field_tag 'zip', value = nil, id: 'query', :maxlength => 25, placeholder: "Congo"
-          %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
-  %br
-  %br
-  .row
-    .col-sm-12
-      = link_to t('.learn_more'), mission_path, class: 'btn btn-host'
-  %br
-    %h3= t('.congo_start')
-    .count-down
-  %br
+%div
+  %div.fadein
+    =image_tag "home2.jpg", class: "slideshow-pic"
+    =image_tag "home5.jpg", class: "slideshow-pic"
+    =image_tag "home7.jpg", class: "slideshow-pic"
+    =image_tag "home8.jpg", class: "slideshow-pic"
+
+  %div.search-area.text-center
+    %div.page-container.page-container-responsive.row-full-height
+      %div.intro-area.row.row-table.row-full-height
+        %div.text-center.col-md-12.col-middle
+          %h1.home-text.header-text
+            = t('.congo_week_2014')
+          %div.h4.field.subtitle-text.side-margin
+            = "Break the silence about issues in the heart of Africa."
+          %div.learn-more.row-space-bottom.header-text
+            =link_to t('JOIN THE MOVEMENT NOW'), mission_path, class: 'btn btn-host'
+
+      %div.bottom-search-area
+        %div.col-md-12.text-center
+          %div.col-md-6.bottom-align
+            = t('Find an Event near you', class: 'subtitle-text')
+            = form_tag movement_events_path(@movement), method: :get do
+              = text_field_tag 'zip', value = nil, id: 'query', :maxlength => 25, placeholder: 'Enter a City, State or Zipcode'
+              %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
+          %div.col-md-6.bottom-align
+            -if current_user
+              = link_to t('events.host_btn') , new_movement_event_path(@movement), class: 'btn search btn-host'
+            -else
+              = link_to t('events.host_btn') , new_movement_unauthenticated_event_path(@movement), class: 'btn search btn-host'
+
+%div.panel.panel-dark.full-height
+  %div.page-container.page-container-responsive.row-full-height
+    %div.home-area
+      %div.text-center.row-space-top
+        %h2.strong.upcoming-events
+          = "Upcoming Events"
+        %p.row-space-bottom.events-subtitle
+          = "CONGO EVENTS"
+      %div.row-space-bottom
+        %div.carousel-responsive
+          %div.carousel-pic
+            =image_tag "carousel1.jpg", class: "carousel-pic"
+          %div.carousel-pic
+            =image_tag "carousel2.jpg", class: "carousel-pic"
+          %div.carousel-pic
+            =image_tag "carousel3.jpg", class: "carousel-pic"
+          %div.carousel-pic
+            =image_tag "carousel4.jpg", class: "carousel-pic"
+          %div.carousel-pic
+            =image_tag "carousel5.jpg", class: "carousel-pic"
+          %div.carousel-pic
+            =image_tag "carousel6.jpg", class: "carousel-pic"
+
+          %script{:src => "//cdn.jsdelivr.net/jquery.slick/1.3.11/slick.min.js", :type => "text/javascript"}
+      %div.side-margin
+        %h3.events-subtitle.header-text.text-center
+          = t('.congo_start')
+        .count-down
+
+
+/ %div.page-wrap-header
+/   %h2.text-center.header-text
+/     = t('.congo_week_2014')
+/ %div.page-wrap
+/   %h4
+/     = t('.congo_description')
+/   %br
+/   %h3.text-center
+/     = t('.join_congo')
+/   .row
+/     .col-sm-6
+/       -if current_user
+/         = link_to t('.host_event') , new_movement_event_path(@movement), class: 'btn search btn-host'
+/       -else
+/         = link_to t('.host_event') , new_movement_unauthenticated_event_path(@movement), class: 'btn search btn-host'
+/     .col-sm-6
+/       = link_to t('.attend_event'), movement_events_path(Movement.first), class: 'btn search btn-host'
+/   %br
+/   .row
+/     .col-sm-12
+/       = link_to t('.learn_more'), mission_path, class: 'btn btn-host'
+/   %br
+/     %h3= t('.congo_start')
+/     .count-down
+/   %br

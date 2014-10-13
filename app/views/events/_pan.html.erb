@@ -1,0 +1,11 @@
+<script type="text/javascript">
+	function pan() {
+	      var panPoint = new google.maps.LatLng(<%=@coordinates[0]%>, <%=@coordinates[1]%>);
+	      map.setZoom(6);
+	      map.panTo(panPoint);
+	}
+
+	window.onload = pan();
+
+</script>
+

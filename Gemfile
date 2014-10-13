@@ -71,6 +71,8 @@ gem 'geocoder'
 gem 'redactor-rails'
 gem 'mini_magick'
 gem 'carrierwave'
+gem 'font-awesome-sass'
+gem 'slick_rails'
 
 gem 'gon'
 
