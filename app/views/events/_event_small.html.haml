@@ -13,7 +13,7 @@
           %img.sponsor-img{alt: "", src: asset_path(event.image)}/
           %ins.ins
     -else
-      = link_to image_tag(event.image, class: "event_avatar"), event_path(event)
+      = link_to image_tag(event.image, class: "event-avatar"), event_path(event)
     .spacer10
     .row
       -unless event.attended_by? current_user

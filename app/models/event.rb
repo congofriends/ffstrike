@@ -17,7 +17,7 @@ class Event < ActiveRecord::Base
   validates :event_type, presence: true
 
   has_attached_file :image,
-                    :styles => { :medium => '280x150', :thum => '50x50' },
+                    :styles => { :thum => '300x300#' },
                     :default_url => 'default_profile_2014.jpg'
 
   validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']

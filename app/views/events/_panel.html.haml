@@ -1,6 +1,6 @@
 .row{id: "event_#{event.id}"}
   .col-xs-4
-    = link_to image_tag(event.image, class: "event_avatar"), event_path(event)
+    = link_to image_tag(event.image, class: "event-avatar"), event_path(event)
   .col-sm-4.event-data
     %h3= link_to event.name, event_path(event)
     %strong= t('events.when')
