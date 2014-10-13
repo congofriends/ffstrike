@@ -5,9 +5,9 @@
     =image_tag "home7.jpg", class: "slideshow-pic"
     =image_tag "home8.jpg", class: "slideshow-pic"
 
-  %div.search-area.text-center
+  %div.search-area
     %div.page-container.page-container-responsive.row-full-height
-      %div.intro-area.row.row-table.row-full-height
+      %div.intro-area.row.row-table.row-full-height.text-center
         %div.text-center.col-md-12.col-middle
           %h1.home-text.header-text
             = t('.congo_week_2014')
@@ -17,9 +17,9 @@
             =link_to t('JOIN THE MOVEMENT NOW'), mission_path, class: 'btn btn-host'
 
       %div.bottom-search-area
-        %div.col-md-12.text-center
-          %div.col-md-6.bottom-align
-            = t('Find an Event near you', class: 'subtitle-text')
+        %div.col-md-12
+          %div.col-md-6.bottom-align.subtitle-text
+            = t('Find an Event near you')
             = form_tag movement_events_path(@movement), method: :get do
               = text_field_tag 'zip', value = nil, id: 'query', :maxlength => 25, placeholder: 'Enter a City, State or Zipcode'
               %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
