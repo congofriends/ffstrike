@@ -45,14 +45,15 @@ es:
       export_attendees: *export_attendees
       contact_attendees: "Contacto con los asistentes"
     dashboard:
-      my_events: "Mi Eventos"
+      my_events: "Mis Eventos"
       header: "Administrar Mis eventos"
       instructions: "Seleccione un evento y haga clic en Mostrar"
       tab_edit: "Detalles del evento"
       tab_tasks: "Tareas"
       tab_attendees: "Los Asistentes"
+      tab_event_type_images: "Cambiar sus imagenes de tipos de eventos"
     new:
-      congo_week_content: "Gracias para tomado la responsabilidad de sería un anfitrión del evento y ayudado hacer #CongoWeek20114 en Octubre de 19-25th un éxito"
+      congo_week_content: "Gracias por tomar la responsabilidad de ser un anfitrión del evento y por ayudar hacer #CongoWeek20114 en los 19-25 de octubre un éxito"
       datetime_tbd: "Fecha y Tiempo por Determinar"
       address_tbd: "Dirección por Determinar"
       legend1:  "Evento Información Básica (1/2)"
@@ -140,6 +141,7 @@ es:
       home: 'INICIO'
       events: 'EVENTOS'
       teams: 'EQUIPOS'
+      about: 'SOBRE'
       donate: 'COLABORE'
     footer:
       contact: 'Contáctenos'

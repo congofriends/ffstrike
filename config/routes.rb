@@ -26,6 +26,7 @@ Ffstrike::Application.routes.draw do
 
     get 'mission' => 'static_pages#mission',  as: 'mission'
     get 'template' => 'static_pages#template',  as: 'template'
+    get 'about' => 'static_pages#about', as: 'about'
 
     #users
     devise_scope :user do
@@ -66,6 +67,11 @@ Ffstrike::Application.routes.draw do
         put 'assign' => 'assignments#assign', on: :member, as: 'assign'
       end
     end
+
+    #event_types
+    patch 'event_types/:id/load_image' => 'event_types#load_images', as: 'event_type'
+
+    #------------
     get 'movements/:id/explanation' => 'movements#explanation', as: 'movement_explanation', id: /[^\/]+/
 
     get 'my_events' => 'events#my_events', as: 'my_events'

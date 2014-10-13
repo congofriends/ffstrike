@@ -107,6 +107,7 @@ class EventsController < ApplicationController
     redirect_to root_path and return unless current_user
     @events = current_user.events_owned & current_user.current_events
     @event = (params[:name] && (Event.where(id: params[:name][:id]).count > 0)) ? (Event.find params[:name][:id]) : @events.first
+    load_event_types
     redirect_to root_path and return unless (@events.include?(@event)  && !@events.empty?) || current_user.super_admin?
     respond_to do |format|
       format.html {render action: 'my_events'}
@@ -212,5 +213,9 @@ class EventsController < ApplicationController
   def clear_fields_on_tbd
     clear_time_fields = {start_time: "", end_time: ""}
     @event.update(clear_time_fields) if params[:event][:time_tbd]
+  end
+
+  def load_event_types
+    @event_types = [EventType.find(1), EventType.find(4), EventType.find(7), EventType.find(9)]
   end
 end

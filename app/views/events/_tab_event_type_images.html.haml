@@ -1,0 +1,14 @@
+#group.tab-content.tab-pane
+	.row
+		.col-md-12
+			.well
+				.form-horizontal
+					- @event_types.each do |event_types|
+						= form_for event_types do |form|
+							%fieldset
+								.form-group
+									= form.label :image, t('.bg_image2'), class: 'col-md-3 control-label'
+									.col-md-9
+										= image_tag event_types.image, { class: 'front-page img-responsive' }
+										= form.file_field :image
+								= form.submit 'Submit here'
