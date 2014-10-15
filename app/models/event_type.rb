@@ -5,6 +5,7 @@ class EventType < ActiveRecord::Base
 						:styles => { :medium => '280x150', :thum => '50x50' },
 						:default_url => 'congo.jpg'
 
+	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 	def self.names
 		all.map(&:name)
 	end

@@ -69,7 +69,7 @@ Ffstrike::Application.routes.draw do
     end
 
     #event_types
-    patch 'event_types/:id/load_image' => 'event_types#load_images', as: 'event_type'
+    patch 'event_types/:id/update' => 'event_types#update', as: 'event_type'
 
     #------------
     get 'movements/:id/explanation' => 'movements#explanation', as: 'movement_explanation', id: /[^\/]+/

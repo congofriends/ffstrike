@@ -180,7 +180,7 @@ class MovementsController < ApplicationController
   end
 
   def load_event_types
-    @event_types = [EventType.names[0], EventType.names[3], EventType.names[6], EventType.names[8]]
+    @event_types = [EventType.find(1), EventType.find(4), EventType.find(7), EventType.find(9)]
   end
 
   def load_countdown_urls
