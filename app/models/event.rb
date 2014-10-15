@@ -17,7 +17,7 @@ class Event < ActiveRecord::Base
   validates :event_type, presence: true
 
   has_attached_file :image,
-                    :styles => { :thum => '300x300#' },
+                    :styles => { :medium => '280x150', :thum => '300x300#' },
                     :default_url => 'default_profile_2014.jpg'
 
   validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
@@ -40,9 +40,9 @@ class Event < ActiveRecord::Base
     return [] if zipcode.nil?
     zipcode = zipcode.strip
     if Rails.env.test?
-      lookup = Zipcode.find_by_zip(zipcode)
-      return [] if lookup.nil? || distance.nil?
-      Event.near([lookup.latitude, lookup.longitude], distance).joins(:movement).where(approved: true, movements: {published: true})
+      lat =  41.9215421
+      long =  -87.70248169999999
+      Event.near([lat, long], distance).joins(:movement).where(approved: true, movements: {published: true})
     else
       Event.near(zipcode, distance).joins(:movement).where(approved: true, movements: {published: true})
     end

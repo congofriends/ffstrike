@@ -65,8 +65,8 @@ describe Event do
     context "with a movement" do
       before do
         @test_zip = "60647"
-        @test_latitude = 41.9209
-        @test_longitude = -87.7043
+        @test_latitude = 38
+        @test_longitude = -50
         zip = FactoryGirl.create(:zipcode, zip: @test_zip, latitude: @test_latitude, longitude: @test_longitude)
 
         FactoryGirl.create(:zipcode, zip: "90210", latitude: 34.0901, longitude: -118.4065)
