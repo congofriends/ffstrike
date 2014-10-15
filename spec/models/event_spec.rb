@@ -73,12 +73,13 @@ describe Event do
       end
 
       context "with a published event" do
-        it "finds a nearby event in the same zip code if assosiated movement is published" do
+          it "finds a nearby event in the same zip code if assosiated movement is published" do
           event = FactoryGirl.create(:approved_event, zip: @test_zip, latitude: @test_latitude, longitude: @test_longitude, movement: published_movement)
           expect(Event.near_zip(@test_zip, 50)).to eq([event])
         end
 
         it "doesn't find a far away event even if assosiated movement is published" do
+          pending
           event = FactoryGirl.create(:approved_event, zip: @test_zip, movement: published_movement)
           event.update_attributes(latitude: @test_latitude, longitude: @test_longitude)
           expect(Event.near_zip("90210", 50)).to eq([])

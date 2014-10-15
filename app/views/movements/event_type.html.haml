@@ -6,14 +6,13 @@
 		- @event_types.each do |event_type| 
 			- if current_user
 				.group-panel-event-type
-					.center
-						%div
-							= link_to new_movement_event_path(@movement, {type: event_type.name}) do
-								%a{href: new_movement_event_path(@movement, {type: event_type.name})}
-									%img.group-image-event-type{alt: "", src: asset_path(event_type.image)}/		
-						%div
-							= link_to new_movement_event_path(@movement, {type: event_type.name}) do
-								.text-center.group-name= event_type.name		
+					%div
+						= link_to new_movement_event_path(@movement, {type: event_type.name}) do
+							%a{href: new_movement_event_path(@movement, {type: event_type.name})}
+								%img.group-image-event-type{alt: "", src: asset_path(event_type.image)}/		
+					%div
+						= link_to new_movement_event_path(@movement, {type: event_type.name}) do
+							.text-center.group-name-event-type= event_type.name		
 			- else
 				.group-panel-event-type
 					%div
@@ -22,5 +21,4 @@
 								%img.group-image-event-type{alt: "", src: asset_path(event_type.image)}
 					%div
 						= link_to new_movement_unauthenticated_event_path(@movement, {type: event_type.name}) do
-							.text-center.group-name= event_type.name	
-					 
+							.text-center.group-name-event-type= event_type.name	
