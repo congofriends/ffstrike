@@ -9,6 +9,9 @@ class MovementsController < ApplicationController
 
   def index
     @movement = Movement.first
+
+    @public_events = (Event.public_events.count < 6) ? Event.public_events : Event.public_events.first(6)
+
     load_countdown_urls
     render 'movements/show'
   end
