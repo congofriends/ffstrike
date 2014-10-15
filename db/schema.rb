@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141013184632) do
+ActiveRecord::Schema.define(version: 20141007112816) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,26 +48,8 @@ ActiveRecord::Schema.define(version: 20141013184632) do
   add_index "attendances", ["user_id", "event_id"], name: "index_attendances_on_user_id_and_event_id", unique: true, using: :btree
   add_index "attendances", ["user_id"], name: "index_attendances_on_user_id", using: :btree
 
-  create_table "attendees", force: true do |t|
-    t.string   "email"
-    t.integer  "movement_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "event_id"
-    t.string   "name"
-    t.text     "notes"
-    t.boolean  "point_person"
-    t.text     "phone_number"
-  end
-
-  add_index "attendees", ["event_id"], name: "index_attendees_on_event_id", using: :btree
-
   create_table "event_types", force: true do |t|
-    t.string   "name"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.string "name"
   end
 
   create_table "events", force: true do |t|

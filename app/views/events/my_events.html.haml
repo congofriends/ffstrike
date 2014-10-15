@@ -18,9 +18,7 @@
         %a{href: '#tasks', data: {toggle: 'tab'}}= t('events.dashboard.tab_tasks')
       %li
         %a{href: '#attendees', data: {toggle: 'tab'}}= t('events.dashboard.tab_attendees')
-      -if current_user.coordinator?
-        %li
-          %a{href: '#event_type_images', data: {toggle: 'tab'}}= t('events.dashboard.tab_event_type_images')
+
 
   .tab-content
     .tab-pane.fade.in#event
@@ -29,5 +27,3 @@
       = render "tab_tasks", event: @event
     .tab-pane.fade.in#attendees
       = render "tab_attendees", event: @event
-    .tab-pane.fade.in#event_type_images
-      = render "tab_event_type_images", event: @event
