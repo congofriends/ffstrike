@@ -1,21 +1,21 @@
 class CreateEventsPage
 include Capybara::DSL
 	def create_new_event
-		click_link_or_button('Movie Screening')
-		fill_in 'event_name', with: 'Cats and Dogs'
-		fill_in 'event_address', with: '2373'
-		fill_in 'event_city', with: 'Chicago'
-		fill_in 'event_zip', with: '60649'
-		fill_in 'event_state', with: 'IL'
-		fill_in "event_start_time", with: DateTime.new(2015, 05, 16, 15, 30)
-		fill_in "event_end_time", with: DateTime.new(2015, 05, 17, 15, 30)
+	click_link_or_button('Movie Screening')
+	fill_in 'event_name', with: 'Cats and Dogs'
+	fill_in 'event_address', with: '2373'
+	fill_in 'event_city', with: 'Chicago'
+	fill_in 'event_zip', with: '60649'
+	fill_in 'event_state', with: 'IL'
+	fill_in "event_start_time", with: DateTime.new(2015, 05, 16, 15, 30)
+	fill_in "event_end_time", with: DateTime.new(2015, 05, 17, 15, 30)
     select "United States", from: "event_country", :match => :first
     click_link_or_button "Next"
-		find('input#create_event').click
+	find('input#create_event').click
   end
 
   def select_fundraising_event
-		click_link_or_button('Fundraiser For Fotc')
+	click_link_or_button('Fundraiser For Fotc')
     fill_in 'event_name', with: 'Cats and Dogs'
     fill_in 'event_description', with: "Cats and Dogs are my faaaaavorite aminals"
     fill_in 'event_address', with: '2373'
@@ -42,8 +42,8 @@ include Capybara::DSL
 		fill_in 'event_city', with: 'Chicago'
 		fill_in 'event_zip', with: '60649'
 		fill_in 'event_state', with: 'IL'
-    select "United States", from: "event_country", :match => :first
-    click_link_or_button "Next"
+    	select "United States", from: "event_country", :match => :first
+    	click_link_or_button "Next"
 		find('input#create_event').click
 	end
 
@@ -54,10 +54,11 @@ include Capybara::DSL
 		fill_in 'event_city', with: 'Chicago'
 		fill_in 'event_zip', with: '60649'
 		fill_in 'event_state', with: 'IL'
-    select "United States", from: "event_country", :match => :first
+    	select "United States", from: "event_country", :match => :first
 		fill_in "event_start_time", with: DateTime.new(2015, 05, 16, 15, 30)
 		fill_in "event_end_time", with: DateTime.new(2015, 05, 17, 15, 30)
-    click_link_or_button 'Next', :match => :first
+    	click_link_or_button 'Next', :match => :first
+    	click_link_or_button 'Next'
 		fill_in 'user_name', with: 'Mackenzie'
 		fill_in 'user_surname', with: 'Lee'
 		fill_in 'user_email', with: 'mack@gmail.com'
@@ -79,7 +80,7 @@ include Capybara::DSL
 		fill_in "event_start_time", with: DateTime.new(2015, 05, 16, 15, 30)
 		fill_in "event_end_time", with: DateTime.new(2015, 05, 17, 15, 30)
 		click_link_or_button 'Next', :match => :first
-    click_link_or_button 'Next'
+    	click_link_or_button 'Next'
 		fill_in 'user_name', with: 'Mackenzie'
 		fill_in 'user_surname', with: 'Lee'
 		fill_in 'user_email', with: 'mack@gmail.com'
