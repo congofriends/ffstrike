@@ -21,14 +21,14 @@ class EventsController < ApplicationController
     @events = Event.near_zip(params[:zip], 200)
     respond_to do |format|
       unless @events.empty?
-        @events = (@events.public_events << @events.where(start_time: nil)).flatten
+        @events = @events.public_events
         @coordinates = Geocoder.coordinates(params[:zip])
         load_map_vars
         @events = Kaminari.paginate_array(@events).page(params[:page]).per(5)
         format.html {render action: "index"}
         format.js
       else
-        @events = (Event.public_events << Event.where(start_time: nil)).flatten
+        @events = Event.public_events
         load_map_vars
         @events = Kaminari.paginate_array(@events).page(params[:page]).per(5)
         flash[:notice] = t('event.not_found') if params[:zip].present?
