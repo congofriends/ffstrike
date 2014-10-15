@@ -67,7 +67,7 @@
           = image_tag event.image, class: 'front-page img-responsive'
           = f.file_field :image
         %strong= t('static_pages.mission.organizer_toolkit')
-        = link_to t('static_pages.mission.link'), "http://congoweek.org/downloads.html", :target => '_blank', id: 'organizer-link'
+        = link_to t('static_pages.mission.link'), organizer_toolkit_path, id: 'organizer-link'
         .row
           .form-group.col-sm-3{:style => "float: right;"}
             = f.submit t("events.edit.update"), class: 'btn btn-attend btn-update'

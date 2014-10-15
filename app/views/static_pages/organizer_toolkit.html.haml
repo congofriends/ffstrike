@@ -1,0 +1,82 @@
+=image_tag Movement.first.image, class: "bg"
+%div.content-header.container
+  %h2.text-center.header-text= t('.organizerToolKit')
+.container
+
+  %h3.toolkit-headers= t('.downloads')
+  %br
+  .row
+    .col-sm-3
+      %p.downloads-text= t('.postcardFront') 
+      %a{download: "congoPostcard2014", href: asset_path("postcard5x7_2014.jpg")}
+        %img{alt: "congoPostcard2014", src: asset_path("postcard5x7_2014.jpg"), class: "btn-team downloads"}
+    .col-sm-3
+      %p.downloads-text= t('.postcardBack')
+      %a{download: "congoPostcardBack2014", href: asset_path("postcardback5x7_2014.jpg")}
+        %img{alt: "congoPostcardBack2014", src: asset_path("postcardback5x7_2014.jpg"), class: "btn-team downloads"}
+    .col-sm-3
+      %p.downloads-text= t('.flyer')
+      %a{download: "congoFlyer2014", href: asset_path("congoFlyer2014.jpg")}
+        %img{alt: "congoFlyer2014", src: asset_path("congoFlyer2014.jpg"), class: "btn-team downloads"}
+    .col-sm-3
+      %p.downloads-text= t('.banner1')
+      %a{download: "congoBanner800_2014", href: asset_path("banner_800_2014.jpg")}
+        %img{alt: "congoBanner800_2014", src: asset_path("banner_800_2014.jpg"), class: "btn-team downloads"}
+  %br
+  %br
+  .row
+    .col-sm-3
+      %p.downloads-text= t('.banner2')
+      %a{download: "congoBanner900_2014", href: asset_path("banner_900_2014.jpg")}
+        %img{alt: "congoBanner900_2014", src: asset_path("banner_900_2014.jpg"), class: "btn-team downloads"}
+    .col-sm-3
+      %p.downloads-text= t('.poster')
+      %a{download: "congoPoster2014", href: asset_path("poster2014.jpg")}
+        %img{alt: "congoPoster2014", src: asset_path("poster2014.jpg"), class: "btn-team downloads"}
+    .col-sm-3
+      %p.downloads-text= t('.notebook')
+      %a{download: "congoNotebook2014", href: asset_path("notebook2014.jpg")}
+        %img{alt: "congoNotebook2014", src: asset_path("notebook2014.jpg"), class: "btn-team downloads"}
+  %br
+
+  %h3.toolkit-headers= t('.documents')
+  %div.toolkit-headers
+    %a{download: "basic_facts.pdf", href: asset_path("documents/basic_facts.pdf")}
+      %div=t('.basicFactsPdf')
+    %a{download: "overview.pdf", href: asset_path("documents/overview.pdf")}
+      %div=t('.historicalOverviewPdf')
+    %a{download: "coltan.pdf", href: asset_path("documents/coltan.pdf")}
+      %div=t('.coltanBasicsPdf')
+    %a{download: "women.pdf", href: asset_path("documents/women.pdf")}
+      %div=t('.womensSituationPdf')
+    %a{download: "talking_themes.pdf", href: asset_path("documents/talking_themes.pdf")}
+      %div=t('.talkingThemesPdf')
+    %a{download: "core_prescriptions.pdf", href: asset_path("documents/core_prescriptions.pdf")}
+      %div=t('.corePrescriptionsPdf')
+    %a{download: "mapping_recommendations.pdf", href: asset_path("documents/mapping_recommendations.pdf")}
+      %div=t('.unitedNationsPdf')
+    %a{download: "berkeley_city_council.pdf", href: asset_path("documents/berkeley_city_council.pdf")}
+      %div=t('.cityCouncilResolutionPdf')
+    %a{download: "congo_companies.pdf", href: asset_path("documents/congo_companies.pdf")}
+      %div=t('.companiesInTheCongoPdf')
+    %a{download: "reading_list.pdf", href: asset_path("documents/reading_list.pdf")}
+      %div=t('.readingListPdf')
+    %a{download: "presentation_simplified.odp", href: asset_path("documents/presentation_simplified.odp")}
+      %div=t('.historicalOverviewPpt')
+    %a{download: "militarism_africa.pdf", href: asset_path("documents/militarism_africa.pdf")}
+      %div=t('.militarismPdf')
+    %a{download: "congo_christian_worship_resource.pdf", href: asset_path("documents/congo_christian_worship_resource.pdf")}
+      %div=t('.christianLiturgyPdf')
+  %br
+
+  %h3.toolkit-headers= t('.videos')
+  .row
+    .col-sm-4
+      =youtube_embed_url_for_('vLV9szEu9Ag')
+    .col-sm-4
+      =youtube_embed_url_for_('jiDxvt3pveA')
+    .col-sm-4
+      =youtube_embed_url_for_('Io8c81xHLmw')
+
+
+

@@ -29,7 +29,7 @@ Ffstrike::Application.routes.draw do
     get 'mission' => 'static_pages#mission',  as: 'mission'
     get 'template' => 'static_pages#template',  as: 'template'
     get 'about' => 'static_pages#about', as: 'about'
-
+    get 'organizer_toolkit' => 'static_pages#organizer_toolkit', as: 'organizer_toolkit'
     #users
     devise_scope :user do
       get 'new_attendee_user' => 'users#new_attendee_user'

@@ -28,7 +28,7 @@
 	%br
 	%br
 		%strong= t('.organizer_toolkit')
-		%strong= link_to t('.link'), "http://congoweek.org/downloads.html", :target => '_blank'
+		%strong= link_to t('.link'), organizer_toolkit_path
 	.row
 		.col-sm-6
 			= link_to t('.host_event') , event_type_movement_path(Movement.first), class: 'btn search btn-host'

@@ -6,4 +6,6 @@ class StaticPagesController < ApplicationController
 
   def template; end
 
+  def organizer_toolkit; end
+
 end
