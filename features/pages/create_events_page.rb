@@ -58,7 +58,6 @@ include Capybara::DSL
 		fill_in "event_start_time", with: DateTime.new(2015, 05, 16, 15, 30)
 		fill_in "event_end_time", with: DateTime.new(2015, 05, 17, 15, 30)
     	click_link_or_button 'Next', :match => :first
-    	click_link_or_button 'Next'
 		fill_in 'user_name', with: 'Mackenzie'
 		fill_in 'user_surname', with: 'Lee'
 		fill_in 'user_email', with: 'mack@gmail.com'
