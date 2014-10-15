@@ -5,4 +5,8 @@ class EventType < ActiveRecord::Base
 		all.map(&:name)
 	end
 
+	def formatted_name
+		name.parameterize
+	end
+
 end
