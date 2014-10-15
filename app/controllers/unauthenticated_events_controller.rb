@@ -27,7 +27,6 @@ class UnauthenticatedEventsController < ApplicationController
     end
   end
 
-
   private
 
   def load_movement

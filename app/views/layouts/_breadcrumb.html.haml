@@ -5,4 +5,4 @@
       = link_to t('.home'), root_path, id: "home", class: "header-footer"
       = link_to t('.events'), movement_events_path(movement), id: 'events-index', class: "header-footer"
       = link_to t('.teams'), support_network_movement_path(movement), id: 'teams', class: "header-footer"
-      = link_to t('.donate'), "http://www.friendsofthecongo.org/donate.html", class: "header-footer", :target => '_blank'
+      = link_to_modal t('.donate'), new_charge_path, class: "header-footer", :target => '_blank'

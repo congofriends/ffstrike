@@ -1,0 +1,29 @@
+=image_tag "donation-background.jpg", class: "bg"
+.donation-form
+	.row
+		#donation-header EVERY DOLLAR MAKES A DIFFERENCE
+		%hr
+		%br
+		= form_tag charges_path do
+			=label_tag 'Donation Amount in dollars', nil, id: "donation-label"
+			%br
+			=number_field_tag 'donation', 1, in: 1...10000000, id: "donation-input", :onkeypress => "return isNumberKey(event)"
+
+			=label_tag 'Comments', nil, id: "donation-label"
+			%br
+			=text_field_tag 'comment', nil, id: "donation-input"
+
+			.row.donation-button
+				%script.stripe-button{"data-amount" => "0", "data-description" => "Payment Information", "data-key" => Rails.configuration.stripe[:publishable_key], :src => "https://checkout.stripe.com/checkout.js"}
+
+			:javascript
+				$('#donation-input').change(function(event) {
+				 var amount = document.getElementById("donation-input").value * 100;
+				 $('.stripe-button').attr('data-amount', amount)
+				});
+				function isNumberKey(evt){
+						var charCode = (evt.which) ? evt.which : event.keyCode
+						if (charCode > 31 && (charCode < 48 || charCode > 57))
+								return false;
+						return true;
+				}

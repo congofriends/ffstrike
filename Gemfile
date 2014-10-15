@@ -76,6 +76,8 @@ gem 'slick_rails'
 
 gem 'gon'
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 gem 'kaminari'
 
 group :test, :development do

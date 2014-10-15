@@ -9,6 +9,8 @@ Ffstrike::Application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "users", :invitations => 'users/invitations'  }
 
+  resources :charges
+
   scope "(:locale)", locale: /en|fr|es|it/ do
   # devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks", :registrations => "users", :invitations => 'users/invitations'  }
     # devise_for :users, skip: :omniauth_callbacks , :controllers => { :registrations => "users", :invitations => 'users/invitations'  }
