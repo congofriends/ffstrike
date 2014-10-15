@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   def new
     redirect_to new_user_session_path and return unless current_user
     @event = Event.new
-    @event_type = params[:type] || EventType.first.name
+    @event_type = params[:type] || EventType.first.name 
   end
 
   def explanation
@@ -198,10 +198,6 @@ class EventsController < ApplicationController
 
   def set_initial_location
     @initial_location = @event.location
-  end
-
-  def load_event_types
-    @event_types = EventType.all.map {|e| [e.id, e.name]}
   end
 
   def redirect_unauthorized_user
