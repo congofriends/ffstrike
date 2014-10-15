@@ -1,7 +1,7 @@
 it:
   dictionary:
     email: &email E-mail
-    name: &name Nome 
+    name: &name Nome
     phone: &phone Telefono Numero
     point: &point Point Persona
     password: &password E Conferma
@@ -12,6 +12,7 @@ it:
   events:
     events: "EVENTI"
     host_btn: *host_event
+    home_host_btn: "Diventa un host"
     unattend_btn: "EVENT UNATTEND "
     volunteer_status: "Sono interessato al volontariato "
     show_btn: "MOSTRA"
@@ -81,7 +82,7 @@ it:
       header1: 'Autorizzazione a gestire un evento a vantaggio di Gli Amici del Congo'
       header2: "Responsabilitą del l'organizzatore dell'evento"
       p1: "Grazie per offrire il vostro sostegno agli Amici del Congo Breaking the Silence: Congo Settimana Al fine di proteggere il capitolo 501 (c) 3 Stato , chiediamo che l'utente accetta le seguenti condizioni : Io, ospite dell'evento , accettare di organizzare e sponsorizzare un evento a sostegno degli Amici del Congo (FOTC) Congo Week."
-      p2: "Capisco che lo scopo principale di questo evento è quello di raccogliere fondi per Gli Amici del Congo (FOTC) e che tutti i fondi raccolti devono essere presentate al FOTC a sostegno dei suoi programmi e progetti spese per l'evento sarà. non sia pagato da FOTC o da fondi ricevuti dalla manifestazione. Pagamento di tutte le spese devono essere pagati direttamente dal gruppo di sponsor. Sappiamo che l'organizzatore dell'evento deve essere conforme a tutti i regolamenti e le politiche e le pratiche del FOTC relativi alla raccolta di fondi. Il presente accordo rimane in vigore per tutta la durata della manifestazione. FOTC il Consiglio si riserva il diritto di annullare il sostegno della manifestazione per qualsiasi motivo, considerata dal Consiglio di essere sufficiente." 
+      p2: "Capisco che lo scopo principale di questo evento è quello di raccogliere fondi per Gli Amici del Congo (FOTC) e che tutti i fondi raccolti devono essere presentate al FOTC a sostegno dei suoi programmi e progetti spese per l'evento sarà. non sia pagato da FOTC o da fondi ricevuti dalla manifestazione. Pagamento di tutte le spese devono essere pagati direttamente dal gruppo di sponsor. Sappiamo che l'organizzatore dell'evento deve essere conforme a tutti i regolamenti e le politiche e le pratiche del FOTC relativi alla raccolta di fondi. Il presente accordo rimane in vigore per tutta la durata della manifestazione. FOTC il Consiglio si riserva il diritto di annullare il sostegno della manifestazione per qualsiasi motivo, considerata dal Consiglio di essere sufficiente."
       p3: "In caso di risoluzione del presente contratto, l'organizzatore dell'evento trasmette tutti i fondi raccolti nel nome del FOTC al FOTC Inoltre, se Organizzatore dell'evento continua a raccogliere fondi per FOTC, FOTC membri adottano misure positive per informare il pubblico e tutte le persone con cui l' organizzatore dell'evento ha contatto, tra cui tutte le persone che hanno contribuito soldi l'organizzatore dell'evento che l'organizzatore dell'evento non è affiliato con il FOTC a."
       user_agree: "Sono d'accordo:"
       user_list1: "Per inviare una descrizione dell'evento."
@@ -331,12 +332,14 @@ it:
       events: "EVENTI"
       network: "NETWORK"
       congo_week_2014: "#CongoWeek2014"
-      congo_description: "Il Congo Week è una campagna globale che si svolge 19-25 Ottobre a rompere il silenzio sui problemi nel cuore dell'Africa."
-      join_congo: "Aderire al movimento"
+      congo_description: "Rompere il silenzio sui problemi nel cuore dell'Africa"
+      join_congo: "Scopri come funziona"
       congo_start: "Congo La settimana inizia in:"
+      find_event: "Trova un evento vicino a te"
       host_event: "Ospitare un evento."
+      upcoming_events: "Prossimi Eventi"
       attend_event: "Partecipare a un evento."
-      learn_more: "Per saperne di più Congo Settimana."
+      support: "Sostenere i Congolesi ora"
     show_team:
       about_creators: 'Circa i Creatori'
       host_event: *host_event

@@ -12,6 +12,7 @@ en:
   events:
     events: "EVENTS"
     host_btn: *host_event
+    home_host_btn: "Become a Host"
     unattend_btn: "UNATTEND EVENT"
     volunteer_status: "I'm interested in volunteering"
     show_btn: "SHOW"
@@ -332,12 +333,14 @@ en:
       events: "EVENTS"
       network: "NETWORK"
       congo_week_2014: "#CongoWeek2014"
-      congo_description: "Congo Week is a global campaign that takes place October 19th - 25th to break the silence about issues in the heart of Africa."
-      join_congo: "JOIN THE MOVEMENT"
+      congo_description: "Break the silence about issues in the heart of Africa"
+      join_congo: "Discover How it Works"
       congo_start: "Congo Week starts in:"
+      find_event: "Find an Event near you"
       host_event: "Host an Event"
+      upcoming_event: "Upcoming Events"
       attend_event: "Attend an Event"
-      learn_more: "Learn More About Congo Week"
+      support: "Support the Congolese now"
     show_team:
       about_creators: 'About the Creators'
       host_event: *host_event

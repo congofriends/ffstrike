@@ -509,7 +509,7 @@ div.col-sm-6 img.movement_avatar {
 }
 
 .footer2{
-  padding-bottom: 10px;
+  padding-top: 10px;
   color: black;
 }
 
@@ -623,7 +623,14 @@ div.col-sm-6 img.movement_avatar {
 }
 
 .panel-dark{
-  background-color: #EDEFED;
+  background: rgb(255,254,251);
+  background: -moz-linear-gradient(top, rgba(255,254,251,1) 0%, rgba(255,253,247,1) 50%, rgba(255,251,241,1) 100%, rgba(255,253,249,1) 100%, rgba(255,251,241,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,254,251,1)), color-stop(50%,rgba(255,253,247,1)), color-stop(100%,rgba(255,251,241,1)), color-stop(100%,rgba(255,253,249,1)), color-stop(100%,rgba(255,251,241,1)));
+  background: -webkit-linear-gradient(top, rgba(255,254,251,1) 0%,rgba(255,253,247,1) 50%,rgba(255,251,241,1) 100%,rgba(255,253,249,1) 100%,rgba(255,251,241,1) 100%);
+  background: -o-linear-gradient(top, rgba(255,254,251,1) 0%,rgba(255,253,247,1) 50%,rgba(255,251,241,1) 100%,rgba(255,253,249,1) 100%,rgba(255,251,241,1) 100%);
+  background: -ms-linear-gradient(top, rgba(255,254,251,1) 0%,rgba(255,253,247,1) 50%,rgba(255,251,241,1) 100%,rgba(255,253,249,1) 100%,rgba(255,251,241,1) 100%);
+  background: linear-gradient(to bottom, rgba(255,254,251,1) 0%,rgba(255,253,247,1) 50%,rgba(255,251,241,1) 100%,rgba(255,253,249,1) 100%,rgba(255,251,241,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffefb', endColorstr='#fffbf1',GradientType=0 );
 }
 
 .row-space-top{
@@ -661,6 +668,11 @@ div.col-sm-6 img.movement_avatar {
   margin: 0 auto;
 }
 
+.carousel-responsive {
+  border-style: none none ridge none;
+  border-width: thick;
+}
+
 .upcoming-events{
   color: #565A5C;
   font-family: Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -668,10 +680,16 @@ div.col-sm-6 img.movement_avatar {
   font-weight: bold;
 }
 
+.event-borders {
+  border-style: ridge none none none;
+  border-width: thick;
+}
+
 .events-subtitle{
   color: #565A5C;
-  font-family: Circular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-family: Garamond, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .slideshow-pic{
@@ -684,7 +702,7 @@ div.col-sm-6 img.movement_avatar {
 }
 
 .full-height {
-  height: 620px;
+  height: 550px;
   width: 100%;
 }
 

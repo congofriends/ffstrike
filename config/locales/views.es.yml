@@ -12,6 +12,7 @@ es:
   events:
     events: "Eventos"
     host_btn: "ANFITRIÓN DE UN EVENTO"
+    home_host_btn: "Conviértase en una anfitriona"
     unattend_btn: "EVENTO UNATTEND"
     volunteer_status: "Estoy interesado en ser voluntario"
     show_btn: "MOSTRAR"
@@ -341,12 +342,14 @@ es:
       events: "EVENTOS"
       network: "RED"
       congo_week_2014: "#CongoWeek2014"
-      congo_description: "Semana de Congo es un campaña global que ocurría Octubre 19th - 25th salir del silencio sobre problemas en el corazón de África."
-      join_congo: "INGRESA EN EL MOVIMIENTO"
+      congo_description: "Romper el silencio sobre cuestiones en el corazón de África"
+      join_congo: "Descubre Cómo funciona"
       congo_start: "Semana de Congo empezaré en:"
+      find_event: "Busca un evento cerca de usted"
       host_event: "Presenta Evento"
+      upcoming_events: "Próximos Eventos"
       attend_event: "Asista Evento"
-      learn_more: "Ayuda Mas Sobre Semana de Congo"
+      support: "Apoyar a los Congoleños ahora"
     show_team:
       about_creators: 'Sobre los creadores de'
       host_event: *host_event

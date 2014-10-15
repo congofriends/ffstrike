@@ -14,31 +14,31 @@
           %h1.home-text.header-text
             = t('.congo_week_2014')
           %div.h4.field.subtitle-text.side-margin.header-text
-            = "Break the silence about issues in the heart of Africa"
+            = t('.congo_description')
           %div.learn-more.row-space-bottom.header-text
-            =link_to t('JOIN THE MOVEMENT NOW'), mission_path, class: 'btn btn-host'
+            =link_to t('.join_congo'), mission_path, class: 'btn btn-host'
 
       %div.bottom-search-area
         %div.col-md-12
           %div.col-md-2
           %div.col-xs-4.subtitle-text
-            = t('Find an Event near you')
+            = t('.find_event')
             = form_tag movement_events_path(@movement), method: :get do
               = text_field_tag 'zip', value = nil, id: 'query', :maxlength => 25, placeholder: 'Enter a City, State or Zipcode', class: "events-subtitle"
               %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
-          %div.col-xs-4
-            = link_to t('events.host_btn') , event_type_movement_path(Movement.first), class: 'btn search btn-host'
+          %div.col-xs-4.initialism
+            = link_to t('events.home_host_btn') , event_type_movement_path(Movement.first), class: 'btn search btn-host'
           %div.col-md-2
 
 %div.panel.panel-dark.full-height
   %div.page-container.page-container-responsive.row-full-height
     %div.home-area
-      %div.text-center.row-space-top
-        %h2.strong.upcoming-events
-          = "Upcoming Events"
-        %p.row-space-bottom.events-subtitle
-          = "CONGO EVENTS"
-      %div.row-space-bottom
+      %div.text-center.row-space-top.event-borders
+        %h2.strong.upcoming-events.initialism
+          = t('.upcoming_events')
+        %p.events-subtitle
+          = t('.support')
+      %div.row-space-top
         %div.carousel-responsive
           - @public_events.each do |event|
             %div.carousel-pic.lighten
