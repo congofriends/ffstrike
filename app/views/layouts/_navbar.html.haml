@@ -31,7 +31,7 @@
           - if current_user.nil?
             %li= link_to t('.sign_in'), new_session_path(:user), id: "sign-in"
           %li.dropdown
-            %a.dropdown-toggle.animated.bounce{"data-toggle" => "dropdown", href: "#"}
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
               = @locale_hash[params[:locale]]
               %b.caret
               %ul.dropdown-menu#languages
