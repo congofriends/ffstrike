@@ -48,6 +48,20 @@ ActiveRecord::Schema.define(version: 20141013184632) do
   add_index "attendances", ["user_id", "event_id"], name: "index_attendances_on_user_id_and_event_id", unique: true, using: :btree
   add_index "attendances", ["user_id"], name: "index_attendances_on_user_id", using: :btree
 
+  create_table "attendees", force: true do |t|
+    t.string   "email"
+    t.integer  "movement_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "event_id"
+    t.string   "name"
+    t.text     "notes"
+    t.boolean  "point_person"
+    t.text     "phone_number"
+  end
+
+  add_index "attendees", ["event_id"], name: "index_attendees_on_event_id", using: :btree
+
   create_table "event_types", force: true do |t|
     t.string   "name"
     t.string   "image_file_name"

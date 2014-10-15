@@ -27,10 +27,7 @@
               = text_field_tag 'zip', value = nil, id: 'query', :maxlength => 25, placeholder: 'Enter a City, State or Zipcode', class: 'events-subtitle'
               %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
           %div.col-xs-4
-            -if current_user
-              = link_to t('events.host_btn') , new_movement_event_path(@movement), class: 'btn search btn-host'
-            -else
-              = link_to t('events.host_btn') , new_movement_unauthenticated_event_path(@movement), class: 'btn search btn-host'
+            = link_to t('events.host_btn') , event_type_movement_path(Movement.first), class: 'btn search btn-host'
           %div.col-md-2
 
 %div.panel.panel-dark.full-height

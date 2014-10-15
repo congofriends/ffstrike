@@ -79,7 +79,8 @@ describe Event do
         end
 
         it "doesn't find a far away event even if assosiated movement is published" do
-          event = FactoryGirl.create(:approved_event, zip: @test_zip, latitude: @test_latitude, longitude: @test_longitude, movement: published_movement)
+          event = FactoryGirl.create(:approved_event, zip: @test_zip, movement: published_movement)
+          event.update_attributes(latitude: @test_latitude, longitude: @test_longitude)
           expect(Event.near_zip("90210", 50)).to eq([])
         end
 

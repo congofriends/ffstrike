@@ -25,7 +25,7 @@
                   %li#manage_events= link_to t('.manage_my_events'), my_events_path
                 %li.divider
                 %li= link_to t('.create_group'), new_movement_path
-                %li= link_to t('.host_event'), new_movement_event_path(Movement.first) if Movement.first
+                %li= link_to t('.host_event'), event_type_movement_path(Movement.first) if Movement.first
                 %li.divider
                 %li= link_to t('.sign_out'), destroy_user_session_path, :method => :delete
           - if current_user.nil?

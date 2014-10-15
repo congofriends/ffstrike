@@ -6,6 +6,8 @@ class EventType < ActiveRecord::Base
 						:default_url => 'congo.jpg'
 
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+  	validates_attachment_size :image, :less_than => 5.megabytes
+	
 	def self.names
 		all.map(&:name)
 	end
