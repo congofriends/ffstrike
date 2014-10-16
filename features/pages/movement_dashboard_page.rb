@@ -9,8 +9,8 @@ include Capybara::DSL
   end
 
   def visit_movement_dashboard user
-    click_link "#{user.name}"
-    click_link "Manage Teams"
+    click_link "#{user.name.upcase}"
+    click_link "MANAGE TEAMS"
     select "#{Movement.last.name}", from: "name_id"
     click_link_or_button "SHOW"
     return self

@@ -24,7 +24,7 @@ include RSpec::Matchers
 	end
 
 	def sign_in
-		click_link 'sign-in'
+		click_link 'Sign in'
 	end
 
 	def sign_up
@@ -40,7 +40,7 @@ include RSpec::Matchers
 	end
 
   def translate_home_page(locale)
-    expect(find('#events-index').text).to eql(I18n.t('layouts.breadcrumb.events', locale: locale))
-    expect(find('#sign-in').text).to eql(I18n.t('layouts.navbar.sign_in', locale: locale))
+    expect(find('#events-index').text).to eql(I18n.t('layouts.breadcrumb.events', locale: locale).upcase)
+    expect(find('#sign-in').text).to eql(I18n.t('layouts.navbar.sign_in', locale: locale).upcase)
   end
 end

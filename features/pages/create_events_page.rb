@@ -1,7 +1,7 @@
 class CreateEventsPage
 include Capybara::DSL
 	def create_new_event
-	click_link_or_button('Movie Screening')
+	click_link_or_button('MOVIE SCREENING')
 	fill_in 'event_name', with: 'Cats and Dogs'
 	fill_in 'event_address', with: '2373'
 	fill_in 'event_city', with: 'Chicago'
@@ -15,7 +15,7 @@ include Capybara::DSL
   end
 
   def select_fundraising_event
-	click_link_or_button('Fundraiser For Fotc')
+	click_link_or_button('FUNDRAISER FOR FOTC')
     fill_in 'event_name', with: 'Cats and Dogs'
     fill_in 'event_description', with: "Cats and Dogs are my faaaaavorite aminals"
     fill_in 'event_address', with: '2373'
@@ -33,7 +33,7 @@ include Capybara::DSL
   end
 
 	def create_new_event_without_time
-		click_link_or_button('Movie Screening')
+		click_link_or_button('MOVIE SCREENING')
 		fill_in 'event_name', with: 'Event Without Time'
 		fill_in 'event_description', with: "I don't know when this event is happening yet"
 		fill_in "event_start_time", with: DateTime.new(2015, 05, 17, 15, 30)
@@ -48,7 +48,7 @@ include Capybara::DSL
 	end
 
 	def create_new_event_as_an_attendee
-		click_link_or_button('Movie Screening')
+		click_link_or_button('MOVIE SCREENING')
 		fill_in 'event_name', with: 'Cats and Dogs'
 		fill_in 'event_address', with: '2373'
 		fill_in 'event_city', with: 'Chicago'
@@ -68,7 +68,7 @@ include Capybara::DSL
 	end
 
 	def create_new_event_as_an_attendee_without_location
-		click_link_or_button('Movie Screening')
+		click_link_or_button('MOVIE SCREENING')
 		fill_in 'event_name', with: 'Cats and Dogs'
 		fill_in 'event_address', with: '2373'
 		fill_in 'event_city', with: 'Chicago'
