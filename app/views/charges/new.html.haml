@@ -16,6 +16,7 @@
 			.row.donation-button
 				%script.stripe-button{"data-amount" => "0", "data-description" => "Payment Information", "data-key" => Rails.configuration.stripe[:publishable_key], :src => "https://checkout.stripe.com/checkout.js"}
 
+
 			:javascript
 				$('#donation-input').change(function(event) {
 				 var amount = document.getElementById("donation-input").value * 100;

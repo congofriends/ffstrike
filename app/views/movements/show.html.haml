@@ -24,7 +24,7 @@
           %div.col-xs-4.subtitle-text
             = t('Find an Event near you')
             = form_tag movement_events_path(@movement), method: :get do
-              = text_field_tag 'zip', value = nil, id: 'query', :maxlength => 25, placeholder: 'Enter a City, State or Zipcode', class: 'events-subtitle'
+              = text_field_tag 'zip', value = nil, id: 'query', :maxlength => 25, class: 'events-subtitle'
               %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
           %div.col-xs-4
             = link_to t('events.host_btn') , event_type_movement_path(Movement.first), class: 'btn search btn-host'

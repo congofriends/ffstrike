@@ -15,25 +15,25 @@
           - if current_user
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-                = current_user.first_name
+                = current_user.first_name.upcase
                 %b.caret
               %ul.dropdown-menu
-                %li#my_profile= link_to t('.my_profile'), user_movements_path
+                %li#my_profile= link_to t('.my_profile').upcase, user_movements_path
                 - unless current_user.movements.empty?
-                  %li#manage_groups= link_to t('.manage_my_groups'), my_groups_path
+                  %li#manage_groups= link_to t('.manage_my_groups').upcase, my_groups_path
                 - unless (current_user.events_owned & current_user.current_events).empty?
-                  %li#manage_events= link_to t('.manage_my_events'), my_events_path
+                  %li#manage_events= link_to t('.manage_my_events').upcase, my_events_path
                 %li.divider
-                %li= link_to t('.create_group'), new_movement_path
-                %li= link_to t('.host_event'), event_type_movement_path(Movement.first) if Movement.first
+                %li= link_to t('.create_group').upcase, new_movement_path
+                %li= link_to t('.host_event').upcase, event_type_movement_path(Movement.first) if Movement.first
                 %li.divider
-                %li= link_to t('.sign_out'), destroy_user_session_path, :method => :delete
+                %li= link_to t('.sign_out').upcase, destroy_user_session_path, :method => :delete
           - if current_user.nil?
-            %li= link_to t('.sign_in'), new_session_path(:user), id: "sign-in"
+            %li= link_to t('.sign_in').upcase, new_session_path(:user), id: "sign-in"
           %li.dropdown
             %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-              = @locale_hash[params[:locale]]
+              = @locale_hash[params[:locale]].upcase
               %b.caret
               %ul.dropdown-menu#languages
                 -@locale_hash.each_pair do |key, value|
-                  %li= link_to(value, locale: key)
+                  %li= link_to(value.downcase, locale: key)

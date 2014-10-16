@@ -1,19 +1,19 @@
 =image_tag Movement.first.image, class: "bg"
 .container
 	.well
-		%h4.event_type_header HOST AN EVENT
+		%h4.event_type_header CHOOSE A TYPE
 	- @event_types.each do |event_type|
 		- if current_user
 			.group-panel-event-type
 				%div
 					= link_to new_movement_event_path(@movement, {type: event_type.name}) do
 						%a{href: new_movement_event_path(@movement, {type: event_type.name})}
+							.text-center.group-name-event-type= event_type.name.upcase
 							%img.group-image-event-type{alt: "", src: asset_path("#{event_type.formatted_name}.jpeg")}/
-							.text-center.group-name-event-type= event_type.name
 		- else
 			.group-panel-event-type
 				%div
 					= link_to new_movement_unauthenticated_event_path(@movement, {type: event_type.name}) do
 						%a{href: new_movement_unauthenticated_event_path(@movement, {type: event_type.name}) }
+							.text-center.group-name-event-type= event_type.name.upcase
 							%img.group-image-event-type{alt: "", src: asset_path("#{event_type.formatted_name}.jpeg")}
-							.text-center.group-name-event-type= event_type.name

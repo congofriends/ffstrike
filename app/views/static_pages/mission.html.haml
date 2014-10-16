@@ -5,16 +5,20 @@
 	%strong=t('movements.show.quote')
 	%br
 	%br
+	.group-panel-event-type
+		%div
+			.text-center.group-name-event-type=t('.header1').upcase
+			%img.group-image-event-type.mission-panel{alt: "", src: asset_path("background.jpg")}/
+			%p= t('.background')
 
-	%h3=t('.header1')
-	%p= t('.background')
-	%br
+	.group-panel-event-type
+		%div
+			.text-center.group-name-event-type=t('.header2').upcase
+			%img.group-image-event-type.mission-panel{alt: "", src: asset_path("purpose.jpg")}/
+			%p
+				= t('.purpose')
+				%strong= t('.cw_date')
 
-	%h3=t('.header2')
-	%p
-		= t('.purpose')
-		%strong= t('.cw_date')
-	%br
 	%h3=t('.header3')
 	%p
 		= t('.get_involved1')
