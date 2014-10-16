@@ -6,16 +6,16 @@
 .DS_Store
 .ruby-version
 # Ignore bundler config.
-/.bundle
+.bundle
 
 # Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
-/db/mongo*
+db/*.sqlite3
+db/*.sqlite3-journal
+db/mongo*
 
 # Ignore all logfiles and tempfiles.
-/log/*.log
-/tmp
+log/*.log
+tmp
 
 # Ignore vim swapfiles
 *.swp
