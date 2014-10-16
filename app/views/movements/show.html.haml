@@ -23,7 +23,7 @@
           %div.subtitle-text.label-field
             = t('.find_event')
             = form_tag movement_events_path(@movement), method: :get do
-              = text_field_tag 'zip', value = nil, id: 'query', :maxlength => 25, placeholder: 'City, State or Zipcode', class: "events-subtitle"
+              = text_field_tag 'zip', value = nil, id: 'query', :maxlength => 25, placeholder: 'City, State or Zipcode', class: "upcoming-font"
               %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
           %div
             = link_to t('events.home_host_btn').upcase , event_type_movement_path(Movement.first), class: 'btn search btn-host'
