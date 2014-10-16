@@ -38,7 +38,7 @@ Then(/^I see an error message to provide a valid zipcode$/) do
 end
 
 Then(/^I can see that I have created a new account$/) do
-  attendee = User.last.name
+  attendee = User.last.name.upcase
   page.should have_content(attendee)
 end
 

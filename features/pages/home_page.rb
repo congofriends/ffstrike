@@ -24,7 +24,7 @@ include RSpec::Matchers
 	end
 
 	def sign_in
-		click_link 'Sign in'
+		click_link_or_button "signin-button"
 	end
 
 	def sign_up
