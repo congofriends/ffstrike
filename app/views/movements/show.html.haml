@@ -19,26 +19,28 @@
             =link_to t('.join_congo').upcase, mission_path, class: 'btn btn-max btn-host'
 
       %div.bottom-search-area
-        %div.col-md-6.subtitle-text
-          = t('.find_event')
-          = form_tag movement_events_path(@movement), method: :get do
-            = text_field_tag 'zip', value = nil, id: 'query', :maxlength => 25, placeholder: 'City, State or Zipcode', class: "events-subtitle"
-            %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
-        %div.col-md-6#home-host-btn
-          = link_to t('events.home_host_btn').upcase , event_type_movement_path(Movement.first), class: 'btn search btn-host'
-        }
+        %div.col-md-12#align-home
+          %div.subtitle-text.label-field
+            = t('.find_event')
+            = form_tag movement_events_path(@movement), method: :get do
+              = text_field_tag 'zip', value = nil, id: 'query', :maxlength => 25, placeholder: 'City, State or Zipcode', class: "events-subtitle"
+              %input{name: "search", class: 'query-btn', src: asset_path("glass.jpeg"), type: "image"}
+          %div
+            = link_to t('events.home_host_btn').upcase , event_type_movement_path(Movement.first), class: 'btn search btn-host'
 
-%div.panel.panel-dark.full-height
+%div.panel.panel-dark
   %div.page-container.row-full-height
     %div.text-center.row-space-top.event-borders
       %h2.strong.upcoming-events
         = t('.upcoming_events')
-      %p.events-subtitle
+      %p.upcoming-font
         = t('.support')
     %div.row-space-top
       %div.carousel-responsive
         - @public_events.each do |event|
           %div.carousel-pic.lighten
             = link_to image_tag(event.image, class: "carousel-pic"), event_path(event)
+            .h4.events-subtitle.upcoming-font
+              = "#{event.name}"
 
         %script{:src => "//cdn.jsdelivr.net/jquery.slick/1.3.11/slick.min.js", :type => "text/javascript"}

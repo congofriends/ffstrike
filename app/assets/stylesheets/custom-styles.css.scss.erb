@@ -604,29 +604,12 @@ div.col-sm-6 img.movement_avatar {
   height: 500px;
 }
 
-#home-host-btn{
-  padding-top: 4px;
-  padding-left: 0px;
-}
-
 .page-container{
   margin-left: auto;
   margin-right: auto;
   padding-left: 25px;
   padding-right: 25px;
   max-width: 1045px;
-}
-@media screen and (max-width: 690px) {
-  .header-text {
-    font-size: 26px;
-    width: 100%
-  }
-  .subtitle-text{
-    font-size: 14px;
-    font-weight: 400;
-    width: 100%;
-    margin: 0 auto;
-  }
 }
 
 .panel {
@@ -646,7 +629,7 @@ div.col-sm-6 img.movement_avatar {
 }
 
 .row-space-top{
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 .row-space-bottom{
@@ -679,6 +662,11 @@ div.col-sm-6 img.movement_avatar {
   margin: 0 auto;
 }
 
+.carousel-text{
+  position: relative;
+  max-height: 250px;
+}
+
 .carousel-responsive {
   border-style: none none ridge none;
   border-width: thick;
@@ -696,21 +684,23 @@ div.col-sm-6 img.movement_avatar {
   border-width: thick;
 }
 
-.events-subtitle{
+.upcoming-font{
   color: #565A5C;
   font-family: Garamond, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: bold;
 }
 
+.events-subtitle {
+  max-width: 310px;
+  padding-left: 22px;
+  overflow: hidden;
+  text-align: center;
+}
+
 .slideshow-pic{
   width: 100%;
   height: 611px;
-}
-
-.full-height {
-  height: 550px;
-  width: 100%;
 }
 
 .bottom-search-area {
@@ -719,7 +709,7 @@ div.col-sm-6 img.movement_avatar {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 30px;
+  padding: 20px;
 }
 
 .search-area {
@@ -779,3 +769,32 @@ div.col-sm-6 img.movement_avatar {
      -o-transition: all 0.5s linear;
         transition: all 0.5s linear;
 }
+
+#align-home > div {
+  display: inline-block;
+  width: 30%;
+  vertical-align: text-bottom;
+}
+
+#align-home {
+  text-align: center;
+  margin: 0px auto;
+}
+
+@media screen and (max-width: 690px) {
+  .header-text {
+    font-size: 26px;
+    width: 100%
+  }
+  .subtitle-text{
+    font-size: 14px;
+    font-weight: 400;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #align-home > div {
+    width: 100%;
+  }
+}
+
