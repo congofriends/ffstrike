@@ -5,7 +5,7 @@
 	.pad20=t('movements.show.quote')
 	.group-panel-event-type
 		%div
-			%img.group-image-event-type.mission-panel{alt: "", src: asset_path("purpose.jpg")}
+			%img.group-image-event-type.mission-panel{alt: "", src: asset_path("background.jpg")}
 			%span.text-content
 				%span=t('.background')
 
@@ -14,7 +14,7 @@
 			%img.group-image-event-type.mission-panel{alt: "", src: asset_path("purpose.jpg")}
 			%span.text-content.purpose-pic
 				%span=t('.purpose') + t('.cw_date')
-	%h3.pad20=t('.breaking_the_silence')
+	.pad20.text-center#bts=t('.breaking_the_silence')
 	%div.carousel-responsive.mar30
 		.col-sm-4
 			=youtube_embed_url_for_('pu4AvfBnLB0')
