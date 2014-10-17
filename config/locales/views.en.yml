@@ -145,6 +145,7 @@ en:
       events: 'EVENTS'
       teams: 'TEAMS'
       about: 'ABOUT'
+      resources: 'RESOURCES'
       donate: 'DONATE'
     footer:
       contact: 'Contact Us'

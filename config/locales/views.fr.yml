@@ -142,6 +142,7 @@ fr:
       home: 'MAISON'
       events: 'ÉVÉNEMENT'
       teams: 'ÉQUIPES'
+      resources: 'RESSOURCES'
       about: 'SUR'
       donate: 'FAITES UN DON'
     footer:

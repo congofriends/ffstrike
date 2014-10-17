@@ -11,7 +11,7 @@ $(document).ready(function(){
 
 	$('.carousel-responsive').slick({
 	  dots: true,
-	  infinite: false,
+	  infinite: true,
 	  speed: 500,
 	  slidesToShow: 3,
 	  slidesToScroll: 3,
@@ -34,6 +34,5 @@ $(document).ready(function(){
 	    }
 	  ]
 	})
-
 
 });

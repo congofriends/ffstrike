@@ -143,6 +143,7 @@ it:
       home: 'CASA'
       events: 'EVENTI'
       teams: 'SQUADRE'
+      resources: 'RISORSE'
       about: 'CIRCA'
       donate: 'DONA'
     footer:

@@ -141,6 +141,7 @@ es:
     breadcrumb:
       home: 'INICIO'
       events: 'EVENTOS'
+      resources: 'RECURSOS'
       teams: 'EQUIPOS'
       about: 'SOBRE'
       donate: 'COLABORE'

@@ -2,7 +2,7 @@
 %div.content-header.container
 	%h2.text-center.header-text Congo Week
 .container
-	%strong=t('movements.show.quote')
+	.pad20=t('movements.show.quote')
 	%br
 	%br
 	.group-panel-event-type
@@ -19,42 +19,32 @@
 			%span.text-content
 				%span=t('.purpose') + t('.cw_date')
 	%h3=t('.breaking_the_silence')
-	.row
-		.col-sm-3
-			=youtube_embed_url_for_('2PxDHXs5WNw')
-		.col-sm-3
-			=youtube_embed_url_for_('yRdNQdGNq6g')
-		.col-sm-3
-			=youtube_embed_url_for_('QO04lo6oUns')
-		.col-sm-3
-			=youtube_embed_url_for_('uhwDTSh3kAA')
-		.col-sm-3
-			=youtube_embed_url_for_('6XYF31aJzlo')
-		.col-sm-3
-			=youtube_embed_url_for_('eA_ywiVJqpM')
-		.col-sm-3
-			=youtube_embed_url_for_('6qv7BbgaUjE')
-		.col-sm-3
-			=youtube_embed_url_for_('SfAr4d89b-A')
-	%h3=t('.header3')
-	%p
-		= t('.get_involved1')
-		%strong=t('.date')
-		%strong= link_to t('.link'), movement_events_path(Movement.first)
-		= t('.get_involved2')
 	%br
-	%strong
+	%div.carousel-responsive
+		.col-sm-4
+			=youtube_embed_url_for_('pu4AvfBnLB0')
+		.col-sm-4
+			=youtube_embed_url_for_('h3h9C496HtE')
+		.col-sm-4
+			=youtube_embed_url_for_('FVer68WFVjo')
+		.col-sm-4
+			=youtube_embed_url_for_('Q_CWxQ1uVEs')
+		.col-sm-4
+			=youtube_embed_url_for_('uhwDTSh3kAA')
+		.col-sm-4
+			=youtube_embed_url_for_('6qv7BbgaUjE')
+		.col-sm-4
+			=youtube_embed_url_for_('meKJRvgmliE')
+		.col-sm-4
+			=youtube_embed_url_for_('SfAr4d89b-A')
+		.col-sm-4
+			=youtube_embed_url_for_('Nr-PLQtR4OY')
+	%strong.pad20
 		= t('.view_template')
 		= link_to  t('.link'), template_path
 	%br
-	%br
-		%strong= t('.organizer_toolkit')
-		%strong= link_to t('.link'), organizer_toolkit_path
 	.row
 		.col-sm-6
 			= link_to t('.host_event') , event_type_movement_path(Movement.first), class: 'btn search btn-host'
 		.col-sm-6
 			= link_to t('.attend_event'), movement_events_path(Movement.first), class: 'btn search btn-host'
-
-
-
