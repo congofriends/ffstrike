@@ -56,6 +56,32 @@
 	}
 
 }
+span.text-content {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  cursor: pointer;
+  display: table;
+  height: 100%;
+  left: 20px;
+  position: absolute;
+  top: 200px;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  transition: opacity 500ms;
+}
+ 
+span.text-content span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+div.group-panel-event-type div:hover span.text-content {
+  opacity: 1;
+}
 
 .group-name {
   font-size: 15px;

@@ -7,16 +7,35 @@
 	%br
 	.group-panel-event-type
 		%div
-			%img.group-image-event-type.mission-panel{alt: "", src: asset_path("purpose.jpg")}/
-			%p= t('.background')
+			.text-center.group-name-event-type=t('.header1').upcase
+			%img.group-image-event-type.mission-panel{alt: "", src: asset_path("background.jpg")}
+			%span.text-content
+				%span=t('.background')
 
 	.group-panel-event-type
 		%div
-			%img.group-image-event-type.mission-panel{alt: "", src: asset_path("purpose.jpg")}/
-			%p
-				= t('.purpose')
-				%strong= t('.cw_date')
-
+			.text-center.group-name-event-type=t('.header2').upcase
+			%img.group-image-event-type.mission-panel{alt: "", src: asset_path("purpose.jpg")}
+			%span.text-content
+				%span=t('.purpose') + t('.cw_date')
+	%h3=t('.breaking_the_silence')
+	.row
+		.col-sm-3
+			=youtube_embed_url_for_('2PxDHXs5WNw')
+		.col-sm-3
+			=youtube_embed_url_for_('yRdNQdGNq6g')
+		.col-sm-3
+			=youtube_embed_url_for_('QO04lo6oUns')
+		.col-sm-3
+			=youtube_embed_url_for_('uhwDTSh3kAA')
+		.col-sm-3
+			=youtube_embed_url_for_('6XYF31aJzlo')
+		.col-sm-3
+			=youtube_embed_url_for_('eA_ywiVJqpM')
+		.col-sm-3
+			=youtube_embed_url_for_('6qv7BbgaUjE')
+		.col-sm-3
+			=youtube_embed_url_for_('SfAr4d89b-A')
 	%h3=t('.header3')
 	%p
 		= t('.get_involved1')
@@ -36,5 +55,6 @@
 			= link_to t('.host_event') , event_type_movement_path(Movement.first), class: 'btn search btn-host'
 		.col-sm-6
 			= link_to t('.attend_event'), movement_events_path(Movement.first), class: 'btn search btn-host'
+
 
 
