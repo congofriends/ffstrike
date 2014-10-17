@@ -7,20 +7,18 @@
 	%br
 	.group-panel-event-type
 		%div
-			.text-center.group-name-event-type=t('.header1').upcase
-			%img.group-image-event-type.mission-panel{alt: "", src: asset_path("background.jpg")}
+			%img.group-image-event-type.mission-panel{alt: "", src: asset_path("purpose.jpg")}
 			%span.text-content
 				%span=t('.background')
 
 	.group-panel-event-type
 		%div
-			.text-center.group-name-event-type=t('.header2').upcase
 			%img.group-image-event-type.mission-panel{alt: "", src: asset_path("purpose.jpg")}
 			%span.text-content
 				%span=t('.purpose') + t('.cw_date')
-	%h3=t('.breaking_the_silence')
+	%h3.pad20=t('.breaking_the_silence')
 	%br
-	%div.carousel-responsive
+	%div.carousel-responsive.mar30
 		.col-sm-4
 			=youtube_embed_url_for_('pu4AvfBnLB0')
 		.col-sm-4

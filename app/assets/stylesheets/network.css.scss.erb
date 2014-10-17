@@ -33,17 +33,18 @@
 	border-color: lightgray;
 }
 
+.pad20{
+	padding: 0 20px;
+}
 
+.mar30{
+	margin: 0 30px;
+}
 
 .group-image-event-type {
-	height: 300px;
 	min-width: 300px;
 	width: 100%;
 	padding: 0px;
-}
-
-.mission-panel {
-	height: 500px;
 }
 
 @media all and (max-width: 990px) {
@@ -57,22 +58,20 @@
 
 }
 span.text-content {
-  background: rgba(0,0,0,0.5);
   color: white;
   cursor: pointer;
   display: table;
-  height: 100%;
-  left: 20px;
+  height: 30%;
   position: absolute;
-  top: 200px;
-  width: 100%;
+  top: 14%;
+  width: 43%;
   opacity: 0;
   -webkit-transition: opacity 500ms;
   -moz-transition: opacity 500ms;
   -o-transition: opacity 500ms;
   transition: opacity 500ms;
 }
- 
+
 span.text-content span {
   display: table-cell;
   text-align: center;
@@ -81,6 +80,12 @@ span.text-content span {
 
 div.group-panel-event-type div:hover span.text-content {
   opacity: 1;
+}
+
+
+div.group-panel-event-type div:hover .mission-panel{
+  opacity: .7;
+
 }
 
 .group-name {
