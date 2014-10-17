@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   def new
     redirect_to new_user_session_path and return unless current_user
     @event = Event.new
-    @event_type = params[:type] || EventType.first.name 
+    @event_type = params[:type] || EventType.first.name
   end
 
   def explanation
@@ -24,7 +24,7 @@ class EventsController < ApplicationController
         @events = @events.public_events
         @coordinates = Geocoder.coordinates(params[:zip])
         load_map_vars
-        @events = Kaminari.paginate_array(@events).page(params[:page]).per(5)
+        @events = Kaminari.paginate_array(@events).page(params[:page]).per(5) if params[:home]
         format.html {render action: "index"}
         format.js
       else
