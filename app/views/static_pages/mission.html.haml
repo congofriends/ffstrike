@@ -3,8 +3,6 @@
 	%h2.text-center.header-text Congo Week
 .container
 	.pad20=t('movements.show.quote')
-	%br
-	%br
 	.group-panel-event-type
 		%div
 			%img.group-image-event-type.mission-panel{alt: "", src: asset_path("purpose.jpg")}
@@ -14,10 +12,9 @@
 	.group-panel-event-type
 		%div
 			%img.group-image-event-type.mission-panel{alt: "", src: asset_path("purpose.jpg")}
-			%span.text-content
+			%span.text-content.purpose-pic
 				%span=t('.purpose') + t('.cw_date')
 	%h3.pad20=t('.breaking_the_silence')
-	%br
 	%div.carousel-responsive.mar30
 		.col-sm-4
 			=youtube_embed_url_for_('pu4AvfBnLB0')
