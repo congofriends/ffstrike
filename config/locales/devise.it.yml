@@ -56,7 +56,7 @@ it:
         sign_up: "SIGN UP"
     sessions:
       signed_in: "Firmato in successo. "
-      signed_out: " Firmato con successo. "
+      signed_out: "Firmato con successo. "
     unlocks:
       send_instructions: "Riceverai un messaggio email con le istruzioni su come sbloccare il tuo account in pochi minuti."
       send_paranoid_instructions: "Se esiste l'account, riceverete un'email con le istruzioni su come sbloccare in pochi minuti."

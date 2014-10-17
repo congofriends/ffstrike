@@ -55,7 +55,7 @@ it:
     new:
       congo_week_content : "Grazie per assumere la responsabilità di essere un host evento e contribuendo a rendere # CongoWeek2014 ottobre 19-25 un successo."
       datetime_tbd : "Data e ora da stabilire"
-      address_tbd : " Indirizzo da determinare"
+      address_tbd : "Indirizzo da determinare"
       legend1: "Evento Informazioni di base (mezzo)"
       legend2: "Dettagli evento (2/2)"
       legend3: "Dati personali "
@@ -427,8 +427,8 @@ it:
       sign_up: "Unisciti al team!"
       follow_up_msg: "Aspettatevi di sentire dall'host con gli aggiornamenti di squadra"
     finish_signup:
-      finish_signup_header: " Inserisci il tuo indirizzo email qui sotto per accedere con Twitter "
-      finish_signup_message: " Questo indirizzo e-mail verrà associato con i tuoi Congo Eventi conto."
+      finish_signup_header: "Inserisci il tuo indirizzo email qui sotto per accedere con Twitter "
+      finish_signup_message: "Questo indirizzo e-mail verrà associato con i tuoi Congo Eventi conto."
   validations:
     name: "è richiesto Nome "
     email: "Email è richiesto"

@@ -145,7 +145,7 @@ class MovementsController < ApplicationController
   end
 
   def support_network
-    @support_network =  Movement.where(parent_id: @movement)
+    @support_network =  Movement.where(parent_id: @movement).sort{|team1,team2| team1.name.downcase <=> team2.name.downcase}
   end
 
   def check_name
