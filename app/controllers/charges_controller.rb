@@ -7,6 +7,8 @@ class ChargesController < ApplicationController
 	  @amount = params[:donation].to_i*100
 	  @comment= params[:comment]
 
+	  binding.pry
+
 	  customer = Stripe::Customer.create(
 	    :email => params[:stripeEmail],
 	    :card  => params[:stripeToken]
@@ -18,7 +20,7 @@ class ChargesController < ApplicationController
 	    description:  'Rails Stripe customer',
 	    currency:     'usd'
 	  )
-	  redirect_to root_path, notice: "Thank you for your contribution to Friends of the Congo.  Your donation of #{ActionController::Base.helpers.number_to_currency(@amount)} USD will help support the efforts of the Congo Youth Initiative." and return if charge
+	  redirect_to root_path, notice: "Thank you for your contribution to Friends of the Congo.  Your donation of #{ActionController::Base.helpers.number_to_currency(@amount/100)} USD will help support the efforts of the Congo Youth Initiative." and return if charge
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
 	  redirect_to charges_path
