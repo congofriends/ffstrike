@@ -7,8 +7,6 @@ class ChargesController < ApplicationController
 	  @amount = params[:donation].to_i*100
 	  @comment= params[:comment]
 
-	  binding.pry
-
 	  customer = Stripe::Customer.create(
 	    :email => params[:stripeEmail],
 	    :card  => params[:stripeToken]
