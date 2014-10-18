@@ -29,7 +29,7 @@ Scenario: Viewing an Event on Index after Creating an Event
     And I create an event
     Then I can see the event on the Events Index
 
-@javascript
+@javascript @ignore
 Scenario: An event should not be viewable on index if approval is set to false
     When I select the Create Event button
     And I create an event
