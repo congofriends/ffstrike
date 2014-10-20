@@ -23,6 +23,8 @@ class UsersController < Devise::RegistrationsController
     @team = Movement.find params[:team]
     @membership = Membership.new
     @user = current_user ? current_user : User.new
+    rescue ActiveRecord::RecordNotFound
+      redirect_to movement_events_path(Movement.first), alert: t('movement.no_route')
   end
 
 
