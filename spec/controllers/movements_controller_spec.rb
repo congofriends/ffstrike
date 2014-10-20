@@ -34,7 +34,7 @@ describe MovementsController do
       end
 
       it "redirects to the movement page" do
-        expect(response).to redirect_to movement_explanation_path(Movement.last)
+        expect(response).to redirect_to movement_path(Movement.last)
       end
 
       it "notifies user that movement has been created" do

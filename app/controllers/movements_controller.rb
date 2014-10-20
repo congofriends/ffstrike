@@ -9,9 +9,7 @@ class MovementsController < ApplicationController
 
   def index
     @movement = Movement.first
-
     @public_events = (Event.public_events.count < 6) ? Event.public_events : Event.public_events.first(6)
-
     load_countdown_urls
     render 'movements/show'
   end
@@ -57,7 +55,7 @@ class MovementsController < ApplicationController
         NewTeamMailWorker.perform_async(current_user.id, @movement.id) if ENV["RAILS_ENV"] == "production"
         @movement.users << current_user
       end
-      redirect_to movement_explanation_path(@movement)
+      redirect_to movement_path(@movement)
       flash[:notice] = t('movement.created')
     else
       render :new, alert: t('movement.not_created')
