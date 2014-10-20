@@ -15,11 +15,7 @@ class UserMailer < ActionMailer::Base
     return unless @movement
     @members_emails = []
     @movement.members.each { |member| @members_emails << member.email }
-    if ENV['RAILS_ENV'] == 'test'
-      mail(to: ['tmorris@thoughtworks.com'], subject: "#{@movement.name} has been removed.").deliver
-    else
-      mail(to: @members_emails, subject: "#{@movement.name} has been removed.").deliver
-    end
+    mail(to: @members_emails, subject: "#{@movement.name} has been removed.").deliver
   end
 
   def task_signup_message(event_id, task_id, attendee_id)
