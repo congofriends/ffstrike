@@ -113,7 +113,4 @@
                 = password_field :user, :password_confirmation, class: 'form-control'
               .form-group
                 %button{type: "button", class: "btn btn-primary previous"}= t("events.new.previous")
-                -if @event_type == "Fundraiser For Fotc"
-                  = submit_tag t("events.new.create_btn"), class: 'btn btn-success', id: 'create_event', disabled: "true"
-                -else
-                  = submit_tag t("events.new.create_btn"), class: 'btn btn-success', id: 'create_event'
+                = submit_tag t("events.new.create_btn"), class: 'btn btn-success', id: 'create_event'
