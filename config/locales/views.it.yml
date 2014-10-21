@@ -326,7 +326,7 @@ it:
       about_creator: "Circa Creatore:"
       cancel_btn: 'Annulla'
       create_btn: 'Crea Team'
-      avatar: "Immagine"
+      avatar: "Avatar"
       avatar_size: "(Consigliata Dimensione immagine : 250 x 175)"
       website: "Sito Web"
     show:
@@ -373,7 +373,7 @@ it:
       call_to_action: "Call To Action:"
       about_creator: "Circa Creatore:"
       create_btn: 'Crea Team'
-      avatar: "Immagine "
+      avatar: "Avatar "
       avatar_size: "(Consigliata Dimensione immagine : 250 x 175)"
       website: "Sito Web"
       legend: "Dettagli del Gruppo"

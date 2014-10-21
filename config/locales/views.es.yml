@@ -326,7 +326,7 @@ es:
       about_creator: 'Acerca del creador'
       cancel_btn: 'Cancelar'
       create_btn: 'Crear Equipo'
-      avatar: "Imagen"
+      avatar: "Avatar"
       avatar_size: "(Recomendada Imagen Dimensión: 250 x 175)"
       website: "Website"
     show:
@@ -373,7 +373,7 @@ es:
       call_to_action: 'Llamamiento a la acción'
       about_creator: 'Acerca del creador'
       create_btn: 'Crear Equipo'
-      avatar: "Imagen"
+      avatar: "Avatar"
       avatar_size: "(Recomendada Imagen Dimensión: 250 x 175)"
       website: "Website"
       legend: "Detalles del grupo"

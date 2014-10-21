@@ -285,7 +285,7 @@ en:
       about_creator: "About Creator:"
       update_movement: "Update Team"
       delete_team: "Delete Team"
-      bg_image1: "Background Image 1"
+      bg_image1: "Avatar"
       bg_image2: "Background Image 2"
       confirm_delete_team: "Are you sure you want to delete "
     tab_group_teams:
@@ -326,7 +326,7 @@ en:
       about_creator: "About Creator:"
       cancel_btn: 'Cancel'
       create_btn: 'Create Team'
-      avatar: "Image"
+      avatar: "Avatar"
       avatar_size: "(Recommended Image Dimension: 250 x 175)"
       website: "Website"
     show:
@@ -373,7 +373,7 @@ en:
       call_to_action: "Call To Action:"
       about_creator: "About Creator:"
       create_btn: 'Create Team'
-      avatar: "Image"
+      avatar: "Avatar"
       avatar_size: "(Recommended Image Dimension: 250 x 175)"
       website: "Website"
       legend: "Group Details"

@@ -326,7 +326,7 @@ fr:
       about_creator: "De Créateur:"
       cancel_btn: 'Annuler'
       create_btn: 'Créer du équipe'
-      avatar: "Image"
+      avatar: "Avatar"
       avatar_size: "(Dimension de l'image Recommandée: 250 x 175)"
       website: "Website"
     show:
@@ -373,7 +373,7 @@ fr:
       call_to_action: "Appel à l'action:"
       about_creator: "De Créateur:"
       create_btn: 'Créer du équipe'
-      avatar: "Image"
+      avatar: "Avatar"
       avatar_size: "(Dimension de l'image Recommandée: 250 x 175)"
       website: "Website"
       legend: "Détails du groupe"
