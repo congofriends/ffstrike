@@ -30,7 +30,7 @@
     -unless !@movement.tagline || @movement.tagline.empty?
       %hr
       .tagline= @movement.tagline
-    - unless !@movement.website || @movement.website.empty?
+    - unless !@movement.website || @movement.website.empty? || @movement.website == "http://"
       %hr
       =link_to @movement.website, @movement.website, :target => '_blank'
     - unless !@movement.about_creator || @movement.about_creator.empty?
