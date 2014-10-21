@@ -455,6 +455,7 @@ es:
     zip_required: 'Zip es necesario'
     zip_numeric: "Zip debe contener sólo números"
     zip_length: "Zip debe ser de 5 dígitos"
+    image_extension: "Tipo de imagen no es válido: jpg, jpeg, png, gif"
   static_pages:
     mission:
       header1: "Antecedentes"

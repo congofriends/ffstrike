@@ -44,10 +44,16 @@ function initializeGroupValidations() {
 function initializeEditGroupValidations() {
   $('#edit-group-form').validate({
     rules: {
-      'movement[name]': {required: true}
+      'movement[name]': {required: true},
+      'movement[extended_description]': {required: true},
+      'movement[avatar]': {extension: "jpg|jpeg|gif|png"},
+      'movement[image]': {extension: "jpg|jpeg|gif|png"}
     },
     messages: {
-      'movement[name]': I18n[window.gon.locale]['name']
+      'movement[name]': I18n[window.gon.locale]['name'],
+      'movement[extended_description]': I18n[window.gon.locale]['description'],
+      'movement[avatar]': I18n[window.gon.locale]['image_extension'],
+      'movement[image]': I18n[window.gon.locale]['image_extension']
     },
 
     errorElement: "div",

@@ -11,7 +11,7 @@
 								.col-md-9
 									= form.text_field :name, class: 'form-control', :maxlength => 100
 							.form-group
-								= form.label :extended_description,  t('.extended_description'), class: 'col-md-3 control-label'
+								= form.label :extended_description,  t('.extended_description') + ' * ', class: 'col-md-3 control-label'
 								.col-md-9
 									= form.text_area :extended_description, class: 'form-control'
 							.form-group

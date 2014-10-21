@@ -455,6 +455,7 @@ en:
     zip_required: 'Zip is required'
     zip_numeric: "Zip should contain only numbers"
     zip_length: "Zip should be 5 digits long"
+    image_extension: "Image extensions supported: jpg, jpeg, png, gif"
   static_pages:
     mission:
       header1: "Background"

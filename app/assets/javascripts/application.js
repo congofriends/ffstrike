@@ -28,3 +28,4 @@
 //= require jquery.infinitescroll
 //= require redactor-rails
 //= require slick
+//= require additional-methods
