@@ -3,3 +3,12 @@
 /spec
 
 /features
+
+/config/environments
+
+/config/initializers
+
+/config/locales
+
+/public
+
