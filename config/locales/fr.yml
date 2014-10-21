@@ -51,183 +51,158 @@ fr:
     signed_up: "Grâce à la signature de!"
     for_attendees_only: "Tâches sont pour les participants uniquement"
   event_type:
-    rally:
-      short_description: "Host un grand rassemblement public ou le mois de mars pour attirer l'attention du public et des médias à votre cause"
-      full_description: "Des rassemblements sont de grands événements (idéalement 20 personnes ou plus) destiné à attirer l'attention du public et des médias de faire pencher l'opinion publique
-      sur une question importante. Des rassemblements peuvent paraître très différents l'un de l'autre, mais en général, ils ont au moins
-      1 à 3 haut-parleurs, signes, et chants. Ils peuvent durer de 10 minutes à tous les jours, mais la plupart des rassemblements sont à 30 minutes à une heure.
-      Avec un peu de temps et d'efforts, un bon rallye peut se réunir dans quelques jours lorsque nécessaire, mais, si vous le pouvez,
-      nous vous suggérons de vous-même et votre équipe au moins une semaine à un mois pour organiser un rassemblement réussi."
-    public_speak_out:
-      short_description: "Organiser une parole publique à recueillir citoyens concernés ensemble et de faire entendre votre voix"
-      full_description: "le but d'un public parler-out est de réunir des personnes avec une préoccupation similaire, et de recueillir
-      positive du public attention pour votre cause. Vous pouvez aussi choisir d'inviter les médias à couvrir votre événement. Un public parler-out peut être inférieure à
-      un rassemblement - vous pouvez avoir une bonne parole-out et pétition événement avec juste 3-10 personnes. Bien que ce ne soit pas tous parler de
-      ces événements comprennent une pétition au composant, l'ajout d'une pétition peut être un bon moyen de faire participer le public, d'identifier les militants,
-      et de montrer aux décideurs que votre question est populaire. Une parole publique pourrait être de 15 minutes à tout un après-midi de
-      présenter une pétition. Contrairement à un rallye, parler, sont très faciles à organiser. Avec quelques amis, vous pourriez avoir un parler dans quelques jours,
-      mais, si vous prévoyez quelque chose de plus élaboré, vous souhaitez peut-être vous donner une semaine à un mois de plan."
     movie_screening:
-      short_description: "Afficher une animation pertinente pour éduquer la communauté sur votre question"
-      full_description: "De prendre des mesures, nous avons d'abord besoin d'être éduqués. Un film de dépistage peut être une excellente première étape pour de nombreuses personnes à
-      apprendre sur des questions importantes. Hébergement d'un écran de cinéma peut être rapide et facile à organiser. Votre film de dépistage pourrait être de
-      3, 5 ou 100 personnes. Vous pouvez également décider d'ajouter plus de votre dépistage comme un orateur ou une pétition drive."
-    public_forum:
-      short_description: "Réunir des experts et héberger un forum public d'éduquer la communauté sur votre question"
-      full_description: "Avant de nous prononcer, nous devons être instruits. Forums publics sont destinés à informer la population en général sur des questions importantes.
-      En général, les tribunes publiques impliquent une ardoise d'orateurs qui sont des experts dans la question que vous êtes discuter qui font leurs propres déclarations,
-      aux questions de l'auditoire. En général, les tribunes publiques sont polis les événements où les gens viennent apprendre informations,
-      toutefois, si votre sujet est controversé vous devrait être préparé pour l'opposition. (Clip de forums sur les soins de santé?) un succès public forme
-      devrait avoir une large participation - en fonction de la taille de votre communauté, vous devez viser entre 20 et 200 (ou plus !) les personnes de votre
-      événement. Ces derniers peuvent être grands événements pour développer votre mouvement. Car cet événement nécessite beaucoup de logistique et de recrutement,
-      nous suggérons vous permettant au moins 1-3 mois pour planifier et préparer."
-    meet_with_decision_maker:
-      short_description: "Get intervenants clés ensemble et présenter votre cas à un fonctionnaire élu ou autre décideur"
-      full_description: "Une chose est sûre - les gens au pouvoir n'y retournerai certainement pas faire la bonne chose à moins qu'elles ne soient posées
-      (souvent ils ne le font pas alors soit - c'est pourquoi les choses comme des rassemblements, parler-out, et la pétition lecteurs existent. Mais il vaut la peine de
-      demander !).  L'intention d'une réunion avec un décideur - qu'il s'agisse d'une ville councilperson, état ou représentant fédéral,
-      ou d'une école secondaire ou administrateur du collège - est de s'assurer qu'ils savent de vos demandes. Lors de cette réunion, vous voudrez 3-5 mouvement actif
-      dirigeants prêts à prendre la parole. Parce qu'il faut souvent du temps pour fixer une réunion avec les décideurs et de préparer votre présentation
-      , nous recommandons de donner vous-même au moins 2 à 6 semaines pour organiser une réunion, bien que, dans un pincement, vous pourriez le faire plus rapidement."
-    planning_meeting:
-      short_description: "Obtenez vos amis et alliés ensemble pour planifier votre prochain déménagement"
-      full_description: "réunions de planification sont cruciales pour organiser plus complexes et actions de renforcement communautaire qui sera la dernière. Une réunion de planification
-      pourrait être une réunion improvisée déjeuner avec vous et quelques autres dirigeants ou il pourrait être un plus grand groupe au grand complet réunion vous planifier et de prévoir
-      plusieurs semaines à l'avance. Des réunions pourraient essentiellement à partager des informations, de prendre des décisions, ou de déléguer des tâches. Assurez-vous juste que
-      vous avez un but et programme solide pour faire avancer les choses (et peut-être des collations trop ... )."
+      short_description: "Voir un film pertinent à éduquer la communauté sur votre question"
+      full_description: "Une projection de film peut être une première étape pour de nombreuses personnes de se renseigner sur des questions importantes."
+    rally:
+      short_description: "Accueillir un grand rassemblement public ou marcher pour attirer l'attention du public et des médias à votre cause"
+      full_description: "Rassemblements sont de grands événements (idéalement 20 personnes ou plus) destinées à attirer l'attention du public et des médias"
+    teach_in:
+      short_description: "Assemblez experts et accueillera un forum public pour sensibiliser la communauté sur votre question"
+      full_description: "Enseigner Ins sont destinées à informer la population générale sur les questions importantes. En général, des forums publics impliquent une liste de conférenciers qui sont des experts dans la question dont vous discutez."
+    fundraiser_for_fotc:
+      short_description: "Amasser des fonds pour votre cause"
+      full_description: "Amasser des fonds pour votre cause"
+    cell_out:
+      short_description: "Instant de silence numérique"
+      full_description: "La cellule OUT est un moment de silence numérique pour commémorer les millions de vies perdues congolais, sensibiliser sur le conflit en cours au Congo et la ruée vicieux pour les ressources naturelles spectaculaires du Congo."
+    prayer_service:
+      short_description: "ce est un service de prière à comemmorate tombé congolais."
+      full_description: "ce est un service de prière à comemmorate tombé congolais."
+    forum:
+      short_description: "Ce sera l'occasion d'avoir une discussion et parler de questions relatives à la Congo"
+      full_description: "Ce sera l'occasion d'avoir une discussion et parler de questions relatives à la Congo"
+    concert:
+      short_description: "Ceci est d'appuyer les efforts du Congo"
+      full_description: "Ceci est d'appuyer les efforts du Congo"
     other:
-      short_description: "Ont une idée pour un événement créatif? Utilisez cet outil pour créer des tâches et de les affecter"
-      full_description: "Ont une idée pour un événement créatif? Utilisez cet outil pour créer des tâches et de les affecter."
+      short_description: "Vous avez une idée pour un événement créatif? Utilisez cet outil pour créer des tâches et assigner"
+      full_description: "Vous avez une idée pour un événement créatif? Utilisez cet outil pour créer des tâches et assigner."
   host_tasks:
-    rally:
-    - 'Find a location. Ideally your location has something to do with your movement
-      AND will be a good place for media outlets to come cover your event. '
-    - 'Pick a date and time. This may already be chosen for you as part of a larger
-      “Day of Action” - if not, try to pick a date and time when both concerned individuals
-      and the media will be able to attend. '
-    - 'Create an agenda for your event. This doesn’t need to be perfect - just think
-      about what you want your event to look like and how you want it to flow. It
-      could be “Opening Speaker, Chants, Speaker, March, Closing Speaker.” '
-    - Find a speaker (maybe it’s you!) and start preparing your speaker for the event.
-    - Begin publicizing your event by printing and distributing posters, using social
-      media, inviting friends and family, and contacting like-minded organizations
-    - Contact the media about your event
-    public_forum:
-    - Find a location. Make sure it has the seating (or potential for seating) and
-      potential technology you need (like microphones).
-    - Pick a date and time. Try to pick a date and time when lots of people will be
-      available - probably a weekday evening or weekend afternoon. (You should also
-      take into consideration speakers schedules here - if 1 or 2 speakers are truly
-      crucial to your event, get their availability before scheduling.)
-    - Secure 3-5 speakers. Make sure you have several perspectives represented - for
-      example, if you are hosting a forum about mountain top removal, you may want
-      an environmental organizer, a union-worker, a doctor, and a supportive elected
-      official. These speakers should be high-level enough to draw interest from your
-      community. If you expect a high turn out and/or any controversy, you may also
-      want to find someone to moderate the panel and direct audience questions.
-    - Create an agenda for your event and share the agenda with your event participants.
-    - Begin publicizing your event and recruiting attendees (you can do any or all
-      of the following)
-    - Print posters and put them in public places
-    - Post your event on social media
-    - Call your friends and family and invite them to attend
-    - Call and email like-minded organizations and ask them to attend
-    - 'Optional: Snacks!'
     movie_screening:
-    - Find a location. Make sure it has the seating (or potential for seating) and
-      technology you need.
-    - Secure the movie.
-    - Pick a date and time. This may already be chosen for you as part of a larger
-      “Day of Action” - if not, try to pick a date and time when lots of people will
-      be available - probably a weekday evening or weekend afternoon.
-    - If you’re doing more than just the movie, create an agenda for your event. This
-      doesn’t need to be perfect - just think about what you want your event to look
-      like and how you want it to flow. It could be “Opening Speaker [probably you],
-      Movie Showing, Call to Action (like petitions or announcements about upcoming
-      events), Closing.”
-    - 'Begin publicizing your event and recruiting attendees (you can do any or all
-      of the following):'
-    - Print posters and put them in public places
-    - Post your event on social media
-    - Call your friends and family and invite them to attend
-    - Call and email like-minded organizations and ask them to attend
-    - Optional! Snacks
-    public_speak_out:
-    - 'Find a location. For this type of event, you want to pick a place with lots
-      of food-traffic. '
-    - 'Pick a date and time. This may already be chosen for you as part of a larger
-      “Day of Action” - if not, try to pick a date and time when lots of people will
-      be out - lunch time is often a good bet. '
-    - 'Create an agenda for your event. This doesn’t need to be perfect - just think
-      about what you want your event to look like and how you want it to flow. It
-      could be “Opening Speaker [probably you], Sharing Stories by Attendees, Pass
-      out Petitions, Petition for 20 minutes-2 hours, Closing Speaker.” '
-    - Prepare your speaker for the event
-    - Begin publicizing your event by printing and distributing posters, using social
-      media, inviting friends and family, and contacting like-minded organizations
-    - Contact the media about your event
-    meet_with_decision_maker:
-    - Call the decision-makers office and ask to schedule an appointment If 1 or 2
-      others are truly crucial to your meeting, get their availability before scheduling.)
-      Generally - it should be easy to get a meeting with someone, even if it’s an
-      aide. If you’re getting the brush off- keep calling!
-    - Secure 2-4 people to join you. Make sure you have several perspectives represented
-      - you may want to think about how you represent the decision-makers interests
-      or constituencies in terms of the age, gender, and racial diversity.
-    - Create an agenda for your event and share the agenda with your event participants.
-    - Practice, practice, practice. Meet with your group and communication via email
-      or phone before the meeting to make sure you are all on the same page. Make
-      sure everyone has their talking points written out. It’s important to have a
-      united front and a clear ask at your meeting.
-    - After the meeting - follow up with the decision-maker. Thank them for their
-      time and remind them of your request.
-    planning_meeting:
-    - Schedule your meeting - make sure you check with key players before the finalize
-      the time.
-    - Communicate with other leaders (if there are any) to decide on the agenda.
-    - Share the agenda with meeting participants before the meeting.
-    - Arrive in the space early to make sure you have everything you need.
-    - 'Optional: Bring snacks or assign someone to snacks.'
-    - 'Optional: Assign a notetaker to take notes and distribute them after the meeting.'
-    - 'Optional: Assign a timekeeper to keep things moving.'
+      - "Planifier un bref ordre du jour pour votre événement - pensez à qui vous voulez introduire le film et ce que (le cas échéant) que vous ferez après."
+      - "Faire des affiches et les mettre en place (exemples d'affiches disponibles en bas de page)"
+      - "Diffusez votre événement sur ​​les médias sociaux en utilisant le hashtag #CongoWeek2014"
+      - 'Faites passer le mot parmi les organisations dans votre communauté ou sur votre campus'
+      - 'Envoyer une alerte à la presse locale'
+      - "Organisez vos matériaux pour la journée de. Vous voudrez pétitions des cartes postales, des DVD seront distribués, connectez-feuille ou un ordinateur pour les gens de vous connecter à votre événement, des fiches, des stylos et des collations (en option). (http://congoweek.org/downloads.html)"
+    rally:
+      - "Créer un ordre du jour de l'événement avec haut-parleurs, des chants, ou un mars par votre communauté ou d'un campus."
+      - "Faire des affiches et les mettre en place (exemples d'affiches disponibles en bas de page)"
+      - "Diffusez votre événement sur ​​les médias sociaux en utilisant le hashtag #CongoWeek2014"
+      - 'Faites passer le mot parmi les organisations dans votre communauté ou sur votre campus'
+      - 'Envoyer une alerte à la presse locale'
+      - 'Organisez vos matériaux pour la journée de. Vous voudrez pétitions des cartes postales, des DVD seront distribués, connectez-feuille ou un ordinateur pour les gens de vous connecter à votre événement, des fiches, des stylos et des collations (en option). (http://congoweek.org/downloads.html)'
+    teach_in:
+      - "Fixez quelques haut-parleurs. (Si vous n'êtes pas sûr de savoir comment trouver des conférenciers, veuillez communiquer avec Friends of the Congo ou obtenir des conseils sur les conférenciers, http://congoweek.org/invite-a-speaker.html)"
+      - "Créer un ordre du jour pour votre événement et de partager l'ordre du jour avec les participants de l'événement."
+      - "Faire des affiches et les mettre en place (exemples d'affiches disponibles en bas de page)"
+      - "Diffusez votre événement sur ​​les médias sociaux en utilisant le hashtag #CongoWeek2014"
+      - "Faites passer le mot parmi les organisations dans votre communauté ou sur votre campus"
+      - "Envoyer une alerte à la presse locale"
+      - "Organisez vos matériaux pour la journée de. Vous voudrez pétitions des cartes postales, des DVD seront distribués, connectez-feuille ou un ordinateur pour les gens de vous connecter à votre événement, des fiches, des stylos et des collations (en option). (http://congoweek.org/downloads.html)"
+    fundraiser_for_fotc:
+      - "Avant l'événement: Lire et signer les Amis de l'accord Congo (FOTC) de collecte de fonds d'autorisation et de le faxer ou numériser et envoyer par courriel à FOTC"
+      - "Avant l'événement: Ecrire un programme pour votre événement et garantir une animation (une bande, un haut-parleur, un film - le ciel est la limite!)"
+      - "Avant l'événement: Faire un objectif de combien d'argent vous voulez soulever - connaître votre objectif"
+      - "Avant l'événement: Faire des affiches et les mettre en place (exemples d'affiches disponibles en bas de page)"
+      - "Avant l'événement: Diffusez votre événement sur ​​les médias sociaux en utilisant le hashtag #CongoWeek2014"
+      - "Avant l'événement: Faites passer le mot parmi les organisations dans votre communauté ou sur votre campus"
+      - "Avant l'événement: Envoyer une alerte à la presse locale"
+      - "Avant l'événement: Organisez vos matériaux pour la journée de. Vous voudrez pétitions des cartes postales, des DVD seront distribués, connectez-feuille ou un ordinateur pour les gens de vous connecter à votre événement, des fiches, des stylos et des collations (en option). (http://congoweek.org/downloads.html)"
+      - "Avant l'événement: Si vous avez trouvé des dons en nature pour votre événement, vous aurez probablement besoin de la lettre exonéré d'impôt des Amis du Congo que vous pouvez obtenir en envoyant un courriel ici (finance@friendsofthecongo.org)"
+      - "Au cours de l'événement: Mise en place d'un ordinateur (ou les ordinateurs) pour les cotisations de carte de crédit en ligne."
+      - "Au cours de l'événement: Passez un panier de collecte ou des enveloppes où les gens peuvent faire un don en espèces ou par chèque (les chèques doivent être libellés à l'ordre des Amis du Congo)"
+      - "Au cours de l'événement: Faire et mettre à jour un 'thermomètre' pour suivre vos progrès de collecte de fonds à travers la nuit (facultatif)"
+      - "Après l'événement: Envoyez les contributions aux amis du Congo dans la semaine de votre événement soit en envoyant un chèque à Friends of the Congo, 1629 K Street, NW Ste 300, Washington, DC 20006, ou faire un don en ligne à (http: //friendsofthecongo.org/donate.html)"
+      - "Après l'événement: tout le monde qui a fait don par courrier électronique, par téléphone ou e-mail Merci."
+    cell_out:
+      - "Planifier un événement de lancement, idéalement à midi le jour de votre CellOUT. Vous pouvez choisir d'avoir un haut-parleur ou un autre divertissement. Si vous avoir accès à un écran, vous pouvez partager la vidéo promo trouvé à www.thecellout.com. Lors de cet événement, demander à chacun de prendre leur les téléphones cellulaires et d'enregistrer le message vocal suivant Saviez-vous que le Congo a environ 64 pour cent de la réserve mondes du coltan, une ressource naturelle qui est au cœur du fonctionnement de nos téléphones portables? Comme nous bénéficions de coltan, des millions de Congolais sont morts dans la conflit le plus meurtrier depuis la Seconde Guerre mondiale en raison de la ruée vers le coltan et d'autres minéraux essentiels pour le fonctionnement de la technologie moderne. Rejoignez-nous dans la solidarité avec le peuple congolais et rapide à partir de votre téléphone pendant au moins une heure."
+      - "Faire un objectif pour combien de personnes vous souhaitez participer - connaître votre objectif"
+      - "Faire des affiches et les mettre en place (exemples d'affiches disponibles en bas de page)"
+      - "Diffusez votre événement sur ​​les médias sociaux en utilisant le hashtag #CongoWeek2014"
+      - "Faites passer le mot parmi les organisations dans votre communauté ou sur votre campus"
+      - "Envoyer une alerte à la presse locale"
+      - "Organisez vos matériaux pour la journée de. Vous voudrez pétitions des cartes postales, des DVD seront distribués, connectez-feuille ou un ordinateur pour les gens de vous connecter à votre événement, des fiches, des stylos et des collations (en option). (http://congoweek.org/downloads.html)"
+      - "Facultatif: Organisez une cérémonie de clôture où tout le monde se tourna leur téléphone revenir à une heure désignée. Ce pourrait être combinée avec une collecte de fonds, projection de films, cercle de discussion, ou tout autre type d'événement."
+    prayer_service:
+      - "Tendez la main aux dirigeants de la foi dans votre communauté et leur demander d'assister et de participer."
+      - "Partager la liturgie Congo avec les chefs religieux http://congoweek.org/images/pdf/congo_christian_worship_resource.pdf."
+      - "Créer un ordre du jour de l'événement avec haut-parleurs, des chants, ou un mars par votre communauté ou d'un campus."
+      - "Faire des affiches et les mettre en place (exemples d'affiches disponibles en bas de page)"
+      - "Diffusez votre événement sur ​​les médias sociaux en utilisant le hashtag #CongoWeek2014"
+      - 'Faites passer le mot parmi les organisations dans votre communauté ou sur votre campus'
+      - 'Envoyer une alerte à la presse locale'
+      - 'Organisez vos matériaux pour la journée de. Vous voudrez pétitions des cartes postales, des DVD seront distribués, connectez-feuille ou un ordinateur pour les gens de vous connecter à votre événement, des fiches, des stylos et des collations (en option). (http://congoweek.org/downloads.html)'
+    forum:
+      - "Faire des affiches et les mettre en place (exemples d'affiches disponibles en bas de page)"
+      - "Diffusez votre événement sur ​​les médias sociaux en utilisant le hashtag #CongoWeek2014"
+      - "Faites passer le mot parmi les organisations dans votre communauté ou sur votre campus"
+      - "Envoyer une alerte à la presse locale"
+      - "Organisez vos matériaux pour la journée de. Vous voudrez pétitions des cartes postales, des DVD seront distribués, connectez-feuille ou un ordinateur pour les gens de vous connecter à votre événement, des fiches, des stylos et des collations (en option). (http://congoweek.org/downloads.html)"
+    concert:
+      - "Faire des affiches et les mettre en place (exemples d'affiches disponibles en bas de page)"
+      - "Diffusez votre événement sur ​​les médias sociaux en utilisant le hashtag #CongoWeek2014"
+      - "Faites passer le mot parmi les organisations dans votre communauté ou sur votre campus"
+      - "Envoyer une alerte à la presse locale"
+      - "Organisez vos matériaux pour la journée de. Vous voudrez pétitions des cartes postales, des DVD seront distribués, connectez-feuille ou un ordinateur pour les gens de vous connecter à votre événement, des fiches, des stylos et des collations (en option). (http://congoweek.org/downloads.html)"
+      - "Encourager les artistes à passer le mot sur le concert via les médias sociaux"
+      - "Fournir des points de discussion pour les artistes"
+      - "Organiser des entrevues d'artistes à l'avance du concert"
+      - "PSA produire si vous avez la capacité de le faire"
+      - "Faire appel à la contribution financière pendant le concert"
+      - "Afin Lumumba T-shirts de Friends of the Congo à vendre au concert"
+      - "Encourager les participants à tweeter pendant le concert en utilisant #Congoweek2014"
     other:
-    - Go to coordinator dashboard and create tasks you think will help to run a successful event
+      - "Faire des affiches et les mettre en place (exemples d'affiches disponibles en bas de page)"
+      - "Diffusez votre événement sur ​​les médias sociaux en utilisant le hashtag #CongoWeek2014"
+      - "Faites passer le mot parmi les organisations dans votre communauté ou sur votre campus"
+      - "Envoyer une alerte à la presse locale"
+      - "Organisez vos matériaux pour la journée de. Vous voudrez pétitions des cartes postales, des DVD seront distribués, connectez-feuille ou un ordinateur pour les gens de vous connecter à votre événement, des fiches, des stylos et des collations (en option). (http://congoweek.org/downloads.html)"
   attendees_tasks:
-    rally:
-    - Look up media outlets in your area
-    - Email reporters and media outlets 3-7 days before the event
-    - Call reporters and media to make sure they know about the event
-    - Arrive early to greet media representatives
-    - Send media release and photos to media representatives
-    - Make signs that showcase your message and arrive early to distribute them
-    - Print and post recruitment fliers in public places
-    - Recruit 5-10 of your friends to come
-    - Contact like-minded organizations and invite them to the rally
-    - Publicize your event via social media
-    public_forum:
-    - Call 5-10 friends and invite them to come
-    - 'Publicize your event via social media (and ask others to do the same!) '
-    - Print and post recruitment fliers in public spaces
-    - Bring snacks and plates/cups
-    - Bring a friend (or several!)
-    - Publicize the event via social media
     movie_screening:
-    - Call 5-10 friends and invite them to come
-    - 'Publicize your event via social media (and ask others to do the same!) '
-    - Print and post recruitment fliers in public spaces
-    - Bring snacks and plates/cups
-    - Bring a friend (or several!)
-    - Publicize the event via social media
-    public_speak_out:
-    - Look up media outlets in your area
-    - Email reporters and media outlets 3-7 days before the event
-    - Call reporters and media to make sure they know about the event
-    - Arrive early to greet media representatives
-    - Send media release and photos to media representatives
-    - Make signs that showcase your message and arrive early to distribute them
-    - Make petition sheets for attendees
-    - Bring lots of extra pens and clipboards or other hard surfaces to write on
-    - Print and post recruitment fliers in public places
-    - Recruit 5-10 of your friends to come
-    - Contact like-minded organizations and invite them
-    - Publicize your event via social media
+      - "Appelez 5-10 amis et les inviter à venir"
+      - "Annoncer votre événement via les médias sociaux en utilisant le hashtag #CongoWeek2014 (et demander aux autres de faire la même chose!)"
+      - "Aider à mettre en place et/ou nettoyer"
+      - "Je veux faire plus! Contactez-moi au sujet impliquer davantage!"
+    rally:
+      - "Faire un signe à soutenir la paix et la justice au Congo (par exemple: la demande Paix pour le Congo, Congo croyons-nous, la justice pour le Congo maintenant"
+      - "Annoncer votre événement via les médias sociaux en utilisant le hashtag #CongoWeek2014 (et demander aux autres de faire la même chose!)"
+      - "Appelez 5-10 amis et les inviter à venir"
+      - "Aider à mettre en place et/ou nettoyer"
+      - "Je veux faire plus! Contactez-moi au sujet impliquer davantage!"
+    teach_in:
+      - "Appelez 5-10 amis et les inviter à venir"
+      - "Annoncer votre événement via les médias sociaux en utilisant le hashtag #CongoWeek2014 (et demander aux autres de faire la même chose!)"
+      - "Aider à mettre en place et/ou nettoyer"
+      - "Je veux faire plus! Contactez-moi au sujet impliquer davantage!"
+    fundraiser_for_fotc:
+      - "Appelez 5-10 amis et les inviter à venir"
+      - "Demandez à vos amis / famille qui ne peuvent pas se rendre à l'événement pour un don en ligne à (http://friendsofthecongo.org/donate.html)"
+      - "Annoncer votre événement via les médias sociaux en utilisant le hashtag #CongoWeek2014 (et demander aux autres de faire la même chose!)"
+      - "Aider à mettre en place et/ou nettoyer"
+      - "Je veux faire plus! Contactez-moi au sujet impliquer davantage!"
+    cell_out:
+      - "Invitez vos amis (parce que cela est en partie une action «virtuel» - vous pouvez même inviter des amis qui vivent dans une autre ville, état ​​ou pays)"
+      - "Annoncer votre événement via les médias sociaux en utilisant le hashtag #CongoWeek2014 (et demander aux autres de faire la même chose!)"
+      - "Je veux faire plus! Contactez-moi au sujet impliquer davantage!"
+    prayer_service:
+      - "Appelez 5-10 amis et les inviter à venir"
+      - "Annoncer votre événement via les médias sociaux en utilisant le hashtag #CongoWeek2014 (et demander aux autres de faire la même chose!)"
+      - "Aider à mettre en place et/ou nettoyer"
+      - "Je veux faire plus! Contactez-moi au sujet impliquer davantage!"
+    forum:
+      - "Appelez 5-10 amis et les inviter à venir"
+      - "Annoncer votre événement via les médias sociaux en utilisant le hashtag #CongoWeek2014 (et demander aux autres de faire la même chose!)"
+      - "Aider à mettre en place et/ou nettoyer"
+      - "Je veux faire plus! Contactez-moi au sujet impliquer davantage!"
+    concert:
+      - "Appelez 5-10 amis et les inviter à venir"
+      - "Annoncer votre événement via les médias sociaux en utilisant le hashtag #CongoWeek2014 (et demander aux autres de faire la même chose!)"
+      - "Aider à mettre en place et/ou nettoyer"
+      - "Je veux faire plus! Contactez-moi au sujet impliquer davantage!"
+    other:
+      - "Appelez 5-10 amis et les inviter à venir"
+      - "Annoncer votre événement via les médias sociaux en utilisant le hashtag #CongoWeek2014 (et demander aux autres de faire la même chose!)"
+      - "Aider à mettre en place et/ou nettoyer"
+      - "Je veux faire plus! Contactez-moi au sujet impliquer davantage!"

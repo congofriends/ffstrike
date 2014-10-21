@@ -67,37 +67,37 @@ it:
       short_description: "momento di silenzio digitale "
       full_description: "Il OUT Cell è un momento digitale di silenzio per commemorare i milioni di vite perse congolesi , diffondere la conoscenza del conflitto in corso in Congo e la corsa vizioso per le risorse naturali spettacolari del Congo."
     prayer_service:
-      short_description:
-      full_description:
+      short_description: "si tratta di un servizio di preghiera per comemmorate caduto congolese."
+      full_description: "si tratta di un servizio di preghiera per comemmorate caduto congolese."
     forum:
-      short_description:
-      full_description:
+      short_description: "Questa è l'occasione di avere una discussione e parlare di questioni riguardanti il ​​Congo"
+      full_description: "Questa è l'occasione di avere una discussione e parlare di questioni riguardanti il ​​Congo"
     concert:
-      short_description:
-      full_description:
+      short_description: "Questo è quello di sostenere gli sforzi del Congo"
+      full_description: "Questo è quello di sostenere gli sforzi del Congo"
     other:
       short_description: "Hai un'idea per un evento creativo Utilizzare questo strumento per creare compiti ed assegnarli?"
       full_description: "Hai un'idea per un evento creativo Utilizzare questo strumento per creare attività e assegnare loro?"
   host_tasks:
     movie_screening :
       - "Pianificare un breve ordine del giorno per il tuo evento - pensare a chi si vuole introdurre il film e cosa (se mai) si farà in seguito."
-      - "Make manifesti e metterli in su (manifesti del campione disponibile a piè di pagina)"
-      - "Pubblica il tuo evento sui social media usando l' hashtag # CongoWeek2014"
+      - "Fare un manifesti e metterli in su (manifesti del campione disponibile a piè di pagina)"
+      - "Pubblica il tuo evento sui social media usando l' hashtag #CongoWeek2014"
       - 'Spargi la voce tra le organizzazioni nella vostra comunità o nella tua università'
       - 'Inviare un avviso per stampa locale'
       - "Organizzare i vostri materiali per il giorno del Si vuole petizioni da cartolina, i DVD da distribuire, accedi foglio o del computer per le persone a fare login al vostro evento, schede, penne, e snack (opzionale) (http://congoweek.org/downloads.html)"
     rally :
       - "Creazione di un ordine del giorno per l'evento con altoparlanti , canti , o una marcia attraverso la vostra comunità o campus."
-      - "Make manifesti e metterli in su ( manifesti del campione disponibile a piè di pagina ) "
-      - "Pubblica il tuo evento sui social media usando l' hashtag # CongoWeek2014 "
+      - "Fare un manifesti e metterli in su ( manifesti del campione disponibile a piè di pagina ) "
+      - "Pubblica il tuo evento sui social media usando l' hashtag #CongoWeek2014 "
       - 'Spargi la voce tra le organizzazioni nella vostra comunità o nella tua università '
       - 'Inviare un avviso per stampa locale '
       - 'Organizzare i vostri materiali per la giornata di . Si vuole petizioni da cartolina, i DVD da distribuire, accedi foglio o del computer per le persone a fare login al vostro evento, schede, penne, e snack (opzionale) (http://congoweek.org/downloads.html)'
     teach_in:
       - 'Bloccare alcuni oratori . ( Se non sei sicuro di come trovare altoparlanti , contattare Amici del Congo o ricevere consigli su altoparlanti ad http://congoweek.org/invite -a - speaker.html ) '
       - "Creazione di un ordine del giorno per il vostro evento e condividere l'agenda con i vostri partecipanti all'evento."
-      - 'Make manifesti e metterli in su (manifesti del campione disponibile a piè di pagina) '
-      - "Pubblica il tuo evento sui social media utilizzando l' hashtag # CongoWeek2014"
+      - 'Fare un manifesti e metterli in su (manifesti del campione disponibile a piè di pagina) '
+      - "Pubblica il tuo evento sui social media utilizzando l' hashtag #CongoWeek2014"
       - 'Spargi la voce tra le organizzazioni nella vostra comunità o nella tua università'
       - 'Inviare un avviso per stampa locale'
       - 'Organizzare i vostri materiali per la giornata di. Si vuole petizioni da cartolina, i DVD da distribuire, accedi foglio o del computer per le persone a fare login al vostro evento, schede, penne, e snack (opzionale) (http://congoweek.org/downloads.html)'
@@ -117,10 +117,10 @@ it:
       - "Dopo l'evento: Invia i contributi ai Friends of Congo entro una settimana dal vostro evento o l'invio di un assegno per Amici del Congo, 1629 K Street, NW Ste 300, Washington, DC 20006, o dando un contributo online all'indirizzo (http://friendsofthecongo.org/donate.html)"
       - "Dopo l'evento: Grazie a tutti coloro che hanno donato via e-mail, telefono o e-mail. "
     cell_out:
-      - "Pianificare un evento di kick off, idealmente a mezzogiorno del giorno del vostro CellOUT Si può scegliere di avere un altoparlante o qualche altro intrattenimento Se si ha accesso ad una schermata, si può decidere di condividere il video promo trovati sul sito www.thecellout.com a questo evento, chiedere a tutti di prendere i loro telefoni cellulari e registrare il seguente messaggio vocale sapevate che il Congo ha un 64 per cento stimato di riserva mondi di Coltan, una risorsa naturale che è fondamentale per il funzionamento del nostro telefoni cellulari? come beneficiamo di Coltan, milioni di congolesi sono morti nel conflitto più sanguinoso dalla seconda guerra mondiale a causa della lotta per coltan e altri minerali fondamentali per il funzionamento della tecnologia moderna. Unitevi a noi in solidarietà con il popolo congolese e veloce dal telefono per almeno un'ora."
+      - "Pianificare un evento di kick off, idealmente a mezzogiorno del giorno del tuo cellulare OUT. Si può scegliere di avere un altoparlante o qualche altro intrattenimento. Se si ha accesso a uno schermo, si può decidere di condividere il video promo trovato alla www.thecellout.com. A questo evento, chiedere a tutti di prendere i loro telefoni cellulari e registrare il seguente messaggio vocale Sapevate che il Congo ha un 64 per cento stimato di riserva mondi di Coltan, una risorsa naturale che è fondamentale per il funzionamento dei nostri telefoni cellulari? Come abbiamo beneficiare di Coltan, milioni di congolesi sono morti nel conflitto più sanguinoso dalla seconda guerra mondiale a causa della lotta per coltan e altri minerali fondamentali per il funzionamento della tecnologia moderna. Unitevi a noi in solidarietà con il popolo congolese e veloce dal telefono per almeno un'ora."
       - 'Fare un obiettivo per quante persone si desidera partecipare - pubblicizzare il tuo obiettivo'
-      - 'Make manifesti e metterli in su (manifesti del campione disponibile a piè di pagina)'
-      - "Pubblica il tuo evento sui social media utilizzando l'hashtag # CongoWeek2014 "
+      - 'Fare un manifesti e metterli in su (manifesti del campione disponibile a piè di pagina)'
+      - "Pubblica il tuo evento sui social media utilizzando l'hashtag #CongoWeek2014 "
       - 'Spargi la voce tra le organizzazioni nella vostra comunità o nella tua università '
       - 'Inviare un avviso per stampa locale'
       - 'Organizzare i vostri materiali per la giornata di. Si vuole petizioni da cartolina, i DVD da distribuire, accedi foglio o del computer per le persone a fare login al vostro evento, schede, penne, e snack (opzionale). (http://congoweek.org/downloads.html )'
@@ -129,19 +129,19 @@ it:
       - 'Entrare in contatto con i leader religiosi nella vostra comunità e chiedere loro di assistere e partecipare.'
       - 'Condividere la liturgia Congo con i leader religiosi http://congoweek.org/images/pdf/congo_christian_worship_resource.pdf.'
       - "Creazione di un ordine del giorno per l'evento con altoparlanti , canti , o una marcia attraverso la vostra comunità o campus."
-      - "Make manifesti e metterli in su (manifesti del campione disponibile a piè di pagina)"
-      - "Pubblica il tuo evento sui social media usando l' hashtag # CongoWeek2014"
+      - "Fare un manifesti e metterli in su (manifesti del campione disponibile a piè di pagina)"
+      - "Pubblica il tuo evento sui social media usando l' hashtag #CongoWeek2014"
       - 'Spargi la voce tra le organizzazioni nella vostra comunità o nella tua università'
       - 'Inviare un avviso per stampa locale'
       - 'Organizzare i vostri materiali per la giornata di. Si vuole petizioni da cartolina, i DVD da distribuire, accedi foglio o del computer per le persone a fare login al vostro evento, schede, penne, e snack (opzionale). (http://congoweek.org/downloads.html)'
     forum:
-      - "Make manifesti e metterli in su (manifesti del campione disponibile a piè di pagina)"
+      - "Fare un manifesti e metterli in su (manifesti del campione disponibile a piè di pagina)"
       - "Pubblica il tuo evento sui social media usando l'hashtag #CongoWeek2014"
       - 'Spargi la voce tra le organizzazioni nella vostra comunità o nella tua università'
       - 'Inviare un avviso per stampa locale'
       - "Organizzare i vostri materiali per il giorno del Si vuole petizioni da cartolina, i DVD da distribuire , accedi foglio o del computer per le persone a fare login al vostro evento, schede, penne, e snack (opzionale) (http://congoweek.org/downloads.html) "
     concert:
-      - "Make manifesti e metterli in su (manifesti del campione disponibile a piè di pagina)"
+      - "Fare un manifesti e metterli in su (manifesti del campione disponibile a piè di pagina)"
       - "Pubblica il tuo evento sui social media usando l'hashtag #CongoWeek2014"
       - 'Spargi la voce tra le organizzazioni nella vostra comunità o nella tua università'
       - 'Inviare un avviso per stampa locale'
@@ -154,8 +154,8 @@ it:
       - "Ordine Lumumba T -shirt da Amici del Congo per la vendita al concerto"
       - "Incoraggiare i partecipanti di tweet durante il concerto utilizzando #Congoweek2014"
     other:
-      - "Make manifesti e metterli in su (manifesti del campione disponibile a piè di pagina)"
-      - "Pubblica il tuo evento sui social media usando l' hashtag # CongoWeek2014"
+      - "Fare un manifesti e metterli in su (manifesti del campione disponibile a piè di pagina)"
+      - "Pubblica il tuo evento sui social media usando l' hashtag #CongoWeek2014"
       - 'Spargi la voce tra le organizzazioni nella vostra comunità o nella tua università'
       - 'Inviare un avviso per stampa locale'
       - "Organizzare i vostri materiali per il giorno del Si vuole petizioni da cartolina, i DVD da distribuire, accedi foglio o del computer per le persone a fare login al vostro evento, schede, penne, e snack (opzionale) (http://congoweek.org/downloads.html) "
@@ -167,24 +167,24 @@ it:
       - 'Io voglio fare di più! Contattatemi su come ottenere più coinvolti!'
     rally:
       - 'Fare un segno per sostenere la pace e la giustizia in Congo (per esempio: La domanda Pace per il Congo, Congo crediamo, Giustizia per il Congo Now'
-      - "Pubblicizzare il tuo evento attraverso i social media utilizzando l' hashtag # CongoWeek2014 (e chiedere agli altri di fare lo stesso !)"
+      - "Pubblicizzare il tuo evento attraverso i social media utilizzando l' hashtag #CongoWeek2014 (e chiedere agli altri di fare lo stesso !)"
       - 'Chiama 5-10 amici e invitarli a venire '
       - 'Aiuto per impostare e/o ripulire '
       - 'Io voglio fare di più! Contattatemi su come ottenere più coinvolti! '
     teach_in:
       - 'Chiama 5-10 amici e invitarli a venire '
-      - "Pubblicizzare il tuo evento attraverso i social media utilizzando l' hashtag # CongoWeek2014 (e chiedere agli altri di fare lo stesso!)"
+      - "Pubblicizzare il tuo evento attraverso i social media utilizzando l' hashtag #CongoWeek2014 (e chiedere agli altri di fare lo stesso!)"
       - 'Aiuto per impostare e/o ripulire '
       - 'Io voglio fare di più! Contattatemi su come ottenere più coinvolti!'
     fundraiser_for_fotc:
       - 'Chiama 5-10 amici e invitarli a venire '
       - "Chiedete ai vostri amici / famiglia che non può farlo per l'evento di donare online all'indirizzo (http://friendsofthecongo.org/donate.html )"
-      - "Pubblicizzare il tuo evento attraverso i social media utilizzando l' hashtag # CongoWeek2014 (e chiedere agli altri di fare lo stesso!)"
+      - "Pubblicizzare il tuo evento attraverso i social media utilizzando l' hashtag #CongoWeek2014 (e chiedere agli altri di fare lo stesso!)"
       - 'Aiuto per impostare e/o ripulire '
       - 'Io voglio fare di più! Contattatemi su come ottenere più coinvolti!'
     cell_out:
       - 'Invita i tuoi amici ( perché questo è in parte un azione " virtuale" - si può anche invitare gli amici che vivono in una diversa città, stato o paese ) '
-      - "Pubblicizzare il tuo evento attraverso i social media utilizzando l' hashtag # CongoWeek2014 (e chiedere agli altri di fare lo stesso!)"
+      - "Pubblicizzare il tuo evento attraverso i social media utilizzando l' hashtag #CongoWeek2014 (e chiedere agli altri di fare lo stesso!)"
       - 'Io voglio fare di più! Contattatemi su come ottenere più coinvolti!'
     prayer_service:
       - 'Chiama 5-10 amici e invitarli a venire'
@@ -203,6 +203,6 @@ it:
       - 'Io voglio fare di più ! Contattatemi su come ottenere più coinvolti!'
     other:
       - 'Chiama 5-10 amici e invitarli a venire'
-      - "Pubblicizzare il tuo evento attraverso i social media utilizzando l'hashtag # CongoWeek2014 ( e chiedere agli altri di fare lo stesso ! )"
+      - "Pubblicizzare il tuo evento attraverso i social media utilizzando l'hashtag #CongoWeek2014 ( e chiedere agli altri di fare lo stesso ! )"
       - 'Aiuto per impostare e/o ripulire'
       - 'Io voglio fare di più! Contattatemi su come ottenere più coinvolti!'
