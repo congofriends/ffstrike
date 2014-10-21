@@ -4,7 +4,8 @@ class UnauthenticatedEventsController < ApplicationController
   def new
     redirect_unauthorized_user
     @event = Event.new
-    @event_type = params[:type] || EventType.first.name
+    event_type_name = params[:type] || EventType.first.name
+    @event_type = EventType.find_by(name: event_type_name)
   end
 
   def create
@@ -35,7 +36,8 @@ class UnauthenticatedEventsController < ApplicationController
   end
 
   def event_params
-    params[:event][:event_type_id] = EventType.find_by(name: params[:event][:event_type]).id if params[:event][:event_type]
+    @event_type = EventType.find_by(name: params[:event][:event_type]) if params[:event][:event_type]
+    params[:event][:event_type_id] = @event_type.id if @event_type
     params.require(:event).permit(:event_type_id, :name, :description, :address, :address2, :location_details, :city, :zip, :state, :country, :start_time, :end_time, :host_id, :notes, :image, :flyer, :forum_option, :approved)
   end
 
