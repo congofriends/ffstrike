@@ -17,10 +17,10 @@
               %legend= t("events.new.legend1")
               .form-group.col-sm-12
                 = label :event, :name, t("events.edit.name") + " *"
-                = text_field :event, :name, class: 'form-control', maxlength: 130, value: "#{@event_type.name} for Congo Week"
+                = text_field :event, :name, class: 'form-control', maxlength: 130, placeholder: "#{@event_type.name} for Congo Week"
               .form-group.col-sm-12
                 = label :event, :description, t("events.description") + " *"
-                = text_area :event, :description, class: 'form-control redactor', rows: "20", value: EVENT_DESCRIPTIONS["event_type"]["#{@event_type.name.downcase.gsub(' ', '_')}"]["full_description"]
+                = text_area :event, :description, class: 'form-control redactor', rows: "20", placeholder: EVENT_DESCRIPTIONS["event_type"]["#{@event_type.name.downcase.gsub(' ', '_')}"]["full_description"]
               .event-date-time
                 .form-group.col-sm-4
                   = label :event, :start_time, t("events.edit.start_date") + " *"
