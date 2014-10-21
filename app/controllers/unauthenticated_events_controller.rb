@@ -20,10 +20,10 @@ class UnauthenticatedEventsController < ApplicationController
         NewEventMailWorker.perform_async(@user.id, @event.id) if ENV["RAILS_ENV"] == "production" && current_user
         redirect_to my_events_path, notice: t('event.created') and return
       else
-        redirect_to new_movement_event_path(@movement), alert: t('event.failure')
+        redirect_to new_movement_event_path(@movement), alert: @event.errors.full_messages.flatten.join(' ')
       end
     else
-      flash[:alert] = t('user.invalid_credentials')
+      flash[:alert] = @user.errors.full_messages.flatten.join(' ')
       render 'new'
     end
   end
