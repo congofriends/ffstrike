@@ -3,6 +3,7 @@ include Capybara::DSL
 include BestInPlace::TestHelpers
 
 	def edit_event
+		click_link_or_button "Event Details"
 		fill_in("event[address]", with: "123 this street")
 		click_link_or_button('UPDATE')
 	end
