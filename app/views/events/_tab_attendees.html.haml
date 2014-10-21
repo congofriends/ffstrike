@@ -1,18 +1,23 @@
-.tab-pane#attendees
-  .well
-    %table.responsive.table.table-bordered.table-striped.sortable#attendee-table
-      %tr
-        %th= t('events.name')
-        %th= t('events.email')
-        %th= t('events.phone')
-        %th= t('events.volunteer')
-        %th= t('events.notes')
-      - event.attendees.each do |attendee|
+-if event.attendees.size > 0
+  .tab-pane#attendees
+    .well
+      %table.responsive.table.table-bordered.table-striped.sortable#attendee-table
         %tr
-          %td= attendee.full_name
-          %td= attendee.email if attendee.volunteer_for(event) || current_user.super_admin?
-          %td= attendee.phone if attendee.volunteer_for(event) || current_user.super_admin?
-          %td= attendee.volunteer_for(event) ? t('.yes') : t('.no')
-          %td= best_in_place attendee.attendance_for(event), :notes, :path=> attendance_path({event_id: event.id, attendee_id: attendee.id}), :type => :input, :html_attrs => {:class=>"input"}
-= link_to t('.export_attendees'), export_event_attendees_path(event), class: 'btn ctrl-btn btn-host'
-= link_to_modal t('.contact_attendees'), new_attendee_msg_path(event), class: "btn btn-contact ctrl-btn btn-host"
+          %th= t('events.name')
+          %th= t('events.email')
+          %th= t('events.phone')
+          %th= t('events.volunteer')
+          %th= t('events.notes')
+        - event.attendees.each do |attendee|
+          %tr
+            %td= attendee.full_name
+            %td= attendee.email if attendee.volunteer_for(event) || current_user.super_admin?
+            %td= attendee.phone if attendee.volunteer_for(event) || current_user.super_admin?
+            %td= attendee.volunteer_for(event) ? t('.yes') : t('.no')
+            %td= best_in_place attendee.attendance_for(event), :notes, :path=> attendance_path({event_id: event.id, attendee_id: attendee.id}), :type => :input, :html_attrs => {:class=>"input"}
+          %p= '*' + t('events.seen_data_message') + '*'
+  = link_to t('.export_attendees'), export_event_attendees_path(event), class: 'btn ctrl-btn btn-host'
+  = link_to_modal t('.contact_attendees'), new_attendee_msg_path(event), class: "btn btn-contact ctrl-btn btn-host"
+-else
+  .well
+    %h2=t('events.no_attendee_message')

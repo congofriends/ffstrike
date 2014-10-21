@@ -35,6 +35,8 @@ en:
     tasks_signed_up: "Tasks Signed Up For:"
     name: *name
     email: *email
+    no_attendee_message: "Sorry, but you currently do not have any attendees. Invite people to your event for Congo Week!"
+    seen_data_message: "Only volunteers and FOTC coordinators' emails and phone numbers will be seen for this event."
     phone: *phone
     point: *point
     volunteer: Volunteer

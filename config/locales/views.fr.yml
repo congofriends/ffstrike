@@ -35,6 +35,8 @@ fr:
     tasks_signed_up: "Tâches signé pour:"
     name: *name
     email: *email
+    no_attendee_message: "Désolé, mais vous ne disposez pas actuellement des participants. Invitez les gens à votre événement de la Semaine Congo!"
+    seen_data_message: "Seuls les bénévoles et les e-mails des coordonnateurs fotc et numéros de téléphone seront considérés pour cet événement."
     phone: *phone
     point: *point
     volunteer: Bénévole

@@ -35,6 +35,8 @@ it:
     tasks_signed_up: "Task firmato per:"
     name: *name
     email: *email
+    no_attendee_message: "Siamo spiacenti, ma attualmente non si dispone di partecipanti. Invita la gente al vostro evento per il Congo settimana!"
+    seen_data_message: "Solo i volontari ed e-mail FOTC coordinatori e numeri di telefono si vedrà per questo evento."
     phone: *phone
     point: *point
     volunteer: "Volontario"
