@@ -73,10 +73,11 @@ fr:
       event_type: "Type d'événement :"
       event_team_msg: "Si cet événement est associé à une équipe, veuillez choisir ici:"
       forum_msg: "Inclure un forum de discussion pour l'événement pour les participants:"
+      name: "Votre nom"
+      surname: "Votre nom"
+      email: "Votre e-mail"
       avatar_size: "(Dimension de l'image Recommandée: 250 x 175)"
       event_type_notice: "Le type d'événement ne peut pas être modifié après le dépôt de ce formulaire"
-      name: "Votre nom"
-      email: "Votre e-mail"
       phone: "Numéro de téléphone:"
       password: *password
       password_confirmation: *confirmation
@@ -138,7 +139,8 @@ fr:
       new_description: "Ajouter une nouvelle tâche description ici ..."
       create_btn: "Créer une nouvelle tâche"
     attendee_tasks:
-      header: "Voici comment vous pouvez aider:"
+      header1: "Merci pour votre inscription!"
+      header2: "Voici comment vous pouvez aider:"
   layouts:
     breadcrumb:
       home: 'MAISON'
@@ -229,6 +231,7 @@ fr:
       share_msg: "Partagez votre équipe sur ​​les médias sociaux!"
     email_modal:
       email_attendees: "E-MAIL AUX PARTICIPANTS"
+      send_email: "ENVOYER EMAIL"
       title: "E-mail aux participants"
       subject: "Objet"
       message: "Message"
@@ -239,14 +242,8 @@ fr:
       subject: "Subject"
       message: "Objet"
       placeholder: "Saisissez le message à envoyer à tous les hôtes."
-    email_hosts_modal:
-      email_hosts: "Hôtes E-MAIL"
-      title: "E-mail les hôtes"
-      subject: "Objet"
-      message: "Message"
-      placeholder: "Saisissez le message à envoyer à tous les hôtes."
     tab_tasks:
-      modify_tasks: 'Modifier les tâches pour les événements ici'
+      modify_tasks: 'Modifier les tâches pour les événements ici'   
     my_groups:
       my_groups: 'Mes équipes'
       manage_my_groups: 'Gérer mes équipes'
@@ -316,34 +313,22 @@ fr:
       prevent_removal: "Vous êtes le seul admin"
       confirm_msg: 'Êtes-vous sûr?'
     new:
-      name: *name
-      phone: 'Téléphone'
-      location: "Détails d'emplacement:"
-      location_placeholder: 'Par exemple mondial, International, National..'
-      youtube_link: 'Lien de YouTube'
-      create_btn: 'Créer du équipe'
-      tagline: "Slogan: "
-      call_to_action: "Appel à l'action:"
-      extended_description: "Description étendue"
-      about_creator: "De Créateur:"
       thanks_msg: "Merci de créer une équipe pour le <<Congo Week>> pour encourage la paix et la justice dans le cœur de l'Afrique."
       explanation_msg: "Une fois le formulaire complété, les événements associés à votre équipe seront affichés."
-      name: 'Nom:'
+      name: *name
+      phone: 'Téléphone'
       location_placeholder: 'Par exemple mondial, International, National..'
-      location: "Emplacement:"
-      youtube_link: 'Lien de Youtube'
-      about_creator: "De Créateur:"
+      location: "Détails d'emplacement:"
+      youtube_link: 'Lien de YouTube'
       tagline: "Slogan"
-      call_to_action: "Appel à l'action:"
       extended_description: "Extended Description"
+      call_to_action: "Appel à l'action:"
+      about_creator: "De Créateur:"
+      cancel_btn: 'Annuler'
       create_btn: 'Créer du équipe'
       avatar: "Image"
       avatar_size: "(Dimension de l'image Recommandée: 250 x 175)"
       website: "Website"
-      legend: "Détails du groupe"
-      legend2: "Inscrivez-vous à Création d'un groupe (2/2)"
-      next: "Suivant"
-      previous: "Précédent"
     show:
       h1: "Soutenir le Mouvement mondial Congo"
       quote: "Notre mission et notre vision est d'élever la conscience de la communauté internationale sur le défi du Congo et soutenir les institutions congolaises en provoquant un changement pacifique et durable. Rejoignez le mouvement pour la paix et la justice au Congo! Ici, vous pouvez en apprendre davantage sur la crise au Congo et prendre des mesures en créant ou assister à un événement, ou de créer ou rejoindre une équipe dans votre région."
@@ -376,29 +361,25 @@ fr:
       team_information: "Une équipe est une collection d'individus ou une organisation qui a adhéré au mouvement du Congo à organiser des événements dans leurs communautés locales afin de sensibiliser et d'éduquer les autres au sujet de la situation au Congo . Aidez-nous à construire des équipes partout dans le monde à travailler en partenariat avec congolais pour ramener la paix , la justice et la dignité humaine au cœur de l'Afrique . Après avoir créé votre équipe assurez-vous de poster votre événement , même si la date et le lieu n'est pas finalisé - cochez simplement la case «à déterminer » pour l'adresse et la date ."
   unauthenticated_submovements:
     new:
-      name: *name
-      phone: 'Téléphone'
-      location: "Détails d'emplacement:"
-      location_placeholder: 'Par exemple mondial, International, National..'
-      youtube_link: 'Lien de Youtube'
-      create_btn: 'Créer du équipe'
-      tagline: "Slogan: "
-      call_to_action: "Appel à l'action:"
-      extended_description: "Description étendue"
-      about_creator: "De Créateur:"
       thanks_msg: "Merci pour la création d'une Semaine équipe Congo pour soutenir la paix et la justice dans le cœur de l'Afrique."
       explanation_msg: "Une fois le formulaire complété, les événements associés à votre équipe seront affichés."
-      name: 'Nom:'
+      name: *name
+      phone: *phone
       location_placeholder: 'Par exemple mondial, International, National..'
-      location: "Emplacement:"
+      location: "Détails d'emplacement:"     
       youtube_link: 'Lien de Youtube'
-      about_creator: "De Créateur:"
-      tagline: "Slogan:"
+      tagline: "Slogan: "
+      extended_description: "Description étendue"
       call_to_action: "Appel à l'action:"
+      about_creator: "De Créateur:"
       create_btn: 'Créer du équipe'
       avatar: "Image"
       avatar_size: "(Dimension de l'image Recommandée: 250 x 175)"
       website: "Website"
+      legend: "Détails du groupe"
+      legend2: "Inscrivez-vous pour Créer un groupe (2/2)"
+      next: "Prochaine"
+      previous: "Précédent"
   assignments:
     assign:
       just_signed_up: 'Tout juste signé!'

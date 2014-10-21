@@ -68,7 +68,7 @@ es:
         destroyed: "Usted ha desactivado su cuenta."
   errors:
     messages:
-      already_confirmed: i'ya fue confirmada, por favor intenta iniciar sesión'
+      already_confirmed: "i'ya fue confirmada, por favor intenta iniciar sesión"
       confirmation_period_expired: 'necesita confirmarse dentro de %{period}, por favor solicita una nueva'
       expired: 'ha expirado, por favor solicita una nueva'
       not_found: 'no se encontró'

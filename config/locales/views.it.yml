@@ -50,6 +50,7 @@ it:
       tab_tasks: "Attività"
       tab_attendees: "Partecipanti"
       tab_event_type_images: "Modificare le immagini di tipi di evento"
+    tab_attendees:  
       yes: 'Sì'
       no: 'No'
       export_attendees: *export_attendees

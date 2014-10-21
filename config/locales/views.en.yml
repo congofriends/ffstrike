@@ -78,8 +78,8 @@ en:
       email: "Your email"
       avatar_size: "(Recommended Image Dimension: 250 x 175)"
       event_type_notice: "The Event Type can not be changed after submitting this form"
-      phone: "Your phone"
-      password: "Password"
+      phone: *phone
+      password: *password
       password_confirmation: "Password confirmation"
     fundraiser:
       header1: 'Authorization to Operate an Event for the Benefit of The Friends of the Congo'

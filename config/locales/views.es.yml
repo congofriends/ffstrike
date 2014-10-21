@@ -40,13 +40,8 @@ es:
     phone: *phone
     point: *point
     volunteer: Voluntario
-    upcoming_events: "Eventos Próximos"
     notes: "Notas(Haga clic para editar)"
-    tab_attendees:
-      yes: 'Sí'
-      no: 'No'
-      export_attendees: *export_attendees
-      contact_attendees: "Contacto con los asistentes"
+    upcoming_events: "Eventos Próximos"
     dashboard:
       my_events: "Mis Eventos"
       header: "Administrar Mis eventos"
@@ -55,6 +50,11 @@ es:
       tab_tasks: "Tareas"
       tab_attendees: "Los Asistentes"
       tab_event_type_images: "Cambiar sus imagenes de tipos de eventos"
+    tab_attendees:
+      yes: 'Sí'
+      no: 'No'
+      export_attendees: *export_attendees
+      contact_attendees: "Contacto con los asistentes"
     new:
       congo_week_content: "Gracias por tomar la responsabilidad de ser un anfitrión del evento y por ayudar hacer #CongoWeek20114 en los 19-25 de octubre un éxito"
       datetime_tbd: "Fecha y Tiempo por Determinar"
@@ -70,13 +70,14 @@ es:
       create_btn: "CREAR EVENTO"
       account_exist: "Si tengas una cuenta existente, Por Favor "
       msg_to_attendees: "Escribir un breve mensaje a asistentes a eventos:"
-      avatar_size: "(Recomendada Imagen Dimensión 250 x 175)"
-      event_type_notice: "El Tipo de evento no se puede cambiar después de la presentación de este formulario"
       event_type: 'Tipo de evento:'
       event_team_msg: "Si cet événement est associé à une équipe, veuillez choisir ici:"
       forum_msg: "Incluir una de las asistentes foro de debate sobre este evento:"
       name: "Su nombre"
+      surname: "Sus apellidos"
       email: "Su correo electrónico"
+      event_type_notice: "El Tipo de evento no se puede cambiar después de la presentación de este formulario"
+      avatar_size: "(Recomendada Imagen Dimensión 250 x 175)"
       phone: "El teléfono"
       password: *password
       password_confirmation: *confirmation
@@ -138,7 +139,8 @@ es:
       new_description: "Añadir una nueva descripción de la tarea aquí..."
       create_btn: "CREAR UNA NUEVA TAREA"
     attendee_tasks:
-      header: "Aquí es cómo usted puede ayudar:"
+      header1: "Gracias por registrarte!"
+      header2: "Aquí es cómo usted puede ayudar:"
   layouts:
     breadcrumb:
       home: 'INICIO'
@@ -149,7 +151,7 @@ es:
       donate: 'COLABORE'
     footer:
       contact: 'Contáctenos'
-      questions: '¿Preguntas? ¿Comentarios? ¿Errores? '
+      questions: '¿Preguntas? ¿Comentarios? ¿Errores?'
       mission: 'MISIÓN'
       template: 'TEMAS'
       media: 'HERRAMIENTAS'
@@ -165,16 +167,16 @@ es:
   contact:
     new_event_msg:
       contact_host_for: 'Póngase en contacto con el host:'
-      name: *name
-      email: *email
+      name: "Su nombre:"
+      email: "Su correo electrónico"
       subject: 'Asunto:'
       message: 'Su mensaje:'
       question: 'Pregunta sobre %{about}'
       submit: 'Enviar'
     new_movement_msg:
       contact_coordinator_for: 'Contacto con el coordinador para: '
-      email: *email
-      name: *name
+      email: "Su correo electrónico"
+      name: "Su nombre:"
       message: 'Su mensaje:'
       subject: 'Asunto:'
       question: "Question à propos de %{about}"
@@ -229,6 +231,7 @@ es:
       share_msg: "Comparte tu equipo en las redes sociales!"
     email_modal:
       email_attendees: "CORREO ELECTRÓNICO PARTICIPANTES"
+      send_email: "ENVIAR CORREO ELECTRÓNICO"
       title: "Correo electrónico a los asistentes"
       subject: "Sujeto"
       message: "Mensaje"
@@ -310,8 +313,10 @@ es:
       prevent_removal: "Tú eres el único admin"
       confirm_msg: '¿Estás seguro?'
     new:
+      thanks_msg: 'Gracias por crear una Semana Equipo Congo para apoyar la paz y la justicia en el corazón de África ti.'
+      explanation_msg: "Una vez que complete los detalles pertinentes para crear un equipo, los eventos asociados con su equipo se mostrarán en una sola página."
       name: *name
-      phone: 'Teléfono'
+      phone: *phone
       location_placeholder: 'p. ej. Mundial, Internacional, Nacional..'
       location: "Los detalles de la ubicación:"
       youtube_link: 'Youtube'
@@ -319,25 +324,11 @@ es:
       extended_description: 'Descripción Ampliada'
       call_to_action: 'Llamamiento a la acción'
       about_creator: 'Acerca del creador'
-      create_btn: 'Crear Equipo'
-      thanks_msg: 'Gracias por crear una Semana Equipo Congo para apoyar la paz y la justicia en el corazón de África ti.'
-      explanation_msg: "Una vez que complete los detalles pertinentes para crear un equipo, los eventos asociados con su equipo se mostrarán en una sola página."
-      name: 'Nombre'
-      location_placeholder: 'p. ej. Mundial, Internacional, Nacional..'
-      location: "Ubicación"
-      youtube_link: 'Youtube'
-      tagline: "Etiqueta"
-      extended_description: "Descripción Ampliada"
-      call_to_action: "Llamamiento a la acción"
-      about_creator: "Acerca del creador"
+      cancel_btn: 'Cancelar'
       create_btn: 'Crear Equipo'
       avatar: "Imagen"
       avatar_size: "(Recomendada Imagen Dimensión: 250 x 175)"
       website: "Website"
-      legend: "Detalles del grupo"
-      legend2: "Registra para Crear grupo (2/2)"
-      next: "Siguiente"
-      previous: "Anterior"
     show:
       h1: 'Apoya el Movimiento Mundial en Congo'
       quote: 'Nuestra misión y visión es elevar la conciencia de la comunidad mundial en el reto del Congo y apoya las instituciones congoleñas en el logro de un cambio pacífico y duradero. Únete al movimiento por la paz y la justicia en el Congo! Aquí usted puede aprender acerca de la crisis en el Congo y tomar acción mediante la creación o asistir a un evento, o crear o unirse a un equipo en su área.'
@@ -345,7 +336,7 @@ es:
       events: "EVENTOS"
       network: "RED"
       congo_week_2014: "#CongoWeek2014"
-      congo_description: "Romper el silencio sobre cuestiones en el corazón de África"
+      congo_description: "ROMPER el silencio sobre cuestiones en el corazón de África"
       join_congo: "Descubre Cómo funciona"
       congo_start: "Semana de Congo empezaré en:"
       find_event: "Busca un evento cerca de usted"
@@ -370,8 +361,10 @@ es:
       team_information: "Un equipo es un conjunto de individuos u organizaciones que se ha unido el movimiento Congo para organizar eventos en sus comunidades locales para crear conciencia y educar a otros acerca de la situación en el Congo. Ayúdanos a construir equipos de todo el mundo para trabajar en asociación con los congoleños para lograr la paz , la justicia y la dignidad humana en el corazón de África . Después de crear su equipo asegúrese de publicar su evento incluso si la fecha y la ubicación no se finaliza - simplemente marque la casilla 'A ser determinado' para la dirección y la fecha."
   unauthenticated_submovements:
     new:
+      thanks_msg: 'Gracias por crear una Semana Equipo Congo para apoyar la paz y la justicia en el corazón de África ti.'
+      explanation_msg: "Una vez que complete los detalles pertinentes para crear un equipo, los eventos asociados con su equipo se mostrarán en una sola página."
       name: *name
-      phone: 'Teléfono'
+      phone: *phone
       location_placeholder: 'p. ej. Mundial, Internacional, Nacional..'
       location: "Los detalles de la ubicación:"
       youtube_link: 'Youtube'
@@ -380,20 +373,13 @@ es:
       call_to_action: 'Llamamiento a la acción'
       about_creator: 'Acerca del creador'
       create_btn: 'Crear Equipo'
-      thanks_msg: 'Gracias por crear una Semana Equipo Congo para apoyar la paz y la justicia en el corazón de África ti.'
-      explanation_msg: "Una vez que complete los detalles pertinentes para crear un equipo, los eventos asociados con su equipo se mostrarán en una sola página."
-      name: 'Nombre'
-      location_placeholder: 'p. ej. Mundial, Internacional, Nacional..'
-      location: "Ubicación"
-      youtube_link: 'Youtube'
-      tagline: "Etiqueta"
-      extended_description: "Descripción Ampliada"
-      call_to_action: "Llamamiento a la acción"
-      about_creator: "Acerca del creador"
-      create_btn: 'Crear Equipo'
       avatar: "Imagen"
       avatar_size: "(Recomendada Imagen Dimensión: 250 x 175)"
       website: "Website"
+      legend: "Detalles del grupo"
+      legend2: "Registra para Crear grupo (2/2)"
+      next: "Siguiente"
+      previous: "Anterior"
   assignments:
     assign:
       just_signed_up: 'Apenas firmado!'
