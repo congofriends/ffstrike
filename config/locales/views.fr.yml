@@ -393,7 +393,7 @@ fr:
       textable: "Je souhaite recevoir les mises à jour de texte des Amis du Congo"
       point: "J'aimerais faire du bénévolat pour cet événement!"
       sign_up: "Inscrivez-moi!"
-      email_shared: "* Votre adresse e-mail sera partagée avec l'hôte de l'événement."
+      email_shared: "*Votre adresse e-mail sera partagée avec l'hôte de l'événement."
     user_and_attendee_form:
       more_info: "S'il vous plaît nous donner plus d'information à vous inscrire!"
       check_email_for_password: "vérifier vos courriels pour le mot de passe."

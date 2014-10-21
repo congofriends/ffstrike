@@ -393,7 +393,7 @@ it:
       textable: "Vorrei ricevere gli aggiornamenti di testo da Amici del Congo"
       point: "Mi piacerebbe fare volontariato per questo evento!"
       sign_up: "Sign me up!"
-      email_shared: "* Il tuo indirizzo email sarà condiviso con l'host dell'evento."
+      email_shared: "*Il tuo indirizzo email sarà condiviso con l'host dell'evento."
     user_and_attendee_form:
       more_info: "Vi preghiamo di darci più informazioni per iscriversi!"
       check_email_for_password: "Guarda la tua e -mail per una password"
