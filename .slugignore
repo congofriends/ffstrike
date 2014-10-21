@@ -1,1 +1,7 @@
-./
+/app/assets
+
+/config
+
+/spec
+
+/features
