@@ -12,7 +12,7 @@ es:
   events:
     events: "Eventos"
     host_btn: "ANFITRIÓN DE UN EVENTO"
-    home_host_btn: "Conviértase en una anfitriona"
+    home_host_btn: "CONVIÉRTASE EN UNA ANFITRIONA"
     unattend_btn: "EVENTO UNATTEND"
     volunteer_status: "Estoy interesado en ser voluntario"
     show_btn: "MOSTRAR"
@@ -336,8 +336,8 @@ es:
       events: "EVENTOS"
       network: "RED"
       congo_week_2014: "#CongoWeek2014"
-      congo_description: "ROMPER el silencio sobre cuestiones en el corazón de África"
-      join_congo: "Descubre Cómo funciona"
+      congo_description: "ROMPER EL SILENCIO SOBRE CUESTIONES EN EL CORAZÓN DE ÁFRICA"
+      join_congo: "DESCUBRE CÓMO FUNCIONA"
       congo_start: "Semana de Congo empezaré en:"
       find_event: "Busca un evento cerca de usted"
       host_event: "Presenta Evento"
@@ -537,3 +537,7 @@ es:
       christianLiturgyPdf: "Liturgia cristiana"
       videos: "Vídeos"
       recommendedFilms: "Lista de las películas recomendados para mostrar durante Congo Semana"
+    donate:
+      header: "Cada dólar marca la diferencia"
+      amount: "Donación monto en dólares"
+      comments: "Comentarios"

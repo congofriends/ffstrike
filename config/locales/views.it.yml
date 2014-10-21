@@ -537,3 +537,7 @@ it:
       christianLiturgyPdf: "Liturgia cristiana"
       videos: "Videocassettas"
       recommendedFilms: "Elenco dei film raccomandati per mostrare durante la Settimana Congo"
+    donate:
+      header: "Ogni dollaro fa la differenza"
+      amount: "Donazione importo in dollari"
+      comments: "Commenti"

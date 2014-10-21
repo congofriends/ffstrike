@@ -537,3 +537,7 @@ en:
       christianLiturgyPdf: "Christian Liturgy"
       videos: "Videos"
       recommendedFilms: "List of recommended films to show during Congo Week"
+    donate:
+      header: "Every Dollar Makes a Difference"
+      amount: "Donation Amount in Dollars"
+      comments: "Comments"
