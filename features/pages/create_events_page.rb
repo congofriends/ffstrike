@@ -3,6 +3,7 @@ include Capybara::DSL
 	def create_new_event
 	click_link_or_button('MOVIE SCREENING')
 	fill_in 'event_name', with: 'Cats and Dogs'
+	fill_in 'event_description', with: 'Cats and Dogs are cool'
 	fill_in 'event_address', with: '2373'
 	fill_in 'event_city', with: 'Chicago'
 	fill_in 'event_zip', with: '60649'
@@ -50,6 +51,7 @@ include Capybara::DSL
 	def create_new_event_as_an_attendee
 		click_link_or_button('MOVIE SCREENING')
 		fill_in 'event_name', with: 'Cats and Dogs'
+		fill_in 'event_description', with: 'Cats and Dogs are cool'
 		fill_in 'event_address', with: '2373'
 		fill_in 'event_city', with: 'Chicago'
 		fill_in 'event_zip', with: '60649'
@@ -70,6 +72,7 @@ include Capybara::DSL
 	def create_new_event_as_an_attendee_without_location
 		click_link_or_button('MOVIE SCREENING')
 		fill_in 'event_name', with: 'Cats and Dogs'
+		fill_in 'event_description', with: 'Cats and Dogs are cool'
 		fill_in 'event_address', with: '2373'
 		fill_in 'event_city', with: 'Chicago'
 		fill_in 'event_zip', with: '60649'
