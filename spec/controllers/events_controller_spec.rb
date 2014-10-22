@@ -20,7 +20,7 @@ describe EventsController do
   describe "GET #explanation" do
     it "redirects to the show page" do
       get "explanation", id: event
-      
+
       expect(response).to redirect_to event_path
     end
 
@@ -152,7 +152,7 @@ describe EventsController do
 
       it "notifies user that event had errors" do
         post :create, movement_id: movement, event: event_without_address
-        flash[:alert].should == "Host can't be blank Name can't be blank Description can't be blank"
+        flash[:alert].should == "Host can't be blank. Name can't be blank. Description can't be blank"
       end
     end
   end

@@ -1,10 +1,41 @@
-function initializeGroupValidations() {
+function initializeMovementValidations() {
+  $('#new_movement').validate({
+    rules: {
+      'movement[extended_description]':{required: true},
+      'movement[name]': {
+        required: true,
+        remote: "/check_name"},
+      'movement[avatar]': {extension: "jpg|jpeg|png|gif"}
+    },
+    messages: {
+      'movement[extended_description]':{required: I18n[window.gon.locale]['description']},
+      'movement[name]': {
+        required: I18n[window.gon.locale]['name'],
+        remote: I18n[window.gon.locale]['existing_name']},
+      'movement[avatar]': I18n[window.gon.locale]['image_extension']
+    },
+    errorElement: "div",
+    errorClass: "text-danger",
+    errorId: "event_error",
+    errorPlacement: function (error, element) {
+      error.insertAfter(element);
+      element.closest('div').addClass('has-error');
+    },
+    success: function (label) {
+        label.closest('.form-group').removeClass('has-error').addClass('has-success');
+        label.next('.help-block').hide();
+    }
+  });
+};
+
+function initializeSubmovementValidations() {
   $('#new-group-form').validate({
     rules: {
       'movement[extended_description]':{required: true},
       'movement[name]': {
         required: true,
         remote: "/check_name"},
+      'movement[avatar]': {extension: "jpg|jpeg|gif|png"},
       'user[name]': {required: true},
       'user[surname]': {required: true},
       'user[email]': {
@@ -19,6 +50,7 @@ function initializeGroupValidations() {
       'movement[name]': {
         required: I18n[window.gon.locale]['name'],
         remote: I18n[window.gon.locale]['existing_name']},
+      'movement[avatar]': I18n[window.gon.locale]['image_extension'],
       'user[name]': I18n[window.gon.locale]['first_name'],
       'user[surname]': I18n[window.gon.locale]['surname'],
       'user[email]': {
@@ -91,9 +123,13 @@ function goToGroupPreviousStep(button) {
   previous_fieldset.show();
 }
 
-function new_team_user_page() {
+function new_unauthenticated_submovements_page() {
   return location.pathname.match(/unauthenticated_submovements/) != null;
 };
+
+function new_movements_page() {
+  return location.pathname.match(/movements/) != null;
+}
 
 function my_groups_page() {
   return location.pathname.match(/my_groups/)  != null;
@@ -113,8 +149,12 @@ $(document).ready(function() {
 /* Activating Best In Place */
   jQuery(".best_in_place").best_in_place();
 
-  if(new_team_user_page()){
-    initializeGroupValidations();
+  if(new_movements_page()){
+    initializeMovementValidations();
+  }
+
+  if(new_unauthenticated_submovements_page()){
+    initializeSubmovementValidations();
   }
 
   if(my_groups_page()){

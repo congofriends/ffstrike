@@ -38,7 +38,7 @@ describe UnauthenticatedEventsController do
 
       it 'notifies the user what happened' do
         post :create, user: user, event: invalid_event, movement_id: movement
-        flash[:alert].should eq("Description can't be blank Start date can't be in the past")
+        flash[:alert].should eq("Description can't be blank. Start date can't be in the past")
       end
     end
     context 'valid user & event' do

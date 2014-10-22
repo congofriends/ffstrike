@@ -13,10 +13,10 @@
 							%legend= t('.legend1')
 							.form-group.col-sm-12
 								= form.label :event_name, t('events.edit.name') + " *"
-								= form.text_field :name, class: 'form-control', :maxlength => 100, placeholder: "#{@event_type} for Congo Week"
+								= form.text_field :name, class: 'form-control', :maxlength => 100, value: "#{@event_type.name} for Congo Week"
 							.form-group.col-sm-12
 								= form.label :event_description, t('events.description') + " *"
-								= form.text_area :description, class: 'form-control redactor', rows: "50", placeholder: EVENT_DESCRIPTIONS["event_type"]["#{@event_type.downcase.gsub(' ', '_')}"]["full_description"]
+								= form.text_area :description, class: 'form-control redactor', rows: "50", value: EVENT_DESCRIPTIONS["event_type"]["#{@event_type.name.downcase.gsub(' ', '_')}"]["full_description"]
 							.event-date-time
 								.form-group.col-sm-4
 									= form.label t('events.edit.start_date') + " *"
@@ -68,10 +68,10 @@
 									=t('.avatar_size')
 							.form-group
 								= form.label t('.msg_to_attendees')
-								= text_area :event, :notes, class: 'form-control', rows: "2", maxlength: 200, placeholder: "Thank you for signing up to attend the #{@event_type}!"
+								= text_area :event, :notes, class: 'form-control', rows: "2", maxlength: 200, placeholder: "Thank you for signing up to attend the #{@event_type.name}!"
 							.hidden.form-group
 								= form.label :event_type_id, t('.event_type') + " *"
-								= form.select :event_type, EventType.all.map(&:name), class: 'form-control', selected: @event_type
+								= form.select :event_type, EventType.all.map(&:name), class: 'form-control', selected: @event_type.name
 							.row
 								= render 'fundraiser_agreement_form'
 							.form-group

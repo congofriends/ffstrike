@@ -9,7 +9,8 @@ class EventsController < ApplicationController
   def new
     redirect_to new_user_session_path and return unless current_user
     @event = Event.new
-    @event_type = params[:type] || EventType.first.name
+    event_type_name = params[:type] || EventType.first.name
+    @event_type = EventType.find_by(name: event_type_name)
   end
 
   def explanation
@@ -95,11 +96,11 @@ class EventsController < ApplicationController
       @event.assign_host(current_user)
       redirect_to my_events_path, notice: t('event.created') and return
     else
-      flash[:alert] = @event.errors.full_messages.flatten.join(' ')
+      flash[:alert] = @event.errors.full_messages.flatten.join('. ')
       if @movement.users.include?(current_user)
        redirect_to my_groups_path and return
       end
-      redirect_to movement_path(@movement) and return
+      render 'new'
     end
   end
 
@@ -147,7 +148,8 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params[:event][:event_type_id] = EventType.find_by(name: params[:event][:event_type]).id if params[:event][:event_type]
+    @event_type = EventType.find_by(name: params[:event][:event_type]) if params[:event][:event_type]
+    params[:event][:event_type_id] = @event_type.id if @event_type
     params.require(:event).permit(:event_type_id, :address2, :name, :address, :location_details, :description, :city, :zip, :state, :country, :start_time, :image, :flyer, :end_time, :host_id, :notes, :forum_option, :approved)
   end
 

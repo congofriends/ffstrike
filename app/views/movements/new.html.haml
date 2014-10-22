@@ -1,8 +1,5 @@
+- render partial: 'shared/load_i18n_translations'
 =image_tag Movement.first.image, class: "bg"
-= render 'new_group_validations'
-- if @movement.errors.any?
-  .flash.alert.alert-alert
-    = @movement.errors.full_messages.last
 .container.no-header
   .row
     .col-md-4

@@ -7,6 +7,7 @@ function initializeValidations() {
       'event[city]': { required: true },
       'event[country]': { required: true },
       'event[description]': { required: true },
+      'event[image]': {extension: "jpg|jpeg|png|gif"},
       'user[name]': {required: true},
       'user[surname]': {required: true},
       'user[email]': {
@@ -23,6 +24,7 @@ function initializeValidations() {
       'event[city]': I18n[window.gon.locale]['city'],
       'event[country]': I18n[window.gon.locale]['country'],
       'event[description]': I18n[window.gon.locale]['description'],
+      'event[image]': I18n[window.gon.locale]['image_extension'],
       'user[name]': I18n[window.gon.locale]['first_name'],
       'user[surname]': I18n[window.gon.locale]['surname'],
       'user[email]': {
@@ -51,13 +53,17 @@ function initializeEditEventValidations() {
         'event[name]': { required: true },
         'event[city]': { required: true },
         'event[country]': { required: true },
-        'event[description]': { required: true }
+        'event[description]': { required: true },
+        'event[flyer]': {extension: "jpg|jpeg|png|gif"},
+        'event[image]': {extension: "jpg|jpeg|png|gif"}
       },
       messages: {
         'event[name]': I18n[window.gon.locale]['name'],
         'event[city]': I18n[window.gon.locale]['city'],
         'event[country]': I18n[window.gon.locale]['country'],
-        'event[description]': I18n[window.gon.locale]['description']
+        'event[description]': I18n[window.gon.locale]['description'],
+        'event[flyer]': I18n[window.gon.locale]['image_extension'],
+        'event[image]': I18n[window.gon.locale]['image_extension']
       },
       errorElement: "div",
       errorClass: "text-danger",
