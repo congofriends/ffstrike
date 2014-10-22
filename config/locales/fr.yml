@@ -7,7 +7,7 @@ fr:
     twitter_signup: "Vous avez réussi à signer avec Twitter!"
     invalid_credentials: "Informations d\'authentification utilisateur non valides"
   event:
-    created: "Félicitations! Vous avez réussi à créer un %{event_type}"
+    created: "Félicitations! Vous avez réussi à créer un Événement"
     updated: "Événement mis à jour."
     deleted: "Événement supprimé."
     not_yours: "Il ne vous appartient pas cet événement!"
