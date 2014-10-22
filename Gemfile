@@ -32,7 +32,7 @@ gem 'rails_serve_static_assets'
 
 # File upload related
 # gem "paperclip", "~> 3.0"
-gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'paperclip'
 gem "rmagick"
 gem 'pdfkit'
 gem 'wkhtmltopdf-binary', "0.9.9"
@@ -76,7 +76,7 @@ gem 'slick_rails'
 
 gem 'gon'
 
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'stripe'
 
 gem 'kaminari'
 
