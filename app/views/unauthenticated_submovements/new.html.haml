@@ -22,9 +22,9 @@
                   .col-md-8
                     = text_field :movement, :name , { class: 'form-control', placeholder: 'Congo Supporters'}
                 .form-group
-                  = label :movement, :extended_description, t('.extended_description') + '*', { class: 'col-md-4 control-label' }
+                  = label :movement, :extended_description, t('.extended_description') + '*', { class: 'col-md-4 control-label'}
                   .col-md-8
-                    = text_area :movement, :extended_description, { class: 'form-control', rows: "6"}
+                    = text_area :movement, :extended_description, { class: 'form-control', rows: "6", placeholder: 'Tell us more about your team!'}
                 .form-group
                   = label :movement, :website, t('.website'), { class: 'col-md-4 control-label' }
                   .col-md-8
