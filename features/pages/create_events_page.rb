@@ -1,9 +1,26 @@
 class CreateEventsPage
 include Capybara::DSL
+	
 	def create_new_event
 	click_link_or_button('MOVIE SCREENING')
 	fill_in 'event_name', with: 'Cats and Dogs'
 	fill_in 'event_description', with: 'Cats and Dogs are cool'
+	fill_in 'event_address', with: '2373'
+	fill_in 'event_city', with: 'Chicago'
+	fill_in 'event_zip', with: '60649'
+	fill_in 'event_state', with: 'IL'
+	fill_in "event_start_time", with: DateTime.new(2015, 05, 16, 15, 30)
+	fill_in "event_end_time", with: DateTime.new(2015, 05, 17, 15, 30)
+    select "United States", from: "event_country", :match => :first
+    click_link_or_button "Next"
+	find('input#create_event').click
+	end
+	
+	def create_new_event_with_javascript
+	click_link_or_button('MOVIE SCREENING')
+	fill_in 'event_name', with: 'Cats and Dogs'
+	#fill_in 'event_description', with: 'Cats and Dogs are cool'
+	find(:css, "div.redactor_form-control.redactor_redactor.redactor_editor").set("Cats and Dogs are awesome")
 	fill_in 'event_address', with: '2373'
 	fill_in 'event_city', with: 'Chicago'
 	fill_in 'event_zip', with: '60649'
@@ -72,7 +89,7 @@ include Capybara::DSL
 	def create_new_event_as_an_attendee_without_location
 		click_link_or_button('MOVIE SCREENING')
 		fill_in 'event_name', with: 'Cats and Dogs'
-		fill_in 'event_description', with: 'Cats and Dogs are cool'
+		find(:css, "div.redactor_form-control.redactor_redactor.redactor_editor").set("Cats and Dogs are awesome")
 		fill_in 'event_address', with: '2373'
 		fill_in 'event_city', with: 'Chicago'
 		fill_in 'event_zip', with: '60649'

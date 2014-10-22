@@ -32,7 +32,7 @@ Scenario: Viewing an Event on Index after Creating an Event
 @javascript @ignore
 Scenario: An event should not be viewable on index if approval is set to false
     When I select the Create Event button
-    And I create an event
+    And I create a redactor event
     And I set event approval to false
     Then I can not see the event on the event index page
 

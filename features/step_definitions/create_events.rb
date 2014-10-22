@@ -19,6 +19,10 @@ When(/^I create an event/)do
 	create_events_page.create_new_event()
 end
 
+When(/^I create a redactor event/)do
+	create_events_page.create_new_event_with_javascript()
+end
+
 When(/^I select a fundraising event/)do
   create_events_page.select_fundraising_event()
 end
