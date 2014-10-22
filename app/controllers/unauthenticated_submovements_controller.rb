@@ -2,6 +2,7 @@ class UnauthenticatedSubmovementsController < ApplicationController
 
   def new
     redirect_to root_path, alert: t('event.already_signed_in') if current_user
+    @submovement = Movement.new
   end
 
   def create
