@@ -5,7 +5,7 @@
   %h2
     =t('.manage_my_groups')
   = form_tag my_groups_path, :method => :get, remote: true do
-    = select("name", "id", @groups.map {|group| [group.name, group.id]})
+    = select("name", "id", @groups.map {|group| [group.name, group.id]}, selected: @group.id)
     = submit_tag t('.show')
     %h3
       =t('.select_group')
@@ -22,7 +22,7 @@
       %li
         %a{href: '#past_events', data: {toggle: 'tab'}}
           =t('.past_events')
-      
+
 
   .tab-content
     .tab-pane.fade.in#group

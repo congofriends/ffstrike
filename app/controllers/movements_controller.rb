@@ -33,7 +33,6 @@ class MovementsController < ApplicationController
     @group = params[:name] ? Movement.find(params[:name][:id]) : @groups.first
     @congo_week = @group && @group.name == "Congo Week"
     redirect_to root_path and return unless @groups.include?(@group)
-
     respond_to do |format|
       format.html {render action: 'my_groups'}
       format.js
@@ -140,7 +139,7 @@ class MovementsController < ApplicationController
 
   def update
     @movement.update_attributes(movement_params)
-    redirect_to request.referer
+    redirect_to my_groups_path({name: {id: @movement.id}})
   end
 
   def support_network

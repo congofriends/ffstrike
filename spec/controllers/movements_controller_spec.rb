@@ -126,8 +126,8 @@ describe MovementsController do
         expect(movement.reload.video).to eq("_ZSbC09qgLI")
       end
 
-      it "redirects to show" do
-        expect(response).to redirect_to movement_path(movement)
+      it "redirects to my_groups" do
+        expect(response.location).to include("my_groups")
       end
     end
 
