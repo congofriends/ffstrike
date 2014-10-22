@@ -29,6 +29,7 @@ class MovementsController < ApplicationController
   def my_groups
     redirect_to root_path and return unless current_user
     @groups = current_user.movements_and_groups
+    @groups = @groups.sort_by{|group| group.name}
     @group = params[:name] ? Movement.find(params[:name][:id]) : @groups.first
     @congo_week = @group && @group.name == "Congo Week"
     redirect_to root_path and return unless @groups.include?(@group)
@@ -143,7 +144,7 @@ class MovementsController < ApplicationController
   end
 
   def support_network
-    @support_network =  Movement.where(parent_id: @movement).sort{|team1,team2| team1.name.downcase <=> team2.name.downcase}
+    @support_network =  Movement.where(parent_id: @movement).sort_by{|team| team.name}
   end
 
   def check_name
