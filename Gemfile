@@ -61,6 +61,7 @@ gem 'simplecov', :require => false, :group => :test
 # User authentication system
 gem 'devise'
 
+
 # Invitation system
 gem 'devise_invitable'
 
