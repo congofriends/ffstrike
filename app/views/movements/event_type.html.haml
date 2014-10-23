@@ -9,11 +9,13 @@
 					= link_to new_movement_event_path(@movement, {type: event_type.name}) do
 						%a{href: new_movement_event_path(@movement, {type: event_type.name})}
 							.text-center.group-name-event-type= event_type.name.upcase
-							%img.group-image-event-type{alt: "", src: asset_path("#{event_type.formatted_name}.jpeg")}/
+							%img.group-image-event-type.mission-panel{alt: "", src: asset_path("#{event_type.formatted_name}.jpeg")}
+							%span.text-content#black
 		- else
 			.group-panel-event-type
 				%div
 					= link_to new_movement_unauthenticated_event_path(@movement, {type: event_type.name}) do
 						%a{href: new_movement_unauthenticated_event_path(@movement, {type: event_type.name}) }
 							.text-center.group-name-event-type= event_type.name.upcase
-							%img.group-image-event-type{alt: "", src: asset_path("#{event_type.formatted_name}.jpeg")}
+							%img.group-image-event-type.mission-panel{alt: "", src: asset_path("#{event_type.formatted_name}.jpeg")}
+							%span.text-content#black

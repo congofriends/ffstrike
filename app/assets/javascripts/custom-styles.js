@@ -5,16 +5,14 @@ $(document).ready(function() {
 
 	var resizeText = function () {
 		// Standard height, for which the body font size is correct
-		var preferredFontSize = 93; // %
+		var preferredFontSize = 91; // %
 		var finalSize = $(window).width();
 
 		var scalePercentage = (finalSize) / (initialSize);
 		var newFontSize = preferredFontSize * scalePercentage;
-		$(".countdown-amount").css("font-size", newFontSize + '%');
-		$(".countdown-period").css("font-size", newFontSize + '%');
 		
 		if (finalSize > 1100){
-		$(".btn").css("font-size", newFontSize + '%');
+			$(".btn").css("font-size", newFontSize + '%');
 		}
 
 	};
