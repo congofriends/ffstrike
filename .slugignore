@@ -1,0 +1,7 @@
+#	For pushing to QA, the slug can't go over 300MB, so for now, we're using this as a temporary solution to the slug issue
+
+/spec
+
+/features
+
+/tmp

@@ -81,6 +81,8 @@ gem 'stripe'
 
 gem 'kaminari'
 
+gem 'asset_sync'
+
 group :test, :development do
   gem 'puppet'
   gem 'rspec'
