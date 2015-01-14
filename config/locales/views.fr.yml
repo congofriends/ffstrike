@@ -243,7 +243,7 @@ fr:
       message: "Objet"
       placeholder: "Saisissez le message à envoyer à tous les hôtes."
     tab_tasks:
-      modify_tasks: 'Modifier les tâches pour les événements ici'   
+      modify_tasks: 'Modifier les tâches pour les événements ici'
     my_groups:
       my_groups: 'Mes équipes'
       manage_my_groups: 'Gérer mes équipes'
@@ -335,7 +335,7 @@ fr:
       congo-week: "CONGO SEMAINE"
       events: "ÉVÉNEMENTS"
       network: "RÉSEAU"
-      congo_week_2014: "#CongoWeek2014"
+      hashtag: "#BreakingTheSilence"
       congo_description:  "Briser le silence sur les questions au cœur de l'Afrique"
       join_congo: "Découvrez comment ça marche"
       congo_start: "Semaine Congo commence dans:"
@@ -366,7 +366,7 @@ fr:
       name: *name
       phone: *phone
       location_placeholder: 'Par exemple mondial, International, National..'
-      location: "Détails d'emplacement:"     
+      location: "Détails d'emplacement:"
       youtube_link: 'Lien de Youtube'
       tagline: "Slogan: "
       extended_description: "Description étendue"

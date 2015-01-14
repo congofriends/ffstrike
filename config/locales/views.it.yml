@@ -50,7 +50,7 @@ it:
       tab_tasks: "Attività"
       tab_attendees: "Partecipanti"
       tab_event_type_images: "Modificare le immagini di tipi di evento"
-    tab_attendees:  
+    tab_attendees:
       yes: 'Sì'
       no: 'No'
       export_attendees: *export_attendees
@@ -348,6 +348,7 @@ it:
       about_creators: 'Circa i Creatori'
       host_event: *host_event
       contact_group_coordinator: 'CONTATTO COORDINATORE'
+      hashtag: "#BreakingTheSilence"
       join_team: 'Unisciti alla Squadra'
       upcoming_events: 'Prossimi Eventi'
       no_upcoming_events: 'Non ci sono Prossimi Eventi'
