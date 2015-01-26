@@ -5,8 +5,6 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'simplecov'
 require 'paperclip/matchers'
-require 'pry-rescue/minitest'
-require 'pry-rescue/rspec'
 require 'capybara/rspec'
 require 'capybara/rails'
 
