@@ -14,7 +14,7 @@
       %div.intro-area.row.row-table.row-full-height.text-center
         %div.text-center.col-middle
           %h1.home-text.header-text
-            =link_to t('.congo-week'), "http://www.social.congoevents.org/"
+            =link_to t('.dashtag-header'), "http://www.social.congoevents.org/"
           %div.h4.field.subtitle-text
             = t('.congo_description').upcase
           %div.row-space-bottom
@@ -35,7 +35,7 @@
   %div.page-container.row-full-height
     %div.text-center.row-space-top
       %h2.strong.upcoming-events
-        = t('.upcoming_events')
+        = t('.upcoming_events') if @public_events.any?
       %p.upcoming-font
         = t('.support')
     %div.row-space-top
