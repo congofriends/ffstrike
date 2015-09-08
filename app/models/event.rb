@@ -18,14 +18,14 @@ class Event < ActiveRecord::Base
 
   has_attached_file :image,
                     :styles => { :medium => '280x150', :thum => '300x300#' },
-                    :default_url => 'default_profile_2014.jpg'
+                    :default_url => 'congo_flyer.jpg'
 
   validates_attachment_content_type :image, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
   validates_attachment_size :image, :less_than => 5.megabytes
 
   has_attached_file :flyer,
                     :styles => { :medium => '280x150', :thum => '50x50' },
-                    :default_url => 'poster2014.jpg'
+                    :default_url => 'congo_flyer.jpg'
 
   validates_attachment_content_type :flyer, content_type: ['image/png', 'image/gif', 'image/jpg', 'image/jpeg']
 
