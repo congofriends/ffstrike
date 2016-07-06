@@ -18,8 +18,8 @@ namespace :db do
       event = movement.events.where(name: params["name"]).first_or_create!(
         params.merge({
           host_id: coordinator.id,
-          start_time: DateTime.new(2016, 05, 16, 15, 30),
-          end_time: DateTime.new(2016, 05, 16, 17, 30),
+          start_time: DateTime.new(2017, 05, 16, 15, 30),
+          end_time: DateTime.new(2017, 05, 16, 17, 30),
           host_id: coordinator.id}))
     end
 
@@ -53,8 +53,8 @@ namespace :db do
         city: "Chicago",
         zip: "60634",
         state: "IL",
-        start_time: DateTime.new(2016, 05, 14, 15, 30),
-        end_time: DateTime.new(2016, 05, 14, 17, 30),
+        start_time: DateTime.new(2017, 05, 14, 15, 30),
+        end_time: DateTime.new(2017, 05, 14, 17, 30),
         event_type_id: 2,
         approved: true,
         notes: "Thanks for attending! We will all be wearing red to this event, to show our solidarity.",
@@ -67,8 +67,8 @@ namespace :db do
         city: "Chicago",
         zip: "60634",
         state: "IL",
-        start_time: DateTime.new(2016, 05, 14, 15, 30),
-        end_time: DateTime.new(2016, 05, 14, 17, 30),
+        start_time: DateTime.new(2017, 05, 14, 15, 30),
+        end_time: DateTime.new(2017, 05, 14, 17, 30),
         event_type_id: 3,
         approved: false,
         notes: "Thanks for attending! We will all be wearing red to this event, to show our solidarity.",
