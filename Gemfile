@@ -146,3 +146,5 @@ gem 'jquery-countdown-rails'
 #Exception handler
 gem 'request_exception_handler'
 
+gem "recaptcha", require: "recaptcha/rails"
+

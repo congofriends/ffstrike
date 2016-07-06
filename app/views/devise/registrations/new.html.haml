@@ -34,6 +34,8 @@
             .col-md-8
               = f.password_field :password_confirmation, class: 'form-control'
           .form-group
+            = recaptcha_tags :ajax => true
+          .form-group
             .col-md-8.col-md-offset-4
               = f.submit t('devise.registrations.edit.sign_up'), class: 'btn btn-primary', id: 'sign_up_button'
       = render "devise/shared/links"

@@ -87,6 +87,8 @@
 							- if current_user
 								= form.hidden_field :host_id, value: current_user.id
 							.form-group
+								= recaptcha_tags :ajax => true
+							.form-group
 								%button{type: "button", class: "btn btn-primary previous"}=  t('.previous')
 								= form.submit  t('.create_btn'), class: 'btn btn-success', id: 'create_event'
 

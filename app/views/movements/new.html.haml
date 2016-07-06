@@ -42,6 +42,8 @@
                   = form.text_field :video, { class: 'form-control' }
               = form.hidden_field :parent_id, value:  params[:parent_id]
               .form-group
+                = recaptcha_tags :ajax => true
+              .form-group
                 .col-md-8.col-md-offset-4
                   = link_to t('movements.new.cancel_btn'), :back, class: "btn btn-cancel"
                   = form.submit t('.create_btn'), class: "btn btn-success", id: "create_movement"

@@ -30,7 +30,8 @@
 
 		.form-group.label-field
 			= f.hidden_field :event_id, value: @event.id
-
+		.form-group
+			= recaptcha_tags :ajax => true
 		.form-group
 			= f.submit t('.sign_up'), class: "btn btn-info col-md-12", id: 'sign_up_button'
 
