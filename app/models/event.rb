@@ -152,7 +152,7 @@ class Event < ActiveRecord::Base
   end
 
   def assign_coordinates
-    if Rails.env.test?
+    if Rails.env.test? || Rails.env.development?
       self.update_attributes(latitude: 41.9215421, longitude: -87.70248169999999)
     else
       coordinates = Geocoder.coordinates(location) unless location == "TBD"
