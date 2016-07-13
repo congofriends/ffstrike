@@ -50,7 +50,7 @@ class MovementsController < ApplicationController
   def create
     params[:movement][:parent_id] = Movement.first.id if Movement.first
     @movement = Movement.new(movement_params)
-    if @movement.save
+    if verify_recaptcha(model: @movement) && @movement.save
       unless current_user.nil?
         NewTeamMailWorker.perform_async(current_user.id, @movement.id) if ENV["RAILS_ENV"] == "production"
         @movement.users << current_user

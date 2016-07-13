@@ -11,7 +11,7 @@ class UnauthenticatedEventsController < ApplicationController
   def create
     @user = User.new user_params
     @event = Event.new event_params
-    if @user.save
+    if verify_recaptcha(model: @user) && @user.save
       sign_in(:user, @user)
       @event = @movement.events.build(event_params)
       @event.assign_host @user

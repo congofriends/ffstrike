@@ -37,7 +37,7 @@ class UsersController < Devise::RegistrationsController
 
     user_signed_in = current_user
 
-    if user.save
+    if verify_recaptcha(model: user) && user.save
       sign_in(:user, user)
       if Membership.where(user: user, movement_id: @team).empty?
         @team.members << current_user
@@ -71,7 +71,7 @@ class UsersController < Devise::RegistrationsController
     @event ||= Event.find(@event_id)
 
 
-    if user.save
+    if verify_recaptcha(model: user) && user.save
       flash[:notice] = message
       sign_in(:user, user)
       if Attendance.where(user: user, event: @event).empty?
