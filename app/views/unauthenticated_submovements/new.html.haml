@@ -69,6 +69,8 @@
                     = label :user, :password_confirmation, 'Password confirmation *'
                     = password_field :user, :password_confirmation, class: 'form-control'
                 .form-group
+                  = recaptcha_tags :ajax => true
+                .form-group
                   %button{type: "button", class: "btn btn-primary previous-group"}=t('.previous')
                   = submit_tag t('.create_btn'), class: 'btn btn-success'
 
