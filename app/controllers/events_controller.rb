@@ -89,7 +89,7 @@ class EventsController < ApplicationController
   def create
     @movement = Movement.find_by_name(params["event"]["movement"]) if params["event"]["movement"] && params["event"]["movement"] != ""
     @event = @movement.events.build(event_params)
-    pry
+    pry if ENV["RAILS_ENV"] == "qa"
     if verify_recaptcha(model: @event) && @event.save
       clear_fields_on_tbd
       UserMailer.event_creation_message(current_user.id, @event.id) if ENV["RAILS_ENV"] == "qa"
