@@ -110,7 +110,7 @@ class EventsController < ApplicationController
   def recaptcha_verify_via_api_call(request, recaptcha_response)
         private_key = Recaptcha.configuration.private_key!
         remote_ip = (request.respond_to?(:remote_ip) && request.remote_ip) || (env && env['REMOTE_ADDR'])
-
+        puts "private key #{private_key}"
         verify_hash = {
           "secret"    => private_key,
           "remoteip"  => remote_ip.to_s,
