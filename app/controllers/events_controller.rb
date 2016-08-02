@@ -91,7 +91,7 @@ class EventsController < ApplicationController
     @event = @movement.events.build(event_params)
     puts "event #{@event}"
     puts "params #{params}"
-    if verify_recaptcha(model: @event) && @event.save
+    if verify_recaptcha && @event.save
       clear_fields_on_tbd
       UserMailer.event_creation_message(current_user.id, @event.id) if ENV["RAILS_ENV"] == "qa"
       NewEventMailWorker.perform_async(current_user.id, @event.id) if ENV["RAILS_ENV"] == "production"
