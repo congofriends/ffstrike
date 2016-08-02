@@ -117,7 +117,7 @@ class EventsController < ApplicationController
           "response"  => recaptcha_response
         }
 
-        reply = JSON.parse(Recaptcha.get(verify_hash, options))
+        reply = JSON.parse(Recaptcha.get(verify_hash))
         puts reply
         reply['success'].to_s == "true"
       end
