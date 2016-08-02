@@ -83,13 +83,13 @@ gem 'kaminari'
 
 gem 'asset_sync'
 
+gem 'pry'
 group :test, :development do
   gem 'puppet'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'factory_girl'
   gem 'factory_girl_rails', "~> 4.0"
-  gem 'pry'
   gem 'pry-byebug'
   gem 'better_errors'
   gem 'assert_difference'
@@ -100,6 +100,7 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'poltergeist'
   gem 'i18n-tasks', '~> 0.5.4'
+  gem 'thin'
 end
 
 group :production, :staging do
