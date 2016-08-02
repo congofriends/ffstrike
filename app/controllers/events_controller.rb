@@ -89,9 +89,6 @@ class EventsController < ApplicationController
   def create
     @movement = Movement.find_by_name(params["event"]["movement"]) if params["event"]["movement"] && params["event"]["movement"] != ""
     @event = @movement.events.build(event_params)
-    puts "event #{@event}"
-    puts "params #{params}"
-    recaptcha_verify_via_api_call(request, params['g-recaptcha-response'])
     if verify_recaptcha(model: @event) && @event.save
       clear_fields_on_tbd
       UserMailer.event_creation_message(current_user.id, @event.id) if ENV["RAILS_ENV"] == "qa"
@@ -107,21 +104,6 @@ class EventsController < ApplicationController
     end
   end
   
-  def recaptcha_verify_via_api_call(request, recaptcha_response)
-        private_key = Recaptcha.configuration.private_key!
-        remote_ip = (request.respond_to?(:remote_ip) && request.remote_ip) || (env && env['REMOTE_ADDR'])
-        puts "private key #{private_key}"
-        verify_hash = {
-          "secret"    => private_key,
-          "remoteip"  => remote_ip.to_s,
-          "response"  => recaptcha_response
-        }
-
-        reply = JSON.parse(Recaptcha.get(verify_hash,{}))
-        puts reply
-        reply['success'].to_s == "true"
-      end
-
   def my_events
     redirect_to root_path and return unless current_user
     @events = current_user.events_owned & current_user.current_events
